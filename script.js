@@ -14,19 +14,21 @@
       label: 'Start Here',
       eyebrow: 'Studio overview · Frankston, Australia',
       title: 'Ideas made visible, audible and useful.',
-      statement: 'Blue $nake Studio is an independent creative practice by Tom, bringing visual art, music, education tools and experimental systems into one connected body of work.',
+      statement: 'The Moss Man is the creator. Blue $nake Studio is the world-building studio. blkck2.com is the portal.',
+      pageTitle: 'Blue $nake Studio — Art, Music & Learning · blkck2.com',
+      pageDescription: 'The Moss Man is the creator. Blue $nake Studio is the world-building studio. blkck2.com is the portal. Art, music, Meta-Pet, Moss 60 and teacher tools from Frankston, Australia.',
       startHere: true,
       details: [
-        'Explore original artwork, music-led worlds and a growing archive of studio projects.',
-        'Discover privacy-conscious learning concepts, classroom resources and the Moss 60 visual number system.',
-        'Schools & educators, councils, collaborators and creative partners, this page is the clearest introduction to the studio and its work.'
+        'An independent creative practice by Tom from Frankston: visual art, music worlds, privacy-first learning tools, teacher supports, print packs and Moss 60 number systems — one connected body of work.',
+        'Discover Meta-Pet (child-safe STEAM learning), the Teacher\'s Secret Cheatsheet (behaviour support templates), Black Wing Crew / Neon Venom (2026 LP) and Gallery Rooms.',
+        'Schools, councils, collaborators and creative partners — choose your door below and follow the relevant project link.'
       ],
       links: [
-        { label: 'Open Gallery Rooms', href: '#visual-worlds', className: 'album-link' },
-        { label: 'View Elevator Pitch', href: 'https://elevator-pitch-seven.vercel.app/', className: 'album-link' },
-        { label: 'Memetics Register', href: 'documents/oss-734g-known-unknowns-register.html' },
-        { label: 'Meta-Pet Pilot School', href: 'https://metapet-pilot-school.vercel.app/' },
-        { label: 'Black Wing Crew', href: 'https://blackwingcrew.netlify.app/' },
+        { label: 'Try Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link' },
+        { label: 'Download Teacher Pack', href: 'https://teachers-secret-cheatsheet.vercel.app/', className: 'album-link' },
+        { label: 'Enter Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link' },
+        { label: 'Gallery Rooms', href: '#visual-worlds' },
+        { label: 'Elevator Pitch', href: 'https://elevator-pitch-seven.vercel.app/' },
         { label: 'YouTube @blkck2', href: 'https://www.youtube.com/@blkck2' },
         { label: 'Email B$S', href: 'mailto:bluesssnakestudio@gmail.com' }
       ],
@@ -38,6 +40,8 @@
       eyebrow: 'About the practice · Blue $nake Studio',
       title: 'A studio without hard borders.',
       statement: 'The Moss Man is the creative identity behind a practice where painting, music, design, learning and systems thinking continuously inform one another.',
+      pageTitle: 'The Moss Man — About the Practice · Blue $nake Studio',
+      pageDescription: 'Tom from Frankston: artist, musician, educator and founder of Blue $nake Studio. A practice where painting, music, design, learning and systems thinking inform one another.',
       textualInstallation: true,
       details: [
         'The work moves between expressive art and practical tools without treating them as separate disciplines.',
@@ -57,6 +61,8 @@
       eyebrow: 'Selected work · Visual archive',
       title: 'Enter the visual worlds.',
       statement: 'A curated archive of paintings, characters, symbols, campaign artwork and works in progress—organised as distinct rooms, each with its own atmosphere and purpose.',
+      pageTitle: 'Gallery Rooms — Blue $nake Studio · blkck2.com',
+      pageDescription: 'Eight gallery chambers: The Painted Wing, Neon Venom, The Omen Room, The Learning Beast, Moss 60 Engine, Street Print Arsenal, Colouring Pages and Memetics & Public Repair.',
       series: ['Auralia', 'Insidious Rhythms', 'Original Paintings', 'B$S Branding', 'Process / References'],
       rooms: true,
       details: [
@@ -75,6 +81,8 @@
       eyebrow: 'Music and moving image · Neon Venom',
       title: 'Sound with a visual identity.',
       statement: 'Black Wing Crew brings music, performance and graphic language together through recurring symbols, rhythmic hooks, short-form video and print-led releases.',
+      pageTitle: 'Black Wing Crew / Neon Venom — Blue $nake Studio',
+      pageDescription: 'The 2026 Neon Venom digital LP by Blue $nake Studio: tracklist, streaming, downloads, lyrics, QR drops, lyric posters and street print assets.',
       series: ['Black Wing Crew', 'Neon Venom'],
       details: [
         'This is the sound-and-symbol branch for Neon Venom, Woman Money Venom and Black Omen energy.',
@@ -92,6 +100,8 @@
       eyebrow: 'Civic gothic · recursive song cycle · Victoria',
       title: 'The old state dreams in circles.',
       statement: 'Old Vic State is a civic-gothic song and image cycle about memory, command and the structures that outlive the people who believe they control them.',
+      pageTitle: 'Old Vic State — Civic Gothic Song Cycle · Blue $nake Studio',
+      pageDescription: 'A civic-gothic song and image cycle from Blue $nake Studio. One wing remembers fire. One wing remembers law. Between them hangs the body of command.',
       oldVicState: true,
       details: [
         'One wing remembers fire. One wing remembers law. Between them hangs the body of command.',
@@ -111,6 +121,8 @@
       eyebrow: 'Sister-city song · learning bridge',
       title: 'Two shores. One song.',
       statement: 'The Frankston → Fuji branch is for the bilingual sister-city material: song, lyric sheets, practice games, taiko rhythm, cultural connection and school-friendly learning.',
+      pageTitle: 'Frankston → Fuji — Sister-City Song · Blue $nake Studio',
+      pageDescription: 'Bilingual Japanese and English sister-city material for schools and councils: lyric sheets, pronunciation guides, taiko rhythm and cultural connection between Frankston and Susono.',
       details: [
         'Keep this branch clean and respectful so councils, schools and collaborators can understand it quickly.',
         'Use it for Japanese/English lyric sheets, pronunciation cards, rhythm practice and context tidbits.',
@@ -128,6 +140,8 @@
       eyebrow: 'Respectful research · language journey',
       title: 'Ask before the omen speaks.',
       statement: 'This branch holds the Black Omen / Waahn research path: Bunurong–Boonwurrung enquiry, place respect, translation limits, word-bank notes and consultation-first process.',
+      pageTitle: 'Black Omen / Waahn — Bunurong Language Research · Blue $nake Studio',
+      pageDescription: 'Respectful research-in-progress into Black Omen, Waahn and Bunurong–Boonwurrung language near Frankston. Consultation-first, not a final translation or cultural authority.',
       details: [
         'Frame it as research-in-progress, not cultural authority or final translation.',
         'Good for notes, contact drafts, source maps, word-bank experiments and permission pathways.',
@@ -145,6 +159,8 @@
       eyebrow: 'Privacy-first learning · Concept development',
       title: 'Technology that gives attention back.',
       statement: 'Meta-Pet is a child-safe learning companion concept designed around creativity, pattern recognition and healthy interaction—not advertising, tracking or endless engagement.',
+      pageTitle: 'Meta-Pet — Privacy-First Learning · Blue $nake Studio',
+      pageDescription: 'A child-safe STEAM learning companion: no ads, no trackers, no unnecessary data collection. Puzzles, pattern recognition and healthy device use for schools and families.',
       details: [
         'Local-first, child-safe direction: no ads, no trackers, no unnecessary cloud collection.',
         'A STEAM learning creature powered by puzzles, pattern recognition, creative tasks and symbolic identity.',
@@ -164,6 +180,8 @@
       eyebrow: 'Visual mathematics · 108 · 360',
       title: 'A number system you can see and feel.',
       statement: 'Moss 60 explores base-60 thinking, cycles, geometry, colour and sound as a visual framework for puzzles, identity systems and creative learning.',
+      pageTitle: 'Moss 60 — Visual Number System · Blue $nake Studio',
+      pageDescription: 'A 60-position visual mathematics system: base-60 thinking, geometry, glyphs and digital DNA. Powers the Meta-Pet learning engine and symbolic identity system.',
       series: ['MOSS60 / Geometry'],
       details: [
         'Keep the deep numbers behind the mechanics so it feels real without forcing people to read a textbook.',
@@ -183,6 +201,8 @@
       eyebrow: 'Classroom proof · behaviour support',
       title: 'Useful in a real classroom.',
       statement: 'Teacher Tools is the proof branch: classroom-ready supports, behaviour sheets, healthy attention design and low-admin learning material for stretched teachers.',
+      pageTitle: 'Teacher Tools — Behaviour Support · Blue $nake Studio',
+      pageDescription: 'Seven printable behaviour support templates for stretched teachers. Victoria-aware, low admin, child-facing. Behaviour framed as communication throughout.',
       details: [
         'This is where B$S becomes practical: printables, behaviour support, lesson prompts and school-safe language.',
         'Keep it clear enough for teachers and parents, but visually connected to the Moss Tree world.',
@@ -202,7 +222,19 @@
       eyebrow: 'Poster arsenal · QR drops · Officeworks-ready',
       title: 'Print the omen.',
       statement: 'The Print Street Pack branch is for posters, stickers, QR codes, cutouts, cards, coasters, A4 layouts and physical promo kits that make B$S leave the screen.',
+      pageTitle: 'Print Street Pack — Posters, QR & Stickers · Blue $nake Studio',
+      pageDescription: 'A4 poster packs, QR sticker sheets, chant posters, brand marks and print-ready street assets from Blue $nake Studio. Officeworks-ready, cuttable, scannable.',
       series: ['Neon Venom', 'B$S Branding', 'Insidious Rhythms', 'Black Wing Crew'],
+      featuredIds: [
+        'neon-venom-portrait-qr',
+        'bwc-neon-qr-sheet',
+        'bwc-crest-sheet',
+        'bss-serpent-crest',
+        'old-vic-state-campaign',
+        'neon-venom-campaign',
+        'neon-venom-portal-qr',
+        'black-wing-chant-sheet'
+      ],
       details: [
         'This is central to your style: not just online — printable, cuttable, scannable, hand-to-hand.',
         'Organise files as A4 poster packs, two-up prints, sticker sheets, QR sheets and promo cards.',
@@ -909,6 +941,10 @@
     if (options.hash !== false && location.hash !== `#${slugs[active]}`) {
       history.replaceState(null, '', `#${slugs[active]}`);
     }
+    const activeSec = sections[active];
+    document.title = activeSec.pageTitle || `${activeSec.label} — Blue $nake Studio · blkck2.com`;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', activeSec.pageDescription || activeSec.statement);
     if (changed && status) status.textContent = `${sections[active].label} selected`;
   }
 
