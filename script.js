@@ -32,7 +32,7 @@
         { label: 'YouTube @blkck2', href: 'https://www.youtube.com/@blkck2' },
         { label: 'Email B$S', href: 'mailto:bluesssnakestudio@gmail.com' }
       ],
-      featuredIds: ['auralia-cosmic-poster', 'black-wing-chant-sheet', 'neon-venom-enter-dream-qr', 'moss60-geometry-linework', 'painting-bss-woman-cockatoo', 'blue-snake-gold-logo']
+      featuredIds: ['moss-man-runic-scribe', 'auralia-cosmic-poster', 'black-wing-chant-sheet', 'neon-venom-enter-dream-qr', 'moss60-geometry-linework', 'painting-bss-woman-cockatoo', 'blue-snake-gold-logo']
     },
     {
       slug: 'moss-man',
@@ -53,7 +53,7 @@
         { label: 'Black Wing Crew', href: 'https://blackwingcrew.netlify.app/' },
         { label: 'YouTube @blkck2', href: 'https://www.youtube.com/@blkck2' }
       ],
-      featuredIds: ['auralia-cosmic-poster', 'black-wing-chant-sheet', 'neon-venom-enter-dream-qr', 'painting-bss-woman-cockatoo', 'blue-snake-gold-logo', 'moss60-geometry-linework']
+      featuredIds: ['moss-man-runic-scribe', 'moss-man-victorian-library', 'moss-man-frankston-courts', 'moss-man-hope-poster', 'auralia-cosmic-poster', 'black-wing-chant-sheet', 'neon-venom-enter-dream-qr', 'painting-bss-woman-cockatoo']
     },
     {
       slug: 'visual-worlds',
@@ -62,7 +62,7 @@
       title: 'Enter the visual worlds.',
       statement: 'A curated archive of paintings, characters, symbols, campaign artwork and works in progress—organised as distinct rooms, each with its own atmosphere and purpose.',
       pageTitle: 'Gallery Rooms — Blue $nake Studio · blkck2.com',
-      pageDescription: 'Eight gallery chambers: The Painted Wing, Neon Venom, The Omen Room, The Learning Beast, Moss 60 Engine, Street Print Arsenal, Colouring Pages and Memetics & Public Repair.',
+      pageDescription: 'Ten gallery chambers: The Painted Wing, Neon Venom, The Omen Room, The Learning Beast, Moss 60 Engine, Street Print Arsenal, Colouring Pages, Memetics & Public Repair, The Moss Man and Humour & Parody.',
       series: ['Auralia', 'Insidious Rhythms', 'Original Paintings', 'B$S Branding', 'Process / References'],
       rooms: true,
       details: [
@@ -92,7 +92,8 @@
       links: [
         { label: 'Open Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link' },
         { label: 'Watch on YouTube', href: 'https://www.youtube.com/@blkck2' }
-      ]
+      ],
+      featuredIds: ['black-wing-cosmic-singing', 'neon-venom-cyberpunk-poster', 'bss-twin-cockatoos-stained-glass', 'neon-venom-enter-dream-qr', 'black-wing-chant-sheet', 'neon-venom-campaign']
     },
     {
       slug: 'old-vic-state',
@@ -172,7 +173,7 @@
         { label: 'Teacher Tools', href: '#teacher-tools' },
         { label: 'Email studio', href: 'mailto:bluesssnakestudio@gmail.com' }
       ],
-      featuredIds: ['meta-pet-process-overview', 'meta-pet-no-login', 'meta-pet-one-more-app', 'meta-pet-digital-genomes', 'meta-pet-companion-portrait', 'meta-pet-neon-ornament']
+      featuredIds: ['meta-pet-kid-with-feather', 'meta-pet-process-overview', 'meta-pet-no-login', 'meta-pet-one-more-app', 'meta-pet-digital-genomes', 'meta-pet-companion-portrait', 'meta-pet-neon-ornament']
     },
     {
       slug: 'moss60',
@@ -381,7 +382,7 @@
       useFor: 'portfolio proof, artist identity, handmade credibility, exhibition pieces',
       proof: ['physical paintings', 'Auralia portrait language', 'cockatoo totem work', 'blue/gold B$S palette'],
       promise: 'This room proves the studio is not only prompts and code — there is a hand, a mythology, and a real painter underneath it.',
-      ids: ['painting-bss-woman-cockatoo', 'painting-redhair-auralia', 'painting-spiral-listener', 'painting-two-muses', 'auralia-serpent-profile', 'auralia-moon-dust']
+      ids: ['painting-bss-woman-cockatoo', 'painting-redhair-auralia', 'painting-spiral-listener', 'painting-two-muses', 'auralia-serpent-profile', 'auralia-moon-dust', 'bss-twin-cockatoos-stained-glass', 'auralia-ouroboros-keyart', 'auralia-blue-flight-relief', 'auralia-dark-profile-snake', 'she-weaves-dawn-stained-glass', 'she-weaves-dawn-woodblock', 'painting-child-namo-narayana', 'auralia-klimt-mosaic']
     },
     {
       slug: 'neon-venom-room',
@@ -394,7 +395,7 @@
       useFor: 'music promo, YouTube traffic, QR drops, sticker sheets, street campaigns',
       proof: ['QR stickers', 'Black Wing Crew bait', 'neon campaign graphics', 'promo-ready visuals'],
       promise: 'This room makes the work scannable, shareable and hard to ignore.',
-      ids: ['neon-venom-portrait-qr', 'bwc-neon-qr-sheet', 'neon-venom-campaign', 'neon-venom-portal-qr', 'neon-venom-enter-dream-qr', 'neon-venom-black-birds-dream']
+      ids: ['neon-venom-portrait-qr', 'bwc-neon-qr-sheet', 'neon-venom-campaign', 'neon-venom-portal-qr', 'neon-venom-enter-dream-qr', 'neon-venom-black-birds-dream', 'woman-money-venom-shorts-qr', 'woman-money-venom-full-qr', 'neon-venom-cyberpunk-poster', 'black-wing-cosmic-singing']
     },
     {
       slug: 'omen-room',
@@ -407,7 +408,7 @@
       useFor: 'Black Wing Crew, Black Omen, lyric posters, chant sheets, film clip identity',
       proof: ['Black Omen chant sheet', 'Auralia omen poster', 'Insidious Rhythms lyrics', 'raw video sources'],
       promise: 'This room gives the music its mythology and makes the songs feel like they came from somewhere older.',
-      ids: ['black-omen-research-map', 'black-omen-language-working-map', 'black-wing-chant-sheet', 'auralia-cosmic-poster', 'insidious-rhythms-gold', 'insidious-rhythms-blue', 'video-black-wing-source-01', 'video-source-02']
+      ids: ['black-omen-research-map', 'black-omen-language-working-map', 'black-wing-chant-sheet', 'auralia-cosmic-poster', 'insidious-rhythms-gold', 'insidious-rhythms-blue', 'video-black-wing-source-01', 'video-source-02', 'black-cockatoo-deity-throne', 'bss-coat-of-arms', 'krishna-bss-portrait', 'krishna-bss-fullbody', 'moss-man-victorian-library', 'omen-fire-silhouette', 'omen-campfire-face', 'black-cockatoo-queen', 'bss-mascot-all-seeing-eye', 'omen-blue-serpent-deity', 'bss-twin-cockatoos-night']
     },
     {
       slug: 'learning-beast',
@@ -420,7 +421,7 @@
       useFor: 'school pitch, teacher pathway, classroom printables, behaviour support, Meta-Pet explanation',
       proof: ['Meta-Pet Pilot School link', 'Teacher Tools link', 'behaviour-support direction', 'Moss 60 learning engine'],
       promise: 'This room shows the serious education purpose underneath the wild visual shell.',
-      ids: ['meta-pet-process-overview', 'teacher-one-device-flow', 'teacher-transition-flow', 'meta-pet-no-login', 'meta-pet-digital-genomes', 'meta-pet-companion-portrait', 'meta-pet-neon-ornament']
+      ids: ['meta-pet-process-overview', 'teacher-one-device-flow', 'teacher-transition-flow', 'meta-pet-no-login', 'meta-pet-digital-genomes', 'meta-pet-companion-portrait', 'meta-pet-neon-ornament', 'meta-pet-kid-with-feather', 'auralia-divine-ascending', 'auralia-coin-m', 'auralia-coin-f']
     },
     {
       slug: 'moss60-engine',
@@ -433,7 +434,7 @@
       useFor: 'interactive puzzles, Meta-Pet identity, digital DNA, skill-game mechanics, mythic logic systems',
       proof: ['MOSS60 geometry study', 'B$S symbolic marks', 'Auralia serpent loop', 'fire/mood texture'],
       promise: 'This room keeps the maths behind the magic so the work feels alive instead of random.',
-      ids: ['moss60-dna-geometry-campaign', 'meta-pet-neon-ornament', 'meta-pet-digital-genomes', 'moss60-geometry-linework', 'blue-snake-gold-logo', 'auralia-serpent-profile', 'bss-cockatoo-logo']
+      ids: ['moss60-dna-geometry-campaign', 'meta-pet-neon-ornament', 'meta-pet-digital-genomes', 'moss60-geometry-linework', 'blue-snake-gold-logo', 'auralia-serpent-profile', 'bss-cockatoo-logo', 'spiral-mountain-god', 'auralia-moss60-linework']
     },
     {
       slug: 'street-print-arsenal',
@@ -446,9 +447,9 @@
       useFor: 'A4 poster packs, QR sheets, sticker sheets, school one-pagers, song posters, handout kits',
       proof: ['QR designs', 'lyric posters', 'brand marks', 'chant sheets', 'sticker-ready artwork'],
       promise: 'This room turns the online world into physical evidence people can hold, scan and remember.',
-      ids: ['neon-venom-portrait-qr', 'bwc-neon-qr-sheet', 'bwc-crest-sheet', 'bss-serpent-crest', 'old-vic-state-campaign', 'neon-venom-campaign', 'neon-venom-portal-qr', 'black-wing-chant-sheet']
-    }
-,
+      downloadPack: { label: '↓ Download QR Pack', href: 'downloads/bss-qr-drop-pack.zip' },
+      ids: ['neon-venom-portrait-qr', 'bwc-neon-qr-sheet', 'bwc-crest-sheet', 'bss-serpent-crest', 'old-vic-state-campaign', 'neon-venom-campaign', 'neon-venom-portal-qr', 'black-wing-chant-sheet', 'qr-pink', 'qr-orange', 'qr-yellow', 'qr-green', 'qr-purple', 'qr-cyan', 'qr-rainbow', 'neon-venom-cyberpunk-poster', 'moss-man-hope-poster']
+    },
     {
       slug: 'colouring-pages',
       number: 'ROOM 07',
@@ -460,7 +461,8 @@
       useFor: 'home printing, classroom activities, mindful colouring, creative workshops, studio handouts',
       proof: ['seven printable artworks', 'detailed and simple options', 'Auralia visual world', 'full-size PNG files'],
       promise: 'This room invites people to participate in the studio world, one colour at a time.',
-      ids: ['colouring-auralia-landscape', 'colouring-auralia-flute', 'colouring-auralia-omen', 'colouring-auralia-gateway', 'colouring-moss-man', 'colouring-cockatoo-serpent', 'print-ruler-is-read']
+      downloadPack: { label: '↓ Download Colouring Pack', href: 'downloads/bss-colouring-pages-pack.zip' },
+      ids: ['colouring-auralia-landscape', 'colouring-auralia-flute', 'colouring-auralia-omen', 'colouring-auralia-gateway', 'colouring-moss-man', 'colouring-cockatoo-serpent', 'print-ruler-is-read', 'colouring-child-saint', 'colouring-pug-kiss', 'colouring-auralia-simple', 'colouring-auralia-detailed', 'colouring-auralia-female']
     },
     {
       slug: 'memetics-public-repair',
@@ -477,7 +479,34 @@
         { label: 'Open Known Unknowns Register', href: 'documents/oss-734g-known-unknowns-register.html', className: 'album-link' }
       ],
       ids: ['memetics-duty-nine-steps', 'memetics-fear-duty', 'memetics-awareness-repair', 'memetics-story-duty', 'memetics-status-quo-personal', 'memetics-awareness-safety', 'memetics-status-quo-systems']
-    }  ];
+    },
+    {
+      slug: 'moss-man-room',
+      number: 'ROOM 09',
+      title: 'The Moss Man',
+      eyebrow: 'Tom Moss · Frankston, Australia',
+      doorway: 'The portrait archive.',
+      statement: 'Ten years of self-portraiture, parody and myth-building. From the runic scribe to the budget medieval warrior.',
+      mood: 'Warm, strange, self-aware',
+      useFor: 'Press, collaboration pitches, social content',
+      proof: ['Runic scribe portrait', 'Frankston Law Courts', 'Crown of the Clucker', 'HOPE poster', '$5 medieval warrior'],
+      promise: 'You will understand who made this.',
+      ids: ['moss-man-runic-scribe', 'moss-man-frankston-courts', 'moss-man-hope-poster', 'moss-man-crown-clucker', 'moss-man-five-dollar-warrior', 'moss-man-pug-oldmaster', 'moss-man-notice-poster', 'moss-man-victorian-library', 'moss-man-portrait-v1', 'moss-man-portrait-v2', 'moss-man-fire-cockatoo', 'moss-man-candid']
+    },
+    {
+      slug: 'humour-room',
+      number: 'ROOM 10',
+      title: 'Humour & Parody',
+      eyebrow: 'Black Wing Crew · Comedy archive',
+      doorway: 'The part where the studio laughs at itself.',
+      statement: 'Breaking Beak, Beak to the Future, Crown of the Clucker and the official emu/kangaroo national policy.',
+      mood: 'Irreverent, very Australian',
+      useFor: 'Social posts, YouTube thumbnails, merch',
+      proof: ['Beak to the Future', 'Breaking Beak', 'Pi Wizard Chicken', 'Forward Together Awkward Forever'],
+      promise: 'One of these becomes a meme.',
+      ids: ['humour-beak-to-the-future', 'humour-breaking-beak', 'humour-pi-wizard-chicken', 'humour-forward-together', 'moss-man-crown-clucker', 'moss-man-five-dollar-warrior']
+    }
+  ];
 
 
   total.textContent = String(sections.length).padStart(2, '0');
@@ -657,6 +686,7 @@
           <div><span>use it for</span><strong>${escapeHtml(room.useFor)}</strong></div>
         </div>
         ${linksRow(room)}
+        ${room.downloadPack ? `<div class="links-row"><a class="project-link album-link" href="${escapeHtml(room.downloadPack.href)}" download>${escapeHtml(room.downloadPack.label)}</a></div>` : ''}
         <div class="room-proof-strip">
           ${(room.proof || []).map(proof => `<span>${escapeHtml(proof)}</span>`).join('')}
         </div>
@@ -721,15 +751,15 @@
 
   function oldVicStateFeature() {
     const chapters = [
-      ['I', 'The Omen', 'War becomes government; government dreams it has escaped war.', 'assets/19_old_vic_state/black-omen-command-cycle.jpeg'],
-      ['II', 'The Ledger', 'Justice deferred. Truth recorded. Silence witnessed. Time remembers.', 'assets/19_old_vic_state/old-vic-ledger-city.jpeg'],
-      ['III', 'Butterfly Symmetry', 'One wing remembers fire. One wing remembers law.', 'assets/19_old_vic_state/butterfly-symmetry-triptych.jpeg'],
-      ['IV', 'The Witness', 'The civic memory remains when the office, crown and speaker are gone.', 'assets/19_old_vic_state/victorian-ledger-witness.jpeg']
+      ['I', 'The Omen', 'War becomes government; government dreams it has escaped war.', '19_old_vic_state/black-omen-command-cycle.jpeg'],
+      ['II', 'The Ledger', 'Justice deferred. Truth recorded. Silence witnessed. Time remembers.', '19_old_vic_state/old-vic-ledger-city.jpeg'],
+      ['III', 'Butterfly Symmetry', 'One wing remembers fire. One wing remembers law.', '19_old_vic_state/butterfly-symmetry-triptych.jpeg'],
+      ['IV', 'The Witness', 'The civic memory remains when the office, crown and speaker are gone.', '19_old_vic_state/victorian-ledger-witness.jpeg']
     ];
     return `
       <section class="old-vic-feature" aria-labelledby="old-vic-feature-title">
         <figure class="old-vic-hero">
-          <img src="assets/14_music_campaigns/old-vic-state-campaign.png" alt="Old Vic State in monumental gold lettering between a recording studio and a gothic civic procession" loading="lazy">
+          <img src="14_music_campaigns/old-vic-state-campaign.png" alt="Old Vic State in monumental gold lettering between a recording studio and a gothic civic procession" loading="lazy">
           <figcaption>
             <span>Old Vic State · B$S original cycle</span>
             <h2 id="old-vic-feature-title">Memory sharpened into hope.</h2>
