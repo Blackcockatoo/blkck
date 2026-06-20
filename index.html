@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" data-design="studio-editorial">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blue $nake Studio — Art, Music &amp; Learning Systems</title>
+  <meta name="description" content="Blue $nake Studio is an independent creative practice spanning visual art, music, learning tools and experimental systems." />
+  <link rel="canonical" href="https://blackcockatoo.github.io/abio/" />
+  <meta property="og:site_name" content="Blue $nake Studio" />
+  <meta property="og:title" content="The Moss Man / B$S — Moss Tree" />
+  <meta property="og:description" content="A myth-tech studio from Frankston: visual art, music worlds, privacy-first learning tools, Moss 60 number systems, teacher supports and print-ready street packs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://blackcockatoo.github.io/abio/" />
+  <meta property="og:image" content="https://blackcockatoo.github.io/abio/assets/01_auralia/auralia_cosmic_poster_v1.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:alt" content="Auralia — Black Birds Dream: a major B$S key image with black birds, butterflies, gold star-map ornament and serpent energy." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Moss Man / B$S — Moss Tree" />
+  <meta name="twitter:description" content="A myth-tech studio: art, music, learning tools and number engines from Blue $nake Studio." />
+  <meta name="twitter:image" content="https://blackcockatoo.github.io/abio/assets/01_auralia/auralia_cosmic_poster_v1.png" />
+  <meta name="theme-color" content="#04101d" />
+  <link rel="preload" as="image" href="assets/01_auralia/auralia_cosmic_poster_v1.png" />
+  <meta name="application-name" content="Moss Tree" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Moss Tree" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://blackcockatoo.github.io/abio/#person",
+        "name": "Tom (The Moss Man)",
+        "alternateName": "The Moss Man",
+        "description": "Creative technologist, artist, musician, behavioural thinker and founder of Blue $nake Studio based in Frankston, Australia.",
+        "url": "https://blackcockatoo.github.io/abio/",
+        "sameAs": ["https://www.youtube.com/@blkck2"],
+        "email": "bluesssnakestudio@gmail.com",
+        "knowsAbout": ["visual art", "music", "mathematics", "education technology", "behaviour support", "digital design"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://blackcockatoo.github.io/abio/#website",
+        "url": "https://blackcockatoo.github.io/abio/",
+        "name": "The Moss Man / Blue $nake Studio",
+        "description": "A myth-tech studio: visual art, music worlds, privacy-first learning tools, Moss 60 number systems, teacher supports and print-ready street packs.",
+        "author": { "@id": "https://blackcockatoo.github.io/abio/#person" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="intro-film" id="intro-film" role="dialog" aria-modal="true" aria-label="Welcome to Blue Snake Studio">
+    <video id="intro-video" autoplay playsinline preload="auto">
+      <source src="assets/10_video/YTShort_20June2026_13_12_14.mp4" type="video/mp4" />
+    </video>
+    <div class="intro-shade" aria-hidden="true"></div>
+    <div class="intro-brand"><span>Blue $nake Studio</span><strong>Art, sound and ideas<br />built as one world.</strong></div>
+    <div class="intro-controls">
+      <button class="intro-sound" id="intro-sound" type="button" aria-pressed="true">Sound on</button>
+      <button class="intro-enter" id="intro-enter" type="button">Enter studio <span aria-hidden="true">→</span></button>
+    </div>
+  </div>
+  <a class="skip-link" href="#experience">Skip to content</a>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="#start-here" aria-label="Blue Snake Studios — Start Here">
+        <span class="brand-mark" aria-hidden="true">B$S</span>
+        <span class="brand-copy">Blue $nake Studio <small>Independent creative practice</small></span>
+      </a>
+      <div class="mast-actions">
+        <span class="counter" aria-hidden="true"><span id="current-count">01</span> / <span id="total-count">10</span></span>
+        <a class="mast-link" href="https://www.youtube.com/@blkck2">@blkck2</a>
+        <button class="print-button" type="button" onclick="window.print()">Studio overview</button>
+      </div>
+    </header>
+
+    <main class="experience" id="experience">
+      <section class="tree-stage" id="tree-stage" aria-label="Studio sections">
+        <div class="nav-intro"><span>Explore the studio</span><p>Art, music, education and experimental systems from Frankston, Australia.</p></div>
+        <div class="tree" id="tree" role="tablist" aria-orientation="vertical" aria-label="Explore Blue Snake Studio">
+          <span class="spine" aria-hidden="true"></span>
+        </div>
+        <p class="hint"><span class="hint-key">↑</span><span class="hint-key">↓</span> Navigate</p>
+        <p class="tree-label" aria-hidden="true">EST. FRANKSTON</p>
+      </section>
+
+      <section class="panel-wrap" id="panel-wrap" aria-live="polite" aria-atomic="false"></section>
+      <p class="sr-only" id="status" aria-live="polite"></p>
+    </main>
+  </div>
+
+  <script src="data/gallery-items.js"></script>
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>

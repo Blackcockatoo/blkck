@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Blue Snake Studio Moss Tree</title>
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="28%" r="85%">
+      <stop offset="0" stop-color="#0b2633"/>
+      <stop offset=".58" stop-color="#04101a"/>
+      <stop offset="1" stop-color="#010509"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f0d293"/>
+      <stop offset=".55" stop-color="#bd8d43"/>
+      <stop offset="1" stop-color="#765021"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="72" fill="url(#bg)"/>
+  <path d="M76 118V76h42M394 76h42v42M436 394v42h-42M118 436H76v-42" fill="none" stroke="#bd8d43" stroke-width="5"/>
+  <circle cx="256" cy="256" r="151" fill="none" stroke="#bd8d43" stroke-opacity=".35" stroke-width="3"/>
+  <circle cx="256" cy="256" r="104" fill="none" stroke="#f0d293" stroke-opacity=".24" stroke-width="3"/>
+  <path d="M256 98v316M125 332l262-152M125 180l262 152" fill="none" stroke="#bd8d43" stroke-opacity=".28" stroke-width="3"/>
+  <path d="M256 139l102 59v118l-102 59-102-59V198z" fill="#04101a" stroke="url(#gold)" stroke-width="7"/>
+  <text x="256" y="281" fill="url(#gold)" font-family="Georgia,serif" font-size="80" text-anchor="middle" letter-spacing="-5">B$S</text>
+  <path d="M232 310h48" stroke="#f0d293" stroke-width="4"/>
+  <path d="M256 121l9 18-9 18-9-18zM256 355l9 18-9 18-9-18z" fill="#bd8d43"/>
+</svg>
