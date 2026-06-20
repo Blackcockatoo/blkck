@@ -1,0 +1,3613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPERATION: SEMANTIC SOVEREIGNTY // OSS-734G // KNOWN UNKNOWNS REGISTER // UMBRA</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Barlow+Condensed:wght@300;400;500;600;700;900&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --midnight: #0A0D1A;
+    --deep-navy: #0D1128;
+    --navy: #111733;
+    --gold: #C9A84C;
+    --gold-bright: #E4C26A;
+    --gold-dim: #7A6230;
+    --gold-glow: rgba(201,168,76,0.12);
+    --red-stamp: #8B1A1A;
+    --red-stamp-bright: #C0392B;
+    --white: #F0EDE4;
+    --white-dim: #B8B3A7;
+    --white-faint: #5A5750;
+    --paper: #E8E2D4;
+    --paper-dark: #CFC8B8;
+    --scan-line: rgba(201,168,76,0.03);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--midnight);
+    color: var(--white);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* SCAN LINE EFFECT */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      var(--scan-line) 0px,
+      var(--scan-line) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* VIGNETTE */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%);
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  /* ═══════════════════════════════════════
+     COVER PAGE
+  ═══════════════════════════════════════ */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 60px 40px;
+    border-bottom: 1px solid var(--gold-dim);
+    overflow: hidden;
+  }
+
+  .cover-bg-geometry {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image:
+      repeating-linear-gradient(0deg, var(--gold) 0, var(--gold) 1px, transparent 1px, transparent 60px),
+      repeating-linear-gradient(90deg, var(--gold) 0, var(--gold) 1px, transparent 1px, transparent 60px);
+  }
+
+  /* Sri Yantra-ish SVG geometry */
+  .yantra-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    opacity: 0.06;
+    animation: slowRotate 120s linear infinite;
+  }
+
+  @keyframes slowRotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  .cover-stripe {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: repeating-linear-gradient(90deg,
+      var(--red-stamp) 0, var(--red-stamp) 20px,
+      var(--midnight) 20px, var(--midnight) 24px
+    );
+  }
+
+  .cover-stripe-bottom {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 6px;
+    background: repeating-linear-gradient(90deg,
+      var(--red-stamp) 0, var(--red-stamp) 20px,
+      var(--midnight) 20px, var(--midnight) 24px
+    );
+  }
+
+  .classification-banner {
+    background: var(--red-stamp);
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    padding: 6px 32px;
+    text-align: center;
+    margin-bottom: 48px;
+    border: 1px solid var(--red-stamp-bright);
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--gold-dim);
+    letter-spacing: 0.2em;
+    text-align: center;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 6vw, 72px);
+    color: var(--gold-bright);
+    text-align: center;
+    line-height: 1.05;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 60px rgba(201,168,76,0.3);
+  }
+
+  .cover-subtitle {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--white-dim);
+    text-align: center;
+    letter-spacing: 0.3em;
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 640px;
+    width: 100%;
+    border: 1px solid var(--gold-dim);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 48px;
+  }
+
+  .cover-meta-cell {
+    padding: 14px 20px;
+    border-right: 1px solid var(--gold-dim);
+    border-bottom: 1px solid var(--gold-dim);
+  }
+
+  .cover-meta-cell:nth-child(even) { border-right: none; }
+  .cover-meta-cell:nth-last-child(-n+2) { border-bottom: none; }
+
+  .cover-meta-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .cover-meta-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .cover-stamp {
+    position: absolute;
+    bottom: 100px;
+    right: 80px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--red-stamp);
+    border: 3px solid var(--red-stamp);
+    padding: 8px 16px;
+    letter-spacing: 0.15em;
+    transform: rotate(-12deg);
+    opacity: 0.7;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+
+  .cover-stamp-2 {
+    position: absolute;
+    top: 120px;
+    left: 60px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--red-stamp);
+    border: 1px solid var(--red-stamp);
+    padding: 6px 10px;
+    transform: rotate(6deg);
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  .bss-sig {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--gold-dim);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.05em;
+  }
+
+  .bss-sig span {
+    color: var(--gold);
+    display: block;
+    font-size: 10px;
+    font-family: 'DM Mono', monospace;
+    font-style: normal;
+    letter-spacing: 0.2em;
+    margin-top: 4px;
+  }
+
+  /* ═══════════════════════════════════════
+     NAVIGATION / TOC
+  ═══════════════════════════════════════ */
+  .toc {
+    background: var(--deep-navy);
+    border-bottom: 1px solid var(--gold-dim);
+    padding: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: none; /* shown on scroll via JS */
+  }
+
+  /* ═══════════════════════════════════════
+     MAIN LAYOUT
+  ═══════════════════════════════════════ */
+  .doc-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 100px;
+  }
+
+  /* ═══════════════════════════════════════
+     SECTION HEADERS
+  ═══════════════════════════════════════ */
+  .section-header {
+    padding: 60px 0 0;
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .section-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-eyebrow::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold-dim);
+    opacity: 0.4;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(22px, 4vw, 40px);
+    color: var(--gold-bright);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .section-number {
+    font-size: 11px;
+    color: var(--white-faint);
+    letter-spacing: 0.1em;
+    margin-bottom: 24px;
+  }
+
+  .section-rule {
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    margin-bottom: 32px;
+  }
+
+  /* ═══════════════════════════════════════
+     CHAPTER STYLES
+  ═══════════════════════════════════════ */
+  .chapter {
+    padding: 48px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+
+  .chapter-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--gold);
+    opacity: 0.2;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 60px;
+    text-align: right;
+  }
+
+  .chapter-title-block {}
+
+  .chapter-label {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .chapter-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(18px, 3vw, 28px);
+    color: var(--white);
+    line-height: 1.15;
+  }
+
+  .chapter-subtitle {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--white-dim);
+    font-style: italic;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+  }
+
+  /* ═══════════════════════════════════════
+     BODY TEXT
+  ═══════════════════════════════════════ */
+  .prose {
+    color: var(--white-dim);
+    line-height: 1.85;
+    margin-bottom: 20px;
+    max-width: 720px;
+  }
+
+  .prose p { margin-bottom: 14px; }
+
+  .lead {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    font-style: italic;
+    max-width: 720px;
+  }
+
+  /* ═══════════════════════════════════════
+     PULL QUOTES
+  ═══════════════════════════════════════ */
+  .pull-quote {
+    border-left: 3px solid var(--gold);
+    padding: 16px 24px;
+    margin: 28px 0;
+    background: var(--gold-glow);
+    position: relative;
+  }
+
+  .pull-quote-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(16px, 2.5vw, 22px);
+    color: var(--gold-bright);
+    line-height: 1.4;
+    font-style: italic;
+  }
+
+  .pull-quote-attr {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--gold-dim);
+    margin-top: 10px;
+    text-transform: uppercase;
+  }
+
+  /* ═══════════════════════════════════════
+     CLASSIFIED BOXES
+  ═══════════════════════════════════════ */
+  .classified-box {
+    border: 1px solid var(--red-stamp);
+    padding: 20px 24px;
+    margin: 24px 0;
+    position: relative;
+    background: rgba(139, 26, 26, 0.06);
+  }
+
+  .classified-box-label {
+    position: absolute;
+    top: -8px;
+    left: 16px;
+    background: var(--midnight);
+    padding: 0 8px;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: var(--red-stamp-bright);
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ═══════════════════════════════════════
+     FIELD DRILLS
+  ═══════════════════════════════════════ */
+  .drill-block {
+    background: var(--navy);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+
+  .drill-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .drill-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(201,168,76,0.3);
+  }
+
+  .drill-item {
+    margin-bottom: 14px;
+    padding-left: 20px;
+    position: relative;
+    color: var(--white-dim);
+  }
+
+  .drill-item::before {
+    content: attr(data-drill);
+    position: absolute;
+    left: 0;
+    font-size: 9px;
+    color: var(--gold);
+    font-weight: 700;
+    top: 1px;
+  }
+
+  .drill-item strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  /* ═══════════════════════════════════════
+     SECTION HEADINGS WITHIN CHAPTERS
+  ═══════════════════════════════════════ */
+  .sub-heading {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin: 24px 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .sub-heading::before {
+    content: '▸';
+    font-size: 10px;
+    color: var(--gold-dim);
+  }
+
+  /* ═══════════════════════════════════════
+     REDACTED TEXT
+  ═══════════════════════════════════════ */
+  .redacted {
+    background: var(--white-dim);
+    color: transparent;
+    user-select: none;
+    display: inline-block;
+    min-width: 120px;
+  }
+
+  /* ═══════════════════════════════════════
+     TABLES
+  ═══════════════════════════════════════ */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 12px;
+  }
+
+  .doc-table th {
+    background: rgba(201,168,76,0.1);
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    border: 1px solid rgba(201,168,76,0.2);
+    text-align: left;
+    font-size: 11px;
+  }
+
+  .doc-table td {
+    padding: 10px 14px;
+    border: 1px solid rgba(201,168,76,0.1);
+    color: var(--white-dim);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  .doc-table td:first-child {
+    color: var(--gold-bright);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+  }
+
+  /* ═══════════════════════════════════════
+     STAMPS / FOOTERS
+  ═══════════════════════════════════════ */
+  .inline-stamp {
+    display: inline-block;
+    border: 1px solid var(--red-stamp);
+    color: var(--red-stamp-bright);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    padding: 2px 8px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin: 0 6px;
+  }
+
+  .page-break-marker {
+    text-align: center;
+    padding: 20px 0;
+    color: var(--white-faint);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .page-break-marker::before, .page-break-marker::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .chapter-seal {
+    margin: 28px 0 8px;
+    padding: 16px 0 0;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--gold-dim);
+    font-size: 14px;
+  }
+
+  .chapter-seal::before {
+    content: '⬡ ';
+    font-style: normal;
+    font-size: 10px;
+  }
+
+  /* ═══════════════════════════════════════
+     ANNEX STYLES
+  ═══════════════════════════════════════ */
+  .annex-header {
+    background: rgba(201,168,76,0.05);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 24px 32px;
+    margin: 48px 0 32px;
+    position: relative;
+  }
+
+  .annex-tag {
+    position: absolute;
+    top: -8px;
+    left: 24px;
+    background: var(--midnight);
+    padding: 0 12px;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .annex-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(18px, 3vw, 28px);
+    color: var(--gold-bright);
+    margin-bottom: 6px;
+  }
+
+  .annex-sub {
+    font-size: 11px;
+    color: var(--white-faint);
+    letter-spacing: 0.1em;
+  }
+
+  /* ═══════════════════════════════════════
+     POTENCY TABLE (Annex E)
+  ═══════════════════════════════════════ */
+  .potency-row-sovereign td:first-child {
+    color: var(--gold-bright) !important;
+    font-weight: 600;
+  }
+
+  .potency-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .badge-tactical { background: rgba(201,168,76,0.1); color: var(--gold-dim); }
+  .badge-strategic { background: rgba(201,168,76,0.2); color: var(--gold); }
+  .badge-sovereign { background: var(--gold); color: var(--midnight); }
+
+  /* ═══════════════════════════════════════
+     FINAL SEAL / JOD
+  ═══════════════════════════════════════ */
+  .final-seal {
+    text-align: center;
+    padding: 60px 40px;
+    border-top: 1px solid var(--gold-dim);
+    position: relative;
+  }
+
+  .final-seal-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(20px, 4vw, 36px);
+    color: var(--gold-bright);
+    margin-bottom: 12px;
+  }
+
+  .final-seal-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    margin: 24px auto;
+    max-width: 400px;
+  }
+
+  .sig-block {
+    display: inline-block;
+    text-align: left;
+    border: 1px solid var(--gold-dim);
+    padding: 16px 24px;
+    margin: 8px 16px;
+    min-width: 220px;
+  }
+
+  .sig-name {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--gold);
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .sig-title {
+    font-size: 10px;
+    color: var(--white-faint);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ═══════════════════════════════════════
+     SCROLL PROGRESS
+  ═══════════════════════════════════════ */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--gold);
+    z-index: 2000;
+    transition: width 0.1s;
+    box-shadow: 0 0 8px rgba(201,168,76,0.5);
+  }
+
+  /* ═══════════════════════════════════════
+     NAVIGATION
+  ═══════════════════════════════════════ */
+  .nav-bar {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .nav-btn {
+    background: var(--deep-navy);
+    border: 1px solid var(--gold-dim);
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+
+  .nav-btn:hover {
+    background: var(--gold);
+    color: var(--midnight);
+  }
+
+  /* ═══════════════════════════════════════
+     INTERLUDE SPECIAL
+  ═══════════════════════════════════════ */
+  .interlude {
+    padding: 48px 0;
+    position: relative;
+  }
+
+  .interlude-inner {
+    border: 1px solid rgba(201,168,76,0.15);
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(201,168,76,0.03) 0%, transparent 60%);
+    position: relative;
+  }
+
+  .interlude-inner::before {
+    content: 'INTERLUDE';
+    position: absolute;
+    top: -8px;
+    left: 32px;
+    background: var(--midnight);
+    padding: 0 12px;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--gold-dim);
+  }
+
+  /* ═══════════════════════════════════════
+     LIST STYLES
+  ═══════════════════════════════════════ */
+  .doc-list {
+    list-style: none;
+    margin: 12px 0 20px;
+    padding: 0;
+  }
+
+  .doc-list li {
+    padding: 5px 0 5px 20px;
+    position: relative;
+    color: var(--white-dim);
+  }
+
+  .doc-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold-dim);
+  }
+
+  .warning-box {
+    border: 1px solid var(--gold);
+    background: rgba(201,168,76,0.06);
+    padding: 16px 20px;
+    margin: 20px 0;
+    position: relative;
+  }
+
+  .warning-box::before {
+    content: '⚠ WARNING';
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+
+
+  /* ═══════════════════════════════════════
+     BLACK LANTERN DOUBLE-DOWN COMPONENTS
+  ═══════════════════════════════════════ */
+  .black-lantern-band {
+    border: 1px solid rgba(228,194,106,0.35);
+    background:
+      linear-gradient(135deg, rgba(201,168,76,0.10) 0%, transparent 32%),
+      linear-gradient(315deg, rgba(139,26,26,0.12) 0%, transparent 42%),
+      rgba(17,23,51,0.62);
+    padding: 28px;
+    margin: 34px 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 60px rgba(0,0,0,0.25), 0 0 35px rgba(201,168,76,0.06);
+  }
+
+  .black-lantern-band::before {
+    content: 'BLACK LANTERN ADDENDUM';
+    position: absolute;
+    top: -8px;
+    left: 24px;
+    background: var(--midnight);
+    color: var(--gold-bright);
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    padding: 0 12px;
+  }
+
+  .black-lantern-band::after {
+    content: '';
+    position: absolute;
+    inset: -40%;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(228,194,106,0.09), transparent 18%),
+      repeating-conic-gradient(from 0deg, transparent 0deg 9deg, rgba(201,168,76,0.025) 9deg 10deg);
+    animation: lanternDrift 60s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes lanternDrift {
+    from { transform: rotate(0deg) scale(1); }
+    to { transform: rotate(360deg) scale(1.03); }
+  }
+
+  .lantern-title {
+    font-family: 'DM Serif Display', serif;
+    color: var(--gold-bright);
+    font-size: clamp(22px, 4vw, 38px);
+    line-height: 1.05;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lantern-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 22px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lantern-card {
+    border: 1px solid rgba(201,168,76,0.18);
+    background: rgba(10,13,26,0.55);
+    padding: 16px;
+    min-height: 130px;
+  }
+
+  .lantern-card .kicker {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .lantern-card p {
+    color: var(--white-dim);
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .frame-console {
+    border: 1px solid rgba(192,57,43,0.45);
+    background: rgba(139,26,26,0.08);
+    padding: 18px;
+    margin: 24px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .console-readout {
+    min-height: 54px;
+    border-left: 2px solid var(--red-stamp-bright);
+    padding: 8px 0 8px 16px;
+    color: var(--white);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .copy-bank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .copy-chip {
+    background: var(--deep-navy);
+    border: 1px solid var(--gold-dim);
+    color: var(--gold-bright);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    padding: 8px 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.18s ease;
+  }
+
+  .copy-chip:hover, .copy-chip:focus {
+    background: var(--gold);
+    color: var(--midnight);
+    outline: none;
+  }
+
+  .axiom-rack {
+    counter-reset: axiom;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 24px 0;
+  }
+
+  .axiom {
+    counter-increment: axiom;
+    border: 1px solid rgba(201,168,76,0.16);
+    background: rgba(13,17,40,0.78);
+    padding: 16px 18px 16px 56px;
+    position: relative;
+    color: var(--white-dim);
+  }
+
+  .axiom::before {
+    content: counter(axiom, decimal-leading-zero);
+    position: absolute;
+    left: 16px;
+    top: 14px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--gold);
+    opacity: 0.45;
+  }
+
+  .axiom strong { color: var(--white); font-weight: 600; }
+
+  .ladder {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin: 22px 0;
+  }
+
+  .ladder-step {
+    border-left: 3px solid var(--gold-dim);
+    padding: 12px 16px;
+    background: rgba(201,168,76,0.05);
+    color: var(--white-dim);
+  }
+
+  .ladder-step strong {
+    color: var(--gold-bright);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .worksheet {
+    border: 1px dashed rgba(201,168,76,0.35);
+    padding: 18px;
+    margin: 20px 0;
+    background: rgba(232,226,212,0.035);
+  }
+
+  .worksheet-line {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    border-bottom: 1px solid rgba(201,168,76,0.14);
+    padding: 10px 0;
+    gap: 14px;
+  }
+
+  .worksheet-line span:first-child {
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .worksheet-line span:last-child {
+    color: var(--white-faint);
+  }
+
+  .sigil-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 26px 0;
+    color: var(--gold-dim);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .sigil-dot {
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--gold);
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px rgba(201,168,76,0.3);
+  }
+
+
+
+  /* ═══════════════════════════════════════
+     NEW-NEW DOCTRINE COMPONENTS
+  ═══════════════════════════════════════ */
+  .newnew-ribbon {
+    border: 1px solid rgba(228,194,106,0.42);
+    background:
+      linear-gradient(90deg, rgba(139,26,26,0.16), transparent 30%, rgba(201,168,76,0.10)),
+      rgba(10,13,26,0.72);
+    padding: 18px 22px;
+    margin: 26px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .newnew-ribbon::before {
+    content: 'NEW-NEW ADAPTATION ORDER';
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .newnew-ribbon p {
+    position: relative;
+    z-index: 1;
+    color: var(--white-dim);
+    margin-bottom: 10px;
+  }
+
+  .newnew-ribbon strong { color: var(--gold-bright); }
+
+  .delta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+  }
+
+  .delta-card {
+    border: 1px solid rgba(201,168,76,0.18);
+    background: rgba(13,17,40,0.72);
+    padding: 16px 18px;
+    position: relative;
+    min-height: 150px;
+  }
+
+  .delta-card::before {
+    content: attr(data-delta);
+    display: inline-block;
+    color: var(--red-stamp-bright);
+    border: 1px solid rgba(192,57,43,0.4);
+    padding: 2px 7px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .delta-card h4 {
+    font-family: 'DM Serif Display', serif;
+    color: var(--gold-bright);
+    font-size: 18px;
+    margin-bottom: 8px;
+    line-height: 1.15;
+  }
+
+  .delta-card p { color: var(--white-dim); font-size: 12px; line-height: 1.65; }
+
+  .signal-stack {
+    border-left: 3px solid var(--red-stamp-bright);
+    margin: 24px 0;
+    background: rgba(139,26,26,0.08);
+  }
+
+  .signal-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 14px;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(192,57,43,0.14);
+  }
+
+  .signal-row span:first-child {
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .signal-row span:last-child { color: var(--white-dim); }
+
+  .hygiene-wheel {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin: 24px 0;
+  }
+
+  .hygiene-spoke {
+    border: 1px solid rgba(201,168,76,0.18);
+    background: rgba(201,168,76,0.045);
+    padding: 14px 12px;
+    text-align: center;
+    min-height: 120px;
+  }
+
+  .hygiene-spoke strong {
+    display: block;
+    color: var(--gold-bright);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .hygiene-spoke span { color: var(--white-dim); font-size: 11px; line-height: 1.45; }
+
+  .field-script {
+    border: 1px solid rgba(201,168,76,0.22);
+    background: rgba(10,13,26,0.72);
+    padding: 18px 22px;
+    margin: 22px 0;
+  }
+
+  .field-script code {
+    display: block;
+    color: var(--white);
+    white-space: pre-wrap;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 900px) {
+    .delta-grid, .hygiene-wheel { grid-template-columns: 1fr; }
+    .signal-row { grid-template-columns: 1fr; gap: 4px; }
+  }
+
+  @media print {
+    body::before, body::after, .nav-bar, .progress-bar, .copy-bank { display:none !important; }
+    body { background:#fff; color:#111; }
+    .cover, .chapter, .annex-header, .black-lantern-band { break-inside: avoid; }
+  }
+
+  @media (max-width: 900px) {
+    .lantern-grid, .axiom-rack { grid-template-columns: 1fr; }
+    .worksheet-line { grid-template-columns: 1fr; gap: 4px; }
+  }
+
+
+
+  /* ═══════════════════════════════════════
+     KNOWN UNKNOWNS REGISTER — OSS 734G
+  ═══════════════════════════════════════ */
+  .horizon-band {
+    position: relative;
+    border: 1px solid rgba(228,194,106,0.34);
+    background:
+      radial-gradient(circle at 15% 20%, rgba(228,194,106,0.10), transparent 26%),
+      linear-gradient(135deg, rgba(201,168,76,0.08), rgba(13,17,40,0.56));
+    padding: 28px 30px;
+    margin: 34px 0;
+    overflow: hidden;
+  }
+
+  .horizon-band::before {
+    content: 'DEEP RESEARCH REFIT';
+    position: absolute;
+    top: -8px;
+    left: 22px;
+    background: var(--midnight);
+    padding: 0 12px;
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 0.28em;
+  }
+
+  .horizon-band::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(90deg, transparent 0 48%, rgba(201,168,76,0.08) 49%, transparent 50% 100%),
+      linear-gradient(0deg, transparent 0 48%, rgba(201,168,76,0.06) 49%, transparent 50% 100%);
+    background-size: 80px 80px;
+    opacity: 0.28;
+    pointer-events: none;
+  }
+
+  .horizon-title {
+    font-family: 'DM Serif Display', serif;
+    color: var(--gold-bright);
+    font-size: clamp(20px, 3.4vw, 32px);
+    line-height: 1.1;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .horizon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 12px;
+    margin: 22px 0;
+  }
+
+  .horizon-card {
+    border: 1px solid rgba(201,168,76,0.20);
+    background: rgba(10,13,26,0.52);
+    padding: 16px;
+    min-height: 138px;
+  }
+
+  .horizon-card strong {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--gold-bright);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+  }
+
+  .horizon-card span {
+    display: block;
+    color: var(--white-dim);
+    font-size: 12px;
+    line-height: 1.62;
+  }
+
+  .radar-list {
+    counter-reset: radar;
+    margin: 20px 0;
+  }
+
+  .radar-item {
+    counter-increment: radar;
+    display: grid;
+    grid-template-columns: 54px 1fr;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.10);
+  }
+
+  .radar-item::before {
+    content: 'R-' counter(radar, decimal-leading-zero);
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+  }
+
+  .radar-item b { color: var(--white); font-weight: 500; }
+  .radar-item em { color: var(--gold-bright); font-style: normal; }
+
+  .tripwire-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+  }
+
+  .tripwire {
+    border-left: 3px solid var(--red-stamp);
+    background: rgba(139,26,26,0.08);
+    padding: 14px 16px;
+  }
+
+  .tripwire strong {
+    display: block;
+    color: var(--red-stamp-bright);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .operator-pledge {
+    border: 1px solid rgba(228,194,106,0.34);
+    background: rgba(201,168,76,0.06);
+    padding: 20px 24px;
+    margin: 26px 0;
+    font-size: 12px;
+  }
+
+  .operator-pledge code {
+    white-space: pre-wrap;
+    color: var(--white);
+    font-family: 'DM Mono', monospace;
+    line-height: 1.75;
+  }
+
+  .source-note {
+    font-size: 11px;
+    color: var(--white-faint);
+    border: 1px dashed rgba(201,168,76,0.25);
+    padding: 14px 16px;
+    margin: 18px 0;
+    background: rgba(255,255,255,0.02);
+  }
+
+  @media (max-width: 600px) {
+    .cover-meta-grid { grid-template-columns: 1fr; }
+    .cover-stamp { display: none; }
+    .cover-stamp-2 { display: none; }
+    .chapter-header { flex-direction: column; gap: 8px; }
+    .chapter-num { font-size: 32px; width: auto; text-align: left; }
+    .sig-block { min-width: unset; width: 100%; margin: 8px 0; }
+    .annex-header { padding: 24px 20px; }
+    .interlude-inner { padding: 28px 20px; }
+  }
+
+
+  /* ═══════════════════════════════════════
+     734G DEEP RESEARCH REFIT
+  ═══════════════════════════════════════ */
+  .research-kicker {
+    display: inline-block;
+    border: 1px solid rgba(201,168,76,0.35);
+    background: rgba(201,168,76,0.07);
+    color: var(--gold-bright);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    margin: 8px 0 18px;
+  }
+
+  .signal-ledger {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+  }
+
+  .signal-card {
+    border: 1px solid rgba(201,168,76,0.22);
+    background: linear-gradient(135deg, rgba(201,168,76,0.06), rgba(139,26,26,0.04));
+    padding: 16px 18px;
+    min-height: 150px;
+    position: relative;
+  }
+
+  .signal-card::before {
+    content: attr(data-signal);
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .signal-card strong {
+    display: block;
+    font-family: 'DM Serif Display', serif;
+    color: var(--gold-bright);
+    font-size: 19px;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+
+  .signal-card span {
+    display: block;
+    color: var(--white-dim);
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .verification-flow {
+    counter-reset: flow;
+    display: grid;
+    gap: 8px;
+    margin: 24px 0;
+  }
+
+  .flow-step {
+    counter-increment: flow;
+    border: 1px solid rgba(201,168,76,0.18);
+    background: rgba(17,23,51,0.72);
+    padding: 12px 16px 12px 48px;
+    position: relative;
+    color: var(--white-dim);
+  }
+
+  .flow-step::before {
+    content: counter(flow, decimal-leading-zero);
+    position: absolute;
+    left: 14px;
+    top: 12px;
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--gold);
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  .flow-step strong { color: var(--white); font-weight: 500; }
+
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+    margin: 24px 0;
+  }
+
+  .metric-card {
+    border: 1px solid rgba(139,26,26,0.42);
+    background: rgba(139,26,26,0.055);
+    padding: 18px 20px;
+  }
+
+  .metric-card .metric-code {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: 0.08em;
+    color: var(--red-stamp-bright);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .metric-card strong {
+    color: var(--gold-bright);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .metric-card p { color: var(--white-dim); margin:0; }
+
+  .source-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 10px;
+    margin: 22px 0;
+  }
+
+  .source-link {
+    display: block;
+    border: 1px solid rgba(201,168,76,0.15);
+    background: rgba(201,168,76,0.04);
+    padding: 12px 14px;
+    text-decoration: none;
+    color: var(--white-dim);
+    font-size: 11px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .source-link strong {
+    display:block;
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    letter-spacing:0.12em;
+    font-size:11px;
+    margin-bottom:5px;
+  }
+
+  .source-link:hover { border-color: var(--gold); color: var(--white); }
+
+  .blade-line {
+    font-family: 'DM Serif Display', serif;
+    color: var(--gold-bright);
+    font-size: clamp(17px,2.5vw,24px);
+    font-style: italic;
+    line-height:1.35;
+    padding: 18px 22px;
+    border-top: 1px solid rgba(201,168,76,0.25);
+    border-bottom: 1px solid rgba(201,168,76,0.25);
+    margin: 28px 0;
+    background: rgba(201,168,76,0.035);
+  }
+
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ═══════════════════════════════════════
+     COVER
+═══════════════════════════════════════ -->
+<section class="cover" id="top">
+  <div class="cover-bg-geometry"></div>
+  <svg class="yantra-bg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="190" stroke="#C9A84C" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="160" stroke="#C9A84C" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="130" stroke="#C9A84C" stroke-width="0.5"/>
+    <polygon points="200,30 370,310 30,310" stroke="#C9A84C" stroke-width="0.5" fill="none"/>
+    <polygon points="200,370 30,90 370,90" stroke="#C9A84C" stroke-width="0.5" fill="none"/>
+    <polygon points="200,60 350,290 50,290" stroke="#C9A84C" stroke-width="0.5" fill="none"/>
+    <polygon points="200,340 50,110 350,110" stroke="#C9A84C" stroke-width="0.5" fill="none"/>
+    <polygon points="200,100 320,280 80,280" stroke="#C9A84C" stroke-width="0.3" fill="none"/>
+    <polygon points="200,300 80,120 320,120" stroke="#C9A84C" stroke-width="0.3" fill="none"/>
+    <circle cx="200" cy="200" r="20" stroke="#C9A84C" stroke-width="1"/>
+    <circle cx="200" cy="200" r="5" fill="#C9A84C" opacity="0.5"/>
+    <line x1="200" y1="10" x2="200" y2="390" stroke="#C9A84C" stroke-width="0.2"/>
+    <line x1="10" y1="200" x2="390" y2="200" stroke="#C9A84C" stroke-width="0.2"/>
+  </svg>
+  <div class="cover-stripe"></div>
+  <div class="cover-stripe-bottom"></div>
+  <div class="cover-stamp-2">ARCHIVAL: B$S/BLACK-LANTERN/MMXXVI</div>
+  <div class="cover-stamp">TOP SECRET</div>
+
+  <div class="classification-banner">
+    TOP SECRET // DIEGETIC DOSSIER // HANDLE VIA SEMANTIC SOVEREIGNTY CHANNELS ONLY // UMBRA
+  </div>
+
+  <div class="cover-eyebrow">ARCHIVAL FINDING: PROJECT GRAMMARIAN 734-G // KNOWN UNKNOWNS REGISTER</div>
+
+  <h1 class="cover-title">OPERATION:<br>SEMANTIC<br>SOVEREIGNTY</h1>
+  <div class="cover-subtitle" style="margin-top:-4px;margin-bottom:22px;color:var(--gold);">KNOWN UNKNOWNS REGISTER // OSS-734G</div>
+  <div class="cover-subtitle">OSS-734G · DEEP RESEARCH REFIT · OMEGA-7</div>
+
+  <div class="cover-meta-grid">
+    <div class="cover-meta-cell">
+      <span class="cover-meta-label">Originator</span>
+      <span class="cover-meta-value">DSI / Project Nightingale, Sub-Unit 4</span>
+    </div>
+    <div class="cover-meta-cell">
+      <span class="cover-meta-label">Date</span>
+      <span class="cover-meta-value">2026-06-15 (Deep Research Refit)</span>
+    </div>
+    <div class="cover-meta-cell">
+      <span class="cover-meta-label">Access Required</span>
+      <span class="cover-meta-value">Level 5 / UMBRA Clearance</span>
+    </div>
+    <div class="cover-meta-cell">
+      <span class="cover-meta-label">Source</span>
+      <span class="cover-meta-value">TheMossMan / Blue Snake Studios</span>
+    </div>
+    <div class="cover-meta-cell">
+      <span class="cover-meta-label">Classification</span>
+      <span class="cover-meta-value">DIEGETIC ARCHIVE / BLUE SNAKE STUDIOS</span>
+    </div>
+    <div class="cover-meta-cell">
+      <span class="cover-meta-label">Declassification</span>
+      <span class="cover-meta-value">PENDING: WHEN THE ROOM CAN HANDLE IT</span>
+    </div>
+  </div>
+
+  <p class="bss-sig">Blue Snake Studios
+    <span>FASTER THAN LIGHTNING · SLOWER THAN MOSS</span>
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════
+     MAIN DOCUMENT
+═══════════════════════════════════════ -->
+<div class="doc-container">
+
+  <!-- EXECUTIVE SUMMARY -->
+
+<div class="classified-box">
+<span class="classified-box-label">CLASSIFICATION NOTICE</span>
+<p class="prose">Most weapons alter bodies. This document alters environments.</p>
+<p class="prose">Exposure may result in heightened frame detection, increased resistance to manipulation, inability to unsee narrative architecture, and permanent loss of innocence regarding language.</p>
+<p class="prose" style="margin-bottom:0;">Once understood, the contents cannot be forgotten.</p>
+</div>
+
+  <section class="section-header">
+    <div class="section-eyebrow">DSI-734B-R01</div>
+    <h2 class="section-title">Executive Summary</h2>
+    <div class="section-rule"></div>
+  </section>
+
+  <div class="classified-box">
+    <span class="classified-box-label">DECOMPILATION PROTOCOL: OMEGA-7 (LANGUAGE IS A WEAPON)</span>
+    <p class="prose" style="margin-bottom:10px;">The following document, designated <em>"The Grammarian's Coup,"</em> was recovered from a non-traditional vector (Project Blue Snake, 2025). It is not a manual for political action, but a <strong style="color:var(--white)">meta-manual for the architecture of cognitive reality</strong>. Its core thesis — that the decisive conflict is fought in definitions and frames — is confirmed by all current DSI models (see Annex A: The Quiet Layer).</p>
+    <p class="prose" style="margin-bottom:0;">The text is a self-contained doctrine for achieving <strong style="color:var(--gold)">Semantic Sovereignty</strong>: the ability to control the conditions of discourse such that one's reality becomes the default gravity of the room.</p>
+  </div>
+
+  <div class="warning-box">
+    Exposure to this text has been shown to induce a permanent shift in cognitive processing, rendering the operator acutely aware of framing mechanisms. This awareness is irreversible and may lead to operational detachment (see Section 214: The Weapon and the Warning). Proceed with extreme caution.
+  </div>
+
+
+  <div class="newnew-ribbon" id="newnew-order">
+    <p><strong>Revision Order:</strong> The doctrine now recognizes that the room is no longer a stable room. It is a feed, a model, a remix engine, a screenshot, a comment section, a workplace, a family script, and an inner voice wearing six borrowed masks before breakfast.</p>
+    <p><strong>Core update:</strong> Semantic Sovereignty must move from frame detection to <em>environmental authorship</em>: choosing intake, verifying provenance, slowing synthetic urgency, and building language that survives contact with machine-amplified imitation.</p>
+    <p style="margin-bottom:0;"><strong>Verdict:</strong> The doctrine does not need replacement. It needs adaptive armor.</p>
+  </div>
+
+
+
+  <div class="black-lantern-band" id="blacklantern">
+    <h2 class="lantern-title">The Black Lantern Clause</h2>
+    <div class="prose" style="position:relative;z-index:1;">
+      <p><strong style="color:var(--gold-bright)">Double down:</strong> the document no longer behaves like a lecture. It behaves like a lantern carried into a room full of invisible furniture. It does not merely say "frames exist." It teaches the eye to catch the frame at the instant it tries to become reality.</p>
+      <p>The earlier doctrine named the war. This edition names the weather: algorithmic weather, family weather, workplace weather, spiritual weather, institutional weather. The frame is not always a person. Sometimes the frame is the pressure system around the person.</p>
+    </div>
+
+    <div class="lantern-grid">
+      <div class="lantern-card">
+        <span class="kicker">Signal</span>
+        <p>Notice the word, tone, silence, timing, category, label, punishment, reward, and repetition. The frame has a smell before it has a sentence.</p>
+      </div>
+      <div class="lantern-card">
+        <span class="kicker">Source</span>
+        <p>Ask who authored the meaning. The author may be a person, institution, wound, habit, fear, platform, memory, or inherited family script.</p>
+      </div>
+      <div class="lantern-card">
+        <span class="kicker">Sovereignty</span>
+        <p>Do not merely counter the frame. Build a cleaner one: truer, more spacious, more livable, less hungry for obedience.</p>
+      </div>
+    </div>
+
+    <div class="frame-console" aria-label="Frame scan console">
+      <div class="console-readout" id="oracleReadout">RUN FRAME SCAN → Identify the noun. Expose the assumption. Refuse the cage. Install the livable reality.</div>
+      <div class="copy-bank">
+        <button class="copy-chip" id="spinFrame" type="button">Run Frame Scan</button>
+        <button class="copy-chip" type="button" data-copy="Who named this? Who benefits from that name? What becomes possible if the name changes?">Copy Three Questions</button>
+        <button class="copy-chip" type="button" data-copy="I don't accept that framing. Define the terms. I'm not answering that question as asked.">Copy Core Refusals</button>
+        <button class="copy-chip" id="printBrief" type="button">Print / PDF</button>
+      </div>
+    </div>
+
+    <div class="sigil-strip"><span class="sigil-dot"></span> See The Frame <span class="sigil-dot"></span> Name The Author <span class="sigil-dot"></span> Build The Room <span class="sigil-dot"></span></div>
+  </div>
+
+  <!-- INTERLUDE -->
+  
+<section class="chapter" id="preamble-memetics">
+<div class="chapter-header">
+<div class="chapter-num">00</div>
+<div class="chapter-title-block">
+<div class="chapter-label">Preamble</div>
+<h2 class="chapter-title">Memetic Terrain</h2>
+<div class="chapter-subtitle">Time. Place. Circumstance. The invisible architecture of meaning.</div>
+</div>
+</div>
+
+<div class="pull-quote">
+<p class="pull-quote-text">Ideas do not live inside minds. They live between minds.</p>
+</div>
+
+<div class="prose">
+<p>A meme is not merely an idea. It is a self-replicating unit of meaning moving through language, symbols, rituals, habits, stories, and assumptions. Minds die. Memes survive.</p>
+<p>The successful meme is not necessarily the most true. The successful meme is the one most compatible with the environment in which it spreads.</p>
+</div>
+
+<div class="sub-heading">The Three Coordinates</div>
+<div class="prose">
+<p>Every meme exists within three dimensions: <strong>Time. Place. Circumstance.</strong></p>
+<p>The same statement spoken in different eras, locations, or conditions can generate entirely different realities.</p>
+</div>
+
+<div class="sub-heading">The Frame Before The Fact</div>
+<div class="prose">
+<p>Facts do not arrive naked. They arrive wrapped in language, placed within categories, and embedded inside narratives.</p>
+<p>Every fact arrives inside a frame. The frame determines what the fact means, what emotions accompany it, and what actions appear reasonable.</p>
+</div>
+
+<div class="sub-heading">The Invisible Architecture</div>
+<div class="prose">
+<p>Framing is insidious because it rarely appears as manipulation. It appears as common sense, professionalism, realism, or objectivity.</p>
+<p>The strongest frame is not the one people obey. The strongest frame is the one people mistake for reality.</p>
+</div>
+
+<div class="sub-heading">Memetic Sovereignty</div>
+<div class="prose">
+<p>The objective of Semantic Sovereignty is not domination. It is awareness.</p>
+<p>To see the frame. To see the story. To see the assumption. To see the author.</p>
+<p>Because the moment a frame becomes visible, it ceases to function as an invisible prison.</p>
+</div>
+</section>
+
+<div class="interlude" id="interlude">
+    <div class="interlude-inner">
+      <div class="section-eyebrow" style="margin-bottom:16px;">BEFORE THE FIRST SENTENCE</div>
+      <h2 class="chapter-title" style="font-size:clamp(20px,4vw,34px);margin-bottom:20px;color:var(--gold-bright)">The Room Before Words</h2>
+
+      <div class="pull-quote">
+        <p class="pull-quote-text">"Before force moves bodies, language moves meanings. Before laws change behavior, language changes what feels normal. The first war is not fought over territory. It is fought over what the territory is allowed to mean. The first victory is making a definition feel inevitable."</p>
+        <p class="pull-quote-attr">— TheMossMan · The Grammarian's Coup</p>
+      </div>
+
+      <div class="prose">
+        <p>Before the first sentence is spoken, a room is already full. Not with people. With assumptions. With invisible furniture. With the weight of yesterday's conversations, the hierarchy nobody wrote down, the rules that arrive disguised as "common sense."</p>
+        <p>Most people enter the room believing they are thinking. They are not. <strong style="color:var(--white)">They are executing inherited scripts.</strong> They call it common sense because they cannot see the author.</p>
+        <p>Because the world doesn't hit you as raw reality. It hits you as something you can recognize. A threat. A joke. A job interview. A vibe. A trap. A test. A chance. And that "something" is not reality itself. It's <strong style="color:var(--gold)">reality after translation.</strong></p>
+        <p>Like waking up inside an operating system you didn't install.</p>
+      </div>
+
+      <div class="prose">
+        <p>Picture a kid watching a storm roll in. The sky goes dark. The wind moves wrong. The birds vanish.</p>
+        <p>If the kid has been taught "danger," the body tightens. If the kid has been taught "beauty," the eyes widen. If the kid has been taught "punishment," guilt rises like bile. If the kid has been taught "weather," it's data.</p>
+        <p><strong style="color:var(--white)">Same clouds. Different nervous system. Different prediction. Different future. The weather never changed. The meaning did.</strong></p>
+      </div>
+
+      <div class="prose">
+        <p>Language is the invisible rigging underneath the stage. It's what decides what you can even notice. Underneath the surface of words are older channels that don't wait for your permission: tone, posture, pacing, silence, repetition, who speaks first, who speaks last, who doesn't explain themselves, what can't be said without punishment.</p>
+        <p><strong style="color:var(--gold)">Words are late. The body speaks first. The room answers first. Then the sentence arrives like a formal document stamped after the decision.</strong></p>
+      </div>
+
+      <div class="sub-heading">The Unseen War: Definitions</div>
+      <p class="prose">The decisive conflict is fought in definitions. To name a situation is not just to describe it. It is to choose the scoring system.</p>
+
+      <div class="doc-table" style="max-width:600px;">
+        <table class="doc-table">
+          <thead><tr><th>Name It As...</th><th>Authorized Reality</th></tr></thead>
+          <tbody>
+            <tr><td>"security issue"</td><td>certain actions become obvious</td></tr>
+            <tr><td>"human rights issue"</td><td>those same actions become monstrous</td></tr>
+            <tr><td>"budget issue"</td><td>compassion becomes "unrealistic"</td></tr>
+            <tr><td>"public health issue"</td><td>dissent becomes "dangerous"</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sub-heading">The Weapon and the Warning</div>
+      <div class="prose">
+        <p>There is a temptation. A dark little seduction that arrives dressed as competence: <em>"If language shapes reality, then I can shape reality."</em></p>
+        <p>True. But incomplete. Because language doesn't only shape others. <strong style="color:var(--white)">It shapes you.</strong></p>
+        <p>A person can become extremely effective at steering rooms and simultaneously become hollow inside — performing power, hungry for dominance, addicted to winning, allergic to being wrong, unable to rest. And that is not sovereignty. <strong style="color:var(--gold)">That is captivity with better clothes.</strong></p>
+      </div>
+
+      <div class="pull-quote">
+        <p class="pull-quote-text">If you use language to distort what you know is true, you don't become powerful. You become predictable. And predictable people are easy to steer.</p>
+      </div>
+
+      <div class="sub-heading">The Covenant: Three Questions</div>
+      <div class="drill-block">
+        <div class="drill-label">THE BLADE-HANDLING PROTOCOL</div>
+        <div class="drill-item" data-drill="1.">
+          <strong>Who named this?</strong>
+        </div>
+        <div class="drill-item" data-drill="2.">
+          <strong>Who benefits from that name?</strong>
+        </div>
+        <div class="drill-item" data-drill="3.">
+          <strong>What becomes possible if the name changes?</strong>
+        </div>
+      </div>
+
+      <p class="chapter-seal">Read it slowly. Handle it like a blade. Once you can see that war, you stop losing it by accident.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ CHAPTERS ═══════════════════ -->
+
+  <!-- CHAPTER 1 -->
+  <div class="chapter" id="ch1">
+    <div class="chapter-header">
+      <div class="chapter-num">01</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter One</div>
+        <h2 class="chapter-title">The Unseen War</h2>
+        <div class="chapter-subtitle">Where the battle is decided before anyone raises their voice.</div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p class="pull-quote-text">The first victory is not proving you're right. The first victory is making your reality the one the room uses to measure "right."</p>
+    </div>
+
+    <div class="prose">
+      <p>The novice believes conflict begins when words collide. The practitioner knows conflict begins when the world is named. Before the first argument, the room has already chosen its gods: "Normal." "Serious." "Realistic." "Respect." "Safety." "Freedom." They sit there like unchallenged statues. People don't debate them — people orbit them.</p>
+    </div>
+
+    <div class="sub-heading">1) The Naming: The Original Sin</div>
+    <div class="prose">
+      <p>The first act of power is not to command. It is to name. In Genesis, Adam's first task was to name the animals. This was not a clerical task. It was an act of dominion. The name is the first frame.</p>
+      <p>If you call a protest a "riot," you have already authorized the use of force. If you call a tax a "contribution," you have already authorized its collection. If you call a person a "resource," you have already authorized their expenditure. <strong style="color:var(--gold)">The name is the instruction set for the nervous system.</strong></p>
+    </div>
+
+    <div class="sub-heading">2) The Invisible Wall: The Frame</div>
+    <div class="prose">
+      <p>A frame is the invisible wall that determines what is in the picture and what is out. If the frame is "economic growth," then environmental protection becomes a "cost." If the frame is "planetary survival," then economic growth becomes a "risk." The content remains the same. The meaning flips entirely.</p>
+      <p><strong style="color:var(--white)">The master grammarian does not argue inside the frame. The master grammarian frames the argument.</strong></p>
+    </div>
+
+    <div class="sub-heading">3) The Silent Agreement: The Default</div>
+    <div class="prose">
+      <p>The most powerful frame is the one that is never noticed. It is the Default. The Default is the gravitational field of the room. It requires zero energy to maintain. Any deviation from the Default requires immense energy — courage, evidence, repetition, social risk.</p>
+      <p><strong style="color:var(--gold)">The Coup is the act of replacing the old Default with a new, more useful one.</strong></p>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 1</div>
+      <div class="drill-item" data-drill="A">
+        <strong>The Noun Check.</strong> Identify the three most powerful nouns currently operating in your environment. Ask: What actions do these nouns authorize? What actions do they forbid?
+      </div>
+      <div class="drill-item" data-drill="B">
+        <strong>The Default Violation.</strong> Identify a small, harmless Default in your daily life. Violate it gently and observe the immediate, unconscious resistance. This is the energy of the Default.
+      </div>
+      <div class="drill-item" data-drill="C">
+        <strong>The Frame Flip.</strong> Take a current problem and rename it using a completely different category (e.g., "Lack of motivation" becomes "Misalignment of incentives"). Observe how the new name instantly suggests a new set of solutions.
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 2 -->
+  <div class="chapter" id="ch2">
+    <div class="chapter-header">
+      <div class="chapter-num">02</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Two</div>
+        <h2 class="chapter-title">The Architecture of Consent</h2>
+        <div class="chapter-subtitle">How the room is built to agree before it speaks.</div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>Consent is not a verbal agreement. Consent is an architectural feature. The room is built to produce a specific kind of agreement. The Grammarian understands that the most effective form of control is not coercion, but <strong style="color:var(--gold)">the engineering of inevitability.</strong></p>
+    </div>
+
+    <div class="sub-heading">1) The Vocabulary of Inevitability</div>
+    <div class="prose">
+      <p>Certain words function as structural supports for the Default. They are semantic choke points used to compress complex reality into a single, unassailable point of consensus.</p>
+    </div>
+
+    <ul class="doc-list">
+      <li><strong style="color:var(--white)">"Just"</strong> — minimizes complexity, shuts down inquiry</li>
+      <li><strong style="color:var(--white)">"Obviously"</strong> — turns an opinion into shared fact, punishes dissent</li>
+      <li><strong style="color:var(--white)">"Realistic"</strong> — the ultimate frame-border, excluding all possibilities outside the Default</li>
+    </ul>
+
+    <div class="sub-heading">2) The Quiet Layer: The Non-Verbal Grammar</div>
+
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th>Element</th>
+          <th>Function in the Quiet Layer</th>
+          <th>Coup Application</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pacing</td>
+          <td>Determines tolerance for complexity. Fast pace = simple answers required.</td>
+          <td>Slow the pace to force inclusion of nuance.</td>
+        </tr>
+        <tr>
+          <td>Silence</td>
+          <td>Determines who is expected to fill the void.</td>
+          <td>Hold silence to force the opposition to reveal their next frame.</td>
+        </tr>
+        <tr>
+          <td>Posture</td>
+          <td>Determines perceived right to define reality.</td>
+          <td>Adopt calm, non-anxious certainty. Calm is the ultimate frame.</td>
+        </tr>
+        <tr>
+          <td>Repetition</td>
+          <td>Determines the weight of a concept.</td>
+          <td>Repeat key nouns without variation. This is the sound of the new Default being installed.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="sub-heading">3) The Coup of the Clock</div>
+    <div class="prose">
+      <p>Time is a grammatical tool. The 5-minute meeting, the 3-point agenda, the "quick" check-in — these structures select for the fastest, simplest, most prepackaged answer, which is always the answer that reinforces the existing Default.</p>
+      <p><strong style="color:var(--gold)">The Coup requires temporal sovereignty: the ability to expand the time frame to allow for the installation of a new, more complex frame.</strong></p>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 2</div>
+      <div class="drill-item" data-drill="A"><strong>The Choke Point Interruption.</strong> When you hear a choke point word ("just," "obviously," "realistic"), interrupt with a neutral question: "What is the assumption behind that word?"</div>
+      <div class="drill-item" data-drill="B"><strong>The Pacing Shift.</strong> In a high-pressure conversation, deliberately slow your speech by 20%. Observe the anxiety this creates. Use that anxiety to introduce a new, calming frame.</div>
+      <div class="drill-item" data-drill="C"><strong>The Quiet Layer Audit.</strong> Observe a high-stakes meeting with the sound off. Note only who interrupts whom, who holds eye contact, whose posture is most relaxed. This is the true hierarchy.</div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 3 -->
+  <div class="chapter" id="ch3">
+    <div class="chapter-header">
+      <div class="chapter-num">03</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Three</div>
+        <h2 class="chapter-title">The Mirror Clause</h2>
+        <div class="chapter-subtitle">The operator's self-correction protocol.</div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p class="pull-quote-text">The doctrine is a blade. The Mirror Clause is the safety. Whatever language you use to shape others becomes the language that shapes you.</p>
+    </div>
+
+    <div class="sub-heading">1) The Deformation of the Operator</div>
+    <div class="prose">
+      <p>The most dangerous outcome of the Coup is not failure. It is success at the cost of self-deformation. Constant simplification leads to an inability to perceive nuance. Constant distortion leads to an inability to trust your own perception of truth. Constant framing for dominance leads to a perpetual state of anxiety and combativeness.</p>
+    </div>
+
+    <div class="sub-heading">2) The Sovereignty of Truth</div>
+    <div class="prose">
+      <p>The predictable operator distorts truth for short-term gain. This creates a brittle frame that collapses under pressure. The sovereign operator uses the tools of grammar to articulate a truth that is complex, useful, and enduring.</p>
+    </div>
+
+    <div class="sub-heading">3) The Three Questions as Mirror</div>
+    <div class="drill-block">
+      <div class="drill-label">SELF-DIAGNOSTIC PROTOCOL</div>
+      <div class="drill-item" data-drill="1."><strong>Who named this?</strong> — Reveals the external frame.</div>
+      <div class="drill-item" data-drill="2."><strong>Who benefits from that name?</strong> — Reveals the external power structure.</div>
+      <div class="drill-item" data-drill="3."><strong>What becomes possible if the name changes?</strong> — Reveals the internal creative potential.</div>
+    </div>
+
+    <p class="chapter-seal">The Coup is complete when the answer to Question 1 is "I did," and the answer to Question 2 is "The room benefits from a more livable reality." If your power makes you smaller inside, it isn't power. It's payment.</p>
+  </div>
+
+  <!-- CHAPTER 4 -->
+  <div class="chapter" id="ch4">
+    <div class="chapter-header">
+      <div class="chapter-num">04</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Four</div>
+        <h2 class="chapter-title">The Body Is the Carrier Wave</h2>
+        <div class="chapter-subtitle">The true grammar is non-verbal. The body speaks first.</div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>If your words say "I'm confident" but your body is asking permission, the room hears the body. The body is the truth detector people use when they don't know they're detecting.</p>
+    </div>
+
+    <div class="sub-heading">1) The Law of Coherence</div>
+    <p class="prose">If the body and the words are in conflict, the body wins. A subtle twitch, a hurried pace, a tense shoulder — these are all grammatical signals that override the dictionary definition of your words.</p>
+
+    <div class="sub-heading">2) The Pacing Coup</div>
+    <ul class="doc-list">
+      <li><strong style="color:var(--white)">Frantic Pacing</strong> — Signals instability, desperation. Your words are filed under "noise."</li>
+      <li><strong style="color:var(--white)">Slow Pacing</strong> — Signals self-possession, control. Your words are filed under "guidance."</li>
+    </ul>
+
+    <div class="sub-heading">3) The Posture of Sovereignty</div>
+    <div class="prose">
+      <p>Sovereignty is not aggression. It is calm, non-anxious certainty. Grounded (feet flat, weight distributed). Open (shoulders back, chest open). Still (minimal unnecessary movement). This posture is not a performance. It is the physical manifestation of the Mirror Clause: <strong style="color:var(--gold)">coherence.</strong></p>
+    </div>
+
+    <div class="sub-heading">4) Silence as Punctuation</div>
+    <div class="prose">
+      <p>Weak silence is freezing. Strong silence is punctuation. Strong silence says: "That landed" — "I'm not scrambling" — "I don't need to convince you" — "You can meet me here when you're ready."</p>
+    </div>
+
+    <div class="sub-heading">5) Status Signals</div>
+    <p class="prose">Rooms run on status whether we like it or not. Status is not "ego." It is the nervous system deciding whose signals to treat as guidance. Status leaks through: who speaks first, who interrupts and gets away with it, who asks questions without apology, who doesn't over-explain.</p>
+
+    <div class="classified-box">
+      <span class="classified-box-label">ETHICAL LOCK: No Predator Posture</span>
+      <p class="prose" style="margin-bottom:0;">The lock is simple: <strong style="color:var(--gold)">the body should increase safety while increasing clarity.</strong> Authority without cruelty. Calm without coldness. Intimidation, dominance games, manufactured calm as threat — that's not mastery. That's insecurity in costume.</p>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 4</div>
+      <div class="drill-item" data-drill="A"><strong>The Three Speeds.</strong> Say one sentence at three speeds: fast, medium, slow. Notice how the meaning changes before the words do.</div>
+      <div class="drill-item" data-drill="B"><strong>The Pause Practice.</strong> In conversation, insert a one-breath pause before answering any charged question. Not for drama — to reclaim steering.</div>
+      <div class="drill-item" data-drill="C"><strong>The No That Doesn't Apologize.</strong> Practice saying "No" in one sentence, steady tone, no extra reasons. Then stop. The goal is not harshness. The goal is clean borders.</div>
+      <div class="drill-item" data-drill="D"><strong>Alignment Check.</strong> Before a difficult conversation, ask: What do I want to be understood? (words) What do I want the room to feel? (signal) Then adjust posture/breath to match.</div>
+    </div>
+
+    <p class="chapter-seal">Words are the surface. The body is the carrier wave. If you do not control the carrier wave, someone else will interpret your message for you.</p>
+  </div>
+
+  <!-- CHAPTER 5 -->
+  <div class="chapter" id="ch5">
+    <div class="chapter-header">
+      <div class="chapter-num">05</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Five</div>
+        <h2 class="chapter-title">Timing and Silence</h2>
+        <div class="chapter-subtitle">The blade is not the word. The blade is when you stop.</div>
+      </div>
+    </div>
+
+    <div class="prose"><p>Most people think communication is what you say. Operators know communication is what you time. A sentence is not finished when the words end. It's finished when the room's nervous system decides what it meant. That decision happens in the gap. That gap is timing.</p></div>
+
+    <div class="sub-heading">1) Timing Is the Hidden Rank System</div>
+    <div class="prose">
+      <p>Whoever controls the clock controls the floor. The person who rushes is usually conceding status. The person who can pause without panic is usually holding it. The person who speaks last often sets the final interpretation.</p>
+      <p><strong style="color:var(--gold)">If your timing is frantic, your meaning will be treated as unstable — even if it's true.</strong></p>
+    </div>
+
+    <div class="sub-heading">2) Silence Is Control of Meaning</div>
+    <div class="prose">
+      <p>A powerful pause does three things at once: it stops the other person from steering you with speed; it forces the room to feel your last sentence instead of skipping it; it signals self-possession — you are not desperate to be understood.</p>
+    </div>
+
+    <div class="sub-heading">3) The Fatal Error: Explaining After the Point</div>
+    <div class="prose">
+      <p>Most people ruin their own statements by adding a second paragraph. They land a clean sentence... then they panic. They start softening it, justifying it, apologizing for it. The room learns: "This person doesn't believe their own words."</p>
+    </div>
+
+    <div class="pull-quote">
+      <p class="pull-quote-text">Say the thing. Stop. Let the silence do the work. If you can't stop, you don't have authority yet — only content.</p>
+    </div>
+
+    <div class="sub-heading">4) Timing as Tactical Geometry</div>
+    <ul class="doc-list">
+      <li><strong style="color:var(--white)">Pre-Pause (Before you answer)</strong> — Take one breath. Breaks trap doors; trap doors require speed. <em>"Speed is the enemy's favourite drug."</em></li>
+      <li><strong style="color:var(--white)">Mid-Pause (After a key phrase)</strong> — The pause separates the border from the explanation. Makes the border unmissable.</li>
+      <li><strong style="color:var(--white)">End-Pause (After your conclusion)</strong> — No fade-out. No nervous laughter. Let the room finish the sentence internally.</li>
+    </ul>
+
+    <div class="sub-heading">5) Silence as Defense: The Anti-Bait Technique</div>
+    <div class="prose">
+      <p>Bait works because it gets you to react from the body. If you snap back fast, you've accepted the frame. Silence refuses that contract. When someone pokes:</p>
+    </div>
+    <ul class="doc-list">
+      <li>Pause</li>
+      <li>Look at them like you're waiting for the real question</li>
+      <li>Ask calmly: "What are you trying to get me to agree to?"</li>
+      <li>Say: "I'll respond when you can ask that cleanly."</li>
+    </ul>
+    <p class="prose"><strong style="color:var(--gold)">The goal is not to win the argument. The goal is to refuse the arena.</strong></p>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 5</div>
+      <div class="drill-item" data-drill="A"><strong>The One-Breath Pause.</strong> For the next 24 hours, insert a one-breath pause before answering any question. Observe how your answers change.</div>
+      <div class="drill-item" data-drill="B"><strong>The Clean Stop.</strong> Practice delivering a difficult sentence and then stopping completely. Do not add "because." Do not add "but."</div>
+      <div class="drill-item" data-drill="C"><strong>The Interruption Reversal.</strong> When interrupted, hold silence. Wait for the interrupter to finish. Then, without changing tone, calmly repeat the last three words you said before the interruption.</div>
+    </div>
+
+    <p class="chapter-seal">The blade is not the word. The blade is when you stop.</p>
+  </div>
+
+  <!-- CHAPTER 6 -->
+  <div class="chapter" id="ch6">
+    <div class="chapter-header">
+      <div class="chapter-num">06</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Six</div>
+        <h2 class="chapter-title">The Power of the Noun</h2>
+        <div class="chapter-subtitle">The noun is the instruction set for the nervous system.</div>
+      </div>
+    </div>
+
+    <div class="prose"><p>The novice argues about adjectives. The practitioner controls the nouns. The noun determines the category. The category determines the action.</p></div>
+
+    <div class="sub-heading">1) The Noun as Authorization</div>
+    <table class="doc-table">
+      <thead><tr><th>Noun</th><th>Authorized Response</th></tr></thead>
+      <tbody>
+        <tr><td>"problem"</td><td>"solution"</td></tr>
+        <tr><td>"crisis"</td><td>"emergency action"</td></tr>
+        <tr><td>"misunderstanding"</td><td>"clarification"</td></tr>
+        <tr><td>"betrayal"</td><td>"retribution"</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sub-heading">2) The Coup of the Re-Noun</div>
+    <div class="prose"><p>The most effective counter-frame is not a rebuttal. It is a re-noun. When a hostile frame is deployed, do not argue inside it. Re-name the core concept.</p></div>
+    <table class="doc-table">
+      <thead><tr><th>Hostile Noun</th><th>Sovereign Re-Noun</th></tr></thead>
+      <tbody>
+        <tr><td>"rejection"</td><td>"clarity"</td></tr>
+        <tr><td>"risk"</td><td>"investment"</td></tr>
+        <tr><td>"negativity"</td><td>"critical analysis"</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sub-heading">3) The Law of Semantic Gravity</div>
+    <p class="prose">The most effective nouns possess semantic gravity: they are simple, clear, and align with a deeper, undeniable truth. "Clarity" has more gravity than "rejection." "Investment" has more gravity than "risk." When you use a noun with greater gravity, the room's attention will naturally orbit it.</p>
+
+    <div class="classified-box">
+      <span class="classified-box-label">ETHICAL LOCK: The True Noun</span>
+      <p class="prose" style="margin-bottom:0;">The Coup is not about inventing nouns. It is about discovering the <strong style="color:var(--gold)">truest, most useful noun</strong> for the situation and installing it as the default. If you use a noun that is fundamentally untrue, you create a fracture in your own coherence.</p>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 6</div>
+      <div class="drill-item" data-drill="A"><strong>The Noun Inventory.</strong> List the five most common nouns used to describe your work/life. For each, ask: Is this noun serving me?</div>
+      <div class="drill-item" data-drill="B"><strong>The Re-Noun Practice.</strong> Take a hostile noun you hear often (e.g., "failure"). Re-noun it as something useful (e.g., "signal," "data," "course correction").</div>
+      <div class="drill-item" data-drill="C"><strong>The Gravity Test.</strong> In a low-stakes argument, introduce a noun with high semantic gravity. Observe how the conversation shifts to orbit the new noun.</div>
+    </div>
+
+    <p class="chapter-seal">Control the noun, and you control the authorized response.</p>
+  </div>
+
+  <!-- CHAPTER 7 -->
+  <div class="chapter" id="ch7">
+    <div class="chapter-header">
+      <div class="chapter-num">07</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Seven</div>
+        <h2 class="chapter-title">The Power of the Question</h2>
+        <div class="chapter-subtitle">The strongest control is not control of answers. It is control of questions.</div>
+      </div>
+    </div>
+
+    <div class="prose"><p>Questions are the steering wheel of the conversation. Every question contains a hidden frame. Answering the question as asked is accepting the frame.</p></div>
+
+    <div class="doc-table">
+      <table class="doc-table">
+        <thead><tr><th>Hostile Question</th><th>Hidden Frame</th></tr></thead>
+        <tbody>
+          <tr><td>"Why did you fail?"</td><td>Frame: You failed. Question: The cause.</td></tr>
+          <tr><td>"When will you fix this?"</td><td>Frame: This is broken. Question: The timeline.</td></tr>
+          <tr><td>"Are you with us or against us?"</td><td>Frame: False binary. Question: The side.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sub-heading">2) The Coup of the Re-Question</div>
+    <div class="prose"><p>The most powerful response to a hostile question is not an answer. It is a re-question. It refuses the hostile frame, installs a new one, and returns the steering wheel to you.</p></div>
+
+    <div class="pull-quote">
+      <p class="pull-quote-text">Hostile: "Why are you being so defensive?" → Re-Question: "What is the assumption behind that question?"</p>
+    </div>
+
+    <div class="sub-heading">3) The Three Strategic Questions (FDP)</div>
+    <div class="drill-block">
+      <div class="drill-label">FRAME DETECTION PROTOCOL</div>
+      <div class="drill-item" data-drill="1."><strong>Who named this?</strong> — Exposes the author of the frame.</div>
+      <div class="drill-item" data-drill="2."><strong>Who benefits from that name?</strong> — Exposes the incentive structure.</div>
+      <div class="drill-item" data-drill="3."><strong>What becomes possible if the name changes?</strong> — Exposes the creative potential.</div>
+    </div>
+
+    <p class="prose">These questions are not for debate. They are for diagnosis. High-gravity questions force the other party to operate within your frame of meta-awareness.</p>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 7</div>
+      <div class="drill-item" data-drill="A"><strong>The Frame-Exposing Re-Question.</strong> For 24 hours, when asked a question you don't like, do not answer. Instead ask: "What frame are you operating from?"</div>
+      <div class="drill-item" data-drill="B"><strong>The Question Inventory.</strong> List the five most common questions you ask. Ask: What frame is hidden inside this question?</div>
+      <div class="drill-item" data-drill="C"><strong>The Covenant Practice.</strong> Take a current event. Run it through the Three Questions. Observe how the analysis shifts from content to architecture.</div>
+    </div>
+
+    <p class="chapter-seal">The strongest control is not control of answers. It is control of questions.</p>
+  </div>
+
+  <!-- CHAPTER 8 -->
+  <div class="chapter" id="ch8">
+    <div class="chapter-header">
+      <div class="chapter-num">08</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Eight</div>
+        <h2 class="chapter-title">The Narrative Gravity</h2>
+        <div class="chapter-subtitle">The story that holds the most truth becomes the default.</div>
+      </div>
+    </div>
+
+    <div class="prose"><p>Facts are cheap. They are data points. A story is a container for meaning. It is the gravitational field that organizes the facts. The human mind prefers a simple, coherent lie to a complex, incoherent truth.</p></div>
+
+    <div class="sub-heading">1) The Three Pillars of Narrative Gravity</div>
+    <table class="doc-table">
+      <thead><tr><th>Pillar</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Layer A: Simplicity</td><td>The portable phrase — the story must travel.</td></tr>
+        <tr><td>Layer B: Structure</td><td>A clear scaffold — the story must provide a map.</td></tr>
+        <tr><td>Layer C: Congruence</td><td>The lived proof — the operator's behavior must match.</td></tr>
+      </tbody>
+    </table>
+    <p class="prose">When these three align, the story ceases to be a story. It becomes reality's steering mechanism.</p>
+
+    <div class="sub-heading">2) The Meta-Narrative: The Coup Itself</div>
+    <div class="prose">
+      <p><strong style="color:var(--gold)">Protagonist:</strong> The Grammarian (The Sovereign Operator)<br>
+      <strong style="color:var(--gold)">Antagonist:</strong> Invisible Steering (The Default, The Unseen War)<br>
+      <strong style="color:var(--gold)">Goal:</strong> Liberation (Semantic Sovereignty)</p>
+    </div>
+
+    <div class="sub-heading">3) The Ethical Lock: The Enlarge/Shrink Test</div>
+    <div class="prose"><p>Does your story enlarge reality, or does it shrink it? Shrinking stories rely on scarcity, fear, and false binaries. They are brittle. Enlarging stories rely on potential, complexity, and creative possibility. They endure.</p></div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 8</div>
+      <div class="drill-item" data-drill="A"><strong>The Three-Sentence Story.</strong> Write the core story of your work/life in three sentences. Test it for simplicity and coherence.</div>
+      <div class="drill-item" data-drill="B"><strong>The Antagonist Check.</strong> Identify the antagonist in your current story. Re-noun the antagonist as a constraint that can be managed, not a tyrant that must be fought.</div>
+      <div class="drill-item" data-drill="C"><strong>The Lived Proof.</strong> Choose one principle from your story and embody it publicly for a week. No preaching. Just congruence.</div>
+    </div>
+
+    <p class="chapter-seal">The world is not made of atoms. The world is made of stories.</p>
+  </div>
+
+  <!-- CHAPTER 9 -->
+  <div class="chapter" id="ch9">
+    <div class="chapter-header">
+      <div class="chapter-num">09</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Nine</div>
+        <h2 class="chapter-title">The Lexicon of Sovereignty</h2>
+        <div class="chapter-subtitle">You will swing whatever rusted blade you inherited.</div>
+      </div>
+    </div>
+
+    <div class="prose"><p>Your vocabulary is your operating system. If you use a lexicon full of inherited, unexamined, or hostile terms, you are operating within someone else's frame.</p></div>
+
+    <div class="sub-heading">1) Poison Words vs. Sovereign Words</div>
+    <table class="doc-table">
+      <thead><tr><th>Poison Words</th><th>Sovereign Words</th></tr></thead>
+      <tbody>
+        <tr><td>"failure"</td><td>"signal" / "data"</td></tr>
+        <tr><td>"lazy"</td><td>"misalignment of incentives"</td></tr>
+        <tr><td>"waste"</td><td>"constraint"</td></tr>
+        <tr><td>"enemy"</td><td>"hostile frame"</td></tr>
+        <tr><td>"crazy"</td><td>"atypical processing"</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sub-heading">2) The Law of Semantic Precision</div>
+    <p class="prose">Vague language is a vulnerability. It allows the hostile frame to fill in the blanks. The sovereign operator uses language that is technical (clear, specific, non-emotional), repeatable (easy to use and remember), and aligned (matches the internal coherence of the operator).</p>
+
+    <div class="sub-heading">3) The Ethical Lock: The Inner Dialogue</div>
+    <div class="prose"><p>The most important lexicon is the one you use in your own head. If your inner dialogue is full of poison words, you are constantly framing yourself as a victim. <strong style="color:var(--gold)">The Coup begins with the internal re-noun.</strong></p></div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 9</div>
+      <div class="drill-item" data-drill="A"><strong>Poison Word List.</strong> Write 20 words you use when stressed. Circle the ones that imply shame, guilt, inevitability, or dehumanization.</div>
+      <div class="drill-item" data-drill="B"><strong>Replacement Workshop.</strong> For each circled word, write two replacements: one neutral/technical (for clarity), one narrative/poetic (for travel).</div>
+      <div class="drill-item" data-drill="C"><strong>Default Detector.</strong> Listen for your defaults: "just," "obviously," "everyone knows," "be realistic." Replace one default this week with: "What assumption is inside that?"</div>
+    </div>
+
+    <p class="chapter-seal">A lexicon is a forge. If you don't craft your tools, you will swing whatever rusted blade you inherited.</p>
+  </div>
+
+  <!-- CHAPTER 10 -->
+  <div class="chapter" id="ch10">
+    <div class="chapter-header">
+      <div class="chapter-num">10</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Ten</div>
+        <h2 class="chapter-title">The Two Courts</h2>
+        <div class="chapter-subtitle">Every sentence is judged twice: by the room, and by your own soul.</div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p><strong style="color:var(--gold)">Court One: the outer world</strong> — status, approval, consequence, reputation, tribe.<br>
+      <strong style="color:var(--gold)">Court Two: the inner world</strong> — coherence, integrity, self-trust, the quiet witness that remembers.</p>
+      <p>Most people live as if only Court One exists. They trade truth for belonging in tiny invisible transactions. Then, later, in the dark, Court Two convenes. And Court Two is not impressed.</p>
+    </div>
+
+    <div class="sub-heading">1) The Outer Court: Social Physics</div>
+    <div class="prose"><p>The outer court runs on signals — who speaks first, who gets interrupted, who gets forgiven, whose confidence counts as "leadership," whose emotion counts as "instability." Outer court truth is often not truth. It's what can be carried, repeated, and rewarded.</p></div>
+
+    <div class="sub-heading">2) The Inner Court: Coherence Physics</div>
+    <div class="prose"><p>The inner court doesn't care what the room clapped for. Inner court judgment shows up as anxiety, self-contempt, exhaustion, compulsive performance, spiritual nausea. People call it "burnout." Often it's just the inner court issuing a verdict.</p></div>
+
+    <div class="sub-heading">3) The Split: When You Win Outside and Lose Inside</div>
+    <div class="prose">
+      <p>You learn the techniques. You start winning rooms. And slowly:</p>
+      <ul class="doc-list" style="margin-top:8px;">
+        <li>your words feel less true</li>
+        <li>you're always performing</li>
+        <li>you need more approval to feel real</li>
+        <li>you can't stop strategizing</li>
+        <li>you don't know what you actually believe anymore</li>
+      </ul>
+      <p style="margin-top:12px;">That's Court One devouring Court Two. <strong style="color:var(--gold)">It looks like victory. It feels like occupation.</strong></p>
+    </div>
+
+    <div class="pull-quote">
+      <p class="pull-quote-text">Impressive wins minutes. Coherent wins decades. This is the difference between influence and domination, leadership and control, doctrine and propaganda.</p>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 10</div>
+      <div class="drill-item" data-drill="A"><strong>Two-Court Journal.</strong> After a hard conversation, write two paragraphs: outer court (what did I achieve socially?) and inner court (what did it cost me internally?).</div>
+      <div class="drill-item" data-drill="B"><strong>Integrity Clause.</strong> Write one rule you will not break for status. Keep it short and absolute.</div>
+      <div class="drill-item" data-drill="C"><strong>Impressiveness Detox.</strong> For one day, remove unnecessary flourish. Notice what panics. That panic is Court One withdrawal.</div>
+    </div>
+
+    <p class="chapter-seal">If you win the room and lose yourself, you didn't win. You rented power at interest.</p>
+  </div>
+
+  <!-- CHAPTER 11 -->
+  <div class="chapter" id="ch11">
+    <div class="chapter-header">
+      <div class="chapter-num">11</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Eleven</div>
+        <h2 class="chapter-title">Counter-Capture and Refusal</h2>
+        <div class="chapter-subtitle">The strongest defense is declining the arena.</div>
+      </div>
+    </div>
+
+    <div class="prose"><p>You will be framed. Daily. By people, institutions, algorithms, even loved ones. Not always maliciously. Often unconsciously. But the effect is the same: your attention is guided, your options narrow, your language colonized.</p></div>
+
+    <div class="sub-heading">1) The Law: Name the Frame to Refuse It</div>
+    <div class="prose"><p>Frames thrive in invisibility. The moment you make the frame explicit, it loses power. The first defense is always naming:</p></div>
+    <ul class="doc-list">
+      <li>"That assumes X."</li>
+      <li>"That's a false binary."</li>
+      <li>"That's a guilt frame."</li>
+      <li>"That's a status trap."</li>
+      <li>"That's a scarcity story."</li>
+    </ul>
+    <p class="prose"><strong style="color:var(--gold)">Naming is the spell-breaker.</strong></p>
+
+    <div class="sub-heading">2) The Three Refusals</div>
+    <div class="classified-box" style="border-color:var(--gold);">
+      <span class="classified-box-label" style="color:var(--gold-bright);border-color:var(--gold);">CORE BORDERS — NOT COMEBACKS</span>
+      <p style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--gold-bright);margin:6px 0 4px;font-style:italic;">"I don't accept that framing."</p>
+      <p style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--gold-bright);margin:4px 0;font-style:italic;">"Define the terms."</p>
+      <p style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--gold-bright);margin:4px 0;font-style:italic;">"I'm not answering that question as asked."</p>
+    </div>
+
+    <div class="sub-heading">3) Common Capture Traps</div>
+    <table class="doc-table">
+      <thead><tr><th>Trap</th><th>Mechanism</th><th>Counter</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>The "Prove It" Courtroom</td>
+          <td>Demand proof on a standard they control</td>
+          <td>"What standard are you using, and who set it?"</td>
+        </tr>
+        <tr>
+          <td>The False Choice</td>
+          <td>"With us or against us"</td>
+          <td>"That's a forced binary. Here's the third option."</td>
+        </tr>
+        <tr>
+          <td>The Tone Police</td>
+          <td>Ignore content, attack delivery</td>
+          <td>"If you want to discuss tone, we can. Address the issue."</td>
+        </tr>
+        <tr>
+          <td>The Guilt Hook</td>
+          <td>Assume wrongdoing, demand confession</td>
+          <td>"What assumption are you starting from?"</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 11</div>
+      <div class="drill-item" data-drill="A"><strong>The Naming Practice.</strong> For every hostile statement today, name the frame (e.g., "scarcity frame," "shame frame," "false binary").</div>
+      <div class="drill-item" data-drill="B"><strong>The Redirection.</strong> Practice: "I'm not answering that question as asked. The more useful question is…" Then insert a high-gravity question from Chapter 7.</div>
+      <div class="drill-item" data-drill="C"><strong>The Calm Exit.</strong> Practice saying: "I'm not going to continue this conversation under these terms." Then physically remove yourself. No explanation.</div>
+    </div>
+
+    <p class="chapter-seal">The strongest defense is declining the arena. The moment you name the frame, you are no longer inside it.</p>
+  </div>
+
+  <!-- CHAPTER 12 -->
+  <div class="chapter" id="ch12">
+    <div class="chapter-header">
+      <div class="chapter-num">12</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Twelve</div>
+        <h2 class="chapter-title">The Ethical Gate</h2>
+        <div class="chapter-subtitle">The final check: Does your victory make the room more livable?</div>
+      </div>
+    </div>
+
+    <div class="prose"><p>The Mirror Clause is not a moral suggestion. It is a mechanical law. If you build a frame that is fundamentally cruel or untrue, it will eventually collapse or deform the operator.</p></div>
+
+    <div class="sub-heading">1) The Law of Enduring Frames</div>
+    <div class="prose">
+      <p>Frames built on fear, scarcity, and domination are high-maintenance. They require constant energy to suppress dissent and manage the inevitable backlash. Frames built on clarity, utility, and potential are low-maintenance. They become the Default because they are obviously useful.</p>
+    </div>
+
+    <div class="sub-heading">2) The Final Ethical Gate (The World Test)</div>
+    <div class="pull-quote">
+      <p class="pull-quote-text">If my frame became the world's default, would I want to live in that world? If yes: proceed. If no: you are building a prison. And prisons eventually collapse or revolt.</p>
+    </div>
+
+    <div class="sub-heading">3) The Sovereignty of Consent</div>
+    <div class="prose">
+      <p>Manipulation is the act of engineering consent through invisible steering. <strong style="color:var(--gold)">Sovereignty is the act of making the steering visible, then inviting consent.</strong></p>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 12</div>
+      <div class="drill-item" data-drill="A"><strong>The Livability Audit.</strong> Look at a frame you recently installed. Ask: Does this frame increase or decrease the agency of the people operating within it?</div>
+      <div class="drill-item" data-drill="B"><strong>The Consent Check.</strong> In a low-stakes interaction, explicitly state the frame you are using. Ask: "Are you willing to operate within this definition?" Observe the power of explicit consent.</div>
+      <div class="drill-item" data-drill="C"><strong>Residue Check.</strong> After a high-stakes conversation, ask: Did I become more human or less human while doing that? If less, you're accumulating residue. Clean the tool.</div>
+    </div>
+
+    <p class="chapter-seal">If your power makes you smaller inside, it isn't power. It's payment.</p>
+  </div>
+
+  <!-- CHAPTER 13 -->
+  <div class="chapter" id="ch13">
+    <div class="chapter-header">
+      <div class="chapter-num">13</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Thirteen</div>
+        <h2 class="chapter-title">Endgame: Occupation by Coherence</h2>
+        <div class="chapter-subtitle">When dissent must translate into your language to be heard — and the room becomes livable.</div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>The endgame is not domination. Domination is noisy. Domination requires maintenance. Domination creates enemies forever. The endgame is coherence — so stable that it becomes the default gravity of the room.</p>
+      <p>The highest form of victory: not crushing the opposition, but <strong style="color:var(--gold)">making their frame irrelevant.</strong></p>
+    </div>
+
+    <div class="sub-heading">1) The Law: Reality Selects for What Works</div>
+    <p class="prose">The endgame requires frames that are: true enough to survive contact with life — clear enough to repeat — ethical enough to avoid backlash rot — flexible enough to revise — stable enough to govern. The endgame isn't a trick. It's an ecology.</p>
+
+    <div class="sub-heading">2) The Final Victory Condition</div>
+    <ul class="doc-list">
+      <li>Opposition arguments sound absurd without rebuttal</li>
+      <li>Dissent must translate into your terms to be understood</li>
+      <li>Your vocabulary becomes the "default common sense"</li>
+      <li>Your framing becomes the room's internal compass</li>
+    </ul>
+    <div class="warning-box" style="border-color:var(--gold-dim);">
+      But here's the real test: Does your victory make the room more livable? If not, it's not endgame. It's tyranny-in-training.
+    </div>
+
+    <div class="sub-heading">3) Installing the Default Without Coercion</div>
+    <div class="prose"><p>The highest installation method is not pressure. It's utility. People adopt what helps them orient. When Layer A (portable phrase), Layer B (scaffold), and Layer C (lived proof) align — persuasion becomes unnecessary. Not because people are conquered. Because the frame becomes <strong style="color:var(--gold)">obviously useful.</strong></p></div>
+
+    <div class="sub-heading">4) The Moment the Coup Is Complete</div>
+    <div class="prose"><p>When people repeat your phrases without quoting you. When your questions become the normal questions. When your definitions become the default definitions. When even critics use your terms to critique you. At that point, the room is speaking your language. And <strong style="color:var(--gold)">language is reality's steering mechanism.</strong></p></div>
+
+    <div class="pull-quote">
+      <p class="pull-quote-text">The final form is not flashy. It's calm. It says less. It repeats without anxiety. It refuses without rage. It clarifies without humiliation. It holds silence without threat. Because the endgame isn't conquest. It's occupation — but by coherence, not by fear.</p>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 13</div>
+      <div class="drill-item" data-drill="A"><strong>Default Design.</strong> Write the default assumptions you want in your community / project / life. Then write the words that would install them.</div>
+      <div class="drill-item" data-drill="B"><strong>Lived Proof.</strong> Choose one principle and embody it publicly for a month. No preaching. Just congruence. Reality persuades better than rhetoric.</div>
+      <div class="drill-item" data-drill="C"><strong>The World Test.</strong> Imagine a world where your vocabulary wins completely. Does it create clarity, dignity, and agency? Or does it create obedience and fear? Revise accordingly.</div>
+    </div>
+
+    <div class="pull-quote" style="margin-top:32px;">
+      <p class="pull-quote-text">This doctrine does not persuade. It rearranges the conditions so persuasion becomes unnecessary. And when the work is done, what remains is quiet: not because everyone agrees — but because the room has found a grammar that can hold truth without violence.</p>
+      <p class="pull-quote-attr">— The Grammarian's Coup: Final Seal</p>
+    </div>
+  </div>
+
+
+
+  <!-- CHAPTER 14 -->
+  <div class="chapter" id="ch14">
+    <div class="chapter-header">
+      <div class="chapter-num">14</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Fourteen</div>
+        <h2 class="chapter-title">Algorithmic Weather</h2>
+        <div class="chapter-subtitle">The feed is the new room. The room now follows you home.</div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p class="pull-quote-text">The old room had walls. The new room has a feed. The frame no longer waits for you to enter. It learns your nervous system and arrives first.</p>
+    </div>
+
+    <div class="prose">
+      <p>The modern frame does not always speak in sentences. It speaks in ordering. What appears first. What repeats. What gets rewarded with attention. What is made to feel urgent. What is made to feel invisible.</p>
+      <p>An algorithmic environment is a weather system of emphasis. It does not need to lie. It only needs to arrange truth so that one feeling becomes easier than another.</p>
+    </div>
+
+    <div class="sub-heading">1) Arrangement Is Argument</div>
+    <div class="prose">
+      <p>Order is grammar. The first item becomes premise. The second becomes proof. The repeated item becomes pattern. The omitted item becomes impossible. The feed argues without declaring itself an argument.</p>
+    </div>
+
+    <div class="sub-heading">2) Emotional Forecasting</div>
+    <table class="doc-table">
+      <thead><tr><th>Weather Pattern</th><th>Body Effect</th><th>Sovereign Response</th></tr></thead>
+      <tbody>
+        <tr><td>Outrage loop</td><td>Narrow attention, fast judgment</td><td>Slow the clock. Ask what action is actually required.</td></tr>
+        <tr><td>Doom cascade</td><td>Learned helplessness, collapse of agency</td><td>Reduce scale. Find the next honest lever.</td></tr>
+        <tr><td>Status mirror</td><td>Comparison hunger, performative self</td><td>Return to Court Two. What remains true without applause?</td></tr>
+        <tr><td>False consensus</td><td>Belief that "everyone" thinks one thing</td><td>Define the sample. Who is missing from the room?</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sub-heading">3) The Feed Fast</div>
+    <div class="prose">
+      <p>To exit algorithmic weather, remove the weather long enough to hear your own climate. Silence is not emptiness. Silence is the return of unsponsored thought.</p>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 14</div>
+      <div class="drill-item" data-drill="A"><strong>The First Ten Audit.</strong> Write down the first ten items your feed gives you. For each: what emotion is being trained?</div>
+      <div class="drill-item" data-drill="B"><strong>The Omission Test.</strong> Ask: what topic, person, solution, or scale is absent from this feed-weather?</div>
+      <div class="drill-item" data-drill="C"><strong>The One-Lever Rule.</strong> After any heavy information exposure, name one concrete action available within twenty-four hours. If none exists, treat it as weather, not command.</div>
+    </div>
+
+    <p class="chapter-seal">The feed is not reality. It is a weather report written by incentives. Carry an umbrella made of questions.</p>
+  </div>
+
+  <!-- CHAPTER 15 -->
+  <div class="chapter" id="ch15">
+    <div class="chapter-header">
+      <div class="chapter-num">15</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Fifteen</div>
+        <h2 class="chapter-title">The Black Lantern Protocol</h2>
+        <div class="chapter-subtitle">A portable rite for hostile rooms, fogged minds, and inherited scripts.</div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>The Black Lantern is not a weapon you point at people. It is a light you place between the frame and the mind. It reveals the architecture without needing to humiliate the architect.</p>
+    </div>
+
+    <div class="axiom-rack">
+      <div class="axiom"><strong>Do not react to the hook.</strong> Reaction accepts the hook's category. Breathe first, answer second.</div>
+      <div class="axiom"><strong>Name the arena.</strong> Before content, identify the field: shame, scarcity, urgency, loyalty, status, guilt, fear.</div>
+      <div class="axiom"><strong>Ask for terms.</strong> Undefined words are trapdoors. Define the noun before stepping on it.</div>
+      <div class="axiom"><strong>Protect the inner court.</strong> No victory is worth becoming less true to yourself.</div>
+      <div class="axiom"><strong>Build a livable frame.</strong> The replacement must create agency, not obedience.</div>
+      <div class="axiom"><strong>Leave cleanly.</strong> Some rooms do not want truth. Withdrawal can be the highest grammar.</div>
+    </div>
+
+    <div class="sub-heading">The Five-Move Lantern Rite</div>
+    <div class="ladder">
+      <div class="ladder-step"><strong>1 · Ground</strong><br>Feet, breath, jaw, shoulders. The body must stop asking permission before the words can stand upright.</div>
+      <div class="ladder-step"><strong>2 · Locate</strong><br>Where is the pressure coming from: speed, shame, authority, vagueness, repetition, threat, praise, belonging?</div>
+      <div class="ladder-step"><strong>3 · Name</strong><br>Say the frame simply: "That's a false binary." "That's an urgency frame." "That's a guilt hook." No sermon. Just light.</div>
+      <div class="ladder-step"><strong>4 · Rebuild</strong><br>Offer the cleaner frame: "The useful question is..." "The real constraint is..." "The noun I would use is..."</div>
+      <div class="ladder-step"><strong>5 · Seal</strong><br>Stop. Let the new frame breathe. Do not chase agreement. Coherence does not beg.</div>
+    </div>
+
+    <div class="classified-box">
+      <span class="classified-box-label">BLACK LANTERN ETHICAL LOCK</span>
+      <p class="prose" style="margin-bottom:0;">The Lantern is invalid if used to fog another person on purpose. It is valid only when it increases clarity, agency, consent, and truthful relation. The moment it becomes a dominance toy, it goes dark.</p>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 15</div>
+      <div class="drill-item" data-drill="A"><strong>The Thirty-Second Decompiler.</strong> In any charged moment, spend thirty seconds identifying: noun, assumption, beneficiary, missing option.</div>
+      <div class="drill-item" data-drill="B"><strong>The Clean Reframe.</strong> Convert one complaint into a workable frame without denying the pain inside it.</div>
+      <div class="drill-item" data-drill="C"><strong>The Lantern Exit.</strong> Practice: "I can continue when the terms are clear." Then stop speaking.</div>
+    </div>
+
+    <p class="chapter-seal">The Black Lantern does not conquer the room. It makes the room visible. After that, only honest architecture survives.</p>
+  </div>
+
+  <!-- EPILOGUE -->
+  <div class="chapter" id="epilogue">
+    <div class="chapter-header">
+      <div class="chapter-num" style="font-size:24px;line-height:1.4;width:80px;">EPIL-<br>OGUE</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Epilogue</div>
+        <h2 class="chapter-title">The Covenant Restated</h2>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>You have reached the end of the fifteen chapters. But the work does not end here. Because this book is not information. It is an interface. The goal was never to give you "new beliefs." The goal was to give you a <strong style="color:var(--gold)">new way of seeing</strong> — one that lets you detect frames before you crash into them.</p>
+      <p>You can use these tools to dominate, to manipulate, to corner. You can become the kind of cage-builder you once feared. Or you can use these tools to liberate — yourself and others — from invisible steering. The difference is not in the tools. The difference is in <strong style="color:var(--white)">the Mirror Clause.</strong></p>
+    </div>
+
+    <div class="pull-quote">
+      <p class="pull-quote-text">Whatever language you use to shape others becomes the language that shapes you.</p>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-label">THE COVENANT — ONE LAST TIME</div>
+      <div class="drill-item" data-drill="1.">Who named this?</div>
+      <div class="drill-item" data-drill="2.">Who benefits from that name?</div>
+      <div class="drill-item" data-drill="3.">What becomes possible if the name changes?</div>
+    </div>
+
+    <div class="prose">
+      <p>Once awake, you have a choice: to build frames that enlarge reality, not ones that shrink it. To speak truth that can survive daylight. To refuse capture without becoming a captor.</p>
+      <p><strong style="color:var(--gold)">The first war is not fought over territory. It is fought over what the territory is allowed to mean. The first victory is making a definition feel inevitable. Once you can see that war, you stop losing it by accident. And then — only then — does sovereignty begin.</strong></p>
+    </div>
+  </div>
+
+  <!-- PAGE BREAK -->
+  <div class="page-break-marker">◆ END OF PRIMARY TEXT ◆ BEGIN DOSSIER ANNEXES ◆</div>
+
+  <!-- ═══════════════════════════════════════
+       ANNEXES
+  ═══════════════════════════════════════ -->
+
+  <!-- ANNEX B -->
+  <div class="annex-header" id="annexb">
+    <span class="annex-tag">Annex B // DSI-734B-A02</span>
+    <h2 class="annex-title">Historical Precedents & Esoteric Corollaries</h2>
+    <p class="annex-sub">Prepared by: DSI/Historical Analysis Division (Sub-Unit 7: Gnostic Vectors)</p>
+  </div>
+
+  <p class="lead">The Text is not new; it is the most recent and explicit articulation of a perennial, often hermetically sealed, understanding of reality as a linguistically-constructed environment. The Text is not a new weapon; it is <strong>the rediscovery of fire.</strong></p>
+
+  <table class="doc-table">
+    <thead>
+      <tr>
+        <th>Concept</th>
+        <th>Historical Precedent</th>
+        <th>DSI Analysis</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>The Naming as Dominion (Ch. 1)</td>
+        <td>Genesis 2:19–20 (Judeo-Christian)</td>
+        <td>The first act of man in the primordial garden is not labor, but nomenclature. To name is to assert dominion over function and meaning within a given reality-frame.</td>
+      </tr>
+      <tr>
+        <td>The Frame as Invisible Prison (Interlude)</td>
+        <td>Plato's Allegory of the Cave</td>
+        <td>The prisoners perceive shadows as reality. Liberation is not arguing about the shadows, but turning to see the mechanism. "Liberation from invisible steering" is a direct parallel to the philosopher's painful ascent.</td>
+      </tr>
+      <tr>
+        <td>The Inner/Outer Court (Ch. 10)</td>
+        <td>Gospel of Thomas, Logion 3 (Gnostic)</td>
+        <td>"When you know yourselves, then you will be known… But if you do not know yourselves, then you are in poverty, and you are poverty." The external world is a consequence of failing the inner court.</td>
+      </tr>
+      <tr>
+        <td>The Power of the Unspoken (Ch. 4 & 5)</td>
+        <td>Tao Te Ching, Verse 1 (Taoist)</td>
+        <td>"The Tao that can be told is not the eternal Tao. The name that can be named is not the eternal name." The named, framed reality is a lesser, contingent version of the true, un-framed reality.</td>
+      </tr>
+      <tr>
+        <td>Winning Without Fighting (Endgame)</td>
+        <td>Sun Tzu's Art of War</td>
+        <td>"The supreme art of war is to subdue the enemy without fighting." This is Occupation by Coherence.</td>
+      </tr>
+      <tr>
+        <td>Bringing Forth What Is Within (Ethical Gate)</td>
+        <td>Gospel of Thomas, Logion 70 (Gnostic)</td>
+        <td>"If you bring forth what is within you, what you bring forth will save you. If you do not bring forth what is within you, what you do not bring forth will destroy you."</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="classified-box">
+    <span class="classified-box-label">CONCLUSION: THE PERENNIAL DOCTRINE</span>
+    <p class="prose" style="margin-bottom:0;">Its danger lies in its clarity and its removal of the mystical language that once shrouded these concepts, presenting them as a <strong style="color:var(--gold)">replicable, secular technology.</strong></p>
+  </div>
+
+  <!-- ANNEX C -->
+  <div class="annex-header" id="annexc">
+    <span class="annex-tag">Annex C // DSI-734B-A03</span>
+    <h2 class="annex-title">Counter-Semantic Triggers</h2>
+    <p class="annex-sub">Prepared by: DSI/Linguistic Countermeasures Unit (Sub-Unit 9: Semantic Breach)</p>
+  </div>
+
+  <p class="prose">These are not mere words; they are <strong style="color:var(--gold)">de-compilation commands for cognitive reality.</strong></p>
+
+  <table class="doc-table">
+    <thead>
+      <tr>
+        <th>Trigger Phrase</th>
+        <th>Source Logic</th>
+        <th>Operational Mechanism</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>"Define the Nouns"</td>
+        <td>Chapter 6 & 11</td>
+        <td>Acts as a semantic anchor. Forces the opposition to reveal the instruction set they are attempting to install. In Gnostic terms: demanding the "True Name" of an Archon to strip it of its power.</td>
+      </tr>
+      <tr>
+        <td>"What Is the Assumption?"</td>
+        <td>Chapter 7 & 11</td>
+        <td>Meta-diagnostic trigger. Bypasses the content and strikes directly at the invisible rigging. Forces the Default to explain itself. Mirrors the Socratic method of questioning the light source, not the shadows.</td>
+      </tr>
+      <tr>
+        <td>"I Don't Accept the Framing"</td>
+        <td>Chapter 11</td>
+        <td>Direct declaration of Semantic Sovereignty. A portable border that refuses to be enclosed by the opposition's arena. Aligns with the Taoist refusal to be bound by the "eternal name," maintaining the operator's position in the Nameless source of power.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="warning-box">
+    Use of these triggers in a high-gravity environment will cause immediate "Frame Stress" in the opposition, often manifesting as stuttering, rapid pacing, or unprovoked aggression. This is the sound of the Invisible Frame fracturing. The operator must be prepared to install a new, more coherent frame immediately following the breach.
+  </div>
+
+  <!-- ANNEX E -->
+  <div class="annex-header" id="annexe">
+    <span class="annex-tag">Annex E // DSI-734B-A05 // OMEGA-1</span>
+    <h2 class="annex-title">The Master Key Analysis</h2>
+    <p class="annex-sub">Prepared by: DSI/Strategic Synthesis Unit (Sub-Unit 1: Omega Point)</p>
+  </div>
+
+  <table class="doc-table">
+    <thead>
+      <tr>
+        <th>Trigger Phrase</th>
+        <th>Potency Level</th>
+        <th>Ancient Wisdom Context</th>
+        <th>DSI Analysis</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>"Define the Nouns"</td>
+        <td><span class="potency-badge badge-tactical">Tactical</span></td>
+        <td>Genesis / Gnostic Naming</td>
+        <td>Highly effective for local disruption. Operates within the realm of names and definitions. A battle over the content of the frame.</td>
+      </tr>
+      <tr>
+        <td>"What Is the Assumption?"</td>
+        <td><span class="potency-badge badge-strategic">Strategic</span></td>
+        <td>Plato's Cave (Periagoge)</td>
+        <td>Moves the conflict from the content to the architecture. Exposes the "fire" behind the shadows. Still requires engaging with the logic of the existing frame.</td>
+      </tr>
+      <tr class="potency-row-sovereign">
+        <td>"I Don't Accept the Framing"</td>
+        <td><span class="potency-badge badge-sovereign">SOVEREIGN — MASTER KEY</span></td>
+        <td>Tao Te Ching (Nameless) / Thomas (The Kingdom)</td>
+        <td>The most potent trigger. Does not argue, does not diagnose. It is a total ontological refusal. Removes the operator from the opposition's reality entirely.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-heading">The Logic of the Master Key</div>
+  <ul class="doc-list">
+    <li><strong style="color:var(--white)">Total Arena Refusal.</strong> Unlike the other triggers, which engage with the opposition's terms, this phrase declines the arena itself. In Sun Tzu's doctrine: the ultimate "winning without fighting."</li>
+    <li><strong style="color:var(--white)">Absolute Sovereignty.</strong> It asserts that the operator's reality is not contingent upon the room's consensus.</li>
+    <li><strong style="color:var(--white)">The Taoist Void.</strong> It returns the room to a state of Nameless potential, where the operator — not the frame — holds the steering wheel.</li>
+  </ul>
+
+  <div class="classified-box">
+    <span class="classified-box-label">FINAL RECOMMENDATION // OMEGA-1</span>
+    <p class="prose" style="margin-bottom:0;">The DSI recommends that "I Don't Accept the Framing" be treated as the primary weapon of last resort. Its deployment creates a "Semantic Vacuum" that can only be filled by an operator with high Posture Coherence. If used without internal alignment, the vacuum will collapse back into the original frame. <strong style="color:var(--gold)">If used with coherence, it is an irreversible act of liberation.</strong></p>
+  </div>
+
+  <!-- ANNEX F -->
+  <div class="annex-header" id="annexf">
+    <span class="annex-tag">Annex F // DSI-734B-A06 // Stoic Protocols</span>
+    <h2 class="annex-title">Stoic Validation & Limitation Analysis</h2>
+    <p class="annex-sub">Prepared by: DSI/Ethical Intelligence Unit (Sub-Unit 3)</p>
+  </div>
+
+  <table class="doc-table">
+    <thead>
+      <tr>
+        <th>Stoic Concept</th>
+        <th>Master Key Application</th>
+        <th>DSI Analysis</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>The Dichotomy of Control (Enchiridion 1)</td>
+        <td>Distinguishing between the "Arena" (External) and the "Judgment" (Internal)</td>
+        <td>The Master Key recognises that while the operator cannot control the attempt to frame (external), they have absolute control over the acceptance of that frame (internal). It is the linguistic enactment of the "Inner Citadel."</td>
+      </tr>
+      <tr>
+        <td>Prohairesis (Moral Choice/Will)</td>
+        <td>Refusing to let the faculty of choice be colonised by external definitions</td>
+        <td>Epictetus: "No one can take your choice away from you." The Master Key is the verbal shield for this internal faculty.</td>
+      </tr>
+      <tr>
+        <td>Amor Fati (Love of Fate)</td>
+        <td>Accepting the reality of the situation while refusing the interpretation of the frame</td>
+        <td>The Master Key does not deny the facts; it denies the framing of those facts. Aligns with the Stoic practice of stripping things bare to see what they truly are, devoid of the "shadows" of external judgment.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="classified-box" style="border-color:var(--gold-dim);">
+    <span class="classified-box-label" style="color:var(--gold);">IDENTIFIED LIMITATIONS</span>
+    <div class="drill-item" data-drill="1." style="color:var(--white-dim);padding-left:20px;margin-bottom:8px;"><strong style="color:var(--white)">The Trap of Reactive Pride.</strong> If the Master Key is used as a shield for the ego rather than a tool for clarity, it violates the Stoic principle of Cosmopolitanism. The refusal must be rooted in Coherence, not in a desire to dominate.</div>
+    <div class="drill-item" data-drill="2." style="color:var(--white-dim);padding-left:20px;"><strong style="color:var(--white)">The Solipsism Risk.</strong> Total refusal of external frames can lead to isolation if not balanced by the Ethical Gate (Chapter 12). Sovereignty is not the absence of relation, but the presence of correct relation.</div>
+  </div>
+
+  <p style="font-family:'DM Mono',monospace;font-size:11px;color:var(--gold-dim);letter-spacing:0.15em;text-align:center;margin:24px 0 0;border-top:1px solid rgba(201,168,76,0.15);padding-top:16px;">STOIC SEAL // DSI-734B-A06 // SOVEREIGNTY IS THE CORRECT USE OF ASSENT</p>
+
+
+
+  <!-- ANNEX G -->
+  <div class="annex-header" id="annexg">
+    <span class="annex-tag">Annex G // DSI-734D-A07 // Field Tool</span>
+    <h2 class="annex-title">Frame Autopsy Worksheet</h2>
+    <p class="annex-sub">A printable diagnostic for conversations, media, meetings, family scripts, and inner monologues.</p>
+  </div>
+
+  <div class="worksheet">
+    <div class="worksheet-line"><span>Surface Statement</span><span>What was literally said / shown / repeated?</span></div>
+    <div class="worksheet-line"><span>Primary Noun</span><span>What category was installed by the key noun?</span></div>
+    <div class="worksheet-line"><span>Hidden Assumption</span><span>What must be accepted for the statement to make sense?</span></div>
+    <div class="worksheet-line"><span>Beneficiary</span><span>Who gains attention, authority, safety, money, status, or avoidance?</span></div>
+    <div class="worksheet-line"><span>Missing Option</span><span>What alternative becomes invisible under this frame?</span></div>
+    <div class="worksheet-line"><span>Body Signal</span><span>What did the frame make your nervous system do?</span></div>
+    <div class="worksheet-line"><span>Cleaner Frame</span><span>What is the truest, most useful, most livable replacement?</span></div>
+    <div class="worksheet-line"><span>Consent Check</span><span>Would a person freely accept this frame if the steering was visible?</span></div>
+  </div>
+
+  <div class="copy-bank">
+    <button class="copy-chip" type="button" data-copy="FRAME AUTOPSY: Surface statement / Primary noun / Hidden assumption / Beneficiary / Missing option / Body signal / Cleaner frame / Consent check">Copy Worksheet Headers</button>
+  </div>
+
+  <!-- ANNEX H -->
+  <div class="annex-header" id="annexh">
+    <span class="annex-tag">Annex H // DSI-734D-A08 // Memetic Hygiene</span>
+    <h2 class="annex-title">The Memetic Field Matrix</h2>
+    <p class="annex-sub">Four zones of exposure, resistance, repair, and authorship.</p>
+  </div>
+
+  <table class="doc-table">
+    <thead><tr><th>Zone</th><th>Question</th><th>Failure Mode</th><th>Repair</th></tr></thead>
+    <tbody>
+      <tr><td>Exposure</td><td>What am I repeatedly consuming?</td><td>Borrowed urgency becomes personal anxiety.</td><td>Control intake before controlling interpretation.</td></tr>
+      <tr><td>Interpretation</td><td>What meaning did I attach?</td><td>Old wounds choose the frame before the mind arrives.</td><td>Name the wound without letting it govern the room.</td></tr>
+      <tr><td>Transmission</td><td>What am I repeating?</td><td>Unexamined language turns the operator into a carrier.</td><td>Repeat only what you are willing to be shaped by.</td></tr>
+      <tr><td>Authorship</td><td>What language am I building?</td><td>Reacting forever, never writing the world.</td><td>Create phrases that increase clarity, dignity, agency, and truth.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="black-lantern-band" style="margin-top:32px;">
+    <h2 class="lantern-title">The Final Double-Down</h2>
+    <div class="prose" style="position:relative;z-index:1;">
+      <p>The most dangerous frame is the one that feels like your own voice before you have audited where it came from.</p>
+      <p>The final sovereignty is not merely saying no to hostile language. It is becoming the author of the language that can safely hold your life.</p>
+    </div>
+    <div class="pull-quote" style="position:relative;z-index:1;">
+      <p class="pull-quote-text">Do not let the world live rent-free in your nouns. Charge it rent in clarity.</p>
+      <p class="pull-quote-attr">— Black Lantern Edition</p>
+    </div>
+  </div>
+
+
+
+  <!-- CHAPTER 16 -->
+  <div class="chapter" id="ch16">
+    <div class="chapter-header">
+      <div class="chapter-num">16</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Sixteen</div>
+        <h2 class="chapter-title">The Synthetic Swarm</h2>
+        <div class="chapter-subtitle">When the meme no longer waits for humans to manufacture it.</div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p class="pull-quote-text">The old meme replicated because people repeated it. The new meme replicates because machines can generate infinite costumes for the same command.</p>
+    </div>
+
+    <div class="prose">
+      <p>The New-New is not merely faster information. It is industrialized variation. One frame can appear as a headline, a short video, a fake screenshot, a voice note, a testimonial, a meme, an argument, a trend, a fake consensus, and a personal recommendation before the operator recognizes the same skeleton wearing different skins.</p>
+      <p>The danger is not only deception. The danger is <strong style="color:var(--gold)">semantic exhaustion</strong>: the mind becomes too tired to distinguish truth, performance, parody, attack, advertisement, and bait.</p>
+    </div>
+
+    <div class="sub-heading">1) The Four Mutations of the New-New</div>
+    <div class="delta-grid">
+      <div class="delta-card" data-delta="Mutation I"><h4>From Message to Weather</h4><p>The unit of influence is no longer one statement. It is the surrounding atmosphere of repetition, omission, ranking, recommendation, and emotional tempo.</p></div>
+      <div class="delta-card" data-delta="Mutation II"><h4>From Author to Apparition</h4><p>Authorship becomes foggy. The question is no longer only "Who said this?" but "What system had an incentive to make this appear here, now, to me?"</p></div>
+      <div class="delta-card" data-delta="Mutation III"><h4>From Virality to Manufacture</h4><p>Virality can now be simulated through volume, remix, botlike repetition, synthetic images, templated outrage, and coordinated aesthetic pressure.</p></div>
+      <div class="delta-card" data-delta="Mutation IV"><h4>From Belief to Reflex</h4><p>The frame does not always need you to believe it. Sometimes it only needs you to feel rushed, disgusted, superior, ashamed, loyal, or afraid.</p></div>
+    </div>
+
+    <div class="sub-heading">2) Synthetic Swarm Signatures</div>
+    <div class="signal-stack">
+      <div class="signal-row"><span>Costume Flood</span><span>The same frame appears across many formats with minor cosmetic changes.</span></div>
+      <div class="signal-row"><span>Instant Consensus</span><span>It feels like everyone already agrees before you have found the source.</span></div>
+      <div class="signal-row"><span>Frictionless Rage</span><span>The content makes anger easier than understanding.</span></div>
+      <div class="signal-row"><span>Proof Fog</span><span>There is a lot of evidence-shaped material, but the original ground is hard to locate.</span></div>
+      <div class="signal-row"><span>Aesthetic Authority</span><span>Clean design, confident voice, cinematic texture, or official-looking layout substitutes for verification.</span></div>
+    </div>
+
+    <div class="classified-box">
+      <span class="classified-box-label">ETHICAL LOCK: Anti-Deception Clause</span>
+      <p class="prose" style="margin-bottom:0;">The doctrine may analyze synthetic influence, but it must not become synthetic predation. No fake consensus. No forged evidence. No impersonation. No weaponized ambiguity. Sovereignty without provenance becomes camouflage for cowardice.</p>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 16</div>
+      <div class="drill-item" data-drill="A"><strong>The Skeleton Test.</strong> Strip five posts down to their core command. Are they actually different, or the same frame in different costumes?</div>
+      <div class="drill-item" data-drill="B"><strong>The Source Descent.</strong> Do not share a claim until you can name the original source, the first reliable confirmation, and the incentive attached to its spread.</div>
+      <div class="drill-item" data-drill="C"><strong>The Feeling Label.</strong> Before believing or rejecting content, write the first emotion it tried to install. Emotion is often the delivery vehicle.</div>
+    </div>
+
+    <p class="chapter-seal">In the New-New, the meme wears masks faster than the eye can blink. Do not chase the mask. Find the skeleton.</p>
+  </div>
+
+  <!-- CHAPTER 17 -->
+  <div class="chapter" id="ch17">
+    <div class="chapter-header">
+      <div class="chapter-num">17</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Seventeen</div>
+        <h2 class="chapter-title">Reality Hygiene</h2>
+        <div class="chapter-subtitle">The counter-rite for AI slop, urgency fog, fake consensus, and borrowed taste.</div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p class="pull-quote-text">Media literacy asks, "Is this true?" Reality hygiene asks, "What is this doing to my capacity to know?"</p>
+    </div>
+
+    <div class="prose">
+      <p>Reality Hygiene is the daily maintenance of perception. It does not require paranoia. It requires rhythm. The operator must protect the conditions under which clear seeing remains possible.</p>
+      <p>The New-New attacks by abundance. Too much content, too many claims, too many urgent rooms, too many artificial mirrors. The sovereign response is not withdrawal from reality. It is <strong style="color:var(--gold)">curated contact with reality.</strong></p>
+    </div>
+
+    <div class="sub-heading">1) The Five Spokes of Reality Hygiene</div>
+    <div class="hygiene-wheel">
+      <div class="hygiene-spoke"><strong>Provenance</strong><span>Where did this originate, and what changed as it travelled?</span></div>
+      <div class="hygiene-spoke"><strong>Latency</strong><span>Delay response long enough for the nervous system to stop obeying urgency.</span></div>
+      <div class="hygiene-spoke"><strong>Embodiment</strong><span>Return to the body: breath, place, weather, work, craft, touch.</span></div>
+      <div class="hygiene-spoke"><strong>Triangulation</strong><span>Check across independent sources, not merely repeated copies.</span></div>
+      <div class="hygiene-spoke"><strong>Authorship</strong><span>Create language before the feed writes your inner weather for you.</span></div>
+    </div>
+
+    <div class="sub-heading">2) The New-New Refusal Script</div>
+    <div class="field-script"><code>I refuse the speed of the hook.
+I refuse the noun before it is defined.
+I refuse the screenshot before provenance.
+I refuse the crowd before sample.
+I refuse the vibe before ground.
+I refuse to become a carrier for language I have not audited.
+I return to the clean question.</code></div>
+
+    <div class="sub-heading">3) Adaptation Rule: Living Doctrine</div>
+    <div class="prose">
+      <p>A rigid doctrine becomes a relic. A spineless doctrine becomes fashion. The sovereign doctrine must be <strong style="color:var(--white)">stable in ethics, flexible in tactics, ruthless in self-audit, and humble before new evidence.</strong></p>
+      <p>The core remains: name the frame, reveal the beneficiary, install the cleaner question. The adaptation is where this happens: not only in rooms, but in feeds, models, marketplaces, inboxes, images, schoolyards, workplaces, and the private theatre of the self.</p>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 17</div>
+      <div class="drill-item" data-drill="A"><strong>The 24-Hour Hold.</strong> Any content that makes you furious, ashamed, or desperate to share must wait twenty-four hours unless immediate safety is involved.</div>
+      <div class="drill-item" data-drill="B"><strong>The Three-Origin Rule.</strong> Before accepting a public claim, locate three independent origins: source, confirmation, and counter-reading.</div>
+      <div class="drill-item" data-drill="C"><strong>The Taste Reclamation.</strong> Spend one hour with non-feed culture: book, walk, instrument, hand-drawn work, conversation, silence. Ask what remains attractive without algorithmic applause.</div>
+      <div class="drill-item" data-drill="D"><strong>The Authorship Hour.</strong> Each day, write one clean sentence that belongs to you before consuming anyone else's weather.</div>
+    </div>
+
+    <p class="chapter-seal">The New-New cannot be beaten by louder content. It is beaten by cleaner perception, slower assent, stronger provenance, and language with a pulse.</p>
+  </div>
+
+  <!-- ANNEX I -->
+  <div class="annex-header" id="annexi">
+    <span class="annex-tag">Annex I // DSI-734E-A09 // Doctrine Delta</span>
+    <h2 class="annex-title">New-New Adaptation Matrix</h2>
+    <p class="annex-sub">What changes, what remains, and what must now be guarded.</p>
+  </div>
+
+  <table class="doc-table">
+    <thead><tr><th>Old Doctrine</th><th>New-New Adaptation</th><th>Operator Question</th></tr></thead>
+    <tbody>
+      <tr><td>The room has a frame.</td><td>The room is now portable, personalized, predictive, and monetized.</td><td>What room followed me here?</td></tr>
+      <tr><td>The noun authorizes action.</td><td>The image, ranking, edit, caption, and comment chain also authorize action.</td><td>What non-verbal grammar is doing the naming?</td></tr>
+      <tr><td>Silence interrupts bait.</td><td>Latency interrupts algorithmic urgency.</td><td>What happens if I do not react today?</td></tr>
+      <tr><td>The body is the carrier wave.</td><td>The feed trains the body before the conscious mind arrives.</td><td>What sensation was installed first?</td></tr>
+      <tr><td>The ethical gate prevents predation.</td><td>Provenance prevents synthetic cowardice.</td><td>Can I show where this came from?</td></tr>
+      <tr><td>Coherence wins the room.</td><td>Coherence must now survive infinite remix.</td><td>What phrase remains true when stripped of style?</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ANNEX J -->
+  <div class="annex-header" id="annexj">
+    <span class="annex-tag">Annex J // DSI-734E-A10 // Seven-Day Rite</span>
+    <h2 class="annex-title">Seven-Day Reality Hygiene Rite</h2>
+    <p class="annex-sub">A field reset for operators entering the New-New environment.</p>
+  </div>
+
+  <div class="worksheet">
+    <div class="worksheet-line"><span>Day 1 — Intake Audit</span><span>List the top ten sources shaping your attention. Mark each as nourishing, neutral, extractive, or hostile.</span></div>
+    <div class="worksheet-line"><span>Day 2 — Delay</span><span>Do not instantly share, reply, or defend. Practice latency as sovereignty.</span></div>
+    <div class="worksheet-line"><span>Day 3 — Provenance</span><span>Trace one claim back to origin. Record where certainty increased or collapsed.</span></div>
+    <div class="worksheet-line"><span>Day 4 — Embodiment</span><span>Spend one hour in non-digital reality. Let the nervous system remember unsponsored weather.</span></div>
+    <div class="worksheet-line"><span>Day 5 — Re-Noun</span><span>Choose one inherited label and replace it with a truer noun.</span></div>
+    <div class="worksheet-line"><span>Day 6 — Authorship</span><span>Write a one-paragraph frame you want to live inside. Test it for dignity, agency, clarity, and truth.</span></div>
+    <div class="worksheet-line"><span>Day 7 — Seal</span><span>Create three personal laws of attention. What will you no longer let write your mind?</span></div>
+  </div>
+
+  <div class="copy-bank">
+    <button class="copy-chip" type="button" data-copy="NEW-NEW REFUSAL: I refuse the speed of the hook. I refuse the noun before it is defined. I refuse the screenshot before provenance. I refuse the crowd before sample. I refuse the vibe before ground. I refuse to become a carrier for language I have not audited. I return to the clean question.">Copy New-New Refusal</button>
+    <button class="copy-chip" type="button" data-copy="REALITY HYGIENE: Provenance / Latency / Embodiment / Triangulation / Authorship">Copy Hygiene Wheel</button>
+  </div>
+
+  <div class="black-lantern-band" style="margin-top:34px;">
+    <h2 class="lantern-title">734G Seal: Horizon Armor</h2>
+    <div class="prose" style="position:relative;z-index:1;">
+      <p>The doctrine survives the New-New by refusing to become nostalgia. It keeps the old blade — frame, noun, question, silence, body, ethics — and adds armor for synthetic speed, algorithmic weather, provenance fog, and outsourced taste.</p>
+      <p>The highest operator is not the loudest. The highest operator is the one who can remain authored in an environment designed to make authorship feel obsolete.</p>
+    </div>
+    <div class="pull-quote" style="position:relative;z-index:1;">
+      <p class="pull-quote-text">Do not merely defend your mind. Design the conditions under which your mind can stay honest.</p>
+      <p class="pull-quote-attr">— New-New Doctrine Refresh</p>
+    </div>
+  </div>
+
+
+
+
+  <!-- CHAPTER 18 -->
+  <div class="chapter" id="ch18">
+    <div class="chapter-header">
+      <div class="chapter-num">18</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Eighteen</div>
+        <h2 class="chapter-title">The Near Horizon</h2>
+        <div class="chapter-subtitle">Look past the ridge. Do not worship the fog.</div>
+      </div>
+    </div>
+
+    <div class="horizon-band">
+      <h2 class="horizon-title">Horizon Rule</h2>
+      <div class="prose" style="position:relative;z-index:1;">
+        <p>Do not predict like a prophet. Scan like a tracker. The horizon is not a fantasy screen. It is the place where current incentives reveal their next likely shape.</p>
+        <p><strong style="color:var(--gold)">The point stays sharp when the doctrine names vectors, not dreams.</strong> A vector has direction, pressure, beneficiary, cost, and countermeasure. Anything less is atmosphere.</p>
+      </div>
+    </div>
+
+    <div class="sub-heading">1) The Four Tests of the Horizon</div>
+    <div class="horizon-grid">
+      <div class="horizon-card"><strong>Signal</strong><span>What already exists in seed form? Do not chase rumours. Find repeated incentives, tools, behaviours, and failures.</span></div>
+      <div class="horizon-card"><strong>Vector</strong><span>Where does the signal naturally move if nobody interrupts it? Speed, scale, intimacy, automation, monetisation, normalisation.</span></div>
+      <div class="horizon-card"><strong>Human Cost</strong><span>What capacity does it weaken: attention, trust, memory, authorship, embodiment, consent, patience, courage?</span></div>
+      <div class="horizon-card"><strong>Clean Counter</strong><span>What small repeatable practice restores agency without becoming paranoia or control addiction?</span></div>
+    </div>
+
+    <div class="sub-heading">2) Over-Horizon Vectors</div>
+    <div class="radar-list">
+      <div class="radar-item"><div><b>Agentic Speech.</b> Assistants, bots, schedulers, recommenders, and auto-repliers begin speaking before the person arrives. <em>Defense:</em> mark where the human has actually consented.</div></div>
+      <div class="radar-item"><div><b>Personal Reality Shells.</b> Feeds, search, summaries, and recommendations converge into custom worlds that feel objective because they are convenient. <em>Defense:</em> schedule encounters with reality that was not selected for you.</div></div>
+      <div class="radar-item"><div><b>Synthetic Witnesses.</b> Images, audio, screenshots, captions, transcripts, and summaries become cheap enough to fake and common enough to doubt. <em>Defense:</em> ask for chain of custody before outrage.</div></div>
+      <div class="radar-item"><div><b>Borrowed Urgency.</b> Every system competes to make its priority feel like your emergency. <em>Defense:</em> separate danger from velocity.</div></div>
+      <div class="radar-item"><div><b>Vibe Governance.</b> Aesthetic consensus replaces explicit argument. What looks cringe, clean, modern, toxic, safe, unsafe, iconic, or embarrassing becomes policy before policy is written. <em>Defense:</em> translate vibe back into claims.</div></div>
+      <div class="radar-item"><div><b>Provenance Class Divide.</b> Some people and institutions can prove origin; others cannot. Trust may follow receipts, not truth. <em>Defense:</em> treat provenance as context, not a caste system.</div></div>
+    </div>
+
+    <div class="classified-box">
+      <span class="classified-box-label">HORIZON ETHICAL LOCK</span>
+      <p class="prose" style="margin-bottom:0;">The horizon is not permission to become suspicious of everything. Paranoia is just another frame with bad lighting. The operator remains open, but not porous; skeptical, but not cruel; adaptive, but not for sale.</p>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 18</div>
+      <div class="drill-item" data-drill="A"><strong>The Vector Sheet.</strong> Pick one emerging pattern. Write: signal, vector, beneficiary, human cost, clean counter.</div>
+      <div class="drill-item" data-drill="B"><strong>The Vibe Translation.</strong> When a public mood appears obvious, translate it into plain claims. What is being asserted without being argued?</div>
+      <div class="drill-item" data-drill="C"><strong>The Human Consent Mark.</strong> In any automated message, summary, or recommendation, ask: where is the human choice visible?</div>
+    </div>
+
+    <p class="chapter-seal">The horizon is useful only when it sharpens the present.</p>
+  </div>
+
+  <!-- CHAPTER 19 -->
+  <div class="chapter" id="ch19">
+    <div class="chapter-header">
+      <div class="chapter-num">19</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Nineteen</div>
+        <h2 class="chapter-title">The Authorship Layer</h2>
+        <div class="chapter-subtitle">The next fight is not over attention alone. It is over who gets to write the first draft of you.</div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p class="pull-quote-text">The most dangerous frame is no longer the one imposed from outside. It is the one you accept because it sounds like your own inner voice.</p>
+    </div>
+
+    <div class="prose">
+      <p>The New-New does not merely compete for attention. It offers to write your taste, your schedule, your apology, your confidence, your outrage, your identity, your next sentence. Convenience becomes authorship by slow substitution.</p>
+      <p>The answer is not rejection of tools. The answer is hierarchy. Tools may assist the hand. They must not inherit the throne.</p>
+    </div>
+
+    <div class="sub-heading">1) The Three Drafts</div>
+    <table class="doc-table">
+      <thead><tr><th>Draft</th><th>Meaning</th><th>Sovereign Practice</th></tr></thead>
+      <tbody>
+        <tr><td>First Draft</td><td>The raw inner wording before optimisation.</td><td>Write one sentence in your own rough voice before seeking help.</td></tr>
+        <tr><td>Second Draft</td><td>The clarified version shaped by tools, feedback, craft, and context.</td><td>Use assistance to sharpen, not replace, the author.</td></tr>
+        <tr><td>Final Draft</td><td>The statement you can stand behind with your body.</td><td>Read it aloud. If your body rejects it, revise.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sub-heading">2) The Sharp Point</div>
+    <div class="operator-pledge"><code>I may use engines.
+I do not become engine-driven.
+I may use summaries.
+I do not outsource judgement.
+I may use style.
+I do not rent a soul.
+I may accelerate the hand.
+I do not surrender the author.</code></div>
+
+    <div class="sub-heading">3) Authorship Tripwires</div>
+    <div class="tripwire-grid">
+      <div class="tripwire"><strong>Too Smooth</strong><span class="prose">The language has no scar, grain, humour, or risk. It may be polished into obedience.</span></div>
+      <div class="tripwire"><strong>Too Fast</strong><span class="prose">The answer arrived before the body could check whether it was true.</span></div>
+      <div class="tripwire"><strong>Too Familiar</strong><span class="prose">The frame flatters your existing wound so perfectly that it bypasses audit.</span></div>
+      <div class="tripwire"><strong>Too Useful</strong><span class="prose">The tool solves the task while quietly redefining the task.</span></div>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 19</div>
+      <div class="drill-item" data-drill="A"><strong>The Rough Sentence.</strong> Before any assisted writing, write the ugly first line yourself. Keep the fingerprint.</div>
+      <div class="drill-item" data-drill="B"><strong>The Body Read.</strong> Read assisted text aloud. Remove any phrase that makes your posture collapse or your jaw lie.</div>
+      <div class="drill-item" data-drill="C"><strong>The Tool Boundary.</strong> Name exactly what the tool is allowed to do: structure, spelling, options, compression, translation, critique. Anything else requires permission.</div>
+    </div>
+
+    <p class="chapter-seal">A tool may sharpen the blade. It must not choose the target.</p>
+  </div>
+
+  <!-- CHAPTER 20 -->
+  <div class="chapter" id="ch20">
+    <div class="chapter-header">
+      <div class="chapter-num">20</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Twenty</div>
+        <h2 class="chapter-title">Small Realities That Survive the Storm</h2>
+        <div class="chapter-subtitle">The counter-future is not bigger noise. It is stronger local truth.</div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>When the global feed becomes unstable, reality returns through small trusted circuits: people who show up, tools that leave receipts, communities with memory, crafts that touch matter, routines that can be verified by life.</p>
+      <p>The doctrine must therefore defend not only the mind, but the <strong style="color:var(--gold)">conditions of shared reality</strong>: local trust, repeated contact, transparent edits, repair after error, and embodied proof.</p>
+    </div>
+
+    <div class="sub-heading">1) The Five Local Anchors</div>
+    <div class="horizon-grid">
+      <div class="horizon-card"><strong>Receipts</strong><span>Keep records of origin, change, context, and consent. Not bureaucracy: memory armor.</span></div>
+      <div class="horizon-card"><strong>Witness</strong><span>Prefer people and institutions that can be questioned, corrected, and seen again.</span></div>
+      <div class="horizon-card"><strong>Ritual</strong><span>Repeat useful practices until clarity becomes culture, not performance.</span></div>
+      <div class="horizon-card"><strong>Repair</strong><span>Trust grows when error can be admitted without annihilation.</span></div>
+      <div class="horizon-card"><strong>Craft</strong><span>Make things that carry the mark of a hand. The hand reminds the mind it lives in a world.</span></div>
+    </div>
+
+    <div class="sub-heading">2) The Anti-Slop Covenant</div>
+    <div class="prose">
+      <p>Slop is not merely low-quality content. Slop is any output that consumes attention while degrading the conditions for meaning. It is language without responsibility, image without origin, urgency without consequence, volume without care.</p>
+    </div>
+
+    <div class="operator-pledge"><code>I will not flood the room to feel powerful.
+I will not confuse output with offering.
+I will not use synthetic speed to escape human responsibility.
+I will make fewer things with stronger fingerprints.
+I will keep the point sharp.</code></div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 20</div>
+      <div class="drill-item" data-drill="A"><strong>The Receipt Habit.</strong> For any important claim, record origin, date, source, uncertainty, and what would change your mind.</div>
+      <div class="drill-item" data-drill="B"><strong>The Repair Line.</strong> Practice: "I was wrong about that part. Here is the correction. Here is what remains true."</div>
+      <div class="drill-item" data-drill="C"><strong>The Handprint Test.</strong> Before publishing, ask: where is the human care visible?</div>
+    </div>
+
+    <p class="chapter-seal">The future will be noisy. Build rooms where truth can still hear itself.</p>
+  </div>
+
+  <!-- ANNEX K -->
+  <div class="annex-header" id="annexk">
+    <span class="annex-tag">Annex K // DSI-734G-A11 // Horizon Radar</span>
+    <h2 class="annex-title">Over-Horizon Radar Sheet</h2>
+    <p class="annex-sub">A compact diagnostic for scanning the next bend without dulling the present blade.</p>
+  </div>
+
+  <table class="doc-table">
+    <thead><tr><th>Question</th><th>Operator Notes</th></tr></thead>
+    <tbody>
+      <tr><td>What is the visible signal?</td><td>Tool, trend, behaviour, phrase, policy, market pressure, repeated failure.</td></tr>
+      <tr><td>What incentive pushes it forward?</td><td>Profit, speed, status, convenience, control, safety, fear, belonging.</td></tr>
+      <tr><td>What human capacity might weaken?</td><td>Attention, trust, authorship, consent, patience, memory, locality, embodiment.</td></tr>
+      <tr><td>What does the pattern make easier?</td><td>Good and bad. Never analyse threat without analysing utility.</td></tr>
+      <tr><td>What does it make harder?</td><td>Locate the hidden tax.</td></tr>
+      <tr><td>What is the clean countermeasure?</td><td>Small, repeatable, ethical, teachable, non-paranoid.</td></tr>
+      <tr><td>What remains uncertain?</td><td>Mark unknowns clearly. False certainty is horizon rot.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ANNEX L -->
+  <div class="annex-header" id="annexl">
+    <span class="annex-tag">Annex L // DSI-734G-A12 // Public Signal Grounding</span>
+    <h2 class="annex-title">Why The Doctrine Must Keep Adapting</h2>
+    <p class="annex-sub">A compressed source-note layer for the Horizon Refit.</p>
+  </div>
+
+  <div class="source-note">
+    Public signals used for the 734G refit: the Reuters Institute's 2025 Digital News Report records a continuing shift from traditional news toward social/video platforms, creator ecosystems, and emerging AI-news interfaces; C2PA describes Content Credentials as an open standard for establishing origin and edit history of digital content; Australian cyber guidance frames content credentials as useful context rather than automatic proof of truth; NIST synthetic-content work indicates public institutions are actively formalising risk guidance around AI-generated media. These signals do not replace the doctrine. They justify keeping it alive.
+  </div>
+
+  <div class="copy-bank">
+    <button class="copy-chip" type="button" data-copy="HORIZON RULE: Do not predict like a prophet. Scan like a tracker. Name the signal, vector, beneficiary, human cost, and clean countermeasure.">Copy Horizon Rule</button>
+    <button class="copy-chip" type="button" data-copy="ANTI-SLOP COVENANT: I will not flood the room to feel powerful. I will not confuse output with offering. I will not use synthetic speed to escape human responsibility. I will make fewer things with stronger fingerprints. I will keep the point sharp.">Copy Anti-Slop Covenant</button>
+    <button class="copy-chip" type="button" data-copy="AUTHORSHIP LAYER: Tools may assist the hand. They must not inherit the throne.">Copy Authorship Layer</button>
+  </div>
+
+
+
+
+  <!-- CHAPTER 21 -->
+  <div class="chapter" id="ch21">
+    <div class="chapter-header">
+      <div class="chapter-num">21</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Twenty-One</div>
+        <h2 class="chapter-title">Trust-Path Verification</h2>
+        <div class="chapter-subtitle">The next test is not merely whether a claim is true. It is how the claim travelled before it reached the nervous system.</div>
+      </div>
+    </div>
+
+    <span class="research-kicker">Deep Research Refit // 734G</span>
+
+    <div class="prose">
+      <p>The doctrine now expands from <strong style="color:var(--gold)">content verification</strong> to <strong style="color:var(--gold)">trust-path verification</strong>. A claim is not only a sentence. It is a route: model, platform, feed, screenshot, repost, influencer, summary, comment swarm, emotional charge, archive trace, and human witness.</p>
+      <p>The old question was: <strong style="color:var(--white)">Is this true?</strong> The new question is: <strong style="color:var(--white)">What system made this feel available, urgent, obvious, popular, moral, or inevitable?</strong></p>
+    </div>
+
+    <div class="blade-line">The stamp proves the path. It does not prove the meaning.</div>
+
+    <div class="sub-heading">1) The Trust Path</div>
+    <div class="verification-flow">
+      <div class="flow-step"><strong>Origin.</strong> Who or what first authored the object? Human witness, institution, model, anonymous account, scraped remix, or screenshot-only ghost?</div>
+      <div class="flow-step"><strong>Transformation.</strong> What changed before you saw it? Crop, caption, translation, AI summary, edit, compression, watermark loss, outrage headline.</div>
+      <div class="flow-step"><strong>Amplification.</strong> Who made it feel important? Feed ranking, influencer, swarm, paid boost, bot cluster, trusted friend, institutional channel.</div>
+      <div class="flow-step"><strong>Emotional payload.</strong> Which feeling arrived before the evidence? Fear, disgust, belonging, intimacy, panic, revelation, cynicism, validation.</div>
+      <div class="flow-step"><strong>Recoverability.</strong> Can the primary object be found, archived, dated, and challenged?</div>
+      <div class="flow-step"><strong>Embodiment.</strong> Did this event touch the world, or only the nervous system?</div>
+    </div>
+
+    <div class="classified-box">
+      <span class="classified-box-label">Doctrine Patch</span>
+      <p class="prose" style="margin-bottom:0;">Absence of provenance is not proof of falsity. Presence of provenance is not proof of truth. Provenance is chain-of-custody. Meaning still requires interpretation, context, incentive analysis, and human accountability.</p>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 21</div>
+      <div class="drill-item" data-drill="A"><strong>The Path Before The Point.</strong> Before debating the content, map the route by which the content reached you.</div>
+      <div class="drill-item" data-drill="B"><strong>The Screenshot Demotion.</strong> Treat screenshots as leads, not sources. Recover the original or mark the claim unresolved.</div>
+      <div class="drill-item" data-drill="C"><strong>The Emotion Label.</strong> Name the emotional payload out loud before responding: "This arrived carrying panic." "This arrived carrying tribal pride."</div>
+    </div>
+
+    <p class="chapter-seal">Truth now needs a route-map. Without the route, the claim arrives wearing borrowed authority.</p>
+  </div>
+
+  <!-- CHAPTER 22 -->
+  <div class="chapter" id="ch22">
+    <div class="chapter-header">
+      <div class="chapter-num">22</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Twenty-Two</div>
+        <h2 class="chapter-title">Synthetic Consensus and Slop Saturation</h2>
+        <div class="chapter-subtitle">The crowd may be real. The agreement may not be.</div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>The new manipulation does not always need to convince you directly. It can surround you with the appearance of agreement until disagreement feels socially irrational. That is synthetic consensus: engineered public gravity.</p>
+      <p>Beside it grows slop saturation: technically coherent output with low authorship, low accountability, weak provenance, high repetition, and enough volume to drown the signal.</p>
+    </div>
+
+    <div class="metric-grid">
+      <div class="metric-card"><span class="metric-code">SCI</span><strong>Synthetic Consensus Index</strong><p>Coordination signals + persona anomalies + copied phrasing + cross-platform bursts + low source diversity.</p></div>
+      <div class="metric-card"><span class="metric-code">SSR</span><strong>Slop Saturation Ratio</strong><p>Attention share of repetitive, low-verification content divided by attention share of recoverable primary-source material.</p></div>
+      <div class="metric-card"><span class="metric-code">TCI</span><strong>Trust Collapse Indicator</strong><p>Public uncertainty + correction fatigue + unresolved claim backlog + declining fallback to trusted verification paths.</p></div>
+    </div>
+
+    <div class="sub-heading">1) Signs of Synthetic Consensus</div>
+    <div class="signal-ledger">
+      <div class="signal-card" data-signal="Swarm"><strong>Many mouths, one sentence</strong><span>Repeated wording appears across accounts faster than organic adoption would normally allow.</span></div>
+      <div class="signal-card" data-signal="Persona"><strong>Thin humans</strong><span>Accounts have faces, bios, and slogans, but little history, little friction, and no lived mess.</span></div>
+      <div class="signal-card" data-signal="Timing"><strong>Unnatural simultaneity</strong><span>Sudden agreement appears in tight windows across platforms and comment fields.</span></div>
+      <div class="signal-card" data-signal="Gravity"><strong>Popularity without roots</strong><span>The claim feels huge, yet the primary source is weak, missing, anonymous, or screenshot-only.</span></div>
+    </div>
+
+    <div class="sub-heading">2) Signs of Slop Saturation</div>
+    <table class="doc-table">
+      <thead><tr><th>Symptom</th><th>Operational Meaning</th><th>Countermeasure</th></tr></thead>
+      <tbody>
+        <tr><td>Same idea, infinite costumes</td><td>A frame has become cheap to replicate.</td><td>Strip variation. Name the repeated command.</td></tr>
+        <tr><td>Coherent but empty</td><td>The words flow, but no one appears accountable.</td><td>Ask who paid the cost of knowing.</td></tr>
+        <tr><td>Source evaporation</td><td>The claim lives in reposts, not records.</td><td>Recover primary object or quarantine.</td></tr>
+        <tr><td>Comment-field certainty</td><td>Agreement is being used as evidence.</td><td>Measure account diversity before belief.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="pull-quote">
+      <p class="pull-quote-text">The future will not arrive as a lie. It will arrive as a mood. Name the mood before it names you.</p>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-label">Field Drills — Chapter 22</div>
+      <div class="drill-item" data-drill="A"><strong>The Swarm Split.</strong> Separate agreement from repetition. Repetition is not consensus. It may be distribution.</div>
+      <div class="drill-item" data-drill="B"><strong>The Author Cost Test.</strong> Ask: who can be corrected, questioned, or held responsible for this output?</div>
+      <div class="drill-item" data-drill="C"><strong>The Feed Weather Log.</strong> Track one week of recurring moods in your feed. Identify what emotion is being trained.</div>
+    </div>
+
+    <p class="chapter-seal">When the crowd becomes weather, the operator becomes meteorologist.</p>
+  </div>
+
+  <!-- CHAPTER 23 -->
+  <div class="chapter" id="ch23">
+    <div class="chapter-header">
+      <div class="chapter-num">23</div>
+      <div class="chapter-title-block">
+        <div class="chapter-label">Chapter Twenty-Three</div>
+        <h2 class="chapter-title">Embodiment, Challenge, and the Human Lock</h2>
+        <div class="chapter-subtitle">A voice can be cloned. A face can be simulated. The decision layer must grow bones.</div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>Deepfake danger is not only fake media. It is fake authority entering a real decision. The operator must therefore protect high-consequence actions with an embodied challenge: money, voting, safety, accusation, reputation, medical instruction, legal action, emergency movement, and family trust.</p>
+      <p>The rule is simple: <strong style="color:var(--gold)">if a synthetic object could cause a real-world action, the action requires an out-of-channel human lock.</strong></p>
+    </div>
+
+    <div class="sub-heading">1) The Human Lock Protocol</div>
+    <div class="verification-flow">
+      <div class="flow-step"><strong>Pause the action.</strong> Do not transfer, publish, accuse, evacuate, resign, vote, or expose based only on mediated evidence.</div>
+      <div class="flow-step"><strong>Switch channels.</strong> Verify through a different path: known number, physical meeting, pre-agreed phrase, official page, direct institutional contact.</div>
+      <div class="flow-step"><strong>Ask a living question.</strong> Use context that a scraped model would struggle to know and that has not been publicly posted.</div>
+      <div class="flow-step"><strong>Record the verification.</strong> Time, channel, person, source, uncertainty, and decision owner.</div>
+      <div class="flow-step"><strong>Only then act.</strong> Speed is not proof. Urgency is often the hook.</div>
+    </div>
+
+    <div class="classified-box">
+      <span class="classified-box-label">Ethical Lock</span>
+      <p class="prose" style="margin-bottom:0;">Do not use verification rituals to humiliate, dominate, or interrogate people who are already vulnerable. The lock exists to protect shared reality, not to create paranoid authority theatre.</p>
+    </div>
+
+    <div class="sub-heading">2) High-Consequence Trigger List</div>
+    <table class="doc-table">
+      <thead><tr><th>Trigger</th><th>Required Response</th></tr></thead>
+      <tbody>
+        <tr><td>Money movement</td><td>Out-of-band confirmation and dual approval.</td></tr>
+        <tr><td>Voting or civic instruction</td><td>Official source verification before sharing.</td></tr>
+        <tr><td>Medical or safety directive</td><td>Trusted professional or official channel check.</td></tr>
+        <tr><td>Reputation-damaging claim</td><td>Primary evidence recovery, archive capture, right-of-reply path.</td></tr>
+        <tr><td>Voice/video instruction from authority</td><td>Known-channel callback or pre-agreed challenge-response.</td></tr>
+      </tbody>
+    </table>
+
+    <p class="chapter-seal">The body returns where the screen becomes uncertain. Reality must have a second door.</p>
+  </div>
+
+  <!-- ANNEX M -->
+  <div class="annex-header" id="annexm">
+    <span class="annex-tag">Annex M // DSI-734G-A13 // Known Unknowns Register</span>
+    <h2 class="annex-title">Known Unknowns Register</h2>
+    <p class="annex-sub">The dangerous unknown is not the invisible thing. It is the visible thing nobody has named correctly yet.</p>
+  </div>
+
+  <table class="doc-table">
+    <thead><tr><th>Known Unknown</th><th>Why It Matters</th><th>Operator Response</th></tr></thead>
+    <tbody>
+      <tr><td>Synthetic consensus</td><td>Fake agreement can become socially real before factual review catches up.</td><td>Measure coordination, source diversity, persona depth, and phrase repetition.</td></tr>
+      <tr><td>Provenance trap</td><td>A verified path does not equal verified meaning, and missing metadata does not equal fake.</td><td>Treat provenance as positive context, never as a truth oracle.</td></tr>
+      <tr><td>Screenshot-native proof</td><td>The viral object may be a rectangle detached from source, time, and accountability.</td><td>Recover primary object or label unresolved.</td></tr>
+      <tr><td>Agentic persuasion</td><td>Influence can become adaptive, conversational, tireless, and personalised.</td><td>Ask whether the message is responding to you or training you.</td></tr>
+      <tr><td>Slop saturation</td><td>Attention can be buried under coherent emptiness and low-authorship output.</td><td>Prefer authored, witnessed, accountable, recoverable material.</td></tr>
+      <tr><td>Trust collapse</td><td>People may stop believing true things because false things became too common.</td><td>Build verification rituals, correction culture, and public receipts.</td></tr>
+      <tr><td>Archive rot</td><td>Truth can vanish by becoming hard to retrieve, not by being disproven.</td><td>Save originals, dates, URLs, files, transcripts, and uncertainty notes.</td></tr>
+      <tr><td>Inner author drift</td><td>The feed can shape taste, humour, anger, desire, and urgency until borrowed thought feels native.</td><td>Ask: would I still think this if nobody rewarded me for thinking it?</td></tr>
+    </tbody>
+  </table>
+
+  <div class="copy-bank">
+    <button class="copy-chip" type="button" data-copy="KNOWN UNKNOWNS SEVEN: Who authored this? Who amplified this? Who benefits from urgency? What emotion arrived before evidence? What was removed before I saw it? Is this consensus or synthetic weather? Would I still believe it if the feed stopped rewarding me?">Copy Known Unknowns Seven</button>
+    <button class="copy-chip" type="button" data-copy="SCREENSHOT RULE: A screenshot is a lead, not a source. Recover the primary object or mark the claim unresolved.">Copy Screenshot Rule</button>
+    <button class="copy-chip" type="button" data-copy="HUMAN LOCK: If a synthetic object could cause a real-world action, the action requires out-of-channel human verification.">Copy Human Lock</button>
+  </div>
+
+  <!-- ANNEX N -->
+  <div class="annex-header" id="annexn">
+    <span class="annex-tag">Annex N // DSI-734G-A14 // Measurement Stack</span>
+    <h2 class="annex-title">Three Dials for Synthetic Weather</h2>
+    <p class="annex-sub">A metric without a threshold is dashboard theatre. Every dial requires a response.</p>
+  </div>
+
+  <table class="doc-table">
+    <thead><tr><th>Dial</th><th>What To Measure</th><th>When It Turns Red</th><th>Response</th></tr></thead>
+    <tbody>
+      <tr><td>SCI</td><td>Coordination, account age, repeated phrasing, low persona depth, cross-platform bursts.</td><td>Many mouths repeat one frame faster than organic uptake.</td><td>Do not read the swarm as public opinion. Quarantine the frame and audit origin.</td></tr>
+      <tr><td>SSR</td><td>Ratio of derivative low-verification posts to recoverable primary-source posts.</td><td>Analysts spend more time finding sources than evaluating claims.</td><td>Slow sharing, prioritise primary objects, publish source maps.</td></tr>
+      <tr><td>TCI</td><td>Uncertainty, correction fatigue, unresolved-claim backlog, collapse into blanket cynicism.</td><td>People say "nothing is real" more than they ask "how do we check?"</td><td>Make verification visible, repeatable, calm, and communal.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="blade-line">When everything can be fake, truth needs ritual.</div>
+
+  <!-- ANNEX O -->
+  <div class="annex-header" id="annexo">
+    <span class="annex-tag">Annex O // DSI-734G-A15 // Deep Research Source Pack</span>
+    <h2 class="annex-title">Public Signal Grounding — Source Pack</h2>
+    <p class="annex-sub">Grounding links for the 734G refit. These are signal anchors, not scripture.</p>
+  </div>
+
+  <div class="source-note">
+    The 734G refit is grounded in public signals around social/video news consumption, AI risk management, provenance standards, watermarking, recommender systems, deepfake incidents, screenshot misinformation, and regulatory disclosure. The doctrine remains artistic-operational; the source pack exists to keep the blade from floating into pure myth.
+  </div>
+
+  <div class="source-grid">
+    <a class="source-link" href="https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2025/dnr-executive-summary" target="_blank" rel="noopener"><strong>Reuters Institute</strong>Digital News Report 2025: social/video shift, trust, and AI-news interfaces.</a>
+    <a class="source-link" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener"><strong>NIST</strong>Generative AI Profile: lifecycle, ecosystem risks, provenance, societal trust.</a>
+    <a class="source-link" href="https://c2pa.org/" target="_blank" rel="noopener"><strong>C2PA</strong>Content Credentials: origin and edit-history standard for digital media.</a>
+    <a class="source-link" href="https://spec.c2pa.org/specifications/specifications/2.4/index.html" target="_blank" rel="noopener"><strong>C2PA Spec 2.4</strong>Technical specifications, AI/ML guidance, security and harms modelling.</a>
+    <a class="source-link" href="https://deepmind.google/discover/blog/watermarking-ai-generated-text-and-video-with-synthid/" target="_blank" rel="noopener"><strong>Google DeepMind</strong>SynthID watermarking: useful layer, not a silver bullet.</a>
+    <a class="source-link" href="https://newsroom.tiktok.com/en-us/how-tiktok-recommends-videos-for-you" target="_blank" rel="noopener"><strong>TikTok</strong>For You recommendation signals and user-control claims.</a>
+    <a class="source-link" href="https://blog.youtube/inside-youtube/on-youtubes-recommendation-system/" target="_blank" rel="noopener"><strong>YouTube</strong>Recommendation system explanation and viewing influence.</a>
+    <a class="source-link" href="https://eur-lex.europa.eu/eli/reg/2022/2065/oj" target="_blank" rel="noopener"><strong>EU DSA</strong>Recommender transparency and non-profiling option for very large platforms.</a>
+    <a class="source-link" href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" target="_blank" rel="noopener"><strong>EU AI Act</strong>Synthetic content and deepfake transparency obligations.</a>
+    <a class="source-link" href="https://www.reuters.com/technology/artificial-intelligence/lingo-telecom-agrees-1-million-fine-over-ai-generated-biden-robocalls-2024-08-21/" target="_blank" rel="noopener"><strong>Reuters</strong>AI-generated Biden robocall case and enforcement signal.</a>
+    <a class="source-link" href="https://www.theguardian.com/world/2024/feb/05/hong-kong-company-deepfake-video-conference-call-scam" target="_blank" rel="noopener"><strong>The Guardian</strong>Hong Kong deepfake video-call scam; synthetic authority in a real decision.</a>
+    <a class="source-link" href="https://arxiv.org/abs/2306.08236" target="_blank" rel="noopener"><strong>Research</strong>Screenshot misinformation: why screenshots require source recovery.</a>
+  </div>
+
+  <div class="copy-bank">
+    <button class="copy-chip" type="button" data-copy="TRUST-PATH VERIFICATION: Origin, transformation, amplification, emotion, recoverability, embodiment.">Copy Trust-Path Ritual</button>
+    <button class="copy-chip" type="button" data-copy="THREE DIALS: SCI measures synthetic consensus. SSR measures slop saturation. TCI measures trust collapse.">Copy Three Dials</button>
+    <button class="copy-chip" type="button" data-copy="FINAL 734G SEAL: The future will not arrive as a lie. It will arrive as a mood. Name the mood before it names you.">Copy 734G Seal</button>
+  </div>
+
+
+  <!-- FINAL SEAL -->
+  <div class="final-seal" id="final">
+    <div class="inline-stamp" style="margin-bottom:20px;display:block;width:fit-content;margin-left:auto;margin-right:auto;">JOINT OPERATIONAL DISPATCH // JOD-734G</div>
+
+    <h2 class="final-seal-title">Final Seal // 734G</h2>
+    <div class="final-seal-line"></div>
+
+    <div class="pull-quote" style="max-width:600px;margin:0 auto 32px;">
+      <p class="pull-quote-text">The greatest danger is not that the world will frame you. The greatest danger is that the frame will arrive wearing your own voice, your own taste, your own urgency, and your own reflection. The Horizon Key is not prediction. It is disciplined authorship under synthetic weather: signal, vector, human cost, clean countermeasure.</p>
+    </div>
+
+    <div class="prose" style="text-align:center;max-width:500px;margin:0 auto 32px;">
+      <p>Sovereignty is not a destination. It is the constant, conscious act of refusal against invisible steering — and the equally conscious act of building small realities that can be trusted, repaired, and lived inside.</p>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0;margin:32px 0;">
+      <div class="sig-block">
+        <div class="sig-name"><span class="redacted">█████████████████</span></div>
+        <div class="sig-title">Cardinal Prefect, Scrinium Apostolicum<br>VA-734G-ALPHA</div>
+      </div>
+      <div class="sig-block">
+        <div class="sig-name"><span class="redacted">█████████████████</span></div>
+        <div class="sig-title">Director, Directorate of Strategic Influence<br>CIA-734G-OMEGA</div>
+      </div>
+    </div>
+
+    <div class="final-seal-line"></div>
+
+    <div class="inline-stamp" style="display:inline-block;margin:16px 8px;">JOD-734G // DISPERSAL COMPLETE</div>
+    <div class="inline-stamp" style="display:inline-block;margin:16px 8px;">THE FEED IS NOT YOUR GOD</div>
+
+    <p style="margin-top:40px;font-family:'DM Serif Display',serif;font-style:italic;font-size:16px;color:var(--gold-dim);">Blue Snake Studios</p>
+    <p style="font-family:'DM Mono',monospace;font-size:10px;color:var(--white-faint);letter-spacing:0.2em;margin-top:4px;">FASTER THAN LIGHTNING · SLOWER THAN MOSS</p>
+  </div>
+
+</div><!-- /doc-container -->
+
+<!-- FIXED NAV -->
+<nav class="nav-bar">
+  <a href="#top" class="nav-btn">▲ TOP</a>
+  <a href="#interlude" class="nav-btn">INTRO</a>
+  <a href="#ch1" class="nav-btn">CH 1–5</a>
+  <a href="#ch6" class="nav-btn">CH 6–9</a>
+  <a href="#ch10" class="nav-btn">CH 10–17</a>
+  <a href="#annexb" class="nav-btn">ANNEX</a>
+  <a href="#annexg" class="nav-btn">TOOLS</a>
+  <a href="#annexi" class="nav-btn">NEW-NEW</a>
+  <a href="#ch18" class="nav-btn">HORIZON</a>
+  <a href="#annexk" class="nav-btn">RADAR</a>
+  <a href="#annexm" class="nav-btn">KNOWN</a>
+  <a href="#annexo" class="nav-btn">SOURCES</a>
+  <a href="#final" class="nav-btn">SEAL</a>
+</nav>
+
+<script>
+
+  // Black Lantern interactive console
+  const frameLines = [
+    'SCAN RESULT → Primary pressure: urgency. Slow the clock before accepting the command.',
+    'SCAN RESULT → Primary trap: undefined noun. Define the noun before entering the argument.',
+    'SCAN RESULT → Primary hook: guilt. Ask who benefits from your automatic confession.',
+    'SCAN RESULT → Primary fog: false binary. Find the third door and make it visible.',
+    'SCAN RESULT → Primary wound: old script wearing a new face. Name the script, then choose the room.',
+    'SCAN RESULT → Primary defense: silence. Say the clean sentence, stop, let coherence work.',
+    'SCAN RESULT → Primary repair: consent. Make the steering visible and invite agreement.',
+    'SCAN RESULT → New-New signature: costume flood. Same skeleton, many masks. Find the repeated command.',
+    'SCAN RESULT → New-New defense: latency. Delay response until urgency stops pretending to be truth.',
+    'SCAN RESULT → New-New hygiene: provenance. Do not carry what you cannot trace.',
+    'SCAN RESULT → Horizon vector: agentic speech. Mark where human consent is visible.',
+    'SCAN RESULT → Horizon defense: authorship. Write the rough sentence before optimisation.',
+    'SCAN RESULT → Horizon repair: receipts. Origin, date, source, uncertainty, correction path.',
+    'SCAN RESULT → Known unknown: synthetic consensus. Measure agreement before trusting it.',
+    'SCAN RESULT → 734G ritual: trust path. Origin, transformation, amplification, emotion, recoverability, embodiment.',
+    'SCAN RESULT → Human lock required. If it moves money, safety, voting, or reputation, verify out-of-channel.'
+  ];
+
+  const spinFrame = document.getElementById('spinFrame');
+  const oracleReadout = document.getElementById('oracleReadout');
+  if (spinFrame && oracleReadout) {
+    spinFrame.addEventListener('click', () => {
+      const line = frameLines[Math.floor(Math.random() * frameLines.length)];
+      oracleReadout.textContent = line;
+    });
+  }
+
+  document.querySelectorAll('[data-copy]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const original = btn.textContent;
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copy);
+        btn.textContent = 'Copied';
+      } catch (err) {
+        btn.textContent = 'Copy manually';
+      }
+      setTimeout(() => { btn.textContent = original; }, 1400);
+    });
+  });
+
+  const printBrief = document.getElementById('printBrief');
+  if (printBrief) printBrief.addEventListener('click', () => window.print());
+
+  // Progress bar
+  const progressBar = document.getElementById('progressBar');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = progress + '%';
+  });
+
+  // Subtle chapter entrance
+  const chapters = document.querySelectorAll('.chapter, .annex-header, .interlude');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.05 });
+
+  chapters.forEach(ch => {
+    ch.style.opacity = '0';
+    ch.style.transform = 'translateY(12px)';
+    ch.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(ch);
+  });
+</script>
+</body>
+</html>
