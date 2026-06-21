@@ -13,16 +13,13 @@
       slug: 'start-here',
       label: 'Start Here',
       eyebrow: 'Studio overview · Frankston, Australia',
-      title: 'Ideas made visible, audible and useful.',
+      title: 'Patterns become worlds.',
       statement: 'The Moss Man is the creator. Blue $nake Studio is the world-building studio. blkck2.com is the portal.',
-      pageTitle: 'Blue $nake Studio — Art, Music & Learning · blkck2.com',
+      studioDescription: 'Blue $nake Studio builds child-safe learning tools, mythic music worlds, visual art and symbolic engines — all connected through The Moss Man\'s pattern-based universe.',
+      pageTitle: 'The Moss Man / Blue $nake Studio — Art, Music, Meta-Pet & Moss 60',
       pageDescription: 'The Moss Man is the creator. Blue $nake Studio is the world-building studio. blkck2.com is the portal. Art, music, Meta-Pet, Moss 60 and teacher tools from Frankston, Australia.',
       startHere: true,
-      details: [
-        'An independent creative practice by Tom from Frankston: visual art, music worlds, privacy-first learning tools, teacher supports, print packs and Moss 60 number systems — one connected body of work.',
-        'Discover Meta-Pet (child-safe STEAM learning), the Teacher\'s Secret Cheatsheet (behaviour support templates), Black Wing Crew / Neon Venom (2026 LP) and Gallery Rooms.',
-        'Schools, councils, collaborators and creative partners — choose your door below and follow the relevant project link.'
-      ],
+      details: [],
       links: [
         { label: 'Try Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link' },
         { label: 'Download Teacher Pack', href: 'https://teachers-secret-cheatsheet.vercel.app/', className: 'album-link' },
@@ -571,29 +568,99 @@
   }
 
   function startHereAudience() {
-    const cards = [
-      ['Schools & educators', 'Privacy-conscious learning concepts, classroom resources and practical behaviour-support tools.', '#teacher-tools'],
-      ['Councils & community', 'Local cultural projects, bilingual song pathways and careful research-led collaboration.', '#frankston-fuji'],
-      ['Art & music', 'Original paintings, visual worlds, Black Wing Crew releases and short-form video.', '#black-wing-crew'],
-      ['Print & promotion', 'Posters, QR cards, sticker sheets and production-ready campaign assets.', '#print-street-pack']
+    const doors = [
+      {
+        audience: 'Schools / Parents',
+        what: 'Child-safe learning tools and classroom support.',
+        detail: 'Meta-Pet digital companion, Teacher\'s Secret Cheatsheet, behaviour-support templates, privacy-first design — no ads, no trackers.',
+        cta: 'Try Meta-Pet', href: 'https://www.bluesnakestudios.com/'
+      },
+      {
+        audience: 'Art / Music / Culture',
+        what: 'Mythic music worlds, visual art, print packs and lore.',
+        detail: 'Black Wing Crew, Neon Venom LP, gallery rooms, sticker sheets, lyric posters, YouTube and street print drops.',
+        cta: 'Enter Black Wing Crew', href: 'https://blackwingcrew.netlify.app/'
+      },
+      {
+        audience: 'Theory / Invention',
+        what: 'Visual number system, symbolic engine and digital DNA.',
+        detail: 'Moss 60 base-60 geometry, Semantic Sovereignty doctrine, interactive glyph engine, proof layers and pattern logic.',
+        cta: 'Explore Moss 60', href: '#moss60'
+      }
     ];
     return `
-      <section class="start-here-pack" aria-label="Who this page is for">
+      <section class="start-here-pack" aria-label="Choose your door">
         <div class="section-heading">
-          <p class="eyebrow">Find your way in</p>
-          <h2>Four ways to work with the studio.</h2>
-          <p>Choose the area closest to your interests, then explore the related projects and working examples.</p>
+          <p class="eyebrow">Choose your door</p>
+          <h2>Three ways into the studio.</h2>
         </div>
         <div class="start-card-grid">
-          ${cards.map(([label, copy, href]) => `
-            <a class="start-card" href="${escapeHtml(href)}">
-              <span>${escapeHtml(label)}</span>
-              <p>${escapeHtml(copy)}</p>
-              <strong>Explore →</strong>
+          ${doors.map(d => `
+            <a class="start-card" href="${escapeHtml(d.href)}"${externalAttrs(d.href)}>
+              <span>${escapeHtml(d.audience)}</span>
+              <strong>${escapeHtml(d.what)}</strong>
+              <p>${escapeHtml(d.detail)}</p>
+              <em>${escapeHtml(d.cta)} →</em>
             </a>
           `).join('')}
         </div>
       </section>
+    `;
+  }
+
+  function featuredProjectsGrid() {
+    const projects = [
+      { label: 'Meta-Pet', desc: 'Privacy-first digital pet & classroom learning tool.', href: '#meta-pet' },
+      { label: 'Teacher\'s Secret Cheatsheet', desc: 'Behaviour-support templates for stretched teachers.', href: 'https://teachers-secret-cheatsheet.vercel.app/' },
+      { label: 'Black Wing Crew / Neon Venom', desc: '2026 LP: songs, lyric posters, QR drops, streaming.', href: 'https://blackwingcrew.netlify.app/' },
+      { label: 'Moss 60', desc: 'Visual number system — base-60 digital DNA & glyph engine.', href: '#moss60' },
+      { label: 'Semantic Sovereignty', desc: 'Doctrine on language, framing, meaning and narrative defence.', href: '#moss60' },
+      { label: 'Visual Worlds', desc: '10 gallery rooms: mythology, portraits, parody, print.', href: '#visual-worlds' },
+      { label: 'Frankston → Fuji', desc: 'Bilingual sister-city song, Japanese practice & taiko.', href: '#frankston-fuji' },
+      { label: 'Black Omen / Waahn', desc: 'Bunurong-Boonwurrung language research map.', href: '#black-omen-waahn' }
+    ];
+    return `
+      <section class="featured-projects" aria-label="Studio projects">
+        <div class="section-heading">
+          <p class="eyebrow">What we make</p>
+          <h2>Studio projects.</h2>
+        </div>
+        <div class="featured-project-grid">
+          ${projects.map(p => `
+            <a class="featured-project-card" href="${escapeHtml(p.href)}"${externalAttrs(p.href)}>
+              <strong>${escapeHtml(p.label)}</strong>
+              <p>${escapeHtml(p.desc)}</p>
+            </a>`).join('')}
+        </div>
+      </section>
+    `;
+  }
+
+  function startHereAbout() {
+    return `
+      <section class="studio-about" aria-label="About the studio">
+        <div class="section-heading">
+          <p class="eyebrow">The Moss Man / Tom Moss · Frankston, Australia</p>
+          <h2>A studio without hard borders.</h2>
+        </div>
+        <div class="about-body">
+          <p>Tom is a hands-on creator, artist, songmaker, behavioural thinker, digital developer, pattern-builder and world-maker. He has spent years building connected systems where a painting informs a number, a chant informs a classroom tool, and a black cockatoo feather threads through all of it.</p>
+          <p>Blue $nake Studio is his production entity. blkck2.com is the portal. The work covers visual art, music, education technology and symbolic systems — held together by a single principle: <em>patterns become worlds.</em></p>
+          <div class="links-row">
+            <a class="project-link album-link" href="#moss-man">Meet The Moss Man →</a>
+            <a class="project-link" href="mailto:bluesssnakestudio@gmail.com">Contact the studio</a>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  function panelFooter() {
+    return `
+      <footer class="panel-footer" role="contentinfo">
+        <p class="footer-brand">Created by <strong>The Moss Man</strong> / <strong>Blue $nake Studio</strong> — <a href="https://blkck2.com/">blkck2.com</a> — <a href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener noreferrer">@blkck2</a></p>
+        <p class="footer-contact"><a href="mailto:bluesssnakestudio@gmail.com">bluesssnakestudio@gmail.com</a> · <a href="mailto:blkck2@gmail.com">blkck2@gmail.com</a></p>
+      </footer>
     `;
   }
 
@@ -806,14 +873,18 @@
             <p class="eyebrow">${escapeHtml(section.eyebrow)}</p>
             <h1>${escapeHtml(section.title)}</h1>
             <p class="statement">${escapeHtml(section.statement)}</p>
+            ${section.studioDescription ? `<p class="studio-description">${escapeHtml(section.studioDescription)}</p>` : ''}
             ${section.textualInstallation ? textualInstallation() : ''}
             ${section.oldVicState ? oldVicStateFeature() : ''}
             ${linksRow(section)}
-            <ul class="details">${(section.details || []).map(detail => `<li>${escapeHtml(detail)}</li>`).join('')}</ul>
+            ${!section.startHere ? `<ul class="details">${(section.details || []).map(detail => `<li>${escapeHtml(detail)}</li>`).join('')}</ul>` : ''}
             ${projectProofStrip(section)}
             ${section.startHere ? startHereAudience() : ''}
+            ${section.startHere ? featuredProjectsGrid() : ''}
+            ${section.startHere ? startHereAbout() : ''}
             ${section.startHere ? collectionGrid() : ''}
             ${section.rooms ? roomsShowcase() : ''}
+            ${panelFooter()}
           </section>
           ${hasGallery ? `
             <section class="panel-view panel-images-view" id="view-${section.slug}-images" role="tabpanel" aria-labelledby="subtab-${section.slug}-images" data-panel-view-panel="images" hidden>
