@@ -6,7 +6,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital poster',
     type: 'Feature artwork',
     year: '2026',
-    image: 'assets/01_auralia/auralia_cosmic_poster_v1.png',
+    image: '01_auralia/auralia_cosmic_poster_v1.png',
     tags: ['Auralia', 'black cockatoo', 'serpent', 'butterfly', 'gold', 'omen', 'B$S'],
     description: 'A major Auralia key image: black birds, black butterflies, gold star-map ornament, torii imagery, serpent energy, and the line “the sign dreams the seer / the seer dreams the sign”.'
   },
@@ -17,7 +17,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital character concept',
     type: 'Character world',
     year: '2026',
-    image: 'assets/01_auralia/auralia_serpent_cockatoo_profile_v1.jpg',
+    image: '01_auralia/auralia_serpent_cockatoo_profile_v1.jpg',
     tags: ['Auralia', 'profile', 'serpent', 'black cockatoo', 'blue gold', 'muse'],
     description: 'A refined side-profile character concept combining Auralia, the yellow-tailed black cockatoo, serpent circle, gold glow and Blue Snake Studios visual language.'
   },
@@ -28,7 +28,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital poem poster',
     type: 'Poetic concept',
     year: '2026',
-    image: 'assets/01_auralia/auralia_poetic_profile_moon_dust_v1.png',
+    image: '01_auralia/auralia_poetic_profile_moon_dust_v1.png',
     tags: ['Auralia', 'poetry', 'moon dust', 'serpent', 'cockatoo', 'recursive text'],
     description: 'A lyric-poem visual exploring presence, code, memory and the door motif. Useful for the Auralia mythology and spoken-word poster system.'
   },
@@ -39,7 +39,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital lyric poster',
     type: 'Lyric poster',
     year: '2026',
-    image: 'assets/02_insidious_rhythms/insidious_rhythms_gold_lyric_poster_v1.png',
+    image: '02_insidious_rhythms/insidious_rhythms_gold_lyric_poster_v1.png',
     tags: ['Insidious Rhythms', 'poetry', 'serpent', 'cockatoo', 'gold', 'recursion', 'memetics'],
     description: 'A black-and-gold lyric poster about hidden cadence, framing, recursion and the architecture of persistence.'
   },
@@ -50,7 +50,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital lyric poster',
     type: 'Lyric poster',
     year: '2026',
-    image: 'assets/02_insidious_rhythms/insidious_rhythms_blue_lyric_poster_v1.png',
+    image: '02_insidious_rhythms/insidious_rhythms_blue_lyric_poster_v1.png',
     tags: ['Insidious Rhythms', 'poetry', 'metronome', 'clock', 'serpent', 'night blue'],
     description: 'A cooler blue-toned lyric poster using a clock, metronome, candles and serpent imagery to emphasise time, rhythm and concealed influence.'
   },
@@ -61,7 +61,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital lyric sheet',
     type: 'Chant sheet',
     year: '2026',
-    image: 'assets/03_black_wing_crew/black_omen_black_wing_chant_sheet_v1.png',
+    image: '03_black_wing_crew/black_omen_black_wing_chant_sheet_v1.png',
     tags: ['Black Wing Crew', 'Black Omen', 'chant', 'black birds', 'butterflies', 'rowing song'],
     description: 'A dark chant sheet combining Black Omen verse, call-and-response crew lines, row/oar rhythm and the Black Wing Crew identity.'
   },
@@ -72,7 +72,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Sticker / QR design',
     type: 'Sticker concept',
     year: '2026',
-    image: 'assets/04_neon_venom/neon_venom_qr_open_the_portal_v1.png',
+    image: '04_neon_venom/neon_venom_qr_open_the_portal_v1.png',
     tags: ['Neon Venom', 'QR', 'sticker', 'black birds', 'pink', 'green', 'portal'],
     description: 'A QR sticker concept designed as a portal into the Neon Venom / Black Wing Crew music world.'
   },
@@ -83,7 +83,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Sticker / QR design',
     type: 'Sticker concept',
     year: '2026',
-    image: 'assets/04_neon_venom/neon_venom_qr_enter_the_dream_v1.png',
+    image: '04_neon_venom/neon_venom_qr_enter_the_dream_v1.png',
     tags: ['Neon Venom', 'QR', 'sticker', 'enter the dream', 'black bird', 'neon'],
     description: 'A second QR sticker direction with symmetrical bird forms, neon typography and a stronger “enter the dream” call-to-action.'
   },
@@ -94,7 +94,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Sticker / merch graphic',
     type: 'Sticker concept',
     year: '2026',
-    image: 'assets/04_neon_venom/neon_venom_black_birds_dream_sticker_v1.png',
+    image: '04_neon_venom/neon_venom_black_birds_dream_sticker_v1.png',
     tags: ['Neon Venom', 'black birds dream', 'sticker', 'wings', 'neon', 'merch'],
     description: 'A bold merch-style graphic using mirrored birds and wing forms with the phrase “black birds dream”.'
   },
@@ -105,7 +105,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Physical painting / photographed artwork',
     type: 'Painting',
     year: '2026',
-    image: 'assets/05_paintings/blue_snake_studios_woman_cockatoo_painting_v1.jpg',
+    image: '05_paintings/blue_snake_studios_woman_cockatoo_painting_v1.jpg',
     tags: ['painting', 'Blue Snake Studios', 'cockatoo', 'halo', 'gold blue'],
     description: 'A hand-made Blue Snake Studios painting featuring the recurring woman-and-cockatoo motif, halo, leaves and soft blue/gold palette.'
   },
@@ -116,7 +116,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Physical painting / photographed artwork',
     type: 'Painting',
     year: '2026',
-    image: 'assets/05_paintings/auralia_red_hair_halo_cockatoo_painting_v1.jpg',
+    image: '05_paintings/auralia_red_hair_halo_cockatoo_painting_v1.jpg',
     tags: ['painting', 'Auralia', 'red hair', 'cockatoo', 'halo'],
     description: 'A physical Auralia painting with red hair, gold halo, cockatoo companion and an early mythic portrait style.'
   },
@@ -127,7 +127,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Physical painting / photographed artwork',
     type: 'Painting',
     year: '2026',
-    image: 'assets/05_paintings/auralia_spiral_listener_painting_v1.jpg',
+    image: '05_paintings/auralia_spiral_listener_painting_v1.jpg',
     tags: ['painting', 'Auralia', 'spiral listener', 'bird', 'symbolic sound'],
     description: 'A handmade piece showing Auralia as the Spiral Listener: sound, breath, symbol and bird companion moving from sketch into myth.'
   },
@@ -138,7 +138,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Sketch / canvas board',
     type: 'Sketch board',
     year: '2026',
-    image: 'assets/05_paintings/neon_venom_sketch_board_v1.jpg',
+    image: '05_paintings/neon_venom_sketch_board_v1.jpg',
     tags: ['Neon Venom', 'sketch', 'canvas', 'app concept', 'B$S'],
     description: 'A rough multi-panel sketch board for Neon Venom / BlackWingCrew app concepts, logos and character language.'
   },
@@ -149,7 +149,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Physical painting / photographed artwork',
     type: 'Painting',
     year: '2026',
-    image: 'assets/05_paintings/two_muses_mirror_cockatoo_painting_v1.jpg',
+    image: '05_paintings/two_muses_mirror_cockatoo_painting_v1.jpg',
     tags: ['painting', 'two women', 'mirror', 'cockatoos', 'blue gold'],
     description: 'A two-figure mirror composition with cockatoo companions, circular energy and early Blue Snake Studios colour language.'
   },
@@ -160,7 +160,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Logo design',
     type: 'Brand mark',
     year: '2026',
-    image: 'assets/06_branding/bss_cockatoo_flat_logo_v1.png',
+    image: '06_branding/bss_cockatoo_flat_logo_v1.png',
     tags: ['B$S', 'logo', 'cockatoo', 'brand mark', 'flat design'],
     description: 'A flat B$S cockatoo mark using the yellow-tailed black cockatoo as studio totem and brand icon.'
   },
@@ -171,7 +171,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Logo design',
     type: 'Brand identity',
     year: '2026',
-    image: 'assets/06_branding/blue_snake_studios_gold_logo_v1.png',
+    image: '06_branding/blue_snake_studios_gold_logo_v1.png',
     tags: ['Blue Snake Studios', 'logo', 'gold', 'cockatoo', 'serpent', 'brand identity'],
     description: 'A gold-on-green Blue Snake Studios identity mark combining woman profile, cockatoo and serpent/spiral elements.'
   },
@@ -182,7 +182,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Linework diagram',
     type: 'Symbol system',
     year: '2026',
-    image: 'assets/07_moss60_geometry/moss60_sacred_geometry_linework_v1.png',
+    image: '07_moss60_geometry/moss60_sacred_geometry_linework_v1.png',
     tags: ['MOSS60', 'geometry', 'symbol system', 'linework', 'sacred geometry'],
     description: 'A linework diagram for the MOSS60 / symbolic-geometry side of the studio: circles, triangles, grids, arcs and structured pattern language.'
   },
@@ -193,7 +193,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Reference collage',
     type: 'Reference',
     year: '2026',
-    image: 'assets/08_references/yellow_tailed_black_cockatoo_reference_collage_v1.jpg',
+    image: '08_references/yellow_tailed_black_cockatoo_reference_collage_v1.jpg',
     tags: ['reference', 'yellow-tailed black cockatoo', 'bird', 'totem'],
     description: 'Reference material for the yellow-tailed black cockatoo: posture, wing shape, yellow cheek patch, tail markings and character attitude.'
   },
@@ -204,7 +204,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Reference image',
     type: 'Reference',
     year: '2026',
-    image: 'assets/08_references/yellow_tailed_black_cockatoo_tail_reference_v1.jpg',
+    image: '08_references/yellow_tailed_black_cockatoo_tail_reference_v1.jpg',
     tags: ['reference', 'cockatoo', 'tail', 'yellow markings'],
     description: 'A close reference for the cockatoo tail pattern and yellow under-tail flash used across the B$S/Auralia imagery.'
   },
@@ -215,7 +215,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Character reference',
     type: 'Reference',
     year: '2026',
-    image: 'assets/08_references/cockatoo_gentleman_character_reference_v1.png',
+    image: '08_references/cockatoo_gentleman_character_reference_v1.png',
     tags: ['reference', 'cockatoo', 'character', 'gentleman', 'dark portrait'],
     description: 'A dark anthropomorphic cockatoo portrait reference useful for character, mascot and mythic studio-world directions.'
   },
@@ -226,7 +226,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Photo reference',
     type: 'Mood reference',
     year: '2026',
-    image: 'assets/09_mood/fire_log_mood_texture_v1.jpg',
+    image: '09_mood/fire_log_mood_texture_v1.jpg',
     tags: ['mood', 'fire', 'texture', 'glow', 'atmosphere'],
     description: 'A dark fire and ember reference for glow, atmosphere, smoke, ash and texture studies.'
   },
@@ -238,7 +238,7 @@ window.BSS_GALLERY_ITEMS = [
     type: 'Video',
     year: '2026',
     mediaType: 'video',
-    video: 'assets/10_video/black_wing_video_source_01.mp4',
+    video: '10_video/black_wing_video_source_01.mp4',
     tags: ['video', 'Black Wing Crew', 'source', 'motion', 'process'],
     description: 'Raw Black Wing video source material for music visuals, motion edits and portfolio process reference.'
   },
@@ -250,7 +250,7 @@ window.BSS_GALLERY_ITEMS = [
     type: 'Video',
     year: '2026',
     mediaType: 'video',
-    video: 'assets/10_video/video_source_02.mp4',
+    video: '10_video/video_source_02.mp4',
     tags: ['video', 'source', 'process', 'motion'],
     description: 'Additional raw video source for building reels, background loops, gallery edits and music-world visuals.'
   },
@@ -262,7 +262,7 @@ window.BSS_GALLERY_ITEMS = [
     type: 'Video',
     year: '2026',
     mediaType: 'video',
-    video: 'assets/10_video/video_source_03.mp4',
+    video: '10_video/video_source_03.mp4',
     tags: ['video', 'source', 'process', 'motion'],
     description: 'Additional video material for process display, Black Wing edits and future promotional reels.'
   },
@@ -274,7 +274,7 @@ window.BSS_GALLERY_ITEMS = [
     type: 'Video',
     year: '2026',
     mediaType: 'video',
-    video: 'assets/10_video/video_source_04.mp4',
+    video: '10_video/video_source_04.mp4',
     tags: ['video', 'source', 'process', 'motion'],
     description: 'Additional video source for the Process / Sketchbook section and future Black Wing Crew visuals.'
   }
@@ -287,7 +287,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Printable line art',
     type: 'Colouring page',
     year: '2026',
-    image: 'assets/11_colouring_pages/auralia-black-birds-dream-landscape-colouring.png',
+    image: '11_colouring_pages/auralia-black-birds-dream-landscape-colouring.png',
     tags: ['colouring page', 'Auralia', 'cockatoo', 'serpent', 'butterflies'],
     description: 'An ornate landscape colouring page featuring Auralia, cockatoos, serpents, butterflies and moonlit ornament.'
   },
@@ -298,7 +298,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Printable line art',
     type: 'Colouring page',
     year: '2026',
-    image: 'assets/11_colouring_pages/auralia-butterfly-flute-colouring.png',
+    image: '11_colouring_pages/auralia-butterfly-flute-colouring.png',
     tags: ['colouring page', 'Auralia', 'flute', 'butterflies', 'birds'],
     description: 'A detailed portrait colouring page with flute, flower garlands, birds, butterflies and ceremonial jewellery.'
   },
@@ -309,7 +309,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Printable line art',
     type: 'Colouring page',
     year: '2026',
-    image: 'assets/11_colouring_pages/auralia-omen-portrait-colouring.png',
+    image: '11_colouring_pages/auralia-omen-portrait-colouring.png',
     tags: ['colouring page', 'Auralia', 'omen', 'cockatoo', 'serpent'],
     description: 'A poster-format colouring page combining the Auralia portrait, cockatoo, serpent, butterflies and omen text.'
   },
@@ -320,7 +320,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Printable line art',
     type: 'Colouring page',
     year: '2026',
-    image: 'assets/11_colouring_pages/auralia-serpent-gateway-colouring.png',
+    image: '11_colouring_pages/auralia-serpent-gateway-colouring.png',
     tags: ['colouring page', 'Auralia', 'serpent', 'cockatoo', 'gateway'],
     description: 'An intricate Auralia colouring poster with celestial geometry, serpent, cockatoo and a moonlit gateway.'
   },
@@ -331,7 +331,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Printable line art',
     type: 'Colouring page',
     year: '2026',
-    image: 'assets/11_colouring_pages/moss-man-cockatoo-feather-colouring.png',
+    image: '11_colouring_pages/moss-man-cockatoo-feather-colouring.png',
     tags: ['colouring page', 'Moss Man', 'cockatoo', 'feather', 'character'],
     description: 'A friendly, bold-line character page of the Moss Man with a cockatoo companion and ceremonial feather.'
   },
@@ -342,7 +342,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Printable line art',
     type: 'Colouring page',
     year: '2026',
-    image: 'assets/11_colouring_pages/cockatoo-serpent-symbol-colouring.png',
+    image: '11_colouring_pages/cockatoo-serpent-symbol-colouring.png',
     tags: ['colouring page', 'cockatoo', 'serpent', 'symbol', 'B$S'],
     description: 'A clean symbolic colouring page pairing a cockatoo, serpent, portrait and Blue $nake Studio marks.'
   },
@@ -353,7 +353,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Printable art poster',
     type: 'Poster',
     year: '2026',
-    image: 'assets/11_colouring_pages/the-ruler-is-read-poster.png',
+    image: '11_colouring_pages/the-ruler-is-read-poster.png',
     tags: ['printable poster', 'record', 'ruler', 'gold', 'archive'],
     description: 'A dark navy and antique-gold companion poster exploring authority, observation, records and accountability.'
   },
@@ -364,7 +364,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Concept poster',
     year: '2026',
-    image: 'assets/12_meta_pet/moss60-dna-geometry-campaign.png',
+    image: '12_meta_pet/moss60-dna-geometry-campaign.png',
     tags: ['Moss 60', 'DNA', 'geometry', 'digital genome', 'Meta-Pet'],
     description: 'A blue-and-gold DNA helix inside a luminous geometric field, connecting Moss 60 pattern logic to Meta-Pet identity.'
   },
@@ -375,7 +375,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Product concept poster',
     year: '2026',
-    image: 'assets/12_meta_pet/meta-pet-digital-genomes-poster.png',
+    image: '12_meta_pet/meta-pet-digital-genomes-poster.png',
     tags: ['Meta-Pet', 'digital genome', 'learning companion', 'geometry', 'concept'],
     description: 'A polished Meta-Pet campaign poster presenting the companion as a character generated from a vast field of possible digital genomes.'
   },
@@ -386,7 +386,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: '3D concept render',
     type: 'Object concept',
     year: '2026',
-    image: 'assets/12_meta_pet/meta-pet-neon-ornament-concept.png',
+    image: '12_meta_pet/meta-pet-neon-ornament-concept.png',
     tags: ['Meta-Pet', 'ornament', 'neon', 'character object', 'prototype'],
     description: 'A playful physical-object concept that turns the Meta-Pet face and geometry language into a glowing collectible ornament.'
   },
@@ -397,7 +397,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital portrait',
     type: 'Concept artwork',
     year: '2026',
-    image: 'assets/12_meta_pet/meta-pet-companion-portrait.png',
+    image: '12_meta_pet/meta-pet-companion-portrait.png',
     tags: ['Meta-Pet', 'companionship', 'care', 'attention', 'human connection'],
     description: 'An intimate portrait expressing the quieter purpose behind Meta-Pet: comfort, trust and technology designed around care.'
   },
@@ -408,7 +408,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Research interface concept',
     year: '2026',
-    image: 'assets/13_black_omen/black-omen-research-map.png',
+    image: '13_black_omen/black-omen-research-map.png',
     tags: ['Black Omen', 'research map', 'Bunurong', 'Boonwurrung', 'consultation'],
     description: 'A cinematic visual map for organising countries, places, stories, language, knowledge and timelines within a consultation-first research process.'
   },
@@ -419,7 +419,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Research poster',
     year: '2026',
-    image: 'assets/13_black_omen/black-omen-language-working-map.png',
+    image: '13_black_omen/black-omen-language-working-map.png',
     tags: ['Black Omen', 'language research', 'cultural respect', 'permission', 'sources'],
     description: 'A working-map poster that clearly frames language research as unapproved, source-led and dependent on guidance from Bunurong language authorities.'
   },
@@ -430,7 +430,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Music-world poster',
     year: '2026',
-    image: 'assets/14_music_campaigns/old-vic-state-campaign.png',
+    image: '14_music_campaigns/old-vic-state-campaign.png',
     tags: ['Old Vic State', 'B$S Original', 'music', 'studio', 'campaign'],
     description: 'A black-and-gold music-world campaign connecting studio, state, story, spirit and survival through a grand civic visual language.'
   },
@@ -441,7 +441,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Music-world poster',
     year: '2026',
-    image: 'assets/14_music_campaigns/neon-venom-campaign.png',
+    image: '14_music_campaigns/neon-venom-campaign.png',
     tags: ['Neon Venom', 'B$S Original', 'music', 'neon', 'campaign'],
     description: 'The high-voltage counterpart to Old Vic State: a neon music campaign built for releases, screens, social promotion and live visual identity.'
   },
@@ -452,7 +452,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Concept overview',
     year: '2026',
-    image: 'assets/15_meta_pet_campaigns/meta-pet-process-overview.png',
+    image: '15_meta_pet_campaigns/meta-pet-process-overview.png',
     tags: ['Meta-Pet', 'process', 'observation', 'learning', 'evolution'],
     description: 'A wide-format overview introducing Meta-Pet as an observable learning process that changes through attention and care.'
   },
@@ -463,7 +463,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Classroom workflow poster',
     year: '2026',
-    image: 'assets/15_meta_pet_campaigns/teacher-one-device-flow.png',
+    image: '15_meta_pet_campaigns/teacher-one-device-flow.png',
     tags: ['teachers', 'classroom', 'workflow', 'privacy', 'lesson'],
     description: 'A classroom comparison showing how one clear, account-free lesson flow can reduce confusion and lost teaching time.'
   },
@@ -474,7 +474,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Classroom workflow poster',
     year: '2026',
-    image: 'assets/15_meta_pet_campaigns/teacher-transition-flow.png',
+    image: '15_meta_pet_campaigns/teacher-transition-flow.png',
     tags: ['teachers', 'transition', 'focus', 'classroom', 'workflow'],
     description: 'A teacher-facing visual about faster classroom transitions through a simple start, focus and continue sequence.'
   },
@@ -485,7 +485,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Humour campaign',
     year: '2026',
-    image: 'assets/15_meta_pet_campaigns/meta-pet-one-more-app-meme.png',
+    image: '15_meta_pet_campaigns/meta-pet-one-more-app-meme.png',
     tags: ['Meta-Pet', 'humour', 'Tamagotchi', 'education', 'campaign'],
     description: 'A playful campaign image acknowledging app fatigue while positioning Meta-Pet as an education-focused alternative.'
   },
@@ -496,7 +496,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Privacy poster',
     year: '2026',
-    image: 'assets/15_meta_pet_campaigns/meta-pet-no-login-privacy.png',
+    image: '15_meta_pet_campaigns/meta-pet-no-login-privacy.png',
     tags: ['Meta-Pet', 'privacy', 'no login', 'no tracking', 'classrooms'],
     description: 'A direct privacy promise for classrooms: no login, no tracking and no unnecessary data collection.'
   },
@@ -507,7 +507,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Nine-step framework',
     year: '2026',
-    image: 'assets/16_memetics_public_repair/duty-nine-step-framework.png',
+    image: '16_memetics_public_repair/duty-nine-step-framework.png',
     tags: ['memetics', 'awareness', 'duty', 'action', 'repair'],
     description: 'A nine-step visual framework moving from awareness and connection toward choice, duty and responsible action.'
   },
@@ -518,7 +518,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Public repair poster',
     year: '2026',
-    image: 'assets/16_memetics_public_repair/fear-is-their-tool-duty-is-ours.png',
+    image: '16_memetics_public_repair/fear-is-their-tool-duty-is-ours.png',
     tags: ['memetics', 'fear', 'duty', 'responsibility', 'repair'],
     description: 'A split-path poster contrasting fear-based control with documentation, responsibility, support and repair.'
   },
@@ -529,7 +529,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Public repair poster',
     year: '2026',
-    image: 'assets/16_memetics_public_repair/public-awareness-public-repair.png',
+    image: '16_memetics_public_repair/public-awareness-public-repair.png',
     tags: ['memetics', 'public awareness', 'repair', 'accountability', 'action'],
     description: 'A campaign critique arguing that warnings and slogans are insufficient without documentation, escalation and repair.'
   },
@@ -540,7 +540,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Narrative framework',
     year: '2026',
-    image: 'assets/16_memetics_public_repair/continue-story-to-duty.png',
+    image: '16_memetics_public_repair/continue-story-to-duty.png',
     tags: ['memetics', 'narrative', 'duty', 'action', 'future'],
     description: 'A visual cycle moving from problem and awareness through responsibility, action and collective repair.'
   },
@@ -551,7 +551,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Systems poster',
     year: '2026',
-    image: 'assets/16_memetics_public_repair/status-quo-duty-personal.png',
+    image: '16_memetics_public_repair/status-quo-duty-personal.png',
     tags: ['memetics', 'status quo', 'systems', 'duty', 'action'],
     description: 'A systems-accountability poster contrasting institutional delay with practical routes to act, report and support.'
   },
@@ -562,7 +562,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Public safety poster',
     year: '2026',
-    image: 'assets/16_memetics_public_repair/public-awareness-not-safety.png',
+    image: '16_memetics_public_repair/public-awareness-not-safety.png',
     tags: ['memetics', 'public safety', 'awareness', 'responsibility', 'repair'],
     description: 'A poster separating awareness campaigns from the concrete work of protection, accountability and repair.'
   },
@@ -573,7 +573,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Systems poster',
     year: '2026',
-    image: 'assets/16_memetics_public_repair/status-quo-systems-fail.png',
+    image: '16_memetics_public_repair/status-quo-systems-fail.png',
     tags: ['memetics', 'status quo', 'systems failure', 'duty', 'repair'],
     description: 'A detailed systems poster framing personal duty as the final escalation path when institutions remain stalled.'
   },
@@ -584,7 +584,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital emblem design',
     type: 'Brand mark',
     year: '2026',
-    image: 'assets/17_branding_campaigns/blue-snake-studios-serpent-crest.png',
+    image: '17_branding_campaigns/blue-snake-studios-serpent-crest.png',
     tags: ['Blue Snake Studios', 'crest', 'serpent', 'trident', 'branding'],
     description: 'A blue-and-gold serpent crest developed as a formal emblem for Blue $nake Studios.'
   },
@@ -595,7 +595,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital emblem studies',
     type: 'Brand development sheet',
     year: '2026',
-    image: 'assets/17_branding_campaigns/black-wing-crew-crest-sheet.png',
+    image: '17_branding_campaigns/black-wing-crew-crest-sheet.png',
     tags: ['Black Wing Crew', 'crest', 'branding', 'wings', 'logo'],
     description: 'Nine dark heraldic crest directions exploring the Black Wing Crew mark across badges, shields and winged seals.'
   },
@@ -606,7 +606,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'QR poster',
     year: '2026',
-    image: 'assets/17_branding_campaigns/neon-venom-portrait-qr-poster.png',
+    image: '17_branding_campaigns/neon-venom-portrait-qr-poster.png',
     tags: ['Neon Venom', 'portrait', 'QR', 'music', 'campaign'],
     description: 'A blue-and-gold Neon Venom portrait poster with a prominent multicolour QR portal for music and studio traffic.'
   },
@@ -617,7 +617,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'QR sheet',
     year: '2026',
-    image: 'assets/17_branding_campaigns/black-wing-crew-neon-qr-sheet.png',
+    image: '17_branding_campaigns/black-wing-crew-neon-qr-sheet.png',
     tags: ['Black Wing Crew', 'QR', 'neon', 'print sheet', 'campaign'],
     description: 'A set of seven high-contrast neon QR treatments prepared for stickers, cards and street-print deployment.'
   },
@@ -628,7 +628,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital educational poster',
     type: 'Bilingual study sheet',
     year: '2026',
-    image: 'assets/18_frankston_fuji/sister-cities-lyric-study-sheet.png',
+    image: '18_frankston_fuji/sister-cities-lyric-study-sheet.png',
     tags: ['Frankston', 'Susono', 'Fuji', 'Japanese', 'lyrics'],
     description: 'A Japanese and English lyric study sheet combining key words, chant lines and pronunciation prompts.'
   },
@@ -639,7 +639,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital educational poster',
     type: 'Bilingual chorus poster',
     year: '2026',
-    image: 'assets/18_frankston_fuji/frankston-susono-bilingual-chorus.png',
+    image: '18_frankston_fuji/frankston-susono-bilingual-chorus.png',
     tags: ['Frankston', 'Susono', 'chorus', 'Japanese', 'Black Wing Crew'],
     description: 'A bilingual chorus poster built for group singing, call-and-response and sister-city participation.'
   },
@@ -650,7 +650,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital educational poster',
     type: 'Bilingual song sheet',
     year: '2026',
-    image: 'assets/18_frankston_fuji/black-wing-crew-sister-cities-song.png',
+    image: '18_frankston_fuji/black-wing-crew-sister-cities-song.png',
     tags: ['Frankston', 'Susono', 'song', 'Japanese', 'Black Wing Crew'],
     description: 'A full illustrated bilingual song sheet connecting Frankston, Susono and Fuji through the Black Wing Crew story.'
   },
@@ -661,7 +661,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital educational poster',
     type: 'Pronunciation guide',
     year: '2026',
-    image: 'assets/18_frankston_fuji/sister-cities-pronunciation-sheet.png',
+    image: '18_frankston_fuji/sister-cities-pronunciation-sheet.png',
     tags: ['Frankston', 'Susono', 'pronunciation', 'lyrics', 'Japanese'],
     description: 'A practical English and Japanese lyric sheet with pronunciation cues, chant prompts and classroom-ready structure.'
   },
@@ -672,7 +672,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital campaign artwork',
     type: 'Music-world scene',
     year: '2026',
-    image: 'assets/18_frankston_fuji/fuji-taiko-black-butterflies.png',
+    image: '18_frankston_fuji/fuji-taiko-black-butterflies.png',
     tags: ['Fuji', 'taiko', 'black butterflies', 'music', 'sister cities'],
     description: 'A cinematic taiko performance beneath Fuji, bringing the rhythm and black-butterfly imagery of the sister-city project to life.'
   },
@@ -683,7 +683,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital narrative poster',
     type: 'Civic-gothic diagram',
     year: '2026',
-    image: 'assets/19_old_vic_state/black-omen-command-cycle.jpeg',
+    image: '19_old_vic_state/black-omen-command-cycle.jpeg',
     tags: ['Old Vic State', 'Black Omen', 'war', 'government', 'command'],
     description: 'A monumental black-wing diagram tracing the recurring passage from battlefield to government, record, care and replacement.'
   },
@@ -694,7 +694,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital cinematic artwork',
     type: 'World-building landscape',
     year: '2026',
-    image: 'assets/19_old_vic_state/old-vic-ledger-city.jpeg',
+    image: '19_old_vic_state/old-vic-ledger-city.jpeg',
     tags: ['Old Vic State', 'Victoria', 'ledger', 'Parliament', 'Melbourne'],
     description: 'A rain-darkened Victorian city where Parliament, Flinders Street Station, Saturn and the chained civic ledger occupy one impossible night.'
   },
@@ -705,7 +705,7 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital lyric triptych',
     type: 'Long-form narrative poster',
     year: '2026',
-    image: 'assets/19_old_vic_state/butterfly-symmetry-triptych.jpeg',
+    image: '19_old_vic_state/butterfly-symmetry-triptych.jpeg',
     tags: ['Old Vic State', 'butterfly symmetry', 'war', 'law', 'recursion'],
     description: 'The complete left-wing, body and right-wing transfer: war, command and law folded into a single butterfly-shaped text field.'
   },
@@ -716,7 +716,832 @@ window.BSS_GALLERY_ITEMS = [
     medium: 'Digital cinematic montage',
     type: 'Narrative key art',
     year: '2026',
-    image: 'assets/19_old_vic_state/victorian-ledger-witness.jpeg',
+    image: '19_old_vic_state/victorian-ledger-witness.jpeg',
     tags: ['Old Vic State', 'witness', 'ledger', 'Parliament', 'memory'],
     description: 'A civic nightmare panorama of witness, confinement, public memory and the clockwork state beneath the line: what was done has already begun.'
+  },
+
+  // ── THE MOSS MAN ──────────────────────────────────────────────────────────
+  {
+    id: 'moss-man-runic-scribe',
+    title: 'The Runic Scribe',
+    series: 'The Moss Man',
+    medium: 'Digital illuminated manuscript',
+    type: 'Portrait',
+    year: '2026',
+    image: '20_moss_man/moss-man-runic-scribe.png',
+    tags: ['The Moss Man', 'scribe', 'runic', 'feather', 'portrait', 'illuminated'],
+    description: 'Tom at the desk, cockatoo feathers in hand, circular runic halo behind him and a spiral-filled book open before him. The illuminated manuscript portrait of the creator — the definitive Moss Man archetype.'
+  },
+  {
+    id: 'moss-man-frankston-courts',
+    title: 'Frankston Law Courts',
+    series: 'The Moss Man',
+    medium: 'Digital old master oil painting',
+    type: 'Portrait',
+    year: '2026',
+    image: '20_moss_man/moss-man-frankston-courts.png',
+    tags: ['The Moss Man', 'Frankston', 'portrait', 'old master', 'suit', 'feather'],
+    description: 'Tom in flat cap and three-piece suit, holding a black cockatoo feather before the carved stone of the Frankston Law Courts. Frankston\'s most distinguished citizen, rendered in warm dark oil-paint tones.'
+  },
+  {
+    id: 'moss-man-hope-poster',
+    title: 'HOPE',
+    series: 'The Moss Man',
+    medium: 'Digital street poster',
+    type: 'Print',
+    year: '2026',
+    image: '20_moss_man/moss-man-hope-poster.png',
+    tags: ['The Moss Man', 'HOPE', 'street art', 'Shepard Fairey', 'poster', 'Frankston'],
+    description: 'Tom rendered in the bold graphic language of Shepard Fairey — red, cream and blue, face lifted, the word HOPE beneath. Street-art poster energy for community campaigns.'
+  },
+  {
+    id: 'moss-man-crown-clucker',
+    title: 'Crown of the Clucker',
+    series: 'The Moss Man',
+    medium: 'Digital tarot card',
+    type: 'Character art',
+    year: '2026',
+    image: '20_moss_man/moss-man-crown-clucker.png',
+    tags: ['The Moss Man', 'tarot', 'chicken', 'crown', 'humour', 'self-aware'],
+    description: 'The Moss Man, mossy green hoodie and wild grin, with a live chicken perched on his head. Aged parchment tarot-card format — self-aware character comedy at its finest.'
+  },
+  {
+    id: 'moss-man-five-dollar-warrior',
+    title: 'The $5 Medieval Warrior',
+    series: 'The Moss Man',
+    medium: 'Digital historical painting',
+    type: 'Character art',
+    year: '2026',
+    image: '20_moss_man/moss-man-five-dollar-warrior.png',
+    tags: ['The Moss Man', 'medieval', 'warrior', 'budget', 'humour', 'neon'],
+    description: 'An angry man in a spiked helmet with a "$5.00" price tag, neon green scarf, sword raised over a burning battlefield. The budget medieval warrior — Moss Man humour at its most absurd.'
+  },
+  {
+    id: 'moss-man-pug-oldmaster',
+    title: 'Old Master & Pug',
+    series: 'The Moss Man',
+    medium: 'Digital oil painting',
+    type: 'Portrait',
+    year: '2026',
+    image: '20_moss_man/moss-man-pug-oldmaster.png',
+    tags: ['The Moss Man', 'pug', 'oil painting', 'old master', 'personal', 'warmth'],
+    description: 'A man in a black hoodie kissing a pug dog wrapped in a blanket — rendered in the warm intimate manner of the old masters. The humanising warmth at the centre of the studio.'
+  },
+  {
+    id: 'moss-man-notice-poster',
+    title: 'This Notice Has Been Noticed',
+    series: 'The Moss Man',
+    medium: 'Digital satirical poster',
+    type: 'Print',
+    year: '2026',
+    image: '20_moss_man/moss-man-notice-poster.png',
+    tags: ['The Moss Man', 'satire', 'bureaucracy', 'Soviet poster', 'humour', 'absurdism'],
+    description: '"THIS NOTICE HAS BEEN NOTICED BY NOTICING NOTICES THAT NOTICE… THIS POSTER EXISTS TO INFORM YOU THAT THIS POSTER EXISTS." Soviet poster aesthetic, bureaucratic absurdism. Very shareable.'
+  },
+  {
+    id: 'moss-man-victorian-library',
+    title: 'The Victorian Library',
+    series: 'The Moss Man',
+    medium: 'Digital portrait',
+    type: 'Portrait',
+    year: '2026',
+    image: '20_moss_man/moss-man-victorian-library.png',
+    tags: ['The Moss Man', 'Victorian', 'moss', 'library', 'raven', 'Melbourne 1868'],
+    description: 'Tom\'s face covered in living moss and lichen, standing in a dark Victorian library beside a raven, a globe and a telescope, beneath a painting reading "MELBOURNE 1868". Hero-level portrait of deep time and place.'
+  },
+  {
+    id: 'moss-man-portrait-v1',
+    title: 'The Moss Man — Mystic',
+    series: 'The Moss Man',
+    medium: 'Digital portrait',
+    type: 'Portrait',
+    year: '2026',
+    image: '20_moss_man/moss-man-portrait-v1.png',
+    tags: ['The Moss Man', 'portrait', 'gold', 'mystic', 'subdued'],
+    description: 'A subdued gold-and-shadow portrait — the contemplative, inward register of the Moss Man archetype.'
+  },
+  {
+    id: 'moss-man-portrait-v2',
+    title: 'The Moss Man — FREE B$S',
+    series: 'The Moss Man',
+    medium: 'Digital portrait',
+    type: 'Portrait',
+    year: '2026',
+    image: '20_moss_man/moss-man-portrait-v2.png',
+    tags: ['The Moss Man', 'portrait', 'street', 'hype', 'B$S', 'FREE'],
+    description: 'The hype/street register — bold, confrontational, the "FREE B$S" energy that powers the whole studio.'
+  },
+  {
+    id: 'moss-man-fire-cockatoo',
+    title: 'Fire & Feather',
+    series: 'The Moss Man',
+    medium: 'Digital mythic portrait',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '20_moss_man/moss-man-fire-cockatoo.png',
+    tags: ['The Moss Man', 'fire', 'black cockatoo', 'mythic', 'face-merge', 'omen'],
+    description: 'A mythic face-merge: Tom and the black cockatoo become one in fire. Where the portrait ends and the bird begins is a deliberate mystery.'
+  },
+  {
+    id: 'moss-man-candid',
+    title: 'Off Duty',
+    series: 'The Moss Man',
+    medium: 'Photography',
+    type: 'Portrait',
+    year: '2026',
+    image: '20_moss_man/moss-man-candid.jpg',
+    tags: ['The Moss Man', 'candid', 'portrait', 'flat cap', 'personal'],
+    description: 'The Moss Man off duty — flat cap, sunglasses, Simpsons t-shirt, blue plaid flannel, holding a wooden stick in front of a brick wall. The person behind the mythology.'
+  },
+
+  // ── AURALIA ───────────────────────────────────────────────────────────────
+  {
+    id: 'auralia-ouroboros-keyart',
+    title: 'Auralia & The Circle',
+    series: 'Auralia',
+    medium: 'Digital key art',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '01_auralia/auralia-ouroboros-keyart.jpg',
+    tags: ['Auralia', 'ouroboros', 'serpent', 'dollar sign', 'fire', 'B$S', 'dark fantasy'],
+    description: 'A woman in profile, dark skin and golden eyes, a black cockatoo on her shoulder, a massive ouroboros snake circling her — its head breathing fire in the shape of a dollar sign. B$S gold symbols burn in the background. One of the strongest pieces in the archive.'
+  },
+  {
+    id: 'auralia-dark-profile-snake',
+    title: 'Dark Profile',
+    series: 'Auralia',
+    medium: 'Digital painting',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '01_auralia/auralia-dark-profile-snake.png',
+    tags: ['Auralia', 'blue skin', 'serpent', 'cockatoo', 'gold geometry', 'dark'],
+    description: 'A woman in profile, blue skin, a black cockatoo on her shoulder and a snake with a glowing eye coiled at her chest. Gold geometric circles and plant motifs complete the composition. Auralia in another form.'
+  },
+  {
+    id: 'auralia-silhouette-halo',
+    title: 'Sun Disc',
+    series: 'Auralia',
+    medium: 'Digital illustration',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '01_auralia/auralia-silhouette-halo.webp',
+    tags: ['Auralia', 'silhouette', 'sun disc', 'halo', 'cockatoo', 'gold', 'charcoal'],
+    description: 'Woman silhouette, dark void skin and a gold circular sun-disc halo, a black cockatoo on her shoulder, against a clean charcoal background. Graphic logo quality — elegantly usable as social or brand image.'
+  },
+  {
+    id: 'auralia-blue-flight-relief',
+    title: 'Blue Wing Rising',
+    series: 'Auralia',
+    medium: '3D bas-relief render',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '01_auralia/auralia-blue-flight-relief.jpg',
+    tags: ['Auralia', '3D', 'bas-relief', 'blue', 'flight', 'spiral', 'gold', 'botanical'],
+    description: 'A 3D bas-relief render: a blue cockatoo in flight, swept feathers forming a spiral, a gold crescent moon ring above, set against a deep blue botanical leaf background. Unique paper-sculpture aesthetic.'
+  },
+  {
+    id: 'auralia-dark-painting-two-women',
+    title: 'Two Women & The Bird',
+    series: 'Auralia',
+    medium: 'Digital oil painting',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '01_auralia/auralia-dark-painting-two-women.png',
+    tags: ['Auralia', 'dark oil painting', 'two women', 'cockatoo', 'triquetra', 'sacred'],
+    description: 'Two women and a black cockatoo, a triquetra binding the composition, deep olive and dark tones. The anchor painting of Auralia\'s painted world.'
+  },
+  {
+    id: 'auralia-heraldic-badge',
+    title: 'Auralia — Heraldic Badge',
+    series: 'Auralia',
+    medium: 'Digital logo',
+    type: 'Branding',
+    year: '2026',
+    image: '01_auralia/auralia-heraldic-badge.png',
+    tags: ['Auralia', 'heraldic', 'badge', 'gold', 'circle', 'clean', 'logo'],
+    description: 'A clean gold circular heraldic badge — Auralia distilled to her most iconic form. Ready for print, pin or merchandise.'
+  },
+  {
+    id: 'auralia-moss60-linework',
+    title: 'Seed of Life',
+    series: 'Auralia',
+    medium: 'Digital linework',
+    type: 'Concept art',
+    year: '2026',
+    image: '01_auralia/auralia-moss60-linework.png',
+    tags: ['Auralia', 'linework', 'snake', 'cockatoo', 'seed of life', 'Moss 60', 'minimal'],
+    description: 'Minimal linework: snake, cockatoo and seed-of-life geometry interlocked. The symbolic vocabulary of the Moss 60 system made visible in its most reduced form.'
+  },
+  {
+    id: 'auralia-klimt-mosaic',
+    title: 'The Mosaic Woman',
+    series: 'Auralia',
+    medium: 'Physical painting',
+    type: 'Original artwork',
+    year: '2026',
+    image: '01_auralia/auralia-klimt-mosaic.jpg',
+    tags: ['Auralia', 'Klimt', 'mosaic', 'tessellated', 'gold', 'blue hair', 'physical painting'],
+    description: 'A Klimt-inspired mosaic painting on canvas: a woman with swirling blue hair surrounded by tessellated gold and blue tiles, a black cockatoo woven into the pattern. Auralia in the language of sacred geometry and craft.'
+  },
+  {
+    id: 'auralia-divine-ascending',
+    title: 'Auralia Ascending',
+    series: 'Auralia',
+    medium: 'Digital anime illustration',
+    type: 'Character art',
+    year: '2026',
+    image: '01_auralia/auralia-divine-ascending.webp',
+    tags: ['Auralia', 'anime', 'divine', 'ascending', 'white robes', 'yellow halo', 'god rays'],
+    description: 'Auralia in white robes, arms rising, bathed in yellow god rays and a golden halo. Yellow flowers, glowing lanterns. The divine form — ascending and radiant.'
+  },
+  {
+    id: 'auralia-victorian-formal',
+    title: 'Auralia — Victorian Register',
+    series: 'Auralia',
+    medium: 'Digital anime illustration',
+    type: 'Character art',
+    year: '2026',
+    image: '01_auralia/auralia-victorian-formal.webp',
+    tags: ['Auralia', 'anime', 'Victorian', 'formal', 'red bow tie', 'frock coat', 'flame'],
+    description: 'Auralia in red bow tie, Victorian frock coat and flame-tip tail, surrounded by lanterns and sparkles. The same character, the formal Victorian register.'
+  },
+  {
+    id: 'auralia-neon-halloween',
+    title: 'Auralia — Neon Halloween',
+    series: 'Auralia',
+    medium: 'Digital anime illustration',
+    type: 'Character art',
+    year: '2026',
+    image: '01_auralia/auralia-neon-halloween.webp',
+    tags: ['Auralia', 'anime', 'neon', 'Halloween', 'B$S', 'purple', 'skulls'],
+    description: 'A neon Halloween scene: purple drips, skulls, glowing eyes, street lamps and B$S signs embedded in the environment. Auralia in the Neon Venom aesthetic.'
+  },
+  {
+    id: 'auralia-coin-m',
+    title: 'The Gold Coin — M',
+    series: 'Auralia',
+    medium: '3D coin render',
+    type: 'Collectible',
+    year: '2026',
+    image: '01_auralia/auralia-coin-m.png',
+    tags: ['Auralia', 'coin', 'gold', '3D', 'Victorian', 'collectible', 'steampunk'],
+    description: 'A 3D rendered gold coin with Auralia in Victorian gentleman guise embossed on the face — bow tie, monocle, steampunk. Moss 60 token or Meta-Pet digital collectible.'
+  },
+  {
+    id: 'auralia-coin-f',
+    title: 'The Gold Coin — F',
+    series: 'Auralia',
+    medium: '3D coin render',
+    type: 'Collectible',
+    year: '2026',
+    image: '01_auralia/auralia-coin-f.png',
+    tags: ['Auralia', 'coin', 'gold', '3D', 'female', 'collectible'],
+    description: 'The matching female gold coin — Auralia in her feminine form, embossed on a black-background coin. Pair with The Gold Coin — M.'
+  },
+
+  // ── B$S MYTHOLOGY / OMEN ROOM ─────────────────────────────────────────────
+  {
+    id: 'bss-twin-cockatoos-stained-glass',
+    title: '鳥の鳴くのは — Birds & Secrets',
+    series: 'B$S Mythology',
+    medium: 'Digital stained glass',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '21_mythology/bss-twin-cockatoos-stained-glass.png',
+    tags: ['B$S Mythology', 'stained glass', 'twin cockatoos', 'snake', 'Japanese', 'secrets', 'gold'],
+    description: '"鳥の鳴くのは隠し事ができないからか" — Do birds sing because they can\'t keep secrets? Two black cockatoos face each other on a perch, a snake coiled between them, gold and teal and navy stained glass. The most beautiful image in the archive.'
+  },
+  {
+    id: 'black-cockatoo-deity-throne',
+    title: 'The Throne',
+    series: 'B$S Mythology',
+    medium: 'Digital dark fantasy',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '21_mythology/black-cockatoo-deity-throne.webp',
+    tags: ['B$S Mythology', 'deity', 'throne', 'cathedral', 'worship', 'dark fantasy', 'black cockatoo'],
+    description: 'A massive black cockatoo enthroned in a golden cathedral, wings spread wide, more than eight women kneeling in worship, candles burning, flying cockatoos in the vaulted air, a mandala behind the head. The most mythologically powerful image in the archive.'
+  },
+  {
+    id: 'bss-coat-of-arms',
+    title: 'B$S Coat of Arms',
+    series: 'B$S Mythology',
+    medium: 'Digital heraldic illustration',
+    type: 'Branding',
+    year: '2026',
+    image: '21_mythology/bss-coat-of-arms.jpg',
+    tags: ['B$S Mythology', 'coat of arms', 'heraldic', 'snake', 'cockatoo', 'knights', 'mandala'],
+    description: 'Blue snake coiled on pedestal, black cockatoo with yellow wings in flight above, two armoured knights flanking, gold mandala halo, planets and compass roses. The B$S mythology\'s heraldic statement: snake + cockatoo + knights.'
+  },
+  {
+    id: 'krishna-bss-portrait',
+    title: 'Krishna — B$S Portrait',
+    series: 'B$S Mythology',
+    medium: 'Digital painting',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '21_mythology/krishna-bss-portrait.png',
+    tags: ['B$S Mythology', 'Krishna', 'blue', 'flute', 'B$S', 'spiritual', 'dark'],
+    description: 'Dark painterly portrait: Krishna in blue skin, jewelled turban and peacock feather, playing flute, black ravens and butterflies surrounding him — and the B$S logo embedded directly in his clothing. A spiritual identity claim.'
+  },
+  {
+    id: 'krishna-bss-fullbody',
+    title: 'Krishna — Full Form',
+    series: 'B$S Mythology',
+    medium: 'Digital painting',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '21_mythology/krishna-bss-fullbody.png',
+    tags: ['B$S Mythology', 'Krishna', 'blue', 'full body', 'flute', 'snake', 'mandala'],
+    description: 'Full-body Krishna standing with arms open, flute in hand, a snake coiled at his feet, ravens and butterflies, mandala halo. Pair with the B$S portrait — this is the wider composition.'
+  },
+  {
+    id: 'she-weaves-dawn-stained-glass',
+    title: '暁を編む者 — Stained Glass',
+    series: 'B$S Mythology',
+    medium: 'Digital stained glass',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '21_mythology/she-weaves-dawn-stained-glass.png',
+    tags: ['B$S Mythology', 'She Who Weaves the Dawn', 'stained glass', 'kimono', 'cockatoo', 'Japanese', 'amber'],
+    description: '"暁を編む者" — She Who Weaves the Dawn. A woman in green kimono, long black braid, a black cockatoo on her wrist and birds overhead, pagoda and trees behind, warm amber and gold. Diptych with the woodblock version.'
+  },
+  {
+    id: 'she-weaves-dawn-woodblock',
+    title: '暁を編む者 — Woodblock',
+    series: 'B$S Mythology',
+    medium: 'Digital woodblock print',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '21_mythology/she-weaves-dawn-woodblock.png',
+    tags: ['B$S Mythology', 'She Who Weaves the Dawn', 'woodblock', 'print', 'kimono', 'cockatoo', 'Japanese'],
+    description: 'She Who Weaves the Dawn in woodblock print style — flat graphic, high contrast, the same green kimono and cockatoo rendered as if pulled from a carved block. Diptych with the stained glass version.'
+  },
+  {
+    id: 'spiral-mountain-god',
+    title: '螺旋山神 — Spiral Mountain God',
+    series: 'Moss 60',
+    medium: 'Digital stained glass',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '21_mythology/spiral-mountain-god.png',
+    tags: ['Moss 60', 'stained glass', 'mountain deity', 'Japanese', 'spiral', 'Moss 60', 'blue'],
+    description: '"螺旋山神" — Spiral Mountain God. A tall mountain deity in conical hat, surrounded by waves and clouds, with a spiral glyph that maps directly onto the Moss 60 circular number system. Deep blue and teal stained glass.'
+  },
+  {
+    id: 'black-cockatoo-queen',
+    title: 'Black Cockatoo Queen',
+    series: 'B$S Mythology',
+    medium: 'Digital dark fantasy',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '21_mythology/black-cockatoo-queen.webp',
+    tags: ['B$S Mythology', 'cockatoo queen', 'dark fantasy', 'wings', 'armour', 'fire', 'ember'],
+    description: 'An anthropomorphic female black cockatoo — massive wings, ember-glowing crest, ornate lace armour, a small companion bird, fire storm behind her. The Black Cockatoo Queen. Pairs with the deity piece.'
+  },
+  {
+    id: 'omen-blue-serpent-deity',
+    title: 'Blue Serpent',
+    series: 'B$S Mythology',
+    medium: 'Digital painting',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '21_mythology/omen-blue-serpent-deity.jpg',
+    tags: ['B$S Mythology', 'serpent', 'blue', 'psychedelic', 'Hindu', 'deity', 'lotus'],
+    description: 'A man cross-legged on a lotus, pointing a wand at a glowing portal, surrounded by massive blue serpents, Hindu deities, tropical forest, candles. Deep blue, pink and gold. The Hindu-snake mythology convergence.'
+  },
+  {
+    id: 'omen-fire-silhouette',
+    title: 'The Fire Below',
+    series: 'B$S Mythology',
+    medium: 'Photography / light art',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '21_mythology/omen-fire-silhouette.jpg',
+    tags: ['B$S Mythology', 'fire', 'silhouette', 'light art', 'mirror', 'gold', 'mystical'],
+    description: 'A mirror-symmetrical dark silhouette of a person standing with arms raised, surrounded by an intense burst of golden-white fire from below. Abstract, deeply mystical. Works as section divider or hero background.'
+  },
+  {
+    id: 'omen-campfire-face',
+    title: 'Face in the Fire',
+    series: 'B$S Mythology',
+    medium: 'Photography',
+    type: 'Documentary',
+    year: '2026',
+    image: '21_mythology/omen-campfire-face.jpg',
+    tags: ['B$S Mythology', 'campfire', 'fire', 'pareidolia', 'face', 'omen', 'documentary'],
+    description: 'Burning campfire logs, a face-like form emerging from the charred and ashen wood, orange and pink flames. Seeing faces in fire — the perceptual layer of the B$S mythology.'
+  },
+  {
+    id: 'bss-twin-cockatoos-night',
+    title: 'Twin Cockatoos — Midnight',
+    series: 'B$S Mythology',
+    medium: 'Digital anime illustration',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '21_mythology/bss-twin-cockatoos-night.webp',
+    tags: ['B$S Mythology', 'twin cockatoos', 'night', 'clocktower', 'runes', 'duality', 'Halloween'],
+    description: 'Twin cockatoos mirrored facing each other at a clocktower, glowing runes, bats, pentagram stars, Halloween neon city. Duality theme — pairs with the Japanese stained-glass twin cockatoos.'
+  },
+  {
+    id: 'bss-mascot-all-seeing-eye',
+    title: 'Auralia — All-Seeing Eye',
+    series: 'Auralia',
+    medium: 'Digital anime illustration',
+    type: 'Character art',
+    year: '2026',
+    image: '21_mythology/auralia-all-seeing-eye.webp',
+    tags: ['Auralia', 'all-seeing eye', 'esoteric', 'illuminati', 'pyramid', 'arcane', 'red eyes'],
+    description: 'Auralia in a black formal suit with gold trim, ALL-SEEING EYE motifs covering the wings, a pyramid-triangle chest symbol, multiple red eyes and an arcane starry background. The secret-society register of the character.'
+  },
+
+  // ── B$S BRANDING ──────────────────────────────────────────────────────────
+  {
+    id: 'bss-official-logo-badge',
+    title: 'Blue $nake Studios — Official Badge',
+    series: 'B$S Branding',
+    medium: 'Digital logo',
+    type: 'Branding',
+    year: '2026',
+    image: '06_branding/bss-official-logo-badge.png',
+    tags: ['B$S Branding', 'logo', 'badge', 'spiral', 'Fibonacci', 'triquetra', 'gold', 'official'],
+    description: 'The clean official Blue $nake Studios badge: a woman\'s profile in blue and teal within a circular frame, Fibonacci/spiral geometry, triquetra symbol, olive branch and "BLUE SNAKE STUDIOS" text in gold on dark navy. The site\'s canonical logo image.'
+  },
+  {
+    id: 'bss-melbourne-seal',
+    title: 'B$S Melbourne Seal',
+    series: 'B$S Branding',
+    medium: 'Digital illustration',
+    type: 'Branding',
+    year: '2026',
+    image: '06_branding/bss-melbourne-seal.png',
+    tags: ['B$S Branding', 'Melbourne', 'seal', 'Victorian', 'gothic', 'badge', 'ornate'],
+    description: 'An ornate Victorian circular badge: a blue snake coiled on a dollar sign, gothic city skyline, "BLUE $NAKE STUDIOS / B$S / MELBOURNE" in the outer ring. High-quality civic-pride logo lockup.'
+  },
+  {
+    id: 'bss-winged-crest',
+    title: 'B$S Winged Crest',
+    series: 'B$S Branding',
+    medium: 'Digital illustration',
+    type: 'Branding',
+    year: '2026',
+    image: '06_branding/bss-winged-crest.png',
+    tags: ['B$S Branding', 'winged crest', 'metallic', 'snake', 'wings', 'blkck2', 'print'],
+    description: 'The B$S winged crest — metallic snake flanked by spread wings, blkck2.com embedded in the design. Ready for street print, badge or merchandise.'
+  },
+  {
+    id: 'bss-cyberpunk-flute-child',
+    title: 'Blue $nake Studios — Neon City',
+    series: 'B$S Branding',
+    medium: 'Digital illustration',
+    type: 'Branding',
+    year: '2026',
+    image: '06_branding/bss-cyberpunk-flute-child.png',
+    tags: ['B$S Branding', 'cyberpunk', 'neon', 'child', 'flute', 'snake', 'city'],
+    description: 'A Krishna-like child figure playing a flute atop a glowing snake head, neon city below, "BLUE $NAKE STUDIOS" logo. An alt brand direction — mythic and playful in one frame.'
+  },
+  {
+    id: 'bss-pattern-architects-poster',
+    title: 'Pattern Architects',
+    series: 'B$S Branding',
+    medium: 'Digital poster',
+    type: 'Print',
+    year: '2026',
+    image: '06_branding/bss-pattern-architects-poster.png',
+    tags: ['B$S Branding', 'Pattern Architects', 'gold', 'S logo', 'poster', 'studio'],
+    description: 'Gold S logo with studio inscription text against dark background. Pattern Architects — the studio\'s process identity made visual.'
+  },
+  {
+    id: 'bss-cockatoo-silhouette-mandala',
+    title: 'Cockatoo & Mandala',
+    series: 'B$S Branding',
+    medium: 'Digital illustration',
+    type: 'Branding',
+    year: '2026',
+    image: '06_branding/bss-cockatoo-silhouette-mandala.webp',
+    tags: ['B$S Branding', 'silhouette', 'mandala', 'cockatoo', 'floral spiral', 'minimalist'],
+    description: 'Black silhouette of a yellow-tailed black cockatoo on a branch, an ornate circular mandala and floral spiral pattern behind it, dark grey tones. Minimalist and elegant — works as site background texture or brand element.'
+  },
+
+  // ── BLACK WING CREW / NEON VENOM ─────────────────────────────────────────
+  {
+    id: 'black-wing-cosmic-singing',
+    title: 'The Cosmic Song',
+    series: 'Black Wing Crew',
+    medium: 'Digital illustration',
+    type: 'Feature artwork',
+    year: '2026',
+    image: '03_black_wing_crew/black-wing-cosmic-singing.webp',
+    tags: ['Black Wing Crew', 'cockatoo', 'singing', 'galaxy', 'moons', 'coast', 'music', 'epic'],
+    description: 'A yellow-tailed black cockatoo singing on coastal rocks, musical notes floating up into a cosmic galaxy and multiple moons, golden sunrise, a flock rising into flight. The whole B$S music identity in one frame.'
+  },
+  {
+    id: 'neon-venom-cyberpunk-poster',
+    title: 'Neon Venom — Now Streaming',
+    series: 'Black Wing Crew',
+    medium: 'Digital poster',
+    type: 'Print',
+    year: '2026',
+    image: '04_neon_venom/neon-venom-cyberpunk-poster.png',
+    tags: ['Black Wing Crew', 'Neon Venom', 'cyberpunk', 'green snake', 'Japanese', 'streaming', 'poster'],
+    description: 'Green dripping snake, cyberpunk city, Japanese text (毒/venom), "NOW STREAMING AT BLACKWINGCREW.NETLIFY.APP". Direct streaming CTA in street-poster format.'
+  },
+  {
+    id: 'woman-money-venom-shorts-qr',
+    title: 'Woman Money Venom — Shorts',
+    series: 'Black Wing Crew',
+    medium: 'Digital QR poster',
+    type: 'Print',
+    year: '2026',
+    image: '04_neon_venom/woman-money-venom-shorts-qr.png',
+    tags: ['Black Wing Crew', 'Neon Venom', 'QR', 'Shorts', 'street poster'],
+    description: 'Street-poster QR linking to the Woman Money Venom Shorts cut — scan and watch immediately.'
+  },
+  {
+    id: 'woman-money-venom-full-qr',
+    title: 'Woman Money Venom — Full Video',
+    series: 'Black Wing Crew',
+    medium: 'Digital QR poster',
+    type: 'Print',
+    year: '2026',
+    image: '04_neon_venom/woman-money-venom-full-qr.png',
+    tags: ['Black Wing Crew', 'Neon Venom', 'QR', 'full video', 'street poster'],
+    description: 'Street-poster QR linking to the full Woman Money Venom video.'
+  },
+
+  // ── QR DROPS ──────────────────────────────────────────────────────────────
+  {
+    id: 'qr-pink',
+    title: 'QR Drop — Pink',
+    series: 'QR Drops',
+    medium: 'Digital sticker / street print',
+    type: 'Print',
+    year: '2026',
+    image: '17_branding_campaigns/qr-pink.png',
+    tags: ['QR Drops', 'QR', 'pink', 'neon', 'street print', 'sticker', 'Black Wing Crew'],
+    description: 'Neon pink QR code linking to blackwingcrew.netlify.app. Single-colour sticker on black — part of the 7-colour QR drop set.'
+  },
+  {
+    id: 'qr-orange',
+    title: 'QR Drop — Orange',
+    series: 'QR Drops',
+    medium: 'Digital sticker / street print',
+    type: 'Print',
+    year: '2026',
+    image: '17_branding_campaigns/qr-orange.png',
+    tags: ['QR Drops', 'QR', 'orange', 'amber', 'neon', 'street print', 'sticker'],
+    description: 'Amber/orange QR code — same format, warm amber variant. Part of the 7-colour QR drop set.'
+  },
+  {
+    id: 'qr-yellow',
+    title: 'QR Drop — Yellow',
+    series: 'QR Drops',
+    medium: 'Digital sticker / street print',
+    type: 'Print',
+    year: '2026',
+    image: '17_branding_campaigns/qr-yellow.png',
+    tags: ['QR Drops', 'QR', 'yellow', 'neon', 'street print', 'sticker'],
+    description: 'Yellow QR code variant. Part of the 7-colour QR drop set.'
+  },
+  {
+    id: 'qr-green',
+    title: 'QR Drop — Green',
+    series: 'QR Drops',
+    medium: 'Digital sticker / street print',
+    type: 'Print',
+    year: '2026',
+    image: '17_branding_campaigns/qr-green.png',
+    tags: ['QR Drops', 'QR', 'green', 'neon', 'street print', 'sticker'],
+    description: 'Neon green QR code variant. Part of the 7-colour QR drop set.'
+  },
+  {
+    id: 'qr-purple',
+    title: 'QR Drop — Purple',
+    series: 'QR Drops',
+    medium: 'Digital sticker / street print',
+    type: 'Print',
+    year: '2026',
+    image: '17_branding_campaigns/qr-purple.png',
+    tags: ['QR Drops', 'QR', 'purple', 'neon', 'street print', 'sticker'],
+    description: 'Purple QR code variant. Part of the 7-colour QR drop set.'
+  },
+  {
+    id: 'qr-cyan',
+    title: 'QR Drop — Cyan',
+    series: 'QR Drops',
+    medium: 'Digital sticker / street print',
+    type: 'Print',
+    year: '2026',
+    image: '17_branding_campaigns/qr-cyan.png',
+    tags: ['QR Drops', 'QR', 'cyan', 'electric blue', 'neon', 'street print', 'sticker'],
+    description: 'Cyan/electric blue QR code variant. Part of the 7-colour QR drop set.'
+  },
+  {
+    id: 'qr-rainbow',
+    title: 'QR Drop — Rainbow',
+    series: 'QR Drops',
+    medium: 'Digital sticker / street print',
+    type: 'Print',
+    year: '2026',
+    image: '17_branding_campaigns/qr-rainbow.png',
+    tags: ['QR Drops', 'QR', 'rainbow', 'multicolour', 'neon', 'street print', 'sticker'],
+    description: 'Rainbow/multicolour QR code — all 7 neon colours merged into one. The full-spectrum variant of the QR drop set.'
+  },
+
+  // ── HUMOUR & PARODY ────────────────────────────────────────────────────────
+  {
+    id: 'humour-beak-to-the-future',
+    title: 'Beak to the Future',
+    series: 'Humour',
+    medium: 'Digital parody poster',
+    type: 'Print',
+    year: '2026',
+    image: '22_humour/beak-to-the-future.png',
+    tags: ['Humour', 'parody', 'Back to the Future', 'cockatoo', 'DeLorean', 'time travel', 'Marty McFly'],
+    description: '"BEAK TO THE FUTURE" — a black cockatoo as Marty McFly in orange puffer vest, a DeLorean and swirling time portal with clock tower, bold orange title. Tagline: "When the feathers hit 88 mph... you\'re gonna see some serious squawk." Best parody piece in the archive.'
+  },
+  {
+    id: 'humour-breaking-beak',
+    title: 'Breaking Beak',
+    series: 'Humour',
+    medium: 'Digital parody poster',
+    type: 'Print',
+    year: '2026',
+    image: '22_humour/breaking-beak.png',
+    tags: ['Humour', 'parody', 'Breaking Bad', 'cockatoo', 'Heisenberg', 'dark green', 'Moss 60'],
+    description: '"Breaking Beak" — a black cockatoo in Heisenberg pork-pie hat and glasses, styled after Breaking Bad, "36" in the logo (Moss 60 numerology). Strong pop-culture parody. Very shareable.'
+  },
+  {
+    id: 'humour-pi-wizard-chicken',
+    title: 'Pi Wizard Chicken',
+    series: 'Humour',
+    medium: 'Digital cartoon',
+    type: 'Character art',
+    year: '2026',
+    image: '22_humour/pi-wizard-chicken.png',
+    tags: ['Humour', 'chicken', 'pi', 'wizard', 'math', 'Moss 60', 'cartoon'],
+    description: 'A green witch-hat chicken holding a scroll with π (pi), cartoon style on warm parchment. Math humour + chicken theme + Moss 60 numerics. Perfect for STEAM classrooms.'
+  },
+  {
+    id: 'humour-forward-together',
+    title: 'Forward Together Awkward Forever',
+    series: 'Humour',
+    medium: 'Digital satirical poster',
+    type: 'Print',
+    year: '2026',
+    image: '22_humour/forward-together-awkward-forever.png',
+    tags: ['Humour', 'Australian', 'emu', 'kangaroo', 'satire', 'national policy', 'retro poster'],
+    description: '"FORWARD TOGETHER AWKWARD FOREVER / CAN\'T BACK DOWN. LITERALLY." — an emu and kangaroo facing a NO REVERSE NATIONAL POLICY sign. Distinctly Australian in-joke, retro poster format.'
+  },
+
+  // ── COLOURING PAGES (new additions) ──────────────────────────────────────
+  {
+    id: 'colouring-child-saint',
+    title: 'Colouring Page — Child & Bird',
+    series: 'Auralia',
+    medium: 'Colouring page (line art)',
+    type: 'Educational',
+    year: '2026',
+    image: '11_colouring_pages/colouring-child-saint.png',
+    tags: ['Auralia', 'colouring page', 'child', 'saint', 'cockatoo', 'feather', 'line art'],
+    description: 'A child/saint seated with a halo, birds and a cockatoo, feather motif. Clean line art for colouring — the Namo Narayana painting thread made accessible for children.'
+  },
+  {
+    id: 'colouring-pug-kiss',
+    title: 'Colouring Page — Pug Kiss',
+    series: 'The Moss Man',
+    medium: 'Colouring page (line art)',
+    type: 'Educational',
+    year: '2026',
+    image: '11_colouring_pages/colouring-pug-kiss.png',
+    tags: ['The Moss Man', 'colouring page', 'pug', 'kiss', 'warmth', 'line art'],
+    description: 'Colouring-page version of the Old Master & Pug oil painting. Clean line art — a man kissing a pug wrapped in cloth.'
+  },
+  {
+    id: 'colouring-auralia-simple',
+    title: 'Colouring Page — Auralia Simple',
+    series: 'Auralia',
+    medium: 'Colouring page (line art)',
+    type: 'Educational',
+    year: '2026',
+    image: '11_colouring_pages/colouring-auralia-simple.png',
+    tags: ['Auralia', 'colouring page', 'simple', 'anime', 'bow tie', 'lanterns', 'line art'],
+    description: 'Simple colouring-page version of Auralia in Victorian bow tie, wings spread, lanterns and sparkles. Clean and accessible for younger colourists.'
+  },
+  {
+    id: 'colouring-auralia-detailed',
+    title: 'Colouring Page — Auralia Detailed',
+    series: 'Auralia',
+    medium: 'Colouring page (line art)',
+    type: 'Educational',
+    year: '2026',
+    image: '11_colouring_pages/colouring-auralia-detailed.png',
+    tags: ['Auralia', 'colouring page', 'detailed', 'candelabra', 'peace symbol', 'fire', 'line art'],
+    description: 'Detailed colouring-page version of Auralia — candelabra, peace symbol, fire, clouds, building. For dedicated colourists who want a challenge.'
+  },
+  {
+    id: 'colouring-auralia-female',
+    title: 'Colouring Page — Auralia Female',
+    series: 'Auralia',
+    medium: 'Colouring page (line art)',
+    type: 'Educational',
+    year: '2026',
+    image: '11_colouring_pages/colouring-auralia-female.png',
+    tags: ['Auralia', 'colouring page', 'female', 'flowers', 'moon', 'companion bird', 'line art'],
+    description: 'Tall female anthropomorphic cockatoo character, flowers in hair, full outfit, small companion bird, hearts and moon. Detailed anime-style colouring page.'
+  },
+
+  // ── META-PET ──────────────────────────────────────────────────────────────
+  {
+    id: 'meta-pet-kid-with-feather',
+    title: 'The Feather in the Hall',
+    series: 'Meta-Pet',
+    medium: 'Photography',
+    type: 'Documentary',
+    year: '2026',
+    image: '12_meta_pet/meta-pet-kid-with-feather.jpg',
+    tags: ['Meta-Pet', 'kid', 'feather', 'school', 'real world', 'proof', 'jukebox'],
+    description: 'A young boy (~9 years old) in a school hall, smiling, holding a large black cockatoo feather. Tie-dye hoodie, red pants, jukebox visible behind him. The most powerful real-world proof image in the collection — showing actual student engagement.'
+  },
+
+  // ── ORIGINAL PAINTINGS ────────────────────────────────────────────────────
+  {
+    id: 'painting-child-namo-narayana',
+    title: 'Namo Narayana',
+    series: 'Original Paintings',
+    medium: 'Physical painting on canvas',
+    type: 'Original artwork',
+    year: '2026',
+    image: '05_paintings/painting-child-namo-narayana.jpg',
+    tags: ['Original Paintings', 'canvas', 'child', 'Sanskrit', 'cockatoo', 'stained glass', 'Namo Narayana'],
+    description: 'Hand-painted on canvas: a young boy with brown skin, a black cockatoo feather in hand, a white cockatoo near his ear, stained-glass geometric background in blue, teal and gold. Sanskrit text reads "OM Namo Narayana OM". Sanskrit, cockatoo and learning — all in one.'
+  },
+  {
+    id: 'painting-round-cockatoo-crest',
+    title: 'Round Canvas — Crest',
+    series: 'Original Paintings',
+    medium: 'Physical painting on round canvas',
+    type: 'Original artwork',
+    year: '2026',
+    image: '05_paintings/painting-round-cockatoo-crest.jpg',
+    tags: ['Original Paintings', 'round canvas', 'cockatoo', 'crest', 'wings', 'hearts', 'hand-painted'],
+    description: 'A hand-painted round canvas: black cockatoo heraldic crest with spread wings, gold flaming hearts below, heart-shaped frame, pink and blue gradient. A physical expression of the B$S crest symbol.'
+  },
+
+  // ── STUDIO PROCESS ────────────────────────────────────────────────────────
+  {
+    id: 'studio-three-feathers',
+    title: 'Three Feathers',
+    series: 'Studio Process',
+    medium: 'Photography',
+    type: 'Documentary',
+    year: '2026',
+    image: '23_studio_process/studio-three-feathers.jpg',
+    tags: ['Studio Process', 'feathers', 'yellow-tailed black cockatoo', 'specimen', 'still life'],
+    description: 'Three yellow-tailed black cockatoo feathers laid flat on a white sketchbook — spotted black, cream and yellow pattern. Beautiful specimen photography. Likely the feathers held in The Runic Scribe portrait.'
+  },
+  {
+    id: 'studio-single-feather',
+    title: 'The Feather',
+    series: 'Studio Process',
+    medium: 'Photography',
+    type: 'Documentary',
+    year: '2026',
+    image: '23_studio_process/studio-single-feather.jpg',
+    tags: ['Studio Process', 'feather', 'yellow-tailed black cockatoo', 'workbench', 'talisman'],
+    description: 'A single yellow-tailed black cockatoo feather on a timber workbench, warm light, diagonal composition. The feather is the recurring physical talisman across seven pieces in this collection.'
+  },
+  {
+    id: 'studio-canvas-flatlay',
+    title: 'Studio Flatlay',
+    series: 'Studio Process',
+    medium: 'Photography',
+    type: 'Documentary',
+    year: '2026',
+    image: '23_studio_process/studio-canvas-flatlay.jpg',
+    tags: ['Studio Process', 'flatlay', 'canvas', 'physical', 'Auralia', 'mirror women', 'studio'],
+    description: 'Multiple canvases laid out on the studio floor: mirror-image women portrait, red-hair Auralia with cockatoo, blue-hair mosaic woman, a small cockatoo-in-heart sketch with handwritten poem, and black stuffed cockatoos. Proof of physical studio practice.'
+  },
+  {
+    id: 'studio-vishnu-meditation',
+    title: 'Before the Mural',
+    series: 'Studio Process',
+    medium: 'Photography',
+    type: 'Documentary',
+    year: '2026',
+    image: '23_studio_process/studio-vishnu-meditation.jpg',
+    tags: ['Studio Process', 'meditation', 'Vishnu', 'cobra', 'mural', 'Hindu', 'atmospheric'],
+    description: 'A man seen from behind, sitting in meditation on a wooden floor before a massive blue Vishnu/cobra deity mural in a forest mandala setting. Shows the real reference world behind the studio — deeply atmospheric.'
+  },
+  {
+    id: 'studio-tom-feathers-hair',
+    title: 'Origin',
+    series: 'Studio Process',
+    medium: 'Photography',
+    type: 'Documentary',
+    year: '2026',
+    image: '23_studio_process/studio-tom-feathers-hair.jpg',
+    tags: ['Studio Process', 'portrait', 'feathers', 'sunglasses', 'origin', 'young', 'candid'],
+    description: 'A young man in profile, feathers tucked behind his ear, sunglasses, dark hair and a striped jacket. The origin image — the feather-in-hair moment that the whole mythology grew around.'
   }];

@@ -604,6 +604,21 @@ button:focus-visible, a:focus-visible {
   overflow: hidden;
   box-shadow: 0 18px 44px rgba(0,0,0,.28);
   transition: all 200ms var(--ease-snappy);
+  position: relative;
+}
+.art-card::after {
+  content: '© Blue $nake Studio';
+  position: absolute;
+  bottom: 7px;
+  right: 9px;
+  font-family: Georgia, serif;
+  font-size: 9px;
+  font-weight: normal;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: .05em;
+  pointer-events: none;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.95);
+  z-index: 2;
 }
 .art-card:hover {
   transform: translateY(-5px);
@@ -1227,12 +1242,14 @@ button:focus-visible, a:focus-visible {
 .start-card-grid {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
   margin-top: 18px;
 }
 .start-card {
-  min-height: 156px;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
   padding: 18px;
   border: 1px solid rgba(0,245,255,.22);
   border-radius: 20px;
@@ -1250,7 +1267,7 @@ button:focus-visible, a:focus-visible {
 }
 .start-card span {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   color: var(--neon-cyan);
   text-transform: uppercase;
   letter-spacing: .18em;
@@ -1258,23 +1275,104 @@ button:focus-visible, a:focus-visible {
   font-weight: 900;
   text-shadow: 0 0 12px rgba(0,245,255,.2);
 }
-.start-card p {
-  margin: 0 0 16px;
-  color: var(--muted);
-  font-size: 14px;
-}
 .start-card strong {
-  color: var(--neon-pink);
-  text-transform: uppercase;
-  letter-spacing: .15em;
-  font-size: 10px;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold-hot);
+  margin: 0 0 8px;
+  line-height: 1.4;
 }
-.start-card strong::after { content: " ↗"; color: var(--neon-cyan); }
+.start-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+  flex: 1;
+}
+.start-card em {
+  display: block;
+  margin-top: 14px;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
 
 @media (max-width: 820px) {
-  .start-card-grid { grid-template-columns: 1fr; }
+  .start-card-grid { grid-template-columns: repeat(2, 1fr); }
   .start-card { min-height: 0; }
 }
+@media (max-width: 540px) {
+  .start-card-grid { grid-template-columns: 1fr; }
+}
+
+.studio-description {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 640px;
+  margin: 0 0 28px;
+  line-height: 1.65;
+}
+
+.featured-projects { margin: 48px 0; }
+.featured-project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+.featured-project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 18px;
+  border: 1px solid rgba(120,214,247,.18);
+  border-radius: 14px;
+  background: rgba(255,255,255,.04);
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 180ms ease;
+}
+.featured-project-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(199,168,106,.5);
+  background: rgba(199,168,106,.07);
+}
+.featured-project-card strong { font-size: 13px; color: var(--gold-hot); }
+.project-status {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 20px;
+  background: rgba(120,214,247,.10);
+  color: var(--neon-cyan);
+  margin-bottom: 2px;
+}
+.featured-project-card p { font-size: 12px; color: var(--muted); margin: 0; line-height: 1.5; }
+
+.studio-about { margin: 48px 0 32px; max-width: 720px; }
+.about-body p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
+.about-body em { color: var(--gold-hot); font-style: italic; }
+
+.panel-footer {
+  margin-top: 64px;
+  padding: 24px 0 40px;
+  border-top: 1px solid rgba(120,214,247,.12);
+  font-size: 12px;
+  color: var(--dim);
+  line-height: 1.9;
+}
+.panel-footer a { color: var(--muted); text-decoration: none; }
+.panel-footer a:hover { color: var(--gold-hot); }
+.footer-brand { margin-bottom: 2px; }
+.footer-brand strong { color: var(--ink); }
+.footer-contact { font-size: 11px; }
 
 @media print {
   .start-here-pack { border: 1px solid #aaa; box-shadow: none; background: #fff; }

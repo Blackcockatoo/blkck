@@ -13,24 +13,23 @@
       slug: 'start-here',
       label: 'Start Here',
       eyebrow: 'Studio overview · Frankston, Australia',
-      title: 'Ideas made visible, audible and useful.',
-      statement: 'Blue $nake Studio is an independent creative practice by Tom, bringing visual art, music, education tools and experimental systems into one connected body of work.',
+      title: 'Patterns become worlds.',
+      statement: 'The Moss Man is the creator. Blue $nake Studio is the world-building studio. blkck2.com is the portal.',
+      studioDescription: 'Blue $nake Studio builds child-safe learning tools, mythic music worlds, visual art and symbolic engines — all connected through The Moss Man\'s pattern-based universe.',
+      pageTitle: 'The Moss Man / Blue $nake Studio — Art, Music, Meta-Pet & Moss 60',
+      pageDescription: 'The Moss Man is the creator. Blue $nake Studio is the world-building studio. blkck2.com is the portal. Art, music, Meta-Pet, Moss 60 and teacher tools from Frankston, Australia.',
       startHere: true,
-      details: [
-        'Explore original artwork, music-led worlds and a growing archive of studio projects.',
-        'Discover privacy-conscious learning concepts, classroom resources and the Moss 60 visual number system.',
-        'Schools & educators, councils, collaborators and creative partners, this page is the clearest introduction to the studio and its work.'
-      ],
+      details: [],
       links: [
-        { label: 'Open Gallery Rooms', href: '#visual-worlds', className: 'album-link' },
-        { label: 'View Elevator Pitch', href: 'https://elevator-pitch-seven.vercel.app/', className: 'album-link' },
-        { label: 'Memetics Register', href: 'documents/oss-734g-known-unknowns-register.html' },
-        { label: 'Meta-Pet Pilot School', href: 'https://metapet-pilot-school.vercel.app/' },
-        { label: 'Black Wing Crew', href: 'https://blackwingcrew.netlify.app/' },
+        { label: 'Try Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link' },
+        { label: 'Download Teacher Pack', href: 'https://teachers-secret-cheatsheet.vercel.app/', className: 'album-link' },
+        { label: 'Enter Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link' },
+        { label: 'Gallery Rooms', href: '#visual-worlds' },
+        { label: 'Elevator Pitch', href: 'https://elevator-pitch-seven.vercel.app/' },
         { label: 'YouTube @blkck2', href: 'https://www.youtube.com/@blkck2' },
         { label: 'Email B$S', href: 'mailto:bluesssnakestudio@gmail.com' }
       ],
-      featuredIds: ['auralia-cosmic-poster', 'black-wing-chant-sheet', 'neon-venom-enter-dream-qr', 'moss60-geometry-linework', 'painting-bss-woman-cockatoo', 'blue-snake-gold-logo']
+      featuredIds: ['moss-man-runic-scribe', 'auralia-cosmic-poster', 'black-wing-chant-sheet', 'neon-venom-enter-dream-qr', 'moss60-geometry-linework', 'painting-bss-woman-cockatoo', 'blue-snake-gold-logo']
     },
     {
       slug: 'moss-man',
@@ -38,6 +37,8 @@
       eyebrow: 'About the practice · Blue $nake Studio',
       title: 'A studio without hard borders.',
       statement: 'The Moss Man is the creative identity behind a practice where painting, music, design, learning and systems thinking continuously inform one another.',
+      pageTitle: 'The Moss Man — About the Practice · Blue $nake Studio',
+      pageDescription: 'Tom from Frankston: artist, musician, educator and founder of Blue $nake Studio. A practice where painting, music, design, learning and systems thinking inform one another.',
       textualInstallation: true,
       details: [
         'The work moves between expressive art and practical tools without treating them as separate disciplines.',
@@ -49,7 +50,7 @@
         { label: 'Black Wing Crew', href: 'https://blackwingcrew.netlify.app/' },
         { label: 'YouTube @blkck2', href: 'https://www.youtube.com/@blkck2' }
       ],
-      featuredIds: ['auralia-cosmic-poster', 'black-wing-chant-sheet', 'neon-venom-enter-dream-qr', 'painting-bss-woman-cockatoo', 'blue-snake-gold-logo', 'moss60-geometry-linework']
+      featuredIds: ['moss-man-runic-scribe', 'moss-man-victorian-library', 'moss-man-frankston-courts', 'moss-man-hope-poster', 'auralia-cosmic-poster', 'black-wing-chant-sheet', 'neon-venom-enter-dream-qr', 'painting-bss-woman-cockatoo']
     },
     {
       slug: 'visual-worlds',
@@ -57,6 +58,8 @@
       eyebrow: 'Selected work · Visual archive',
       title: 'Enter the visual worlds.',
       statement: 'A curated archive of paintings, characters, symbols, campaign artwork and works in progress—organised as distinct rooms, each with its own atmosphere and purpose.',
+      pageTitle: 'Gallery Rooms — Blue $nake Studio · blkck2.com',
+      pageDescription: 'Ten gallery chambers: The Painted Wing, Neon Venom, The Omen Room, The Learning Beast, Moss 60 Engine, Street Print Arsenal, Colouring Pages, Memetics & Public Repair, The Moss Man and Humour & Parody.',
       series: ['Auralia', 'Insidious Rhythms', 'Original Paintings', 'B$S Branding', 'Process / References'],
       rooms: true,
       details: [
@@ -75,6 +78,8 @@
       eyebrow: 'Music and moving image · Neon Venom',
       title: 'Sound with a visual identity.',
       statement: 'Black Wing Crew brings music, performance and graphic language together through recurring symbols, rhythmic hooks, short-form video and print-led releases.',
+      pageTitle: 'Black Wing Crew / Neon Venom — Blue $nake Studio',
+      pageDescription: 'The 2026 Neon Venom digital LP by Blue $nake Studio: tracklist, streaming, downloads, lyrics, QR drops, lyric posters and street print assets.',
       series: ['Black Wing Crew', 'Neon Venom'],
       details: [
         'This is the sound-and-symbol branch for Neon Venom, Woman Money Venom and Black Omen energy.',
@@ -84,7 +89,8 @@
       links: [
         { label: 'Open Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link' },
         { label: 'Watch on YouTube', href: 'https://www.youtube.com/@blkck2' }
-      ]
+      ],
+      featuredIds: ['black-wing-cosmic-singing', 'neon-venom-cyberpunk-poster', 'bss-twin-cockatoos-stained-glass', 'neon-venom-enter-dream-qr', 'black-wing-chant-sheet', 'neon-venom-campaign']
     },
     {
       slug: 'old-vic-state',
@@ -92,6 +98,8 @@
       eyebrow: 'Civic gothic · recursive song cycle · Victoria',
       title: 'The old state dreams in circles.',
       statement: 'Old Vic State is a civic-gothic song and image cycle about memory, command and the structures that outlive the people who believe they control them.',
+      pageTitle: 'Old Vic State — Civic Gothic Song Cycle · Blue $nake Studio',
+      pageDescription: 'A civic-gothic song and image cycle from Blue $nake Studio. One wing remembers fire. One wing remembers law. Between them hangs the body of command.',
       oldVicState: true,
       details: [
         'One wing remembers fire. One wing remembers law. Between them hangs the body of command.',
@@ -111,6 +119,8 @@
       eyebrow: 'Sister-city song · learning bridge',
       title: 'Two shores. One song.',
       statement: 'The Frankston → Fuji branch is for the bilingual sister-city material: song, lyric sheets, practice games, taiko rhythm, cultural connection and school-friendly learning.',
+      pageTitle: 'Frankston → Fuji — Sister-City Song · Blue $nake Studio',
+      pageDescription: 'Bilingual Japanese and English sister-city material for schools and councils: lyric sheets, pronunciation guides, taiko rhythm and cultural connection between Frankston and Susono.',
       details: [
         'Keep this branch clean and respectful so councils, schools and collaborators can understand it quickly.',
         'Use it for Japanese/English lyric sheets, pronunciation cards, rhythm practice and context tidbits.',
@@ -128,6 +138,8 @@
       eyebrow: 'Respectful research · language journey',
       title: 'Ask before the omen speaks.',
       statement: 'This branch holds the Black Omen / Waahn research path: Bunurong–Boonwurrung enquiry, place respect, translation limits, word-bank notes and consultation-first process.',
+      pageTitle: 'Black Omen / Waahn — Bunurong Language Research · Blue $nake Studio',
+      pageDescription: 'Respectful research-in-progress into Black Omen, Waahn and Bunurong–Boonwurrung language near Frankston. Consultation-first, not a final translation or cultural authority.',
       details: [
         'Frame it as research-in-progress, not cultural authority or final translation.',
         'Good for notes, contact drafts, source maps, word-bank experiments and permission pathways.',
@@ -142,13 +154,18 @@
     {
       slug: 'meta-pet',
       label: 'Meta-Pet',
-      eyebrow: 'Privacy-first learning · Concept development',
+      eyebrow: 'Privacy-first learning · In development',
       title: 'Technology that gives attention back.',
-      statement: 'Meta-Pet is a child-safe learning companion concept designed around creativity, pattern recognition and healthy interaction—not advertising, tracking or endless engagement.',
+      statement: 'Meta-Pet is a child-safe digital learning companion built for healthy device use, creativity and schools — without ads, trackers, social feeds, gambling loops or unnecessary data collection.',
+      pageTitle: 'Meta-Pet — Privacy-First Learning · Blue $nake Studio',
+      pageDescription: 'A child-safe STEAM learning companion: no ads, no trackers, no unnecessary data collection. Puzzles, pattern recognition and healthy device use for schools and families.',
       details: [
-        'Local-first, child-safe direction: no ads, no trackers, no unnecessary cloud collection.',
-        'A STEAM learning creature powered by puzzles, pattern recognition, creative tasks and symbolic identity.',
-        'This is where the wild B$S world becomes a tool for families, schools and healthy device use.'
+        'No ads, no trackers, no unnecessary cloud data — privacy-first from the ground up.',
+        'Healthy device use design: no social feeds, no gambling loops, no endless scroll.',
+        'Classroom mode: zero-admin setup, no login required for students.',
+        'Parent peace of mind: transparent, local-first, fully child-safe.',
+        'A STEAM learning companion powered by puzzles, pattern recognition and creative tasks.',
+        'Prototype available now. Contact the studio for school pilot enquiries.'
       ],
       links: [
         { label: 'Open Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link' },
@@ -156,7 +173,7 @@
         { label: 'Teacher Tools', href: '#teacher-tools' },
         { label: 'Email studio', href: 'mailto:bluesssnakestudio@gmail.com' }
       ],
-      featuredIds: ['meta-pet-process-overview', 'meta-pet-no-login', 'meta-pet-one-more-app', 'meta-pet-digital-genomes', 'meta-pet-companion-portrait', 'meta-pet-neon-ornament']
+      featuredIds: ['meta-pet-kid-with-feather', 'meta-pet-process-overview', 'meta-pet-no-login', 'meta-pet-one-more-app', 'meta-pet-digital-genomes', 'meta-pet-companion-portrait', 'meta-pet-neon-ornament']
     },
     {
       slug: 'moss60',
@@ -164,11 +181,15 @@
       eyebrow: 'Visual mathematics · 108 · 360',
       title: 'A number system you can see and feel.',
       statement: 'Moss 60 explores base-60 thinking, cycles, geometry, colour and sound as a visual framework for puzzles, identity systems and creative learning.',
+      pageTitle: 'Moss 60 — Visual Number System · Blue $nake Studio',
+      pageDescription: 'A 60-position visual mathematics system: base-60 thinking, geometry, glyphs and digital DNA. Powers the Meta-Pet learning engine and symbolic identity system.',
       series: ['MOSS60 / Geometry'],
       details: [
-        'Keep the deep numbers behind the mechanics so it feels real without forcing people to read a textbook.',
-        'Use it for Meta-Pet DNA, fractal puzzles, symbolic security, angle-colour-behaviour systems and skill games.',
-        'The public face should feel like a mystical machine: playable first, explainable second.'
+        'A 60-position visual number system grounded in base-60 geometry, cycles and proportion.',
+        'Powers Meta-Pet: digital DNA genomes, glyph puzzles and symbolic identity systems.',
+        'Semantic Sovereignty doctrine: language, framing, meaning and narrative defence.',
+        'Try the Oracle Warden — a playable glyph engine with interactive Moss 60 logic.',
+        'Research and invention phase. Contact the studio to discuss pilot use or collaboration.'
       ],
       links: [
         { label: 'Explore Digital DNA', href: 'https://www.bluesnakestudios.com/digital-dna', className: 'album-link' },
@@ -183,10 +204,14 @@
       eyebrow: 'Classroom proof · behaviour support',
       title: 'Useful in a real classroom.',
       statement: 'Teacher Tools is the proof branch: classroom-ready supports, behaviour sheets, healthy attention design and low-admin learning material for stretched teachers.',
+      pageTitle: 'Teacher Tools — Behaviour Support · Blue $nake Studio',
+      pageDescription: 'Seven printable behaviour support templates for stretched teachers. Victoria-aware, low admin, child-facing. Behaviour framed as communication throughout.',
       details: [
-        'This is where B$S becomes practical: printables, behaviour support, lesson prompts and school-safe language.',
-        'Keep it clear enough for teachers and parents, but visually connected to the Moss Tree world.',
-        'Best use: prove that the myth-tech has a real education purpose underneath.'
+        'Seven printable behaviour-support templates: transition flows, attention supports, classroom strategies.',
+        'Who it helps: classroom teachers, education support officers, integration aides, parents, support coordinators.',
+        'Low admin: print-and-use formats, child-facing language, Victoria-aware framing.',
+        'Free to download and use in your classroom.',
+        'Not legal, medical or clinical advice. These are practical classroom tools, not professional assessments.'
       ],
       links: [
         { label: 'Open Teacher Tools Landing Page', href: 'https://teachers-secret-cheatsheet.vercel.app/', className: 'album-link' },
@@ -202,7 +227,19 @@
       eyebrow: 'Poster arsenal · QR drops · Officeworks-ready',
       title: 'Print the omen.',
       statement: 'The Print Street Pack branch is for posters, stickers, QR codes, cutouts, cards, coasters, A4 layouts and physical promo kits that make B$S leave the screen.',
+      pageTitle: 'Print Street Pack — Posters, QR & Stickers · Blue $nake Studio',
+      pageDescription: 'A4 poster packs, QR sticker sheets, chant posters, brand marks and print-ready street assets from Blue $nake Studio. Officeworks-ready, cuttable, scannable.',
       series: ['Neon Venom', 'B$S Branding', 'Insidious Rhythms', 'Black Wing Crew'],
+      featuredIds: [
+        'neon-venom-portrait-qr',
+        'bwc-neon-qr-sheet',
+        'bwc-crest-sheet',
+        'bss-serpent-crest',
+        'old-vic-state-campaign',
+        'neon-venom-campaign',
+        'neon-venom-portal-qr',
+        'black-wing-chant-sheet'
+      ],
       details: [
         'This is central to your style: not just online — printable, cuttable, scannable, hand-to-hand.',
         'Organise files as A4 poster packs, two-up prints, sticker sheets, QR sheets and promo cards.',
@@ -349,7 +386,7 @@
       useFor: 'portfolio proof, artist identity, handmade credibility, exhibition pieces',
       proof: ['physical paintings', 'Auralia portrait language', 'cockatoo totem work', 'blue/gold B$S palette'],
       promise: 'This room proves the studio is not only prompts and code — there is a hand, a mythology, and a real painter underneath it.',
-      ids: ['painting-bss-woman-cockatoo', 'painting-redhair-auralia', 'painting-spiral-listener', 'painting-two-muses', 'auralia-serpent-profile', 'auralia-moon-dust']
+      ids: ['painting-bss-woman-cockatoo', 'painting-redhair-auralia', 'painting-spiral-listener', 'painting-two-muses', 'auralia-serpent-profile', 'auralia-moon-dust', 'bss-twin-cockatoos-stained-glass', 'auralia-ouroboros-keyart', 'auralia-blue-flight-relief', 'auralia-dark-profile-snake', 'she-weaves-dawn-stained-glass', 'she-weaves-dawn-woodblock', 'painting-child-namo-narayana', 'auralia-klimt-mosaic']
     },
     {
       slug: 'neon-venom-room',
@@ -362,7 +399,7 @@
       useFor: 'music promo, YouTube traffic, QR drops, sticker sheets, street campaigns',
       proof: ['QR stickers', 'Black Wing Crew bait', 'neon campaign graphics', 'promo-ready visuals'],
       promise: 'This room makes the work scannable, shareable and hard to ignore.',
-      ids: ['neon-venom-portrait-qr', 'bwc-neon-qr-sheet', 'neon-venom-campaign', 'neon-venom-portal-qr', 'neon-venom-enter-dream-qr', 'neon-venom-black-birds-dream']
+      ids: ['neon-venom-portrait-qr', 'bwc-neon-qr-sheet', 'neon-venom-campaign', 'neon-venom-portal-qr', 'neon-venom-enter-dream-qr', 'neon-venom-black-birds-dream', 'woman-money-venom-shorts-qr', 'woman-money-venom-full-qr', 'neon-venom-cyberpunk-poster', 'black-wing-cosmic-singing']
     },
     {
       slug: 'omen-room',
@@ -375,7 +412,7 @@
       useFor: 'Black Wing Crew, Black Omen, lyric posters, chant sheets, film clip identity',
       proof: ['Black Omen chant sheet', 'Auralia omen poster', 'Insidious Rhythms lyrics', 'raw video sources'],
       promise: 'This room gives the music its mythology and makes the songs feel like they came from somewhere older.',
-      ids: ['black-omen-research-map', 'black-omen-language-working-map', 'black-wing-chant-sheet', 'auralia-cosmic-poster', 'insidious-rhythms-gold', 'insidious-rhythms-blue', 'video-black-wing-source-01', 'video-source-02']
+      ids: ['black-omen-research-map', 'black-omen-language-working-map', 'black-wing-chant-sheet', 'auralia-cosmic-poster', 'insidious-rhythms-gold', 'insidious-rhythms-blue', 'video-black-wing-source-01', 'video-source-02', 'black-cockatoo-deity-throne', 'bss-coat-of-arms', 'krishna-bss-portrait', 'krishna-bss-fullbody', 'moss-man-victorian-library', 'omen-fire-silhouette', 'omen-campfire-face', 'black-cockatoo-queen', 'bss-mascot-all-seeing-eye', 'omen-blue-serpent-deity', 'bss-twin-cockatoos-night']
     },
     {
       slug: 'learning-beast',
@@ -388,7 +425,7 @@
       useFor: 'school pitch, teacher pathway, classroom printables, behaviour support, Meta-Pet explanation',
       proof: ['Meta-Pet Pilot School link', 'Teacher Tools link', 'behaviour-support direction', 'Moss 60 learning engine'],
       promise: 'This room shows the serious education purpose underneath the wild visual shell.',
-      ids: ['meta-pet-process-overview', 'teacher-one-device-flow', 'teacher-transition-flow', 'meta-pet-no-login', 'meta-pet-digital-genomes', 'meta-pet-companion-portrait', 'meta-pet-neon-ornament']
+      ids: ['meta-pet-process-overview', 'teacher-one-device-flow', 'teacher-transition-flow', 'meta-pet-no-login', 'meta-pet-digital-genomes', 'meta-pet-companion-portrait', 'meta-pet-neon-ornament', 'meta-pet-kid-with-feather', 'auralia-divine-ascending', 'auralia-coin-m', 'auralia-coin-f']
     },
     {
       slug: 'moss60-engine',
@@ -401,7 +438,7 @@
       useFor: 'interactive puzzles, Meta-Pet identity, digital DNA, skill-game mechanics, mythic logic systems',
       proof: ['MOSS60 geometry study', 'B$S symbolic marks', 'Auralia serpent loop', 'fire/mood texture'],
       promise: 'This room keeps the maths behind the magic so the work feels alive instead of random.',
-      ids: ['moss60-dna-geometry-campaign', 'meta-pet-neon-ornament', 'meta-pet-digital-genomes', 'moss60-geometry-linework', 'blue-snake-gold-logo', 'auralia-serpent-profile', 'bss-cockatoo-logo']
+      ids: ['moss60-dna-geometry-campaign', 'meta-pet-neon-ornament', 'meta-pet-digital-genomes', 'moss60-geometry-linework', 'blue-snake-gold-logo', 'auralia-serpent-profile', 'bss-cockatoo-logo', 'spiral-mountain-god', 'auralia-moss60-linework']
     },
     {
       slug: 'street-print-arsenal',
@@ -414,9 +451,9 @@
       useFor: 'A4 poster packs, QR sheets, sticker sheets, school one-pagers, song posters, handout kits',
       proof: ['QR designs', 'lyric posters', 'brand marks', 'chant sheets', 'sticker-ready artwork'],
       promise: 'This room turns the online world into physical evidence people can hold, scan and remember.',
-      ids: ['neon-venom-portrait-qr', 'bwc-neon-qr-sheet', 'bwc-crest-sheet', 'bss-serpent-crest', 'old-vic-state-campaign', 'neon-venom-campaign', 'neon-venom-portal-qr', 'black-wing-chant-sheet']
-    }
-,
+      downloadPack: { label: '↓ Download QR Pack', href: 'downloads/bss-qr-drop-pack.zip' },
+      ids: ['neon-venom-portrait-qr', 'bwc-neon-qr-sheet', 'bwc-crest-sheet', 'bss-serpent-crest', 'old-vic-state-campaign', 'neon-venom-campaign', 'neon-venom-portal-qr', 'black-wing-chant-sheet', 'qr-pink', 'qr-orange', 'qr-yellow', 'qr-green', 'qr-purple', 'qr-cyan', 'qr-rainbow', 'neon-venom-cyberpunk-poster', 'moss-man-hope-poster']
+    },
     {
       slug: 'colouring-pages',
       number: 'ROOM 07',
@@ -428,7 +465,8 @@
       useFor: 'home printing, classroom activities, mindful colouring, creative workshops, studio handouts',
       proof: ['seven printable artworks', 'detailed and simple options', 'Auralia visual world', 'full-size PNG files'],
       promise: 'This room invites people to participate in the studio world, one colour at a time.',
-      ids: ['colouring-auralia-landscape', 'colouring-auralia-flute', 'colouring-auralia-omen', 'colouring-auralia-gateway', 'colouring-moss-man', 'colouring-cockatoo-serpent', 'print-ruler-is-read']
+      downloadPack: { label: '↓ Download Colouring Pack', href: 'downloads/bss-colouring-pages-pack.zip' },
+      ids: ['colouring-auralia-landscape', 'colouring-auralia-flute', 'colouring-auralia-omen', 'colouring-auralia-gateway', 'colouring-moss-man', 'colouring-cockatoo-serpent', 'print-ruler-is-read', 'colouring-child-saint', 'colouring-pug-kiss', 'colouring-auralia-simple', 'colouring-auralia-detailed', 'colouring-auralia-female']
     },
     {
       slug: 'memetics-public-repair',
@@ -445,7 +483,34 @@
         { label: 'Open Known Unknowns Register', href: 'documents/oss-734g-known-unknowns-register.html', className: 'album-link' }
       ],
       ids: ['memetics-duty-nine-steps', 'memetics-fear-duty', 'memetics-awareness-repair', 'memetics-story-duty', 'memetics-status-quo-personal', 'memetics-awareness-safety', 'memetics-status-quo-systems']
-    }  ];
+    },
+    {
+      slug: 'moss-man-room',
+      number: 'ROOM 09',
+      title: 'The Moss Man',
+      eyebrow: 'Tom Moss · Frankston, Australia',
+      doorway: 'The portrait archive.',
+      statement: 'Ten years of self-portraiture, parody and myth-building. From the runic scribe to the budget medieval warrior.',
+      mood: 'Warm, strange, self-aware',
+      useFor: 'Press, collaboration pitches, social content',
+      proof: ['Runic scribe portrait', 'Frankston Law Courts', 'Crown of the Clucker', 'HOPE poster', '$5 medieval warrior'],
+      promise: 'You will understand who made this.',
+      ids: ['moss-man-runic-scribe', 'moss-man-frankston-courts', 'moss-man-hope-poster', 'moss-man-crown-clucker', 'moss-man-five-dollar-warrior', 'moss-man-pug-oldmaster', 'moss-man-notice-poster', 'moss-man-victorian-library', 'moss-man-portrait-v1', 'moss-man-portrait-v2', 'moss-man-fire-cockatoo', 'moss-man-candid']
+    },
+    {
+      slug: 'humour-room',
+      number: 'ROOM 10',
+      title: 'Humour & Parody',
+      eyebrow: 'Black Wing Crew · Comedy archive',
+      doorway: 'The part where the studio laughs at itself.',
+      statement: 'Breaking Beak, Beak to the Future, Crown of the Clucker and the official emu/kangaroo national policy.',
+      mood: 'Irreverent, very Australian',
+      useFor: 'Social posts, YouTube thumbnails, merch',
+      proof: ['Beak to the Future', 'Breaking Beak', 'Pi Wizard Chicken', 'Forward Together Awkward Forever'],
+      promise: 'One of these becomes a meme.',
+      ids: ['humour-beak-to-the-future', 'humour-breaking-beak', 'humour-pi-wizard-chicken', 'humour-forward-together', 'moss-man-crown-clucker', 'moss-man-five-dollar-warrior']
+    }
+  ];
 
 
   total.textContent = String(sections.length).padStart(2, '0');
@@ -510,29 +575,100 @@
   }
 
   function startHereAudience() {
-    const cards = [
-      ['Schools & educators', 'Privacy-conscious learning concepts, classroom resources and practical behaviour-support tools.', '#teacher-tools'],
-      ['Councils & community', 'Local cultural projects, bilingual song pathways and careful research-led collaboration.', '#frankston-fuji'],
-      ['Art & music', 'Original paintings, visual worlds, Black Wing Crew releases and short-form video.', '#black-wing-crew'],
-      ['Print & promotion', 'Posters, QR cards, sticker sheets and production-ready campaign assets.', '#print-street-pack']
+    const doors = [
+      {
+        audience: 'Schools / Parents',
+        what: 'Child-safe learning tools and classroom support.',
+        detail: 'Meta-Pet digital companion, Teacher\'s Secret Cheatsheet, behaviour-support templates, privacy-first design — no ads, no trackers.',
+        cta: 'Try Meta-Pet', href: 'https://www.bluesnakestudios.com/'
+      },
+      {
+        audience: 'Art / Music / Culture',
+        what: 'Mythic music worlds, visual art, print packs and lore.',
+        detail: 'Black Wing Crew, Neon Venom LP, gallery rooms, sticker sheets, lyric posters, YouTube and street print drops.',
+        cta: 'Enter Black Wing Crew', href: 'https://blackwingcrew.netlify.app/'
+      },
+      {
+        audience: 'Theory / Invention',
+        what: 'Visual number system, symbolic engine and digital DNA.',
+        detail: 'Moss 60 base-60 geometry, Semantic Sovereignty doctrine, interactive glyph engine, proof layers and pattern logic.',
+        cta: 'Explore Moss 60', href: '#moss60'
+      }
     ];
     return `
-      <section class="start-here-pack" aria-label="Who this page is for">
+      <section class="start-here-pack" aria-label="Choose your door">
         <div class="section-heading">
-          <p class="eyebrow">Find your way in</p>
-          <h2>Four ways to work with the studio.</h2>
-          <p>Choose the area closest to your interests, then explore the related projects and working examples.</p>
+          <p class="eyebrow">Choose your door</p>
+          <h2>Three ways into the studio.</h2>
         </div>
         <div class="start-card-grid">
-          ${cards.map(([label, copy, href]) => `
-            <a class="start-card" href="${escapeHtml(href)}">
-              <span>${escapeHtml(label)}</span>
-              <p>${escapeHtml(copy)}</p>
-              <strong>Explore →</strong>
+          ${doors.map(d => `
+            <a class="start-card" href="${escapeHtml(d.href)}"${externalAttrs(d.href)}>
+              <span>${escapeHtml(d.audience)}</span>
+              <strong>${escapeHtml(d.what)}</strong>
+              <p>${escapeHtml(d.detail)}</p>
+              <em>${escapeHtml(d.cta)} →</em>
             </a>
           `).join('')}
         </div>
       </section>
+    `;
+  }
+
+  function featuredProjectsGrid() {
+    const projects = [
+      { label: 'Meta-Pet', status: 'In development', desc: 'A privacy-first digital pet and learning companion — no ads, trackers, social feeds, gambling loops or unnecessary data.', href: '#meta-pet' },
+      { label: 'Teacher\'s Secret Cheatsheet', status: 'Live', desc: 'Behaviour-support templates for stretched teachers. Print and use. Zero admin.', href: 'https://teachers-secret-cheatsheet.vercel.app/' },
+      { label: 'Black Wing Crew / Neon Venom', status: 'Live', desc: '2026 LP: songs, lyric posters, QR drops, streaming.', href: 'https://blackwingcrew.netlify.app/' },
+      { label: 'Moss 60', status: 'Research', desc: 'Visual number system — base-60 digital DNA, glyph engine and symbolic identity.', href: '#moss60' },
+      { label: 'Semantic Sovereignty', status: 'Active', desc: 'Doctrine on language, framing, meaning and narrative defence.', href: 'documents/oss-734g-known-unknowns-register.html' },
+      { label: 'Visual Worlds', status: 'Live', desc: '10 gallery rooms: mythology, portraits, parody, print.', href: '#visual-worlds' },
+      { label: 'Frankston → Fuji', status: 'In progress', desc: 'Bilingual sister-city song, Japanese practice & taiko.', href: '#frankston-fuji' },
+      { label: 'Black Omen / Waahn', status: 'Research', desc: 'Bunurong-Boonwurrung language research map.', href: '#black-omen-waahn' }
+    ];
+    return `
+      <section class="featured-projects" aria-label="Studio projects">
+        <div class="section-heading">
+          <p class="eyebrow">What we make</p>
+          <h2>Studio projects.</h2>
+        </div>
+        <div class="featured-project-grid">
+          ${projects.map(p => `
+            <a class="featured-project-card" href="${escapeHtml(p.href)}"${externalAttrs(p.href)}>
+              <strong>${escapeHtml(p.label)}</strong>
+              ${p.status ? `<span class="project-status">${escapeHtml(p.status)}</span>` : ''}
+              <p>${escapeHtml(p.desc)}</p>
+            </a>`).join('')}
+        </div>
+      </section>
+    `;
+  }
+
+  function startHereAbout() {
+    return `
+      <section class="studio-about" aria-label="About the studio">
+        <div class="section-heading">
+          <p class="eyebrow">The Moss Man / Tom Moss · Frankston, Australia</p>
+          <h2>A studio without hard borders.</h2>
+        </div>
+        <div class="about-body">
+          <p>Tom is a hands-on creator, artist, songmaker, behavioural thinker, digital developer, pattern-builder and world-maker. He has spent years building connected systems where a painting informs a number, a chant informs a classroom tool, and a black cockatoo feather threads through all of it.</p>
+          <p>Blue $nake Studio is his production entity. blkck2.com is the portal. The work covers visual art, music, education technology and symbolic systems — held together by a single principle: <em>patterns become worlds.</em></p>
+          <div class="links-row">
+            <a class="project-link album-link" href="#moss-man">Meet The Moss Man →</a>
+            <a class="project-link" href="mailto:bluesssnakestudio@gmail.com">Contact the studio</a>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  function panelFooter() {
+    return `
+      <footer class="panel-footer" role="contentinfo">
+        <p class="footer-brand">Created by <strong>The Moss Man</strong> / <strong>Blue $nake Studio</strong> — <a href="https://blkck2.com/">blkck2.com</a> — <a href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener noreferrer">@blkck2</a></p>
+        <p class="footer-contact"><a href="mailto:bluesssnakestudio@gmail.com">bluesssnakestudio@gmail.com</a> · <a href="mailto:blkck2@gmail.com">blkck2@gmail.com</a></p>
+      </footer>
     `;
   }
 
@@ -625,6 +761,7 @@
           <div><span>use it for</span><strong>${escapeHtml(room.useFor)}</strong></div>
         </div>
         ${linksRow(room)}
+        ${room.downloadPack ? `<div class="links-row"><a class="project-link album-link" href="${escapeHtml(room.downloadPack.href)}" download>${escapeHtml(room.downloadPack.label)}</a></div>` : ''}
         <div class="room-proof-strip">
           ${(room.proof || []).map(proof => `<span>${escapeHtml(proof)}</span>`).join('')}
         </div>
@@ -689,15 +826,15 @@
 
   function oldVicStateFeature() {
     const chapters = [
-      ['I', 'The Omen', 'War becomes government; government dreams it has escaped war.', 'assets/19_old_vic_state/black-omen-command-cycle.jpeg'],
-      ['II', 'The Ledger', 'Justice deferred. Truth recorded. Silence witnessed. Time remembers.', 'assets/19_old_vic_state/old-vic-ledger-city.jpeg'],
-      ['III', 'Butterfly Symmetry', 'One wing remembers fire. One wing remembers law.', 'assets/19_old_vic_state/butterfly-symmetry-triptych.jpeg'],
-      ['IV', 'The Witness', 'The civic memory remains when the office, crown and speaker are gone.', 'assets/19_old_vic_state/victorian-ledger-witness.jpeg']
+      ['I', 'The Omen', 'War becomes government; government dreams it has escaped war.', '19_old_vic_state/black-omen-command-cycle.jpeg'],
+      ['II', 'The Ledger', 'Justice deferred. Truth recorded. Silence witnessed. Time remembers.', '19_old_vic_state/old-vic-ledger-city.jpeg'],
+      ['III', 'Butterfly Symmetry', 'One wing remembers fire. One wing remembers law.', '19_old_vic_state/butterfly-symmetry-triptych.jpeg'],
+      ['IV', 'The Witness', 'The civic memory remains when the office, crown and speaker are gone.', '19_old_vic_state/victorian-ledger-witness.jpeg']
     ];
     return `
       <section class="old-vic-feature" aria-labelledby="old-vic-feature-title">
         <figure class="old-vic-hero">
-          <img src="assets/14_music_campaigns/old-vic-state-campaign.png" alt="Old Vic State in monumental gold lettering between a recording studio and a gothic civic procession" loading="lazy">
+          <img src="14_music_campaigns/old-vic-state-campaign.png" alt="Old Vic State in monumental gold lettering between a recording studio and a gothic civic procession" loading="lazy">
           <figcaption>
             <span>Old Vic State · B$S original cycle</span>
             <h2 id="old-vic-feature-title">Memory sharpened into hope.</h2>
@@ -744,14 +881,18 @@
             <p class="eyebrow">${escapeHtml(section.eyebrow)}</p>
             <h1>${escapeHtml(section.title)}</h1>
             <p class="statement">${escapeHtml(section.statement)}</p>
+            ${section.studioDescription ? `<p class="studio-description">${escapeHtml(section.studioDescription)}</p>` : ''}
             ${section.textualInstallation ? textualInstallation() : ''}
             ${section.oldVicState ? oldVicStateFeature() : ''}
             ${linksRow(section)}
-            <ul class="details">${(section.details || []).map(detail => `<li>${escapeHtml(detail)}</li>`).join('')}</ul>
+            ${!section.startHere ? `<ul class="details">${(section.details || []).map(detail => `<li>${escapeHtml(detail)}</li>`).join('')}</ul>` : ''}
             ${projectProofStrip(section)}
             ${section.startHere ? startHereAudience() : ''}
+            ${section.startHere ? featuredProjectsGrid() : ''}
+            ${section.startHere ? startHereAbout() : ''}
             ${section.startHere ? collectionGrid() : ''}
             ${section.rooms ? roomsShowcase() : ''}
+            ${panelFooter()}
           </section>
           ${hasGallery ? `
             <section class="panel-view panel-images-view" id="view-${section.slug}-images" role="tabpanel" aria-labelledby="subtab-${section.slug}-images" data-panel-view-panel="images" hidden>
@@ -909,6 +1050,10 @@
     if (options.hash !== false && location.hash !== `#${slugs[active]}`) {
       history.replaceState(null, '', `#${slugs[active]}`);
     }
+    const activeSec = sections[active];
+    document.title = activeSec.pageTitle || `${activeSec.label} — Blue $nake Studio · blkck2.com`;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', activeSec.pageDescription || activeSec.statement);
     if (changed && status) status.textContent = `${sections[active].label} selected`;
   }
 
