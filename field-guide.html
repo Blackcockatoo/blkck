@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Moss Man Field Guide — B$S Universe Lore · Blue $nake Studio</title>
+  <meta name="description" content="The Moss Man Field Guide: everything in the B$S universe explained — who The Moss Man is, what each project is, how the symbols connect and why it all holds together." />
+  <link rel="canonical" href="https://blkck2.com/field-guide.html" />
+  <meta property="og:title" content="The Moss Man Field Guide — B$S Universe" />
+  <meta property="og:description" content="The lore bible for Blue $nake Studio. The Moss Man, Auralia, Moss 60, Black Wing Crew, the feather, the snake — how the whole universe connects." />
+  <meta property="og:image" content="https://blkck2.com/assets/01_auralia/auralia_cosmic_poster_v1.png" />
+  <meta property="og:url" content="https://blkck2.com/field-guide.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Moss Man Field Guide — B$S Universe" />
+  <meta name="twitter:description" content="The lore bible for Blue $nake Studio. How it all connects." />
+  <meta name="twitter:image" content="https://blkck2.com/assets/01_auralia/auralia_cosmic_poster_v1.png" />
+  <meta name="theme-color" content="#04101d" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { overflow: auto; }
+    .fg-shell { width: min(900px, calc(100% - 32px)); margin: 0 auto; padding: 80px 0 64px; }
+    .fg-hero { padding-bottom: 48px; border-bottom: 1px solid rgba(120,214,247,.12); margin-bottom: 56px; }
+    .fg-hero h1 { margin: 12px 0 20px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(36px, 6vw, 68px); line-height: .95; letter-spacing: -.03em; color: var(--ink); }
+    .fg-hero .lead { font-size: 17px; color: var(--muted); max-width: 680px; line-height: 1.75; margin: 0 0 24px; }
+    .fg-chapter { margin-bottom: 72px; }
+    .fg-chapter h2 { margin: 0 0 22px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(24px,3.5vw,38px); font-weight: 400; color: var(--ink); border-bottom: 1px solid rgba(120,214,247,.1); padding-bottom: 12px; }
+    .fg-chapter .eyebrow { margin: 0 0 8px; }
+    .fg-body { max-width: 720px; }
+    .fg-body p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 18px; }
+    .fg-body p:last-child { margin-bottom: 0; }
+    .fg-body strong { color: var(--ink); }
+    .fg-body em { color: var(--gold-hot); font-style: italic; }
+    .fg-body a { color: var(--gold-hot); text-decoration: none; }
+    .fg-body a:hover { text-decoration: underline; }
+    .entity-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 14px; margin: 22px 0; }
+    .entity-card { padding: 20px 22px; border: 1px solid rgba(120,214,247,.15); border-radius: 14px; background: rgba(2,7,13,.5); }
+    .entity-card h3 { margin: 0 0 8px; font-size: 14px; font-weight: 700; color: var(--gold-hot); }
+    .entity-card p { margin: 0; font-size: 12px; color: var(--muted); line-height: 1.6; }
+    .entity-card .entity-type { font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--neon-cyan); margin-bottom: 6px; display: block; }
+    .symbol-map { list-style: none; padding: 0; margin: 22px 0; }
+    .symbol-map li { display: grid; grid-template-columns: 140px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(120,214,247,.07); font-size: 13px; }
+    .symbol-map li:last-child { border-bottom: none; }
+    .symbol-map .sym-name { color: var(--ink); font-weight: 600; }
+    .symbol-map .sym-meaning { color: var(--muted); line-height: 1.6; }
+    .connection-list { list-style: none; padding: 0; margin: 16px 0 0; }
+    .connection-list li { padding: 10px 0 10px 18px; border-bottom: 1px solid rgba(120,214,247,.06); font-size: 13px; color: var(--muted); line-height: 1.6; position: relative; }
+    .connection-list li::before { content: '→'; position: absolute; left: 0; color: var(--gold-hot); }
+    .connection-list li:last-child { border-bottom: none; }
+    .connection-list li strong { color: var(--ink); }
+    .fg-quote { margin: 28px 0; padding: 20px 28px; border-left: 3px solid rgba(199,168,106,.4); font-family: Georgia, "Times New Roman", serif; font-size: 18px; line-height: 1.6; color: var(--ink); font-style: italic; }
+    .fg-footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(120,214,247,.12); font-size: 12px; color: var(--dim); line-height: 1.9; }
+    .fg-footer a { color: var(--muted); text-decoration: none; }
+    .fg-footer a:hover { color: var(--gold-hot); }
+    @media (max-width: 540px) { .fg-shell { padding-top: 64px; } .entity-grid { grid-template-columns: 1fr; } .symbol-map li { grid-template-columns: 1fr; gap: 4px; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="index.html#start-here" aria-label="Blue Snake Studios — Moss Tree">
+        <span class="brand-mark" aria-hidden="true">B$S</span>
+        <span class="brand-copy">Blue $nake Studio</span>
+      </a>
+      <div class="mast-actions">
+        <a class="mast-link" href="index.html#start-here">Moss Tree</a>
+        <a class="mast-link" href="index.html#moss-man">The Moss Man</a>
+        <a class="mast-link" href="proof-wall.html">Proof Wall</a>
+      </div>
+    </header>
+
+    <main class="fg-shell" id="main">
+
+      <!-- HERO -->
+      <section class="fg-hero">
+        <p class="eyebrow">The Moss Man Field Guide · B$S Universe · Frankston, Australia</p>
+        <h1>The Field Guide.</h1>
+        <p class="lead">Everything in the B$S universe — explained. Who The Moss Man is, what each project does, how the symbols connect and why a black cockatoo feather threads through all of it. Start anywhere.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="project-link album-link" href="index.html#start-here">Enter the portal</a>
+          <a class="project-link" href="proof-wall.html">B$S Proof Wall</a>
+          <a class="project-link" href="press-kit.html">Press Kit</a>
+        </div>
+      </section>
+
+      <!-- THE MOSS MAN -->
+      <section class="fg-chapter" aria-label="The Moss Man">
+        <p class="eyebrow">Chapter 1</p>
+        <h2>The Moss Man.</h2>
+        <div class="fg-body">
+          <p><strong>Tom Moss</strong> is a Frankston-based creator who works under the name <strong>The Moss Man</strong>. He builds connected systems across visual art, music, education technology and symbolic invention. A painter, a songmaker, a developer, a behaviourist, a pattern-builder.</p>
+          <p>The Moss Man persona is the creator-as-runic-scribe: the figure who sits at the desk with the black cockatoo feather and the spiral notebook and works out the system from first principles, then makes it visible. Not a performer. Not a marketer. A builder of worlds that have their own internal logic.</p>
+          <p>The name: moss grows where other things don't. It doesn't need ideal conditions. It covers old stone and makes it new. <em>Patterns become worlds.</em></p>
+          <p>Tom is also a practising behaviour support thinker — someone who has worked with children, observed attention, and built tools to address what he sees in classrooms and homes. This is not separate from the mythological work. The classroom tool and the symbolic system use the same underlying pattern logic.</p>
+        </div>
+        <div class="fg-quote">"The Moss Man is the creator. Blue $nake Studio is the world-building studio. blkck2.com is the portal."</div>
+      </section>
+
+      <!-- BLUE $NAKE STUDIO -->
+      <section class="fg-chapter" aria-label="Blue Snake Studio">
+        <p class="eyebrow">Chapter 2</p>
+        <h2>Blue $nake Studio.</h2>
+        <div class="fg-body">
+          <p><strong>Blue $nake Studio</strong> (B$S) is Tom's production entity. It's the name under which all the work is published, branded and connected. The dollar sign in the middle of "Snake" is intentional: knowledge coiled inside commercial form. The serpent eating the currency symbol and returning something else.</p>
+          <p>The studio doesn't specialise. It operates across education technology, music, visual art and symbolic systems simultaneously — not because it's trying to do everything, but because the work is genuinely connected at the level of pattern. A painting informs a number. A chant informs a classroom tool. The same base-60 geometry powers the digital DNA of Meta-Pet and the circular structure of Moss 60.</p>
+          <p><strong>blkck2.com</strong> is the portal — the entrance point to the whole universe. The address is an abbreviation of "black cockatoo" written twice: the bird, mirrored, the central recurring figure in every layer of the work.</p>
+        </div>
+      </section>
+
+      <!-- THE PROJECTS -->
+      <section class="fg-chapter" aria-label="The projects">
+        <p class="eyebrow">Chapter 3</p>
+        <h2>The projects.</h2>
+        <div class="entity-grid">
+          <div class="entity-card">
+            <span class="entity-type">Education technology</span>
+            <h3>Meta-Pet</h3>
+            <p>A privacy-first digital pet and learning companion for classrooms. No ads, trackers, social feeds, gambling loops or unnecessary data. Combines digital pet mechanics with STEAM learning and Moss 60 symbolic identity. In development.</p>
+          </div>
+          <div class="entity-card">
+            <span class="entity-type">Education technology</span>
+            <h3>Teacher's Secret Cheatsheet</h3>
+            <p>Seven printable behaviour-support templates for stretched teachers and ESOs. Zero admin, child-facing language, Victoria-aware. Free to use. Live now.</p>
+          </div>
+          <div class="entity-card">
+            <span class="entity-type">Music</span>
+            <h3>Black Wing Crew</h3>
+            <p>The music arm of B$S. Dark, mythic, loud. The crew is the black cockatoo flock — the omen lineage, the street voices. Music arrives with visual identity: lyric posters, QR codes, sticker sheets.</p>
+          </div>
+          <div class="entity-card">
+            <span class="entity-type">Music</span>
+            <h3>Neon Venom LP</h3>
+            <p>The 2026 digital LP. Cyberpunk, dark mythology, the neon city. Snake + cockatoo + dollar sign. One part chant, one part street drop. Streaming now.</p>
+          </div>
+          <div class="entity-card">
+            <span class="entity-type">Visual art</span>
+            <h3>Visual Worlds — 10 Gallery Rooms</h3>
+            <p>Ten separate gallery rooms, each with its own atmosphere: painted mythology, portrait archive, humour and parody, colouring pages, QR sticker sheets, print packs and the omen archive.</p>
+          </div>
+          <div class="entity-card">
+            <span class="entity-type">Symbolic system</span>
+            <h3>Moss 60</h3>
+            <p>A 60-position visual number system grounded in base-60 geometry. Powers Meta-Pet's digital DNA, glyph puzzles and symbolic identity systems. The Oracle Warden is the interactive glyph engine.</p>
+          </div>
+          <div class="entity-card">
+            <span class="entity-type">Language doctrine</span>
+            <h3>Semantic Sovereignty</h3>
+            <p>A doctrine on language, framing, meaning and narrative defence. Published as the OSS-734G Known Unknowns Register. The practice of understanding whose language you are using and whether it serves you.</p>
+          </div>
+          <div class="entity-card">
+            <span class="entity-type">Community / Cultural</span>
+            <h3>Frankston → Fuji</h3>
+            <p>Bilingual sister-city material: song, lyric sheets, pronunciation guides, taiko rhythm and cultural connection between Frankston and Susono, Japan. School-friendly.</p>
+          </div>
+          <div class="entity-card">
+            <span class="entity-type">Language research</span>
+            <h3>Waahn / Black Omen</h3>
+            <p>Bunurong-Boonwurrung language research map. The presence of the black cockatoo in the local country, its name, its meaning and its thread into the B$S mythology.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- THE SYMBOLS -->
+      <section class="fg-chapter" aria-label="Symbols">
+        <p class="eyebrow">Chapter 4</p>
+        <h2>The recurring symbols.</h2>
+        <div class="fg-body">
+          <p>Every layer of the B$S universe shares a set of symbols. They appear in different forms — painted, sung, printed, encoded — but the underlying meaning stays consistent. Learning to read them is learning to read the studio.</p>
+        </div>
+        <ul class="symbol-map">
+          <li><span class="sym-name">The black cockatoo</span><span class="sym-meaning">The central figure. Deity, ancestor, harbinger, trickster, artist. Appears across mythology, music, classroom tools and number systems. Never explained directly — experienced.</span></li>
+          <li><span class="sym-name">The feather</span><span class="sym-meaning">The physical talisman. The thing found. The thing that starts everything. A yellow-tailed black cockatoo tail feather threads through portraits, songs, classroom visits and lore as a recurring real-world object.</span></li>
+          <li><span class="sym-name">The coiled snake</span><span class="sym-meaning">The B$S emblem. Knowledge wrapped around commercial form. The dollar sign inside the snake's coil. Transformation, danger and return — the currency of the studio.</span></li>
+          <li><span class="sym-name">The spiral</span><span class="sym-meaning">The Moss 60 base shape. Base-60 geometry, the spiral mountain, the ouroboros, the seed of life. Appears in number system diagrams, mythology paintings and classroom identity work.</span></li>
+          <li><span class="sym-name">The neon city</span><span class="sym-meaning">The built world. The street. Where the QR codes land and the prints get pasted. Cyberpunk, broken, alive. The background against which every street drop and music release operates.</span></li>
+          <li><span class="sym-name">The dollar sign</span><span class="sym-meaning">Embedded inside the studio name: Blue $nake. Not about money directly — about meaning inside commercial form. The thing the snake swallows and transforms.</span></li>
+          <li><span class="sym-name">The QR code</span><span class="sym-meaning">The street portal. A physical object pointing into the digital world. The trigger: scan, and the universe opens. Seven colour variants, deployed as stickers, sheets and street drops.</span></li>
+          <li><span class="sym-name">The moss</span><span class="sym-meaning">The studio's name-material. Moss grows where other things don't, on old stone, without ideal conditions. Quiet, patient, covered. The creator who builds at the edges of conventional categories.</span></li>
+        </ul>
+      </section>
+
+      <!-- THE NAMED CHARACTERS -->
+      <section class="fg-chapter" aria-label="Named characters">
+        <p class="eyebrow">Chapter 5</p>
+        <h2>Named figures in the universe.</h2>
+        <div class="fg-body">
+          <p>The B$S universe has recurring named figures who appear across media — paintings, music, classroom tools and number systems. They are not separate characters. They are the same energy in different registers.</p>
+        </div>
+        <div class="entity-grid">
+          <div class="entity-card">
+            <span class="entity-type">The creator</span>
+            <h3>The Moss Man</h3>
+            <p>Tom Moss. The runic scribe at the desk. The creator of everything in this universe. Appears as illuminated portrait, street-art icon, Victorian gentleman, Frankston's most distinguished citizen and the budget medieval warrior.</p>
+          </div>
+          <div class="entity-card">
+            <span class="entity-type">The mythological figure</span>
+            <h3>Auralia</h3>
+            <p>The central mythological figure of the B$S universe. Appears across paintings, character art, colouring pages and symbolic systems. Her connection to the black cockatoo is left as a secret — experienced through the art rather than stated. The divine, the dark, the ascending.</p>
+          </div>
+          <div class="entity-card">
+            <span class="entity-type">The spiritual source</span>
+            <h3>She Who Weaves the Dawn</h3>
+            <p>暁を編む者. A figure from the stained-glass and woodblock series. Green kimono, black cockatoo on wrist, birds overhead. Appears at the junction of Japanese visual tradition and the B$S mythological world.</p>
+          </div>
+          <div class="entity-card">
+            <span class="entity-type">The deity</span>
+            <h3>The Spiral Mountain God</h3>
+            <p>螺旋山神. Appears in the Moss 60 stained-glass series. Mountain deity in conical hat, surrounded by waves and clouds. The cosmic architecture of the number system made visible.</p>
+          </div>
+          <div class="entity-card">
+            <span class="entity-type">The crew</span>
+            <h3>Black Wing Crew</h3>
+            <p>Not a band. The flock. The collective of omen-lineage artist-ancestors who populate the music universe. They are the black cockatoos who chose to sing rather than disappear. The sound comes from inside their world.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT CONNECTS -->
+      <section class="fg-chapter" aria-label="How it connects">
+        <p class="eyebrow">Chapter 6</p>
+        <h2>How it all connects.</h2>
+        <div class="fg-body">
+          <p>The B$S universe is not a collection of separate projects. It is one system expressed in multiple media simultaneously. The connections are not metaphorical — they are structural.</p>
+        </div>
+        <ul class="connection-list">
+          <li><strong>Moss 60 → Meta-Pet:</strong> The base-60 geometry of Moss 60 powers the digital DNA system in Meta-Pet. A child's identity in the app is encoded using the same visual number system as the Oracle Warden glyph engine.</li>
+          <li><strong>The feather → classroom:</strong> The yellow-tailed black cockatoo feather is a physical object used in real classroom visits. The same feather appears in portraits, song lyrics and mythology. The real and the mythological share the same token.</li>
+          <li><strong>Frankston → all of it:</strong> The studio is rooted in Frankston, Victoria. The black cockatoos are local birds. The sister-city connection to Susono runs through Japanese visual tradition that also feeds into the stained-glass series. The Victorian street language runs through the Old Vic State song cycle.</li>
+          <li><strong>Black Wing Crew → Visual Worlds:</strong> Every Black Wing Crew release has a visual identity. The lyric posters, QR sticker sheets and print packs live in the Print Street Arsenal gallery room. Music and image arrive together.</li>
+          <li><strong>Semantic Sovereignty → everything:</strong> The doctrine on language and framing is the meta-layer. It describes how the studio thinks about the relationship between words, meaning and power — and it shows up in the naming of every project, the tone of every piece of text, and the design of every classroom tool.</li>
+          <li><strong>Auralia → Moss 60 → classroom:</strong> Auralia's symbolic identity is encoded using Moss 60 geometry. The same geometry is the puzzle engine in Meta-Pet. A child doing a puzzle in Meta-Pet is engaging with the same underlying pattern as the mythological works.</li>
+        </ul>
+        <div class="fg-body" style="margin-top:28px;">
+          <p><em>Patterns become worlds.</em> The principle holds in every direction you look.</p>
+        </div>
+      </section>
+
+      <!-- WHERE TO START -->
+      <section class="fg-chapter" aria-label="Where to start">
+        <p class="eyebrow">Chapter 7</p>
+        <h2>Where to start.</h2>
+        <div class="fg-body">
+          <p>The B$S universe has no single correct entry point. The right door depends on who you are.</p>
+          <p>If you're a <strong>teacher or parent:</strong> start with <a href="meta-pet.html">Meta-Pet</a> and the <a href="teacher-tools.html">Teacher Tools</a>. The practical layer is also the most fully developed.</p>
+          <p>If you're here for <strong>music:</strong> go to <a href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">blackwingcrew.netlify.app</a> and stream the Neon Venom LP. Download the Street Print Pack and put something on a wall.</p>
+          <p>If you're here for <strong>art:</strong> the ten gallery rooms open from <a href="index.html#visual-worlds">index.html#visual-worlds</a>. Each room has its own atmosphere. The Omen Room and Painted Wing are the most mythologically dense. Start there.</p>
+          <p>If you're here for <strong>the number system:</strong> the <a href="apps/moss60-oracle-warden.html">Oracle Warden</a> is the interactive entry point. The <a href="documents/oss-734g-known-unknowns-register.html">OSS-734G Known Unknowns Register</a> is the published Semantic Sovereignty document.</p>
+          <p>If you came from a <strong>QR code:</strong> you're in the right place. This is the real thing. The portal is <a href="index.html#start-here">blkck2.com</a>.</p>
+        </div>
+      </section>
+
+      <footer class="fg-footer" role="contentinfo">
+        <p>Created by <strong style="color:var(--ink);">The Moss Man</strong> / <strong style="color:var(--ink);">Blue $nake Studio</strong> — <a href="https://blkck2.com/">blkck2.com</a> — <a href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener noreferrer">@blkck2</a></p>
+        <p style="font-size:11px;"><a href="mailto:bluesssnakestudio@gmail.com">bluesssnakestudio@gmail.com</a> · <a href="mailto:blkck2@gmail.com">blkck2@gmail.com</a></p>
+        <p style="margin-top:8px;"><a href="index.html">Moss Tree Portal</a> · <a href="proof-wall.html">B$S Proof Wall</a> · <a href="press-kit.html">Press Kit</a> · <a href="start.html">Choose Your Path</a></p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

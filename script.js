@@ -88,6 +88,7 @@
       ],
       links: [
         { label: 'Open Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link' },
+        { label: 'BWC music archive', href: 'black-wing-crew.html' },
         { label: 'Watch on YouTube', href: 'https://www.youtube.com/@blkck2' }
       ],
       featuredIds: ['black-wing-cosmic-singing', 'neon-venom-cyberpunk-poster', 'bss-twin-cockatoos-stained-glass', 'neon-venom-enter-dream-qr', 'black-wing-chant-sheet', 'neon-venom-campaign']
@@ -169,8 +170,9 @@
       ],
       links: [
         { label: 'Open Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link' },
+        { label: 'Full Meta-Pet page', href: 'meta-pet.html', className: 'album-link' },
         { label: 'Meta-Pet Pilot School', href: 'https://metapet-pilot-school.vercel.app/' },
-        { label: 'Teacher Tools', href: '#teacher-tools' },
+        { label: 'Teacher Tools', href: 'teacher-tools.html' },
         { label: 'Email studio', href: 'mailto:bluesssnakestudio@gmail.com' }
       ],
       featuredIds: ['meta-pet-kid-with-feather', 'meta-pet-process-overview', 'meta-pet-no-login', 'meta-pet-one-more-app', 'meta-pet-digital-genomes', 'meta-pet-companion-portrait', 'meta-pet-neon-ornament']
@@ -215,6 +217,7 @@
       ],
       links: [
         { label: 'Open Teacher Tools Landing Page', href: 'https://teachers-secret-cheatsheet.vercel.app/', className: 'album-link' },
+        { label: 'Full Teacher Tools page', href: 'teacher-tools.html' },
         { label: 'Open Meta-Pet Pilot School', href: 'https://metapet-pilot-school.vercel.app/' },
         { label: 'Open Meta-Pet', href: 'https://www.bluesnakestudios.com/' },
         { label: 'Email B$S', href: 'mailto:bluesssnakestudio@gmail.com' }
