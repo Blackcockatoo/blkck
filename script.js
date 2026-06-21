@@ -25,7 +25,7 @@
         { label: 'Download Teacher Pack', href: 'https://teachers-secret-cheatsheet.vercel.app/', className: 'album-link' },
         { label: 'Enter Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link' },
         { label: 'Gallery Rooms', href: '#visual-worlds' },
-        { label: 'Elevator Pitch', href: 'https://elevator-pitch-seven.vercel.app/' },
+        { label: 'B$S Proof Wall', href: 'proof-wall.html' },
         { label: 'YouTube @blkck2', href: 'https://www.youtube.com/@blkck2' },
         { label: 'Email B$S', href: 'mailto:bluesssnakestudio@gmail.com' }
       ],
@@ -886,7 +886,7 @@
             ${section.oldVicState ? oldVicStateFeature() : ''}
             ${linksRow(section)}
             ${!section.startHere ? `<ul class="details">${(section.details || []).map(detail => `<li>${escapeHtml(detail)}</li>`).join('')}</ul>` : ''}
-            ${projectProofStrip(section)}
+            ${!section.startHere ? projectProofStrip(section) : ''}
             ${section.startHere ? startHereAudience() : ''}
             ${section.startHere ? featuredProjectsGrid() : ''}
             ${section.startHere ? startHereAbout() : ''}
