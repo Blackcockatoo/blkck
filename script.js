@@ -154,15 +154,18 @@
     {
       slug: 'meta-pet',
       label: 'Meta-Pet',
-      eyebrow: 'Privacy-first learning · Concept development',
+      eyebrow: 'Privacy-first learning · In development',
       title: 'Technology that gives attention back.',
-      statement: 'Meta-Pet is a child-safe learning companion concept designed around creativity, pattern recognition and healthy interaction—not advertising, tracking or endless engagement.',
+      statement: 'Meta-Pet is a child-safe digital learning companion built for healthy device use, creativity and schools — without ads, trackers, social feeds, gambling loops or unnecessary data collection.',
       pageTitle: 'Meta-Pet — Privacy-First Learning · Blue $nake Studio',
       pageDescription: 'A child-safe STEAM learning companion: no ads, no trackers, no unnecessary data collection. Puzzles, pattern recognition and healthy device use for schools and families.',
       details: [
-        'Local-first, child-safe direction: no ads, no trackers, no unnecessary cloud collection.',
-        'A STEAM learning creature powered by puzzles, pattern recognition, creative tasks and symbolic identity.',
-        'This is where the wild B$S world becomes a tool for families, schools and healthy device use.'
+        'No ads, no trackers, no unnecessary cloud data — privacy-first from the ground up.',
+        'Healthy device use design: no social feeds, no gambling loops, no endless scroll.',
+        'Classroom mode: zero-admin setup, no login required for students.',
+        'Parent peace of mind: transparent, local-first, fully child-safe.',
+        'A STEAM learning companion powered by puzzles, pattern recognition and creative tasks.',
+        'Prototype available now. Contact the studio for school pilot enquiries.'
       ],
       links: [
         { label: 'Open Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link' },
@@ -182,9 +185,11 @@
       pageDescription: 'A 60-position visual mathematics system: base-60 thinking, geometry, glyphs and digital DNA. Powers the Meta-Pet learning engine and symbolic identity system.',
       series: ['MOSS60 / Geometry'],
       details: [
-        'Keep the deep numbers behind the mechanics so it feels real without forcing people to read a textbook.',
-        'Use it for Meta-Pet DNA, fractal puzzles, symbolic security, angle-colour-behaviour systems and skill games.',
-        'The public face should feel like a mystical machine: playable first, explainable second.'
+        'A 60-position visual number system grounded in base-60 geometry, cycles and proportion.',
+        'Powers Meta-Pet: digital DNA genomes, glyph puzzles and symbolic identity systems.',
+        'Semantic Sovereignty doctrine: language, framing, meaning and narrative defence.',
+        'Try the Oracle Warden — a playable glyph engine with interactive Moss 60 logic.',
+        'Research and invention phase. Contact the studio to discuss pilot use or collaboration.'
       ],
       links: [
         { label: 'Explore Digital DNA', href: 'https://www.bluesnakestudios.com/digital-dna', className: 'album-link' },
@@ -202,9 +207,11 @@
       pageTitle: 'Teacher Tools — Behaviour Support · Blue $nake Studio',
       pageDescription: 'Seven printable behaviour support templates for stretched teachers. Victoria-aware, low admin, child-facing. Behaviour framed as communication throughout.',
       details: [
-        'This is where B$S becomes practical: printables, behaviour support, lesson prompts and school-safe language.',
-        'Keep it clear enough for teachers and parents, but visually connected to the Moss Tree world.',
-        'Best use: prove that the myth-tech has a real education purpose underneath.'
+        'Seven printable behaviour-support templates: transition flows, attention supports, classroom strategies.',
+        'Who it helps: classroom teachers, education support officers, integration aides, parents, support coordinators.',
+        'Low admin: print-and-use formats, child-facing language, Victoria-aware framing.',
+        'Free to download and use in your classroom.',
+        'Not legal, medical or clinical advice. These are practical classroom tools, not professional assessments.'
       ],
       links: [
         { label: 'Open Teacher Tools Landing Page', href: 'https://teachers-secret-cheatsheet.vercel.app/', className: 'album-link' },
@@ -610,14 +617,14 @@
 
   function featuredProjectsGrid() {
     const projects = [
-      { label: 'Meta-Pet', desc: 'Privacy-first digital pet & classroom learning tool.', href: '#meta-pet' },
-      { label: 'Teacher\'s Secret Cheatsheet', desc: 'Behaviour-support templates for stretched teachers.', href: 'https://teachers-secret-cheatsheet.vercel.app/' },
-      { label: 'Black Wing Crew / Neon Venom', desc: '2026 LP: songs, lyric posters, QR drops, streaming.', href: 'https://blackwingcrew.netlify.app/' },
-      { label: 'Moss 60', desc: 'Visual number system — base-60 digital DNA & glyph engine.', href: '#moss60' },
-      { label: 'Semantic Sovereignty', desc: 'Doctrine on language, framing, meaning and narrative defence.', href: '#moss60' },
-      { label: 'Visual Worlds', desc: '10 gallery rooms: mythology, portraits, parody, print.', href: '#visual-worlds' },
-      { label: 'Frankston → Fuji', desc: 'Bilingual sister-city song, Japanese practice & taiko.', href: '#frankston-fuji' },
-      { label: 'Black Omen / Waahn', desc: 'Bunurong-Boonwurrung language research map.', href: '#black-omen-waahn' }
+      { label: 'Meta-Pet', status: 'In development', desc: 'A privacy-first digital pet and learning companion — no ads, trackers, social feeds, gambling loops or unnecessary data.', href: '#meta-pet' },
+      { label: 'Teacher\'s Secret Cheatsheet', status: 'Live', desc: 'Behaviour-support templates for stretched teachers. Print and use. Zero admin.', href: 'https://teachers-secret-cheatsheet.vercel.app/' },
+      { label: 'Black Wing Crew / Neon Venom', status: 'Live', desc: '2026 LP: songs, lyric posters, QR drops, streaming.', href: 'https://blackwingcrew.netlify.app/' },
+      { label: 'Moss 60', status: 'Research', desc: 'Visual number system — base-60 digital DNA, glyph engine and symbolic identity.', href: '#moss60' },
+      { label: 'Semantic Sovereignty', status: 'Active', desc: 'Doctrine on language, framing, meaning and narrative defence.', href: 'documents/oss-734g-known-unknowns-register.html' },
+      { label: 'Visual Worlds', status: 'Live', desc: '10 gallery rooms: mythology, portraits, parody, print.', href: '#visual-worlds' },
+      { label: 'Frankston → Fuji', status: 'In progress', desc: 'Bilingual sister-city song, Japanese practice & taiko.', href: '#frankston-fuji' },
+      { label: 'Black Omen / Waahn', status: 'Research', desc: 'Bunurong-Boonwurrung language research map.', href: '#black-omen-waahn' }
     ];
     return `
       <section class="featured-projects" aria-label="Studio projects">
@@ -629,6 +636,7 @@
           ${projects.map(p => `
             <a class="featured-project-card" href="${escapeHtml(p.href)}"${externalAttrs(p.href)}>
               <strong>${escapeHtml(p.label)}</strong>
+              ${p.status ? `<span class="project-status">${escapeHtml(p.status)}</span>` : ''}
               <p>${escapeHtml(p.desc)}</p>
             </a>`).join('')}
         </div>
