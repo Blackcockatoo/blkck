@@ -1229,10 +1229,10 @@
     const sound = document.getElementById('intro-sound');
     if (!intro || !video || !enter || !sound) return;
 
-    video.muted = false;
+    video.muted = true;
     video.volume = 1;
-    sound.textContent = 'Sound on';
-    sound.setAttribute('aria-pressed', 'true');
+    sound.textContent = 'Sound off';
+    sound.setAttribute('aria-pressed', 'false');
 
     const closeIntro = () => {
       intro.classList.add('is-leaving');
@@ -1244,11 +1244,9 @@
 
     const startFilm = () => {
       video.play().catch(() => {
-        video.pause();
-        video.currentTime = 0;
-        video.muted = false;
+        // Autoplay fully blocked — show play button as fallback
         sound.classList.add('needs-start');
-        sound.textContent = 'Start with sound';
+        sound.textContent = 'Play';
         sound.setAttribute('aria-pressed', 'false');
       });
     };
@@ -1258,10 +1256,10 @@
     sound.addEventListener('click', () => {
       if (sound.classList.contains('needs-start')) {
         sound.classList.remove('needs-start');
-        video.muted = false;
+        video.muted = true;
         video.currentTime = 0;
-        sound.textContent = 'Sound on';
-        sound.setAttribute('aria-pressed', 'true');
+        sound.textContent = 'Sound off';
+        sound.setAttribute('aria-pressed', 'false');
         video.play().catch(() => {});
         return;
       }
