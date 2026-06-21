@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meta-Pet — Privacy-First Learning Companion · Blue $nake Studio</title>
+  <meta name="description" content="Meta-Pet is a privacy-first digital pet and learning companion built for healthy device use, creativity and schools — without ads, trackers, social feeds, gambling loops or unnecessary data collection." />
+  <link rel="canonical" href="https://blkck2.com/meta-pet.html" />
+  <meta property="og:title" content="Meta-Pet — Privacy-First Learning Companion" />
+  <meta property="og:description" content="No ads. No trackers. No social feed. No gambling loops. A child-safe digital learning companion built for schools and families." />
+  <meta property="og:image" content="https://blkck2.com/12_meta_pet/meta-pet-kid-with-feather.jpg" />
+  <meta property="og:url" content="https://blkck2.com/meta-pet.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Meta-Pet — Privacy-First Learning Companion" />
+  <meta name="twitter:description" content="No ads. No trackers. No social feed. Child-safe digital learning for schools and families." />
+  <meta name="twitter:image" content="https://blkck2.com/12_meta_pet/meta-pet-kid-with-feather.jpg" />
+  <meta name="theme-color" content="#04101d" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Meta-Pet" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { overflow: auto; }
+    .mp-shell { width: min(960px, calc(100% - 32px)); margin: 0 auto; padding: 80px 0 64px; }
+    .mp-hero { padding-bottom: 48px; border-bottom: 1px solid rgba(120,214,247,.12); margin-bottom: 56px; }
+    .mp-hero h1 { margin: 12px 0 16px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(38px, 7vw, 78px); line-height: .9; letter-spacing: -.03em; color: var(--ink); max-width: 760px; }
+    .mp-hero .lead { font-size: 18px; color: var(--muted); max-width: 640px; line-height: 1.65; margin: 0 0 28px; }
+    .mp-cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .mp-section { margin-bottom: 56px; }
+    .mp-section h2 { margin: 0 0 20px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(24px, 3.5vw, 38px); font-weight: 400; color: var(--ink); }
+    .promise-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin-top: 20px; }
+    .promise-card { padding: 20px; border: 1px solid rgba(0,245,255,.22); border-radius: 18px; background: rgba(2,7,13,.56); }
+    .promise-card .icon { font-size: 22px; margin-bottom: 10px; line-height: 1; }
+    .promise-card h3 { margin: 0 0 6px; font-size: 14px; font-weight: 700; color: var(--gold-hot); font-family: inherit; }
+    .promise-card p { margin: 0; font-size: 12px; color: var(--muted); line-height: 1.55; }
+    .audience-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 20px; }
+    .audience-card { padding: 24px; border: 1px solid rgba(120,214,247,.18); border-radius: 20px; background: rgba(255,255,255,.03); }
+    .audience-card h3 { margin: 0 0 10px; font-size: 16px; font-weight: 700; color: var(--neon-cyan); font-family: inherit; }
+    .audience-card ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .bundle-box { padding: 28px 32px; border: 2px solid rgba(199,168,106,.3); border-radius: 24px; background: rgba(199,168,106,.05); margin-top: 24px; }
+    .bundle-box h3 { margin: 0 0 12px; font-family: Georgia, serif; font-size: 22px; font-weight: 400; color: var(--gold-hot); }
+    .bundle-box p { margin: 0 0 16px; color: var(--muted); font-size: 14px; line-height: 1.65; }
+    .bundle-box ul { margin: 0 0 20px; padding-left: 20px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .disclaimer { margin-top: 40px; padding: 16px 20px; border-left: 3px solid rgba(120,214,247,.3); font-size: 12px; color: var(--dim); line-height: 1.7; }
+    .mp-footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(120,214,247,.12); font-size: 12px; color: var(--dim); line-height: 1.9; }
+    .mp-footer a { color: var(--muted); text-decoration: none; }
+    .mp-footer a:hover { color: var(--gold-hot); }
+    @media (max-width: 560px) { .promise-grid { grid-template-columns: 1fr 1fr; } .audience-grid { grid-template-columns: 1fr; } .mp-shell { padding-top: 64px; } }
+    @media (max-width: 380px) { .promise-grid { grid-template-columns: 1fr; } }
+    @media print { body { background: #fff; color: #111; } .masthead, .mast-actions { display: none; } .promise-card, .audience-card { border-color: #ccc; background: #f9f9f9; } .mp-hero h1, .mp-section h2 { color: #111; } .promise-card h3, .audience-card h3 { color: #555; } .mp-footer { color: #555; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="index.html" aria-label="Blue Snake Studios — Moss Tree">
+        <span class="brand-mark" aria-hidden="true">B$S</span>
+        <span class="brand-copy">Blue $nake Studio</span>
+      </a>
+      <div class="mast-actions">
+        <a class="mast-link" href="index.html#meta-pet">Meta-Pet Panel</a>
+        <a class="mast-link" href="teacher-tools.html">Teacher Tools</a>
+        <a class="mast-link" href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener">Try it →</a>
+      </div>
+    </header>
+
+    <main class="mp-shell" id="main">
+
+      <!-- HERO -->
+      <section class="mp-hero">
+        <p class="eyebrow">Privacy-first learning · In development · Blue $nake Studio</p>
+        <h1>Technology that gives attention back.</h1>
+        <p class="lead">Meta-Pet is a privacy-first digital pet and learning companion built for healthy device use, creativity and schools — without ads, trackers, social feeds, gambling loops or unnecessary data collection.</p>
+        <div class="mp-cta-row">
+          <a class="project-link album-link" href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener">Open Meta-Pet app →</a>
+          <a class="project-link album-link" href="https://metapet-pilot-school.vercel.app/" target="_blank" rel="noopener">School pilot enquiry</a>
+          <a class="project-link" href="https://teachers-secret-cheatsheet.vercel.app/" target="_blank" rel="noopener">Teacher Tools</a>
+          <a class="project-link" href="mailto:bluesssnakestudio@gmail.com">Contact the studio</a>
+        </div>
+      </section>
+
+      <!-- PRIVACY PROMISE -->
+      <section class="mp-section" aria-label="Privacy Promise">
+        <p class="eyebrow">The Privacy Promise</p>
+        <h2>What Meta-Pet will never do.</h2>
+        <div class="promise-grid">
+          <div class="promise-card">
+            <div class="icon">🚫</div>
+            <h3>No ads</h3>
+            <p>No advertising. No sponsored content. No branded characters. No revenue model built on attention capture.</p>
+          </div>
+          <div class="promise-card">
+            <div class="icon">🔒</div>
+            <h3>No trackers</h3>
+            <p>No analytics tracking, no fingerprinting, no third-party data sharing. What happens in the app stays in the app.</p>
+          </div>
+          <div class="promise-card">
+            <div class="icon">📵</div>
+            <h3>No social feed</h3>
+            <p>No infinite scroll. No likes, shares or follower counts. No comparison or social pressure mechanics.</p>
+          </div>
+          <div class="promise-card">
+            <div class="icon">🎰</div>
+            <h3>No gambling loops</h3>
+            <p>No loot boxes. No random rewards engineered for compulsion. No pay-to-win or premium unlocks targeting children.</p>
+          </div>
+          <div class="promise-card">
+            <div class="icon">☁️</div>
+            <h3>No unnecessary cloud data</h3>
+            <p>Local-first design. Child data is not uploaded, profiled or sold. No accounts required for core features.</p>
+          </div>
+          <div class="promise-card">
+            <div class="icon">⏱️</div>
+            <h3>Healthy session design</h3>
+            <p>Designed to end. Sessions are bounded. No dark patterns to extend screen time beyond what the child or teacher intended.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOR CLASSROOMS -->
+      <section class="mp-section" aria-label="Classroom mode">
+        <p class="eyebrow">For teachers · Classroom mode</p>
+        <h2>Zero-admin classroom learning.</h2>
+        <div class="audience-grid">
+          <div class="audience-card">
+            <h3>No setup required</h3>
+            <ul>
+              <li>No accounts to create</li>
+              <li>No login for students</li>
+              <li>No app store downloads</li>
+              <li>Works in any browser</li>
+              <li>Open and hand to the student</li>
+            </ul>
+          </div>
+          <div class="audience-card">
+            <h3>Classroom-friendly design</h3>
+            <ul>
+              <li>Quiet, focused interface</li>
+              <li>No notifications or interruptions</li>
+              <li>Suitable for individual or paired use</li>
+              <li>Works offline once loaded</li>
+              <li>Supports routine and predictability</li>
+            </ul>
+          </div>
+          <div class="audience-card">
+            <h3>What students do</h3>
+            <ul>
+              <li>STEAM puzzles and pattern tasks</li>
+              <li>Creative symbolic identity</li>
+              <li>Digital pet care and interaction</li>
+              <li>Moss 60 glyph exploration</li>
+              <li>Pattern recognition activities</li>
+            </ul>
+          </div>
+        </div>
+        <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a class="project-link album-link" href="https://teachers-secret-cheatsheet.vercel.app/" target="_blank" rel="noopener">Download Teacher Pack</a>
+          <a class="project-link" href="https://metapet-pilot-school.vercel.app/" target="_blank" rel="noopener">School pilot page</a>
+        </div>
+      </section>
+
+      <!-- FOR PARENTS -->
+      <section class="mp-section" aria-label="For parents">
+        <p class="eyebrow">For parents · Peace of mind</p>
+        <h2>Healthy device use for your child.</h2>
+        <div class="audience-grid">
+          <div class="audience-card">
+            <h3>What it is</h3>
+            <ul>
+              <li>A digital companion your child can care for</li>
+              <li>Creative learning through play and pattern</li>
+              <li>A calm, focused alternative to social media</li>
+              <li>Something that ends naturally</li>
+            </ul>
+          </div>
+          <div class="audience-card">
+            <h3>What it is not</h3>
+            <ul>
+              <li>Not a social platform</li>
+              <li>Not a subscription or in-app purchase system</li>
+              <li>Not engineered for addiction</li>
+              <li>Not collecting your child's data</li>
+              <li>Not connected to external advertising</li>
+            </ul>
+          </div>
+          <div class="audience-card">
+            <h3>Parent controls</h3>
+            <ul>
+              <li>No account to manage or monitor</li>
+              <li>Nothing is stored in the cloud</li>
+              <li>Safe to close at any time</li>
+              <li>No ongoing access to disable</li>
+              <li>Transparent by design</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCHOOL STARTER BUNDLE -->
+      <section class="mp-section" aria-label="School Starter Bundle">
+        <p class="eyebrow">The Attention-Back Toolkit · School Starter</p>
+        <h2>Meta-Pet + Teacher Tools bundle.</h2>
+        <div class="bundle-box">
+          <h3>Everything in one pack.</h3>
+          <p>The most practical combination from Blue $nake Studio for classrooms and families trying to build healthier device habits without losing educational value.</p>
+          <ul>
+            <li>Meta-Pet demo — open and use immediately, no setup</li>
+            <li>Teacher's Secret Cheatsheet — seven printable behaviour-support templates</li>
+            <li>Behaviour support framework — transition flows and attention supports</li>
+            <li>Parent info language — plain-English descriptions of what the app does and doesn't do</li>
+            <li>Privacy promise — shareable statement for school newsletters or councils</li>
+            <li>QR access sheet — printed QR codes students can scan to open Meta-Pet</li>
+          </ul>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a class="project-link album-link" href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener">Open Meta-Pet</a>
+            <a class="project-link album-link" href="https://teachers-secret-cheatsheet.vercel.app/" target="_blank" rel="noopener">Download Teacher Pack</a>
+            <a class="project-link" href="mailto:bluesssnakestudio@gmail.com">Contact for school pilot</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT IT IS -->
+      <section class="mp-section" aria-label="About Meta-Pet">
+        <p class="eyebrow">About the project</p>
+        <h2>What Meta-Pet actually is.</h2>
+        <div style="max-width:680px;">
+          <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:14px;">Meta-Pet is a concept in active development by The Moss Man / Blue $nake Studio. It combines a digital pet care model with STEAM learning mechanics, pattern recognition tasks and a symbolic identity system powered by Moss 60 base-60 geometry.</p>
+          <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:14px;">The core idea: a digital companion that children can care for, customise and learn with — without any of the design patterns that extract attention, money or data from children or families.</p>
+          <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:14px;">The prototype is available at <a href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener" style="color:var(--gold-hot);">bluesnakestudios.com</a>. School pilot enquiries are welcome — contact the studio directly.</p>
+        </div>
+      </section>
+
+      <div class="disclaimer">
+        <strong>Disclaimer:</strong> Meta-Pet is in active development. Features described here represent the design intent and direction of the project. The current prototype demonstrates core concepts. Not a finished commercial product. Not legal, medical or clinical software. Contact the studio for specific use-case discussions.
+      </div>
+
+      <footer class="mp-footer" role="contentinfo">
+        <p>Created by <strong style="color:var(--ink);">The Moss Man</strong> / <strong style="color:var(--ink);">Blue $nake Studio</strong> — <a href="https://blkck2.com/">blkck2.com</a> — <a href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener noreferrer">@blkck2</a></p>
+        <p style="font-size:11px;"><a href="mailto:bluesssnakestudio@gmail.com">bluesssnakestudio@gmail.com</a> · <a href="mailto:blkck2@gmail.com">blkck2@gmail.com</a></p>
+        <p style="margin-top:8px;"><a href="index.html#meta-pet">Back to portal</a> · <a href="teacher-tools.html">Teacher Tools</a> · <a href="proof-wall.html">B$S Proof Wall</a> · <a href="press-kit.html">Press Kit</a></p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

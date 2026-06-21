@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Black Wing Crew — Neon Venom LP · Blue $nake Studio</title>
+  <meta name="description" content="Black Wing Crew is the music world of Blue $nake Studio. The 2026 Neon Venom LP: songs, lyric posters, QR drops, streaming and street print assets. Dark, mythic, loud." />
+  <link rel="canonical" href="https://blkck2.com/black-wing-crew.html" />
+  <meta property="og:title" content="Black Wing Crew — Neon Venom LP · Blue $nake Studio" />
+  <meta property="og:description" content="The 2026 Neon Venom LP: songs, lyric posters, QR drops, streaming and street print assets. Dark, mythic, loud. One part chant, one part cyberpunk." />
+  <meta property="og:image" content="https://blkck2.com/04_neon_venom/neon-venom-cyberpunk-poster.png" />
+  <meta property="og:url" content="https://blkck2.com/black-wing-crew.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Black Wing Crew — Neon Venom LP" />
+  <meta name="twitter:description" content="2026 LP: songs, streaming, QR drops, lyric posters, street prints. Dark, mythic, loud." />
+  <meta name="twitter:image" content="https://blkck2.com/04_neon_venom/neon-venom-cyberpunk-poster.png" />
+  <meta name="theme-color" content="#04101d" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { overflow: auto; }
+    .bwc-shell { width: min(960px, calc(100% - 32px)); margin: 0 auto; padding: 80px 0 64px; }
+    .bwc-hero { padding-bottom: 48px; border-bottom: 1px solid rgba(120,214,247,.12); margin-bottom: 56px; }
+    .bwc-hero h1 { margin: 12px 0 20px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(36px, 6vw, 68px); line-height: .95; letter-spacing: -.03em; color: var(--ink); }
+    .bwc-hero .lead { font-size: 17px; color: var(--muted); max-width: 680px; line-height: 1.75; margin: 0 0 28px; }
+    .bwc-cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .bwc-section { margin-bottom: 64px; }
+    .bwc-section h2 { margin: 0 0 6px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(22px,3vw,34px); font-weight: 400; color: var(--ink); }
+    .track-list { list-style: none; padding: 0; margin: 20px 0 0; }
+    .track-list li { display: flex; align-items: baseline; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(120,214,247,.08); }
+    .track-list li:last-child { border-bottom: none; }
+    .track-num { font-size: 11px; font-weight: 700; letter-spacing: .1em; color: var(--dim); min-width: 22px; }
+    .track-name { font-size: 15px; color: var(--ink); font-weight: 500; }
+    .track-sub { font-size: 12px; color: var(--muted); margin-left: auto; }
+    .release-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 20px; }
+    .release-card { padding: 22px 24px; border: 1px solid rgba(120,214,247,.18); border-radius: 16px; background: rgba(2,7,13,.52); text-decoration: none; color: var(--ink); transition: all 180ms ease; display: flex; flex-direction: column; gap: 8px; }
+    .release-card:hover { transform: translateY(-3px); border-color: rgba(199,168,106,.5); background: rgba(199,168,106,.06); }
+    .release-card .rc-label { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--neon-cyan); }
+    .release-card h3 { margin: 0; font-size: 15px; color: var(--gold-hot); }
+    .release-card p { margin: 0; font-size: 12px; color: var(--muted); line-height: 1.55; }
+    .release-card .rc-cta { margin-top: auto; padding-top: 10px; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-hot); }
+    .print-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 20px; }
+    .print-card { padding: 16px 18px; border: 1px solid rgba(0,245,255,.12); border-radius: 12px; background: rgba(255,255,255,.03); }
+    .print-card strong { display: block; font-size: 13px; color: var(--ink); margin-bottom: 4px; }
+    .print-card p { margin: 0; font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .lore-block { max-width: 720px; margin-top: 20px; }
+    .lore-block p { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+    .lore-block em { color: var(--gold-hot); font-style: italic; }
+    .symbol-list { list-style: none; padding: 0; margin: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+    .symbol-list li { padding: 12px 14px; border-left: 2px solid rgba(199,168,106,.35); font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .symbol-list li strong { display: block; color: var(--ink); margin-bottom: 2px; font-size: 12px; }
+    .bwc-footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(120,214,247,.12); font-size: 12px; color: var(--dim); line-height: 1.9; }
+    .bwc-footer a { color: var(--muted); text-decoration: none; }
+    .bwc-footer a:hover { color: var(--gold-hot); }
+    @media (max-width: 540px) { .bwc-shell { padding-top: 64px; } .release-grid, .print-grid { grid-template-columns: 1fr; } .track-sub { display: none; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="index.html" aria-label="Blue Snake Studios — Moss Tree">
+        <span class="brand-mark" aria-hidden="true">B$S</span>
+        <span class="brand-copy">Blue $nake Studio</span>
+      </a>
+      <div class="mast-actions">
+        <a class="mast-link" href="index.html#black-wing-crew">BWC Panel</a>
+        <a class="mast-link" href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener">@blkck2</a>
+        <a class="mast-link" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">Listen →</a>
+      </div>
+    </header>
+
+    <main class="bwc-shell" id="main">
+
+      <!-- HERO -->
+      <section class="bwc-hero">
+        <p class="eyebrow">Black Wing Crew · Neon Venom LP · 2026 · Blue $nake Studio</p>
+        <h1>Sound with a visual identity.</h1>
+        <p class="lead">Black Wing Crew brings music, mythology and graphic language together through recurring symbols, rhythmic hooks, short-form video and print-led releases. Dark, mythic, loud. One part chant, one part cyberpunk.</p>
+        <div class="bwc-cta-row">
+          <a class="project-link album-link" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">Enter Black Wing Crew</a>
+          <a class="project-link album-link" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">Stream Neon Venom</a>
+          <a class="project-link" href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener">YouTube @blkck2</a>
+          <a class="project-link" href="downloads/bss-street-print-pack.zip">Download Street Print Pack</a>
+        </div>
+      </section>
+
+      <!-- NEON VENOM LP -->
+      <section class="bwc-section" aria-label="Neon Venom LP">
+        <p class="eyebrow">2026 LP · Neon Venom</p>
+        <h2>The record.</h2>
+        <div style="max-width:680px;margin-bottom:24px;">
+          <p style="font-size:15px;color:var(--muted);line-height:1.75;">Neon Venom is the 2026 digital LP from Black Wing Crew. It combines dark mythic lore, cyberpunk visual language and the recurring symbols of the B$S universe — the black cockatoo, the coiled snake, the neon city, the feather — into a single body of sound and image.</p>
+        </div>
+        <ul class="track-list">
+          <li><span class="track-num">01</span><span class="track-name">Woman Money Venom</span><span class="track-sub">Lead single · Streaming now</span></li>
+          <li><span class="track-num">02</span><span class="track-name">Black Wing Chant</span><span class="track-sub">Streaming now</span></li>
+          <li><span class="track-num">03</span><span class="track-name">Neon Venom</span><span class="track-sub">Title track · Streaming now</span></li>
+          <li><span class="track-num">04</span><span class="track-name">Cosmic Singing</span><span class="track-sub">Streaming now</span></li>
+          <li><span class="track-num">05</span><span class="track-name">Black Omen Rising</span><span class="track-sub">Streaming now</span></li>
+          <li><span class="track-num">—</span><span class="track-name" style="color:var(--dim);">More tracks in development</span><span class="track-sub"></span></li>
+        </ul>
+        <div style="margin-top:20px;">
+          <a class="project-link album-link" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">Listen on Black Wing Crew</a>
+        </div>
+      </section>
+
+      <!-- RELEASES & DROPS -->
+      <section class="bwc-section" aria-label="Releases and drops">
+        <p class="eyebrow">Listen · Watch · Download</p>
+        <h2>Releases and drops.</h2>
+        <div class="release-grid">
+          <a class="release-card" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">
+            <span class="rc-label">Hub</span>
+            <h3>Black Wing Crew site</h3>
+            <p>The official home of the crew. Songs, lyric posters, QR drops, news and releases all in one place.</p>
+            <span class="rc-cta">Enter →</span>
+          </a>
+          <a class="release-card" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">
+            <span class="rc-label">Streaming</span>
+            <h3>Neon Venom — Black Wing Crew</h3>
+            <p>Full LP streaming on the official Black Wing Crew site. All tracks available now.</p>
+            <span class="rc-cta">Stream →</span>
+          </a>
+          <a class="release-card" href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener">
+            <span class="rc-label">Video</span>
+            <h3>@blkck2 on YouTube</h3>
+            <p>Music videos, lyric clips, QR reveals, visual drops and B$S lore content.</p>
+            <span class="rc-cta">Watch →</span>
+          </a>
+          <a class="release-card" href="downloads/bss-street-print-pack.zip">
+            <span class="rc-label">Free Download</span>
+            <h3>Street Print Pack</h3>
+            <p>Neon Venom lyric posters, QR sticker sheets, B$S crest prints and street art assets. Print and deploy.</p>
+            <span class="rc-cta">Download →</span>
+          </a>
+          <a class="release-card" href="downloads/bss-qr-drop-pack.zip">
+            <span class="rc-label">Free Download</span>
+            <h3>QR Drop Pack</h3>
+            <p>Seven colour-variant QR codes all pointing to blackwingcrew.netlify.app. Neon pink, orange, yellow, green, purple, cyan and rainbow.</p>
+            <span class="rc-cta">Download →</span>
+          </a>
+          <a class="release-card" href="index.html#print-street-pack">
+            <span class="rc-label">Gallery</span>
+            <h3>Print Arsenal gallery</h3>
+            <p>Browse all print-ready assets from the B$S archive — lyric posters, QR sheets, crest prints and more.</p>
+            <span class="rc-cta">Browse →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- PRINT PACKS -->
+      <section class="bwc-section" aria-label="Street print assets">
+        <p class="eyebrow">Print · Street · QR</p>
+        <h2>Street print assets.</h2>
+        <div class="print-grid">
+          <div class="print-card">
+            <strong>Neon Venom lyric poster</strong>
+            <p>A3 print-ready poster with Neon Venom lyrics and cyberpunk visual. Included in the Street Print Pack.</p>
+          </div>
+          <div class="print-card">
+            <strong>Woman Money Venom QR sheet</strong>
+            <p>Full and shorts video QR codes in poster format. Scan to stream.</p>
+          </div>
+          <div class="print-card">
+            <strong>Black Wing Crew crest</strong>
+            <p>Winged B$S heraldic crest. Works as a sticker, poster or patch design.</p>
+          </div>
+          <div class="print-card">
+            <strong>7-colour QR set</strong>
+            <p>Seven neon colour variants of the same QR code. Use as stickers, flyers or street drops.</p>
+          </div>
+          <div class="print-card">
+            <strong>B$S Melbourne seal</strong>
+            <p>Ornate circular Victorian badge with "BLUE $NAKE STUDIOS / MELBOURNE" lettering.</p>
+          </div>
+          <div class="print-card">
+            <strong>Chant sheet</strong>
+            <p>Black Wing Crew chant lyrics in a format ready to print and hand out at live events.</p>
+          </div>
+        </div>
+        <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="project-link album-link" href="downloads/bss-street-print-pack.zip">Download Street Print Pack</a>
+          <a class="project-link" href="downloads/bss-qr-drop-pack.zip">Download QR Pack</a>
+        </div>
+      </section>
+
+      <!-- THE LORE -->
+      <section class="bwc-section" aria-label="Mythology and lore">
+        <p class="eyebrow">Mythology · Symbols · Lore</p>
+        <h2>The world behind the music.</h2>
+        <div class="lore-block">
+          <p>Black Wing Crew isn't a band name chosen for effect — it's a mythological body. The crew is the black cockatoo flock, the omen lineage, the group of artist-ancestors and street voices that populate the B$S universe. The music comes from inside the world, not outside it.</p>
+          <p>Neon Venom as an LP sits at the intersection of street mythology and the digital city. The black cockatoo appears as deity, harbinger, artist and trickster. The snake coils around the dollar sign. The neon city pulses behind everything. <em>The venom is not poison — it's the truth delivered fast.</em></p>
+          <p>Every release has a visual identity: a lyric poster, a QR code, a symbol set. The music and the image always arrive together.</p>
+        </div>
+        <ul class="symbol-list">
+          <li><strong>The black cockatoo</strong> The central recurring figure. Deity, artist, ancestor, omen. Never explained directly.</li>
+          <li><strong>The coiled snake</strong> The B$S symbol. Encircles the dollar sign. Knowledge, danger and transformation.</li>
+          <li><strong>The neon city</strong> The built world. Cyberpunk, broken, still alive. Where the street print lands.</li>
+          <li><strong>The feather</strong> The physical talisman. The thing you find. The thing that starts everything.</li>
+          <li><strong>The dollar sign</strong> Inside the snake. Inside the studio name. Not about money — about meaning embedded in commercial form.</li>
+          <li><strong>The QR code</strong> The street portal. A physical object pointing into the digital world. The trigger for the whole system.</li>
+        </ul>
+        <div style="margin-top:20px;">
+          <a class="project-link" href="field-guide.html">Read The Moss Man Field Guide</a>
+        </div>
+      </section>
+
+      <!-- VIDEO / YOUTUBE -->
+      <section class="bwc-section" aria-label="Video and YouTube">
+        <p class="eyebrow">Video · @blkck2</p>
+        <h2>Watch on YouTube.</h2>
+        <div style="max-width:680px;">
+          <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:20px;">The @blkck2 YouTube channel carries music videos, lyric clips, QR reveal videos, behind-the-scenes visual work and B$S lore content. Subscribe to get new drops as they release.</p>
+          <a class="project-link album-link" href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener">Open @blkck2 on YouTube</a>
+        </div>
+      </section>
+
+      <footer class="bwc-footer" role="contentinfo">
+        <p>Created by <strong style="color:var(--ink);">The Moss Man</strong> / <strong style="color:var(--ink);">Blue $nake Studio</strong> — <a href="https://blkck2.com/">blkck2.com</a> — <a href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener noreferrer">@blkck2</a></p>
+        <p style="font-size:11px;"><a href="mailto:bluesssnakestudio@gmail.com">bluesssnakestudio@gmail.com</a> · <a href="mailto:blkck2@gmail.com">blkck2@gmail.com</a></p>
+        <p style="margin-top:8px;"><a href="index.html#black-wing-crew">Back to portal</a> · <a href="proof-wall.html">B$S Proof Wall</a> · <a href="field-guide.html">Field Guide</a> · <a href="press-kit.html">Press Kit</a></p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
