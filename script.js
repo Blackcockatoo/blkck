@@ -1274,4 +1274,56 @@
   buildPanels();
   select(active, { hash: location.hash.length > 1 });
   setupIntroFilm();
+
+  // ─── Krishna Sanctum ──────────────────────────────────────────────────────────
+  function setupKrishnaSanctum() {
+    const sanctum  = document.getElementById('krishna-sanctum');
+    const door     = document.getElementById('brand-mark-door');
+    const closeBtn = document.getElementById('sanctum-close');
+    if (!sanctum || !door) return;
+
+    let lastFocused = null;
+
+    function getFocusable() {
+      return [...sanctum.querySelectorAll(
+        'button:not([disabled]), a[href], iframe, [tabindex]:not([tabindex="-1"])'
+      )];
+    }
+
+    function openSanctum() {
+      lastFocused = document.activeElement;
+      sanctum.removeAttribute('aria-hidden');
+      sanctum.classList.add('is-open');
+      setTimeout(() => { if (closeBtn) closeBtn.focus({ preventScroll: true }); }, 820);
+      sanctum.addEventListener('keydown', trapFocus);
+    }
+
+    function closeSanctum() {
+      sanctum.setAttribute('aria-hidden', 'true');
+      sanctum.classList.remove('is-open');
+      sanctum.removeEventListener('keydown', trapFocus);
+      if (lastFocused) { lastFocused.focus({ preventScroll: true }); lastFocused = null; }
+    }
+
+    function trapFocus(e) {
+      if (e.key !== 'Tab') return;
+      const f = getFocusable();
+      if (!f.length) return;
+      if (e.shiftKey && document.activeElement === f[0]) {
+        e.preventDefault(); f[f.length - 1].focus();
+      } else if (!e.shiftKey && document.activeElement === f[f.length - 1]) {
+        e.preventDefault(); f[0].focus();
+      }
+    }
+
+    door.addEventListener('click', e => { e.stopPropagation(); openSanctum(); });
+    door.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); openSanctum(); }
+    });
+    if (closeBtn) closeBtn.addEventListener('click', closeSanctum);
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && sanctum.classList.contains('is-open')) closeSanctum();
+    });
+  }
+  setupKrishnaSanctum();
 })();
