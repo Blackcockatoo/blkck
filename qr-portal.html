@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>B$S QR Portal — Street Drop System · Blue $nake Studio</title>
+  <meta name="description" content="The B$S QR drop system: seven colour variants, all pointing to Black Wing Crew. Print, post, scan, land. Street campaigns for schools, venues and community spaces." />
+  <link rel="canonical" href="https://blkck2.com/qr-portal.html" />
+  <meta property="og:title" content="B$S QR Portal — Street Drop System" />
+  <meta property="og:description" content="Seven colour QR codes. All pointing to Black Wing Crew. Print at Officeworks, post anywhere, scan to land." />
+  <meta property="og:image" content="https://blkck2.com/17_branding_campaigns/qr-rainbow.png" />
+  <meta property="og:url" content="https://blkck2.com/qr-portal.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="B$S QR Portal — Street Drop System" />
+  <meta name="twitter:description" content="Seven colour QR codes. Print, post, scan, land." />
+  <meta name="twitter:image" content="https://blkck2.com/17_branding_campaigns/qr-rainbow.png" />
+  <meta name="theme-color" content="#04101d" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { overflow: auto; }
+    .qr-shell { width: min(960px, calc(100% - 32px)); margin: 0 auto; padding: 80px 0 64px; }
+    .qr-hero { padding-bottom: 48px; border-bottom: 1px solid rgba(120,214,247,.12); margin-bottom: 56px; }
+    .qr-hero h1 { margin: 12px 0 20px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(36px, 6vw, 68px); line-height: .95; letter-spacing: -.03em; color: var(--ink); }
+    .qr-hero .lead { font-size: 17px; color: var(--muted); max-width: 680px; line-height: 1.75; margin: 0 0 28px; }
+    .qr-cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .qr-section { margin-bottom: 64px; }
+    .qr-section h2 { margin: 0 0 6px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(22px,3vw,34px); font-weight: 400; color: var(--ink); }
+    .qr-section .eyebrow { margin: 0 0 8px; }
+    .variant-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin-top: 22px; }
+    .variant-card { padding: 18px 20px; border: 1px solid rgba(120,214,247,.18); border-radius: 14px; background: rgba(2,7,13,.5); display: flex; flex-direction: column; gap: 6px; }
+    .variant-card .vc-colour { display: inline-block; width: 14px; height: 14px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+    .variant-card h3 { margin: 0; font-size: 14px; font-weight: 700; color: var(--gold-hot); }
+    .variant-card .vc-url { font-size: 11px; color: var(--neon-cyan); font-family: monospace; word-break: break-all; }
+    .variant-card p { margin: 0; font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .how-list { list-style: none; padding: 0; margin: 20px 0 0; counter-reset: step; }
+    .how-list li { display: grid; grid-template-columns: 36px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid rgba(120,214,247,.07); counter-increment: step; }
+    .how-list li:last-child { border-bottom: none; }
+    .how-list li::before { content: counter(step); display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(199,168,106,.15); color: var(--gold-hot); font-size: 11px; font-weight: 700; }
+    .how-list li .step-body { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .how-list li .step-body strong { color: var(--ink); display: block; margin-bottom: 2px; font-size: 13px; }
+    .use-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 20px; }
+    .use-card { padding: 16px 18px; border: 1px solid rgba(0,245,255,.12); border-radius: 12px; background: rgba(255,255,255,.03); }
+    .use-card strong { display: block; font-size: 13px; color: var(--ink); margin-bottom: 4px; }
+    .use-card p { margin: 0; font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .download-box { margin-top: 22px; padding: 24px 28px; border: 1px solid rgba(199,168,106,.25); border-radius: 16px; background: rgba(199,168,106,.04); }
+    .download-box h3 { margin: 0 0 8px; font-size: 16px; color: var(--gold-hot); font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+    .download-box p { margin: 0 0 16px; font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .download-box ul { padding: 0 0 0 16px; margin: 0 0 16px; }
+    .download-box ul li { font-size: 13px; color: var(--muted); line-height: 1.7; }
+    .qr-footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(120,214,247,.12); font-size: 12px; color: var(--dim); line-height: 1.9; }
+    .qr-footer a { color: var(--muted); text-decoration: none; }
+    .qr-footer a:hover { color: var(--gold-hot); }
+    @media (max-width: 540px) { .qr-shell { padding-top: 64px; } .variant-grid { grid-template-columns: repeat(2, 1fr); } .use-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="index.html#start-here" aria-label="Blue Snake Studios — Moss Tree">
+        <span class="brand-mark" aria-hidden="true">B$S</span>
+        <span class="brand-copy">Blue $nake Studio</span>
+      </a>
+      <div class="mast-actions">
+        <a class="mast-link" href="index.html#print-street-pack">Print Street Pack</a>
+        <a class="mast-link" href="black-wing-crew.html">Black Wing Crew</a>
+        <a class="mast-link" href="downloads/bss-qr-drop-pack.zip">Download Pack →</a>
+      </div>
+    </header>
+
+    <main class="qr-shell" id="main">
+
+      <!-- HERO -->
+      <section class="qr-hero">
+        <p class="eyebrow">QR Drop System · Blue $nake Studio · Street campaigns</p>
+        <h1>Scan. Land. Act.</h1>
+        <p class="lead">The B$S QR system is seven colour variants of the same code, all pointing to Black Wing Crew. Print them, paste them, hand them out, sticker them. One scan opens the music world.</p>
+        <div class="qr-cta-row">
+          <a class="project-link album-link" href="downloads/bss-qr-drop-pack.zip">Download QR Drop Pack</a>
+          <a class="project-link album-link" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">See where they land</a>
+          <a class="project-link" href="black-wing-crew.html">Black Wing Crew archive</a>
+        </div>
+      </section>
+
+      <!-- THE SEVEN VARIANTS -->
+      <section class="qr-section" aria-label="QR colour variants">
+        <p class="eyebrow">The seven colours</p>
+        <h2>All codes. One destination.</h2>
+        <p style="max-width:640px;font-size:14px;color:var(--muted);line-height:1.7;margin:8px 0 0;">Every QR code below points to <strong style="color:var(--ink);">blackwingcrew.netlify.app</strong>. The colours are for visual variety in street campaigns — match the colour to your surface, your print run or your mood.</p>
+        <div class="variant-grid">
+          <div class="variant-card">
+            <h3><span class="vc-colour" style="background:#ff006e;"></span>Neon Pink</h3>
+            <div class="vc-url">blackwingcrew.netlify.app</div>
+            <p>High-contrast on dark walls, lamp posts, glass. The most visible colour at night.</p>
+          </div>
+          <div class="variant-card">
+            <h3><span class="vc-colour" style="background:#ff8c00;"></span>Orange / Amber</h3>
+            <div class="vc-url">blackwingcrew.netlify.app</div>
+            <p>Warm tone. Works on timber, brown paper, cardboard and natural surfaces.</p>
+          </div>
+          <div class="variant-card">
+            <h3><span class="vc-colour" style="background:#f5e642;"></span>Yellow</h3>
+            <div class="vc-url">blackwingcrew.netlify.app</div>
+            <p>Maximum brightness. Street-sign energy. Stands out in daylight from across the room.</p>
+          </div>
+          <div class="variant-card">
+            <h3><span class="vc-colour" style="background:#39ff14;"></span>Green Neon</h3>
+            <div class="vc-url">blackwingcrew.netlify.app</div>
+            <p>Cyberpunk palette match. Works with Neon Venom visual identity.</p>
+          </div>
+          <div class="variant-card">
+            <h3><span class="vc-colour" style="background:#8b5cf6;"></span>Purple</h3>
+            <div class="vc-url">blackwingcrew.netlify.app</div>
+            <p>Dark mythic tone. Works on white or cream paper. Good for posters and zine inserts.</p>
+          </div>
+          <div class="variant-card">
+            <h3><span class="vc-colour" style="background:#00f5ff;"></span>Cyan / Electric</h3>
+            <div class="vc-url">blackwingcrew.netlify.app</div>
+            <p>B$S brand colour. Matches the site's neon aesthetic. Good on dark or black backgrounds.</p>
+          </div>
+          <div class="variant-card">
+            <h3><span class="vc-colour" style="background:linear-gradient(90deg,#ff006e,#f5e642,#39ff14,#00f5ff,#8b5cf6);"></span>Rainbow</h3>
+            <div class="vc-url">blackwingcrew.netlify.app</div>
+            <p>All colours, one code. Maximum energy. The statement drop piece for music campaigns.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW TO DEPLOY -->
+      <section class="qr-section" aria-label="How to deploy">
+        <p class="eyebrow">How to use them</p>
+        <h2>Print. Post. Scan.</h2>
+        <ol class="how-list">
+          <li>
+            <div class="step-body">
+              <strong>Download the pack</strong>
+              Get the QR Drop Pack — seven print-ready PNG files, one per colour. High resolution, black background, designed for printing.
+            </div>
+          </li>
+          <li>
+            <div class="step-body">
+              <strong>Choose your size</strong>
+              Each QR scans reliably at A6 (postcard), A5 (half-A4) or A4. Do not print smaller than 5cm × 5cm or scanning accuracy drops. A6 is the sweet spot for stickers and handouts.
+            </div>
+          </li>
+          <li>
+            <div class="step-body">
+              <strong>Print at Officeworks or home</strong>
+              Laser print on matte or gloss paper for outdoor use. Inkjet works indoors. For sticker sheets: print on sticker paper (A4 self-adhesive matte, available at Officeworks and newsagents).
+            </div>
+          </li>
+          <li>
+            <div class="step-body">
+              <strong>Laminate if outdoor</strong>
+              Laminated QR codes last months on brick, metal and wood surfaces. A3 thermal laminator sheets from Officeworks, ~$15 for a 100-sheet pack. Trim with scissors after laminating.
+            </div>
+          </li>
+          <li>
+            <div class="step-body">
+              <strong>Post and drop</strong>
+              Lamp posts, windows, noticeboards, guitar cases, sketchbooks, cafe counter, venue door, school whiteboard. Ask permission where needed. The code scans through glass.
+            </div>
+          </li>
+          <li>
+            <div class="step-body">
+              <strong>Test the scan</strong>
+              Before your run, scan the printed code with your phone camera. Confirm it opens <strong style="color:var(--ink);">blackwingcrew.netlify.app</strong>. If the image is blurry or the code is too small, reprint at a larger size.
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- USE CASES -->
+      <section class="qr-section" aria-label="Use cases">
+        <p class="eyebrow">Where they work</p>
+        <h2>Campaign ideas.</h2>
+        <div class="use-grid">
+          <div class="use-card">
+            <strong>Music venue drops</strong>
+            <p>Sticker a set of 6 colours on the venue door, backstage, bar or merch table. Colour variety = visual intrigue. One scan = streaming.</p>
+          </div>
+          <div class="use-card">
+            <strong>School music rooms</strong>
+            <p>Laminated A5 QR card on the music room wall or noticeboard. Students scan during breaks. Works without login or download.</p>
+          </div>
+          <div class="use-card">
+            <strong>Street poster campaigns</strong>
+            <p>Paste alongside a lyric poster or Neon Venom print. The poster gives context; the QR gives the destination. Works as a pair.</p>
+          </div>
+          <div class="use-card">
+            <strong>Handouts at events</strong>
+            <p>A6 card with QR on one side, "Black Wing Crew / Neon Venom LP" on the other. Hand out at markets, open mics, art shows, corridors.</p>
+          </div>
+          <div class="use-card">
+            <strong>Zine and print inserts</strong>
+            <p>Insert a small QR card into a zine, print pack or school resource. Low cost, turns physical into digital.</p>
+          </div>
+          <div class="use-card">
+            <strong>Teacher resource packs</strong>
+            <p>Add a QR code to the Teacher Tools pack pointing to Meta-Pet. Print it alongside the cheatsheet templates.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOWNLOAD -->
+      <section class="qr-section" aria-label="Download the pack">
+        <p class="eyebrow">Download</p>
+        <h2>Free. Print-ready. No login.</h2>
+        <div class="download-box">
+          <h3>B$S QR Drop Pack</h3>
+          <p>Seven print-ready PNG files — one per colour. High resolution, designed for A4/A5/A6 print. Download, print, deploy.</p>
+          <ul>
+            <li>7 colour variants: pink, orange, yellow, green, purple, cyan, rainbow</li>
+            <li>All codes point to blackwingcrew.netlify.app</li>
+            <li>Black background, optimised for sticker and poster printing</li>
+            <li>Free to use. No attribution required. No account needed.</li>
+          </ul>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a class="project-link album-link" href="downloads/bss-qr-drop-pack.zip">Download QR Drop Pack (.zip)</a>
+            <a class="project-link" href="downloads/bss-street-print-pack.zip">Street Print Pack (posters + more)</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="qr-footer" role="contentinfo">
+        <p>Created by <strong style="color:var(--ink);">The Moss Man</strong> / <strong style="color:var(--ink);">Blue $nake Studio</strong> — <a href="https://blkck2.com/">blkck2.com</a> — <a href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener noreferrer">@blkck2</a></p>
+        <p style="font-size:11px;"><a href="mailto:bluesssnakestudio@gmail.com">bluesssnakestudio@gmail.com</a> · <a href="mailto:blkck2@gmail.com">blkck2@gmail.com</a></p>
+        <p style="margin-top:8px;"><a href="index.html#print-street-pack">Print Street Arsenal</a> · <a href="black-wing-crew.html">Black Wing Crew</a> · <a href="proof-wall.html">B$S Proof Wall</a> · <a href="index.html">Moss Tree Portal</a></p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
