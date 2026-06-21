@@ -108,7 +108,7 @@
         'Its answer is not forgetting or revenge, but witness, transfer and symmetry: the wound finds its author; memory sharpens into hope.'
       ],
       links: [
-        { label: 'Listen to Old Vic State', href: 'https://suno.com/playlist/41d71043-b3a3-4ee0-aa80-8aae92922872', className: 'album-link' },
+        { label: 'Listen on Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link' },
         { label: 'Read Butterfly Symmetry', href: 'documents/butterfly-symmetry-final-loop.pdf' },
         { label: 'Read the Victorian Lullaby', href: 'documents/victorian-statesman-recursive-lullaby.pdf' }
       ],
@@ -194,6 +194,7 @@
         'Research and invention phase. Contact the studio to discuss pilot use or collaboration.'
       ],
       links: [
+        { label: 'Try Moss 60 App', href: 'https://www.bluesnakestudios.com/app/moss60', className: 'album-link' },
         { label: 'Explore Digital DNA', href: 'https://www.bluesnakestudios.com/digital-dna', className: 'album-link' },
         { label: 'Oracle Warden', href: 'apps/moss60-oracle-warden.html', className: 'game-link' },
         { label: 'Connect to Meta-Pet', href: '#meta-pet' },
@@ -252,6 +253,26 @@
         { label: 'Watch @blkck2', href: 'https://www.youtube.com/@blkck2', className: 'album-link' },
         { label: 'Email for print files', href: 'mailto:blkck2@gmail.com' }
       ]
+    },
+    {
+      slug: 'games',
+      label: 'Games',
+      eyebrow: 'Play · Explore · Interactive',
+      title: 'Games from the studio.',
+      statement: 'Playable games and interactive engines from Blue $nake Studio — built in the same mythic universe as the art, music and learning tools.',
+      pageTitle: 'Games — Blue $nake Studio',
+      pageDescription: 'Monkey Invaders and the Oracle Warden glyph engine — playable games from Blue $nake Studio.',
+      details: [
+        'Monkey Invaders — arcade-style game from the studio.',
+        'Oracle Warden — the Moss 60 glyph engine, a playable symbolic puzzle.',
+        'More games in development as the studio\'s pattern systems are gamified.'
+      ],
+      links: [
+        { label: 'Play Monkey Invaders', href: 'https://www.bluesnakestudios.com/monkey-invaders.html', className: 'album-link' },
+        { label: 'Oracle Warden (Moss 60)', href: 'apps/moss60-oracle-warden.html', className: 'game-link' },
+        { label: 'Watch @blkck2', href: 'https://www.youtube.com/@blkck2' }
+      ],
+      featuredIds: ['meta-pet-neon-ornament', 'moss60-geometry-linework', 'meta-pet-digital-genomes', 'meta-pet-companion-portrait']
     }
   ];
 
@@ -336,7 +357,7 @@
     'old-vic-state': [
       ['What it is', 'A Victorian civic-gothic song, image and poetry cycle built around recursion, witness and command.'],
       ['Why it matters', 'It joins the studio\'s music, political symbolism and long-form writing into one complete world.'],
-      ['Exists already', 'Four key artworks, a Suno playlist and two finished illustrated books.'],
+      ['Exists already', 'Four key artworks, two finished illustrated books and music on YouTube.'],
       ['Core line', 'One wing remembers fire. One wing remembers law. Between them hangs the body of command.']
     ],
     'frankston-fuji': [
@@ -583,7 +604,7 @@
         audience: 'Schools / Parents',
         what: 'Child-safe learning tools and classroom support.',
         detail: 'Meta-Pet digital companion, Teacher\'s Secret Cheatsheet, behaviour-support templates, privacy-first design — no ads, no trackers.',
-        cta: 'Try Meta-Pet', href: 'https://www.bluesnakestudios.com/'
+        cta: 'Find out more', href: 'meta-pet.html'
       },
       {
         audience: 'Art / Music / Culture',
@@ -595,7 +616,7 @@
         audience: 'Theory / Invention',
         what: 'Visual number system, symbolic engine and digital DNA.',
         detail: 'Moss 60 base-60 geometry, Semantic Sovereignty doctrine, interactive glyph engine, proof layers and pattern logic.',
-        cta: 'Explore Moss 60', href: '#moss60'
+        cta: 'Explore Moss 60', href: 'https://www.bluesnakestudios.com/app/moss60'
       }
     ];
     return `
@@ -623,7 +644,7 @@
       { label: 'Meta-Pet', status: 'In development', desc: 'A privacy-first digital pet and learning companion — no ads, trackers, social feeds, gambling loops or unnecessary data.', href: '#meta-pet' },
       { label: 'Teacher\'s Secret Cheatsheet', status: 'Live', desc: 'Behaviour-support templates for stretched teachers. Print and use. Zero admin.', href: 'https://teachers-secret-cheatsheet.vercel.app/' },
       { label: 'Black Wing Crew / Neon Venom', status: 'Live', desc: '2026 LP: songs, lyric posters, QR drops, streaming.', href: 'https://blackwingcrew.netlify.app/' },
-      { label: 'Moss 60', status: 'Research', desc: 'Visual number system — base-60 digital DNA, glyph engine and symbolic identity.', href: '#moss60' },
+      { label: 'Moss 60', status: 'Research', desc: 'Visual number system — base-60 digital DNA, glyph engine and symbolic identity.', href: 'https://www.bluesnakestudios.com/app/moss60' },
       { label: 'Semantic Sovereignty', status: 'Active', desc: 'Doctrine on language, framing, meaning and narrative defence.', href: 'documents/oss-734g-known-unknowns-register.html' },
       { label: 'Visual Worlds', status: 'Live', desc: '10 gallery rooms: mythology, portraits, parody, print.', href: '#visual-worlds' },
       { label: 'Frankston → Fuji', status: 'In progress', desc: 'Bilingual sister-city song, Japanese practice & taiko.', href: '#frankston-fuji' },
