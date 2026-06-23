@@ -17,6 +17,7 @@
       '<a href="print.html">Print Vault</a> &middot; <a href="meta-pet.html">Meta-Pet</a> &middot; ' +
       '<a href="black-wing-crew.html">Black Wing Crew</a> &middot; <a href="teacher-tools.html">Teacher Tools</a> &middot; ' +
       '<a href="qr-portal.html">QR Portal</a>.</p>';
+    return;
   }
 
   const studioInscription = [
