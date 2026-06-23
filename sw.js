@@ -1,17 +1,35 @@
-const CACHE_NAME = 'moss-tree-v9';
+const CACHE_NAME = 'moss-tree-v10-print-vault-tracker';
 
 const APP_SHELL = [
   './',
   './index.html',
   './start-here.html',
+  './start.html',
+  './proof-wall.html',
+  './print.html',
+  './strongman-tracker.html',
+  './site-health.html',
+  './qr-portal.html',
+  './press-kit.html',
+  './field-guide.html',
+  './black-wing-crew.html',
+  './meta-pet.html',
+  './teacher-tools.html',
   './404.html',
   './styles.css',
   './script.js',
   './data/gallery-items.js',
+  './downloads/black-wing-crew-lyric-sheet.html',
+  './downloads/metapet-starter-sheet.html',
+  './downloads/moss-60-glyph-sheet.html',
+  './downloads/bss-colouring-page.html',
+  './downloads/qr-poster-drop.html',
+  './downloads/bss-proof-wall.html',
   './apps/moss60-oracle-warden.html',
   './documents/oss-734g-known-unknowns-register.html',
   './documents/butterfly-symmetry-final-loop.pdf',
   './documents/victorian-statesman-recursive-lullaby.pdf',
+  './sitemap.xml',
   './manifest.webmanifest',
   './icon.svg',
   './icon-192.png',
@@ -46,11 +64,15 @@ self.addEventListener('fetch', event => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
-  const isShell = APP_SHELL.some(path => url.pathname.endsWith(path.replace('./', '/')));
+  const normalizedPath = `.${url.pathname}`;
+  const isShell = APP_SHELL.some(path => {
+    const shellPath = path === './' ? './index.html' : path;
+    return normalizedPath === shellPath || url.pathname.endsWith(shellPath.replace('./', '/'));
+  });
   const isMedia = /\.(mp4|webm|mov)$/i.test(url.pathname);
 
   if (isMedia) {
-    // Network-only for video — avoid filling cache with large files
+    // Network-only for video — avoid filling cache with large files.
     return;
   }
 
@@ -70,23 +92,22 @@ self.addEventListener('fetch', event => {
   }
 
   if (isShell) {
-    // Cache-first for app shell files
+    // Network-first for app shell files so deploys reveal new print/tracker pages quickly.
     event.respondWith(
-      caches.match(request).then(cached => {
-        if (cached) return cached;
-        return fetch(request).then(response => {
+      fetch(request)
+        .then(response => {
           if (response.ok) {
             const copy = response.clone();
             caches.open(CACHE_NAME).then(cache => cache.put(request, copy)).catch(() => {});
           }
           return response;
-        });
-      })
+        })
+        .catch(() => caches.match(request))
     );
     return;
   }
 
-  // Stale-while-revalidate for everything else (images, assets)
+  // Stale-while-revalidate for everything else (images, small assets).
   event.respondWith(
     caches.open(CACHE_NAME).then(cache =>
       cache.match(request).then(cached => {
