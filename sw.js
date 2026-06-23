@@ -1,4 +1,4 @@
-const CACHE_NAME = 'moss-tree-v9';
+const CACHE_NAME = 'moss-tree-v10';
 
 const APP_SHELL = [
   './',
@@ -8,6 +8,14 @@ const APP_SHELL = [
   './styles.css',
   './script.js',
   './data/gallery-items.js',
+  './data/studio-sections.js',
+  './print.html',
+  './downloads/black-wing-crew-lyric-sheet.html',
+  './downloads/metapet-starter-sheet.html',
+  './downloads/moss-60-glyph-sheet.html',
+  './downloads/bss-colouring-page.html',
+  './downloads/qr-poster-drop.html',
+  './downloads/bss-proof-wall.html',
   './apps/moss60-oracle-warden.html',
   './documents/oss-734g-known-unknowns-register.html',
   './documents/butterfly-symmetry-final-loop.pdf',
