@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Site Health — blkck2.com</title>
+  <meta name="description" content="Quick manual health check for critical blkck2.com pages and starter downloads." />
+  <link rel="canonical" href="https://blkck2.com/site-health.html" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#04101d" />
+  <style>
+    :root { --night:#02070d; --navy:#04101d; --ink:#f4f0e4; --muted:#9eb0bd; --gold:#e7c767; --pink:#ff006e; --cyan:#00f5ff; --ok:#39ff88; --bad:#ff4b6e; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100dvh; color: var(--ink); background: radial-gradient(circle at 12% 10%, rgba(255,0,110,.16), transparent 28rem), radial-gradient(circle at 88% 16%, rgba(0,245,255,.12), transparent 28rem), linear-gradient(145deg, #071b2c, var(--night)); font-family: "Segoe UI", Inter, system-ui, -apple-system, sans-serif; line-height: 1.55; }
+    .shell { width: min(980px, calc(100% - 32px)); margin: 0 auto; padding: 32px 0 72px; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 48px; }
+    a { color: inherit; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; text-transform: uppercase; font-size: 12px; font-weight: 900; letter-spacing: .18em; }
+    .brand-mark { display: grid; place-items: center; width: 36px; height: 36px; border: 2px solid var(--pink); border-radius: 8px; color: var(--cyan); transform: rotate(30deg); }
+    .nav { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; font-size: 11px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    .nav a { color: var(--cyan); text-decoration: none; }
+    h1 { max-width: 12ch; margin: 0 0 18px; font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(52px, 9vw, 100px); line-height: .9; letter-spacing: -.05em; background: linear-gradient(135deg, var(--pink), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .lead { max-width: 760px; color: var(--muted); font-size: 18px; margin: 0 0 24px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 30px; }
+    button, .button { border: 2px solid rgba(0,245,255,.42); border-radius: 10px; color: var(--cyan); background: rgba(0,245,255,.06); padding: 12px 16px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; text-decoration: none; }
+    button.primary { border-color: var(--pink); color: var(--pink); background: rgba(255,0,110,.10); }
+    .grid { display: grid; gap: 12px; margin-top: 24px; }
+    .row { display: grid; grid-template-columns: 130px 1fr auto; gap: 12px; align-items: center; padding: 14px; border: 1px solid rgba(120,214,247,.18); border-radius: 14px; background: rgba(255,255,255,.045); }
+    .status { font-weight: 900; letter-spacing: .14em; text-transform: uppercase; font-size: 12px; color: var(--gold); }
+    .status.ok { color: var(--ok); }
+    .status.bad { color: var(--bad); }
+    .row strong { color: var(--ink); }
+    .row small { color: var(--muted); display: block; }
+    .row a { color: var(--cyan); text-decoration: none; font-weight: 800; }
+    .note { margin-top: 28px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 720px) { header { align-items: flex-start; flex-direction: column; } .row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">B$S</span><span>blkck2 health</span></a>
+      <nav class="nav" aria-label="Site health navigation"><a href="index.html">Home</a><a href="print.html">Print Vault</a><a href="strongman-tracker.html">Tracker</a><a href="proof-wall.html">Proof Wall</a></nav>
+    </header>
+
+    <p class="lead">Manual smoke test for the main portal doors. Use this after deploys to catch broken routes, stale cache, or missing print/download pages.</p>
+    <h1>Site Health</h1>
+
+    <div class="actions">
+      <button class="primary" type="button" id="run-checks">Run health check</button>
+      <button type="button" id="clear-cache">Clear site cache</button>
+      <a class="button" href="sw.js">Open service worker</a>
+    </div>
+
+    <section class="grid" id="results" aria-live="polite"></section>
+    <p class="note">Checks use same-origin fetch with cache bypass where possible. A failed check does not always mean the page is broken for visitors, but it does mean the route should be inspected.</p>
+  </main>
+
+  <script>
+    const checks = [
+      ['Homepage', 'index.html'],
+      ['Start Here', 'start.html'],
+      ['Proof Wall', 'proof-wall.html'],
+      ['Print Vault', 'print.html'],
+      ['Strongman Tracker', 'strongman-tracker.html'],
+      ['QR Portal', 'qr-portal.html'],
+      ['Press Kit', 'press-kit.html'],
+      ['Field Guide', 'field-guide.html'],
+      ['Black Wing Crew page', 'black-wing-crew.html'],
+      ['Meta-Pet page', 'meta-pet.html'],
+      ['Teacher Tools page', 'teacher-tools.html'],
+      ['Black Wing lyric sheet', 'downloads/black-wing-crew-lyric-sheet.html'],
+      ['Meta-Pet starter sheet', 'downloads/metapet-starter-sheet.html'],
+      ['Moss 60 glyph sheet', 'downloads/moss-60-glyph-sheet.html'],
+      ['B$S colouring page', 'downloads/bss-colouring-page.html'],
+      ['QR poster drop', 'downloads/qr-poster-drop.html'],
+      ['Proof Wall printable', 'downloads/bss-proof-wall.html'],
+      ['Manifest', 'manifest.webmanifest'],
+      ['Sitemap', 'sitemap.xml'],
+      ['Service worker', 'sw.js']
+    ];
+
+    const results = document.getElementById('results');
+    const rowFor = (name, path, state, detail = '') => {
+      const row = document.createElement('article');
+      row.className = 'row';
+      row.innerHTML = `<span class="status ${state}">${state || 'wait'}</span><div><strong>${name}</strong><small>${path}${detail ? ' · ' + detail : ''}</small></div><a href="${path}">Open</a>`;
+      return row;
+    };
+
+    async function runChecks() {
+      results.innerHTML = '';
+      for (const [name, path] of checks) {
+        const pending = rowFor(name, path, '', 'checking');
+        results.appendChild(pending);
+        try {
+          const response = await fetch(path, { cache: 'no-store' });
+          pending.replaceWith(rowFor(name, path, response.ok ? 'ok' : 'bad', `HTTP ${response.status}`));
+        } catch (error) {
+          pending.replaceWith(rowFor(name, path, 'bad', error.message));
+        }
+      }
+    }
+
+    async function clearCache() {
+      if (!('caches' in window)) return alert('Cache API not available in this browser.');
+      const keys = await caches.keys();
+      await Promise.all(keys.map(key => caches.delete(key)));
+      if ('serviceWorker' in navigator) {
+        const regs = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(regs.map(reg => reg.update()));
+      }
+      alert('Site cache cleared. Refresh the page after the next deploy if needed.');
+    }
+
+    document.getElementById('run-checks').addEventListener('click', runChecks);
+    document.getElementById('clear-cache').addEventListener('click', clearCache);
+    runChecks();
+  </script>
+</body>
+</html>
