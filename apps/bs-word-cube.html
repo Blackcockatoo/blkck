@@ -30,7 +30,7 @@
     color: var(--pale);
     font-family: Georgia, "Times New Roman", serif;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto 1fr auto;
   }
 
   .masthead {
@@ -380,14 +380,56 @@
 
   .site-footer a { color: rgba(243,234,211,.55); text-decoration: none; }
   .site-footer a:hover { color: var(--gold); }
+
+  .cube-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    padding: 9px 18px;
+    border-bottom: 1px solid rgba(217,184,111,.1);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: 12px;
+  }
+
+  .free-badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border: 1px solid rgba(217,184,111,.55);
+    border-radius: 999px;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .cube-hint {
+    color: rgba(243,234,211,.42);
+    letter-spacing: .04em;
+  }
+
+  .cube-hint a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .cube-hint a:hover { color: var(--pale); }
 </style>
 </head>
 <body>
 
   <nav class="masthead">
     <a href="../index.html">&#8592; blkck2.com</a>
+    <a href="../print.html">Print Vault</a>
     <a href="../proof-wall.html">Proof Wall</a>
   </nav>
+
+  <div class="cube-intro">
+    <span class="free-badge">Free &mdash; Six-Face Word Cube</span>
+    <span class="cube-hint">Drag to spin &middot; No login &middot; No ads &middot; No tracking &middot; <a href="../print.html">Support the studio →</a></span>
+  </div>
 
   <main class="stage" id="stage">
     <div class="sigil"></div>

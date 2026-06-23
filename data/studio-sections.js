@@ -240,7 +240,8 @@ window.BSS_STUDIO_SECTIONS = [
       'Every downloadable piece should have clean names so it can go straight to Officeworks or a local printer.'
     ],
     links: [
-      { label: 'Watch @blkck2', href: 'https://www.youtube.com/@blkck2', className: 'album-link' },
+      { label: 'Browse Print Vault', href: 'print.html', className: 'album-link' },
+      { label: 'Watch @blkck2', href: 'https://www.youtube.com/@blkck2' },
       { label: 'Email for print files', href: 'mailto:blkck2@gmail.com' }
     ]
   },
@@ -251,13 +252,15 @@ window.BSS_STUDIO_SECTIONS = [
     title: 'Games from the studio.',
     statement: 'Playable games and interactive engines from Blue $nake Studio — built in the same mythic universe as the art, music and learning tools.',
     pageTitle: 'Games — Blue $nake Studio',
-    pageDescription: 'Monkey Invaders and the Oracle Warden glyph engine — playable games from Blue $nake Studio.',
+    pageDescription: 'B$S Six-Face Word Cube, Monkey Invaders and the Oracle Warden glyph engine — playable browser games from Blue $nake Studio.',
     details: [
+      'B$S Six-Face Word Cube — drag to spin a 3D artwork cube with six word-grid faces. Free in the browser, no login.',
       'Monkey Invaders — arcade-style game from the studio.',
       'Oracle Warden — the Moss 60 glyph engine, a playable symbolic puzzle.',
       'More games in development as the studio\'s pattern systems are gamified.'
     ],
     links: [
+      { label: 'Play Word Cube', href: 'apps/bs-word-cube.html', className: 'game-link' },
       { label: 'Play Monkey Invaders', href: 'https://www.bluesnakestudios.com/monkey-invaders.html', className: 'album-link' },
       { label: 'Oracle Warden (Moss 60)', href: 'apps/moss60-oracle-warden.html', className: 'game-link' },
       { label: 'Watch @blkck2', href: 'https://www.youtube.com/@blkck2' }
