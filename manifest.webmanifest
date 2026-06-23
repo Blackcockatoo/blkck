@@ -57,6 +57,11 @@
       "name": "Black Wing Crew",
       "short_name": "B.W.C.",
       "url": "./index.html#black-wing-crew"
+    },
+    {
+      "name": "B$S Print Vault",
+      "short_name": "Prints",
+      "url": "./print.html"
     }
   ]
 }
