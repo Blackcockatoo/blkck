@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>B$S Magic Rubix Cube — Blue $nake Studio</title>
 <meta name="description" content="A playable six-face 5x5 word cube by The Moss Man / Blue $nake Studio: symbolic art object, puzzle game, and mystic digital artefact. Six word grids folded into a movable 3D relic." />
 <link rel="canonical" href="https://blkck2.com/magic-cube.html" />
@@ -412,6 +412,17 @@
   .bigBtn  { min-width: 82px; }
   .layerBtn { font-size: .76rem; }
 
+  /* show-info toggle: hidden on desktop, shown on mobile via media query */
+  #showInfoBtn {
+    display: none;
+    align-items: center;
+    gap: 5px;
+    font-size: .76rem;
+    padding: 5px 14px;
+    border-color: rgba(217,184,111,.35);
+    color: rgba(243,234,211,.7);
+  }
+
   /* layer label row */
   .layer-hint {
     font-family: "Segoe UI", system-ui, sans-serif;
@@ -423,6 +434,13 @@
 
   /* ── RESPONSIVE ──────────────────────── */
   @media (max-width: 900px) {
+    /* Unlock viewport height so controls aren't clipped below the fold */
+    body {
+      height: auto;
+      min-height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
     .stage {
       grid-template-columns: 1fr;
       gap: 8px;
@@ -436,16 +454,42 @@
       align-content: start;
       gap: 8px;
     }
+    /* Pin controls to the bottom of the viewport at all times */
+    .controls {
+      position: sticky;
+      bottom: 0;
+      z-index: 20;
+      background: rgba(2,3,6,.97);
+      border-top: 1px solid rgba(217,184,111,.14);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
     :root { --cube-size: min(80vw, 42vh, 400px); }
   }
 
   @media (max-width: 560px) {
-    :root { --cube-size: min(86vw, 38vh, 340px); }
+    :root { --cube-size: min(84vw, 36vh, 320px); }
     .cell { font-size: clamp(.62rem, 3vw, 1rem); }
-    .moveBtn { min-width: 34px; padding: 6px 5px; }
-    button { padding: 7px 8px; }
+    .moveBtn { min-width: 32px; padding: 5px 4px; font-size: .74rem; }
+    button { padding: 6px 7px; font-size: .76rem; }
+    .bigBtn  { min-width: 68px; font-size: .72rem; }
+    .row { gap: 4px; }
     .mini-grid { width: 48px; height: 48px; }
     .mini-cell { font-size: .38rem; }
+    .layer-hint { display: none; }
+    /* Collapse intro strip to save vertical space */
+    .intro-strip { padding: 5px 10px; }
+    .mode-pills  { display: none; }
+    /* Hide side panel by default; show-info button reveals it */
+    .side-panel  { display: none; }
+    .side-panel.expanded {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(160px, 1fr);
+      overflow-x: auto;
+      gap: 8px;
+    }
+    #showInfoBtn { display: flex; }
   }
 </style>
 </head>
@@ -480,7 +524,7 @@
       <section class="cube" id="cube" aria-label="B$S Magic Word Cube — six 5x5 word faces"></section>
     </section>
 
-    <aside class="side-panel" aria-label="Cube information panel">
+    <aside class="side-panel" id="sidePanel" aria-label="Cube information panel">
       <div class="hud" id="orientationHud" aria-live="polite"></div>
 
       <div class="key-panel" aria-label="Face twist key">
@@ -505,6 +549,7 @@
 
   <!-- ── FOOTER CONTROLS ──────────────── -->
   <footer class="controls">
+    <button id="showInfoBtn" aria-expanded="false" aria-controls="sidePanel">Show info ▾</button>
     <div class="status" id="status" role="status" aria-live="polite">
       Solved. Choose a layer, scramble it, or start twisting.
     </div>
@@ -1026,6 +1071,18 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowDown')  { stopAllRotation(); tiltIndex=1; applyViewRotation(); }
   if(e.key==='Escape')     { if(!busy) resetCube(); }
 });
+
+/* ── MOBILE SIDE PANEL TOGGLE ─────────── */
+(function() {
+  const btn = document.getElementById('showInfoBtn');
+  const panel = document.getElementById('sidePanel');
+  if (!btn || !panel) return;
+  btn.addEventListener('click', () => {
+    const open = panel.classList.toggle('expanded');
+    btn.textContent = open ? 'Hide info ▴' : 'Show info ▾';
+    btn.setAttribute('aria-expanded', open);
+  });
+})();
 
 /* ── INIT ────────────────────────────── */
 buildCube();
