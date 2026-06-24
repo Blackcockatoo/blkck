@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Choose Your Path — The Moss Man / Blue $nake Studio</title>
-  <meta name="description" content="New to Blue $nake Studio? Choose your path: schools and parents, music and art, weird math and theory, or QR arrivals. Find the right door into the B$S world." />
+  <meta name="description" content="New to Blue $nake Studio? Choose your path: schools and parents, council and community, art and music, print and support, or theory and invention. Find the right door into the B$S world." />
   <link rel="canonical" href="https://blkck2.com/start.html" />
   <meta property="og:title" content="Choose Your Path — The Moss Man / Blue $nake Studio" />
   <meta property="og:description" content="New here? Choose your path into the B$S world: Meta-Pet for schools, Black Wing Crew for music, gallery rooms for art, or Moss 60 for symbolic systems." />
@@ -41,6 +41,9 @@
     .start-footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(120,214,247,.12); font-size: 12px; color: var(--dim); line-height: 1.9; text-align: center; }
     .start-footer a { color: var(--muted); text-decoration: none; }
     .start-footer a:hover { color: var(--gold-hot); }
+    .path-links { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(120,214,247,.1); }
+    .path-links a { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+    .path-links a:hover { color: var(--gold-hot); }
     @media (max-width: 540px) { .path-grid { grid-template-columns: 1fr; } .start-shell { padding-top: 64px; } }
   </style>
 </head>
@@ -63,52 +66,77 @@
       <section class="start-hero">
         <p class="eyebrow">New here? · Blue $nake Studio / The Moss Man</p>
         <h1>Where do you want to start?</h1>
-        <p>Art, music, learning tools, symbolic systems — made in Frankston, Australia. Choose the door that matches you.</p>
+        <p>An independent creative studio from Frankston, Australia — art, music, child-safe learning tools and symbolic systems. Choose the door that matches you.</p>
       </section>
 
       <nav class="path-grid" aria-label="Choose your path">
 
-        <a class="path-card" href="meta-pet.html">
+        <div class="path-card">
           <span class="path-who">Schools · Parents · Teachers</span>
-          <h2>I'm a parent or teacher</h2>
-          <p>Meta-Pet is a privacy-first digital learning companion — no ads, no trackers, no social feed, no gambling loops. Teacher's Secret Cheatsheet has seven printable behaviour-support templates, zero admin, free to use.</p>
-          <span class="path-cta">Find out more →</span>
-        </a>
+          <h2>Schools / Parents</h2>
+          <p>Child-safe learning tools, classroom resources and privacy-first digital companions — no ads, no trackers, no student data collected.</p>
+          <div class="path-links">
+            <a href="meta-pet.html">Meta-Pet</a>
+            <a href="teacher-tools.html">Teacher Tools</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+          </div>
+          <a class="path-cta" href="meta-pet.html">Open Meta-Pet →</a>
+        </div>
 
-        <a class="path-card" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">
-          <span class="path-who">Music · YouTube · Drops</span>
-          <h2>I'm here for the music</h2>
-          <p>Black Wing Crew and the 2026 Neon Venom LP — songs, lyric posters, QR drops, YouTube videos and street print packs. Dark, mythic, loud. One part chant, one part cyberpunk.</p>
-          <span class="path-cta">Enter Black Wing Crew →</span>
-        </a>
+        <div class="path-card">
+          <span class="path-who">Council · Community · Arts officers</span>
+          <h2>Council / Community</h2>
+          <p>A Frankston-built creative studio open to pilots, workshops, disability arts programs and community partnerships. See what exists and how to start a conversation.</p>
+          <div class="path-links">
+            <a href="gov.html">Community Pathway</a>
+            <a href="proof-wall.html">Proof Wall</a>
+            <a href="print.html">Print Vault</a>
+          </div>
+          <a class="path-cta" href="gov.html">Open the Community Pathway →</a>
+        </div>
 
-        <a class="path-card" href="index.html#visual-worlds">
-          <span class="path-who">Gallery · Paintings · Prints</span>
-          <h2>I'm here for the art</h2>
-          <p>Ten gallery rooms: painted mythology, character portraits, humour and parody, colouring pages, print packs, QR sticker sheets and an omen archive. Each room has its own atmosphere.</p>
-          <span class="path-cta">Enter the Gallery Rooms →</span>
-        </a>
+        <div class="path-card">
+          <span class="path-who">Art · Music · Gallery · Prints</span>
+          <h2>Art / Music / Gallery</h2>
+          <p>Visual art, mythic music worlds, print packs, QR drops and ten gallery rooms — built as one connected creative world.</p>
+          <div class="path-links">
+            <a href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">Black Wing Crew</a>
+            <a href="index.html#visual-worlds">Gallery Rooms</a>
+            <a href="print.html">Print Vault</a>
+          </div>
+          <a class="path-cta" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">Enter Black Wing Crew →</a>
+        </div>
 
-        <a class="path-card" href="https://www.bluesnakestudios.com/app/moss60" target="_blank" rel="noopener">
-          <span class="path-who">Moss 60 · Semantic Sovereignty</span>
-          <h2>I'm here for the weird math</h2>
-          <p>Moss 60 is a 60-position visual number system based on base-60 geometry. The Oracle Warden is a playable glyph engine. Semantic Sovereignty is a doctrine on language, framing and narrative defence.</p>
-          <span class="path-cta">Explore Moss 60 →</span>
-        </a>
+        <div class="path-card">
+          <span class="path-who">Print · Support · Commissions</span>
+          <h2>Print / Support / Commissions</h2>
+          <p>Free printable artefacts, a browser word-cube and a path to workshops, commissions and future supporter packs — no paywall on the portal.</p>
+          <div class="path-links">
+            <a href="print.html">Print Vault</a>
+            <a href="apps/bs-word-cube.html">Word Cube</a>
+            <a href="mailto:bluesssnakestudio@gmail.com">Contact</a>
+          </div>
+          <a class="path-cta" href="print.html">Browse the Print Vault →</a>
+        </div>
 
-        <a class="path-card" href="index.html">
-          <span class="path-who">QR · Link · Referral</span>
-          <h2>I came from a QR code</h2>
-          <p>Welcome. You found the real thing. This is the official portal for The Moss Man / Blue $nake Studio. The full site is at blkck2.com — art, music, learning tools, symbolic systems and a lot more.</p>
-          <span class="path-cta">Enter the portal →</span>
-        </a>
+        <div class="path-card">
+          <span class="path-who">Moss 60 · Semantic Sovereignty · Theory</span>
+          <h2>Theory / Invention</h2>
+          <p>Visual mathematics, symbolic engines and research frameworks — a 60-position number system, a playable glyph engine and a doctrine on language and narrative.</p>
+          <div class="path-links">
+            <a href="https://www.bluesnakestudios.com/app/moss60" target="_blank" rel="noopener">Moss 60 App</a>
+            <a href="apps/moss60-oracle-warden.html">Oracle Warden</a>
+            <a href="documents/oss-734g-known-unknowns-register.html">Semantic Sovereignty</a>
+          </div>
+          <a class="path-cta" href="https://www.bluesnakestudios.com/app/moss60" target="_blank" rel="noopener">Explore Moss 60 →</a>
+        </div>
 
       </nav>
 
       <footer class="start-footer" role="contentinfo">
         <p>Created by <strong style="color:var(--ink);">The Moss Man</strong> / <strong style="color:var(--ink);">Blue $nake Studio</strong> — <a href="https://blkck2.com/">blkck2.com</a> — <a href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener noreferrer">@blkck2</a></p>
         <p style="font-size:11px;"><a href="mailto:bluesssnakestudio@gmail.com">bluesssnakestudio@gmail.com</a> · <a href="mailto:blkck2@gmail.com">blkck2@gmail.com</a></p>
-        <p style="margin-top:8px;"><a href="proof-wall.html">B$S Proof Wall</a> · <a href="start-here.html">Start Here</a> · <a href="index.html">blkck2.com portal</a></p>
+        <p style="margin-top:8px;"><a href="proof-wall.html">Proof Wall</a> · <a href="gov.html">Schools / Council</a> · <a href="print.html">Print Vault</a> · <a href="privacy-policy.html">Privacy Policy</a> · <a href="index.html">blkck2.com portal</a></p>
       </footer>
     </main>
   </div>

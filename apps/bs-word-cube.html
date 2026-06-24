@@ -431,7 +431,7 @@
     <span class="cube-hint">Drag to spin &middot; No login &middot; No ads &middot; No tracking &middot; <a href="../print.html">Support the studio →</a></span>
   </div>
 
-  <main class="stage" id="stage">
+  <main class="stage" id="stage" tabindex="0" aria-label="Six-face word cube. Use arrow keys or drag to rotate. Press Space to toggle auto-spin, Escape to reset.">
     <div class="sigil"></div>
     <section class="cube" id="cube" aria-label="Interactive six-face word cube"></section>
   </main>
@@ -592,6 +592,21 @@ document.getElementById("spinBtn").addEventListener("click", () => {
 });
 
 stage.addEventListener("dblclick", resetCube);
+
+stage.addEventListener("keydown", e => {
+  const step = 15;
+  const actions = {
+    ArrowLeft:  () => { stopAuto(); rotY -= step; applyRotation(); },
+    ArrowRight: () => { stopAuto(); rotY += step; applyRotation(); },
+    ArrowUp:    () => { stopAuto(); rotX = Math.min(88, rotX + step); applyRotation(); },
+    ArrowDown:  () => { stopAuto(); rotX = Math.max(-88, rotX - step); applyRotation(); },
+    " ":        () => document.getElementById("spinBtn").click(),
+    Escape:     resetCube,
+    Home:       resetCube
+  };
+  if (actions[e.key]) { e.preventDefault(); actions[e.key](); }
+});
+
 applyRotation();
 </script>
 </body>

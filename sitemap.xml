@@ -145,4 +145,28 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://blkck2.com/gov.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://blkck2.com/privacy-policy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://blkck2.com/strongman-tracker.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://blkck2.com/apps/bs-word-cube.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

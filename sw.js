@@ -1,4 +1,4 @@
-const CACHE_NAME = 'moss-tree-v10-print-vault-tracker';
+const CACHE_NAME = 'moss-tree-v14';
 
 const APP_SHELL = [
   './',
@@ -19,6 +19,7 @@ const APP_SHELL = [
   './styles.css',
   './script.js',
   './data/gallery-items.js',
+  './data/studio-sections.js',
   './downloads/black-wing-crew-lyric-sheet.html',
   './downloads/metapet-starter-sheet.html',
   './downloads/moss-60-glyph-sheet.html',
@@ -26,6 +27,7 @@ const APP_SHELL = [
   './downloads/qr-poster-drop.html',
   './downloads/bss-proof-wall.html',
   './apps/moss60-oracle-warden.html',
+  './apps/bs-word-cube.html',
   './privacy-policy.html',
   './gov.html',
   './documents/oss-734g-known-unknowns-register.html',
@@ -94,7 +96,7 @@ self.addEventListener('fetch', event => {
   }
 
   if (isShell) {
-    // Network-first for app shell files so deploys reveal new print/tracker pages quickly.
+    // Network-first for app shell files so deploys reveal new pages quickly.
     event.respondWith(
       fetch(request)
         .then(response => {
