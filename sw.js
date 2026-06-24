@@ -26,6 +26,8 @@ const APP_SHELL = [
   './downloads/qr-poster-drop.html',
   './downloads/bss-proof-wall.html',
   './apps/moss60-oracle-warden.html',
+  './privacy-policy.html',
+  './gov.html',
   './documents/oss-734g-known-unknowns-register.html',
   './documents/butterfly-symmetry-final-loop.pdf',
   './documents/victorian-statesman-recursive-lullaby.pdf',

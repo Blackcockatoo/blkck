@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>B$S Six-Face Word Cube — Blue $nake Studio</title>
+<meta name="description" content="Interactive 3D rotating word cube — six gates, six grids, one machine. Drag to spin." />
+<link rel="icon" href="../icon.svg" type="image/svg+xml" />
+<meta name="theme-color" content="#050608" />
+<style>
+  :root {
+    --cube-size: min(68vw, 68vh, 430px);
+    --half: calc(var(--cube-size) / 2);
+    --gold: #d9b86f;
+    --pale: #f3ead3;
+    --blue: #45b6ff;
+    --dark: #050608;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background:
+      radial-gradient(circle at 50% 42%, rgba(64,160,255,.18), transparent 30%),
+      radial-gradient(circle at 50% 52%, rgba(217,184,111,.18), transparent 42%),
+      linear-gradient(135deg, #020204, #0b0a08 48%, #020204);
+    color: var(--pale);
+    font-family: Georgia, "Times New Roman", serif;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+  }
+
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(217,184,111,.15);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .masthead a {
+    color: var(--gold);
+    text-decoration: none;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-weight: 700;
+  }
+
+  .masthead a:hover { color: var(--pale); }
+
+  .stage {
+    position: relative;
+    display: grid;
+    place-items: center;
+    perspective: 1100px;
+    touch-action: none;
+    cursor: grab;
+    padding: 24px 0 8px;
+  }
+
+  .stage:active { cursor: grabbing; }
+
+  .sigil {
+    position: absolute;
+    width: min(86vw, 86vh, 650px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(217,184,111,.23);
+    border-radius: 50%;
+    box-shadow:
+      inset 0 0 45px rgba(217,184,111,.08),
+      0 0 55px rgba(69,182,255,.08);
+    opacity: .9;
+    pointer-events: none;
+  }
+
+  .sigil::before,
+  .sigil::after {
+    content: "";
+    position: absolute;
+    inset: 9%;
+    border: 1px solid rgba(217,184,111,.18);
+    border-radius: 50%;
+  }
+
+  .sigil::after {
+    inset: 22%;
+    border-radius: 0;
+    transform: rotate(45deg);
+    box-shadow: 0 0 26px rgba(69,182,255,.08);
+  }
+
+  .cube {
+    position: relative;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    transform-style: preserve-3d;
+    transform: rotateX(-18deg) rotateY(34deg);
+    transition: transform .08s linear;
+  }
+
+  .cube.autospin {
+    animation: spin 18s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotateX(-18deg) rotateY(0deg); }
+    to   { transform: rotateX(-18deg) rotateY(360deg); }
+  }
+
+  .face {
+    position: absolute;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    padding: calc(var(--cube-size) * .055);
+    background:
+      linear-gradient(145deg, rgba(255,255,255,.04), transparent 22%),
+      radial-gradient(circle at 50% 45%, rgba(0,0,0,.52), transparent 68%);
+    background-size: cover;
+    background-position: center;
+    border: 2px solid rgba(217,184,111,.72);
+    box-shadow:
+      inset 0 0 30px rgba(0,0,0,.7),
+      inset 0 0 12px rgba(217,184,111,.18),
+      0 0 22px rgba(69,182,255,.12);
+    display: grid;
+    grid-template-rows: 1fr;
+    backface-visibility: visible;
+  }
+
+  .face::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(217,184,111,.34);
+    pointer-events: none;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    border: 1px solid rgba(217,184,111,.52);
+    background: rgba(0,0,0,.35);
+  }
+
+  .cell {
+    display: grid;
+    place-items: center;
+    border-right: 1px solid rgba(217,184,111,.3);
+    border-bottom: 1px solid rgba(217,184,111,.3);
+    color: var(--pale);
+    font-size: clamp(1.15rem, 5.5vw, 2.4rem);
+    line-height: 1;
+    text-shadow:
+      0 0 12px rgba(0,0,0,.95),
+      0 2px 6px rgba(0,0,0,.85),
+      0 0 18px rgba(69,182,255,.12);
+    font-weight: 600;
+  }
+
+  .cell:nth-child(5n) { border-right: 0; }
+  .cell:nth-child(n+21) { border-bottom: 0; }
+
+  .front  { transform: rotateY(0deg) translateZ(var(--half)); background-image: url('images/bss-raven-gate.png'); }
+  .back   { transform: rotateY(180deg) translateZ(var(--half)); background-image: url('images/bss-brave-gate.png'); }
+  .right  { transform: rotateY(90deg) translateZ(var(--half)); background-image: url('images/bss-blade-descent.png'); }
+  .left   { transform: rotateY(-90deg) translateZ(var(--half)); background-image: url('images/bss-shade-veil.png'); }
+  .top    { transform: rotateX(90deg) translateZ(var(--half)); background-image: url('images/bss-orbit-voice.png'); }
+  .bottom { transform: rotateX(-90deg) translateZ(var(--half)); background-image: url('images/bss-crane-gate.png'); }
+
+  .front  { --accent: #55aaff; }
+  .back   { --accent: #d9b86f; }
+  .left   { --accent: #6f8cff; }
+  .right  { --accent: #ffcf73; }
+  .top    { --accent: #82ddff; }
+  .bottom { --accent: #d1f0ff; }
+
+  .face {
+    outline: 1px solid color-mix(in srgb, var(--accent), transparent 45%);
+  }
+
+  footer.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 10px 16px;
+    flex-wrap: wrap;
+  }
+
+  button {
+    border: 1px solid rgba(217,184,111,.55);
+    background: rgba(3,4,8,.72);
+    color: var(--pale);
+    padding: 9px 12px;
+    border-radius: 999px;
+    font-family: inherit;
+    letter-spacing: .04em;
+    box-shadow: 0 0 16px rgba(69,182,255,.08);
+    cursor: pointer;
+  }
+
+  button:active { transform: translateY(1px); }
+
+  @media (max-width: 520px) {
+    :root { --cube-size: min(82vw, 60vh); }
+    .cell { font-size: clamp(1.05rem, 6vw, 1.7rem); }
+  }
+
+  /* ---- Pack 2 ---- */
+  .pack2 {
+    padding: 40px 20px 32px;
+    text-align: center;
+    border-top: 1px solid rgba(217,184,111,.18);
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .pack2-heading {
+    font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+    color: var(--gold);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+    font-weight: 500;
+  }
+
+  .pack2-sub {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: 13px;
+    color: rgba(243,234,211,.65);
+    margin: 0 0 24px;
+    letter-spacing: .03em;
+  }
+
+  .pack2-cards {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .pack2-card {
+    width: min(260px, 42vw);
+    text-align: center;
+  }
+
+  .pack2-img-wrap {
+    position: relative;
+    border: 1px solid rgba(217,184,111,.4);
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+  }
+
+  .pack2-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: blur(7px) brightness(.52);
+  }
+
+  .pack2-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(0,0,0,.28);
+    color: var(--gold);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .pack2-lock { font-size: 1.8rem; line-height: 1; }
+
+  .pack2-label {
+    margin: 8px 0 0;
+    font-size: 12px;
+    color: rgba(243,234,211,.7);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-family: "Segoe UI", system-ui, sans-serif;
+  }
+
+  .pack2-btn {
+    display: inline-block;
+    border: 1px solid rgba(217,184,111,.65);
+    background: rgba(3,4,8,.72);
+    color: var(--gold);
+    padding: 11px 28px;
+    border-radius: 999px;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(217,184,111,.12);
+    transition: transform 120ms;
+  }
+
+  .pack2-btn:hover { transform: translateY(-2px); }
+
+  /* ---- Art gallery ---- */
+  .art-gallery {
+    padding: 36px 0 16px;
+    border-top: 1px solid rgba(217,184,111,.12);
+    margin-top: 8px;
+  }
+
+  .art-gallery-heading {
+    font-size: clamp(.9rem, 3vw, 1.1rem);
+    color: var(--gold);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 16px;
+    font-weight: 500;
+  }
+
+  .art-strip {
+    display: flex;
+    overflow-x: auto;
+    gap: 14px;
+    scroll-snap-type: x mandatory;
+    padding: 0 20px 20px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(217,184,111,.3) transparent;
+  }
+
+  .art-item {
+    margin: 0;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    text-align: center;
+  }
+
+  .art-item img {
+    height: 280px;
+    width: auto;
+    max-width: 260px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid rgba(217,184,111,.28);
+    display: block;
+  }
+
+  .art-item figcaption {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(243,234,211,.45);
+    margin-top: 8px;
+  }
+
+  /* ---- Site footer ---- */
+  .site-footer {
+    text-align: center;
+    padding: 20px 16px 28px;
+    border-top: 1px solid rgba(217,184,111,.1);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: 11px;
+    color: rgba(243,234,211,.38);
+    letter-spacing: .06em;
+  }
+
+  .site-footer a { color: rgba(243,234,211,.55); text-decoration: none; }
+  .site-footer a:hover { color: var(--gold); }
+
+  .cube-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    padding: 9px 18px;
+    border-bottom: 1px solid rgba(217,184,111,.1);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: 12px;
+  }
+
+  .free-badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border: 1px solid rgba(217,184,111,.55);
+    border-radius: 999px;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .cube-hint {
+    color: rgba(243,234,211,.42);
+    letter-spacing: .04em;
+  }
+
+  .cube-hint a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .cube-hint a:hover { color: var(--pale); }
+</style>
+</head>
+<body>
+
+  <nav class="masthead">
+    <a href="../index.html">&#8592; blkck2.com</a>
+    <a href="../print.html">Print Vault</a>
+    <a href="../proof-wall.html">Proof Wall</a>
+  </nav>
+
+  <div class="cube-intro">
+    <span class="free-badge">Free &mdash; Six-Face Word Cube</span>
+    <span class="cube-hint">Drag to spin &middot; No login &middot; No ads &middot; No tracking &middot; <a href="../print.html">Support the studio →</a></span>
+  </div>
+
+  <main class="stage" id="stage">
+    <div class="sigil"></div>
+    <section class="cube" id="cube" aria-label="Interactive six-face word cube"></section>
+  </main>
+
+  <footer class="controls">
+    <button id="spinBtn">Auto rotate</button>
+    <button id="resetBtn">Reset</button>
+    <button id="frontBtn">Raven Gate</button>
+  </footer>
+
+  <!-- Pack 2 — new word grids, available as a paid unlock -->
+  <section class="pack2">
+    <h2 class="pack2-heading">Pack 2 — B$S Premium Gates</h2>
+    <p class="pack2-sub">Two new word-cube faces. Unlock to expand your cube.</p>
+    <div class="pack2-cards">
+      <div class="pack2-card">
+        <div class="pack2-img-wrap">
+          <img src="images/bss-beast-engine.png" alt="The Beast Engine word grid — locked" class="pack2-img" />
+          <div class="pack2-overlay">
+            <span class="pack2-lock">&#128274;</span>
+            <span>Unlock Pack 2</span>
+          </div>
+        </div>
+        <p class="pack2-label">The Beast Engine</p>
+      </div>
+      <div class="pack2-card">
+        <div class="pack2-img-wrap">
+          <img src="images/bss-magic-square.png" alt="B$S Magic Square word grid — locked" class="pack2-img" />
+          <div class="pack2-overlay">
+            <span class="pack2-lock">&#128274;</span>
+            <span>Unlock Pack 2</span>
+          </div>
+        </div>
+        <p class="pack2-label">B$S Magic Square</p>
+      </div>
+    </div>
+    <!-- TODO: replace href with Gumroad / Ko-fi product link when payment is configured -->
+    <a class="pack2-btn" href="mailto:bluesssnakestudio@gmail.com?subject=B%24S%20Word%20Cube%20Pack%202%20interest" id="unlockBtn">Get Pack 2</a>
+  </section>
+
+  <!-- Studio artwork gallery -->
+  <section class="art-gallery">
+    <h2 class="art-gallery-heading">B$S Studio Artwork</h2>
+    <div class="art-strip">
+      <figure class="art-item">
+        <img src="images/bss-portrait-pug.png" alt="Pug Oracle — B$S portrait" />
+        <figcaption>Pug Oracle</figcaption>
+      </figure>
+      <figure class="art-item">
+        <img src="images/bss-machine-order-mark.png" alt="Machine Order Mark — B$S print design" />
+        <figcaption>Machine Order Mark</figcaption>
+      </figure>
+      <figure class="art-item">
+        <img src="images/bss-machine-guide.png" alt="Machine reference sheet — B$S" />
+        <figcaption>Machine Reference</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>Blue $nake Studio &middot; <a href="../index.html">blkck2.com</a> &middot; <a href="../proof-wall.html">Proof Wall</a> &middot; <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </footer>
+
+<script>
+const faces = [
+  { cls: "front",  title: "Raven Gate",      rows: ["GRAVE","RAVEN","AVERT","VERSE","ENTER"] },
+  { cls: "back",   title: "Brave Gate",      rows: ["BRAVE","RAVEN","AVERT","VERSE","ENTER"] },
+  { cls: "left",   title: "Shade Veil",      rows: ["SHADE","HAVEN","AVANT","DENSE","ENTER"] },
+  { cls: "right",  title: "Blade Descent",   rows: ["BLADE","LADEN","ADULT","DELVE","ENTER"] },
+  { cls: "top",    title: "Orbit Voice",     rows: ["ABOVE","BARON","ORBIT","VOICE","ENTER"] },
+  { cls: "bottom", title: "Crane Gate",      rows: ["CRANE","RAVEN","AVERT","NERVE","ENTER"] }
+];
+
+const cube = document.getElementById("cube");
+const stage = document.getElementById("stage");
+let rotX = -18;
+let rotY = 34;
+let dragging = false;
+let lastX = 0;
+let lastY = 0;
+let auto = false;
+
+function makeFace(face) {
+  const el = document.createElement("div");
+  el.className = `face ${face.cls}`;
+
+  const grid = document.createElement("div");
+  grid.className = "grid";
+
+  face.rows.join("").split("").forEach(letter => {
+    const cell = document.createElement("div");
+    cell.className = "cell";
+    cell.textContent = letter;
+    grid.appendChild(cell);
+  });
+
+  el.appendChild(grid);
+  return el;
+}
+
+faces.forEach(face => cube.appendChild(makeFace(face)));
+
+function applyRotation() {
+  if (!auto) cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+}
+
+function stopAuto() {
+  auto = false;
+  cube.classList.remove("autospin");
+  document.getElementById("spinBtn").textContent = "Auto rotate";
+  applyRotation();
+}
+
+stage.addEventListener("pointerdown", e => {
+  stopAuto();
+  dragging = true;
+  lastX = e.clientX;
+  lastY = e.clientY;
+  stage.setPointerCapture(e.pointerId);
+});
+
+stage.addEventListener("pointermove", e => {
+  if (!dragging) return;
+  const dx = e.clientX - lastX;
+  const dy = e.clientY - lastY;
+  rotY += dx * 0.45;
+  rotX -= dy * 0.45;
+  rotX = Math.max(-88, Math.min(88, rotX));
+  lastX = e.clientX;
+  lastY = e.clientY;
+  applyRotation();
+});
+
+stage.addEventListener("pointerup", () => dragging = false);
+stage.addEventListener("pointercancel", () => dragging = false);
+
+function resetCube() {
+  stopAuto();
+  rotX = -18;
+  rotY = 34;
+  applyRotation();
+}
+
+document.getElementById("resetBtn").addEventListener("click", resetCube);
+
+document.getElementById("frontBtn").addEventListener("click", () => {
+  stopAuto();
+  rotX = 0;
+  rotY = 0;
+  applyRotation();
+});
+
+document.getElementById("spinBtn").addEventListener("click", () => {
+  auto = !auto;
+  cube.classList.toggle("autospin", auto);
+  document.getElementById("spinBtn").textContent = auto ? "Stop rotate" : "Auto rotate";
+  if (!auto) applyRotation();
+});
+
+stage.addEventListener("dblclick", resetCube);
+applyRotation();
+</script>
+</body>
+</html>
