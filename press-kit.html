@@ -53,6 +53,14 @@
     .links-block { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
     .print-note { margin-top: 40px; padding: 14px 18px; border: 1px solid rgba(199,168,106,.2); border-radius: 10px; background: rgba(199,168,106,.04); font-size: 12px; color: var(--dim); }
     .print-note strong { color: var(--muted); }
+    .copy-blocks { display: grid; gap: 16px; }
+    .copy-block { }
+    .copy-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); margin-bottom: 6px; display: block; }
+    .copy-text { padding: 14px 16px; border: 1px solid rgba(120,214,247,.14); border-radius: 10px; background: rgba(255,255,255,.03); font-size: 13px; color: var(--muted); line-height: 1.65; font-family: inherit; }
+    .copy-btn { margin-top: 6px; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 14px; border: 1px solid rgba(120,214,247,.22); border-radius: 999px; background: none; color: var(--muted); cursor: pointer; font-family: inherit; transition: all .15s; }
+    .copy-btn:hover { border-color: rgba(120,214,247,.55); color: var(--ink); }
+    .copy-btn:focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 2px; }
+    @media print { .copy-btn { display: none; } .copy-text { border-color: #ddd; background: none; color: #444; } .copy-label { color: #888; } }
     .pk-footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid rgba(120,214,247,.12); font-size: 12px; color: var(--dim); line-height: 1.9; }
     .pk-footer a { color: var(--muted); text-decoration: none; }
     .pk-footer a:hover { color: var(--gold-hot); }
@@ -257,8 +265,54 @@
         </div>
       </section>
 
+      <!-- COPY BLOCKS / BOILERPLATES -->
+      <section class="pk-section" aria-labelledby="copy-heading">
+        <p class="eyebrow">Copy blocks</p>
+        <h2 id="copy-heading">Ready-to-use boilerplate.</h2>
+        <p style="font-size:14px;color:var(--muted);margin-bottom:24px;max-width:600px;line-height:1.7;">For editors, producers, event coordinators and comms teams. Copy the block that fits your context. All text is free to use with or without attribution.</p>
+        <div class="copy-blocks">
+
+          <div class="copy-block">
+            <span class="copy-label">One-sentence boilerplate (generic)</span>
+            <p class="copy-text" id="cb-generic">Blue $nake Studio is an independent creative practice from Frankston, Victoria, working across visual art, music, privacy-first education technology and symbolic systems.</p>
+            <button class="copy-btn" data-target="cb-generic" type="button">Copy</button>
+          </div>
+
+          <div class="copy-block">
+            <span class="copy-label">Short bio — 2 sentences (for program notes, event listings)</span>
+            <p class="copy-text" id="cb-short">Tom Moss (The Moss Man) is a Frankston-based creator working across visual art, music, education technology and symbolic systems. His studio, Blue $nake Studio, produces the privacy-first learning tool Meta-Pet, the Black Wing Crew / Neon Venom music world, ten gallery rooms of original visual art and the Moss 60 base-60 symbolic mathematics system.</p>
+            <button class="copy-btn" data-target="cb-short" type="button">Copy</button>
+          </div>
+
+          <div class="copy-block">
+            <span class="copy-label">Medium bio — paragraph (for articles, catalogue essays)</span>
+            <p class="copy-text" id="cb-medium">Tom Moss works as a visual artist, musician, digital product developer and symbolic systems designer under the name The Moss Man, producing through his studio entity Blue $nake Studio. His practice spans connected disciplines that don't ordinarily appear together: painted mythology, behaviour-support tools for classrooms, digital music with street print assets, a visual number system called Moss 60 and a doctrine on language and meaning called Semantic Sovereignty. The thread connecting all of it — patterns become worlds — runs through every medium the studio touches. The black cockatoo feather, the coiled snake, the base-60 geometry are the physical tokens of a single invented universe expressed across painting, code, sound and print simultaneously. Based in Frankston, Victoria, Australia.</p>
+            <button class="copy-btn" data-target="cb-medium" type="button">Copy</button>
+          </div>
+
+          <div class="copy-block">
+            <span class="copy-label">School / council boilerplate (for grant applications, outreach docs)</span>
+            <p class="copy-text" id="cb-schools">Blue $nake Studio is an independent creative practice based in Frankston, Victoria, producing child-safe education technology and community-facing creative work. Meta-Pet is a privacy-first digital learning companion (browser-based prototype, no ads, no trackers, no student accounts required). Teacher's Secret Cheatsheet is a free pack of seven printable behaviour-support templates, written for classroom use and aligned with Victorian school practice. These are independent creative and educational tools, not clinical or therapeutic instruments. Contact: bluesssnakestudio@gmail.com</p>
+            <button class="copy-btn" data-target="cb-schools" type="button">Copy</button>
+          </div>
+
+          <div class="copy-block">
+            <span class="copy-label">Gallery / arts boilerplate (for exhibition listings, curatorial notes)</span>
+            <p class="copy-text" id="cb-gallery">The Moss Man / Blue $nake Studio (Frankston, Victoria) is a visual artist and world-builder working across painting, digital art, symbolic systems and mythology. The practice includes ten gallery rooms spanning painted mythology, character portraits, colouring pages, QR street print assets and the Moss 60 visual mathematics system. The recurring visual language — black cockatoo, coiled snake, neon city, base-60 geometry — forms a single invented universe expressed across every medium. blkck2.com</p>
+            <button class="copy-btn" data-target="cb-gallery" type="button">Copy</button>
+          </div>
+
+          <div class="copy-block">
+            <span class="copy-label">Music boilerplate (for streaming listings, gig copy, review context)</span>
+            <p class="copy-text" id="cb-music">Black Wing Crew is the music world of Blue $nake Studio, produced by Tom Moss / The Moss Man from Frankston, Victoria. Neon Venom (2026, BSS-001) is the debut digital LP — dark, mythic, loud. One part ritual chant, one part cyberpunk. Every release arrives with a lyric poster, a QR code and a symbol set from the B$S visual universe. Stream at blackwingcrew.netlify.app. YouTube: @blkck2.</p>
+            <button class="copy-btn" data-target="cb-music" type="button">Copy</button>
+          </div>
+
+        </div>
+      </section>
+
       <div class="print-note">
-        <strong>Print this page:</strong> Use your browser's print function or the "Print Kit" button above. All section headings, project links and contact details are preserved in print. For high-resolution image assets, email the studio directly.
+        <strong>Print this page:</strong> Use your browser's print function or the "Print Kit" button above. All section headings, project links, contact details and boilerplate text are preserved in print. For high-resolution image assets, email the studio directly.
       </div>
 
       <footer class="pk-footer" role="contentinfo">
@@ -268,5 +322,26 @@
       </footer>
     </main>
   </div>
+  <script>
+    document.querySelectorAll('.copy-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var id = btn.getAttribute('data-target');
+        var el = document.getElementById(id);
+        if (!el) return;
+        var text = el.textContent.trim();
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text).then(function() {
+            var orig = btn.textContent;
+            btn.textContent = 'Copied';
+            setTimeout(function() { btn.textContent = orig; }, 1800);
+          }).catch(function() {
+            prompt('Copy this text:', text);
+          });
+        } else {
+          prompt('Copy this text:', text);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
