@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Auralia Art Prints & Wallpapers — Blue $nake Studio</title>
+<meta name="description" content="Original digital art prints, wallpapers and screensavers from Blue $nake Studio. Auralia series: 11 artworks available as high-res digital downloads, A3 prints on request. Order via email." />
+<link rel="canonical" href="https://blkck2.com/store.html" />
+<meta property="og:site_name" content="Blue $nake Studio" />
+<meta property="og:title" content="Auralia Art Prints & Wallpapers — Blue $nake Studio" />
+<meta property="og:description" content="11 original artworks available as digital downloads, wallpapers and prints. B$S dark art series featuring Auralia — the dream, the omen, the sign." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://blkck2.com/store.html" />
+<meta property="og:image" content="https://blkck2.com/24_auralia_prints/auralia-cosmic-torii-constellation.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Auralia Art Prints — Blue $nake Studio" />
+<meta name="twitter:image" content="https://blkck2.com/24_auralia_prints/auralia-cosmic-torii-constellation.png" />
+<meta name="theme-color" content="#050608" />
+<link rel="icon" href="icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="icon-192.png" />
+<style>
+  :root {
+    --gold: #d9b86f;
+    --pale: #f3ead3;
+    --blue: #45b6ff;
+    --dark: #050608;
+    --ink: rgba(243,234,211,.85);
+    --muted: rgba(243,234,211,.48);
+    --line: rgba(217,184,111,.18);
+    --card-bg: rgba(6,7,10,.92);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { background: var(--dark); scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 18% 8%,  rgba(69,182,255,.1),  transparent 36%),
+      radial-gradient(circle at 82% 14%, rgba(217,184,111,.11), transparent 32%),
+      linear-gradient(145deg, #03040a, #0d0c09 52%, #03040a);
+    color: var(--pale);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    line-height: 1.5;
+  }
+
+  a { color: inherit; }
+
+  /* ── MASTHEAD ─────────────────── */
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--line);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .masthead a { color: var(--gold); text-decoration: none; }
+  .masthead a:hover { color: var(--pale); }
+  .mast-links { display: flex; gap: 16px; flex-wrap: wrap; }
+  .mast-badge {
+    padding: 2px 10px;
+    border: 1px solid rgba(217,184,111,.4);
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gold);
+    pointer-events: none;
+  }
+
+  /* ── SHELL ────────────────────── */
+  .shell {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+
+  /* ── HERO ─────────────────────── */
+  .hero {
+    padding: clamp(36px, 8vw, 80px) 0 40px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 40px;
+  }
+  .eyebrow {
+    margin: 0 0 14px;
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    font-weight: 400;
+    letter-spacing: -.03em;
+    line-height: .95;
+    margin: 0 0 22px;
+    background: linear-gradient(130deg, var(--gold) 30%, #fff8ee 60%, var(--blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .lead {
+    max-width: 680px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--ink);
+    margin: 0 0 28px;
+    line-height: 1.55;
+  }
+  .how-it-works {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .how-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: .82rem;
+    color: var(--muted);
+  }
+  .how-step strong { color: var(--gold); }
+
+  /* ── FILTERS ─────────────────── */
+  .filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .filter-btn {
+    padding: 5px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--muted);
+    font-size: .8rem;
+    letter-spacing: .06em;
+    cursor: pointer;
+    font-family: inherit;
+    transition: border-color .15s, color .15s, background .15s;
+  }
+  .filter-btn:hover,
+  .filter-btn.active {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(217,184,111,.06);
+  }
+  .filter-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  /* ── GRID ────────────────────── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  /* ── CARD ────────────────────── */
+  .card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--card-bg);
+    overflow: hidden;
+    transition: border-color .2s, box-shadow .2s, transform .2s;
+  }
+  .card:hover {
+    border-color: rgba(217,184,111,.42);
+    box-shadow: 0 0 40px rgba(69,182,255,.08), 0 8px 40px rgba(0,0,0,.5);
+    transform: translateY(-3px);
+  }
+  .card[hidden] { display: none; }
+
+  .card-img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    background: #0a0b0e;
+    display: block;
+  }
+  .card-img.landscape { aspect-ratio: 16/9; }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+    flex: 1;
+  }
+
+  .card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag {
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .tag.print   { border-color: rgba(217,184,111,.45); color: var(--gold); }
+  .tag.poster  { border-color: rgba(130,221,255,.4);  color: #82ddff; }
+  .tag.screen  { border-color: rgba(130,255,160,.35); color: #72e890; }
+
+  .card-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--pale);
+  }
+  .card-desc {
+    font-size: .82rem;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.45;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid rgba(217,184,111,.1);
+  }
+  .price {
+    font-size: .8rem;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .price small {
+    display: block;
+    font-weight: 400;
+    color: var(--muted);
+    font-size: .72rem;
+  }
+
+  .order-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 14px;
+    border: 1px solid rgba(217,184,111,.5);
+    border-radius: 999px;
+    background: rgba(217,184,111,.06);
+    color: var(--gold);
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background .15s, border-color .15s, box-shadow .15s;
+    white-space: nowrap;
+  }
+  .order-btn:hover {
+    background: rgba(217,184,111,.14);
+    border-color: var(--gold);
+    box-shadow: 0 0 16px rgba(217,184,111,.15);
+  }
+  .order-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  /* ── HOW TO ORDER ────────────── */
+  .how-to-order {
+    margin-top: 60px;
+    padding: 32px;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: rgba(6,7,10,.7);
+  }
+  .how-to-order h2 {
+    font-family: Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 0 0 10px;
+    color: var(--gold);
+  }
+  .how-to-order p {
+    margin: 0 0 16px;
+    color: var(--ink);
+    max-width: 640px;
+    font-size: .95rem;
+    line-height: 1.6;
+  }
+  .order-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .order-step {
+    padding: 14px 16px;
+    border: 1px solid rgba(217,184,111,.16);
+    border-radius: 14px;
+    background: rgba(217,184,111,.04);
+  }
+  .order-step .num {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    line-height: 22px;
+    text-align: center;
+    font-size: .72rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .order-step p { margin: 0; font-size: .82rem; color: var(--ink); }
+
+  .email-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    background: rgba(217,184,111,.08);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: .88rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    transition: background .15s, box-shadow .15s;
+  }
+  .email-btn:hover {
+    background: rgba(217,184,111,.16);
+    box-shadow: 0 0 24px rgba(217,184,111,.18);
+  }
+
+  /* ── FOOTER ──────────────────── */
+  .footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: .82rem;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  .footer a { color: var(--muted); text-decoration: none; }
+  .footer a:hover { color: var(--gold); }
+
+  /* ── RESPONSIVE ──────────────── */
+  @media (max-width: 600px) {
+    .masthead { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .how-it-works { flex-direction: column; }
+    .how-to-order { padding: 20px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── MASTHEAD ─────────────────── -->
+<nav class="masthead" aria-label="Site navigation">
+  <a href="index.html" aria-label="Back to blkck2.com">&#8592; blkck2.com</a>
+  <span class="mast-badge">Art Store</span>
+  <div class="mast-links">
+    <a href="proof-wall.html">Proof Wall</a>
+    <a href="print.html">Print Vault</a>
+    <a href="mailto:bluesssnakestudio@gmail.com">Contact</a>
+  </div>
+</nav>
+
+<div class="shell">
+
+  <!-- ── HERO ──────────────────── -->
+  <section class="hero" aria-labelledby="page-title">
+    <p class="eyebrow">Auralia series · Original digital art · 11 pieces</p>
+    <h1 id="page-title">Prints &amp; Wallpapers</h1>
+    <p class="lead">Original artwork from Blue $nake Studio — available as high-res digital downloads, device wallpapers, screensavers and A3 art prints on request. Each piece is part of the Auralia symbolic series.</p>
+    <div class="how-it-works" aria-label="How to order summary">
+      <div class="how-step"><strong>1.</strong> Pick a piece below</div>
+      <div class="how-step"><strong>2.</strong> Click "Order this piece"</div>
+      <div class="how-step"><strong>3.</strong> Email arrives pre-filled — just send</div>
+      <div class="how-step"><strong>4.</strong> Receive your file within 48 hours</div>
+    </div>
+  </section>
+
+  <!-- ── FILTERS ────────────────── -->
+  <div class="filters" role="group" aria-label="Filter by type">
+    <button class="filter-btn active" data-filter="all">All (11)</button>
+    <button class="filter-btn" data-filter="poster">Posters</button>
+    <button class="filter-btn" data-filter="print">Art Prints</button>
+    <button class="filter-btn" data-filter="screen">Screensavers</button>
+  </div>
+
+  <!-- ── GRID ──────────────────── -->
+  <div class="grid" id="printGrid" role="list">
+
+    <article class="card" role="listitem" data-types="print screen" aria-label="Auralia: Cockatoo and Snake">
+      <img class="card-img" src="24_auralia_prints/auralia-cockatoo-snake-gold-halo.png"
+        alt="Dark portrait of Auralia with black cockatoo and snake coiled around her, surrounded by a gold halo"
+        loading="lazy" width="600" height="600" />
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag print">Art Print</span>
+          <span class="tag screen">Screensaver</span>
+        </div>
+        <h2 class="card-title">Auralia — Cockatoo &amp; Snake</h2>
+        <p class="card-desc">Dark portrait. Gold halo. Black cockatoo and snake. No text — pure image energy. Portrait format.</p>
+        <div class="card-footer">
+          <div class="price">From $8 AUD <small>Digital download</small></div>
+          <a class="order-btn" href="mailto:bluesssnakestudio@gmail.com?subject=Art Print Enquiry: Auralia — Cockatoo %26 Snake&body=Hi, I'd like to order 'Auralia — Cockatoo %26 Snake' from blkck2.com/store.html. Please let me know about formats and pricing. Thanks." aria-label="Order Auralia: Cockatoo and Snake">Order &#8594;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" role="listitem" data-types="poster print" aria-label="Black Birds Dream — The Omen poster">
+      <img class="card-img" src="24_auralia_prints/auralia-black-birds-dream-poster.png"
+        alt="AURALIA B dollar S / BLACK BIRDS DREAM poster — text reads OMEN WHAT YOU FEEL REMEMBERS and YOU ARE THE DREAM. YOU ARE THE OMEN."
+        loading="lazy" width="600" height="600" />
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag poster">Poster</span>
+          <span class="tag print">Art Print</span>
+        </div>
+        <h2 class="card-title">Black Birds Dream — The Omen</h2>
+        <p class="card-desc">"OMEN WHAT YOU FEEL REMEMBERS · YOU ARE THE DREAM. YOU ARE THE OMEN." Full text poster. B$S official artwork.</p>
+        <div class="card-footer">
+          <div class="price">From $8 AUD <small>Digital · A3 on request</small></div>
+          <a class="order-btn" href="mailto:bluesssnakestudio@gmail.com?subject=Art Print Enquiry: Black Birds Dream — The Omen&body=Hi, I'd like to order 'Black Birds Dream — The Omen' from blkck2.com/store.html. Please let me know about formats and pricing. Thanks." aria-label="Order Black Birds Dream — The Omen">Order &#8594;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" role="listitem" data-types="poster print" aria-label="The Sign Dreams the Seer — cosmic poster">
+      <img class="card-img" src="24_auralia_prints/auralia-cosmic-torii-constellation.png"
+        alt="AURALIA cosmic poster with torii gate and constellation map — text reads THE SIGN DREAMS THE SEER · THE SEER DREAMS THE SIGN"
+        loading="lazy" width="600" height="600" />
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag poster">Poster</span>
+          <span class="tag print">Art Print</span>
+        </div>
+        <h2 class="card-title">The Sign Dreams the Seer</h2>
+        <p class="card-desc">"THE SIGN DREAMS THE SEER · THE SEER DREAMS THE SIGN." Cosmic map with torii gate and constellation field. BSS branding.</p>
+        <div class="card-footer">
+          <div class="price">From $8 AUD <small>Digital · A3 on request</small></div>
+          <a class="order-btn" href="mailto:bluesssnakestudio@gmail.com?subject=Art Print Enquiry: The Sign Dreams the Seer&body=Hi, I'd like to order 'The Sign Dreams the Seer' from blkck2.com/store.html. Please let me know about formats and pricing. Thanks." aria-label="Order The Sign Dreams the Seer">Order &#8594;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" role="listitem" data-types="poster print" aria-label="Black Birds Dream — Moon and Omen">
+      <img class="card-img" src="24_auralia_prints/auralia-black-birds-dream-moon.png"
+        alt="AURALIA B dollar S / BLACK BIRDS DREAM framed poster with full moon and OMEN emblem"
+        loading="lazy" width="600" height="600" />
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag poster">Poster</span>
+          <span class="tag print">Art Print</span>
+        </div>
+        <h2 class="card-title">Black Birds Dream — Moon &amp; Omen</h2>
+        <p class="card-desc">AURALIA B$S series. Full moon, OMEN emblem, framed composition. Companion piece to The Omen poster.</p>
+        <div class="card-footer">
+          <div class="price">From $8 AUD <small>Digital · A3 on request</small></div>
+          <a class="order-btn" href="mailto:bluesssnakestudio@gmail.com?subject=Art Print Enquiry: Black Birds Dream — Moon %26 Omen&body=Hi, I'd like to order 'Black Birds Dream — Moon %26 Omen' from blkck2.com/store.html. Please let me know about formats and pricing. Thanks." aria-label="Order Black Birds Dream — Moon and Omen">Order &#8594;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" role="listitem" data-types="print screen" aria-label="Auralia Blue — Gold Halo">
+      <img class="card-img" src="24_auralia_prints/auralia-blue-indigo-gold-cockatoo.png"
+        alt="Blue and indigo portrait of Auralia with gold cockatoo and halo"
+        loading="lazy" width="600" height="600" />
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag print">Art Print</span>
+          <span class="tag screen">Screensaver</span>
+        </div>
+        <h2 class="card-title">Auralia Blue — Gold Halo</h2>
+        <p class="card-desc">Blue and indigo colour study. Gold cockatoo companion. Halo radiance. Vivid portrait format — excellent as wallpaper.</p>
+        <div class="card-footer">
+          <div class="price">From $8 AUD <small>Digital download</small></div>
+          <a class="order-btn" href="mailto:bluesssnakestudio@gmail.com?subject=Art Print Enquiry: Auralia Blue — Gold Halo&body=Hi, I'd like to order 'Auralia Blue — Gold Halo' from blkck2.com/store.html. Please let me know about formats and pricing. Thanks." aria-label="Order Auralia Blue — Gold Halo">Order &#8594;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" role="listitem" data-types="poster" aria-label="Auralia — Clock, Compass and Torii">
+      <img class="card-img" src="24_auralia_prints/auralia-dark-clock-compass-torii.png"
+        alt="Dark AURALIA poster featuring clock, compass and torii gate symbolic elements"
+        loading="lazy" width="600" height="600" />
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag poster">Poster</span>
+        </div>
+        <h2 class="card-title">Auralia — Clock, Compass &amp; Torii</h2>
+        <p class="card-desc">Dark, dense symbolic composition. Clock, compass, torii — time, direction, threshold. Detailed art poster.</p>
+        <div class="card-footer">
+          <div class="price">From $8 AUD <small>Digital · A3 on request</small></div>
+          <a class="order-btn" href="mailto:bluesssnakestudio@gmail.com?subject=Art Print Enquiry: Auralia — Clock, Compass %26 Torii&body=Hi, I'd like to order 'Auralia — Clock, Compass %26 Torii' from blkck2.com/store.html. Please let me know about formats and pricing. Thanks." aria-label="Order Auralia — Clock, Compass and Torii">Order &#8594;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" role="listitem" data-types="screen print" aria-label="Auralia Silhouette — Landscape">
+      <img class="card-img landscape" src="24_auralia_prints/auralia-landscape-silhouette.webp"
+        alt="Minimal landscape-format Auralia silhouette — wide cinematic composition"
+        loading="lazy" width="800" height="450" />
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag screen">Screensaver</span>
+          <span class="tag print">Art Print</span>
+        </div>
+        <h2 class="card-title">Auralia Silhouette — Landscape</h2>
+        <p class="card-desc">Minimal. Cinematic. Wide format. Perfect as desktop wallpaper, tablet screensaver or printed panoramic strip.</p>
+        <div class="card-footer">
+          <div class="price">From $8 AUD <small>Digital download</small></div>
+          <a class="order-btn" href="mailto:bluesssnakestudio@gmail.com?subject=Art Print Enquiry: Auralia Silhouette — Landscape&body=Hi, I'd like to order 'Auralia Silhouette — Landscape' from blkck2.com/store.html. Please let me know about formats and pricing. Thanks." aria-label="Order Auralia Silhouette — Landscape">Order &#8594;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" role="listitem" data-types="print screen" aria-label="Ouroboros — Golden Fire">
+      <img class="card-img" src="24_auralia_prints/auralia-ouroboros-golden-fire.jpg"
+        alt="Auralia with snake forming the dollar-sign ouroboros symbol surrounded by golden fire"
+        loading="lazy" width="600" height="600" />
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag print">Art Print</span>
+          <span class="tag screen">Screensaver</span>
+        </div>
+        <h2 class="card-title">Ouroboros — Golden Fire</h2>
+        <p class="card-desc">The B$S snake-dollar ouroboros in golden fire. High symbolic energy. Powerful as a print or phone wallpaper.</p>
+        <div class="card-footer">
+          <div class="price">From $8 AUD <small>Digital download</small></div>
+          <a class="order-btn" href="mailto:bluesssnakestudio@gmail.com?subject=Art Print Enquiry: Ouroboros — Golden Fire&body=Hi, I'd like to order 'Ouroboros — Golden Fire' from blkck2.com/store.html. Please let me know about formats and pricing. Thanks." aria-label="Order Ouroboros — Golden Fire">Order &#8594;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" role="listitem" data-types="print screen" aria-label="Auralia — Blue Portrait with Cockatoo">
+      <img class="card-img" src="24_auralia_prints/auralia-blue-portrait-cockatoo.png"
+        alt="Realistic blue portrait of Auralia with black cockatoo and geometric background"
+        loading="lazy" width="600" height="600" />
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag print">Art Print</span>
+          <span class="tag screen">Screensaver</span>
+        </div>
+        <h2 class="card-title">Auralia — Blue Portrait</h2>
+        <p class="card-desc">Highly realistic. Blue tones. Black cockatoo. Geometric patterned background. One of the most painterly pieces in the series.</p>
+        <div class="card-footer">
+          <div class="price">From $8 AUD <small>Digital download</small></div>
+          <a class="order-btn" href="mailto:bluesssnakestudio@gmail.com?subject=Art Print Enquiry: Auralia — Blue Portrait&body=Hi, I'd like to order 'Auralia — Blue Portrait' from blkck2.com/store.html. Please let me know about formats and pricing. Thanks." aria-label="Order Auralia — Blue Portrait">Order &#8594;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" role="listitem" data-types="poster print" aria-label="Blue Snake Studios — Two Voices">
+      <img class="card-img" src="24_auralia_prints/bss-two-women-gold-linework.png"
+        alt="BLUE SNAKE STUDIOS branding artwork — two women in profile with gold linework, spirals and botanical elements"
+        loading="lazy" width="600" height="600" />
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag poster">Poster</span>
+          <span class="tag print">Art Print</span>
+        </div>
+        <h2 class="card-title">Blue $nake Studios — Two Voices</h2>
+        <p class="card-desc">Official B$S studio branding piece. Two women in gold linework, botanical spirals, sacred geometry. Frame-worthy.</p>
+        <div class="card-footer">
+          <div class="price">From $8 AUD <small>Digital · A3 on request</small></div>
+          <a class="order-btn" href="mailto:bluesssnakestudio@gmail.com?subject=Art Print Enquiry: Blue Snake Studios — Two Voices&body=Hi, I'd like to order 'Blue Snake Studios — Two Voices' from blkck2.com/store.html. Please let me know about formats and pricing. Thanks." aria-label="Order Blue Snake Studios — Two Voices">Order &#8594;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" role="listitem" data-types="screen print" aria-label="Auralia — Dark Minimal Gold">
+      <img class="card-img" src="24_auralia_prints/auralia-dark-minimal-gold.png"
+        alt="Dark minimal portrait of Auralia in muted gold tones — atmospheric and understated"
+        loading="lazy" width="600" height="600" />
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag screen">Screensaver</span>
+          <span class="tag print">Art Print</span>
+        </div>
+        <h2 class="card-title">Auralia — Dark Minimal Gold</h2>
+        <p class="card-desc">Understated. Muted gold. Dark atmosphere. No clutter — just presence. The quietest piece in the collection.</p>
+        <div class="card-footer">
+          <div class="price">From $8 AUD <small>Digital download</small></div>
+          <a class="order-btn" href="mailto:bluesssnakestudio@gmail.com?subject=Art Print Enquiry: Auralia — Dark Minimal Gold&body=Hi, I'd like to order 'Auralia — Dark Minimal Gold' from blkck2.com/store.html. Please let me know about formats and pricing. Thanks." aria-label="Order Auralia — Dark Minimal Gold">Order &#8594;</a>
+        </div>
+      </div>
+    </article>
+
+  </div><!-- /grid -->
+
+  <!-- ── HOW TO ORDER ──────────── -->
+  <section class="how-to-order" aria-labelledby="order-heading">
+    <h2 id="order-heading">How to order</h2>
+    <p>All pieces are available as high-resolution digital downloads delivered by email within 48 hours. Physical A3 prints can be arranged on request — Blue $nake Studio works with a local printer and will invoice separately for printing and postage.</p>
+    <div class="order-steps">
+      <div class="order-step">
+        <span class="num">1</span>
+        <p>Click "Order this piece" on any artwork above. An email draft opens with the piece name pre-filled.</p>
+      </div>
+      <div class="order-step">
+        <span class="num">2</span>
+        <p>Mention whether you want a digital download, phone wallpaper, or A3 physical print.</p>
+      </div>
+      <div class="order-step">
+        <span class="num">3</span>
+        <p>Receive a reply within 48 hours with payment details and your file.</p>
+      </div>
+      <div class="order-step">
+        <span class="num">4</span>
+        <p>Digital files are sent as PNG/JPG at the highest available resolution — print-ready.</p>
+      </div>
+    </div>
+    <a class="email-btn" href="mailto:bluesssnakestudio@gmail.com?subject=Art Store Enquiry&body=Hi, I'd like to enquire about the Auralia print collection at blkck2.com/store.html.">
+      &#9993; bluesssnakestudio@gmail.com
+    </a>
+  </section>
+
+  <!-- ── FOOTER ─────────────────── -->
+  <footer class="footer">
+    <span>Blue $nake Studio — Frankston, VIC</span>
+    <a href="index.html">Home</a>
+    <a href="proof-wall.html">Proof Wall</a>
+    <a href="print.html">Print Vault</a>
+    <a href="magic-cube.html">Magic Cube</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="mailto:bluesssnakestudio@gmail.com">Contact</a>
+  </footer>
+
+</div><!-- /shell -->
+
+<script>
+/* Filter logic */
+(function() {
+  const btns  = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.grid .card');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      btns.forEach(b => { b.classList.toggle('active', b === btn); });
+      cards.forEach(card => {
+        if (filter === 'all') {
+          card.hidden = false;
+        } else {
+          const types = (card.dataset.types || '').split(' ');
+          card.hidden = !types.includes(filter);
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
