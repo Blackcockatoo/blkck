@@ -1,0 +1,52 @@
+[build]
+  publish = "."
+
+# www and http → https://blkck2.com
+[[redirects]]
+  from   = "https://www.blkck2.com/*"
+  to     = "https://blkck2.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "http://www.blkck2.com/*"
+  to     = "https://blkck2.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "http://blkck2.com/*"
+  to     = "https://blkck2.com/:splat"
+  status = 301
+  force  = true
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# HTML and service worker: no-cache so updates land immediately
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Static assets: cache 1 week
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
