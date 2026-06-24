@@ -1,4 +1,4 @@
-const CACHE_NAME = 'moss-tree-v14';
+const CACHE_NAME = 'moss-tree-v15';
 
 const APP_SHELL = [
   './',
@@ -30,6 +30,7 @@ const APP_SHELL = [
   './apps/bs-word-cube.html',
   './privacy-policy.html',
   './gov.html',
+  './supporter.html',
   './documents/oss-734g-known-unknowns-register.html',
   './documents/butterfly-symmetry-final-loop.pdf',
   './documents/victorian-statesman-recursive-lullaby.pdf',

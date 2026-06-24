@@ -241,6 +241,7 @@ window.BSS_STUDIO_SECTIONS = [
     ],
     links: [
       { label: 'Browse Print Vault', href: 'print.html', className: 'album-link' },
+      { label: 'Packs &amp; Commissions', href: 'supporter.html', className: 'album-link' },
       { label: 'Watch @blkck2', href: 'https://www.youtube.com/@blkck2' },
       { label: 'Email for print files', href: 'mailto:blkck2@gmail.com' }
     ]
