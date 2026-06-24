@@ -360,11 +360,18 @@
   .footer a { color: var(--muted); text-decoration: none; }
   .footer a:hover { color: var(--gold); }
 
+  /* ── COLLECTOR'S SET CARD ──────── */
+  .card--set { grid-column: span 2; }
+  .card--set .card-imgs { display: flex; gap: 8px; }
+  .card--set .card-img { flex: 1; aspect-ratio: 4/3; }
+
   /* ── RESPONSIVE ──────────────── */
   @media (max-width: 600px) {
     .masthead { flex-direction: column; align-items: flex-start; gap: 8px; }
     .how-it-works { flex-direction: column; }
     .how-to-order { padding: 20px 16px; }
+    .card--set { grid-column: span 1; }
+    .card--set .card-imgs { flex-direction: column; }
   }
 </style>
 </head>
@@ -398,14 +405,42 @@
 
   <!-- ── FILTERS ────────────────── -->
   <div class="filters" role="group" aria-label="Filter by type">
-    <button class="filter-btn active" data-filter="all">All (11)</button>
+    <button class="filter-btn active" data-filter="all">All (12)</button>
     <button class="filter-btn" data-filter="poster">Posters</button>
     <button class="filter-btn" data-filter="print">Art Prints</button>
     <button class="filter-btn" data-filter="screen">Screensavers</button>
+    <button class="filter-btn" data-filter="set">Collector's Set</button>
   </div>
 
   <!-- ── GRID ──────────────────── -->
   <div class="grid" id="printGrid" role="list">
+
+    <!-- Ledger & Witness — Collector's Set -->
+    <article class="card card--set" role="listitem" data-types="print poster set" aria-label="The Ledger and The Witness — Collector's Set">
+      <div class="card-imgs">
+        <img class="card-img" src="24_auralia_prints/old-vic-ledger-city.jpeg"
+          alt="The Ledger of the Old State — civic gothic Victorian Parliament with chained ledger"
+          loading="lazy" width="600" height="450" />
+        <img class="card-img" src="24_auralia_prints/victorian-ledger-witness.jpeg"
+          alt="The Victorian Witness — clockwork witness figure with parliament and archive"
+          loading="lazy" width="600" height="450" />
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag poster">Poster</span>
+          <span class="tag print">Art Print</span>
+          <span class="tag" style="background:rgba(199,168,106,.08);border-color:rgba(199,168,106,.4);color:#c7a86a;">Collector's Set</span>
+        </div>
+        <h2 class="card-title">The Ledger &amp; The Witness — Old Vic State</h2>
+        <p class="card-desc">Civic gothic Victorian narrative pair — Parliament, chained ledger, clockwork witness. Two pieces sold as a set: <em>The Ledger of the Old State</em> + <em>The Victorian Witness</em>.</p>
+        <div class="card-footer">
+          <div class="price">From $18 AUD <small>Both images &middot; Digital download</small></div>
+          <a class="order-btn"
+             href="mailto:bluesssnakestudio@gmail.com?subject=Order%3A%20The%20Ledger%20%26%20The%20Witness%20Collector%27s%20Set&body=Hi%2C%20I%27d%20like%20to%20order%20The%20Ledger%20%26%20The%20Witness%20Collector%27s%20Set%20(%2418%20AUD%20for%20both%20digital%20files).%0A%0APlease%20let%20me%20know%20how%20to%20proceed."
+             aria-label="Order The Ledger and The Witness set by email">Order &#8594;</a>
+        </div>
+      </div>
+    </article>
 
     <article class="card" role="listitem" data-types="print screen" aria-label="Auralia: Cockatoo and Snake">
       <img class="card-img" src="24_auralia_prints/auralia-cockatoo-snake-gold-halo.png"

@@ -437,9 +437,10 @@
     /* Unlock viewport height so controls aren't clipped below the fold */
     body {
       height: auto;
-      min-height: 100vh;
+      min-height: 100svh;
       overflow-x: hidden;
       overflow-y: auto;
+      padding-bottom: 210px;
     }
     .stage {
       grid-template-columns: 1fr;
@@ -456,9 +457,12 @@
     }
     /* Pin controls to the bottom of the viewport at all times */
     .controls {
-      position: sticky;
+      position: fixed;
       bottom: 0;
-      z-index: 20;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 100;
       background: rgba(2,3,6,.97);
       border-top: 1px solid rgba(217,184,111,.14);
       backdrop-filter: blur(8px);
@@ -500,6 +504,7 @@
     <a href="index.html" aria-label="Back to blkck2.com">&#8592; blkck2.com</a>
     <span class="mast-badge">B$S Magic Rubix Cube</span>
     <div class="mast-links">
+      <a href="apps/bs-word-cube.html">Word Cube</a>
       <a href="proof-wall.html">Proof Wall</a>
       <a href="field-guide.html">Field Guide</a>
     </div>

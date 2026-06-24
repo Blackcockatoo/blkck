@@ -416,19 +416,36 @@
   }
 
   .cube-hint a:hover { color: var(--pale); }
+
+  /* ---- Magic Cube promo ---- */
+  .magic-cube-promo { width: 100%; max-width: 700px; margin: 0 auto; padding: 42px 20px 36px; border-top: 1px solid rgba(217,184,111,.22); border-bottom: 1px solid rgba(217,184,111,.22); }
+  .mc-eyebrow { margin: 0 0 10px; font-size: 10px; font-weight: 900; letter-spacing: .22em; text-transform: uppercase; color: #d9b86f; font-family: "Segoe UI", system-ui, sans-serif; }
+  .mc-heading { margin: 0 0 14px; font-family: Georgia, serif; font-size: clamp(26px,5vw,42px); font-weight: 400; color: #f4f0e4; line-height: 1.05; }
+  .mc-desc { margin: 0 0 18px; font-size: 14px; color: #9eb0bd; line-height: 1.6; max-width: 560px; font-family: "Segoe UI", system-ui, sans-serif; }
+  .mc-features { display: flex; flex-wrap: wrap; gap: 6px 10px; list-style: none; margin: 0 0 28px; padding: 0; }
+  .mc-features li { padding: 4px 10px; border: 1px solid rgba(0,245,255,.28); border-radius: 999px; font-size: 10px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; color: #00f5ff; font-family: "Segoe UI", system-ui, sans-serif; }
+  .mc-body { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .mc-qr { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .mc-qr img { border-radius: 12px; display: block; }
+  .mc-qr-label { font-size: 10px; color: #6a7f8a; letter-spacing: .06em; text-transform: uppercase; font-family: "Segoe UI", system-ui, sans-serif; }
+  .mc-cta-col { flex: 1; min-width: 200px; }
+  .mc-play-btn { display: inline-flex; align-items: center; padding: 13px 22px; border: 2px solid #d9b86f; border-radius: 10px; background: rgba(217,184,111,.10); color: #d9b86f; text-decoration: none; font-size: 12px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; font-family: "Segoe UI", system-ui, sans-serif; }
+  .mc-play-btn:hover { background: rgba(217,184,111,.20); }
+  .mc-url { margin: 12px 0 0; font-size: 10px; color: #4a5f6a; font-family: "Segoe UI", system-ui, sans-serif; }
 </style>
 </head>
 <body>
 
   <nav class="masthead">
     <a href="../index.html">&#8592; blkck2.com</a>
+    <a href="../magic-cube.html">Play Magic Cube &#8594;</a>
     <a href="../print.html">Print Vault</a>
     <a href="../proof-wall.html">Proof Wall</a>
   </nav>
 
   <div class="cube-intro">
     <span class="free-badge">Free &mdash; Six-Face Word Cube</span>
-    <span class="cube-hint">Drag to spin &middot; No login &middot; No ads &middot; No tracking &middot; <a href="../print.html">Support the studio →</a></span>
+    <span class="cube-hint">Drag to spin &middot; No login &middot; No ads &middot; No tracking &middot; <a href="../print.html">Support the studio</a> &middot; <a href="../magic-cube.html">Twist &amp; solve the Magic Cube &#8594;</a></span>
   </div>
 
   <main class="stage" id="stage" tabindex="0" aria-label="Six-face word cube. Use arrow keys or drag to rotate. Press Space to toggle auto-spin, Escape to reset.">
@@ -470,6 +487,33 @@
     </div>
     <!-- TODO: replace href with Gumroad / Ko-fi product link when payment is configured -->
     <a class="pack2-btn" href="mailto:bluesssnakestudio@gmail.com?subject=B%24S%20Word%20Cube%20Pack%202%20interest" id="unlockBtn">Get Pack 2</a>
+  </section>
+
+  <!-- Magic Cube promo — go deeper into the playable version -->
+  <section class="magic-cube-promo" aria-label="Play the B$S Magic Cube">
+    <p class="mc-eyebrow">B$S Magic Cube &middot; Play now &mdash; free</p>
+    <h2 class="mc-heading">Play the B$S Rubix Cube</h2>
+    <p class="mc-desc">The same six word faces as this viewer &mdash; now fully playable. Twist layers, solve the puzzle, scan the daily scramble, run museum spin. A game-art relic from Blue $nake Studio.</p>
+    <ul class="mc-features" aria-label="Features">
+      <li>Twist Layers</li>
+      <li>Daily Scramble</li>
+      <li>Museum Spin</li>
+      <li>Copy Moves</li>
+      <li>No Login</li>
+      <li>Free</li>
+    </ul>
+    <div class="mc-body">
+      <div class="mc-qr">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fblkck2.com%2Fmagic-cube.html&color=00f5ff&bgcolor=02070d"
+             alt="QR code — scan to open the B$S Magic Rubix Cube on your phone"
+             width="150" height="150" loading="lazy" />
+        <span class="mc-qr-label">Scan to open on phone</span>
+      </div>
+      <div class="mc-cta-col">
+        <a class="mc-play-btn" href="../magic-cube.html">Open the Magic Cube &#8594;</a>
+        <p class="mc-url">blkck2.com/magic-cube.html &middot; free &middot; no login &middot; no ads</p>
+      </div>
+    </div>
   </section>
 
   <!-- Studio artwork gallery -->
