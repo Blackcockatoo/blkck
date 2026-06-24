@@ -47,7 +47,7 @@ window.BSS_STUDIO_SECTIONS = [
     label: 'Gallery Rooms',
     eyebrow: 'Selected work · Visual archive',
     title: 'Enter the visual worlds.',
-    statement: 'A curated archive of paintings, characters, symbols, campaign artwork and works in progress—organised as distinct rooms, each with its own atmosphere and purpose.',
+    statement: 'A curated archive of paintings, characters, symbols, campaign artwork and works in progress — organised as distinct rooms, each with its own atmosphere and purpose.',
     pageTitle: 'Gallery Rooms — Blue $nake Studio · blkck2.com',
     pageDescription: 'Ten gallery chambers: The Painted Wing, Neon Venom, The Omen Room, The Learning Beast, Moss 60 Engine, Street Print Arsenal, Colouring Pages, Memetics & Public Repair, The Moss Man and Humour & Parody.',
     series: ['Auralia', 'Insidious Rhythms', 'Original Paintings', 'B$S Branding', 'Process / References'],
@@ -224,16 +224,7 @@ window.BSS_STUDIO_SECTIONS = [
     pageTitle: 'Print Street Pack — Posters, QR & Stickers · Blue $nake Studio',
     pageDescription: 'A4 poster packs, QR sticker sheets, chant posters, brand marks and print-ready street assets from Blue $nake Studio. Officeworks-ready, cuttable, scannable.',
     series: ['Neon Venom', 'B$S Branding', 'Insidious Rhythms', 'Black Wing Crew'],
-    featuredIds: [
-      'neon-venom-portrait-qr',
-      'bwc-neon-qr-sheet',
-      'bwc-crest-sheet',
-      'bss-serpent-crest',
-      'old-vic-state-campaign',
-      'neon-venom-campaign',
-      'neon-venom-portal-qr',
-      'black-wing-chant-sheet'
-    ],
+    featuredIds: ['neon-venom-portrait-qr', 'bwc-neon-qr-sheet', 'bwc-crest-sheet', 'bss-serpent-crest', 'old-vic-state-campaign', 'neon-venom-campaign', 'neon-venom-portal-qr', 'black-wing-chant-sheet'],
     details: [
       'This is central to your style: not just online — printable, cuttable, scannable, hand-to-hand.',
       'Organise files as A4 poster packs, two-up prints, sticker sheets, QR sheets and promo cards.',
@@ -268,3 +259,98 @@ window.BSS_STUDIO_SECTIONS = [
     featuredIds: ['meta-pet-neon-ornament', 'moss60-geometry-linework', 'meta-pet-digital-genomes', 'meta-pet-companion-portrait']
   }
 ];
+
+// Vercel/mobile-safe entrance video gate.
+// This file loads before script.js, so the capture listeners below run before the old bubble handlers.
+(() => {
+  const init = () => {
+    const intro = document.getElementById('intro-film');
+    const video = document.getElementById('intro-video');
+    const enter = document.getElementById('intro-enter');
+    const sound = document.getElementById('intro-sound');
+    if (!intro || !video || !enter || !sound || video.dataset.vercelIntroFixed === 'true') return;
+
+    video.dataset.vercelIntroFixed = 'true';
+    video.removeAttribute('autoplay');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+    video.preload = 'auto';
+    video.muted = true;
+    video.volume = 1;
+
+    const source = video.querySelector('source');
+    if (source && source.getAttribute('src') && !source.getAttribute('src').startsWith('/')) {
+      source.setAttribute('src', `/${source.getAttribute('src')}`);
+      video.load();
+    }
+
+    sound.textContent = 'Play intro';
+    sound.setAttribute('aria-pressed', 'false');
+    enter.innerHTML = 'Play entrance <span aria-hidden="true">→</span>';
+
+    const closeIntro = () => {
+      intro.classList.add('is-leaving');
+      window.setTimeout(() => {
+        intro.hidden = true;
+        video.pause();
+      }, 650);
+    };
+
+    const playIntro = async (withSound) => {
+      try {
+        video.muted = !withSound;
+        video.volume = 1;
+        if (video.ended || video.currentTime > 0.25) video.currentTime = 0;
+        const promise = video.play();
+        if (promise && typeof promise.then === 'function') await promise;
+        sound.textContent = video.muted ? 'Sound off' : 'Sound on';
+        sound.setAttribute('aria-pressed', String(!video.muted));
+        enter.innerHTML = 'Skip intro <span aria-hidden="true">→</span>';
+      } catch (error) {
+        console.warn('[B$S] Entrance video blocked or missing; opening site.', error);
+        closeIntro();
+      }
+    };
+
+    const startFromGesture = (event) => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      if (!video.paused && !video.ended) {
+        closeIntro();
+        return;
+      }
+      playIntro(true);
+    };
+
+    const toggleSoundOrPlay = (event) => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      if (video.paused || video.ended) {
+        playIntro(true);
+        return;
+      }
+      video.muted = !video.muted;
+      sound.textContent = video.muted ? 'Sound off' : 'Sound on';
+      sound.setAttribute('aria-pressed', String(!video.muted));
+    };
+
+    enter.addEventListener('click', startFromGesture, true);
+    sound.addEventListener('click', toggleSoundOrPlay, true);
+    video.addEventListener('ended', closeIntro);
+    video.addEventListener('error', () => {
+      console.warn('[B$S] Entrance video failed to load. Check /YTShort_20June2026_13_12_14.mp4 in production.');
+      closeIntro();
+    });
+
+    // Muted autoplay is only a bonus. If Vercel/browser blocks it, the Play entrance button still works.
+    window.setTimeout(() => {
+      if (!intro.hidden && video.paused) playIntro(false);
+    }, 250);
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
+})();
