@@ -293,13 +293,13 @@ window.BSS_GALLERY_ITEMS = [
   },
   {
     id: 'colouring-auralia-flute',
-    title: 'Auralia — Butterfly Flute',
+    title: 'Krsna — Butterfly Flute',
     series: 'Colouring Pages',
     medium: 'Printable line art',
     type: 'Colouring page',
     year: '2026',
     image: '11_colouring_pages/auralia-butterfly-flute-colouring.png',
-    tags: ['colouring page', 'Auralia', 'flute', 'butterflies', 'birds'],
+    tags: ['colouring page', 'Krsna', 'flute', 'butterflies', 'birds'],
     description: 'A detailed portrait colouring page with flute, flower garlands, birds, butterflies and ceremonial jewellery.'
   },
   {
@@ -349,7 +349,7 @@ window.BSS_GALLERY_ITEMS = [
   {
     id: 'print-ruler-is-read',
     title: 'The Ruler Is Read',
-    series: 'Colouring Pages',
+    series: 'Printable Posters',
     medium: 'Printable art poster',
     type: 'Poster',
     year: '2026',
