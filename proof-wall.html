@@ -49,7 +49,13 @@
     .pw-footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(120,214,247,.12); font-size: 12px; color: var(--dim); line-height: 1.9; }
     .pw-footer a { color: var(--muted); text-decoration: none; }
     .pw-footer a:hover { color: var(--gold-hot); }
-    @media (max-width: 640px) { .pw-grid { grid-template-columns: 1fr; } .pw-shell { padding-top: 64px; } }
+    .pw-filter { display: flex; flex-wrap: wrap; gap: 7px; margin: 28px 0 0; }
+    .pw-filter-btn { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 13px; border: 1px solid rgba(120,214,247,.18); border-radius: 999px; color: var(--muted); text-decoration: none; transition: all .14s; white-space: nowrap; }
+    .pw-filter-btn:hover, .pw-filter-btn:focus { border-color: rgba(199,168,106,.55); color: var(--gold-hot); background: rgba(199,168,106,.05); outline: none; }
+    .pw-audience { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; padding: 2px 7px; border-radius: 20px; background: rgba(255,255,255,.04); color: var(--dim); margin-left: 4px; vertical-align: middle; }
+    .pw-card-cta { margin-top: auto; padding-top: 8px; font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--gold-hot); }
+    .pw-card { display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border: 1px solid rgba(120,214,247,.18); border-radius: 14px; background: rgba(255,255,255,.04); text-decoration: none; color: var(--ink); transition: transform 180ms ease, border-color 180ms ease, background 180ms ease; }
+    @media (max-width: 640px) { .pw-grid { grid-template-columns: 1fr; } .pw-shell { padding-top: 64px; } .pw-filter { gap: 5px; } .pw-filter-btn { font-size: 9px; padding: 4px 10px; } }
   </style>
 </head>
 <body>
@@ -77,56 +83,66 @@
           <strong style="color:var(--muted);">For schools and councils:</strong> See <a href="gov.html" style="color:var(--gold-hot);">the Schools / Council pathway</a> for teacher tools, Meta-Pet and outreach context.<br />
           <strong style="color:var(--muted);">For QR arrivals:</strong> You're in the right place — everything live is listed below.
         </p>
+        <nav class="pw-filter" aria-label="Jump to section">
+          <a class="pw-filter-btn" href="#schools">Schools / Parents</a>
+          <a class="pw-filter-btn" href="#councils">Councils / Community</a>
+          <a class="pw-filter-btn" href="#gallery">Art / Gallery</a>
+          <a class="pw-filter-btn" href="#music">Music</a>
+          <a class="pw-filter-btn" href="#apps">Games / Apps</a>
+          <a class="pw-filter-btn" href="#downloads">Print / Downloads</a>
+          <a class="pw-filter-btn" href="#theory">Theory / Lore</a>
+        </nav>
       </section>
 
       <!-- PUBLIC PATHWAY -->
-      <section class="pw-section" aria-label="Public pathway">
+      <section class="pw-section" id="councils" aria-label="Public pathway">
         <div class="pw-section-head">
           <p class="eyebrow">00 · Public pathway</p>
           <h2>For councils, schools and new visitors.</h2>
-          <p>Six pages to share with anyone who needs to understand Blue $nake Studio quickly. Each one is live, linkable and honest about what it is.</p>
+          <p>Pages to share with anyone who needs to understand Blue $nake Studio quickly. Each one is live, linkable and honest about what it is.</p>
         </div>
         <div class="pw-grid">
           <a class="pw-card" href="gov.html">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Councils · Schools</span>
             <strong>Council / School / Community Pathway</strong>
-            <p>A dedicated page for councils, schools, disability arts orgs, libraries and community partners. Eight sections: who it's for, what exists, workshops, privacy principles and honest disclaimers.</p>
+            <p>A dedicated page for councils, schools, disability arts orgs, libraries and community partners. Workshops, privacy principles and honest disclaimers included.</p>
+            <span class="pw-card-cta">Read →</span>
           </a>
           <a class="pw-card" href="print.html">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Everyone</span>
             <strong>B$S Print Vault</strong>
             <p>Free printable artefacts and a path to workshops, commissions and future supporter packs. Download and print, no login required.</p>
+            <span class="pw-card-cta">Browse →</span>
           </a>
           <a class="pw-card" href="store.html">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Art · Public</span>
             <strong>Auralia Art Prints &amp; Wallpapers</strong>
             <p>11 original Auralia artworks available as high-res digital downloads, screensavers and A3 prints on request. Order by email.</p>
+            <span class="pw-card-cta">Browse →</span>
           </a>
           <a class="pw-card" href="apps/bs-word-cube.html">
-            <span class="pw-badge prototype">Prototype</span>
+            <span class="pw-badge prototype">Prototype</span><span class="pw-audience">Everyone</span>
             <strong>B$S Six-Face Word Cube</strong>
             <p>Interactive 3D browser toy. Drag to spin or use arrow keys. No login, no ads, no tracking. Open in thirty seconds.</p>
+            <span class="pw-card-cta">Play →</span>
           </a>
           <a class="pw-card" href="privacy-policy.html">
-            <span class="pw-badge research">Published</span>
+            <span class="pw-badge research">Published</span><span class="pw-audience">Schools · IT</span>
             <strong>Privacy Policy</strong>
             <p>Plain-language policy: no ads, no trackers, no student data collected. Suitable reference for school IT officers and council procurement contacts.</p>
-          </a>
-          <a class="pw-card" href="site-health.html">
-            <span class="pw-badge" style="background:rgba(120,214,247,.1);color:var(--neon-cyan);">Tool</span>
-            <strong>Site Health</strong>
-            <p>Internal route checker — 28 critical portal routes. Run before demos to confirm all pages are returning 200.</p>
+            <span class="pw-card-cta">Read →</span>
           </a>
           <a class="pw-card" href="strongman-tracker.html">
-            <span class="pw-badge" style="background:rgba(255,0,110,.10);color:#ff006e;">Planning</span>
+            <span class="pw-badge" style="background:rgba(255,0,110,.10);color:#ff006e;">Planning</span><span class="pw-audience">Studio</span>
             <strong>Strongman Tracker</strong>
             <p>Revenue streams, 37 Play Store readiness checks and 9 child-safety items. Shows the studio's systematic approach to responsible development.</p>
+            <span class="pw-card-cta">View →</span>
           </a>
         </div>
       </section>
 
       <!-- LIVE WEBSITES -->
-      <section class="pw-section" aria-label="Live websites">
+      <section class="pw-section" id="schools" aria-label="Live websites">
         <div class="pw-section-head">
           <p class="eyebrow">01 · Live websites</p>
           <h2>Working right now.</h2>
@@ -134,132 +150,151 @@
         </div>
         <div class="pw-grid">
           <a class="pw-card" href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Schools · Families</span>
             <strong>Meta-Pet</strong>
-            <p>Privacy-first digital learning companion. No ads, no trackers, no social feed. Try the prototype at bluesnakestudios.com.</p>
+            <p>Privacy-first digital learning companion. No ads, no trackers, no social feed. Prototype — open in any browser, no accounts required.</p>
+            <span class="pw-card-cta">Try →</span>
           </a>
           <a class="pw-card" href="https://teachers-secret-cheatsheet.vercel.app/" target="_blank" rel="noopener">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Teachers · ESOs</span>
             <strong>Teacher's Secret Cheatsheet</strong>
-            <p>Seven printable behaviour-support templates for stretched teachers. Victoria-aware, zero admin, free to use.</p>
-          </a>
-          <a class="pw-card" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">
-            <span class="pw-badge live">Live</span>
-            <strong>Black Wing Crew / Neon Venom</strong>
-            <p>The 2026 Neon Venom LP site — songs, lyric posters, QR drops, streaming links and street print assets.</p>
+            <p>Seven printable behaviour-support templates for stretched teachers. Victoria-aware, zero admin, free to use. No login required.</p>
+            <span class="pw-card-cta">Download free →</span>
           </a>
           <a class="pw-card" href="https://metapet-pilot-school.vercel.app/" target="_blank" rel="noopener">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Schools</span>
             <strong>Meta-Pet Pilot School</strong>
-            <p>Classroom-focused landing page for school pilot enquiries. For teachers, principals and education officers.</p>
+            <p>Classroom-focused landing page for school pilot enquiries. For teachers, principals and education officers considering a pilot.</p>
+            <span class="pw-card-cta">Enquire →</span>
+          </a>
+          <a class="pw-card" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">
+            <span class="pw-badge live">Live</span><span class="pw-audience">Music</span>
+            <strong>Black Wing Crew / Neon Venom LP</strong>
+            <p>The 2026 Neon Venom LP — songs, lyric posters, QR drops, streaming links and street print assets. BSS-001.</p>
+            <span class="pw-card-cta">Listen →</span>
           </a>
           <a class="pw-card" href="https://frankston2fuji.netlify.app/" target="_blank" rel="noopener">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Community</span>
             <strong>Frankston → Fuji</strong>
             <p>Bilingual sister-city song project. Japanese language practice, taiko connection and local bridge work.</p>
+            <span class="pw-card-cta">Open →</span>
           </a>
           <a class="pw-card" href="https://waahn.netlify.app/" target="_blank" rel="noopener">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Community · Research</span>
             <strong>Waahn / Black Omen</strong>
             <p>Respectful research pathway into Bunurong-Boonwurrung language and Country. Living map, not an archive.</p>
+            <span class="pw-card-cta">Open →</span>
           </a>
         </div>
       </section>
 
       <!-- APPS & PROTOTYPES -->
-      <section class="pw-section" aria-label="Apps and prototypes">
+      <section class="pw-section" id="apps" aria-label="Apps and prototypes">
         <div class="pw-section-head">
-          <p class="eyebrow">02 · Apps & prototypes</p>
+          <p class="eyebrow">02 · Games / Apps / Prototypes</p>
           <h2>Playable and interactive.</h2>
-          <p>Working experiments you can open in the browser.</p>
+          <p>Working experiments you can open in the browser right now.</p>
         </div>
         <div class="pw-grid">
           <a class="pw-card" href="magic-cube.html">
-            <span class="pw-badge prototype">Playable Prototype</span>
+            <span class="pw-badge prototype">Playable Prototype</span><span class="pw-audience">Art · Game</span>
             <strong>B$S Magic Rubix Cube</strong>
-            <p>A six-face 5×5 word cube that works as both symbolic artwork and playable puzzle. Scramble, solve, Museum Spin, Daily Scramble, Copy Moves. No login, no ads, no tracking. Art / Game / System.</p>
+            <p>First true B$S game-art relic. A 5×5 word cube that works as symbolic artwork and puzzle. Scramble, solve, Museum Spin, Daily Scramble, Copy Moves. Three modes: Art · Game · Net View.</p>
+            <span class="pw-card-cta">Play →</span>
           </a>
           <a class="pw-card" href="apps/bs-word-cube.html">
-            <span class="pw-badge prototype">Interactive</span>
+            <span class="pw-badge prototype">Interactive</span><span class="pw-audience">Everyone</span>
             <strong>B$S Six-Face Word Cube</strong>
-            <p>Drag and spin the original 3D word cube with six artwork faces. Free in the browser. Pack 2 coming.</p>
+            <p>Drag and spin the original 3D word cube with six artwork faces. Free in the browser, no login.</p>
+            <span class="pw-card-cta">Open →</span>
           </a>
           <a class="pw-card" href="apps/moss60-oracle-warden.html">
-            <span class="pw-badge prototype">Prototype</span>
+            <span class="pw-badge prototype">Prototype</span><span class="pw-audience">Systems · Lore</span>
             <strong>Moss 60 Oracle Warden</strong>
             <p>Interactive glyph engine built on Moss 60 base-60 geometry. Playable symbolic logic, pattern recognition and digital DNA sequences.</p>
+            <span class="pw-card-cta">Open →</span>
           </a>
           <a class="pw-card" href="https://elevator-pitch-seven.vercel.app/" target="_blank" rel="noopener">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Councils · Schools</span>
             <strong>Elevator Pitch</strong>
             <p>Sixty-second interactive studio introduction. For anyone who needs to understand B$S fast — councils, schools, collaborators.</p>
+            <span class="pw-card-cta">Watch →</span>
           </a>
           <a class="pw-card" href="https://www.bluesnakestudios.com/digital-dna" target="_blank" rel="noopener">
-            <span class="pw-badge prototype">Prototype</span>
+            <span class="pw-badge prototype">Prototype</span><span class="pw-audience">Education · Art</span>
             <strong>Digital DNA / Moss 60</strong>
             <p>Moss 60 digital genome explorer — base-60 symbolic identity and visual DNA generation.</p>
+            <span class="pw-card-cta">Explore →</span>
           </a>
         </div>
       </section>
 
       <!-- MUSIC -->
-      <section class="pw-section" aria-label="Music">
+      <section class="pw-section" id="music" aria-label="Music">
         <div class="pw-section-head">
           <p class="eyebrow">03 · Music</p>
           <h2>Listen now.</h2>
-          <p>The Neon Venom LP — streaming and in progress.</p>
+          <p>Black Wing Crew and the Neon Venom LP — streaming and in progress.</p>
         </div>
         <div class="pw-grid">
           <a class="pw-card" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">
-            <span class="pw-badge streaming">Streaming</span>
+            <span class="pw-badge streaming">Streaming</span><span class="pw-audience">Music</span>
             <strong>Neon Venom LP — Black Wing Crew</strong>
-            <p>The 2026 Black Wing Crew album in progress. Songs, chants, experimental tracks and venom-pop. Stream on the official site.</p>
+            <p>The 2026 Black Wing Crew album. Songs, chants, venom-pop, lyric posters, QR drops and street print assets. BSS-001. Stream on the official site.</p>
+            <span class="pw-card-cta">Listen →</span>
+          </a>
+          <a class="pw-card" href="black-wing-crew.html">
+            <span class="pw-badge live">Live</span><span class="pw-audience">Music</span>
+            <strong>Black Wing Crew — Archive Page</strong>
+            <p>Full tracklist, mythology, lore, symbols and visual identity of Black Wing Crew and the Neon Venom universe.</p>
+            <span class="pw-card-cta">Explore →</span>
           </a>
           <a class="pw-card" href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener">
-            <span class="pw-badge live">Active</span>
+            <span class="pw-badge live">Active</span><span class="pw-audience">Music · Art</span>
             <strong>YouTube — @blkck2</strong>
             <p>Music videos, visual art drops, studio process and behind-the-scenes. The official B$S video channel.</p>
-          </a>
-          <a class="pw-card" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">
-            <span class="pw-badge live">Live</span>
-            <strong>Black Wing Crew — Full Site</strong>
-            <p>Complete music world: tracklist, streaming, lyrics, QR drops, lyric posters and street print assets.</p>
+            <span class="pw-card-cta">Subscribe →</span>
           </a>
         </div>
       </section>
 
       <!-- DOWNLOADS -->
-      <section class="pw-section" aria-label="Free downloads">
+      <section class="pw-section" id="downloads" aria-label="Free downloads and print">
         <div class="pw-section-head">
-          <p class="eyebrow">04 · Free downloads &amp; print</p>
+          <p class="eyebrow">04 · Print / Downloads</p>
           <h2>Print and use.</h2>
-          <p>Free packs and a print shelf. Download, print, stick, hand out.</p>
+          <p>Free packs and a print shelf. Download, print, stick, hand out. No login, no cost.</p>
         </div>
         <div class="pw-grid">
           <a class="pw-card" href="print.html">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Everyone</span>
             <strong>B$S Print Vault</strong>
             <p>Free printable artefacts: lyric sheets, colouring pages, glyph sheets, QR posters and classroom tools. Paid supporter packs coming to fund the studio.</p>
+            <span class="pw-card-cta">Browse →</span>
           </a>
           <a class="pw-card" href="qr-portal.html">
-            <span class="pw-badge live">Guide</span>
+            <span class="pw-badge live">Guide</span><span class="pw-audience">Street · Community</span>
             <strong>QR Portal — Street Drop Guide</strong>
             <p>How the QR system works: seven colour variants, print instructions, Officeworks guide, campaign ideas and download.</p>
+            <span class="pw-card-cta">Read →</span>
           </a>
           <a class="pw-card" href="downloads/bss-qr-drop-pack.zip" download>
-            <span class="pw-badge download">Free download</span>
+            <span class="pw-badge download">Free download</span><span class="pw-audience">Street · Art</span>
             <strong>QR Drop Pack</strong>
             <p>Seven neon colour variants of the B$S QR code — pink, orange, yellow, green, purple, cyan, rainbow. Ready to print or post.</p>
+            <span class="pw-card-cta">Download →</span>
           </a>
           <a class="pw-card" href="downloads/bss-colouring-pages-pack.zip" download>
-            <span class="pw-badge download">Free download</span>
+            <span class="pw-badge download">Free download</span><span class="pw-audience">Schools · Families</span>
             <strong>Colouring Pages Pack</strong>
             <p>Twelve B$S colouring pages featuring Auralia, studio mascot characters and mythic scenes. For kids and adults.</p>
+            <span class="pw-card-cta">Download →</span>
           </a>
           <a class="pw-card" href="downloads/bss-street-print-pack.zip" download>
-            <span class="pw-badge download">Free download</span>
+            <span class="pw-badge download">Free download</span><span class="pw-audience">Music · Street</span>
             <strong>Street Print Pack</strong>
             <p>Seven A4-ready hero posters — Neon Venom cyberpunk, HOPE poster, Frankston Courts, B$S seal, winged crest and more. Officeworks-ready.</p>
+            <span class="pw-card-cta">Download →</span>
           </a>
         </div>
       </section>
@@ -273,60 +308,71 @@
         </div>
         <div class="pw-grid">
           <a class="pw-card" href="index.html#visual-worlds">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Gallery · Art</span>
             <strong>The Painted Wing</strong>
             <p>Original paintings, stained-glass mythology, character portraits. The spiritual core of the archive.</p>
+            <span class="pw-card-cta">Open in portal →</span>
           </a>
           <a class="pw-card" href="index.html#visual-worlds">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Music · Art</span>
             <strong>Neon Venom Room</strong>
             <p>Music covers, QR posters, streaming art, lyric sheets. The visual world of the 2026 LP.</p>
+            <span class="pw-card-cta">Open in portal →</span>
           </a>
           <a class="pw-card" href="index.html#visual-worlds">
+            <span class="pw-audience">Mythology · Art</span>
             <span class="pw-badge live">Live</span>
             <strong>The Omen Room</strong>
             <p>Dark mythology, deity figures, heraldic crests, fire pareidolia and esoteric character art.</p>
+            <span class="pw-card-cta">Open in portal →</span>
           </a>
           <a class="pw-card" href="index.html#visual-worlds">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Schools · Art</span>
             <strong>The Learning Beast</strong>
             <p>Meta-Pet characters, classroom proof images and educational visual assets.</p>
+            <span class="pw-card-cta">Open in portal →</span>
           </a>
           <a class="pw-card" href="index.html#visual-worlds">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Systems · Lore</span>
             <strong>Moss 60 Engine Room</strong>
             <p>Geometric glyphs, stained-glass number systems, symbolic patterns and spiral mountain deities.</p>
+            <span class="pw-card-cta">Open in portal →</span>
           </a>
           <a class="pw-card" href="index.html#visual-worlds">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Print · Street</span>
             <strong>Street Print Arsenal</strong>
             <p>A4 poster packs, QR sticker sheets, chant posters and printable street assets. Download pack included.</p>
+            <span class="pw-card-cta">Open in portal →</span>
           </a>
           <a class="pw-card" href="index.html#visual-worlds">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Schools · Families</span>
             <strong>Colouring Pages</strong>
-            <p>Twelve print-and-colour pages. Download pack included.</p>
+            <p>Twelve print-and-colour pages. Download pack included. Free.</p>
+            <span class="pw-card-cta">Open in portal →</span>
           </a>
           <a class="pw-card" href="index.html#visual-worlds">
-            <span class="pw-badge live">Live</span>
-            <strong>Memetics & Public Repair</strong>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Community · Art</span>
+            <strong>Memetics &amp; Public Repair</strong>
             <p>Campaign posters, public messaging, social image assets and memetic design work.</p>
+            <span class="pw-card-cta">Open in portal →</span>
           </a>
           <a class="pw-card" href="index.html#visual-worlds">
-            <span class="pw-badge live">Live</span>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Art · Archive</span>
             <strong>The Moss Man Room</strong>
             <p>Portrait archive: runic scribe, Frankston Courts, HOPE poster, Crown of the Clucker, medieval warrior.</p>
+            <span class="pw-card-cta">Open in portal →</span>
           </a>
           <a class="pw-card" href="index.html#visual-worlds">
-            <span class="pw-badge live">Live</span>
-            <strong>Humour & Parody</strong>
+            <span class="pw-badge live">Live</span><span class="pw-audience">Humour · Art</span>
+            <strong>Humour &amp; Parody</strong>
             <p>Beak to the Future, Breaking Beak, Pi Wizard Chicken, Forward Together Awkward Forever. Very Australian.</p>
+            <span class="pw-card-cta">Open in portal →</span>
           </a>
         </div>
       </section>
 
       <!-- THEORY & DOCUMENTS -->
-      <section class="pw-section" aria-label="Theory and documents">
+      <section class="pw-section" id="theory" aria-label="Theory and documents">
         <div class="pw-section-head">
           <p class="eyebrow">06 · Theory & documents</p>
           <h2>The written layer.</h2>
@@ -335,23 +381,31 @@
         <div class="pw-grid">
           <a class="pw-card" href="documents/oss-734g-known-unknowns-register.html">
             <span class="pw-badge research">Published</span>
+            <span class="pw-audience">Theory / Lore</span>
             <strong>OSS-734G Known Unknowns Register</strong>
             <p>Operation: Semantic Sovereignty — a comprehensive register of known unknowns, narrative framing doctrine and language defence strategies.</p>
+            <span class="pw-card-cta">Read the register →</span>
           </a>
           <a class="pw-card" href="apps/moss60-oracle-warden.html">
             <span class="pw-badge prototype">Interactive</span>
+            <span class="pw-audience">Art / Lore</span>
             <strong>Moss 60 Oracle Warden</strong>
             <p>Playable glyph engine. Try the Moss 60 base-60 geometry system in an interactive symbolic oracle interface.</p>
+            <span class="pw-card-cta">Try the oracle →</span>
           </a>
           <a class="pw-card" href="strongman-tracker.html">
             <span class="pw-badge" style="background:rgba(255,0,110,.10);color:#ff006e;">Planning</span>
+            <span class="pw-audience">Studio / Internal</span>
             <strong>Strongman Tracker</strong>
             <p>Revenue streams, pricing ladder, 37 Play Store readiness checks and 9 child-safety items — all 16 revenue lines tracked. State saved in your browser, nothing leaves your device.</p>
+            <span class="pw-card-cta">View tracker →</span>
           </a>
           <a class="pw-card" href="privacy-policy.html">
             <span class="pw-badge research">Policy</span>
+            <span class="pw-audience">Schools / Parents</span>
             <strong>Privacy Policy</strong>
             <p>No ads, no trackers, no child data collected. Covers localStorage (Strongman Tracker only), YouTube embeds and service workers. Plain language, Play Store ready.</p>
+            <span class="pw-card-cta">Read the policy →</span>
           </a>
         </div>
       </section>

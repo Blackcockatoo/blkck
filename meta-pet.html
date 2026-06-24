@@ -52,7 +52,15 @@
     .mp-footer a:hover { color: var(--gold-hot); }
     @media (max-width: 560px) { .promise-grid { grid-template-columns: 1fr 1fr; } .audience-grid { grid-template-columns: 1fr; } .mp-shell { padding-top: 64px; } }
     @media (max-width: 380px) { .promise-grid { grid-template-columns: 1fr; } }
-    @media print { body { background: #fff; color: #111; } .masthead, .mast-actions { display: none; } .promise-card, .audience-card { border-color: #ccc; background: #f9f9f9; } .mp-hero h1, .mp-section h2 { color: #111; } .promise-card h3, .audience-card h3 { color: #555; } .mp-footer { color: #555; } }
+    @media print { body { background: #fff; color: #111; } .masthead, .mast-actions { display: none; } .promise-card, .audience-card { border-color: #ccc; background: #f9f9f9; } .mp-hero h1, .mp-section h2 { color: #111; } .promise-card h3, .audience-card h3 { color: #555; } .mp-footer { color: #555; } .trust-badge { border-color: #ccc; background: #f5f5f5; color: #111; } .dev-note { border-left-color: #ccc; color: #666; } }
+    .mp-product-name { font-size: clamp(52px,9vw,88px); font-family: Georgia,"Times New Roman",serif; font-weight: 700; line-height: 1; letter-spacing: -.04em; color: var(--gold-hot); margin: 0 0 10px; }
+    .trust-strip { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 26px; }
+    .trust-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 600; color: var(--ink); padding: 5px 14px; border: 1px solid rgba(0,245,255,.22); border-radius: 24px; background: rgba(0,245,255,.04); }
+    .trust-badge::before { content: "✓"; color: #00f5ff; font-size: 11px; font-weight: 700; }
+    .section-anchor { scroll-margin-top: 80px; }
+    .dev-note { display: block; margin-top: 14px; font-size: 11px; color: var(--dim); line-height: 1.65; padding: 8px 14px; border-left: 2px solid rgba(120,214,247,.18); max-width: 560px; }
+    .dev-note a { color: var(--dim); }
+    .dev-note a:hover { color: var(--muted); }
   </style>
 </head>
 <body>
@@ -64,7 +72,7 @@
         <span class="brand-copy">Blue $nake Studio</span>
       </a>
       <div class="mast-actions">
-        <a class="mast-link" href="index.html#meta-pet">Meta-Pet Panel</a>
+        <a class="mast-link" href="index.html">Portal</a>
         <a class="mast-link" href="teacher-tools.html">Teacher Tools</a>
         <a class="mast-link" href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener">Try it →</a>
       </div>
@@ -74,20 +82,37 @@
 
       <!-- HERO -->
       <section class="mp-hero">
-        <p class="eyebrow">Privacy-first learning · In development · Blue $nake Studio</p>
-        <h1>Technology that gives attention back.</h1>
-        <p class="lead">Meta-Pet is a privacy-first digital pet and learning companion built for healthy device use, creativity and schools — without ads, trackers, social feeds, gambling loops or unnecessary data collection.</p>
+        <p class="eyebrow">Privacy-first learning companion · Browser-first prototype · Blue $nake Studio</p>
+        <div class="mp-product-name" aria-label="Meta-Pet">Meta-Pet</div>
+        <h1>For classrooms and families who want better.</h1>
+        <div class="trust-strip" role="list" aria-label="Core product commitments">
+          <span class="trust-badge" role="listitem">No ads</span>
+          <span class="trust-badge" role="listitem">No trackers</span>
+          <span class="trust-badge" role="listitem">No student accounts required</span>
+          <span class="trust-badge" role="listitem">Offline-first · browser-first prototype</span>
+        </div>
         <div class="mp-cta-row">
-          <a class="project-link album-link" href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener">Open Meta-Pet app →</a>
-          <a class="project-link album-link" href="https://metapet-pilot-school.vercel.app/" target="_blank" rel="noopener">School pilot enquiry</a>
-          <a class="project-link" href="https://teachers-secret-cheatsheet.vercel.app/" target="_blank" rel="noopener">Teacher Tools</a>
-          <a class="project-link" href="mailto:bluesssnakestudio@gmail.com">Contact the studio</a>
+          <a class="project-link album-link" href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener">Try Demo →</a>
+          <a class="project-link album-link" href="https://metapet-pilot-school.vercel.app/" target="_blank" rel="noopener">Pilot School Enquiry</a>
+          <a class="project-link" href="#what-it-is">How It Works ↓</a>
+        </div>
+        <span class="dev-note">In active development · Not a finished commercial product · Not clinical or medical software · <a href="privacy-policy.html">Privacy Policy</a></span>
+      </section>
+
+      <!-- 01 · WHAT IT IS -->
+      <section class="mp-section section-anchor" id="what-it-is" aria-label="What Meta-Pet is">
+        <p class="eyebrow">01 · What it is</p>
+        <h2>A digital companion that gives attention back.</h2>
+        <div style="max-width:680px;">
+          <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:14px;">Meta-Pet is a concept in active development by The Moss Man / Blue $nake Studio. It combines a digital pet care model with STEAM learning mechanics, pattern recognition tasks and a symbolic identity system powered by Moss 60 base-60 geometry.</p>
+          <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:14px;">The core idea: a digital companion that children can care for, customise and learn with — without any of the design patterns that extract attention, money or data from children or families.</p>
+          <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:14px;">The prototype is available at <a href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener" style="color:var(--gold-hot);">bluesnakestudios.com</a>. It runs in the browser — no download, no app store, no accounts. Open and use immediately. School pilot enquiries are welcome — contact the studio directly.</p>
         </div>
       </section>
 
-      <!-- PRIVACY PROMISE -->
-      <section class="mp-section" aria-label="Privacy Promise">
-        <p class="eyebrow">The Privacy Promise</p>
+      <!-- 02 · WHY IT IS SAFE -->
+      <section class="mp-section section-anchor" id="why-safe" aria-label="Why it is safe">
+        <p class="eyebrow">02 · Why it is safe</p>
         <h2>What Meta-Pet will never do.</h2>
         <div class="promise-grid">
           <div class="promise-card">
@@ -123,10 +148,10 @@
         </div>
       </section>
 
-      <!-- FOR CLASSROOMS -->
-      <section class="mp-section" aria-label="Classroom mode">
-        <p class="eyebrow">For teachers · Classroom mode</p>
-        <h2>Zero-admin classroom learning.</h2>
+      <!-- 03 · WHAT CHILDREN DO -->
+      <section class="mp-section section-anchor" id="what-children-do" aria-label="What children do with it">
+        <p class="eyebrow">03 · What children do with it</p>
+        <h2>Learning through play, pattern and care.</h2>
         <div class="audience-grid">
           <div class="audience-card">
             <h3>No setup required</h3>
@@ -160,90 +185,71 @@
           </div>
         </div>
         <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
-          <a class="project-link album-link" href="https://teachers-secret-cheatsheet.vercel.app/" target="_blank" rel="noopener">Download Teacher Pack</a>
-          <a class="project-link" href="https://metapet-pilot-school.vercel.app/" target="_blank" rel="noopener">School pilot page</a>
+          <a class="project-link album-link" href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener">Try Demo →</a>
+          <a class="project-link" href="https://teachers-secret-cheatsheet.vercel.app/" target="_blank" rel="noopener">Download Teacher Pack</a>
         </div>
       </section>
 
-      <!-- FOR PARENTS -->
-      <section class="mp-section" aria-label="For parents">
-        <p class="eyebrow">For parents · Peace of mind</p>
-        <h2>Healthy device use for your child.</h2>
-        <div class="audience-grid">
+      <!-- 04 · WHAT TEACHERS AND PARENTS CAN DO NEXT -->
+      <section class="mp-section section-anchor" id="next-steps" aria-label="What teachers and parents can do next">
+        <p class="eyebrow">04 · What teachers and parents can do next</p>
+        <h2>Start today — no setup required.</h2>
+        <div class="audience-grid" style="margin-bottom:28px;">
           <div class="audience-card">
-            <h3>What it is</h3>
+            <h3>For teachers</h3>
             <ul>
-              <li>A digital companion your child can care for</li>
-              <li>Creative learning through play and pattern</li>
-              <li>A calm, focused alternative to social media</li>
-              <li>Something that ends naturally</li>
+              <li>Open the demo — try it yourself first</li>
+              <li>Download the free Teacher Pack (7 templates)</li>
+              <li>Enquire about a school pilot programme</li>
+              <li>Share the privacy statement with your IT team</li>
             </ul>
           </div>
           <div class="audience-card">
-            <h3>What it is not</h3>
+            <h3>For parents</h3>
             <ul>
-              <li>Not a social platform</li>
-              <li>Not a subscription or in-app purchase system</li>
-              <li>Not engineered for addiction</li>
-              <li>Not collecting your child's data</li>
-              <li>Not connected to external advertising</li>
-            </ul>
-          </div>
-          <div class="audience-card">
-            <h3>Parent controls</h3>
-            <ul>
-              <li>No account to manage or monitor</li>
+              <li>Open the prototype with your child</li>
+              <li>No accounts to manage or monitor</li>
               <li>Nothing is stored in the cloud</li>
-              <li>Safe to close at any time</li>
-              <li>No ongoing access to disable</li>
-              <li>Transparent by design</li>
+              <li>Safe to close at any time — transparent by design</li>
+            </ul>
+          </div>
+          <div class="audience-card">
+            <h3>For schools</h3>
+            <ul>
+              <li>School pilot enquiry page available</li>
+              <li>Contact the studio for discussion</li>
+              <li>No platform fees during development phase</li>
+              <li>Privacy policy available for IT review</li>
             </ul>
           </div>
         </div>
-      </section>
-
-      <!-- SCHOOL STARTER BUNDLE -->
-      <section class="mp-section" aria-label="School Starter Bundle">
-        <p class="eyebrow">The Attention-Back Toolkit · School Starter</p>
-        <h2>Meta-Pet + Teacher Tools bundle.</h2>
         <div class="bundle-box">
-          <h3>Everything in one pack.</h3>
-          <p>The most practical combination from Blue $nake Studio for classrooms and families trying to build healthier device habits without losing educational value.</p>
+          <h3>The Attention-Back Toolkit.</h3>
+          <p>Meta-Pet and Teacher Tools together form a lightweight starter pack for classrooms building healthier relationships with screen time and self-regulation — without the overhead of formal programmes or costly platforms.</p>
           <ul>
             <li>Meta-Pet demo — open and use immediately, no setup</li>
             <li>Teacher's Secret Cheatsheet — seven printable behaviour-support templates</li>
             <li>Behaviour support framework — transition flows and attention supports</li>
             <li>Parent info language — plain-English descriptions of what the app does and doesn't do</li>
             <li>Privacy promise — shareable statement for school newsletters or councils</li>
-            <li>QR access sheet — printed QR codes students can scan to open Meta-Pet</li>
           </ul>
           <div style="display:flex;gap:12px;flex-wrap:wrap;">
-            <a class="project-link album-link" href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener">Open Meta-Pet</a>
+            <a class="project-link album-link" href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener">Try Demo →</a>
             <a class="project-link album-link" href="https://teachers-secret-cheatsheet.vercel.app/" target="_blank" rel="noopener">Download Teacher Pack</a>
-            <a class="project-link" href="mailto:bluesssnakestudio@gmail.com">Contact for school pilot</a>
+            <a class="project-link" href="https://metapet-pilot-school.vercel.app/" target="_blank" rel="noopener">School Pilot Enquiry</a>
+            <a class="project-link" href="mailto:bluesssnakestudio@gmail.com">Contact for discussion</a>
           </div>
         </div>
       </section>
 
-      <!-- WHAT IT IS -->
-      <section class="mp-section" aria-label="About Meta-Pet">
-        <p class="eyebrow">About the project</p>
-        <h2>What Meta-Pet actually is.</h2>
-        <div style="max-width:680px;">
-          <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:14px;">Meta-Pet is a concept in active development by The Moss Man / Blue $nake Studio. It combines a digital pet care model with STEAM learning mechanics, pattern recognition tasks and a symbolic identity system powered by Moss 60 base-60 geometry.</p>
-          <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:14px;">The core idea: a digital companion that children can care for, customise and learn with — without any of the design patterns that extract attention, money or data from children or families.</p>
-          <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:14px;">The prototype is available at <a href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener" style="color:var(--gold-hot);">bluesnakestudios.com</a>. School pilot enquiries are welcome — contact the studio directly.</p>
-        </div>
-      </section>
-
       <div class="disclaimer">
-        <strong>Disclaimer:</strong> Meta-Pet is in active development. Features described here represent the design intent and direction of the project. The current prototype demonstrates core concepts. Not a finished commercial product. Not legal, medical or clinical software. Contact the studio for specific use-case discussions.
+        <strong>Important:</strong> Meta-Pet is in active development. Features described here represent the design intent and direction of the project. The current prototype demonstrates core concepts. Not a finished commercial product. Not legal, medical or clinical software. These materials do not constitute professional advice. Always refer complex individual needs to qualified professionals. Contact the studio for specific use-case discussions. <a href="privacy-policy.html" style="color:var(--muted);">Privacy Policy →</a>
       </div>
 
       <footer class="mp-footer" role="contentinfo">
         <p>Created by <strong style="color:var(--ink);">The Moss Man</strong> / <strong style="color:var(--ink);">Blue $nake Studio</strong> — <a href="https://blkck2.com/">blkck2.com</a> — <a href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener noreferrer">@blkck2</a></p>
         <p style="font-size:11px;"><a href="mailto:bluesssnakestudio@gmail.com">bluesssnakestudio@gmail.com</a> · <a href="mailto:blkck2@gmail.com">blkck2@gmail.com</a></p>
-        <p style="margin-top:8px;"><a href="index.html#meta-pet">Back to portal</a> · <a href="teacher-tools.html">Teacher Tools</a> · <a href="proof-wall.html">B$S Proof Wall</a> · <a href="press-kit.html">Press Kit</a></p>
+        <p style="margin-top:8px;"><a href="index.html">Back to portal</a> · <a href="teacher-tools.html">Teacher Tools</a> · <a href="proof-wall.html">B$S Proof Wall</a> · <a href="press-kit.html">Press Kit</a> · <a href="privacy-policy.html">Privacy Policy</a></p>
       </footer>
     </main>
   </div>

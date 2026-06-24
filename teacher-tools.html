@@ -50,6 +50,23 @@
     .tt-footer a { color: var(--muted); text-decoration: none; }
     .tt-footer a:hover { color: var(--gold-hot); }
     @media (max-width: 540px) { .tt-shell { padding-top: 64px; } .who-grid, .tool-grid { grid-template-columns: 1fr; } }
+    .goblin-btn { background: none; border: 1px solid rgba(199,168,106,.25); border-radius: 999px; color: var(--dim); font-family: inherit; font-size: 13px; padding: 8px 18px; cursor: pointer; transition: border-color .15s, color .15s; letter-spacing: .01em; }
+    .goblin-btn:hover { border-color: rgba(199,168,106,.6); color: var(--muted); }
+    .goblin-btn:focus-visible { outline: 2px solid var(--gold-hot); outline-offset: 2px; }
+    .goblin-modal { position: fixed; inset: 0; z-index: 9000; background: rgba(2,7,13,.94); display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .goblin-modal[hidden] { display: none; }
+    .goblin-inner { max-width: 560px; width: 100%; padding: 32px 36px; border: 1px solid rgba(199,168,106,.35); border-radius: 20px; background: rgba(4,8,16,.99); position: relative; }
+    .goblin-eyebrow { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); margin: 0 0 8px; }
+    .goblin-header { font-family: Georgia,serif; font-size: 22px; color: var(--gold-hot); margin: 0 0 4px; }
+    .goblin-sub { font-size: 11px; color: var(--dim); letter-spacing: .08em; margin: 0 0 20px; font-style: italic; }
+    .goblin-text p { font-size: 13px; color: var(--muted); line-height: 1.75; margin-bottom: 12px; }
+    .goblin-text p:last-child { margin-bottom: 0; }
+    .goblin-text strong { color: var(--ink); }
+    .goblin-text em { color: var(--gold-hot); font-style: italic; }
+    .goblin-close { position: absolute; top: 14px; right: 14px; background: none; border: 1px solid rgba(120,214,247,.2); border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px; cursor: pointer; font-family: inherit; }
+    .goblin-close:hover { border-color: rgba(120,214,247,.5); color: var(--ink); }
+    .goblin-close:focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 2px; }
+    @media (max-width: 500px) { .goblin-inner { padding: 24px 20px; } }
     @media print {
       body { background: #fff; color: #111; }
       .masthead, .tt-cta-row { display: none; }
@@ -69,7 +86,7 @@
         <span class="brand-copy">Blue $nake Studio</span>
       </a>
       <div class="mast-actions">
-        <a class="mast-link" href="index.html#teacher-tools">Teacher Tools Panel</a>
+        <a class="mast-link" href="index.html">Portal</a>
         <a class="mast-link" href="meta-pet.html">Meta-Pet</a>
         <a class="mast-link" href="https://teachers-secret-cheatsheet.vercel.app/" target="_blank" rel="noopener">Download Pack →</a>
       </div>
@@ -79,13 +96,14 @@
 
       <!-- HERO -->
       <section class="tt-hero">
-        <p class="eyebrow">Teacher Tools · Blue $nake Studio · Free to use</p>
-        <h1>Seven templates. Zero admin. Print and use.</h1>
-        <p class="lead">Teacher's Secret Cheatsheet is a set of printable behaviour-support tools built for stretched teachers, ESOs and parents. Practical, low-overhead and written in plain language children can actually understand.</p>
+        <p class="eyebrow">Teacher Tools · Blue $nake Studio · Free to use · No login required</p>
+        <h1>Teacher's Secret Cheatsheet.</h1>
+        <p class="lead">Seven printable behaviour-support templates for stretched teachers. Victoria-aware, zero admin, child-facing language. Print and go — no app, no account, no cost.</p>
         <div class="tt-cta-row">
-          <a class="project-link album-link" href="https://teachers-secret-cheatsheet.vercel.app/" target="_blank" rel="noopener">Download the Teacher Pack</a>
-          <a class="project-link album-link" href="meta-pet.html">Try Meta-Pet</a>
-          <a class="project-link" href="mailto:bluesssnakestudio@gmail.com">Contact the studio</a>
+          <a class="project-link album-link" href="https://teachers-secret-cheatsheet.vercel.app/" target="_blank" rel="noopener">Open the Pack →</a>
+          <a class="project-link album-link" onclick="window.print();" style="cursor:pointer;">Print / PDF</a>
+          <a class="project-link" href="https://metapet-pilot-school.vercel.app/" target="_blank" rel="noopener">Meta-Pet Pilot</a>
+          <button class="goblin-btn" type="button" id="goblinGateBtn">Optional Bureaucracy Goblin Gate</button>
         </div>
       </section>
 
@@ -193,9 +211,48 @@
       <footer class="tt-footer" role="contentinfo">
         <p>Created by <strong style="color:var(--ink);">The Moss Man</strong> / <strong style="color:var(--ink);">Blue $nake Studio</strong> — <a href="https://blkck2.com/">blkck2.com</a> — <a href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener noreferrer">@blkck2</a></p>
         <p style="font-size:11px;"><a href="mailto:bluesssnakestudio@gmail.com">bluesssnakestudio@gmail.com</a> · <a href="mailto:blkck2@gmail.com">blkck2@gmail.com</a></p>
-        <p style="margin-top:8px;"><a href="index.html#teacher-tools">Back to portal</a> · <a href="meta-pet.html">Meta-Pet</a> · <a href="proof-wall.html">B$S Proof Wall</a> · <a href="press-kit.html">Press Kit</a></p>
+        <p style="margin-top:8px;"><a href="index.html">Back to portal</a> · <a href="meta-pet.html">Meta-Pet</a> · <a href="proof-wall.html">B$S Proof Wall</a> · <a href="press-kit.html">Press Kit</a></p>
       </footer>
     </main>
   </div>
+
+  <!-- BUREAUCRACY GOBLIN GATE — Easter egg, not the main path -->
+  <div id="goblinModal" class="goblin-modal" role="dialog" aria-modal="true" aria-label="Bureaucracy Goblin's Terms of Engagement" hidden>
+    <div class="goblin-inner">
+      <button class="goblin-close" id="goblinClose" type="button" aria-label="Close goblin gate">&#x2715;</button>
+      <p class="goblin-eyebrow">Official Document · Form GBL-7C · Est. Probably Never</p>
+      <h2 class="goblin-header">Bureaucracy Goblin's Terms of Engagement</h2>
+      <p class="goblin-sub">Mandatory Reading (strictly optional)</p>
+      <div class="goblin-text">
+        <p>By proceeding to access free educational resources, you hereby acknowledge and agree to the following Non-Binding Semi-Ironic Terms of Use:</p>
+        <p><strong>§1.</strong> You are, or are adjacent to, a person who teaches children.</p>
+        <p><strong>§2.</strong> You may, at some point, physically print these materials using a device with ink in it.</p>
+        <p><strong>§3.</strong> These are practical classroom tools, not clinical instruments. The goblin is not a licensed psychologist. These materials are not professional assessments, IEPs, or legal documents.</p>
+        <p><strong>§4.</strong> <em>Behaviour is communication.</em> (This one is actually serious.)</p>
+        <p><strong>§5.</strong> You accept that no goblins were harmed in the making of this cheatsheet, and that the goblin accepts no liability for any situation involving a child, a laminator, or insufficient laminating.</p>
+        <p><strong>§6.</strong> The studio reserves the right to remain independent, weird and free to use forever, approximately.</p>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;">
+        <a class="project-link album-link" href="https://teachers-secret-cheatsheet.vercel.app/" target="_blank" rel="noopener">Accept and Open the Pack →</a>
+        <button class="project-link" type="button" id="goblinReject" style="background:none;border:1px solid rgba(120,214,247,.25);border-radius:999px;cursor:pointer;font-family:inherit;font-size:13px;color:var(--muted);">I reject all goblins</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('goblinGateBtn');
+      var modal = document.getElementById('goblinModal');
+      var close = document.getElementById('goblinClose');
+      var reject = document.getElementById('goblinReject');
+      if (!btn || !modal) return;
+      btn.addEventListener('click', function() { modal.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); });
+      function closeModal() { modal.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); btn.focus(); }
+      if (close) close.addEventListener('click', closeModal);
+      if (reject) reject.addEventListener('click', closeModal);
+      modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal(); });
+    })();
+  </script>
 </body>
 </html>
