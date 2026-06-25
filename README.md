@@ -15,7 +15,7 @@ Hands-on creator, studio builder, storyteller, skater, singer, painter, poet, so
 
 ## Main strands
 
-- **Meta-Pet** — privacy-first, local-first, child-safe digital companion and STEAM learning concept.
+- **Meta-Pet** — privacy-first, local-first, child-safe digital companion and STEM learning concept.
 - **Moss 60** — visual mathematics, symbolic number systems and digital-genome identity logic.
 - **Teacher tools** — classroom support sheets, behaviour planning resources and early-years resilience framing.
 - **Black Wing Crew** — dark chant, lyric sheet, poster and music-world system.

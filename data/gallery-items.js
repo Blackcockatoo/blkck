@@ -1381,7 +1381,7 @@ window.BSS_GALLERY_ITEMS = [
     year: '2026',
     image: '22_humour/pi-wizard-chicken.png',
     tags: ['Humour', 'chicken', 'pi', 'wizard', 'math', 'Moss 60', 'cartoon'],
-    description: 'A green witch-hat chicken holding a scroll with π (pi), cartoon style on warm parchment. Math humour + chicken theme + Moss 60 numerics. Perfect for STEAM classrooms.'
+    description: 'A green witch-hat chicken holding a scroll with π (pi), cartoon style on warm parchment. Math humour + chicken theme + Moss 60 numerics. Perfect for STEM classrooms.'
   },
   {
     id: 'humour-forward-together',

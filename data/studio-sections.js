@@ -149,13 +149,13 @@ window.BSS_STUDIO_SECTIONS = [
     title: 'Technology that gives attention back.',
     statement: 'Meta-Pet is a child-safe digital learning companion built for healthy device use, creativity and schools — without ads, trackers, social feeds, gambling loops or unnecessary data collection.',
     pageTitle: 'Meta-Pet — Privacy-First Learning · Blue $nake Studio',
-    pageDescription: 'A child-safe STEAM learning companion: no ads, no trackers, no unnecessary data collection. Puzzles, pattern recognition and healthy device use for schools and families.',
+    pageDescription: 'A child-safe STEM learning companion: no ads, no trackers, no unnecessary data collection. Puzzles, pattern recognition and healthy device use for schools and families.',
     details: [
       'No ads, no trackers, no unnecessary cloud data — privacy-first from the ground up.',
       'Healthy device use design: no social feeds, no gambling loops, no endless scroll.',
       'Classroom mode: zero-admin setup, no login required for students.',
       'Parent peace of mind: transparent, local-first, fully child-safe.',
-      'A STEAM learning companion powered by puzzles, pattern recognition and creative tasks.',
+      'A STEM learning companion powered by puzzles, pattern recognition and creative tasks.',
       'Prototype available now. Contact the studio for school pilot enquiries.'
     ],
     links: [
