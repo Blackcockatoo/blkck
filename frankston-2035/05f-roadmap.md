@@ -13,6 +13,27 @@ HORIZON 3: 2031–2035   Consolidate and replicate
 
 ---
 
+## Current State — Pre-Council Pitch (June 2026)
+
+The full project document suite is complete. The Council pitch path is built.
+
+| Done | Not yet done |
+|---|---|
+| Constitution, all strategy documents | Council meeting not yet scheduled |
+| Three pilot briefs (full and one-pager) | Pilot 01 school not yet identified |
+| Healthy Technology Charter | Library scoping not yet initiated |
+| First Nations Protocol — 9-part (internal) | Cultural safety advisor not yet engaged |
+| First Nations Protocol — 8 derivatives | Grant applications not yet lodged |
+| Visual System Pack + Screen as Doorway | SVG diagrams not yet executed |
+| Creative OS, Publication Design, Playbook v2.0 | Playbook chapters 1 and 6–10 not yet written |
+| Hero Diagram, 12-Slide Council Deck | — |
+| Proof Register, Pilot Decision Sheet | — |
+| Project Navigation Index | — |
+
+**Immediate next action: Schedule Council meeting. Bring Hero Diagram and Pilot Decision Sheet. Ask for 45 minutes.**
+
+---
+
 ## Horizon 1 — Prove the Model (2026–2027)
 
 **Goal:** Three completed pilots. Documented. Owned by the community. Ready to scale.
@@ -70,5 +91,5 @@ HORIZON 3: 2031–2035   Consolidate and replicate
 
 ---
 
-*Roadmap v1.0 — June 2026*
+*Roadmap v1.1 — June 2026*
 *Subject to revision at each Horizon review*

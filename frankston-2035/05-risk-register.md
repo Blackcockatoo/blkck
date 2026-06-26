@@ -55,6 +55,17 @@ Register is reviewed at each project milestone and updated as conditions change.
 
 ---
 
+### Pitch and Communications Risks
+
+| ID | Risk | L'hood | Impact | Priority | Mitigation | Owner |
+|---|---|---|---|---|---|---|
+| PC01 | Council materials overclaim evidence status (draft claims stated as proven) | M | H | 6 | All claims governed by Proof Register. Never state a 🔵 Draft claim as ✅ Proven in Council documents. | Creative Director |
+| PC02 | Pitch creates expectations that cannot be met at current funding level | M | M | 4 | Council Deck Slide 07 explicitly scopes the first ask to one pilot only. Do not present full ten-year roadmap as near-term commitment. | Creative Director |
+| PC03 | First Nations protocol documents shared externally before cultural safety review | L | H | 3 | 06 series marked INTERNAL. Not shared outside BSS until independent advisor review is complete. | Creative Director |
+| PC04 | Susono partnership presented as confirmed before Council sister-cities program confirms | L | H | 3 | Pilot Decision Sheet explicitly marks Susono "PROPOSED — partnership unconfirmed." Do not advance this pilot without Council confirmation. | Creative Director |
+
+---
+
 ### Open Risks (Unmitigated)
 
 | ID | Risk | Status |
@@ -64,5 +75,5 @@ Register is reviewed at each project milestone and updated as conditions change.
 
 ---
 
-*Risk Register v1.0 — June 2026*
-*Next review: Project milestone 1 (Q4 2026)*
+*Risk Register v1.1 — June 2026*
+*Next review: First Council meeting*

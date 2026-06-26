@@ -63,6 +63,16 @@ All documents below are in `/frankston-2035/` in the git repository.
 | 09 | Publication Design | Complete | Typography, colour, grid, photography, illustration. |
 | 10 | Playbook v2.0 | Complete (partial) | Chapters 2–5 written. 1, 6–10 scaffolded. Templates done. |
 
+**Council Pitch Path**
+
+| File | Document | Status | What It Is |
+|---|---|---|---|
+| CONTENTS | Project Navigation Index | Complete | Tiered reading guide — 90 sec / 5 min / 15 min / Council / next agent. Start here. |
+| HERO-DIAGRAM | Hero Diagram Specification | Complete | Full SVG spec for system map. FRANKSTON → infrastructure → programs → participants → NEW CREATORS → STRONGER FRANKSTON. SVG execution pending. |
+| COUNCIL-DECK | Council Deck Scaffold | Complete | 12-slide pitch scaffold. One message per slide, spoken lines, design references. Bring to Council. |
+| PILOT-DECISION-SHEET | Pilot Decision Sheet | Complete | 5-pilot comparison matrix. Recommended first pilot: Library Creative Pack (score 26/27). |
+| PROOF-REGISTER | Proof Register | Complete | 10 claims, evidence, BSS project evidence, status (✅/🔵/⚪). 2 proven, 6 draft, 2 proposal. |
+
 ---
 
 ### What Still Needs to Happen
@@ -74,14 +84,14 @@ All documents below are in `/frankston-2035/` in the git repository.
 4. **Team briefing** — Brief all BSS personnel on the protocol before any engagement.
 
 **Near-term:**
-5. **Council meeting** — The ask is ready (05c) and the pilot menu (03b). The meeting has not happened.
+5. **Council meeting** — All materials are now in place: Hero Diagram, 12-slide Deck, Pilot Decision Sheet, Proof Register, Pilot Menu. Schedule a 45-minute meeting. The recommended ask is the Library Creative Pack ($12–15k Council co-investment).
 6. **Pilot 01 school identified** — No school has been approached yet.
-7. **Library scoping** — Pilot 02 needs a formal conversation with Frankston Library Service.
-8. **Grant applications** — Creative Victoria and Australia Council applications not yet lodged.
+7. **Library scoping** — Pilot 02 (Library Creative Pack) needs a formal conversation with Frankston Library Service. This is the recommended first pilot.
+8. **Grant applications** — Creative Victoria and Australia Council applications not yet lodged. Do not lodge until Council partnership statement is in hand.
 
 **Ongoing:**
 9. **Playbook chapters** — Chapters 1, 6–10 are scaffolded. Each chapter is written after the relevant pilot completes.
-10. **SVG diagrams** — Visual System Pack specs (07b) and protocol diagrams (06g) need a designer to execute them.
+10. **SVG diagrams** — Hero Diagram (HERO-DIAGRAM.md), Visual System Pack specs (07b), and protocol diagrams (06g) all have full specifications. Need a designer to execute as SVG files.
 
 ---
 
@@ -107,4 +117,4 @@ Keep that.
 
 ---
 
-*Handoff v2.0 — June 2026*
+*Handoff v3.0 — June 2026*
