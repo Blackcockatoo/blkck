@@ -11,11 +11,11 @@ window.BSS_STUDIO_SECTIONS = [
     startHere: true,
     details: [],
     links: [
-      { label: 'Try Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link' },
-      { label: 'Download Teacher Pack', href: 'https://teachers-secret-cheatsheet.vercel.app/', className: 'album-link' },
-      { label: 'Enter Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link' },
-      { label: 'Gallery Rooms', href: '#visual-worlds' },
-      { label: 'B$S Proof Wall', href: 'proof-wall.html' },
+      { label: 'Try Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link', sub: 'Browser demo. No login.' },
+      { label: 'Download Teacher Pack', href: 'https://teachers-secret-cheatsheet.vercel.app/', className: 'album-link', sub: 'Seven printable classroom templates.' },
+      { label: 'Enter Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link', sub: 'Stream the Neon Venom LP.' },
+      { label: 'Gallery Rooms', href: '#visual-worlds', sub: 'Ten rooms of art and myth.' },
+      { label: 'B$S Proof Wall', href: 'proof-wall.html', sub: 'Everything already built.' },
       { label: 'YouTube @blkck2', href: 'https://www.youtube.com/@blkck2' },
       { label: 'Email B$S', href: 'mailto:bluesssnakestudio@gmail.com' }
     ],
@@ -44,6 +44,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'visual-worlds',
+    status: 'Live',
     label: 'Gallery Rooms',
     eyebrow: 'Selected work · Visual archive',
     title: 'Enter the visual worlds.',
@@ -64,6 +65,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'black-wing-crew',
+    status: 'Live',
     label: 'Black Wing Crew',
     eyebrow: 'Music and moving image · Neon Venom',
     title: 'Sound with a visual identity.',
@@ -85,6 +87,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'old-vic-state',
+    status: 'Live',
     label: 'Old Vic State',
     eyebrow: 'Civic gothic · recursive song cycle · Victoria',
     title: 'The old state dreams in circles.',
@@ -106,6 +109,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'frankston-fuji',
+    status: 'Live',
     label: 'Frankston → Fuji',
     eyebrow: 'Sister-city song · learning bridge',
     title: 'Two shores. One song.',
@@ -125,6 +129,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'black-omen-waahn',
+    status: 'Research-in-progress',
     label: 'Black Omen / Waahn',
     eyebrow: 'Respectful research · language journey',
     title: 'Ask before the omen speaks.',
@@ -144,6 +149,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'meta-pet',
+    status: 'Prototype',
     label: 'Meta-Pet',
     eyebrow: 'Privacy-first learning · In development',
     title: 'Technology that gives attention back.',
@@ -169,6 +175,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'moss60',
+    status: 'Research-in-progress',
     label: 'Moss 60',
     eyebrow: 'Visual mathematics · 108 · 360',
     title: 'A number system you can see and feel.',
@@ -193,6 +200,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'teacher-tools',
+    status: 'Live',
     label: 'Teacher Tools',
     eyebrow: 'Classroom proof · behaviour support',
     title: 'Useful in a real classroom.',
@@ -217,6 +225,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'print-street-pack',
+    status: 'Live',
     label: 'Print Street Pack',
     eyebrow: 'Poster arsenal · QR drops · Officeworks-ready',
     title: 'Print the omen.',
@@ -238,6 +247,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'games',
+    status: 'Prototype',
     label: 'Games',
     eyebrow: 'Play · Explore · Interactive',
     title: 'Games from the studio.',

@@ -2,3 +2,7 @@
 https://www.blkck2.com/* https://blkck2.com/:splat 301!
 http://www.blkck2.com/* https://blkck2.com/:splat 301!
 http://blkck2.com/* https://blkck2.com/:splat 301!
+
+# Professional mode — clean lore-free route for schools, councils and partners
+/schools /gov.html 301
+/professional /gov.html 301

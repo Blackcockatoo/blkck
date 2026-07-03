@@ -20,6 +20,17 @@
   status = 301
   force  = true
 
+# Professional mode — clean lore-free route for schools, councils and partners
+[[redirects]]
+  from   = "/schools"
+  to     = "/gov.html"
+  status = 301
+
+[[redirects]]
+  from   = "/professional"
+  to     = "/gov.html"
+  status = 301
+
 # Security headers
 [[headers]]
   for = "/*"
