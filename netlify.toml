@@ -31,6 +31,9 @@
   to     = "/gov.html"
   status = 301
 
+# NOTE: friendly aliases and extensionless page URLs live in the _redirects
+# file, which Netlify processes ahead of these rules. Add new aliases there.
+
 # Security headers
 [[headers]]
   for = "/*"
