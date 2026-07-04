@@ -238,7 +238,7 @@ window.BSS_GALLERY_ITEMS = [
     type: 'Video',
     year: '2026',
     mediaType: 'video',
-    video: '10_video/black_wing_video_source_01.mp4',
+    video: 'black_wing_video_source_01.mp4',
     tags: ['video', 'Black Wing Crew', 'source', 'motion', 'process'],
     description: 'Raw Black Wing video source material for music visuals, motion edits and portfolio process reference.'
   },
@@ -250,7 +250,7 @@ window.BSS_GALLERY_ITEMS = [
     type: 'Video',
     year: '2026',
     mediaType: 'video',
-    video: '10_video/video_source_02.mp4',
+    video: 'video_source_02.mp4',
     tags: ['video', 'source', 'process', 'motion'],
     description: 'Additional raw video source for building reels, background loops, gallery edits and music-world visuals.'
   },
@@ -262,7 +262,7 @@ window.BSS_GALLERY_ITEMS = [
     type: 'Video',
     year: '2026',
     mediaType: 'video',
-    video: '10_video/video_source_03.mp4',
+    video: 'video_source_03.mp4',
     tags: ['video', 'source', 'process', 'motion'],
     description: 'Additional video material for process display, Black Wing edits and future promotional reels.'
   },
@@ -274,7 +274,7 @@ window.BSS_GALLERY_ITEMS = [
     type: 'Video',
     year: '2026',
     mediaType: 'video',
-    video: '10_video/video_source_04.mp4',
+    video: 'video_source_04.mp4',
     tags: ['video', 'source', 'process', 'motion'],
     description: 'Additional video source for the Process / Sketchbook section and future Black Wing Crew visuals.'
   }
