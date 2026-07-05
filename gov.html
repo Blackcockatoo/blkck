@@ -37,6 +37,9 @@
     .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border: 2px solid var(--pink); border-radius: 8px; color: var(--cyan); transform: rotate(30deg); flex-shrink: 0; box-shadow: 0 0 18px rgba(255,0,110,.28); }
     .mast-links { display: flex; flex-wrap: wrap; gap: 14px; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
     .mast-links a { color: var(--cyan); }
+    .mode-toggle { display: inline-flex; align-items: center; padding: 3px; border: 1px solid rgba(120,214,247,.3); border-radius: 999px; background: rgba(2,7,13,.5); }
+    .mode-toggle .mode-opt { display: inline-flex; align-items: center; min-height: 30px; padding: 4px 14px; border-radius: 999px; text-decoration: none; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
+    .mode-toggle .mode-opt.is-active { background: rgba(231,199,103,.16); color: var(--gold, #e7c767); box-shadow: inset 0 0 0 1px rgba(231,199,103,.4); }
 
     /* Hero */
     .hero { padding: clamp(44px, 7vw, 88px) 0 40px; border-bottom: 1px solid var(--line); }
@@ -113,6 +116,10 @@
         <span class="brand-mark" aria-hidden="true">B$S</span>
         <span>Blue $nake Studio</span>
       </a>
+      <span class="mode-toggle" role="group" aria-label="Site mode — Studio shows the full world, Professional shows the lore-free pathway">
+        <a class="mode-opt" href="index.html" title="Full B$S world: lore, music, art">Studio</a>
+        <a class="mode-opt is-active" href="gov.html" aria-current="page" title="Lore-free: schools, councils, privacy, workshops">Professional</a>
+      </span>
       <nav class="mast-links" aria-label="Site navigation">
         <a href="index.html">Moss Tree</a>
         <a href="proof-wall.html">Proof Wall</a>

@@ -1040,12 +1040,15 @@
     const sound = document.getElementById('intro-sound');
     if (!intro || !video || !enter || !sound) return;
 
-    video.muted = true;
-    video.volume = 1;
-    sound.textContent = 'Sound off';
-    sound.setAttribute('aria-pressed', 'false');
+    let seenIntro = false;
+    try { seenIntro = localStorage.getItem('bss-intro-seen') === '1'; } catch (e) { /* private mode */ }
+    const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    let closed = false;
     const closeIntro = () => {
+      if (closed) return;
+      closed = true;
+      try { localStorage.setItem('bss-intro-seen', '1'); } catch (e) { /* private mode */ }
       intro.classList.add('is-leaving');
       window.setTimeout(() => {
         intro.hidden = true;
@@ -1053,33 +1056,37 @@
       }, 650);
     };
 
-    const startFilm = () => {
-      video.play().catch(() => {
-        // Autoplay fully blocked — show play button as fallback
-        sound.classList.add('needs-start');
-        sound.textContent = 'Play';
-        sound.setAttribute('aria-pressed', 'false');
-      });
-    };
+    // Returning visitors and reduced-motion users go straight to the portal.
+    if (seenIntro || reducedMotion) {
+      intro.hidden = true;
+      video.removeAttribute('autoplay');
+      video.pause();
+      return;
+    }
+
+    video.muted = true;
+    video.volume = 1;
+    sound.textContent = 'Sound on';
+    sound.setAttribute('aria-pressed', 'false');
 
     enter.addEventListener('click', closeIntro);
     video.addEventListener('ended', closeIntro);
+    // If the film can't load or never starts, never hold the door shut.
+    video.addEventListener('error', closeIntro);
+    const source = video.querySelector('source');
+    if (source) source.addEventListener('error', closeIntro);
+    window.setTimeout(() => {
+      if (!closed && (video.readyState < 2 || video.paused)) closeIntro();
+    }, 4000);
+
     sound.addEventListener('click', () => {
-      if (sound.classList.contains('needs-start')) {
-        sound.classList.remove('needs-start');
-        video.muted = true;
-        video.currentTime = 0;
-        sound.textContent = 'Sound off';
-        sound.setAttribute('aria-pressed', 'false');
-        video.play().catch(() => {});
-        return;
-      }
       video.muted = !video.muted;
-      sound.textContent = video.muted ? 'Sound off' : 'Sound on';
+      sound.textContent = video.muted ? 'Sound on' : 'Sound off';
       sound.setAttribute('aria-pressed', String(!video.muted));
       if (video.paused) video.play().catch(() => {});
     });
-    startFilm();
+
+    video.play().catch(() => closeIntro());
   }
   buildTree();
   buildPanels();

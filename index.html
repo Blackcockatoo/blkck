@@ -126,6 +126,7 @@
   </script>
 </head>
 <body>
+  <script>try { if (localStorage.getItem('bss-intro-seen') === '1' || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) document.documentElement.classList.add('intro-seen'); } catch (e) {}</script>
   <div class="intro-film" id="intro-film" role="dialog" aria-modal="true" aria-label="Welcome to Blue Snake Studio">
     <video id="intro-video" autoplay playsinline muted preload="auto">
       <source src="YTShort_20June2026_13_12_14.mp4" type="video/mp4" />
@@ -339,6 +340,10 @@
       </a>
       <div class="mast-actions">
         <span class="counter" aria-hidden="true"><span id="current-count">01</span> / <span id="total-count">10</span></span>
+        <span class="mode-toggle" role="group" aria-label="Site mode — Studio shows the full world, Professional shows the lore-free pathway">
+          <a class="mode-opt is-active" href="index.html" aria-current="page" title="Full B$S world: lore, music, art">Studio</a>
+          <a class="mode-opt" href="gov.html" title="Lore-free: schools, councils, privacy, workshops">Professional</a>
+        </span>
         <a class="mast-link" href="start.html">Start here</a>
         <a class="mast-link" href="proof-wall.html">Proof Wall</a>
         <a class="mast-link" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">Music</a>

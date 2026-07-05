@@ -2505,3 +2505,40 @@ a.project-link.game-link[target="_blank"]::before {
 .start-card-note { margin: 14px 0 0; font-size: 13px; color: var(--muted); }
 .start-card-note a { color: var(--gold-hot); text-decoration: none; }
 .start-card-note a:hover { text-decoration: underline; }
+
+/* ── Studio / Professional mode toggle ────────────────────── */
+.mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  border: 1px solid rgba(120, 214, 247, .28);
+  border-radius: 999px;
+  background: rgba(2, 7, 13, .6);
+}
+.mode-toggle .mode-opt {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color .15s, background .15s;
+}
+.mode-toggle .mode-opt:hover { color: var(--gold-hot); }
+.mode-toggle .mode-opt.is-active {
+  background: rgba(199, 168, 106, .18);
+  color: var(--gold-hot);
+  box-shadow: inset 0 0 0 1px rgba(199, 168, 106, .4);
+}
+@media (max-width: 760px) {
+  .mode-toggle .mode-opt { padding: 4px 10px; font-size: 9px; }
+}
+
+/* Returning visitors skip the entrance film entirely (set in a head script before first paint). */
+.intro-seen .intro-film { display: none !important; }
