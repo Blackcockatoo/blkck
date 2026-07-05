@@ -58,7 +58,7 @@
     @media (max-width: 640px) { .pw-grid { grid-template-columns: 1fr; } .pw-shell { padding-top: 96px; } .pw-filter { gap: 5px; } .pw-filter-btn { font-size: 9px; padding: 4px 10px; } }
   </style>
 </head>
-<body>
+<body class="has-bottom-nav">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="shell">
     <header class="masthead">
@@ -75,9 +75,19 @@
 
     <main class="pw-shell" id="main">
       <section class="pw-hero">
-        <p class="eyebrow">The Moss Man / Blue $nake Studio · Frankston, Australia · Updated June 2026</p>
+        <p class="eyebrow">The Moss Man / Blue $nake Studio · Frankston, Australia · Updated July 2026</p>
         <h1>B$S Proof Wall.</h1>
         <p>Everything here works or is becoming real. Live sites, apps, music, downloads, gallery rooms, teacher tools and theory documents — all linked directly. Follow anything that interests you.</p>
+        <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;" aria-label="Status tag legend">
+          <span style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-right:4px;">Status tags:</span>
+          <span class="pw-badge live">Live</span>
+          <span class="pw-badge prototype">Prototype</span>
+          <span class="pw-badge research">Research / Published</span>
+          <span class="pw-badge download">Printable</span>
+          <span class="pw-badge streaming">Music</span>
+          <span class="pw-badge" style="background:rgba(0,245,100,.1);color:#00f564;">School-safe</span>
+          <span class="pw-badge" style="background:rgba(255,0,110,.1);color:#ff006e;">Lore-heavy</span>
+        </div>
         <p style="margin-top:14px;font-size:14px;color:var(--dim);max-width:640px;line-height:1.7;">
           <strong style="color:var(--muted);">For press and collaborators:</strong> Start with <a href="press-kit.html" style="color:var(--gold-hot);">the Press Kit</a> for bios, boilerplate and contact. The <a href="field-guide.html" style="color:var(--gold-hot);">Field Guide</a> explains the full B$S universe.<br />
           <strong style="color:var(--muted);">For schools and councils:</strong> See <a href="gov.html" style="color:var(--gold-hot);">the Schools / Council pathway</a> for teacher tools, Meta-Pet and outreach context.<br />
@@ -102,6 +112,48 @@
           <p>Pages to share with anyone who needs to understand Blue $nake Studio quickly. Each one is live, linkable and honest about what it is.</p>
         </div>
         <div class="pw-grid">
+          <a class="pw-card" href="start-here.html">
+            <span class="pw-badge live">Live</span><span class="pw-audience">New visitors</span>
+            <strong>Start Here in 60 Seconds</strong>
+            <p>One paragraph, four doors, three strongest projects, one contact button. The page to send to councils, schools, galleries and curious strangers.</p>
+            <span class="pw-card-cta">Open →</span>
+          </a>
+          <a class="pw-card" href="pathfinder.html">
+            <span class="pw-badge live">Live</span><span class="pw-audience">New visitors</span>
+            <strong>B$S Pathfinder</strong>
+            <p>Four quick questions that route you to the right part of the world — teacher, artist, music fan, council, explorer or lore goblin.</p>
+            <span class="pw-card-cta">Find your door →</span>
+          </a>
+          <a class="pw-card" href="world-map.html">
+            <span class="pw-badge live">Live</span><span class="pw-audience">Everyone · Lore</span>
+            <strong>B$S World Map</strong>
+            <p>Every project as a clickable node with a plain-English explanation and a direct link. The lore map that doubles as navigation.</p>
+            <span class="pw-card-cta">Open the map →</span>
+          </a>
+          <a class="pw-card" href="workshops.html">
+            <span class="pw-badge live">Booking open</span><span class="pw-audience">Schools · Councils</span>
+            <strong>Workshops &amp; Bookings</strong>
+            <p>Seven workshop formats with ages, durations, materials, tech needs and honest from-prices — plus the full offer ladder from free to funded.</p>
+            <span class="pw-card-cta">Book →</span>
+          </a>
+          <a class="pw-card" href="safety.html">
+            <span class="pw-badge" style="background:rgba(0,245,100,.1);color:#00f564;">School-safe</span><span class="pw-audience">Schools · Parents · ICT</span>
+            <strong>Safety &amp; Boundaries</strong>
+            <p>What B$S is not (therapy, legal advice, data collection, social platform) and what it is — stated plainly for schools and parents.</p>
+            <span class="pw-card-cta">Read →</span>
+          </a>
+          <a class="pw-card" href="case-studies.html">
+            <span class="pw-badge research">Published</span><span class="pw-audience">Councils · Press</span>
+            <strong>Micro Case Studies</strong>
+            <p>Problem, solution, use and safety for the Teacher Pack, Meta-Pet and Black Wing Crew — three sentences at a time, no inflated claims.</p>
+            <span class="pw-card-cta">Read →</span>
+          </a>
+          <a class="pw-card" href="living-index.html">
+            <span class="pw-badge live">Live</span><span class="pw-audience">Everyone · Lore</span>
+            <strong>The Living Index</strong>
+            <p>Every name in the B$S universe, A to Z — plain meaning, lore meaning, audience, status and a direct link for each.</p>
+            <span class="pw-card-cta">Browse A–Z →</span>
+          </a>
           <a class="pw-card" href="gov.html">
             <span class="pw-badge live">Live</span><span class="pw-audience">Councils · Schools</span>
             <strong>Council / School / Community Pathway</strong>
@@ -161,11 +213,11 @@
             <p>Seven printable behaviour-support templates for stretched teachers. Victoria-aware, zero admin, free to use. No login required.</p>
             <span class="pw-card-cta">Download free →</span>
           </a>
-          <a class="pw-card" href="https://metapet-pilot-school.vercel.app/" target="_blank" rel="noopener">
-            <span class="pw-badge live">Live</span><span class="pw-audience">Schools</span>
-            <strong>Meta-Pet Pilot School</strong>
-            <p>Classroom-focused landing page for school pilot enquiries. For teachers, principals and education officers considering a pilot.</p>
-            <span class="pw-card-cta">Enquire →</span>
+          <a class="pw-card" href="https://www.bluesnakestudios.com/schools" target="_blank" rel="noopener">
+            <span class="pw-badge live">Live</span><span class="pw-audience">Schools · Send to schools</span>
+            <strong>Meta-Pet School Pilot Pack</strong>
+            <p>The full pilot offer: lesson cards, teacher checklist, parent/carer notice, ICT privacy summary and governance docs. For principals, teachers and education officers.</p>
+            <span class="pw-card-cta">Review the pack →</span>
           </a>
           <a class="pw-card" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">
             <span class="pw-badge live">Live</span><span class="pw-audience">Music</span>
@@ -295,6 +347,36 @@
             <strong>Street Print Pack</strong>
             <p>Seven A4-ready hero posters — Neon Venom cyberpunk, HOPE poster, Frankston Courts, B$S seal, winged crest and more. Officeworks-ready.</p>
             <span class="pw-card-cta">Download →</span>
+          </a>
+          <a class="pw-card" href="downloads/onepager-school.html">
+            <span class="pw-badge download">Printable</span><span class="pw-audience">Send to schools</span>
+            <strong>School / Council One-Pager</strong>
+            <p>One clean printable page: what the studio offers schools, libraries and councils, with pricing and the pilot path. Print or attach to an email.</p>
+            <span class="pw-card-cta">Open &amp; print →</span>
+          </a>
+          <a class="pw-card" href="downloads/onepager-arts.html">
+            <span class="pw-badge download">Printable</span><span class="pw-audience">Send to galleries</span>
+            <strong>Gallery / Arts One-Pager</strong>
+            <p>One clean printable page for curators and arts organisations — the work, the rooms, commissions and contact.</p>
+            <span class="pw-card-cta">Open &amp; print →</span>
+          </a>
+          <a class="pw-card" href="downloads/onepager-music.html">
+            <span class="pw-badge download">Printable</span><span class="pw-audience">Music · Venues</span>
+            <strong>Music / Collaboration One-Pager</strong>
+            <p>Black Wing Crew, Neon Venom and the collaboration offer on one printable page for venues and programmers.</p>
+            <span class="pw-card-cta">Open &amp; print →</span>
+          </a>
+          <a class="pw-card" href="downloads/onepager-metapet-privacy.html">
+            <span class="pw-badge download">Printable</span><span class="pw-audience">Send to schools · ICT</span>
+            <strong>Meta-Pet Privacy One-Pager</strong>
+            <p>The privacy answers schools ask, on one page: what's stored, what's never collected, and how to delete local data.</p>
+            <span class="pw-card-cta">Open &amp; print →</span>
+          </a>
+          <a class="pw-card" href="downloads/onepager-press.html">
+            <span class="pw-badge download">Printable</span><span class="pw-audience">Press · Media</span>
+            <strong>B$S Press One-Pager</strong>
+            <p>Boilerplate, key projects, fast facts and contact — the whole studio on one printable page.</p>
+            <span class="pw-card-cta">Open &amp; print →</span>
           </a>
         </div>
       </section>
@@ -444,5 +526,11 @@
       </footer>
     </main>
   </div>
+  <nav class="bss-bottom-nav" aria-label="Quick navigation">
+    <a href="index.html"><span class="bn-ico" aria-hidden="true">◉</span>Portal</a>
+    <a href="start-here.html"><span class="bn-ico" aria-hidden="true">✦</span>Start</a>
+    <a href="world-map.html"><span class="bn-ico" aria-hidden="true">◈</span>Map</a>
+    <a href="mailto:bluesssnakestudio@gmail.com"><span class="bn-ico" aria-hidden="true">✉</span>Contact</a>
+  </nav>
 </body>
 </html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The B$S Living Index — A to Z · Blue $nake Studio</title>
+  <meta name="description" content="Every name in the Blue $nake Studio universe, alphabetised: plain meaning, lore meaning, audience, status and a direct link. Auralia to Workshops." />
+  <link rel="canonical" href="https://blkck2.com/living-index.html" />
+  <meta property="og:title" content="The B$S Living Index — A to Z" />
+  <meta property="og:description" content="Every name in the B$S universe: plain meaning, lore meaning, link, audience and status." />
+  <meta property="og:image" content="https://blkck2.com/01_auralia/auralia_cosmic_poster_v1.png" />
+  <meta property="og:url" content="https://blkck2.com/living-index.html" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#04101d" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { overflow: auto; }
+    .li-shell { width: min(900px, calc(100% - 32px)); margin: 0 auto; padding: 116px 0 96px; }
+    .li-hero { margin-bottom: 34px; }
+    .li-hero h1 { margin: 12px 0 14px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(38px, 7vw, 72px); line-height: .9; letter-spacing: -.03em; color: var(--ink); }
+    .li-hero p { margin: 0; color: var(--muted); font-size: 15px; max-width: 600px; line-height: 1.65; }
+    .li-search { margin: 24px 0 8px; }
+    .li-search input { width: 100%; max-width: 420px; padding: 13px 18px; border: 1px solid rgba(120,214,247,.25); border-radius: 999px; background: rgba(2,7,13,.6); color: var(--ink); font-size: 15px; font-family: inherit; }
+    .li-search input:focus { outline: none; border-color: rgba(199,168,106,.6); }
+    .li-letter { margin: 34px 0 12px; font-family: Georgia, serif; font-size: 30px; color: var(--gold-hot); border-bottom: 1px solid rgba(120,214,247,.12); padding-bottom: 6px; }
+    .li-entry { padding: 18px 0; border-bottom: 1px solid rgba(120,214,247,.08); }
+    .li-entry h3 { margin: 0 0 6px; font-size: 18px; font-family: Georgia, serif; font-weight: 400; color: var(--ink); }
+    .li-entry h3 a { color: inherit; text-decoration: none; }
+    .li-entry h3 a:hover { color: var(--gold-hot); }
+    .li-entry .plain { margin: 0 0 6px; font-size: 13px; color: var(--muted); line-height: 1.65; }
+    .li-entry .lore { margin: 0 0 8px; font-size: 12px; color: var(--dim); font-style: italic; line-height: 1.6; }
+    .li-entry .meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .li-tag { font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; background: rgba(120,214,247,.1); color: var(--neon-cyan); }
+    .li-tag.status { background: rgba(0,245,100,.1); color: #00f564; }
+    .li-tag.lorey { background: rgba(255,0,110,.1); color: #ff006e; }
+    .li-entry .open-link { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-hot); text-decoration: none; margin-left: auto; }
+    .li-footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(120,214,247,.12); font-size: 12px; color: var(--dim); line-height: 1.9; text-align: center; }
+    .li-footer a { color: var(--muted); text-decoration: none; }
+    .li-footer a:hover { color: var(--gold-hot); }
+    @media (max-width: 540px) { .li-shell { padding-top: 96px; } }
+  </style>
+</head>
+<body class="has-bottom-nav">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="index.html" aria-label="Blue Snake Studios — Moss Tree">
+        <span class="brand-mark" aria-hidden="true">B$S</span>
+        <span class="brand-copy">The Living Index</span>
+      </a>
+      <div class="mast-actions">
+        <a class="mast-link" href="index.html">Portal</a>
+        <a class="mast-link" href="world-map.html">World Map</a>
+        <a class="mast-link" href="field-guide.html">Field Guide</a>
+      </div>
+    </header>
+
+    <main class="li-shell" id="main">
+      <section class="li-hero">
+        <p class="eyebrow">The B$S universe, A to Z · Updated July 2026</p>
+        <h1>The Living Index.</h1>
+        <p>Every name in the Blue $nake Studio world, alphabetised. Each entry gives the plain meaning, the lore meaning, who it’s for, its current status, and a direct link. This index grows as the world grows.</p>
+        <div class="li-search">
+          <input type="search" id="li-filter" placeholder="Filter the index… (e.g. moss, teacher, venom)" aria-label="Filter index entries" />
+        </div>
+      </section>
+
+      <div id="li-list"></div>
+
+      <footer class="li-footer" role="contentinfo">
+        <p><a href="world-map.html">World Map</a> · <a href="field-guide.html">Field Guide</a> · <a href="proof-wall.html">Proof Wall</a> · <a href="start-here.html">Start Here</a> · <a href="index.html">Back to portal</a></p>
+        <p>Blue $nake Studio · Frankston, Australia · <a href="mailto:bluesssnakestudio@gmail.com">bluesssnakestudio@gmail.com</a></p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      var ENTRIES = [
+        ["Auralia", "The studio's central character and art series — eleven original artworks sold as prints and wallpapers.", "The dream, the omen, the sign.", "Art lovers · Galleries", "Prints available", false, "store.html"],
+        ["Black Omen", "The darker research and mythology thread that sits alongside Waahn.", "The crow-shadow over the map.", "Deep lore · Research", "Research", true, "https://waahn.netlify.app/"],
+        ["Black Wing Crew", "The studio's music project: songs, chants, lyric posters and a full visual identity.", "The crew. Feathered, loud, loyal.", "Music fans · Collaborators", "Active", false, "https://blackwingcrew.netlify.app/"],
+        ["Blue $nake Studio", "The studio everything ships under — art, music, child-safe learning tools and symbolic systems, from Frankston.", "The snake that connects every project.", "Everyone", "Active studio", false, "start-here.html"],
+        ["Case Studies", "Micro case studies: the problem each project solves, in three sentences each.", "Receipts from the field.", "Councils · Schools · Press", "Live", false, "case-studies.html"],
+        ["Colouring Pages", "Twelve free print-and-colour pages featuring Auralia and studio characters.", "The world, waiting for your colours.", "Schools · Families", "Free download", false, "print.html"],
+        ["Digital DNA", "The Moss 60 genome explorer — base-60 symbolic identity and visual DNA generation.", "Every creature carries the wheel inside it.", "Education · Art · Systems", "Prototype", true, "https://www.bluesnakestudios.com/digital-dna"],
+        ["Field Guide", "The long-form explainer of the whole B$S universe.", "The naturalist's handbook to an invented ecosystem.", "Press · Deep lore", "Published", true, "field-guide.html"],
+        ["Frankston → Fuji", "A bilingual sister-city song project connecting Frankston and Japan.", "Two mountains, one song.", "Community · Schools", "Live", false, "https://frankston2fuji.netlify.app/"],
+        ["Magic Cube", "A playable 5×5 word cube — part puzzle, part artwork, in the browser.", "The first true B$S game-art relic.", "Curious · Games · Art", "Playable prototype", false, "magic-cube.html"],
+        ["Meta-Pet", "A privacy-first digital learning companion. No ads, no trackers, no student accounts. Browser-first and local-first.", "A creature raised by care instead of dopamine.", "Schools · Parents", "Live prototype + pilot pack", false, "https://www.bluesnakestudios.com/"],
+        ["Moss 60", "A visual number system built on base-60 — sixty positions, geometric glyphs, an interactive app.", "The engine under everything.", "Theory · Educators · Lore", "Live app", true, "https://www.bluesnakestudios.com/app/moss60"],
+        ["The Moss Man", "The artist behind everything here. One person, Frankston, Australia.", "The creator-figure. Where the patterns come from.", "Everyone", "The person", false, "press-kit.html"],
+        ["Neon Venom", "The 2026 Black Wing Crew album, BSS-001 — streaming with posters and QR street drops.", "The venom is the colour.", "Music fans", "Streaming", false, "https://blackwingcrew.netlify.app/"],
+        ["Oracle Warden", "A playable glyph engine built on Moss 60 pattern logic.", "The warden guards the wheel.", "Lore · Systems", "Prototype", true, "apps/moss60-oracle-warden.html"],
+        ["Pathfinder", "A four-question quiz that routes you to the right part of the site.", "The compass at the crossroads.", "New visitors", "Live", false, "pathfinder.html"],
+        ["Press Kit", "Bios, boilerplate, project table and contact details for media and collaborators.", "The official scroll of introductions.", "Press · Galleries", "Live", false, "press-kit.html"],
+        ["Print Vault", "Free printable posters, colouring pages, glyph sheets and classroom tools.", "The armoury of physical artefacts.", "Everyone", "Live · Free", false, "print.html"],
+        ["Proof Wall", "Everything the studio has built, linked in one place with status tags.", "The wall where claims go to become receipts.", "Councils · Press · Curious", "Live", false, "proof-wall.html"],
+        ["QR Portal", "The street drop system: seven QR colour variants, print guide and campaign ideas.", "Doors hidden in plain sight on lamp posts.", "Street · Community", "Live", false, "qr-portal.html"],
+        ["Safety & Boundaries", "The plain page on what B$S is and is not — for schools and parents.", "The fence that makes the garden safe.", "Schools · Parents · ICT", "Live", false, "safety.html"],
+        ["School Pilot Pack", "Governance documents, lesson cards, checklists and privacy summaries for a Meta-Pet classroom pilot.", "Treaty documents for the school gate.", "Principals · ICT", "Ready", false, "https://www.bluesnakestudios.com/schools"],
+        ["Semantic Sovereignty", "A published doctrine on language, framing and narrative defence (OSS-734G).", "The war for meaning, mapped.", "Deep lore · Researchers", "Published", true, "documents/oss-734g-known-unknowns-register.html"],
+        ["Strongman Tracker", "The studio's own readiness tracker: revenue lines, Play Store checks, child-safety items.", "The studio lifting weights in public.", "Studio · Curious", "Planning tool", false, "strongman-tracker.html"],
+        ["Teacher Pack", "The Teacher's Secret Cheatsheet — seven free printable behaviour-support templates.", "Field equipment for the adults holding the line.", "Teachers · ESOs", "Live · Free", false, "https://teachers-secret-cheatsheet.vercel.app/"],
+        ["Waahn", "A respectful research pathway into Bunurong-Boonwurrung language and Country. A living map, not an archive.", "The crow speaks first.", "Community · Research", "Live", false, "https://waahn.netlify.app/"],
+        ["Word Cube", "The original six-face 3D word cube — drag to spin, free in the browser.", "Six faces, one voice.", "Everyone", "Interactive", false, "apps/bs-word-cube.html"],
+        ["Workshops", "Seven bookable workshop formats for schools, libraries and councils, priced from $300.", "Where the world steps off the screen.", "Schools · Councils", "Booking open", false, "workshops.html"],
+        ["World Map", "Every project as a clickable node with plain-English explanations.", "The atlas of the whole territory.", "New visitors · Lore", "Live", false, "world-map.html"]
+      ];
+
+      function sortKey(t) { return t.replace(/^The\s+/i, "").toUpperCase(); }
+      ENTRIES.sort(function (a, b) { return sortKey(a[0]) < sortKey(b[0]) ? -1 : 1; });
+
+      var list = document.getElementById("li-list");
+      var frag = document.createDocumentFragment();
+      var currentLetter = "";
+
+      ENTRIES.forEach(function (e) {
+        var letter = sortKey(e[0]).charAt(0);
+        if (letter !== currentLetter) {
+          currentLetter = letter;
+          var h = document.createElement("h2");
+          h.className = "li-letter";
+          h.textContent = letter;
+          h.dataset.letter = letter;
+          frag.appendChild(h);
+        }
+        var div = document.createElement("div");
+        div.className = "li-entry";
+        div.dataset.text = (e[0] + " " + e[1] + " " + e[2] + " " + e[3]).toLowerCase();
+        var external = /^https?:/.test(e[6]);
+        div.innerHTML =
+          '<h3><a href="' + e[6] + '"' + (external ? ' target="_blank" rel="noopener"' : "") + ">" + e[0] + "</a></h3>" +
+          '<p class="plain">' + e[1] + "</p>" +
+          '<p class="lore">Lore: ' + e[2] + "</p>" +
+          '<div class="meta"><span class="li-tag status">' + e[4] + '</span><span class="li-tag">' + e[3] + "</span>" +
+          (e[5] ? '<span class="li-tag lorey">Lore-heavy</span>' : "") +
+          '<a class="open-link" href="' + e[6] + '"' + (external ? ' target="_blank" rel="noopener"' : "") + ">Open →</a></div>";
+        frag.appendChild(div);
+      });
+      list.appendChild(frag);
+
+      document.getElementById("li-filter").addEventListener("input", function () {
+        var q = this.value.trim().toLowerCase();
+        var entries = list.querySelectorAll(".li-entry");
+        entries.forEach(function (el) {
+          el.style.display = !q || el.dataset.text.indexOf(q) !== -1 ? "" : "none";
+        });
+        list.querySelectorAll(".li-letter").forEach(function (letterEl) {
+          var sib = letterEl.nextElementSibling, any = false;
+          while (sib && !sib.classList.contains("li-letter")) {
+            if (sib.classList.contains("li-entry") && sib.style.display !== "none") { any = true; break; }
+            sib = sib.nextElementSibling;
+          }
+          letterEl.style.display = any ? "" : "none";
+        });
+      });
+    })();
+  </script>
+  <nav class="bss-bottom-nav" aria-label="Quick navigation">
+    <a href="index.html"><span class="bn-ico" aria-hidden="true">◉</span>Portal</a>
+    <a href="start-here.html"><span class="bn-ico" aria-hidden="true">✦</span>Start</a>
+    <a href="world-map.html"><span class="bn-ico" aria-hidden="true">◈</span>Map</a>
+    <a href="mailto:bluesssnakestudio@gmail.com"><span class="bn-ico" aria-hidden="true">✉</span>Contact</a>
+  </nav>
+</body>
+</html>

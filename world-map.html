@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>B$S World Map — Every Project, Explained · Blue $nake Studio</title>
+  <meta name="description" content="The Blue $nake Studio world map: Meta-Pet, Moss 60, Black Wing Crew, Auralia, Teacher Pack, Frankston → Fuji, Waahn and more — every node explained in plain English with a direct link." />
+  <link rel="canonical" href="https://blkck2.com/world-map.html" />
+  <meta property="og:title" content="B$S World Map — Every Project, Explained" />
+  <meta property="og:description" content="Click a node, get a plain-English explanation and a direct link. The lore map that doubles as navigation." />
+  <meta property="og:image" content="https://blkck2.com/01_auralia/auralia_cosmic_poster_v1.png" />
+  <meta property="og:url" content="https://blkck2.com/world-map.html" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#04101d" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { overflow: auto; }
+    .wm-shell { width: min(1080px, calc(100% - 32px)); margin: 0 auto; padding: 116px 0 96px; }
+    .wm-hero { text-align: center; margin-bottom: 40px; }
+    .wm-hero h1 { margin: 12px 0 14px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(38px, 8vw, 76px); line-height: .9; letter-spacing: -.03em; color: var(--ink); }
+    .wm-hero p { margin: 0 auto; color: var(--muted); font-size: 15px; max-width: 560px; line-height: 1.65; }
+    .wm-layout { display: grid; grid-template-columns: 1fr 340px; gap: 20px; align-items: start; }
+    .wm-region { margin-bottom: 26px; }
+    .wm-region h2 { margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--neon-cyan); }
+    .wm-nodes { display: flex; flex-wrap: wrap; gap: 10px; }
+    .wm-node { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border: 1px solid rgba(120,214,247,.22); border-radius: 999px; background: rgba(2,7,13,.55); color: var(--ink); font-size: 14px; font-family: inherit; cursor: pointer; transition: border-color .15s, background .15s, transform .15s; min-height: 44px; }
+    .wm-node::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--dot, #78d6f7); box-shadow: 0 0 8px var(--dot, #78d6f7); flex-shrink: 0; }
+    .wm-node:hover, .wm-node:focus-visible { border-color: rgba(199,168,106,.6); background: rgba(199,168,106,.08); transform: translateY(-2px); outline: none; }
+    .wm-node.active { border-color: var(--gold-hot); background: rgba(199,168,106,.12); }
+    .wm-detail { position: sticky; top: 92px; padding: 26px; border: 1px solid rgba(0,245,255,.24); border-radius: 24px; background: linear-gradient(150deg, rgba(4,16,29,.92), rgba(2,7,13,.78)); min-height: 300px; }
+    .wm-detail .eyebrow { margin-bottom: 8px; }
+    .wm-detail h3 { margin: 0 0 12px; font-family: Georgia, serif; font-size: 26px; font-weight: 400; color: var(--gold-hot); line-height: 1.1; }
+    .wm-detail .plain { color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0 0 14px; }
+    .wm-detail .lore { color: var(--dim); font-size: 12px; line-height: 1.7; margin: 0 0 18px; padding: 10px 14px; border-left: 2px solid rgba(199,168,106,.35); font-style: italic; }
+    .wm-detail .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+    .wm-detail .tag { font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; background: rgba(120,214,247,.1); color: var(--neon-cyan); }
+    .wm-detail .tag.status { background: rgba(0,245,100,.1); color: #00f564; }
+    @media (max-width: 860px) {
+      .wm-layout { grid-template-columns: 1fr; }
+      .wm-detail { position: fixed; left: 12px; right: 12px; bottom: calc(74px + env(safe-area-inset-bottom, 0px)); top: auto; z-index: 40; min-height: 0; max-height: 56vh; overflow-y: auto; box-shadow: 0 -12px 44px rgba(0,0,0,.6); display: none; }
+      .wm-detail.open { display: block; }
+      .wm-detail .close-btn { display: inline-block; }
+      .wm-shell { padding-top: 96px; }
+    }
+    .wm-detail .close-btn { display: none; position: absolute; top: 14px; right: 16px; background: none; border: 1px solid rgba(120,214,247,.3); border-radius: 999px; color: var(--muted); font-size: 13px; padding: 4px 12px; cursor: pointer; font-family: inherit; }
+    .wm-footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(120,214,247,.12); font-size: 12px; color: var(--dim); line-height: 1.9; text-align: center; }
+    .wm-footer a { color: var(--muted); text-decoration: none; }
+    .wm-footer a:hover { color: var(--gold-hot); }
+  </style>
+</head>
+<body class="has-bottom-nav">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="index.html" aria-label="Blue Snake Studios — Moss Tree">
+        <span class="brand-mark" aria-hidden="true">B$S</span>
+        <span class="brand-copy">B$S World Map</span>
+      </a>
+      <div class="mast-actions">
+        <a class="mast-link" href="index.html">Portal</a>
+        <a class="mast-link" href="pathfinder.html">Pathfinder</a>
+        <a class="mast-link" href="living-index.html">Living Index</a>
+      </div>
+    </header>
+
+    <main class="wm-shell" id="main">
+      <section class="wm-hero">
+        <p class="eyebrow">The lore map that doubles as navigation</p>
+        <h1>The B$S World Map.</h1>
+        <p>Every project in the Blue $nake Studio universe as a node. Click one — you get a plain-English explanation, the lore version, and a direct link. No wrong turns.</p>
+      </section>
+
+      <div class="wm-layout">
+        <div id="wm-regions"></div>
+        <aside class="wm-detail" id="wm-detail" aria-live="polite">
+          <button type="button" class="close-btn" id="wm-close">Close ✕</button>
+          <p class="eyebrow">Select a node</p>
+          <h3>Start anywhere.</h3>
+          <p class="plain">Tap any node on the map. This panel explains what it is in plain English, what it means inside the lore, who it’s best for, and where to open it.</p>
+        </aside>
+      </div>
+
+      <footer class="wm-footer" role="contentinfo">
+        <p><a href="start-here.html">Start Here in 60 Seconds</a> · <a href="pathfinder.html">Pathfinder Quiz</a> · <a href="living-index.html">Living Index</a> · <a href="proof-wall.html">Proof Wall</a> · <a href="index.html">Back to portal</a></p>
+        <p>Blue $nake Studio · Frankston, Australia · <a href="mailto:bluesssnakestudio@gmail.com">bluesssnakestudio@gmail.com</a></p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      var REGIONS = [
+        {
+          name: "Studio Core",
+          dot: "#c7a86a",
+          nodes: [
+            {
+              id: "mossman", title: "The Moss Man",
+              plain: "The artist behind everything here. One person in Frankston, Australia, making art, music, learning tools and symbolic systems.",
+              lore: "The creator-figure of the B$S universe. Where the patterns come from.",
+              audience: "Everyone", status: "The person", link: "press-kit.html", label: "Press kit & bio"
+            },
+            {
+              id: "bss", title: "Blue $nake Studio",
+              plain: "The studio name that everything ships under: child-safe apps, printables, workshops, music and art.",
+              lore: "The world-building engine. The snake that connects every project.",
+              audience: "Everyone", status: "Active studio", link: "start-here.html", label: "Start Here in 60 Seconds"
+            },
+            {
+              id: "printvault", title: "Print Vault",
+              plain: "Free printable posters, colouring pages, glyph sheets and classroom tools. Download and print, no login.",
+              lore: "The armoury. Physical artefacts of the digital world.",
+              audience: "Everyone · Schools · Street", status: "Live", link: "print.html", label: "Open the Print Vault"
+            },
+            {
+              id: "magiccube", title: "Magic Cube",
+              plain: "A playable 5×5 word cube in the browser — part puzzle, part artwork. Scramble it, solve it, spin it.",
+              lore: "The first true B$S game-art relic.",
+              audience: "Curious · Art · Games", status: "Playable prototype", link: "magic-cube.html", label: "Play the Magic Cube"
+            }
+          ]
+        },
+        {
+          name: "Learning World",
+          dot: "#00f564",
+          nodes: [
+            {
+              id: "metapet", title: "Meta-Pet",
+              plain: "A privacy-first digital learning companion for classrooms and families. Browser-first, local-first: no ads, no trackers, no student accounts.",
+              lore: "A creature grown from Moss 60 digital DNA, raised by care instead of dopamine.",
+              audience: "Schools · Parents · Years 3–6", status: "Live prototype + pilot pack", link: "https://www.bluesnakestudios.com/", label: "Open Meta-Pet"
+            },
+            {
+              id: "teacherpack", title: "Teacher Pack",
+              plain: "The Teacher's Secret Cheatsheet: seven free printable behaviour-support templates for stretched teachers. Victoria-aware, zero admin.",
+              lore: "Field equipment for the adults holding the line.",
+              audience: "Teachers · ESOs · Carers", status: "Live · Free", link: "https://teachers-secret-cheatsheet.vercel.app/", label: "Download the Teacher Pack"
+            },
+            {
+              id: "pilotpack", title: "School Pilot Pack",
+              plain: "The full governance pack for running a Meta-Pet classroom pilot: lesson cards, teacher checklist, parent notice, ICT privacy summary.",
+              lore: "The treaty documents between the wild world and the school gate.",
+              audience: "Principals · ICT · Pilot leads", status: "Ready", link: "https://www.bluesnakestudios.com/schools", label: "Review the pilot pack"
+            }
+          ]
+        },
+        {
+          name: "Music World",
+          dot: "#ff006e",
+          nodes: [
+            {
+              id: "bwc", title: "Black Wing Crew",
+              plain: "The studio's music project. Songs, chants, lyric posters and a full visual identity.",
+              lore: "The crew. Feathered, loud, loyal. They carry the sound of the world.",
+              audience: "Music fans · Collaborators", status: "Active", link: "https://blackwingcrew.netlify.app/", label: "Enter Black Wing Crew"
+            },
+            {
+              id: "neonvenom", title: "Neon Venom",
+              plain: "The 2026 Black Wing Crew album (BSS-001) — streaming on the official site, with posters and QR street drops.",
+              lore: "The venom is the colour. The LP that lit the world neon.",
+              audience: "Music fans", status: "Streaming", link: "https://blackwingcrew.netlify.app/", label: "Listen to Neon Venom"
+            },
+            {
+              id: "f2f", title: "Frankston → Fuji",
+              plain: "A bilingual sister-city song project connecting Frankston and Susono, Japan — language practice and bridge-building through music.",
+              lore: "Two mountains, one song. The longest bridge in the world is a melody.",
+              audience: "Community · Schools · Japan", status: "Live", link: "https://frankston2fuji.netlify.app/", label: "Open Frankston → Fuji"
+            }
+          ]
+        },
+        {
+          name: "Art World",
+          dot: "#78d6f7",
+          nodes: [
+            {
+              id: "auralia", title: "Auralia",
+              plain: "The studio's central character and art series — eleven original artworks available as prints and wallpapers.",
+              lore: "The dream, the omen, the sign. Auralia watches every room in the gallery.",
+              audience: "Art lovers · Galleries", status: "Prints available", link: "store.html", label: "Browse Auralia prints"
+            },
+            {
+              id: "gallery", title: "Gallery Rooms",
+              plain: "Ten themed visual rooms inside the portal: paintings, music art, mythology, humour, street prints and more.",
+              lore: "Ten rooms, ten weathers. The archive breathes.",
+              audience: "Art · Curators · Curious", status: "Live", link: "index.html#visual-worlds", label: "Open the gallery"
+            }
+          ]
+        },
+        {
+          name: "Systems World",
+          dot: "#c47aff",
+          nodes: [
+            {
+              id: "moss60", title: "Moss 60",
+              plain: "A visual number system built on base-60: sixty positions, geometric glyphs, and an interactive app. Maths you can look at.",
+              lore: "The engine under everything. Sixty seats, one wheel, endless pattern.",
+              audience: "Theory · Educators · Lore", status: "Live app + prototypes", link: "https://www.bluesnakestudios.com/app/moss60", label: "Explore Moss 60"
+            },
+            {
+              id: "semsov", title: "Semantic Sovereignty",
+              plain: "A published doctrine about language, framing and narrative defence — the OSS-734G Known Unknowns Register.",
+              lore: "The war for meaning, mapped. Know your unknowns.",
+              audience: "Deep lore · Researchers", status: "Published", link: "documents/oss-734g-known-unknowns-register.html", label: "Read the register"
+            },
+            {
+              id: "oracle", title: "Oracle Warden",
+              plain: "A playable glyph engine built on Moss 60 — pattern logic and symbolic sequences you can interact with.",
+              lore: "The warden guards the wheel. Ask, and it answers in glyphs.",
+              audience: "Lore · Systems · Curious", status: "Prototype", link: "apps/moss60-oracle-warden.html", label: "Try the Oracle Warden"
+            }
+          ]
+        },
+        {
+          name: "Community World",
+          dot: "#f5c518",
+          nodes: [
+            {
+              id: "waahn", title: "Waahn / Black Omen",
+              plain: "A respectful research pathway into Bunurong-Boonwurrung language and Country. A living map, not an archive.",
+              lore: "The crow speaks first. Listen before you name.",
+              audience: "Community · Research", status: "Live", link: "https://waahn.netlify.app/", label: "Open Waahn"
+            },
+            {
+              id: "workshops", title: "Workshops",
+              plain: "Seven bookable workshop formats for schools, libraries and councils — from symbol printing to QR poster trails.",
+              lore: "Where the world steps off the screen and into the room.",
+              audience: "Schools · Councils · Libraries", status: "Booking open", link: "workshops.html", label: "Book a workshop"
+            }
+          ]
+        }
+      ];
+
+      var regionsEl = document.getElementById("wm-regions");
+      var detail = document.getElementById("wm-detail");
+      var closeBtn = document.getElementById("wm-close");
+      var byId = {};
+
+      function esc(s) {
+        return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+      }
+
+      REGIONS.forEach(function (region) {
+        var section = document.createElement("section");
+        section.className = "wm-region";
+        var heading = document.createElement("h2");
+        heading.textContent = region.name;
+        section.appendChild(heading);
+        var wrap = document.createElement("div");
+        wrap.className = "wm-nodes";
+        region.nodes.forEach(function (node) {
+          byId[node.id] = node;
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "wm-node";
+          btn.style.setProperty("--dot", region.dot);
+          btn.textContent = node.title;
+          btn.dataset.node = node.id;
+          btn.addEventListener("click", function () { show(node.id, btn); });
+          wrap.appendChild(btn);
+        });
+        section.appendChild(wrap);
+        regionsEl.appendChild(section);
+      });
+
+      function show(id, btn) {
+        var node = byId[id];
+        if (!node) return;
+        document.querySelectorAll(".wm-node.active").forEach(function (b) { b.classList.remove("active"); });
+        if (btn) btn.classList.add("active");
+        var external = /^https?:/.test(node.link);
+        detail.innerHTML =
+          '<button type="button" class="close-btn" id="wm-close">Close ✕</button>' +
+          '<p class="eyebrow">World Map node</p>' +
+          "<h3>" + esc(node.title) + "</h3>" +
+          '<div class="tags"><span class="tag status">' + esc(node.status) + '</span><span class="tag">' + esc(node.audience) + "</span></div>" +
+          '<p class="plain">' + esc(node.plain) + "</p>" +
+          '<p class="lore">Lore: ' + esc(node.lore) + "</p>" +
+          '<a class="project-link album-link" href="' + esc(node.link) + '"' + (external ? ' target="_blank" rel="noopener"' : "") + ">" + esc(node.label) + " →</a>";
+        detail.classList.add("open");
+        detail.querySelector(".close-btn").addEventListener("click", hide);
+        if (location.hash !== "#" + id) {
+          try { history.replaceState(null, "", "#" + id); } catch (e) { /* file:// */ }
+        }
+      }
+
+      function hide() { detail.classList.remove("open"); }
+
+      var initial = location.hash.replace("#", "");
+      if (initial && byId[initial]) {
+        var initBtn = document.querySelector('[data-node="' + initial + '"]');
+        show(initial, initBtn);
+        if (initBtn) initBtn.scrollIntoView({ block: "center" });
+      }
+    })();
+  </script>
+  <nav class="bss-bottom-nav" aria-label="Quick navigation">
+    <a href="index.html"><span class="bn-ico" aria-hidden="true">◉</span>Portal</a>
+    <a href="start-here.html"><span class="bn-ico" aria-hidden="true">✦</span>Start</a>
+    <a href="world-map.html"><span class="bn-ico" aria-hidden="true">◈</span>Map</a>
+    <a href="mailto:bluesssnakestudio@gmail.com"><span class="bn-ico" aria-hidden="true">✉</span>Contact</a>
+  </nav>
+</body>
+</html>

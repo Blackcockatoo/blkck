@@ -396,6 +396,7 @@
             </a>
           `).join('')}
         </div>
+        <p class="start-card-note">Not sure which door? <a href="pathfinder.html">Take the 4-question Pathfinder →</a> · <a href="world-map.html">Or open the World Map</a></p>
       </section>
     `;
   }
@@ -482,6 +483,7 @@
       <footer class="panel-footer" role="contentinfo">
         <p class="footer-brand">Created by <strong>The Moss Man</strong> / <strong>Blue $nake Studio</strong> — <a href="https://blkck2.com/">blkck2.com</a> — <a href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener noreferrer">@blkck2</a></p>
         <p class="footer-contact"><a href="mailto:bluesssnakestudio@gmail.com">bluesssnakestudio@gmail.com</a> · <a href="mailto:blkck2@gmail.com">blkck2@gmail.com</a></p>
+        <p class="footer-contact"><a href="pathfinder.html">Pathfinder</a> · <a href="world-map.html">World Map</a> · <a href="living-index.html">Living Index</a> · <a href="workshops.html">Workshops</a> · <a href="case-studies.html">Case Studies</a> · <a href="safety.html">Safety &amp; Boundaries</a></p>
       </footer>
     `;
   }

@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>B$S Pathfinder — Find Your Door · Blue $nake Studio</title>
+  <meta name="description" content="Four quick questions that route you to the right part of the Blue $nake Studio world: teachers, parents, artists, councils, music fans and deep lore explorers." />
+  <link rel="canonical" href="https://blkck2.com/pathfinder.html" />
+  <meta property="og:title" content="B$S Pathfinder — Find Your Door" />
+  <meta property="og:description" content="Who are you? Four quick questions route you to the right part of the B$S world." />
+  <meta property="og:image" content="https://blkck2.com/01_auralia/auralia_cosmic_poster_v1.png" />
+  <meta property="og:url" content="https://blkck2.com/pathfinder.html" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#04101d" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { overflow: auto; }
+    .pf-shell { width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 116px 0 96px; }
+    .pf-hero { text-align: center; margin-bottom: 36px; }
+    .pf-hero h1 { margin: 12px 0 14px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(38px, 8vw, 72px); line-height: .92; letter-spacing: -.03em; color: var(--ink); }
+    .pf-hero p { margin: 0 auto; color: var(--muted); font-size: 15px; max-width: 480px; line-height: 1.6; }
+    .pf-card { padding: clamp(22px, 4vw, 36px); border: 1px solid rgba(0,245,255,.24); border-radius: 26px; background: linear-gradient(150deg, rgba(4,16,29,.9), rgba(2,7,13,.75)); }
+    .pf-question { font-family: Georgia, serif; font-size: clamp(20px, 3.4vw, 28px); color: var(--ink); margin: 0 0 6px; font-weight: 400; }
+    .pf-step { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--neon-cyan); margin: 0 0 14px; display: block; }
+    .pf-options { display: grid; gap: 10px; margin-top: 18px; }
+    .pf-opt { display: block; width: 100%; text-align: left; padding: 15px 18px; border: 1px solid rgba(120,214,247,.2); border-radius: 16px; background: rgba(255,255,255,.03); color: var(--ink); font-size: 15px; font-family: inherit; line-height: 1.45; cursor: pointer; transition: border-color .15s, background .15s, transform .15s; min-height: 52px; }
+    .pf-opt:hover, .pf-opt:focus-visible { border-color: rgba(199,168,106,.6); background: rgba(199,168,106,.07); transform: translateY(-1px); outline: none; }
+    .pf-opt small { display: block; color: var(--muted); font-size: 12px; margin-top: 3px; }
+    .pf-progress { display: flex; gap: 6px; margin-bottom: 22px; }
+    .pf-progress span { height: 4px; flex: 1; border-radius: 4px; background: rgba(120,214,247,.15); }
+    .pf-progress span.done { background: var(--gold-hot, #c7a86a); }
+    .pf-result h2 { font-family: Georgia, serif; font-size: clamp(24px, 4vw, 36px); font-weight: 400; color: var(--gold-hot); margin: 0 0 10px; }
+    .pf-result p.lead { color: var(--muted); font-size: 15px; line-height: 1.65; margin: 0 0 22px; }
+    .pf-links { display: grid; gap: 10px; }
+    .pf-links a { display: flex; flex-direction: column; gap: 2px; padding: 15px 18px; border: 1px solid rgba(0,245,255,.24); border-radius: 16px; background: rgba(2,7,13,.55); text-decoration: none; color: var(--ink); transition: border-color .15s, background .15s; min-height: 52px; justify-content: center; }
+    .pf-links a:hover { border-color: rgba(199,168,106,.6); background: rgba(199,168,106,.07); }
+    .pf-links a strong { color: var(--gold-hot); font-size: 14px; }
+    .pf-links a span { color: var(--muted); font-size: 12px; }
+    .pf-reset { margin-top: 22px; display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--neon-cyan); background: none; border: none; cursor: pointer; font-family: inherit; padding: 8px 0; }
+    .pf-reset:hover { color: var(--gold-hot); }
+    .pf-footer { margin-top: 48px; text-align: center; font-size: 12px; color: var(--dim); line-height: 1.9; }
+    .pf-footer a { color: var(--muted); text-decoration: none; }
+    .pf-footer a:hover { color: var(--gold-hot); }
+    @media (max-width: 540px) { .pf-shell { padding-top: 96px; } }
+  </style>
+</head>
+<body class="has-bottom-nav">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="index.html" aria-label="Blue Snake Studios — Moss Tree">
+        <span class="brand-mark" aria-hidden="true">B$S</span>
+        <span class="brand-copy">B$S Pathfinder</span>
+      </a>
+      <div class="mast-actions">
+        <a class="mast-link" href="index.html">Portal</a>
+        <a class="mast-link" href="start-here.html">Start Here</a>
+        <a class="mast-link" href="world-map.html">World Map</a>
+      </div>
+    </header>
+
+    <main class="pf-shell" id="main">
+      <section class="pf-hero">
+        <p class="eyebrow">The B$S Pathfinder · 4 quick questions</p>
+        <h1>Who are you?</h1>
+        <p>Answer four quick questions and we’ll send you to the right part of the Blue $nake Studio world. No wrong answers, no data saved.</p>
+      </section>
+
+      <section class="pf-card" aria-live="polite">
+        <div class="pf-progress" id="pf-progress" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div id="pf-stage"></div>
+      </section>
+
+      <footer class="pf-footer" role="contentinfo">
+        <p><a href="start-here.html">Start Here in 60 Seconds</a> · <a href="world-map.html">World Map</a> · <a href="proof-wall.html">Proof Wall</a> · <a href="index.html">Back to portal</a></p>
+        <p>Blue $nake Studio · Frankston, Australia · <a href="mailto:bluesssnakestudio@gmail.com">bluesssnakestudio@gmail.com</a></p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      var PATHS = {
+        teacher: {
+          title: "The Teacher / Parent Path",
+          lead: "Child-safe, privacy-first and printable. Everything here works without student accounts, ads or trackers.",
+          links: [
+            ["Meta-Pet — try the demo", "Privacy-first digital learning companion, in the browser now", "https://www.bluesnakestudios.com/pet"],
+            ["School Pilot Pack", "10-minute demo to 7-session pilot, with governance docs", "https://www.bluesnakestudios.com/schools"],
+            ["Teacher's Secret Cheatsheet", "Seven free printable behaviour-support templates", "https://teachers-secret-cheatsheet.vercel.app/"],
+            ["Safety & Boundaries", "Plain-language page on what B$S is and is not", "safety.html"],
+            ["Colouring pages & print packs", "Free downloads for classrooms and families", "print.html"]
+          ]
+        },
+        artist: {
+          title: "The Artist / Curator Path",
+          lead: "Ten gallery rooms, original paintings, prints and a press kit — a complete visual world built from Frankston.",
+          links: [
+            ["Gallery rooms", "Ten visual worlds inside the portal", "index.html#visual-worlds"],
+            ["Auralia art prints", "Eleven original artworks — downloads and A3 prints", "store.html"],
+            ["Press kit", "Bios, boilerplate, images and contact", "press-kit.html"],
+            ["Arts one-pager (printable)", "One clean page to share with galleries", "downloads/onepager-arts.html"],
+            ["Book a workshop or commission", "Mythic character design, symbol printing and more", "workshops.html"]
+          ]
+        },
+        music: {
+          title: "The Music Path",
+          lead: "Black Wing Crew, the Neon Venom LP, lyric posters, QR street drops and the video channel.",
+          links: [
+            ["Black Wing Crew — Neon Venom LP", "Stream the 2026 album on the official site", "https://blackwingcrew.netlify.app/"],
+            ["Black Wing Crew archive", "Full tracklist, mythology and visual identity", "black-wing-crew.html"],
+            ["@blkck2 on YouTube", "Music videos, art drops and studio process", "https://www.youtube.com/@blkck2"],
+            ["Street print pack", "A4-ready posters and QR drops, free", "print.html"],
+            ["Music / collaboration one-pager", "One clean page for venues and collaborators", "downloads/onepager-music.html"]
+          ]
+        },
+        council: {
+          title: "The Council / Community Path",
+          lead: "A Frankston-built studio open to pilots, workshops, creative trails and community programs — with honest disclaimers.",
+          links: [
+            ["Community pathway", "The dedicated councils / community page", "gov.html"],
+            ["Book a workshop", "Seven workshop formats with pricing from", "workshops.html"],
+            ["School / council one-pager (printable)", "One clean page for meetings and email", "downloads/onepager-school.html"],
+            ["Proof Wall", "Everything the studio has built, all linked", "proof-wall.html"],
+            ["Case studies", "Micro case studies: problem, solution, use", "case-studies.html"]
+          ]
+        },
+        curious: {
+          title: "The Curious Explorer Path",
+          lead: "Welcome. Start with the 60-second overview, then wander — every door leads somewhere real.",
+          links: [
+            ["Start Here in 60 Seconds", "One paragraph, four doors, three strongest projects", "start-here.html"],
+            ["B$S World Map", "Every project as a clickable node, explained in plain English", "world-map.html"],
+            ["Magic Cube", "A playable 5×5 word-cube art relic", "magic-cube.html"],
+            ["Proof Wall", "Everything that exists, all linked", "proof-wall.html"],
+            ["@blkck2 on YouTube", "The video channel", "https://www.youtube.com/@blkck2"]
+          ]
+        },
+        lore: {
+          title: "The Deep Lore Path",
+          lead: "You want the full venom-myth-pattern storm. It's all here: Moss 60, Semantic Sovereignty, the Field Guide and the Living Index.",
+          links: [
+            ["B$S Field Guide", "The full universe explained", "field-guide.html"],
+            ["Moss 60 app", "Base-60 geometry and digital DNA", "https://www.bluesnakestudios.com/app/moss60"],
+            ["Oracle Warden", "Playable Moss 60 glyph engine", "apps/moss60-oracle-warden.html"],
+            ["Semantic Sovereignty", "OSS-734G Known Unknowns Register", "documents/oss-734g-known-unknowns-register.html"],
+            ["The Living Index", "Every name in the B$S world, A to Z", "living-index.html"]
+          ]
+        }
+      };
+
+      var QUESTIONS = [
+        {
+          q: "What best describes you?",
+          opts: [
+            ["Teacher, parent or education support", "teacher"],
+            ["Artist, curator or gallery person", "artist"],
+            ["Music listener or collaborator", "music"],
+            ["Council, library or community org", "council"],
+            ["Just curious — I scanned a QR / followed a link", "curious"],
+            ["Deep lore goblin. Give me everything.", "lore"]
+          ]
+        },
+        {
+          q: "What are you hoping to find?",
+          opts: [
+            ["Tools I can use with kids this week", "teacher"],
+            ["Art to look at, buy or exhibit", "artist"],
+            ["Something to listen to or watch", "music"],
+            ["A program or workshop for my community", "council"],
+            ["I'll know it when I see it", "curious"],
+            ["Systems, symbols and hidden structure", "lore"]
+          ]
+        },
+        {
+          q: "How much lore do you want?",
+          opts: [
+            ["None — keep it professional and plain", "teacher"],
+            ["A little atmosphere is fine", "artist"],
+            ["Lore through music and visuals", "music"],
+            ["Plain English with proof, please", "council"],
+            ["Surprise me", "curious"],
+            ["Maximum lore. Hold nothing back.", "lore"]
+          ]
+        },
+        {
+          q: "What would a win look like today?",
+          opts: [
+            ["A free printable I can use tomorrow", "teacher"],
+            ["Finding one artwork I love", "artist"],
+            ["A new album on repeat", "music"],
+            ["Knowing who to email about a pilot or workshop", "council"],
+            ["An interesting half hour", "curious"],
+            ["Understanding what Moss 60 actually is", "lore"]
+          ]
+        }
+      ];
+
+      var stage = document.getElementById("pf-stage");
+      var progress = document.getElementById("pf-progress").children;
+      var step = 0;
+      var tally = {};
+
+      function esc(s) {
+        return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+      }
+
+      function renderQuestion() {
+        var item = QUESTIONS[step];
+        for (var i = 0; i < progress.length; i++) {
+          progress[i].className = i < step ? "done" : "";
+        }
+        var html = '<span class="pf-step">Question ' + (step + 1) + " of " + QUESTIONS.length + '</span>' +
+          '<h2 class="pf-question">' + esc(item.q) + '</h2>' +
+          '<div class="pf-options" role="group" aria-label="Answers">';
+        item.opts.forEach(function (opt, idx) {
+          html += '<button type="button" class="pf-opt" data-idx="' + idx + '">' + esc(opt[0]) + '</button>';
+        });
+        html += "</div>";
+        stage.innerHTML = html;
+        stage.querySelectorAll(".pf-opt").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var key = item.opts[Number(btn.dataset.idx)][1];
+            tally[key] = (tally[key] || 0) + 1;
+            step += 1;
+            if (step < QUESTIONS.length) { renderQuestion(); } else { renderResult(); }
+          });
+        });
+        stage.querySelector(".pf-opt").focus({ preventScroll: true });
+      }
+
+      function renderResult() {
+        for (var i = 0; i < progress.length; i++) { progress[i].className = "done"; }
+        var best = "curious", bestScore = -1;
+        Object.keys(tally).forEach(function (k) {
+          if (tally[k] > bestScore) { best = k; bestScore = tally[k]; }
+        });
+        var path = PATHS[best];
+        var html = '<span class="pf-step">Your path</span>' +
+          '<div class="pf-result"><h2>' + esc(path.title) + '</h2>' +
+          '<p class="lead">' + esc(path.lead) + '</p><div class="pf-links">';
+        path.links.forEach(function (l) {
+          var external = /^https?:/.test(l[2]);
+          html += '<a href="' + esc(l[2]) + '"' + (external ? ' target="_blank" rel="noopener"' : "") + ">" +
+            "<strong>" + esc(l[0]) + " →</strong><span>" + esc(l[1]) + "</span></a>";
+        });
+        html += '</div><button type="button" class="pf-reset" id="pf-reset">↺ Start again</button></div>';
+        stage.innerHTML = html;
+        document.getElementById("pf-reset").addEventListener("click", function () {
+          step = 0; tally = {}; renderQuestion();
+        });
+      }
+
+      renderQuestion();
+    })();
+  </script>
+  <nav class="bss-bottom-nav" aria-label="Quick navigation">
+    <a href="index.html"><span class="bn-ico" aria-hidden="true">◉</span>Portal</a>
+    <a href="start-here.html"><span class="bn-ico" aria-hidden="true">✦</span>Start</a>
+    <a href="world-map.html"><span class="bn-ico" aria-hidden="true">◈</span>Map</a>
+    <a href="mailto:bluesssnakestudio@gmail.com"><span class="bn-ico" aria-hidden="true">✉</span>Contact</a>
+  </nav>
+</body>
+</html>

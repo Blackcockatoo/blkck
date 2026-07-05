@@ -2462,3 +2462,46 @@ a.project-link.game-link[target="_blank"]::before {
   .contact-path-card strong, .contact-path-card p { color: #111; }
   .link-note, .collection-layer-label { color: #555; }
 }
+
+/* ── Mobile sticky bottom nav (content pages) ─────────────── */
+.bss-bottom-nav {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px));
+  background: rgba(2, 7, 13, .94);
+  border-top: 1px solid rgba(120, 214, 247, .22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.bss-bottom-nav a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 48px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-radius: 12px;
+}
+.bss-bottom-nav a .bn-ico { font-size: 17px; line-height: 1; }
+.bss-bottom-nav a:active,
+.bss-bottom-nav a:hover { color: var(--gold-hot); background: rgba(199, 168, 106, .08); }
+@media (max-width: 760px) {
+  .bss-bottom-nav { display: flex; }
+  body.has-bottom-nav main { padding-bottom: 96px !important; }
+}
+@media print { .bss-bottom-nav { display: none !important; } }
+
+.start-card-note { margin: 14px 0 0; font-size: 13px; color: var(--muted); }
+.start-card-note a { color: var(--gold-hot); text-decoration: none; }
+.start-card-note a:hover { text-decoration: underline; }
