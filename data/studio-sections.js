@@ -86,6 +86,28 @@ window.BSS_STUDIO_SECTIONS = [
     featuredIds: ['black-wing-cosmic-singing', 'neon-venom-cyberpunk-poster', 'bss-twin-cockatoos-stained-glass', 'neon-venom-enter-dream-qr', 'black-wing-chant-sheet', 'neon-venom-campaign']
   },
   {
+    slug: 'krsnapaksi',
+    status: 'Live',
+    label: 'Kṛṣṇapakṣi Chant',
+    eyebrow: 'Devotional cipher · hidden mantra · MMXXVI',
+    title: 'Two ciphers. One name.',
+    statement: 'The Kṛṣṇapakṣi Chant is a devotional chant built like a living temple: it can be sung straight as poetry, then opened as code — the Mahā-mantra concealed twice inside its architecture.',
+    pageTitle: 'Kṛṣṇapakṣi Chant — The Hidden Mantra · Blue $nake Studio',
+    pageDescription: 'An interactive cipher edition of the Kṛṣṇapakṣi Chant: the Mahā-mantra hidden in the first breath of sixteen lines and again in a 23 × 8 syllable rectangle. Chant mode, performance score and live audio visualizer.',
+    details: [
+      'Cipher I — the Acrostic: the first word of every line of the Opening Song, read top to bottom, speaks the complete Mahā-mantra.',
+      'Cipher II — the Rectangle: eight kīrtana couplets laid into a syllable grid, read down, up, down, up — the serpent\'s path — extract the mantra a second time.',
+      'The interactive edition includes a tap-through chant mode, performance notes, a glossary and an audio visualizer wired to the studio track "Take Me Over (Remix)".'
+    ],
+    links: [
+      { label: 'Open the interactive edition', href: 'apps/krsnapaksi-chant.html', className: 'album-link', sub: 'Chant mode, ciphers and visualizer. No login.' },
+      { label: 'Read the PDF edition', href: 'documents/krsnapaksi-chant-hidden-mantra.pdf', sub: '36-page cipher edition, print-friendly.' },
+      { label: 'Play Take Me Over (Remix)', href: 'black-wing-crew.html#take-me-over', sub: 'The companion studio track.' },
+      { label: 'Email B$S', href: 'mailto:bluesssnakestudio@gmail.com' }
+    ],
+    featuredIds: ['krishna-bss-portrait', 'krishna-bss-fullbody', 'black-wing-chant-sheet', 'black-wing-cosmic-singing', 'auralia-cosmic-poster']
+  },
+  {
     slug: 'old-vic-state',
     status: 'Live',
     label: 'Old Vic State',
@@ -126,6 +148,31 @@ window.BSS_STUDIO_SECTIONS = [
       { label: 'Email studio', href: 'mailto:bluesssnakestudio@gmail.com' }
     ],
     featuredIds: ['fuji-taiko-scene', 'fuji-lyric-study-sheet', 'fuji-bilingual-chorus', 'fuji-sister-cities-song', 'fuji-pronunciation-sheet']
+  },
+  {
+    slug: 'frankston-2035',
+    status: 'Live',
+    label: 'Frankston 2035',
+    eyebrow: 'Civic seed kit · Art That Lives · Frankston City Council',
+    title: 'Art that lives in Frankston.',
+    statement: 'Frankston 2035 — Art That Lives is a public civic seed kit for Frankston City Council: five pilot concepts under $500, printable poster seeds, a Healthy Technology Charter and a consultation-first cultural protocol.',
+    pageTitle: 'Frankston 2035 — Art That Lives · Blue $nake Studio',
+    pageDescription: 'A civic seed kit for Frankston City Council from Blue $nake Studio: low-cost public art pilots, A4 poster seeds, Healthy Technology Charter, First Nations cultural protocol and a Frankston–Susono sister-city pathway.',
+    details: [
+      'Five low-cost pilot concepts, each under $500, designed so a council team can start small and prove value fast.',
+      'Ten printable A4 poster seeds, a downloadable identity pack and a full print pack — Officeworks-ready.',
+      'A Healthy Technology Charter, a First Nations cultural protocol (permission-based, relationship-driven) and a Frankston–Susono sister-city exchange pathway.',
+      'Built to be read by council officers in under three minutes via the Start Here brief.'
+    ],
+    links: [
+      { label: 'Open Frankston 2035', href: 'https://frankston-council.vercel.app/', className: 'album-link', sub: 'The full civic seed kit site.' },
+      { label: 'Start Here brief', href: 'https://frankston-council.vercel.app/start-here', sub: 'Under three minutes to read.' },
+      { label: 'Five pilot concepts', href: 'https://frankston-council.vercel.app/pilots', sub: 'Each under $500.' },
+      { label: 'Healthy Technology Charter', href: 'https://frankston-council.vercel.app/healthy-technology' },
+      { label: 'Council / School pathway', href: 'gov.html' },
+      { label: 'Email studio', href: 'mailto:bluesssnakestudio@gmail.com' }
+    ],
+    featuredIds: ['moss-man-frankston-courts', 'moss-man-hope-poster', 'fuji-sister-cities-song', 'memetics-awareness-repair', 'moss-man-runic-scribe']
   },
   {
     slug: 'black-omen-waahn',

@@ -8,6 +8,12 @@ http://blkck2.com/* https://blkck2.com/:splat 301!
 /professional /gov.html 301
 
 # Friendly aliases — commonly guessed URLs must never 404
+/krsnapaksi /apps/krsnapaksi-chant.html 301
+/chant /apps/krsnapaksi-chant.html 301
+/resume /cv.html 301
+/frankston-2035 https://frankston-council.vercel.app/ 302
+/council https://frankston-council.vercel.app/ 302
+/take-me-over /black-wing-crew.html#take-me-over 301
 /gallery /index.html#visual-worlds 301
 /art /index.html#visual-worlds 301
 /games /index.html#games 301
@@ -39,5 +45,6 @@ http://blkck2.com/* https://blkck2.com/:splat 301!
 /qr-portal /qr-portal.html 301
 /black-wing-crew /black-wing-crew.html 301
 /gov /gov.html 301
+/cv /cv.html 301
 /site-health /site-health.html 301
 /strongman-tracker /strongman-tracker.html 301

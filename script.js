@@ -409,6 +409,8 @@
       { label: 'Moss 60', status: 'Research-in-progress', desc: 'Visual number system — base-60 digital DNA, glyph engine and symbolic identity.', href: 'https://www.bluesnakestudios.com/app/moss60' },
       { label: 'Semantic Sovereignty', status: 'Research-in-progress', desc: 'Doctrine on language, framing, meaning and narrative defence.', href: 'documents/oss-734g-known-unknowns-register.html' },
       { label: 'Visual Worlds', status: 'Live', desc: '10 gallery rooms: mythology, portraits, parody, print.', href: '#visual-worlds' },
+      { label: 'Frankston 2035 — Art That Lives', status: 'Live', desc: 'Civic seed kit for Frankston City Council: pilots under $500, poster seeds, Healthy Technology Charter.', href: 'https://frankston-council.vercel.app/' },
+      { label: 'Kṛṣṇapakṣi Chant', status: 'Live', desc: 'Interactive cipher edition — the Mahā-mantra hidden twice, with chant mode and audio visualizer.', href: 'apps/krsnapaksi-chant.html' },
       { label: 'Frankston → Fuji', status: 'Live', desc: 'Bilingual sister-city song, Japanese practice & taiko.', href: '#frankston-fuji' },
       { label: 'Black Omen / Waahn', status: 'Research-in-progress', desc: 'Bunurong-Boonwurrung language research map.', href: '#black-omen-waahn' }
     ];

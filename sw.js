@@ -1,4 +1,4 @@
-const CACHE_NAME = 'moss-tree-v14';
+const CACHE_NAME = 'moss-tree-v15';
 
 const APP_SHELL = [
   './',
@@ -15,6 +15,7 @@ const APP_SHELL = [
   './black-wing-crew.html',
   './meta-pet.html',
   './teacher-tools.html',
+  './cv.html',
   './404.html',
   './styles.css',
   './script.js',
@@ -73,10 +74,10 @@ self.addEventListener('fetch', event => {
     const shellPath = path === './' ? './index.html' : path;
     return normalizedPath === shellPath || url.pathname.endsWith(shellPath.replace('./', '/'));
   });
-  const isMedia = /\.(mp4|webm|mov)$/i.test(url.pathname);
+  const isMedia = /\.(mp4|webm|mov|mp3|wav|pdf)$/i.test(url.pathname);
 
   if (isMedia) {
-    // Network-only for video — avoid filling cache with large files.
+    // Network-only for video, audio and PDFs — avoid filling cache with large files.
     return;
   }
 

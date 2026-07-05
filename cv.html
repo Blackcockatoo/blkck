@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tom Nicholas Carroll — CV · Disability Support &amp; Creative Practice | Blue $nake Studio</title>
+  <meta name="description" content="CV of Tom Nicholas Carroll — qualified Disability Instructor and Support Worker (Certificate IV in Disability Work), Frankston / Mornington Peninsula. Behaviour support, community access and creative learning projects." />
+  <link rel="canonical" href="https://blkck2.com/cv.html" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#04101d" />
+  <meta name="robots" content="index, follow" />
+  <style>
+    :root {
+      --night:#02070d; --navy:#04101d; --navy2:#071b2c;
+      --ink:#f4f0e4; --muted:#9eb0bd; --dim:#4e6575;
+      --gold:#e7c767; --pink:#ff006e; --cyan:#00f5ff;
+      --green:#00f564; --line:rgba(120,214,247,.2);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { background: var(--night); }
+    body {
+      margin: 0; color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(0,245,255,.08), transparent 28rem),
+        radial-gradient(circle at 88% 14%, rgba(231,199,103,.08), transparent 28rem),
+        linear-gradient(145deg, var(--navy2), var(--night) 62%);
+      font-family: "Segoe UI", Inter, system-ui, sans-serif;
+      line-height: 1.6; min-height: 100dvh;
+    }
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { color: var(--gold); }
+    .shell { width: min(920px, calc(100% - 32px)); margin: 0 auto; padding: 24px 0 72px; }
+
+    .masthead { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 0 28px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-size: 12px; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); }
+    .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border: 2px solid var(--pink); border-radius: 8px; color: var(--cyan); transform: rotate(30deg); flex-shrink: 0; box-shadow: 0 0 18px rgba(255,0,110,.28); }
+    .mast-links { display: flex; flex-wrap: wrap; gap: 14px; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .mast-links a { color: var(--cyan); }
+
+    .hero { padding: clamp(44px, 7vw, 80px) 0 36px; border-bottom: 1px solid var(--line); }
+    .eyebrow { margin: 0 0 14px; color: var(--cyan); font-size: 11px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
+    h1 { margin: 0 0 14px; font-family: Georgia, serif; font-size: clamp(34px, 6vw, 60px); font-weight: 400; letter-spacing: -.04em; line-height: 1; color: var(--ink); }
+    .contact-line { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
+    .contact-line a { color: var(--gold); }
+    .lead { max-width: 720px; font-size: clamp(15px, 2vw, 18px); color: var(--muted); margin: 18px 0 26px; line-height: 1.6; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 10px 18px; border: 2px solid rgba(0,245,255,.4); border-radius: 10px; color: var(--cyan); background: rgba(0,245,255,.06); font: 900 11px/1 "Segoe UI", system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; cursor: pointer; transition: transform 140ms; }
+    .btn.primary { border-color: rgba(231,199,103,.55); color: var(--gold); background: rgba(231,199,103,.07); }
+    .btn:hover { transform: translateY(-2px); }
+
+    section { padding: 44px 0; border-bottom: 1px solid var(--line); }
+    section:last-of-type { border-bottom: 0; }
+    h2 { font-family: Georgia, serif; font-size: clamp(24px, 4vw, 40px); font-weight: 400; margin: 0 0 6px; letter-spacing: -.03em; color: var(--ink); }
+    .section-sub { color: var(--muted); font-size: 14px; margin: 0 0 26px; }
+
+    .skill-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+    .skill { display: flex; align-items: flex-start; gap: 10px; padding: 14px 16px; border: 1px solid rgba(0,245,100,.2); border-radius: 12px; background: rgba(0,245,100,.04); }
+    .skill::before { content: "✓"; color: var(--green); font-weight: 900; font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+    .skill span { font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .skill strong { color: var(--ink); }
+
+    .job { padding: 22px 24px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.04); margin-bottom: 14px; }
+    .job-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; margin-bottom: 4px; }
+    .job-title { font-size: 16px; font-weight: 700; color: var(--gold); }
+    .job-when { font-size: 12px; color: var(--dim); letter-spacing: .06em; text-transform: uppercase; font-weight: 700; }
+    .job-org { font-size: 13px; color: var(--muted); margin: 0 0 12px; }
+    .job ul { margin: 0; padding-left: 18px; }
+    .job li { font-size: 13.5px; color: var(--muted); margin-bottom: 6px; line-height: 1.55; }
+
+    .qual-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
+    .qual { padding: 18px 20px; border: 1px solid rgba(231,199,103,.28); border-radius: 14px; background: rgba(231,199,103,.05); }
+    .qual .badge { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 2px 9px; border-radius: 20px; margin-bottom: 8px; }
+    .badge-qual { background: rgba(231,199,103,.12); color: var(--gold); }
+    .badge-award { background: rgba(255,0,110,.1); color: var(--pink); }
+    .badge-earlier { background: rgba(0,245,255,.08); color: var(--cyan); }
+    .qual strong { display: block; font-size: 14px; color: var(--ink); margin-bottom: 6px; line-height: 1.35; }
+    .qual p { font-size: 12.5px; color: var(--muted); margin: 0; line-height: 1.5; }
+
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 22px; }
+    .cert-card { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.03); display: block; transition: transform 160ms, border-color 160ms; }
+    .cert-card:hover { transform: translateY(-3px); border-color: rgba(231,199,103,.4); }
+    .cert-card img { display: block; width: 100%; height: 240px; object-fit: cover; object-position: top; background: #0a1622; }
+    .cert-card span { display: block; padding: 12px 14px; font-size: 12px; color: var(--muted); line-height: 1.45; }
+
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+    .p-card { display: flex; flex-direction: column; gap: 6px; padding: 20px 22px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.04); text-decoration: none; color: var(--ink); transition: transform 160ms, border-color 160ms; }
+    .p-card:hover { transform: translateY(-3px); border-color: rgba(231,199,103,.4); }
+    .p-card strong { font-size: 14px; color: var(--ink); }
+    .p-card p { font-size: 12px; color: var(--muted); margin: 0; line-height: 1.5; }
+    .p-tag { font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--cyan); }
+
+    .note-box { padding: 18px 22px; border: 1px solid rgba(0,245,255,.18); border-radius: 14px; background: rgba(0,245,255,.04); font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--dim); font-size: 12px; line-height: 2; }
+    .footer a { color: var(--muted); }
+    .footer a:hover { color: var(--gold); }
+
+    @media (max-width: 600px) { .skill-grid, .qual-grid, .portfolio-grid { grid-template-columns: 1fr; } }
+    @media print {
+      body { background: #fff; color: #111; }
+      .masthead, .btn-row, .footer, .cert-grid { display: none; }
+      a { color: #111; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">B$S</span>
+        <span>Blue $nake Studio</span>
+      </a>
+      <nav class="mast-links" aria-label="Site navigation">
+        <a href="index.html">Portal</a>
+        <a href="gov.html">Schools / Council</a>
+        <a href="proof-wall.html">Proof Wall</a>
+        <a href="mailto:blkck2@gmail.com">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" aria-label="CV overview">
+      <p class="eyebrow">Curriculum Vitae · Disability Support · Frankston &amp; Mornington Peninsula</p>
+      <h1>Tom Nicholas Carroll</h1>
+      <p class="contact-line">Frankston South VIC &nbsp;·&nbsp; <a href="tel:+61414201575">0414 201 575</a> &nbsp;·&nbsp; <a href="mailto:blkck2@gmail.com">blkck2@gmail.com</a></p>
+      <p class="contact-line">Portfolio: <a href="index.html">blkck2.com</a> &nbsp;/&nbsp; <a href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener">BlueSnakeStudios.com</a></p>
+      <p class="lead">Qualified Disability Instructor and Support Worker (Certificate IV in Disability Work) with over seven years of hands-on experience across behaviour support, community access, day services and supported employment, plus recent frontline work in structured cleaning, farm and community-based support programs. Calm and consistent with complex behaviours, confident in 1:1 and group settings, and experienced in Behaviour Support Plans, Individual Support Plans, incident reporting and accurate file notes. Nominated for the Team Support Worker Award at the 2011 Victorian Disability Sector Awards. Practical, reliable and equally at home in a day program, a community site or on a farm — seeking disability support, community access, day service or hands-on support roles across Frankston and the Mornington Peninsula.</p>
+      <div class="btn-row">
+        <a class="btn primary" href="documents/cv/tom-nicholas-carroll-resume-2026.pdf" download>Download Resume (PDF)</a>
+        <a class="btn" href="mailto:blkck2@gmail.com?subject=Employment%20Enquiry%20%E2%80%94%20Tom%20Nicholas%20Carroll">Employment enquiry</a>
+        <a class="btn" onclick="window.print()" href="#" role="button">Print this page</a>
+      </div>
+    </section>
+
+    <!-- KEY SKILLS -->
+    <section aria-labelledby="skills-heading">
+      <p class="eyebrow">Key skills</p>
+      <h2 id="skills-heading">What I bring to a team.</h2>
+      <div class="skill-grid">
+        <div class="skill"><span><strong>Behaviour support</strong> — 1:1 support, high-support and mixed behavioural groups, calm de-escalation and consistent routines</span></div>
+        <div class="skill"><span><strong>Community access &amp; group facilitation</strong> — day programs, leisure programs, camps and respite</span></div>
+        <div class="skill"><span><strong>Documentation</strong> — Behaviour Support Plans (BSPs), Individual Support Plans (ISPs), incident reports, star charts, file notes and Personal Outcome Measures</span></div>
+        <div class="skill"><span><strong>Supported employment</strong> — assisted factory work and structured work-skills programs</span></div>
+        <div class="skill"><span><strong>Personal care</strong> and support for daily living, independence and individual goals</span></div>
+        <div class="skill"><span><strong>Practical site work</strong> — cleaning programs, site setup, farm, stable and grounds maintenance</span></div>
+        <div class="skill"><span><strong>Sign language</strong> — able to hold a conversation in sign language</span></div>
+        <div class="skill"><span><strong>Communication, problem solving and computer skills</strong>; reliable working independently or in a team</span></div>
+      </div>
+    </section>
+
+    <!-- EMPLOYMENT HISTORY -->
+    <section aria-labelledby="work-heading">
+      <p class="eyebrow">Employment history</p>
+      <h2 id="work-heading">Where I've worked.</h2>
+      <p class="section-sub">Recent and earlier roles, most recent first.</p>
+
+      <div class="job">
+        <div class="job-head">
+          <span class="job-title">Disability Instructor / Support Worker</span>
+          <span class="job-when">2025 – Jan 2026</span>
+        </div>
+        <p class="job-org">DoCrew / Workforce Plus · Frankston / Mornington Peninsula</p>
+        <ul>
+          <li>Supported participants in structured cleaning, farm and community-based programs across multiple local sites, including Focus Red Hill, the Coolstores offices, Pilgrim Cafe, Mornington offices and The Meadows.</li>
+          <li>Provided small-group and 1:1 support, building participants' confidence, communication, independence and safe daily routines.</li>
+          <li>Completed site setup and cleaning routines — kitchens, bathrooms, bins, windows, touchpoints and outdoor areas — modelling safe, thorough work practices.</li>
+          <li>Coached participants in practical work habits: following instructions, completing tasks and working toward individual goals.</li>
+          <li>Adapted calmly to different client needs and behaviours while maintaining safe work practices and clear communication.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <span class="job-title">Casual Stable Hand / Farm Hand</span>
+          <span class="job-when">2025 – Jan 2026 · Casual</span>
+        </div>
+        <p class="job-org">The Meadows Agistment Stables · Stumpy Gully Road, Mornington Peninsula</p>
+        <ul>
+          <li>Carried out feed room duties, unloading feed deliveries, stable cleaning and general farm jobs.</li>
+          <li>Completed mowing, weeding, branch and stick collection, outdoor cleanup and grounds maintenance.</li>
+          <li>Worked safely and reliably around horses, equipment, staff and program participants.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <span class="job-title">Disability Instructor</span>
+          <span class="job-when">2007 – 2012</span>
+        </div>
+        <p class="job-org">Wallara &amp; Peninsula Access Support and Training (P.A.S.T.) · Hastings / Cranbourne / Community Programs</p>
+        <ul>
+          <li>Provided 1:1 support in the P.A.S.T. Behaviour Unit, delivering behaviour support, individual routines and goal-focused services.</li>
+          <li>Supported high-support and mixed behavioural groups in community programs, personal care and structured activities.</li>
+          <li>Wrote Behaviour Support Plans, Individual Support Plans, incident reports, star charts and accurate file notes.</li>
+          <li>Supported independent and semi-independent service users to access community programs and achieve Personal Outcome Measures.</li>
+          <li>Ran programs for groups of 10–15 semi-independent service users through the Cranbourne Shop Front transition.</li>
+          <li>Supported groups of up to 20 service users in assisted factory work through Wallara Industries.</li>
+          <li>Worked weekend and holiday respite contracts, including men's group leisure programs and camps.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <span class="job-title">Earlier Roles</span>
+          <span class="job-when">Prior to 2007</span>
+        </div>
+        <p class="job-org">Salmat Distribution · McDonald's · Big Fish Fish &amp; Chips · Hub Restaurant · Fine Products</p>
+        <ul>
+          <li>Pamphlet distribution, crew member, counter hand, kitchen hand and labouring roles.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- QUALIFICATIONS & AWARDS -->
+    <section aria-labelledby="qual-heading">
+      <p class="eyebrow">Qualifications &amp; awards</p>
+      <h2 id="qual-heading">Credentials.</h2>
+      <div class="qual-grid">
+        <div class="qual">
+          <span class="badge badge-qual">Qualification</span>
+          <strong>Certificate IV in Disability Work (CHC40302)</strong>
+          <p>Chisholm Institute, Frankston · 2011</p>
+        </div>
+        <div class="qual">
+          <span class="badge badge-award">Award nominee</span>
+          <strong>2011 Victorian Disability Sector Awards</strong>
+          <p>Nominee — Team Support Worker Award (Peninsula Access Support and Training Respite), recognising commitment to excellence in practice.</p>
+        </div>
+        <div class="qual">
+          <span class="badge badge-earlier">Earlier training</span>
+          <strong>Apply First Aid (HLTFA311A)</strong>
+          <p>Nepean Industry Edge Training · 2013 (renewal to confirm)</p>
+        </div>
+        <div class="qual">
+          <span class="badge badge-earlier">Earlier training</span>
+          <strong>Additional training</strong>
+          <p>Behaviour Response Training · Certificate II in Transport and Distribution · Recreational Boat Licence course</p>
+        </div>
+      </div>
+
+      <div class="cert-grid">
+        <a class="cert-card" href="documents/cv/cert-iv-disability-2011.jpg" target="_blank" rel="noopener">
+          <img src="documents/cv/cert-iv-disability-2011.jpg" alt="Certificate IV in Disability Work CHC40302, Chisholm Institute, 2011" loading="lazy" />
+          <span>Certificate IV in Disability Work — Chisholm Institute, 2011</span>
+        </a>
+        <a class="cert-card" href="documents/cv/vdsa-award-nomination-2011.jpg" target="_blank" rel="noopener">
+          <img src="documents/cv/vdsa-award-nomination-2011.jpg" alt="2011 Victorian Disability Sector Awards — Team Support Worker Award nomination" loading="lazy" />
+          <span>Victorian Disability Sector Awards — Team Support Worker nomination, 2011</span>
+        </a>
+        <a class="cert-card" href="documents/cv/first-aid-2013.jpg" target="_blank" rel="noopener">
+          <img src="documents/cv/first-aid-2013.jpg" alt="Apply First Aid HLTFA311A certificate, Nepean Industry Edge Training, 2013" loading="lazy" />
+          <span>Apply First Aid — Nepean Industry Edge Training, 2013</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CHECKS & COMPLIANCE -->
+    <section aria-labelledby="checks-heading">
+      <p class="eyebrow">Checks &amp; compliance</p>
+      <h2 id="checks-heading">Screening.</h2>
+      <div class="note-box">
+        NDIS Worker Screening Check, Working with Children Check (VIC) and current First Aid / CPR status — details available on request via <a href="mailto:blkck2@gmail.com?subject=Screening%20%2F%20Compliance%20%E2%80%94%20Tom%20Nicholas%20Carroll">email</a>.
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section aria-labelledby="portfolio-heading">
+      <p class="eyebrow">Portfolio · Creative &amp; learning projects</p>
+      <h2 id="portfolio-heading">Independent creative work.</h2>
+      <p class="section-sub">Web and creative projects developed outside of support work — interactive learning tools, bilingual community and cultural exchange materials, and accessible educational games. Relevant to community programs, disability arts, creative support and school or community engagement roles.</p>
+      <div class="portfolio-grid">
+        <a class="p-card" href="https://frankston-council.vercel.app/" target="_blank" rel="noopener">
+          <span class="p-tag">Civic proposal</span>
+          <strong>Frankston 2035 — Art That Lives</strong>
+          <p>A public civic seed kit for Frankston City Council: pilots under $500, poster seeds, Healthy Technology Charter and a First Nations cultural protocol.</p>
+        </a>
+        <a class="p-card" href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener">
+          <span class="p-tag">Learning tool</span>
+          <strong>Meta-Pet</strong>
+          <p>Privacy-first, child-safe digital learning companion for schools and families. No ads, no trackers.</p>
+        </a>
+        <a class="p-card" href="apps/krsnapaksi-chant.html">
+          <span class="p-tag">Interactive document</span>
+          <strong>Kṛṣṇapakṣi Chant — The Hidden Mantra</strong>
+          <p>An interactive cipher edition of a devotional chant: two hidden mantras, a performance score and a live audio visualizer.</p>
+        </a>
+        <a class="p-card" href="black-wing-crew.html">
+          <span class="p-tag">Music world</span>
+          <strong>Black Wing Crew / Neon Venom</strong>
+          <p>Independent music project: 2026 digital LP, lyric posters, QR street drops and the new “Take Me Over (Remix)”.</p>
+        </a>
+        <a class="p-card" href="https://frankston2fuji.netlify.app/" target="_blank" rel="noopener">
+          <span class="p-tag">Cultural exchange</span>
+          <strong>Frankston → Fuji</strong>
+          <p>Bilingual Japanese–English sister-city song and learning materials for schools and councils.</p>
+        </a>
+        <a class="p-card" href="gov.html">
+          <span class="p-tag">Professional pathway</span>
+          <strong>Council / School / Community Pathway</strong>
+          <p>The professional route into Blue $nake Studio — products, privacy, proof and contact.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- REFEREES / CONTACT -->
+    <section aria-labelledby="ref-heading">
+      <p class="eyebrow">Referees</p>
+      <h2 id="ref-heading">Available on request.</h2>
+      <div class="btn-row" style="margin-top:18px;">
+        <a class="btn primary" href="mailto:blkck2@gmail.com?subject=Referee%20Request%20%E2%80%94%20Tom%20Nicholas%20Carroll">Request referees</a>
+        <a class="btn" href="documents/cv/tom-nicholas-carroll-resume-2026.pdf" download>Download Resume (PDF)</a>
+      </div>
+    </section>
+
+    <footer class="footer" role="contentinfo">
+      <p>Tom Nicholas Carroll · Frankston South, Victoria, Australia · <a href="index.html">blkck2.com</a></p>
+      <p>
+        <a href="index.html">B$S Portal</a> ·
+        <a href="gov.html">Schools / Council</a> ·
+        <a href="proof-wall.html">Proof Wall</a> ·
+        <a href="https://frankston-council.vercel.app/" target="_blank" rel="noopener">Frankston 2035</a> ·
+        <a href="privacy-policy.html">Privacy Policy</a> ·
+        <a href="mailto:blkck2@gmail.com">blkck2@gmail.com</a>
+      </p>
+    </footer>
+  </div>
+  <script>
+    document.querySelector('a[role="button"]').addEventListener('click', function (e) { e.preventDefault(); window.print(); });
+  </script>
+</body>
+</html>
