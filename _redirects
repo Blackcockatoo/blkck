@@ -22,6 +22,9 @@ http://blkck2.com/* https://blkck2.com/:splat 301!
 /prints /print.html 301
 /cube /magic-cube.html 301
 /metapet /meta-pet.html 301
+/chant /krsnapaksi-chant.html 301
+/krsnapaksi /krsnapaksi-chant.html 301
+/krishna /krsnapaksi-chant.html 301
 
 # Extensionless versions of every public page
 /start /start.html 301
@@ -39,5 +42,6 @@ http://blkck2.com/* https://blkck2.com/:splat 301!
 /qr-portal /qr-portal.html 301
 /black-wing-crew /black-wing-crew.html 301
 /gov /gov.html 301
+/krsnapaksi-chant /krsnapaksi-chant.html 301
 /site-health /site-health.html 301
 /strongman-tracker /strongman-tracker.html 301
