@@ -120,6 +120,14 @@
         "name": "Old Vic State",
         "description": "A civic-gothic song and image cycle about memory, command and the structures that outlive the people who believe they control them. One wing remembers fire. One wing remembers law.",
         "creator": { "@id": "https://blkck2.com/#person" }
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://blkck2.com/#krsnapaksi-chant",
+        "name": "Kṛṣṇapakṣi Chant — Two Ciphers, One Name",
+        "description": "A Blue Snake Studio devotional code-poem: the Mahā-mantra revealed once as an acrostic and again through a 23 × 8 syllable grid, with chant mode, PDF edition, music and visual world.",
+        "creator": { "@id": "https://blkck2.com/#person" },
+        "url": "https://blkck2.com/krsnapaksi-chant.html"
       }
     ]
   }
@@ -360,13 +368,32 @@
   </div>
 
   <div id="krishna-sanctum" role="dialog" aria-modal="true"
-       aria-label="The Pulse of Krishna" aria-hidden="true">
+       aria-label="Kṛṣṇapakṣi Chant — Two Ciphers, One Name" aria-hidden="true">
     <button class="sanctum-close" id="sanctum-close" type="button" aria-label="Close">&#x2715;</button>
     <div class="sanctum-inner">
       <p class="sanctum-epigraph" lang="sa">sarvasya c&#257;ha&#7747; h&#7771;di sannivi&#7779;&#7789;o</p>
       <p class="sanctum-epigraph-translation">I am seated in the hearts of all. — Bhagavad G&#299;t&#257; 15.15</p>
-      <h2 class="sanctum-title">The Pulse of Krishna</h2>
-      <p class="sanctum-subtitle">Reader Edition</p>
+      <h2 class="sanctum-title">Two ciphers.<br>One name.</h2>
+      <p class="sanctum-subtitle">Kṛṣṇapakṣi Chant · The Pulse of Krishna, Reader Edition</p>
+      <p class="sanctum-support">A devotional chant, an interactive code-poem, and a black-wing visual hymn.</p>
+      <div class="sanctum-video-frame" id="sanctum-video-frame">
+        <img src="documents/chant/krsnapaksi-chant-og.jpg" alt="Kṛṣṇapakṣi Chant — Two ciphers, one name. Title still from the Blue Snake Studio video." loading="lazy" />
+        <button class="sanctum-play-btn" id="sanctum-video-play" type="button" aria-label="Play the Kṛṣṇapakṣi Chant video on YouTube">
+          <span class="sanctum-play-ring" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </button>
+      </div>
+      <p class="sanctum-video-caption">Kṛṣṇapakṣi Chant — Two ciphers, one name. The hidden mantra edition by Blue Snake Studio. Click to load from YouTube — it will not play automatically or with sound until you start it. <a href="https://youtu.be/pufgJKzIXF4" target="_blank" rel="noopener">Watch on YouTube ↗</a></p>
+      <div class="sanctum-cta-row">
+        <a class="sanctum-btn sanctum-btn-primary" href="krsnapaksi-chant.html">Open the interactive edition</a>
+        <a class="sanctum-btn" href="documents/the-pulse-of-krishna-reader-edition.pdf" target="_blank" rel="noopener">Read the PDF edition</a>
+        <a class="sanctum-btn" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">Hear the sound world</a>
+      </div>
+      <div class="sanctum-cta-row sanctum-cta-row-secondary">
+        <button class="sanctum-btn-text" id="sanctum-copy-pitch" type="button" data-copy-target="sanctum-pitch-text">Copy one-line pitch</button>
+        <a class="sanctum-btn-text" href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener">Share @blkck2</a>
+        <a class="sanctum-btn-text" href="mailto:bluesssnakestudio@gmail.com?subject=Kr%CC%A3s%CC%A3n%CC%A3apak%CC%A3si%CC%A3%20Chant%20%E2%80%94%20enquiry">Email B$S</a>
+      </div>
+      <p id="sanctum-pitch-text" hidden>Kṛṣṇapakṣi Chant — Two ciphers, one name. A Blue Snake Studio devotional code-poem: the Hare Krishna Mahā-mantra hidden once as an acrostic and again inside a 23×8 syllable grid. Watch, chant, read the PDF, explore the grid — free, ad-free, at blkck2.com.</p>
       <div class="sanctum-document">
         <iframe src="documents/the-pulse-of-krishna-reader-edition.pdf"
                 title="The Pulse of Krishna — Reader Edition"

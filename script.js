@@ -1133,6 +1133,40 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && sanctum.classList.contains('is-open')) closeSanctum();
     });
+
+    const sanctumPlayBtn = document.getElementById('sanctum-video-play');
+    const sanctumVideoFrame = document.getElementById('sanctum-video-frame');
+    if (sanctumPlayBtn && sanctumVideoFrame) {
+      sanctumPlayBtn.addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/pufgJKzIXF4?autoplay=1&rel=0';
+        iframe.title = 'Kṛṣṇapakṣi Chant – Two ciphers, one name';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        iframe.loading = 'lazy';
+        sanctumVideoFrame.innerHTML = '';
+        sanctumVideoFrame.appendChild(iframe);
+      });
+    }
+
+    const copyBtn = document.getElementById('sanctum-copy-pitch');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        const target = document.getElementById(copyBtn.getAttribute('data-copy-target'));
+        if (!target) return;
+        const text = target.textContent.trim();
+        const done = () => {
+          const orig = copyBtn.textContent;
+          copyBtn.textContent = 'Copied';
+          setTimeout(() => { copyBtn.textContent = orig; }, 1800);
+        };
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text).then(done).catch(() => prompt('Copy this text:', text));
+        } else {
+          prompt('Copy this text:', text);
+        }
+      });
+    }
   }
   setupKrishnaSanctum();
 })();
