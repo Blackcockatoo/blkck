@@ -522,11 +522,12 @@ button:focus-visible, a:focus-visible {
   text-shadow: 0 0 12px rgba(0, 245, 255, .15);
 }
 .project-link::after {
-  content: "↗";
+  content: "→";
   color: var(--neon-pink);
   font-size: 15px;
   transition: all 200ms var(--ease-bounce);
 }
+.project-link[target="_blank"]::after { content: "↗"; }
 .project-link:hover {
   color: var(--neon-pink);
   transform: translateX(4px);
@@ -2139,7 +2140,7 @@ button:focus-visible, a:focus-visible { outline-color: var(--gold-hot); }
 .panel-images-view .section-heading { margin-top: 0; }
 
 .links-row { gap: 10px; }
-a.project-link[target="_blank"] {
+a.project-link.album-link {
   border-color: var(--gold-hot) !important;
   color: #111 !important;
   background: linear-gradient(135deg, var(--gold-hot), var(--gold)) !important;
@@ -2147,23 +2148,28 @@ a.project-link[target="_blank"] {
   font-weight: 900 !important;
 }
 a.project-link[target="_blank"]::after {
-  content: "↗";
+  content: "↗" / " (opens in new tab)";
   margin-left: 9px;
   font-size: 12px;
 }
-a.project-link[target="_blank"]:hover {
+a.project-link:not([target="_blank"])::after {
+  content: "→";
+  margin-left: 9px;
+  font-size: 12px;
+}
+a.project-link.album-link:hover {
   color: #050608 !important;
   background: linear-gradient(135deg, #f4dda5, var(--gold-hot)) !important;
   box-shadow: 0 12px 32px rgba(199, 168, 106, .3) !important;
   transform: translateY(-2px) !important;
 }
-a.project-link.game-link[target="_blank"] {
+a.project-link.game-link {
   border-color: #9ddfda !important;
   color: #07100f !important;
   background: linear-gradient(135deg, #c5f2ec, #79c8bd) !important;
   box-shadow: 0 9px 28px rgba(121, 200, 189, .2) !important;
 }
-a.project-link.game-link[target="_blank"]::before {
+a.project-link.game-link::before {
   content: "PLAY";
   margin-right: 9px;
   font-size: 7px;
@@ -2556,4 +2562,56 @@ a.project-link.game-link[target="_blank"]::before {
   .contact-path-card { border: 1px solid #bbb; background: #fff; }
   .contact-path-card strong, .contact-path-card p { color: #111; }
   .link-note, .collection-layer-label { color: #555; }
+}
+
+/* ─── Homepage clarity pass: external-link markers + B$S motifs ──────────────── */
+
+/* Consistent rule across the whole homepage: ↗ means "opens in a new tab". */
+.mast-link[target="_blank"]::after {
+  content: " ↗" / " (opens in new tab)";
+  font-size: 10px;
+  opacity: .75;
+}
+.featured-project-card[target="_blank"] strong::after {
+  content: " ↗" / " (opens in new tab)";
+  color: var(--dim);
+  font-size: 12px;
+  font-weight: 400;
+}
+.start-card[target="_blank"] em { color: var(--gold-hot); }
+
+/* Black cockatoo feather — a quiet watermark behind the navigation tree. */
+.tree-stage::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 0;
+  inset: auto;
+  animation: none;
+  left: clamp(-40px, -3vw, -10px);
+  bottom: -36px;
+  width: clamp(160px, 22vw, 260px);
+  height: clamp(440px, 62vh, 720px);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 340'%3E%3Cpath d='M60 10 C32 78 22 188 52 318 L60 334 L68 318 C98 188 88 78 60 10 Z' fill='%23e7c767' fill-opacity='.55'/%3E%3Cpath d='M60 8 C58 118 58 228 60 334' stroke='%2304101d' stroke-width='2.5' fill='none'/%3E%3Cpath d='M40 250 C48 262 72 262 80 250 L78 274 C70 283 50 283 42 274 Z' fill='%2304101d' fill-opacity='.5'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: .06;
+  transform: rotate(14deg);
+  pointer-events: none;
+}
+
+/* Coiled serpent divider above every panel footer. */
+.panel-footer::before {
+  content: "";
+  display: block;
+  width: 96px;
+  height: 20px;
+  margin-bottom: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 24'%3E%3Cpath d='M4 12 C 18 2 30 22 44 12 C 58 2 70 22 84 12 C 90 8 96 8 100 11' stroke='%23e7c767' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='104' cy='12' r='3' fill='%23e7c767'/%3E%3Cpath d='M107 12 L113 10 M107 12 L113 14' stroke='%23e7c767' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E") left center / contain no-repeat;
+  opacity: .45;
+}
+
+@media (max-width: 900px) {
+  .tree-stage::after { opacity: .045; bottom: 0; height: 70vh; }
+}
+@media print {
+  .tree-stage::after, .panel-footer::before { display: none !important; }
 }

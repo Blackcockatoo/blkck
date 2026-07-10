@@ -141,7 +141,7 @@
     <div class="intro-shade" aria-hidden="true"></div>
     <div class="intro-brand"><span>Blue $nake Studio</span><strong>Patterns become worlds.</strong></div>
     <div class="intro-controls">
-      <button class="intro-sound" id="intro-sound" type="button" aria-pressed="true">Sound on</button>
+      <button class="intro-sound" id="intro-sound" type="button" aria-pressed="false">Unmute</button>
       <button class="intro-enter" id="intro-enter" type="button">Enter studio <span aria-hidden="true">→</span></button>
     </div>
   </div>
@@ -348,7 +348,9 @@
         <a class="mast-link" href="print.html">Print</a>
         <a class="mast-link" href="store.html">Store</a>
         <a class="mast-link" href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener">@blkck2</a>
-        <button class="print-button" type="button" onclick="window.print()">Studio overview</button>
+        <button class="print-button" type="button" onclick="window.print()"
+                title="Print or save the full studio overview as a PDF"
+                aria-label="Print the studio overview — opens your print dialog">⎙ Print overview</button>
       </div>
     </header>
 

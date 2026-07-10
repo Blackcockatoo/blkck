@@ -299,8 +299,13 @@
       .replaceAll("'", '&#039;');
   }
 
+  function isExternal(href) {
+    return /^https?:\/\//i.test(href || '');
+  }
+
+  // New tab only for other sites and standalone documents; internal pages stay in this tab.
   function externalAttrs(href) {
-    return href && !href.startsWith('#') && !href.startsWith('mailto:') ? ' target="_blank" rel="noopener"' : '';
+    return isExternal(href) || /\.(pdf|zip)([?#]|$)/i.test(href || '') ? ' target="_blank" rel="noopener"' : '';
   }
 
   function mediaPreview(item) {
@@ -392,7 +397,7 @@
               <span>${escapeHtml(d.audience)}</span>
               <strong>${escapeHtml(d.what)}</strong>
               <p>${escapeHtml(d.detail)}</p>
-              <em>${escapeHtml(d.cta)} →</em>
+              <em>${escapeHtml(d.cta)} ${isExternal(d.href) ? '↗' : '→'}</em>
             </a>
           `).join('')}
         </div>
@@ -1031,58 +1036,11 @@
     if (index >= 0) select(index, { hash: false });
   });
 
-  function setupIntroFilm() {
-    const intro = document.getElementById('intro-film');
-    const video = document.getElementById('intro-video');
-    const enter = document.getElementById('intro-enter');
-    const sound = document.getElementById('intro-sound');
-    if (!intro || !video || !enter || !sound) return;
-
-    video.muted = true;
-    video.volume = 1;
-    sound.textContent = 'Sound off';
-    sound.setAttribute('aria-pressed', 'false');
-
-    const closeIntro = () => {
-      intro.classList.add('is-leaving');
-      window.setTimeout(() => {
-        intro.hidden = true;
-        video.pause();
-      }, 650);
-    };
-
-    const startFilm = () => {
-      video.play().catch(() => {
-        // Autoplay fully blocked — show play button as fallback
-        sound.classList.add('needs-start');
-        sound.textContent = 'Play';
-        sound.setAttribute('aria-pressed', 'false');
-      });
-    };
-
-    enter.addEventListener('click', closeIntro);
-    video.addEventListener('ended', closeIntro);
-    sound.addEventListener('click', () => {
-      if (sound.classList.contains('needs-start')) {
-        sound.classList.remove('needs-start');
-        video.muted = true;
-        video.currentTime = 0;
-        sound.textContent = 'Sound off';
-        sound.setAttribute('aria-pressed', 'false');
-        video.play().catch(() => {});
-        return;
-      }
-      video.muted = !video.muted;
-      sound.textContent = video.muted ? 'Sound off' : 'Sound on';
-      sound.setAttribute('aria-pressed', String(!video.muted));
-      if (video.paused) video.play().catch(() => {});
-    });
-    startFilm();
-  }
+  // The entrance film is fully handled by the gate in data/studio-sections.js,
+  // which loads before this file and owns the Enter / sound controls.
   buildTree();
   buildPanels();
   select(active, { hash: location.hash.length > 1 });
-  setupIntroFilm();
 
   // ─── Krishna Sanctum ──────────────────────────────────────────────────────────
   function setupKrishnaSanctum() {
