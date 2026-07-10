@@ -262,7 +262,7 @@ window.BSS_STUDIO_SECTIONS = [
     ],
     links: [
       { label: 'Play Word Cube', href: 'apps/bs-word-cube.html', className: 'game-link' },
-      { label: 'Play Monkey Invaders', href: 'https://www.bluesnakestudios.com/monkey-invaders.html', className: 'album-link' },
+      { label: 'Play Monkey Invaders', href: 'https://www.bluesnakestudios.com/monkey-invaders.html', className: 'game-link' },
       { label: 'Oracle Warden (Moss 60)', href: 'apps/moss60-oracle-warden.html', className: 'game-link' },
       { label: 'Watch @blkck2', href: 'https://www.youtube.com/@blkck2' }
     ],
@@ -296,7 +296,10 @@ window.BSS_STUDIO_SECTIONS = [
       video.preload = 'none';
       return;
     }
-    video.preload = 'auto';
+    // First visit: buffer the film unless the visitor prefers reduced motion.
+    video.preload = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      ? 'metadata'
+      : 'auto';
 
     const source = video.querySelector('source');
     if (source && source.getAttribute('src') && !source.getAttribute('src').startsWith('/')) {
@@ -363,15 +366,27 @@ window.BSS_STUDIO_SECTIONS = [
       console.warn('[B$S] Entrance video failed to load. Check /YTShort_20June2026_13_12_14.mp4 in production.');
       closeIntro();
     });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !intro.hidden && !intro.classList.contains('is-leaving')) closeIntro();
+    });
 
-    // Muted autoplay is only a bonus. If the browser blocks it, the Unmute button becomes Play intro.
-    window.setTimeout(() => {
-      if (!intro.hidden && video.paused) {
-        playIntro(false).then(() => {
-          if (video.paused) sound.textContent = 'Play intro';
-        });
-      }
-    }, 250);
+    // The intro is a modal dialog: start keyboard users on the Enter Studio button.
+    enter.focus({ preventScroll: true });
+
+    // Muted autoplay is only a bonus — never for reduced-motion visitors,
+    // and if the browser blocks it the sound button becomes Play intro.
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      sound.textContent = 'Play intro';
+    } else {
+      window.setTimeout(() => {
+        if (!intro.hidden && video.paused) {
+          playIntro(false).then(() => {
+            if (video.paused) sound.textContent = 'Play intro';
+          });
+        }
+      }, 250);
+    }
   };
 
   if (document.readyState === 'loading') {

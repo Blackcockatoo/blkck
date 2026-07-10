@@ -2615,3 +2615,18 @@ a.project-link.game-link::before {
 @media print {
   .tree-stage::after, .panel-footer::before { display: none !important; }
 }
+
+/* Brand mark is a real <button> (sanctum door) beside a real link — reset chrome. */
+button.brand-mark {
+  appearance: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  font-size: 10px;
+  line-height: 1;
+}
+a.brand-copy {
+  color: inherit;
+  text-decoration: none;
+}
