@@ -273,6 +273,7 @@ window.BSS_STUDIO_SECTIONS = [
 // Vercel/mobile-safe entrance video gate.
 // This file loads before script.js, so the capture listeners below run before the old bubble handlers.
 (() => {
+  const INTRO_SEEN_KEY = 'bss-intro-seen';
   const init = () => {
     const intro = document.getElementById('intro-film');
     const video = document.getElementById('intro-video');
@@ -284,9 +285,18 @@ window.BSS_STUDIO_SECTIONS = [
     video.removeAttribute('autoplay');
     video.setAttribute('playsinline', '');
     video.setAttribute('webkit-playsinline', '');
-    video.preload = 'auto';
     video.muted = true;
     video.volume = 1;
+
+    // Returning visitors have seen the film — take them straight into the studio.
+    let seen = false;
+    try { seen = localStorage.getItem(INTRO_SEEN_KEY) === '1'; } catch (error) { /* private mode */ }
+    if (seen) {
+      intro.hidden = true;
+      video.preload = 'none';
+      return;
+    }
+    video.preload = 'auto';
 
     const source = video.querySelector('source');
     if (source && source.getAttribute('src') && !source.getAttribute('src').startsWith('/')) {
@@ -294,11 +304,18 @@ window.BSS_STUDIO_SECTIONS = [
       video.load();
     }
 
-    sound.textContent = 'Play intro';
+    // One clear CTA: the gold button always enters the site.
+    // The secondary button only ever controls the film's sound.
+    enter.innerHTML = 'Enter studio <span aria-hidden="true">→</span>';
+    sound.textContent = 'Unmute';
     sound.setAttribute('aria-pressed', 'false');
-    enter.innerHTML = 'Play entrance <span aria-hidden="true">→</span>';
+
+    const markSeen = () => {
+      try { localStorage.setItem(INTRO_SEEN_KEY, '1'); } catch (error) { /* private mode */ }
+    };
 
     const closeIntro = () => {
+      markSeen();
       intro.classList.add('is-leaving');
       window.setTimeout(() => {
         intro.hidden = true;
@@ -310,26 +327,21 @@ window.BSS_STUDIO_SECTIONS = [
       try {
         video.muted = !withSound;
         video.volume = 1;
-        if (video.ended || video.currentTime > 0.25) video.currentTime = 0;
+        if (video.ended) video.currentTime = 0;
         const promise = video.play();
         if (promise && typeof promise.then === 'function') await promise;
-        sound.textContent = video.muted ? 'Sound off' : 'Sound on';
+        sound.textContent = video.muted ? 'Unmute' : 'Mute';
         sound.setAttribute('aria-pressed', String(!video.muted));
-        enter.innerHTML = 'Skip intro <span aria-hidden="true">→</span>';
       } catch (error) {
         console.warn('[B$S] Entrance video blocked or missing; opening site.', error);
         closeIntro();
       }
     };
 
-    const startFromGesture = (event) => {
+    const enterStudio = (event) => {
       event.preventDefault();
       event.stopImmediatePropagation();
-      if (!video.paused && !video.ended) {
-        closeIntro();
-        return;
-      }
-      playIntro(true);
+      closeIntro();
     };
 
     const toggleSoundOrPlay = (event) => {
@@ -340,11 +352,11 @@ window.BSS_STUDIO_SECTIONS = [
         return;
       }
       video.muted = !video.muted;
-      sound.textContent = video.muted ? 'Sound off' : 'Sound on';
+      sound.textContent = video.muted ? 'Unmute' : 'Mute';
       sound.setAttribute('aria-pressed', String(!video.muted));
     };
 
-    enter.addEventListener('click', startFromGesture, true);
+    enter.addEventListener('click', enterStudio, true);
     sound.addEventListener('click', toggleSoundOrPlay, true);
     video.addEventListener('ended', closeIntro);
     video.addEventListener('error', () => {
@@ -352,9 +364,13 @@ window.BSS_STUDIO_SECTIONS = [
       closeIntro();
     });
 
-    // Muted autoplay is only a bonus. If Vercel/browser blocks it, the Play entrance button still works.
+    // Muted autoplay is only a bonus. If the browser blocks it, the Unmute button becomes Play intro.
     window.setTimeout(() => {
-      if (!intro.hidden && video.paused) playIntro(false);
+      if (!intro.hidden && video.paused) {
+        playIntro(false).then(() => {
+          if (video.paused) sound.textContent = 'Play intro';
+        });
+      }
     }, 250);
   };
 
