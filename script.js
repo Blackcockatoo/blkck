@@ -1059,6 +1059,9 @@
 
     function openSanctum() {
       lastFocused = document.activeElement;
+      // The reader-edition PDF is heavy — only fetch it once the sanctum actually opens.
+      const reader = sanctum.querySelector('iframe[data-src]');
+      if (reader && !reader.getAttribute('src')) reader.setAttribute('src', reader.dataset.src);
       sanctum.removeAttribute('aria-hidden');
       sanctum.classList.add('is-open');
       setTimeout(() => { if (closeBtn) closeBtn.focus({ preventScroll: true }); }, 820);
@@ -1083,10 +1086,8 @@
       }
     }
 
+    // The door is a native <button>, so keyboard activation arrives as a click event.
     door.addEventListener('click', e => { e.stopPropagation(); openSanctum(); });
-    door.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); openSanctum(); }
-    });
     if (closeBtn) closeBtn.addEventListener('click', closeSanctum);
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && sanctum.classList.contains('is-open')) closeSanctum();
