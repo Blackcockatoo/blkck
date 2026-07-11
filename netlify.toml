@@ -1,4 +1,5 @@
 [build]
+  command = "bash scripts/import-i-ran-lego.sh"
   publish = "."
 
 # www and http → https://blkck2.com
@@ -64,3 +65,8 @@
   for = "/*.js"
   [headers.values]
     Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/i-ran-lego/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
