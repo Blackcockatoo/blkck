@@ -1,4 +1,5 @@
 [build]
+  command = "python3 scripts/prepare-i-ran-lego.py"
   publish = "."
 
 # www and http → https://blkck2.com
@@ -51,6 +52,11 @@
 
 [[headers]]
   for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/i-ran-lego/sw.js"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
