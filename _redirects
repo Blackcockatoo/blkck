@@ -21,7 +21,11 @@ http://blkck2.com/* https://blkck2.com/:splat 301!
 /privacy /privacy-policy.html 301
 /prints /print.html 301
 /cube /magic-cube.html 301
-/i-ran-lego /i-ran-lego.html 301
+/i-ran-lego /i-ran-lego/index.html 200
+/i-ran-lego/ /i-ran-lego/index.html 200
+/i-ran-lego.html /i-ran-lego/ 301
+/iran-lego /i-ran-lego/ 301
+/living-book /i-ran-lego/ 301
 /metapet /meta-pet.html 301
 /chant /krsnapaksi-chant.html 301
 /krsnapaksi /krsnapaksi-chant.html 301
