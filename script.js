@@ -411,6 +411,7 @@
       { label: 'Teacher\'s Secret Cheatsheet', status: 'Live', desc: 'Behaviour-support templates for stretched teachers. Print and use. Zero admin.', href: 'https://teachers-secret-cheatsheet.vercel.app/' },
       { label: 'Black Wing Crew / Neon Venom', status: 'Live', desc: '2026 LP: songs, lyric posters, QR drops, streaming.', href: 'https://blackwingcrew.netlify.app/' },
       { label: 'B$S Magic Rubix Cube', status: 'Prototype', desc: 'Six-face 5×5 word cube — art mode, game mode, net view. No login, no ads.', href: 'magic-cube.html' },
+      { label: 'Kṛṣṇapakṣi Chant', status: 'Live', desc: 'Interactive devotional code-poem: two hidden ciphers, one Hare Krishna Mahā-mantra grid.', href: 'krsnapaksi-chant.html' },
       { label: 'Moss 60', status: 'Research-in-progress', desc: 'Visual number system — base-60 digital DNA, glyph engine and symbolic identity.', href: 'https://www.bluesnakestudios.com/app/moss60' },
       { label: 'Semantic Sovereignty', status: 'Research-in-progress', desc: 'Doctrine on language, framing, meaning and narrative defence.', href: 'documents/oss-734g-known-unknowns-register.html' },
       { label: 'Visual Worlds', status: 'Live', desc: '10 gallery rooms: mythology, portraits, parody, print.', href: '#visual-worlds' },
