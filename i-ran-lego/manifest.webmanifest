@@ -1,0 +1,17 @@
+{
+  "name": "I RAN, LEGO! - The Living Storybook",
+  "short_name": "I RAN, LEGO!",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07101d",
+  "theme_color": "#07101d",
+  "icons": [
+    {
+      "src": "assets/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "scope": "./"
+}
