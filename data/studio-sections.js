@@ -128,6 +128,27 @@ window.BSS_STUDIO_SECTIONS = [
     featuredIds: ['fuji-taiko-scene', 'fuji-lyric-study-sheet', 'fuji-bilingual-chorus', 'fuji-sister-cities-song', 'fuji-pronunciation-sheet']
   },
   {
+    slug: 'frankston-2035',
+    status: 'Project',
+    label: 'Frankston 2035',
+    eyebrow: 'Community future artefact · civic imagination',
+    title: 'Frankston as a visible, useful future.',
+    statement: 'Frankston 2035 gathers the local-facing Blue $nake Studio work into one discoverable project: child-safe tools, community art, school pathways, public proof and civic imagination.',
+    pageTitle: 'Frankston 2035 — Community Future Artefact · Blue $nake Studio',
+    pageDescription: 'Frankston 2035 is a Blue $nake Studio community future artefact for schools, councils, libraries and local collaborators in Frankston.',
+    details: [
+      'Use this branch for Frankston-focused workshop ideas, council/school proposals, public art notes and community-facing proof.',
+      'Frame it as a creative archive and invitation, not an official council plan or policy claim.',
+      'It should feel local, practical and future-facing: Frankston 2035 as art, education and safe technology made visible.'
+    ],
+    links: [
+      { label: 'Open Frankston 2035', href: 'frankston-2035.html', className: 'album-link' },
+      { label: 'Council / School pathway', href: 'gov.html' },
+      { label: 'B$S Proof Wall', href: 'proof-wall.html#councils' }
+    ],
+    featuredIds: ['moss-man-frankston-courts', 'moss-man-hope-poster', 'moss-man-notice-poster', 'fuji-sister-cities-song', 'meta-pet-process-overview']
+  },
+  {
     slug: 'black-omen-waahn',
     status: 'Research-in-progress',
     label: 'Black Omen / Waahn',
