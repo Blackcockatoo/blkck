@@ -11,11 +11,11 @@ window.BSS_STUDIO_SECTIONS = [
     startHere: true,
     details: [],
     links: [
-      { label: 'Try Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link' },
-      { label: 'Download Teacher Pack', href: 'https://teachers-secret-cheatsheet.vercel.app/', className: 'album-link' },
-      { label: 'Enter Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link' },
-      { label: 'Gallery Rooms', href: '#visual-worlds' },
-      { label: 'B$S Proof Wall', href: 'proof-wall.html' },
+      { label: 'Try Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link', sub: 'Browser demo. No login.' },
+      { label: 'Download Teacher Pack', href: 'https://teachers-secret-cheatsheet.vercel.app/', className: 'album-link', sub: 'Seven printable classroom templates.' },
+      { label: 'Enter Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link', sub: 'Stream the Neon Venom LP.' },
+      { label: 'Gallery Rooms', href: '#visual-worlds', sub: 'Ten rooms of art and myth.' },
+      { label: 'B$S Proof Wall', href: 'proof-wall.html', sub: 'Everything already built.' },
       { label: 'YouTube @blkck2', href: 'https://www.youtube.com/@blkck2' },
       { label: 'Email B$S', href: 'mailto:bluesssnakestudio@gmail.com' }
     ],
@@ -44,6 +44,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'visual-worlds',
+    status: 'Live',
     label: 'Gallery Rooms',
     eyebrow: 'Selected work · Visual archive',
     title: 'Enter the visual worlds.',
@@ -64,6 +65,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'black-wing-crew',
+    status: 'Live',
     label: 'Black Wing Crew',
     eyebrow: 'Music and moving image · Neon Venom',
     title: 'Sound with a visual identity.',
@@ -85,6 +87,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'old-vic-state',
+    status: 'Live',
     label: 'Old Vic State',
     eyebrow: 'Civic gothic · recursive song cycle · Victoria',
     title: 'The old state dreams in circles.',
@@ -106,6 +109,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'frankston-fuji',
+    status: 'Live',
     label: 'Frankston → Fuji',
     eyebrow: 'Sister-city song · learning bridge',
     title: 'Two shores. One song.',
@@ -124,7 +128,29 @@ window.BSS_STUDIO_SECTIONS = [
     featuredIds: ['fuji-taiko-scene', 'fuji-lyric-study-sheet', 'fuji-bilingual-chorus', 'fuji-sister-cities-song', 'fuji-pronunciation-sheet']
   },
   {
+    slug: 'frankston-2035',
+    status: 'Project',
+    label: 'Frankston 2035',
+    eyebrow: 'Community future artefact · civic imagination',
+    title: 'Frankston as a visible, useful future.',
+    statement: 'Frankston 2035 gathers the local-facing Blue $nake Studio work into one discoverable project: child-safe tools, community art, school pathways, public proof and civic imagination.',
+    pageTitle: 'Frankston 2035 — Community Future Artefact · Blue $nake Studio',
+    pageDescription: 'Frankston 2035 is a Blue $nake Studio community future artefact for schools, councils, libraries and local collaborators in Frankston.',
+    details: [
+      'Use this branch for Frankston-focused workshop ideas, council/school proposals, public art notes and community-facing proof.',
+      'Frame it as a creative archive and invitation, not an official council plan or policy claim.',
+      'It should feel local, practical and future-facing: Frankston 2035 as art, education and safe technology made visible.'
+    ],
+    links: [
+      { label: 'Open Frankston 2035', href: 'frankston-2035.html', className: 'album-link' },
+      { label: 'Council / School pathway', href: 'gov.html' },
+      { label: 'B$S Proof Wall', href: 'proof-wall.html#councils' }
+    ],
+    featuredIds: ['moss-man-frankston-courts', 'moss-man-hope-poster', 'moss-man-notice-poster', 'fuji-sister-cities-song', 'meta-pet-process-overview']
+  },
+  {
     slug: 'black-omen-waahn',
+    status: 'Research-in-progress',
     label: 'Black Omen / Waahn',
     eyebrow: 'Respectful research · language journey',
     title: 'Ask before the omen speaks.',
@@ -144,6 +170,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'meta-pet',
+    status: 'Prototype',
     label: 'Meta-Pet',
     eyebrow: 'Privacy-first learning · In development',
     title: 'Technology that gives attention back.',
@@ -169,6 +196,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'moss60',
+    status: 'Research-in-progress',
     label: 'Moss 60',
     eyebrow: 'Visual mathematics · 108 · 360',
     title: 'A number system you can see and feel.',
@@ -193,6 +221,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'teacher-tools',
+    status: 'Live',
     label: 'Teacher Tools',
     eyebrow: 'Classroom proof · behaviour support',
     title: 'Useful in a real classroom.',
@@ -217,6 +246,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'print-street-pack',
+    status: 'Live',
     label: 'Print Street Pack',
     eyebrow: 'Poster arsenal · QR drops · Officeworks-ready',
     title: 'Print the omen.',
@@ -238,6 +268,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'games',
+    status: 'Prototype',
     label: 'Games',
     eyebrow: 'Play · Explore · Interactive',
     title: 'Games from the studio.',
@@ -252,7 +283,7 @@ window.BSS_STUDIO_SECTIONS = [
     ],
     links: [
       { label: 'Play Word Cube', href: 'apps/bs-word-cube.html', className: 'game-link' },
-      { label: 'Play Monkey Invaders', href: 'https://www.bluesnakestudios.com/monkey-invaders.html', className: 'album-link' },
+      { label: 'Play Monkey Invaders', href: 'https://www.bluesnakestudios.com/monkey-invaders.html', className: 'game-link' },
       { label: 'Oracle Warden (Moss 60)', href: 'apps/moss60-oracle-warden.html', className: 'game-link' },
       { label: 'Watch @blkck2', href: 'https://www.youtube.com/@blkck2' }
     ],
@@ -263,6 +294,7 @@ window.BSS_STUDIO_SECTIONS = [
 // Vercel/mobile-safe entrance video gate.
 // This file loads before script.js, so the capture listeners below run before the old bubble handlers.
 (() => {
+  const INTRO_SEEN_KEY = 'bss-intro-seen';
   const init = () => {
     const intro = document.getElementById('intro-film');
     const video = document.getElementById('intro-video');
@@ -274,9 +306,21 @@ window.BSS_STUDIO_SECTIONS = [
     video.removeAttribute('autoplay');
     video.setAttribute('playsinline', '');
     video.setAttribute('webkit-playsinline', '');
-    video.preload = 'auto';
     video.muted = true;
     video.volume = 1;
+
+    // Returning visitors have seen the film — take them straight into the studio.
+    let seen = false;
+    try { seen = localStorage.getItem(INTRO_SEEN_KEY) === '1'; } catch (error) { /* private mode */ }
+    if (seen) {
+      intro.hidden = true;
+      video.preload = 'none';
+      return;
+    }
+    // First visit: buffer the film unless the visitor prefers reduced motion.
+    video.preload = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      ? 'metadata'
+      : 'auto';
 
     const source = video.querySelector('source');
     if (source && source.getAttribute('src') && !source.getAttribute('src').startsWith('/')) {
@@ -284,11 +328,18 @@ window.BSS_STUDIO_SECTIONS = [
       video.load();
     }
 
-    sound.textContent = 'Play intro';
+    // One clear CTA: the gold button always enters the site.
+    // The secondary button only ever controls the film's sound.
+    enter.innerHTML = 'Enter studio <span aria-hidden="true">→</span>';
+    sound.textContent = 'Unmute';
     sound.setAttribute('aria-pressed', 'false');
-    enter.innerHTML = 'Play entrance <span aria-hidden="true">→</span>';
+
+    const markSeen = () => {
+      try { localStorage.setItem(INTRO_SEEN_KEY, '1'); } catch (error) { /* private mode */ }
+    };
 
     const closeIntro = () => {
+      markSeen();
       intro.classList.add('is-leaving');
       window.setTimeout(() => {
         intro.hidden = true;
@@ -300,26 +351,21 @@ window.BSS_STUDIO_SECTIONS = [
       try {
         video.muted = !withSound;
         video.volume = 1;
-        if (video.ended || video.currentTime > 0.25) video.currentTime = 0;
+        if (video.ended) video.currentTime = 0;
         const promise = video.play();
         if (promise && typeof promise.then === 'function') await promise;
-        sound.textContent = video.muted ? 'Sound off' : 'Sound on';
+        sound.textContent = video.muted ? 'Unmute' : 'Mute';
         sound.setAttribute('aria-pressed', String(!video.muted));
-        enter.innerHTML = 'Skip intro <span aria-hidden="true">→</span>';
       } catch (error) {
         console.warn('[B$S] Entrance video blocked or missing; opening site.', error);
         closeIntro();
       }
     };
 
-    const startFromGesture = (event) => {
+    const enterStudio = (event) => {
       event.preventDefault();
       event.stopImmediatePropagation();
-      if (!video.paused && !video.ended) {
-        closeIntro();
-        return;
-      }
-      playIntro(true);
+      closeIntro();
     };
 
     const toggleSoundOrPlay = (event) => {
@@ -330,22 +376,38 @@ window.BSS_STUDIO_SECTIONS = [
         return;
       }
       video.muted = !video.muted;
-      sound.textContent = video.muted ? 'Sound off' : 'Sound on';
+      sound.textContent = video.muted ? 'Unmute' : 'Mute';
       sound.setAttribute('aria-pressed', String(!video.muted));
     };
 
-    enter.addEventListener('click', startFromGesture, true);
+    enter.addEventListener('click', enterStudio, true);
     sound.addEventListener('click', toggleSoundOrPlay, true);
     video.addEventListener('ended', closeIntro);
     video.addEventListener('error', () => {
       console.warn('[B$S] Entrance video failed to load. Check /YTShort_20June2026_13_12_14.mp4 in production.');
       closeIntro();
     });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !intro.hidden && !intro.classList.contains('is-leaving')) closeIntro();
+    });
 
-    // Muted autoplay is only a bonus. If Vercel/browser blocks it, the Play entrance button still works.
-    window.setTimeout(() => {
-      if (!intro.hidden && video.paused) playIntro(false);
-    }, 250);
+    // The intro is a modal dialog: start keyboard users on the Enter Studio button.
+    enter.focus({ preventScroll: true });
+
+    // Muted autoplay is only a bonus — never for reduced-motion visitors,
+    // and if the browser blocks it the sound button becomes Play intro.
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      sound.textContent = 'Play intro';
+    } else {
+      window.setTimeout(() => {
+        if (!intro.hidden && video.paused) {
+          playIntro(false).then(() => {
+            if (video.paused) sound.textContent = 'Play intro';
+          });
+        }
+      }, 250);
+    }
   };
 
   if (document.readyState === 'loading') {

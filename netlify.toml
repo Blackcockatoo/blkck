@@ -20,6 +20,20 @@
   status = 301
   force  = true
 
+# Professional mode — clean lore-free route for schools, councils and partners
+[[redirects]]
+  from   = "/schools"
+  to     = "/gov.html"
+  status = 301
+
+[[redirects]]
+  from   = "/professional"
+  to     = "/gov.html"
+  status = 301
+
+# NOTE: friendly aliases and extensionless page URLs live in the _redirects
+# file, which Netlify processes ahead of these rules. Add new aliases there.
+
 # Security headers
 [[headers]]
   for = "/*"

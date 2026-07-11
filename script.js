@@ -299,8 +299,13 @@
       .replaceAll("'", '&#039;');
   }
 
+  function isExternal(href) {
+    return /^https?:\/\//i.test(href || '');
+  }
+
+  // New tab only for other sites and standalone documents; internal pages stay in this tab.
   function externalAttrs(href) {
-    return href && !href.startsWith('#') && !href.startsWith('mailto:') ? ' target="_blank" rel="noopener"' : '';
+    return isExternal(href) || /\.(pdf|zip)([?#]|$)/i.test(href || '') ? ' target="_blank" rel="noopener"' : '';
   }
 
   function mediaPreview(item) {
@@ -329,7 +334,18 @@
   function linksRow(section) {
     const links = section.links || [];
     if (!links.length) return '';
-    return `<div class="links-row">${links.map(link => `<a class="project-link ${link.className || ''}" href="${escapeHtml(link.href)}"${externalAttrs(link.href)}>${escapeHtml(link.label)}</a>`).join('')}</div>`;
+    return `<div class="links-row">${links.map(link => {
+      const anchor = `<a class="project-link ${link.className || ''}" href="${escapeHtml(link.href)}"${externalAttrs(link.href)}>${escapeHtml(link.label)}</a>`;
+      return link.sub
+        ? `<span class="link-stack">${anchor}<small class="link-note">${escapeHtml(link.sub)}</small></span>`
+        : anchor;
+    }).join('')}</div>`;
+  }
+
+  function statusBadge(status) {
+    if (!status) return '';
+    const slug = status.toLowerCase().replace(/[^a-z]+/g, '-');
+    return `<span class="section-status" data-status="${escapeHtml(slug)}">${escapeHtml(status)}</span>`;
   }
 
   function filterBar(sectionItems) {
@@ -345,29 +361,35 @@
   function startHereAudience() {
     const doors = [
       {
-        audience: 'Schools / Parents',
-        what: 'Child-safe learning tools and classroom support.',
-        detail: 'Meta-Pet digital companion, Teacher\'s Secret Cheatsheet, behaviour-support templates, privacy-first design — no ads, no trackers.',
-        cta: 'Find out more', href: 'meta-pet.html'
-      },
-      {
-        audience: 'Art / Music / Culture',
-        what: 'Mythic music worlds, visual art, print packs and lore.',
-        detail: 'Black Wing Crew, Neon Venom LP, gallery rooms, sticker sheets, lyric posters, YouTube and street print drops.',
+        audience: 'Music / Black Wing Crew',
+        what: 'I\'m here for the music.',
+        detail: 'Neon Venom — the 2026 digital LP. Songs, videos, lyric posters and QR street drops from the studio\'s music world.',
         cta: 'Enter Black Wing Crew', href: 'https://blackwingcrew.netlify.app/'
       },
       {
-        audience: 'Theory / Invention',
-        what: 'Visual number system, symbolic engine and digital DNA.',
-        detail: 'Moss 60 base-60 geometry, Semantic Sovereignty doctrine, interactive glyph engine, proof layers and pattern logic.',
-        cta: 'Explore Moss 60', href: 'https://www.bluesnakestudios.com/app/moss60'
+        audience: 'Schools / Meta-Pet',
+        what: 'I\'m here for schools or Meta-Pet.',
+        detail: 'For principals, teachers, parents and councils: privacy-first learning tools, free teacher templates and a clean professional pathway — no lore required.',
+        cta: 'Open the Schools page', href: 'gov.html'
+      },
+      {
+        audience: 'Art / Prints',
+        what: 'I\'m here for art and prints.',
+        detail: 'Ten gallery rooms, original paintings, wallpapers, posters, colouring pages and the free Print Vault.',
+        cta: 'View Gallery Rooms', href: '#visual-worlds'
+      },
+      {
+        audience: 'Studio / Lore',
+        what: 'I\'m here to understand B$S.',
+        detail: 'The deep layer: Moss 60, the Field Guide, symbolic systems, Semantic Sovereignty and the studio archive.',
+        cta: 'Open the Field Guide', href: 'field-guide.html'
       }
     ];
     return `
       <section class="start-here-pack" aria-label="Choose your door">
         <div class="section-heading">
           <p class="eyebrow">Choose your door</p>
-          <h2>Three ways into the studio.</h2>
+          <h2>Four ways into the studio.</h2>
         </div>
         <div class="start-card-grid">
           ${doors.map(d => `
@@ -375,7 +397,7 @@
               <span>${escapeHtml(d.audience)}</span>
               <strong>${escapeHtml(d.what)}</strong>
               <p>${escapeHtml(d.detail)}</p>
-              <em>${escapeHtml(d.cta)} →</em>
+              <em>${escapeHtml(d.cta)} ${isExternal(d.href) ? '↗' : '→'}</em>
             </a>
           `).join('')}
         </div>
@@ -385,14 +407,17 @@
 
   function featuredProjectsGrid() {
     const projects = [
-      { label: 'Meta-Pet', status: 'In development', desc: 'A privacy-first digital pet and learning companion — no ads, trackers, social feeds, gambling loops or unnecessary data.', href: '#meta-pet' },
+      { label: 'Meta-Pet', status: 'Prototype', desc: 'A privacy-first digital pet and learning companion — no ads, trackers, social feeds, gambling loops or unnecessary data.', href: '#meta-pet' },
       { label: 'Teacher\'s Secret Cheatsheet', status: 'Live', desc: 'Behaviour-support templates for stretched teachers. Print and use. Zero admin.', href: 'https://teachers-secret-cheatsheet.vercel.app/' },
       { label: 'Black Wing Crew / Neon Venom', status: 'Live', desc: '2026 LP: songs, lyric posters, QR drops, streaming.', href: 'https://blackwingcrew.netlify.app/' },
-      { label: 'Moss 60', status: 'Research', desc: 'Visual number system — base-60 digital DNA, glyph engine and symbolic identity.', href: 'https://www.bluesnakestudios.com/app/moss60' },
-      { label: 'Semantic Sovereignty', status: 'Active', desc: 'Doctrine on language, framing, meaning and narrative defence.', href: 'documents/oss-734g-known-unknowns-register.html' },
+      { label: 'B$S Magic Rubix Cube', status: 'Prototype', desc: 'Six-face 5×5 word cube — art mode, game mode, net view. No login, no ads.', href: 'magic-cube.html' },
+      { label: 'I Ran LEGO', status: 'Prototype', desc: 'Miniature myth, brick-built motion and playful B$S side-quest world-building.', href: 'i-ran-lego.html' },
+      { label: 'Moss 60', status: 'Research-in-progress', desc: 'Visual number system — base-60 digital DNA, glyph engine and symbolic identity.', href: 'https://www.bluesnakestudios.com/app/moss60' },
+      { label: 'Semantic Sovereignty', status: 'Research-in-progress', desc: 'Doctrine on language, framing, meaning and narrative defence.', href: 'documents/oss-734g-known-unknowns-register.html' },
       { label: 'Visual Worlds', status: 'Live', desc: '10 gallery rooms: mythology, portraits, parody, print.', href: '#visual-worlds' },
-      { label: 'Frankston → Fuji', status: 'In progress', desc: 'Bilingual sister-city song, Japanese practice & taiko.', href: '#frankston-fuji' },
-      { label: 'Black Omen / Waahn', status: 'Research', desc: 'Bunurong-Boonwurrung language research map.', href: '#black-omen-waahn' }
+      { label: 'Frankston → Fuji', status: 'Live', desc: 'Bilingual sister-city song, Japanese practice & taiko.', href: '#frankston-fuji' },
+      { label: 'Frankston 2035', status: 'Project', desc: 'Community future artefact for Frankston schools, councils, libraries and local collaborators.', href: 'frankston-2035.html' },
+      { label: 'Black Omen / Waahn', status: 'Research-in-progress', desc: 'Bunurong-Boonwurrung language research map.', href: '#black-omen-waahn' }
     ];
     return `
       <section class="featured-projects" aria-label="Studio projects">
@@ -404,7 +429,7 @@
           ${projects.map(p => `
             <a class="featured-project-card" href="${escapeHtml(p.href)}"${externalAttrs(p.href)}>
               <strong>${escapeHtml(p.label)}</strong>
-              ${p.status ? `<span class="project-status">${escapeHtml(p.status)}</span>` : ''}
+              ${statusBadge(p.status)}
               <p>${escapeHtml(p.desc)}</p>
             </a>`).join('')}
         </div>
@@ -431,6 +456,34 @@
     `;
   }
 
+  function contactPathways() {
+    const email = 'bluesssnakestudio@gmail.com';
+    const printEmail = 'blkck2@gmail.com';
+    const paths = [
+      { label: 'School pilot enquiry', sub: 'Meta-Pet pilots, teacher packs, classroom questions.', href: `mailto:${email}?subject=${encodeURIComponent('School Pilot Enquiry — Blue $nake Studio')}` },
+      { label: 'Music / collaboration', sub: 'Black Wing Crew, features, video and creative collabs.', href: `mailto:${email}?subject=${encodeURIComponent('Music / Collaboration — Black Wing Crew')}` },
+      { label: 'Gallery / art enquiry', sub: 'Paintings, exhibitions, commissions and licensing.', href: `mailto:${email}?subject=${encodeURIComponent('Gallery / Art Enquiry — Blue $nake Studio')}` },
+      { label: 'Print files', sub: 'Poster packs, QR sheets and print-ready files.', href: `mailto:${printEmail}?subject=${encodeURIComponent('Print Files Request — Blue $nake Studio')}` },
+      { label: 'Cultural guidance / research correction', sub: 'Feedback on the Waahn / Bunurong language research.', href: `mailto:${email}?subject=${encodeURIComponent('Cultural Guidance / Research Correction — Waahn')}` }
+    ];
+    return `
+      <section class="contact-pathways" aria-label="Contact pathways">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2>Tell us why you're writing.</h2>
+        </div>
+        <p class="contact-pathways-note">Same studio, same inbox — the right subject line just gets you a faster, better answer.</p>
+        <div class="contact-path-grid">
+          ${paths.map(p => `
+            <a class="contact-path-card" href="${escapeHtml(p.href)}">
+              <strong>${escapeHtml(p.label)}</strong>
+              <p>${escapeHtml(p.sub)}</p>
+            </a>`).join('')}
+        </div>
+      </section>
+    `;
+  }
+
   function panelFooter() {
     return `
       <footer class="panel-footer" role="contentinfo">
@@ -441,13 +494,31 @@
   }
 
   function collectionGrid() {
+    const layers = [
+      {
+        label: 'Proof layer — live tools, music and public work',
+        slugs: ['visual-worlds', 'black-wing-crew', 'frankston-fuji', 'meta-pet', 'teacher-tools', 'print-street-pack', 'games']
+      },
+      {
+        label: 'Lore layer — mythology, symbolic systems and research',
+        slugs: ['moss-man', 'old-vic-state', 'black-omen-waahn', 'moss60']
+      }
+    ];
+    const chip = (slug) => {
+      const index = slugs.indexOf(slug);
+      if (index < 0) return '';
+      return `
+          <a class="collection-chip" href="#${slug}" data-jump-index="${index}">
+            <small>${String(index + 1).padStart(2, '0')}</small>
+            <strong>${escapeHtml(sections[index].label)}</strong>
+          </a>`;
+    };
     return `
-      <div class="mini-collections">
-        ${sections.slice(1).map((section, index) => `
-          <a class="collection-chip" href="#${section.slug}" data-jump-index="${index + 1}">
-            <small>${String(index + 2).padStart(2, '0')}</small>
-            <strong>${escapeHtml(section.label)}</strong>
-          </a>`).join('')}
+      <div class="collection-layers">
+        ${layers.map(layer => `
+          <p class="collection-layer-label">${escapeHtml(layer.label)}</p>
+          <div class="mini-collections">${layer.slugs.map(chip).join('')}</div>
+        `).join('')}
       </div>
     `;
   }
@@ -646,7 +717,7 @@
         <div class="panel-scroll">
           ${tabs}
           <section class="panel-view is-active" id="view-${section.slug}-overview" role="tabpanel" aria-labelledby="subtab-${section.slug}-overview" data-panel-view-panel="overview">
-            <p class="eyebrow">${escapeHtml(section.eyebrow)}</p>
+            <p class="eyebrow">${escapeHtml(section.eyebrow)}${section.status ? ' ' + statusBadge(section.status) : ''}</p>
             <h1>${escapeHtml(section.title)}</h1>
             <p class="statement">${escapeHtml(section.statement)}</p>
             ${section.studioDescription ? `<p class="studio-description">${escapeHtml(section.studioDescription)}</p>` : ''}
@@ -659,6 +730,7 @@
             ${section.startHere ? featuredProjectsGrid() : ''}
             ${section.startHere ? startHereAbout() : ''}
             ${section.startHere ? collectionGrid() : ''}
+            ${section.startHere ? contactPathways() : ''}
             ${section.rooms ? roomsShowcase() : ''}
             ${panelFooter()}
           </section>
@@ -966,58 +1038,11 @@
     if (index >= 0) select(index, { hash: false });
   });
 
-  function setupIntroFilm() {
-    const intro = document.getElementById('intro-film');
-    const video = document.getElementById('intro-video');
-    const enter = document.getElementById('intro-enter');
-    const sound = document.getElementById('intro-sound');
-    if (!intro || !video || !enter || !sound) return;
-
-    video.muted = true;
-    video.volume = 1;
-    sound.textContent = 'Sound off';
-    sound.setAttribute('aria-pressed', 'false');
-
-    const closeIntro = () => {
-      intro.classList.add('is-leaving');
-      window.setTimeout(() => {
-        intro.hidden = true;
-        video.pause();
-      }, 650);
-    };
-
-    const startFilm = () => {
-      video.play().catch(() => {
-        // Autoplay fully blocked — show play button as fallback
-        sound.classList.add('needs-start');
-        sound.textContent = 'Play';
-        sound.setAttribute('aria-pressed', 'false');
-      });
-    };
-
-    enter.addEventListener('click', closeIntro);
-    video.addEventListener('ended', closeIntro);
-    sound.addEventListener('click', () => {
-      if (sound.classList.contains('needs-start')) {
-        sound.classList.remove('needs-start');
-        video.muted = true;
-        video.currentTime = 0;
-        sound.textContent = 'Sound off';
-        sound.setAttribute('aria-pressed', 'false');
-        video.play().catch(() => {});
-        return;
-      }
-      video.muted = !video.muted;
-      sound.textContent = video.muted ? 'Sound off' : 'Sound on';
-      sound.setAttribute('aria-pressed', String(!video.muted));
-      if (video.paused) video.play().catch(() => {});
-    });
-    startFilm();
-  }
+  // The entrance film is fully handled by the gate in data/studio-sections.js,
+  // which loads before this file and owns the Enter / sound controls.
   buildTree();
   buildPanels();
   select(active, { hash: location.hash.length > 1 });
-  setupIntroFilm();
 
   // ─── Krishna Sanctum ──────────────────────────────────────────────────────────
   function setupKrishnaSanctum() {
@@ -1036,6 +1061,9 @@
 
     function openSanctum() {
       lastFocused = document.activeElement;
+      // The reader-edition PDF is heavy — only fetch it once the sanctum actually opens.
+      const reader = sanctum.querySelector('iframe[data-src]');
+      if (reader && !reader.getAttribute('src')) reader.setAttribute('src', reader.dataset.src);
       sanctum.removeAttribute('aria-hidden');
       sanctum.classList.add('is-open');
       setTimeout(() => { if (closeBtn) closeBtn.focus({ preventScroll: true }); }, 820);
@@ -1060,14 +1088,46 @@
       }
     }
 
+    // The door is a native <button>, so keyboard activation arrives as a click event.
     door.addEventListener('click', e => { e.stopPropagation(); openSanctum(); });
-    door.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); openSanctum(); }
-    });
     if (closeBtn) closeBtn.addEventListener('click', closeSanctum);
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && sanctum.classList.contains('is-open')) closeSanctum();
     });
+
+    const sanctumPlayBtn = document.getElementById('sanctum-video-play');
+    const sanctumVideoFrame = document.getElementById('sanctum-video-frame');
+    if (sanctumPlayBtn && sanctumVideoFrame) {
+      sanctumPlayBtn.addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/pufgJKzIXF4?autoplay=1&rel=0';
+        iframe.title = 'Kṛṣṇapakṣi Chant – Two ciphers, one name';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        iframe.loading = 'lazy';
+        sanctumVideoFrame.innerHTML = '';
+        sanctumVideoFrame.appendChild(iframe);
+      });
+    }
+
+    const copyBtn = document.getElementById('sanctum-copy-pitch');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        const target = document.getElementById(copyBtn.getAttribute('data-copy-target'));
+        if (!target) return;
+        const text = target.textContent.trim();
+        const done = () => {
+          const orig = copyBtn.textContent;
+          copyBtn.textContent = 'Copied';
+          setTimeout(() => { copyBtn.textContent = orig; }, 1800);
+        };
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text).then(done).catch(() => prompt('Copy this text:', text));
+        } else {
+          prompt('Copy this text:', text);
+        }
+      });
+    }
   }
   setupKrishnaSanctum();
 })();

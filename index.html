@@ -13,14 +13,15 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://blkck2.com/" />
   <meta property="og:image" content="https://blkck2.com/01_auralia/auralia_cosmic_poster_v1.png" />
-  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:width" content="1152" />
+  <meta property="og:image:height" content="1536" />
   <meta property="og:image:alt" content="Auralia — Black Birds Dream: a major B$S key image with black birds, butterflies, gold star-map ornament and serpent energy." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Blue $nake Studio — Art, Music &amp; Learning Systems" />
   <meta name="twitter:description" content="Gallery, music and child-safe learning tools from Blue $nake Studio / Frankston, Australia. Black Wing Crew, Meta-Pet, Teacher Tools." />
   <meta name="twitter:image" content="https://blkck2.com/01_auralia/auralia_cosmic_poster_v1.png" />
   <meta name="theme-color" content="#04101d" />
-  <link rel="preload" as="image" href="01_auralia/auralia_cosmic_poster_v1.png" />
+  <meta name="color-scheme" content="dark" />
   <meta name="application-name" content="Moss Tree" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -120,6 +121,14 @@
         "name": "Old Vic State",
         "description": "A civic-gothic song and image cycle about memory, command and the structures that outlive the people who believe they control them. One wing remembers fire. One wing remembers law.",
         "creator": { "@id": "https://blkck2.com/#person" }
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://blkck2.com/#krsnapaksi-chant",
+        "name": "Kṛṣṇapakṣi Chant — Two Ciphers, One Name",
+        "description": "A Blue Snake Studio devotional code-poem: the Mahā-mantra revealed once as an acrostic and again through a 23 × 8 syllable grid, with chant mode, PDF edition, music and visual world.",
+        "creator": { "@id": "https://blkck2.com/#person" },
+        "url": "https://blkck2.com/krsnapaksi-chant.html"
       }
     ]
   }
@@ -127,16 +136,20 @@
 </head>
 <body>
   <div class="intro-film" id="intro-film" role="dialog" aria-modal="true" aria-label="Welcome to Blue Snake Studio">
-    <video id="intro-video" autoplay playsinline muted preload="auto">
+    <video id="intro-video" autoplay playsinline muted preload="metadata">
       <source src="YTShort_20June2026_13_12_14.mp4" type="video/mp4" />
     </video>
     <div class="intro-shade" aria-hidden="true"></div>
     <div class="intro-brand"><span>Blue $nake Studio</span><strong>Patterns become worlds.</strong></div>
     <div class="intro-controls">
-      <button class="intro-sound" id="intro-sound" type="button" aria-pressed="true">Sound on</button>
+      <button class="intro-sound" id="intro-sound" type="button" aria-pressed="false">Unmute</button>
       <button class="intro-enter" id="intro-enter" type="button">Enter studio <span aria-hidden="true">→</span></button>
     </div>
   </div>
+  <script>
+    // Returning visitors skip the entrance film with no flash while the rest of the page loads.
+    try { if (localStorage.getItem('bss-intro-seen') === '1') document.getElementById('intro-film').hidden = true; } catch (e) {}
+  </script>
   <a class="skip-link" href="#experience">Skip to content</a>
 
   <noscript>
@@ -180,8 +193,8 @@
         <a class="ns-cta" href="start.html">Start Here &rarr;</a>
       </header>
 
-      <!-- THREE DOORS -->
-      <section aria-label="Three entry doors">
+      <!-- FOUR DOORS -->
+      <section aria-label="Four entry doors">
         <div class="ns-doors">
 
           <div class="ns-door">
@@ -201,8 +214,8 @@
             <h2>Music / Black Wing Crew</h2>
             <p>Dark, mythic, loud. Black Wing Crew is the music arm of B$S. Neon Venom is the 2026 digital LP — streaming now. YouTube drops, QR street art and visual world.</p>
             <div class="ns-door-links">
-              <a href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">Enter Black Wing Crew &rarr;</a>
-              <a href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener">YouTube @blkck2 &rarr;</a>
+              <a href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">Enter Black Wing Crew &nearr;</a>
+              <a href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener">YouTube @blkck2 &nearr;</a>
               <a href="black-wing-crew.html">Music archive &rarr;</a>
             </div>
           </div>
@@ -212,9 +225,20 @@
             <h2>Learning Lab</h2>
             <p>Meta-Pet: privacy-first digital companion for classrooms — no ads, no trackers. Teacher's Secret Cheatsheet: seven printable behaviour support templates, Victoria-aware and free to use.</p>
             <div class="ns-door-links">
-              <a href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener">Try Meta-Pet &rarr;</a>
-              <a href="https://teachers-secret-cheatsheet.vercel.app/" target="_blank" rel="noopener">Download Teacher Pack &rarr;</a>
+              <a href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener">Try Meta-Pet &nearr;</a>
+              <a href="https://teachers-secret-cheatsheet.vercel.app/" target="_blank" rel="noopener">Download Teacher Pack &nearr;</a>
               <a href="gov.html">Schools / Council page &rarr;</a>
+            </div>
+          </div>
+
+          <div class="ns-door">
+            <span class="ns-door-tag">Studio &amp; lore</span>
+            <h2>Studio / Lore</h2>
+            <p>The deep layer for people who want to understand B$S: Moss 60 visual mathematics, the Field Guide, symbolic systems, Semantic Sovereignty and the studio archive.</p>
+            <div class="ns-door-links">
+              <a href="field-guide.html">Open the Field Guide &rarr;</a>
+              <a href="apps/moss60-oracle-warden.html">Moss 60 Oracle Warden &rarr;</a>
+              <a href="documents/oss-734g-known-unknowns-register.html">Semantic Sovereignty &rarr;</a>
             </div>
           </div>
 
@@ -228,17 +252,17 @@
           <div class="ns-item">
             <span class="ns-item-badge">Live</span>
             <strong>Neon Venom LP</strong>
-            <a href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">Stream now &rarr;</a>
+            <a href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">Stream now &nearr;</a>
           </div>
           <div class="ns-item">
             <span class="ns-item-badge">Live</span>
             <strong>Meta-Pet</strong>
-            <a href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener">Try demo &rarr;</a>
+            <a href="https://www.bluesnakestudios.com/" target="_blank" rel="noopener">Try demo &nearr;</a>
           </div>
           <div class="ns-item">
             <span class="ns-item-badge">Live</span>
             <strong>Teacher Pack</strong>
-            <a href="https://teachers-secret-cheatsheet.vercel.app/" target="_blank" rel="noopener">Download free &rarr;</a>
+            <a href="https://teachers-secret-cheatsheet.vercel.app/" target="_blank" rel="noopener">Download free &nearr;</a>
           </div>
           <div class="ns-item">
             <span class="ns-item-badge proto">Prototype</span>
@@ -246,9 +270,19 @@
             <a href="magic-cube.html">Play now &rarr;</a>
           </div>
           <div class="ns-item">
+            <span class="ns-item-badge proto">Prototype</span>
+            <strong>I Ran LEGO</strong>
+            <a href="i-ran-lego.html">Open artefact &rarr;</a>
+          </div>
+          <div class="ns-item">
             <span class="ns-item-badge">Live</span>
             <strong>Frankston &rarr; Fuji</strong>
-            <a href="https://frankston2fuji.netlify.app/" target="_blank" rel="noopener">Open &rarr;</a>
+            <a href="https://frankston2fuji.netlify.app/" target="_blank" rel="noopener">Open &nearr;</a>
+          </div>
+          <div class="ns-item">
+            <span class="ns-item-badge proto">Project</span>
+            <strong>Frankston 2035</strong>
+            <a href="frankston-2035.html">Open project &rarr;</a>
           </div>
           <div class="ns-item">
             <span class="ns-item-badge">Live</span>
@@ -266,6 +300,7 @@
           <p style="font-size:17px;font-weight:700;color:#e7c767;margin:0 0 10px;">B$S Magic Rubix Cube</p>
           <p style="font-size:13px;color:#94a6b4;line-height:1.65;margin:0 0 16px;">A six-face 5&times;5 word cube that works as symbolic artwork and playable puzzle. Three modes: Art (Museum Spin), Game (scramble and solve), Net View (track all six sides live). No login, no ads, no tracking.</p>
           <a href="magic-cube.html" style="display:inline-block;background:#ff006e;color:#fff;padding:10px 24px;border-radius:999px;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.04em;">Play the Cube &rarr;</a>
+          <a href="i-ran-lego.html" style="display:block;padding:12px 14px;border:1px solid rgba(120,214,247,.1);border-radius:10px;color:#94a6b4;text-decoration:none;font-size:12px;">I Ran LEGO — live prototype artefact</a>
         </div>
       </section>
 
@@ -274,9 +309,11 @@
         <h2 style="font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#4e6575;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid rgba(231,199,103,.1);">Deep Archive / Lore Layer</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;">
           <a href="field-guide.html" style="display:block;padding:12px 14px;border:1px solid rgba(120,214,247,.1);border-radius:10px;color:#94a6b4;text-decoration:none;font-size:12px;">Field Guide — B$S universe explainer</a>
+          <a href="krsnapaksi-chant.html" style="display:block;padding:12px 14px;border:1px solid rgba(120,214,247,.1);border-radius:10px;color:#94a6b4;text-decoration:none;font-size:12px;">Kṛṣṇapakṣi Chant — two ciphers, one name</a>
           <a href="apps/moss60-oracle-warden.html" style="display:block;padding:12px 14px;border:1px solid rgba(120,214,247,.1);border-radius:10px;color:#94a6b4;text-decoration:none;font-size:12px;">Moss 60 Oracle Warden — glyph engine</a>
           <a href="documents/oss-734g-known-unknowns-register.html" style="display:block;padding:12px 14px;border:1px solid rgba(120,214,247,.1);border-radius:10px;color:#94a6b4;text-decoration:none;font-size:12px;">OSS-734G — Semantic Sovereignty register</a>
           <a href="qr-portal.html" style="display:block;padding:12px 14px;border:1px solid rgba(120,214,247,.1);border-radius:10px;color:#94a6b4;text-decoration:none;font-size:12px;">QR Portal — street drop guide</a>
+          <a href="frankston-2035.html" style="display:block;padding:12px 14px;border:1px solid rgba(120,214,247,.1);border-radius:10px;color:#94a6b4;text-decoration:none;font-size:12px;">Frankston 2035 — community future artefact</a>
         </div>
       </section>
 
@@ -285,6 +322,14 @@
         <p>
           <strong style="color:#e7c767;">Blue $nake Studio</strong> &middot;
           The Moss Man &middot; Tom Moss &middot; Frankston, Victoria, Australia
+        </p>
+        <p>
+          Contact:
+          <a href="mailto:bluesssnakestudio@gmail.com?subject=School%20Pilot%20Enquiry%20%E2%80%94%20Blue%20%24nake%20Studio">School pilot enquiry</a> &middot;
+          <a href="mailto:bluesssnakestudio@gmail.com?subject=Music%20%2F%20Collaboration%20%E2%80%94%20Black%20Wing%20Crew">Music / collaboration</a> &middot;
+          <a href="mailto:bluesssnakestudio@gmail.com?subject=Gallery%20%2F%20Art%20Enquiry%20%E2%80%94%20Blue%20%24nake%20Studio">Gallery / art enquiry</a> &middot;
+          <a href="mailto:blkck2@gmail.com?subject=Print%20Files%20Request%20%E2%80%94%20Blue%20%24nake%20Studio">Print files</a> &middot;
+          <a href="mailto:bluesssnakestudio@gmail.com?subject=Cultural%20Guidance%20%2F%20Research%20Correction%20%E2%80%94%20Waahn">Cultural guidance / research correction</a>
         </p>
         <p>
           <a href="mailto:bluesssnakestudio@gmail.com">bluesssnakestudio@gmail.com</a> &middot;
@@ -308,12 +353,12 @@
 
   <div class="shell">
     <header class="masthead">
-      <a class="brand" href="#start-here" aria-label="Blue Snake Studios — Start Here">
-        <span class="brand-mark" id="brand-mark-door" role="button" tabindex="0" aria-label="Portal">B$S</span>
-        <span class="brand-copy">Blue $nake Studio <small>Independent creative practice</small></span>
-      </a>
+      <span class="brand">
+        <button class="brand-mark" id="brand-mark-door" type="button" aria-label="B$S — open the hidden sanctum">B$S</button>
+        <a class="brand-copy" href="#start-here" aria-label="Blue Snake Studio — Start Here">Blue $nake Studio <small>Independent creative practice</small></a>
+      </span>
       <div class="mast-actions">
-        <span class="counter" aria-hidden="true"><span id="current-count">01</span> / <span id="total-count">10</span></span>
+        <span class="counter" aria-hidden="true"><span id="current-count">01</span> / <span id="total-count">12</span></span>
         <a class="mast-link" href="start.html">Start here</a>
         <a class="mast-link" href="proof-wall.html">Proof Wall</a>
         <a class="mast-link" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">Music</a>
@@ -321,7 +366,9 @@
         <a class="mast-link" href="print.html">Print</a>
         <a class="mast-link" href="store.html">Store</a>
         <a class="mast-link" href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener">@blkck2</a>
-        <button class="print-button" type="button" onclick="window.print()">Studio overview</button>
+        <button class="print-button" type="button" onclick="window.print()"
+                title="Print or save the full studio overview as a PDF"
+                aria-label="Print the studio overview — opens your print dialog">⎙ Print overview</button>
       </div>
     </header>
 
@@ -341,15 +388,34 @@
   </div>
 
   <div id="krishna-sanctum" role="dialog" aria-modal="true"
-       aria-label="The Pulse of Krishna" aria-hidden="true">
+       aria-label="Kṛṣṇapakṣi Chant — Two Ciphers, One Name" aria-hidden="true">
     <button class="sanctum-close" id="sanctum-close" type="button" aria-label="Close">&#x2715;</button>
     <div class="sanctum-inner">
       <p class="sanctum-epigraph" lang="sa">sarvasya c&#257;ha&#7747; h&#7771;di sannivi&#7779;&#7789;o</p>
       <p class="sanctum-epigraph-translation">I am seated in the hearts of all. — Bhagavad G&#299;t&#257; 15.15</p>
-      <h2 class="sanctum-title">The Pulse of Krishna</h2>
-      <p class="sanctum-subtitle">Reader Edition</p>
+      <h2 class="sanctum-title">Two ciphers.<br>One name.</h2>
+      <p class="sanctum-subtitle">Kṛṣṇapakṣi Chant · The Pulse of Krishna, Reader Edition</p>
+      <p class="sanctum-support">A devotional chant, an interactive code-poem, and a black-wing visual hymn.</p>
+      <div class="sanctum-video-frame" id="sanctum-video-frame">
+        <img src="documents/chant/krsnapaksi-chant-og.jpg" alt="Kṛṣṇapakṣi Chant — Two ciphers, one name. Title still from the Blue Snake Studio video." loading="lazy" />
+        <button class="sanctum-play-btn" id="sanctum-video-play" type="button" aria-label="Play the Kṛṣṇapakṣi Chant video on YouTube">
+          <span class="sanctum-play-ring" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </button>
+      </div>
+      <p class="sanctum-video-caption">Kṛṣṇapakṣi Chant — Two ciphers, one name. The hidden mantra edition by Blue Snake Studio. Click to load from YouTube — it will not play automatically or with sound until you start it. <a href="https://youtu.be/pufgJKzIXF4" target="_blank" rel="noopener">Watch on YouTube ↗</a></p>
+      <div class="sanctum-cta-row">
+        <a class="sanctum-btn sanctum-btn-primary" href="krsnapaksi-chant.html">Open the interactive edition</a>
+        <a class="sanctum-btn" href="documents/the-pulse-of-krishna-reader-edition.pdf" target="_blank" rel="noopener">Read the PDF edition</a>
+        <a class="sanctum-btn" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">Hear the sound world</a>
+      </div>
+      <div class="sanctum-cta-row sanctum-cta-row-secondary">
+        <button class="sanctum-btn-text" id="sanctum-copy-pitch" type="button" data-copy-target="sanctum-pitch-text">Copy one-line pitch</button>
+        <a class="sanctum-btn-text" href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener">Share @blkck2</a>
+        <a class="sanctum-btn-text" href="mailto:bluesssnakestudio@gmail.com?subject=Kr%CC%A3s%CC%A3n%CC%A3apak%CC%A3si%CC%A3%20Chant%20%E2%80%94%20enquiry">Email B$S</a>
+      </div>
+      <p id="sanctum-pitch-text" hidden>Kṛṣṇapakṣi Chant — Two ciphers, one name. A Blue Snake Studio devotional code-poem: the Hare Krishna Mahā-mantra hidden once as an acrostic and again inside a 23×8 syllable grid. Watch, chant, read the PDF, explore the grid — free, ad-free, at blkck2.com.</p>
       <div class="sanctum-document">
-        <iframe src="documents/the-pulse-of-krishna-reader-edition.pdf"
+        <iframe data-src="documents/the-pulse-of-krishna-reader-edition.pdf"
                 title="The Pulse of Krishna — Reader Edition"
                 class="sanctum-iframe" tabindex="0">
           <p class="sanctum-fallback">
