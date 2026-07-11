@@ -416,6 +416,7 @@
       { label: 'Semantic Sovereignty', status: 'Research-in-progress', desc: 'Doctrine on language, framing, meaning and narrative defence.', href: 'documents/oss-734g-known-unknowns-register.html' },
       { label: 'Visual Worlds', status: 'Live', desc: '10 gallery rooms: mythology, portraits, parody, print.', href: '#visual-worlds' },
       { label: 'Frankston → Fuji', status: 'Live', desc: 'Bilingual sister-city song, Japanese practice & taiko.', href: '#frankston-fuji' },
+      { label: 'Frankston 2035', status: 'Project', desc: 'Community future artefact for Frankston schools, councils, libraries and local collaborators.', href: 'frankston-2035.html' },
       { label: 'Black Omen / Waahn', status: 'Research-in-progress', desc: 'Bunurong-Boonwurrung language research map.', href: '#black-omen-waahn' }
     ];
     return `
