@@ -1,5 +1,4 @@
 name: Import I RAN LEGO living book
-# Trusted import trigger after workflow bootstrap landed on main.
 
 on:
   push:
@@ -7,17 +6,23 @@ on:
       - agent/import-i-ran-lego
     paths:
       - .github/workflows/import-i-ran-lego.yml
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: write
 
 jobs:
   import-book:
+    if: github.event_name == 'push' || github.head_ref == 'agent/import-i-ran-lego'
     runs-on: ubuntu-latest
     steps:
       - name: Check out import branch
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0
 
       - name: Download and verify living book package
@@ -48,12 +53,10 @@ jobs:
         run: |
           python3 <<'PY'
           from pathlib import Path
-          import re
 
           root = Path('.')
           book = root / 'i-ran-lego'
 
-          # Production-safe book shell.
           index_path = book / 'index.html'
           index = index_path.read_text(encoding='utf-8')
           if 'rel="canonical"' not in index:
@@ -87,7 +90,6 @@ jobs:
           if readme.exists():
               readme.rename(book / 'README_SOURCE.txt')
 
-          # Add a first-class portal section and Start Here CTA.
           sections_path = root / 'data' / 'studio-sections.js'
           sections = sections_path.read_text(encoding='utf-8')
           cta = "      { label: 'Open I RAN, LEGO!', href: 'i-ran-lego/', className: 'album-link', sub: 'Interactive picture-book musical. Free preview.' },\n"
@@ -121,7 +123,6 @@ jobs:
               sections = sections.replace(marker, section + marker, 1)
           sections_path.write_text(sections, encoding='utf-8')
 
-          # Friendly routes.
           redirects_path = root / '_redirects'
           redirects = redirects_path.read_text(encoding='utf-8') if redirects_path.exists() else ''
           route_lines = [
@@ -135,7 +136,6 @@ jobs:
                   redirects += ('\n' if redirects and not redirects.endswith('\n') else '') + line + '\n'
           redirects_path.write_text(redirects, encoding='utf-8')
 
-          # Sitemap discovery.
           sitemap_path = root / 'sitemap.xml'
           if sitemap_path.exists():
               sitemap = sitemap_path.read_text(encoding='utf-8')
@@ -158,6 +158,7 @@ jobs:
           grep -q 'https://blkck2.com/i-ran-lego/' sitemap.xml
 
       - name: Commit imported package
+        if: github.head_ref == 'agent/import-i-ran-lego' || github.ref_name == 'agent/import-i-ran-lego'
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
