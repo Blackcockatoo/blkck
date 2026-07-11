@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import argparse
+import json
 import re
 import shutil
 import tempfile
@@ -8,18 +10,19 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-ARCHIVE = ROOT / "I_RAN_LEGO_LIVING_BOOK_v1.zip"
-TARGET = ROOT / "i-ran-lego"
+MANIFEST_PATH = Path(__file__).resolve().parent / "i-ran-lego.manifest.json"
+MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
 
-REQUIRED = (
-    "index.html",
-    "app.js",
-    "styles.css",
-    "config.js",
-    "data/timing-data.js",
-    "data/camera-data.js",
-    "assets/audio/I_RAN_LEGO_MASTER.mp3",
-)
+ARCHIVE = ROOT / MANIFEST["archive"]
+TARGET = ROOT / MANIFEST["targetPath"]
+REQUIRED = tuple(MANIFEST["requiredFiles"])
+MIN_ARCHIVE_BYTES = MANIFEST["minArchiveBytes"]
+
+_VALIDATORS = MANIFEST["validators"]
+AUDIO_PATH = _VALIDATORS["audioPath"]
+MIN_AUDIO_BYTES = _VALIDATORS["minAudioBytes"]
+PAGES_GLOB = _VALIDATORS["pagesGlob"]
+EXPECTED_PAGES = _VALIDATORS["expectedPages"]
 
 
 def replace_once(text: str, old: str, new: str, label: str) -> str:
@@ -51,10 +54,10 @@ def safe_extract(archive: zipfile.ZipFile, destination: Path) -> None:
     archive.extractall(destination)
 
 
-def install_book() -> None:
+def install_book(dry_run: bool = False) -> None:
     if not ARCHIVE.exists():
         raise FileNotFoundError(f"Missing deployment source: {ARCHIVE.name}")
-    if ARCHIVE.stat().st_size < 10_000_000:
+    if ARCHIVE.stat().st_size < MIN_ARCHIVE_BYTES:
         raise RuntimeError("Living-book archive is unexpectedly small")
 
     with tempfile.TemporaryDirectory(prefix="iran-lego-") as tmp_name:
@@ -78,11 +81,15 @@ def install_book() -> None:
         for required in REQUIRED:
             if not (source / required).is_file():
                 raise RuntimeError(f"Archive is missing {required}")
-        pages = sorted((source / "assets" / "pages").glob("page-*.webp"))
-        if len(pages) != 21:
-            raise RuntimeError(f"Expected 21 illustrated pages, found {len(pages)}")
-        if (source / "assets" / "audio" / "I_RAN_LEGO_MASTER.mp3").stat().st_size < 8_000_000:
+        pages = sorted(source.glob(PAGES_GLOB))
+        if len(pages) != EXPECTED_PAGES:
+            raise RuntimeError(f"Expected {EXPECTED_PAGES} illustrated pages, found {len(pages)}")
+        if (source / AUDIO_PATH).stat().st_size < MIN_AUDIO_BYTES:
             raise RuntimeError("Master audio is unexpectedly small")
+
+        if dry_run:
+            print(f"[dry-run] Archive valid: {len(pages)} pages, all required files present")
+            return
 
         shutil.rmtree(TARGET, ignore_errors=True)
         shutil.copytree(source, TARGET)
@@ -220,9 +227,9 @@ def patch_portal() -> None:
 
 
 def validate() -> None:
-    pages = sorted((TARGET / "assets" / "pages").glob("page-*.webp"))
-    assert len(pages) == 21
-    assert (TARGET / "assets" / "audio" / "I_RAN_LEGO_MASTER.mp3").stat().st_size > 8_000_000
+    pages = sorted(TARGET.glob(PAGES_GLOB))
+    assert len(pages) == EXPECTED_PAGES
+    assert (TARGET / AUDIO_PATH).stat().st_size > MIN_AUDIO_BYTES
     assert "demoMode: false" in (TARGET / "config.js").read_text(encoding="utf-8")
     assert "entitled: false" in (TARGET / "app.js").read_text(encoding="utf-8")
     assert "BACK TO BLKCK2" in (TARGET / "index.html").read_text(encoding="utf-8")
@@ -230,6 +237,19 @@ def validate() -> None:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Prepare the I RAN, LEGO! living book for deployment.")
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="verify the source archive without writing output or deleting the source",
+    )
+    args = parser.parse_args()
+
+    if args.dry_run:
+        install_book(dry_run=True)
+        print("Dry run complete — living-book archive is valid")
+        return
+
     install_book()
     patch_book()
     patch_portal()
