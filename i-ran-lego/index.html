@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07101d">
+  <meta name="description" content="I RAN, LEGO! - an interactive B$S storybook television experience.">
+  <title>I RAN, LEGO! - The Living Storybook</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="canonical" href="https://blkck2.com/i-ran-lego/">
+  <link rel="icon" href="assets/icons/icon.svg">
+  <link rel="stylesheet" href="styles-a.css">
+  <link rel="stylesheet" href="styles-b.css">
+</head>
+<body>
+<div class="texture"></div>
+
+<header class="topbar">
+  <a class="brand" href="#top">
+    <span class="brand-mark">B$S</span>
+    <span class="brand-text">BLUE $SNAKE STUDIO<small>STORYBOOK TELEVISION</small></span>
+  </a>
+  <div class="top-actions">
+    <a class="ghost" href="/">BACK TO BLKCK2</a>
+    <button class="ghost" data-buy="print">HARD COPY</button>
+    <button class="gold" data-open-player="preview" data-media-gated disabled data-access-state>OPEN PREVIEW</button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">AN INTERACTIVE PICTURE-BOOK MUSICAL</div>
+      <h1>I RAN,<br>LEGO!<span>The Great Big Boom-Block Show</span></h1>
+      <p>A hand-built storybook television special. Follow the little red button, sing every word, explore every page - and decide who keeps building the story.</p>
+      <div class="hero-buttons">
+        <button class="red" data-open-player="preview" data-media-gated disabled>OPEN THE LIVING PREVIEW</button>
+        <button class="gold" data-buy="complete">GET THE COMPLETE EDITION</button>
+      </div>
+      <div class="hero-note">
+        <span>Interactive camera</span><span>Bouncing-word sing-along</span><span>Optional printed book</span>
+      </div>
+    </div>
+    <div class="cover-wrap">
+      <div class="cover-glow"></div>
+      <div class="cover-card"><img id="coverPage" alt="I RAN, LEGO! book cover"></div>
+      <div class="cover-badge">PRESS<br>PLAY.<br>NOT THE<br>BUTTON.</div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="marquee-track">
+    <span>FOLLOW THE LITTLE RED BUTTON</span><span>READ IT</span><span>SING IT</span><span>EXPLORE IT</span>
+    <span>FOLLOW THE LITTLE RED BUTTON</span><span>READ IT</span><span>SING IT</span><span>EXPLORE IT</span>
+  </div></div>
+
+  <section class="section">
+    <div class="section-head">
+      <div class="kicker">NOT JUST A VIDEO</div>
+      <h2>A book that performs itself.</h2>
+      <p>The camera travels through the artwork while the song plays. Lyrics live in their own storybook theatre, and the red button bounces from word to word in rhythm.</p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature"><div class="feature-index">01 / WATCH</div><h3>Storybook television</h3><p>Premium pans, pushes, page turns and visual punchlines - authored around the music rather than slapped over it.</p></article>
+      <article class="feature"><div class="feature-index">02 / SING</div><h3>Follow every word</h3><p>Word-level timing, readable lyrics and a bouncing button that knows when to hop, hover and stop.</p></article>
+      <article class="feature"><div class="feature-index">03 / EXPLORE</div><h3>Pause the programme</h3><p>Freeze any scene, drag around the artwork and inspect the page before returning to the performance.</p></article>
+    </div>
+  </section>
+
+  <section class="section editions" id="editions">
+    <div class="section-head">
+      <div class="kicker">CHOOSE YOUR EDITION</div>
+      <h2>Digital, physical, or the whole strange machine.</h2>
+      <p>The living preview is free. The complete digital and printed editions are available directly from Blue $nake Studio while the checkout system is being connected.</p>
+    </div>
+    <div class="edition-grid">
+      <article class="edition">
+        <div class="price">Digital access</div><h3>Living Book</h3>
+        <ul><li>Complete interactive show</li><li>Read, sing and explore modes</li><li>Future digital upgrades</li><li>Works on phone, tablet and desktop</li></ul>
+        <button class="red" data-buy="digital">UNLOCK DIGITAL EDITION</button>
+      </article>
+      <article class="edition featured">
+        <div class="ribbon">BEST FIT</div><div class="price">Digital + print</div><h3>Complete Edition</h3>
+        <ul><li>Everything in the Living Book</li><li>Printed full-colour hard copy</li><li>Immediate digital access</li><li>Collector-ready B$S package</li></ul>
+        <button class="gold" data-buy="complete">GET THE COMPLETE EDITION</button>
+      </article>
+      <article class="edition">
+        <div class="price">Printed edition</div><h3>Hard Copy</h3>
+        <ul><li>Full-colour picture book</li><li>Made for shelves and laps</li><li>Printed and shipped to order</li><li>Optional digital upgrade later</li></ul>
+        <button class="ghost" data-buy="print">ORDER THE PRINTED BOOK</button>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div>BLUE $SNAKE STUDIO - B$S STORYBOOK TELEVISION</div>
+  <div></div>
+</footer>
+
+<section class="player-shell" id="playerShell" aria-label="Interactive living book player">
+  <div class="player-top">
+    <div class="player-title">I RAN, LEGO!<small>THE LIVING STORYBOOK</small></div>
+    <div class="player-actions">
+      <button class="icon-btn hide-mobile" id="backChapter">◀ CHAPTER</button>
+      <button class="icon-btn hide-mobile" id="nextChapter">CHAPTER ▶</button>
+      <button class="icon-btn" id="closePlayer">CLOSE</button>
+    </div>
+  </div>
+
+  <div class="theatre">
+    <div class="tv">
+      <aside class="lyric-panel">
+        <div class="blockbar top"></div><div class="blockbar bottom"></div>
+        <div class="chapter-chip" id="chapterChip">THE PROGRAMME OPENS</div>
+        <div class="follow">FOLLOW THE LITTLE RED BUTTON</div>
+        <div class="lyrics" id="lyrics"></div>
+        <div class="bounce-dot" id="dot"></div>
+        <div class="brandline">B$S STORYBOOK TELEVISION</div>
+        <div class="lyric-progress"><span id="lyricProgress"></span></div>
+      </aside>
+      <div class="stage" id="stage">
+        <img class="page" id="pageA" alt=""><img class="page" id="pageB" alt="">
+        <div class="page-turn" id="pageTurn"></div>
+        <div class="stage-help">EXPLORE MODE - drag to travel, scroll or pinch to zoom</div>
+        <div class="lock-overlay" id="lockOverlay">
+          <div class="lock-card">
+            <div class="kicker">THE FREE PREVIEW ENDS HERE</div>
+            <h3>The rest of the machine is behind the little red button.</h3>
+            <p>Unlock the complete interactive book, or order the physical edition and bundle digital access with it.</p>
+            <div class="lock-actions"><button class="gold" id="unlockFromLock">SEE EDITIONS</button><button class="ghost" id="keepPreviewing">RESTART PREVIEW</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="play-main" id="play" aria-label="Play or pause">▶</button>
+    <input class="seek" id="seek" type="range" min="0" max="66" step=".01" value="0" aria-label="Timeline">
+    <div class="time" id="time">00:00 / 01:06</div>
+    <select class="chapter-select" id="chapterSelect" aria-label="Choose chapter"></select>
+    <label class="control-label"><input type="checkbox" id="lyricsToggle" checked> LYRICS</label>
+    <button class="icon-btn" id="explore">EXPLORE PAGE</button>
+    <button class="icon-btn hide-mobile" id="fullscreen">FULLSCREEN</button>
+  </div>
+  <audio id="audio" preload="metadata"></audio>
+</section>
+
+<div class="modal" id="purchaseModal" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="icon-btn modal-close" id="closeModal">×</button>
+    <div class="kicker">CHOOSE IT. OPEN IT. PLAY IT.</div>
+    <h3 id="purchaseName">Living Book</h3>
+    <p>The secure checkout is being connected. For now, continue to send a pre-filled edition enquiry directly to Blue $nake Studio.</p>
+    <div class="purchase-summary"><strong id="purchasePrice">Enquire</strong><span>One-time edition</span></div>
+    <div class="demo-note">The public site carries the interactive preview only. Complete digital files and print orders are delivered directly by the studio.</div>
+    <div class="modal-buttons">
+      <button class="gold" id="purchaseAction">CONTINUE</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="config.js"></script>
+<script src="data/timing-part-00.js"></script>
+<script src="data/timing-part-01.js"></script>
+<script src="data/timing-part-02.js"></script>
+<script src="data/timing-part-03.js"></script>
+<script src="data/timing-final.js"></script>
+<script src="data/camera-data.js"></script>
+<script src="media-bootstrap.js"></script>
+</body>
+</html>
