@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arcade — Games from Blue $nake Studio | blkck2.com</title>
+  <meta name="description" content="Playable games from Blue $nake Studio: Bubble Hex, Monkey Invaders, the Six-Face Word Cube and the Moss 60 Oracle Warden. Every cabinet links to its canonical playable location." />
+  <link rel="canonical" href="https://blkck2.com/arcade.html" />
+  <meta property="og:title" content="Arcade — Games from Blue $nake Studio" />
+  <meta property="og:description" content="Bubble Hex, Monkey Invaders, the Six-Face Word Cube and the Moss 60 Oracle Warden — playable browser games from Blue $nake Studio." />
+  <meta property="og:image" content="https://blkck2.com/01_auralia/auralia_cosmic_poster_v1.png" />
+  <meta property="og:url" content="https://blkck2.com/arcade.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://blkck2.com/01_auralia/auralia_cosmic_poster_v1.png" />
+  <meta name="theme-color" content="#04101d" />
+  <meta name="application-name" content="Moss Tree" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Moss Tree" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Arcade — Games from Blue $nake Studio",
+    "url": "https://blkck2.com/arcade.html",
+    "description": "Playable games from Blue $nake Studio.",
+    "isPartOf": { "@type": "WebSite", "name": "Blue $nake Studio", "url": "https://blkck2.com/" },
+    "hasPart": [
+      { "@type": "VideoGame", "name": "Bubble Hex", "url": "https://bubblehex.vercel.app", "applicationCategory": "Game", "operatingSystem": "Web browser" },
+      { "@type": "VideoGame", "name": "Monkey Invaders", "url": "https://www.bluesnakestudios.com/monkey-invaders", "applicationCategory": "Game", "operatingSystem": "Web browser" },
+      { "@type": "VideoGame", "name": "B$S Six-Face Word Cube", "url": "https://blkck2.com/apps/bs-word-cube.html", "applicationCategory": "Game", "operatingSystem": "Web browser" },
+      { "@type": "VideoGame", "name": "Oracle Warden", "url": "https://blkck2.com/apps/moss60-oracle-warden.html", "applicationCategory": "Game", "operatingSystem": "Web browser" }
+    ]
+  }
+  </script>
+  <style>
+    body { overflow: auto; }
+    .arcade-shell { position: relative; z-index: 2; width: min(1080px, calc(100% - 32px)); margin: 0 auto; padding: 92px 0 64px; }
+    .arcade-hero { padding: clamp(24px, 5vw, 54px); border: 1px solid rgba(0,245,255,.24); border-radius: 34px; background: linear-gradient(145deg, rgba(4,16,29,.88), rgba(2,7,13,.72)); box-shadow: 0 0 70px rgba(255,0,110,.16); }
+    .arcade-hero h1 { max-width: 900px; margin: 0 0 18px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(44px, 8vw, 96px); line-height: .9; letter-spacing: -.04em; background: linear-gradient(135deg, var(--neon-pink), var(--neon-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .arcade-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin: 32px 0 0; padding: 0; list-style: none; }
+    .arcade-card { display: flex; flex-direction: column; gap: 10px; height: 100%; padding: 24px; border: 1px solid rgba(0,245,255,.22); border-radius: 24px; background: rgba(2,7,13,.52); }
+    .arcade-card h2 { margin: 0; font-family: Georgia, serif; font-size: 22px; font-weight: 400; color: var(--ink); }
+    .arcade-card p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
+    .arcade-card .arcade-controls { font-size: 13px; color: var(--dim); }
+    .arcade-card .project-link { align-self: flex-start; margin-top: auto; }
+    .arcade-status { display: inline-block; align-self: flex-start; padding: 3px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .arcade-status[data-status="live"] { border: 1px solid rgba(0,245,255,.45); color: var(--neon-cyan); }
+    .arcade-status[data-status="active-dev"] { border: 1px solid rgba(243,208,120,.5); color: var(--gold-hot); }
+    .arcade-status[data-status="prototype"] { border: 1px solid rgba(255,0,110,.4); color: var(--neon-pink); }
+    .arcade-note { margin: 32px 0 0; padding: 20px 22px; border: 1px solid rgba(243,208,120,.28); border-radius: 20px; background: rgba(243,208,120,.06); }
+    .arcade-note h2 { margin: 0 0 8px; font-size: 16px; color: var(--gold-hot); }
+    .arcade-note p { margin: 0 0 8px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .arcade-note p:last-child { margin-bottom: 0; }
+    @media (max-width: 760px) { .arcade-shell { padding-top: 78px; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="index.html" aria-label="Blue Snake Studios — Moss Tree">
+        <span class="brand-mark" aria-hidden="true">B$S</span>
+        <span class="brand-copy">Blue $nake Studio · Arcade</span>
+      </a>
+      <div class="mast-actions">
+        <a class="mast-link" href="index.html">Home</a>
+        <a class="mast-link" href="start-here.html">Start Here</a>
+        <a class="mast-link" href="proof-wall.html">Proof Wall</a>
+        <a class="mast-link" href="gov.html">Schools / Council</a>
+        <a class="mast-link" href="https://www.youtube.com/@blkck2">@blkck2</a>
+      </div>
+    </header>
+
+    <main class="arcade-shell" id="main">
+      <section class="arcade-hero">
+        <p class="eyebrow">Play · Explore · Interactive</p>
+        <h1>The arcade.</h1>
+        <p class="statement">Playable games from Blue $nake Studio, built in the same mythic universe as the art, music and learning tools.</p>
+        <p style="max-width:680px;color:var(--muted);font-size:16px;line-height:1.65;margin:0 0 8px;">Each cabinet below links to where the game actually lives. Nothing here is a copy — the games are hosted where they are built, so what you play is always the current build.</p>
+
+        <ul class="arcade-grid">
+          <li class="arcade-card">
+            <span class="arcade-status" data-status="live">Live</span>
+            <h2>Bubble Hex</h2>
+            <p>Trap enemies in bubbles, chain-pop them for score multipliers, collect VENOM letters and survive twelve gothic neon chambers.</p>
+            <p class="arcade-controls">Move with A / D, jump with Space, blow a bubble with X. Touch and gamepad supported.</p>
+            <a class="project-link album-link game-link" href="https://bubblehex.vercel.app" target="_blank" rel="noopener noreferrer">Play Bubble Hex →</a>
+          </li>
+
+          <li class="arcade-card">
+            <span class="arcade-status" data-status="live">Live</span>
+            <h2>Monkey Invaders</h2>
+            <p>Arcade shooter. Hold the line against descending invaders, then break the boss waves. Served through the Blue $nake Studios site.</p>
+            <p class="arcade-controls">Hold ◀ / ▶ to move, hold 🍌 to fire. Landscape recommended on phones.</p>
+            <a class="project-link album-link game-link" href="https://www.bluesnakestudios.com/monkey-invaders" target="_blank" rel="noopener noreferrer">Play Monkey Invaders →</a>
+          </li>
+
+          <li class="arcade-card">
+            <span class="arcade-status" data-status="active-dev">Enhanced build</span>
+            <h2>Monkey Invaders — enhanced</h2>
+            <p>A separate, further-developed engine with bosses, extra enemy types, events, pickups, secrets and progression. Still changing week to week.</p>
+            <p class="arcade-controls">This is <strong>not</strong> the same build as the one above. Expect differences.</p>
+            <a class="project-link game-link" href="https://monkey-invaders-enhanced.vercel.app" target="_blank" rel="noopener noreferrer">Try the enhanced build →</a>
+          </li>
+
+          <li class="arcade-card">
+            <span class="arcade-status" data-status="live">Live</span>
+            <h2>B$S Six-Face Word Cube</h2>
+            <p>Drag to spin a 3D artwork cube with six word-grid faces. Free in the browser, no login.</p>
+            <p class="arcade-controls">Drag to rotate. Works with mouse and touch.</p>
+            <a class="project-link game-link" href="apps/bs-word-cube.html">Play Word Cube →</a>
+          </li>
+
+          <li class="arcade-card">
+            <span class="arcade-status" data-status="prototype">Prototype</span>
+            <h2>Oracle Warden</h2>
+            <p>The Moss 60 glyph engine as a playable symbolic puzzle. Rough edges — this one is still an experiment.</p>
+            <p class="arcade-controls">Keyboard and pointer.</p>
+            <a class="project-link game-link" href="apps/moss60-oracle-warden.html">Open Oracle Warden →</a>
+          </li>
+        </ul>
+
+        <div class="arcade-note">
+          <h2>Two Monkey Invaders?</h2>
+          <p>Yes — deliberately. The Blue $nake Studios site serves an older standalone port of the game. The enhanced build is a separate, more advanced engine developed in its own repository. They are different games at different stages, so both are listed rather than silently swapped.</p>
+        </div>
+
+        <div class="arcade-note">
+          <h2>Not part of MetaPet.school</h2>
+          <p>The arcade is <strong>not</strong> available through <a href="https://metapet.school" target="_blank" rel="noopener noreferrer" style="color:var(--neon-cyan);">metapet.school</a>. That domain runs a deliberately constrained classroom build, and games are blocked there along with the rest of the consumer experience — not merely hidden from the menu.</p>
+          <p>If you are here for the classroom product, start at <a href="meta-pet.html" style="color:var(--neon-cyan);">the MetaPet page</a> or <a href="gov.html" style="color:var(--neon-cyan);">Schools / Council</a> instead.</p>
+        </div>
+
+        <footer style="margin-top:56px;padding-top:24px;border-top:1px solid rgba(120,214,247,.12);font-size:12px;color:var(--dim);line-height:1.9;">
+          <p>Created by <strong style="color:var(--ink);">The Moss Man</strong> / <strong style="color:var(--ink);">Blue $nake Studio</strong> — <a href="https://blkck2.com/" style="color:var(--muted);">blkck2.com</a> — <a href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener noreferrer" style="color:var(--muted);">@blkck2</a></p>
+          <p style="margin-top:8px;font-size:11px;"><a href="proof-wall.html" style="color:var(--muted);">Proof Wall</a> · <a href="meta-pet.html" style="color:var(--muted);">Meta-Pet</a> · <a href="gov.html" style="color:var(--muted);">Schools / Council</a> · <a href="privacy-policy.html" style="color:var(--muted);">Privacy Policy</a></p>
+        </footer>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

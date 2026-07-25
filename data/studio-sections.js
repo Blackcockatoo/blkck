@@ -170,23 +170,24 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'meta-pet',
-    status: 'Prototype',
+    status: 'Live',
     label: 'Meta-Pet',
-    eyebrow: 'Privacy-first learning · In development',
+    eyebrow: 'Privacy-first learning · Two doors',
     title: 'Technology that gives attention back.',
     statement: 'Meta-Pet is a child-safe digital learning companion built for healthy device use, creativity and schools — without ads, trackers, social feeds, gambling loops or unnecessary data collection.',
     pageTitle: 'Meta-Pet — Privacy-First Learning · Blue $nake Studio',
-    pageDescription: 'A child-safe STEAM learning companion: no ads, no trackers, no unnecessary data collection. Puzzles, pattern recognition and healthy device use for schools and families.',
+    pageDescription: 'A child-safe STEAM learning companion: no ads, no trackers, no unnecessary data collection. The full universe at bluesnakestudios.com, the constrained classroom build at metapet.school.',
     details: [
+      'Meta-Pet has two front doors, and they are not the same product.',
+      'bluesnakestudios.com — the full universe: the pet, Digital DNA, Body Forge, Moss 60 and the arcade.',
+      'metapet.school — a deliberately constrained Australian classroom build running Field Mode.',
+      'On metapet.school the consumer areas and the arcade are blocked outright, not just hidden from the menu. Requests for them return teachers and students to the classroom surface.',
       'No ads, no trackers, no unnecessary cloud data — privacy-first from the ground up.',
-      'Healthy device use design: no social feeds, no gambling loops, no endless scroll.',
-      'Classroom mode: zero-admin setup, no login required for students.',
-      'Parent peace of mind: transparent, local-first, fully child-safe.',
-      'A STEAM learning companion powered by puzzles, pattern recognition and creative tasks.',
-      'Prototype available now. Contact the studio for school pilot enquiries.'
+      'Classroom mode: zero-admin setup, no login required for students.'
     ],
     links: [
-      { label: 'Open Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link' },
+      { label: 'Open the full Meta-Pet universe', href: 'https://www.bluesnakestudios.com/', className: 'album-link', sub: 'Pet, Digital DNA, Body Forge, Moss 60 and the arcade.' },
+      { label: 'Open MetaPet.school', href: 'https://metapet.school', className: 'album-link', sub: 'Constrained classroom build. Field Mode.' },
       { label: 'Full Meta-Pet page', href: 'meta-pet.html', className: 'album-link' },
       { label: 'Meta-Pet Pilot School', href: 'https://metapet-pilot-school.vercel.app/' },
       { label: 'Teacher Tools', href: 'teacher-tools.html' },
@@ -268,26 +269,53 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'games',
-    status: 'Prototype',
-    label: 'Games',
+    status: 'Live',
+    label: 'Arcade',
     eyebrow: 'Play · Explore · Interactive',
     title: 'Games from the studio.',
     statement: 'Playable games and interactive engines from Blue $nake Studio — built in the same mythic universe as the art, music and learning tools.',
-    pageTitle: 'Games — Blue $nake Studio',
-    pageDescription: 'B$S Six-Face Word Cube, Monkey Invaders and the Oracle Warden glyph engine — playable browser games from Blue $nake Studio.',
+    pageTitle: 'Arcade — Games from Blue $nake Studio',
+    pageDescription: 'Bubble Hex, Monkey Invaders, the B$S Six-Face Word Cube and the Oracle Warden glyph engine — playable browser games from Blue $nake Studio.',
     details: [
+      'Bubble Hex — trap enemies in bubbles, chain-pop for multipliers, clear twelve gothic neon chambers. Live.',
+      'Monkey Invaders — arcade shooter served through the Blue $nake Studios site. Live.',
+      'Monkey Invaders (enhanced) — a separate, further-developed engine with bosses, events, pickups and progression. Not the same build as the one above.',
       'B$S Six-Face Word Cube — drag to spin a 3D artwork cube with six word-grid faces. Free in the browser, no login.',
-      'Monkey Invaders — arcade-style game from the studio.',
-      'Oracle Warden — the Moss 60 glyph engine, a playable symbolic puzzle.',
-      'More games in development as the studio\'s pattern systems are gamified.'
+      'Oracle Warden — the Moss 60 glyph engine, a playable symbolic puzzle. Prototype.',
+      'The arcade is not part of MetaPet.school; games are blocked on that classroom build.'
     ],
     links: [
+      { label: 'Open the Arcade', href: 'arcade.html', className: 'album-link', sub: 'Every cabinet, with its real status.' },
+      { label: 'Play Bubble Hex', href: 'https://bubblehex.vercel.app', className: 'game-link' },
+      { label: 'Play Monkey Invaders', href: 'https://www.bluesnakestudios.com/monkey-invaders', className: 'game-link' },
       { label: 'Play Word Cube', href: 'apps/bs-word-cube.html', className: 'game-link' },
-      { label: 'Play Monkey Invaders', href: 'https://www.bluesnakestudios.com/monkey-invaders.html', className: 'game-link' },
       { label: 'Oracle Warden (Moss 60)', href: 'apps/moss60-oracle-warden.html', className: 'game-link' },
       { label: 'Watch @blkck2', href: 'https://www.youtube.com/@blkck2' }
     ],
     featuredIds: ['meta-pet-neon-ornament', 'moss60-geometry-linework', 'meta-pet-digital-genomes', 'meta-pet-companion-portrait']
+  },
+  {
+    slug: 'krsnapaksi',
+    status: 'Live',
+    label: 'Kṛṣṇapakṣi Chant',
+    eyebrow: 'Devotional code-poem · two ciphers, one name',
+    title: 'Two ciphers. One name.',
+    statement: 'Kṛṣṇapakṣi Chant is a devotional code-poem in which the Mahā-mantra is revealed twice: once as the Gaura-Stava acrostic, and again through a 23 × 8 syllable grid.',
+    pageTitle: 'Kṛṣṇapakṣi Chant — Two Ciphers, One Name · Blue $nake Studio',
+    pageDescription: 'A Blue $nake Studio devotional code-poem: the Mahā-mantra as a Gaura-Stava acrostic and again through a 23 × 8 syllable grid, with chant mode, Reader Edition PDF and video.',
+    details: [
+      'The Gaura-Stava acrostic carries the mantra down the opening letters.',
+      'A 23 × 8 syllable grid holds the second reading.',
+      'Chant mode follows the text aloud, with a glossary for every term used on the page.',
+      'The Pulse of Krishna — Reader Edition is available as a PDF.',
+      'A guided five-step tour and a video reveal give three ways in, whichever way you arrived.'
+    ],
+    links: [
+      { label: 'Open the Chant', href: 'krsnapaksi-chant.html', className: 'album-link', sub: 'Acrostic, grid, chant mode and glossary.' },
+      { label: 'Reader Edition (PDF)', href: 'documents/the-pulse-of-krishna-reader-edition.pdf' },
+      { label: 'Watch the reveal', href: 'https://youtu.be/pufgJKzIXF4' },
+      { label: 'Black Wing Crew', href: 'https://blackwingcrew.netlify.app/' }
+    ]
   }
 ];
 
