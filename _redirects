@@ -1,4 +1,8 @@
-# Netlify redirect rules — canonical domain enforcement
+# Netlify redirect rules. NOTE: blkck2.com is served by Vercel, which ignores
+# this file — the live rules are the "redirects" block in vercel.json. Keep the
+# two in sync; anything added here alone will silently 404 in production.
+#
+# Canonical domain enforcement
 https://www.blkck2.com/* https://blkck2.com/:splat 301!
 http://www.blkck2.com/* https://blkck2.com/:splat 301!
 http://blkck2.com/* https://blkck2.com/:splat 301!
