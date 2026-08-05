@@ -1,3 +1,6 @@
+# NOTE: blkck2.com is served by Vercel, which ignores this file. The live
+# redirects and headers are in vercel.json — keep the two in sync.
+
 [build]
   command = "python3 scripts/prepare-i-ran-lego.py"
   publish = "."

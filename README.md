@@ -4,7 +4,8 @@ This repository hosts a clean GitHub-ready HTML bio resume for **The Moss Man / 
 
 ## Live project links
 
-- Blue Snake Studios / Meta-Pet: https://www.bluesnakestudios.com/
+- Blue Snake Studios / Meta-Pet (full universe): https://www.bluesnakestudios.com/
+- MetaPet.school (constrained classroom build): https://metapet.school
 - Black Wing Crew / Neon Venom: https://blackwingcrew.netlify.app/
 - YouTube: https://www.youtube.com/@blkck2
 - Jewble Elevator Pitch: https://elevator-pitch-seven.vercel.app/
