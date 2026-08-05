@@ -31,6 +31,7 @@ http://blkck2.com/* https://blkck2.com/:splat 301!
 /iran-lego /i-ran-lego/ 301
 /living-book /i-ran-lego/ 301
 /metapet /meta-pet.html 301
+/metapet-school https://metapet.school 301
 
 # Extensionless versions of every public page
 /start /start.html 301

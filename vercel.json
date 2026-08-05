@@ -21,6 +21,7 @@
     { "source": "/prints", "destination": "/print.html", "permanent": true },
     { "source": "/cube", "destination": "/magic-cube.html", "permanent": true },
     { "source": "/metapet", "destination": "/meta-pet.html", "permanent": true },
+    { "source": "/metapet-school", "destination": "https://metapet.school", "permanent": true },
 
     { "source": "/i-ran-lego.html", "destination": "/i-ran-lego/", "permanent": true },
     { "source": "/iran-lego", "destination": "/i-ran-lego/", "permanent": true },

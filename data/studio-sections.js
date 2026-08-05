@@ -170,23 +170,24 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'meta-pet',
-    status: 'Prototype',
+    status: 'Live',
     label: 'Meta-Pet',
-    eyebrow: 'Privacy-first learning · In development',
+    eyebrow: 'Privacy-first learning · Two doors',
     title: 'Technology that gives attention back.',
     statement: 'Meta-Pet is a child-safe digital learning companion built for healthy device use, creativity and schools — without ads, trackers, social feeds, gambling loops or unnecessary data collection.',
     pageTitle: 'Meta-Pet — Privacy-First Learning · Blue $nake Studio',
-    pageDescription: 'A child-safe STEAM learning companion: no ads, no trackers, no unnecessary data collection. Puzzles, pattern recognition and healthy device use for schools and families.',
+    pageDescription: 'A child-safe STEAM learning companion: no ads, no trackers, no unnecessary data collection. The full universe at bluesnakestudios.com, the constrained classroom build at metapet.school.',
     details: [
+      'Meta-Pet has two front doors, and they are not the same product.',
+      'bluesnakestudios.com — the full universe: the pet, Digital DNA, Body Forge and Moss 60.',
+      'metapet.school — a deliberately constrained Australian classroom build running Field Mode.',
+      'On metapet.school the consumer areas are blocked outright, not just hidden from the menu. Requests for the shop, the pet, Digital DNA or Body Forge return teachers and students to the classroom surface.',
       'No ads, no trackers, no unnecessary cloud data — privacy-first from the ground up.',
-      'Healthy device use design: no social feeds, no gambling loops, no endless scroll.',
-      'Classroom mode: zero-admin setup, no login required for students.',
-      'Parent peace of mind: transparent, local-first, fully child-safe.',
-      'A STEAM learning companion powered by puzzles, pattern recognition and creative tasks.',
-      'Prototype available now. Contact the studio for school pilot enquiries.'
+      'Classroom mode: zero-admin setup, no login required for students.'
     ],
     links: [
-      { label: 'Open Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link' },
+      { label: 'Open the full Meta-Pet universe', href: 'https://www.bluesnakestudios.com/', className: 'album-link', sub: 'Pet, Digital DNA, Body Forge and Moss 60.' },
+      { label: 'Open MetaPet.school', href: 'https://metapet.school', className: 'album-link', sub: 'Constrained classroom build. Field Mode.' },
       { label: 'Full Meta-Pet page', href: 'meta-pet.html', className: 'album-link' },
       { label: 'Meta-Pet Pilot School', href: 'https://metapet-pilot-school.vercel.app/' },
       { label: 'Teacher Tools', href: 'teacher-tools.html' },
