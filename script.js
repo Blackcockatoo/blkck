@@ -281,6 +281,10 @@
   ];
 
 
+  // Everything below drives the portal masthead and tree. Pages that pull in
+  // script.js without that scaffolding (frankston-2035.html) have nothing to build.
+  if (!tree || !panelWrap || !counter || !total) return;
+
   total.textContent = String(sections.length).padStart(2, '0');
 
   const slugs = sections.map(section => section.slug);
@@ -1043,91 +1047,4 @@
   buildTree();
   buildPanels();
   select(active, { hash: location.hash.length > 1 });
-
-  // ─── Krishna Sanctum ──────────────────────────────────────────────────────────
-  function setupKrishnaSanctum() {
-    const sanctum  = document.getElementById('krishna-sanctum');
-    const door     = document.getElementById('brand-mark-door');
-    const closeBtn = document.getElementById('sanctum-close');
-    if (!sanctum || !door) return;
-
-    let lastFocused = null;
-
-    function getFocusable() {
-      return [...sanctum.querySelectorAll(
-        'button:not([disabled]), a[href], iframe, [tabindex]:not([tabindex="-1"])'
-      )];
-    }
-
-    function openSanctum() {
-      lastFocused = document.activeElement;
-      // The reader-edition PDF is heavy — only fetch it once the sanctum actually opens.
-      const reader = sanctum.querySelector('iframe[data-src]');
-      if (reader && !reader.getAttribute('src')) reader.setAttribute('src', reader.dataset.src);
-      sanctum.removeAttribute('aria-hidden');
-      sanctum.classList.add('is-open');
-      setTimeout(() => { if (closeBtn) closeBtn.focus({ preventScroll: true }); }, 820);
-      sanctum.addEventListener('keydown', trapFocus);
-    }
-
-    function closeSanctum() {
-      sanctum.setAttribute('aria-hidden', 'true');
-      sanctum.classList.remove('is-open');
-      sanctum.removeEventListener('keydown', trapFocus);
-      if (lastFocused) { lastFocused.focus({ preventScroll: true }); lastFocused = null; }
-    }
-
-    function trapFocus(e) {
-      if (e.key !== 'Tab') return;
-      const f = getFocusable();
-      if (!f.length) return;
-      if (e.shiftKey && document.activeElement === f[0]) {
-        e.preventDefault(); f[f.length - 1].focus();
-      } else if (!e.shiftKey && document.activeElement === f[f.length - 1]) {
-        e.preventDefault(); f[0].focus();
-      }
-    }
-
-    // The door is a native <button>, so keyboard activation arrives as a click event.
-    door.addEventListener('click', e => { e.stopPropagation(); openSanctum(); });
-    if (closeBtn) closeBtn.addEventListener('click', closeSanctum);
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && sanctum.classList.contains('is-open')) closeSanctum();
-    });
-
-    const sanctumPlayBtn = document.getElementById('sanctum-video-play');
-    const sanctumVideoFrame = document.getElementById('sanctum-video-frame');
-    if (sanctumPlayBtn && sanctumVideoFrame) {
-      sanctumPlayBtn.addEventListener('click', () => {
-        const iframe = document.createElement('iframe');
-        iframe.src = 'https://www.youtube-nocookie.com/embed/pufgJKzIXF4?autoplay=1&rel=0';
-        iframe.title = 'Kṛṣṇapakṣi Chant – Two ciphers, one name';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-        iframe.allowFullscreen = true;
-        iframe.loading = 'lazy';
-        sanctumVideoFrame.innerHTML = '';
-        sanctumVideoFrame.appendChild(iframe);
-      });
-    }
-
-    const copyBtn = document.getElementById('sanctum-copy-pitch');
-    if (copyBtn) {
-      copyBtn.addEventListener('click', () => {
-        const target = document.getElementById(copyBtn.getAttribute('data-copy-target'));
-        if (!target) return;
-        const text = target.textContent.trim();
-        const done = () => {
-          const orig = copyBtn.textContent;
-          copyBtn.textContent = 'Copied';
-          setTimeout(() => { copyBtn.textContent = orig; }, 1800);
-        };
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(text).then(done).catch(() => prompt('Copy this text:', text));
-        } else {
-          prompt('Copy this text:', text);
-        }
-      });
-    }
-  }
-  setupKrishnaSanctum();
 })();

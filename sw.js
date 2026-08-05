@@ -1,4 +1,4 @@
-const CACHE_NAME = 'moss-tree-v15';
+const CACHE_NAME = 'moss-tree-v16';
 
 const APP_SHELL = [
   './',
