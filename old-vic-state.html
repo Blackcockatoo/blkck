@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Old Vic State — Not nostalgia. Cultural continuity. · Blue $nake Studio</title>
-  <meta name="description" content="Old Vic State is a Blue $nake Studio cultural proposition for Victoria: take the visual authority, craft and civic pride of historic Victoria and hand it forward — altered, alive and owned by the next generation. Frankston is the first laboratory." />
+  <meta name="description" content="Old Vic State is a Blue $nake Studio cultural proposition for Victoria: keep what has cultural weight, add something worth inheriting, and put artists and young people inside civic creation. Public art that does something. Frankston is the first laboratory; every town writes its own language." />
   <link rel="canonical" href="https://blkck2.com/old-vic-state.html" />
   <meta property="og:site_name" content="Blue $nake Studio" />
   <meta property="og:title" content="Old Vic State — Not nostalgia. Cultural continuity." />
@@ -213,6 +213,90 @@
       gap: clamp(28px, 6vw, 72px); align-items: start;
     }
 
+    /* ── The proposition: the map to the manifesto ────────────────── */
+    .ovs-prop { margin-top: 8px; border-top: 1px solid rgba(201,162,39,.28); }
+    .ovs-prop-row {
+      display: grid; grid-template-columns: 44px minmax(0, 1fr) auto;
+      gap: 8px 20px; align-items: baseline;
+      padding: 15px 0; border-bottom: 1px solid rgba(201,162,39,.14);
+      text-decoration: none; color: inherit; transition: background .16s ease, padding .16s ease;
+    }
+    .ovs-prop-row:hover { background: rgba(201,162,39,.06); }
+    .ovs-prop-row span {
+      font-family: "Helvetica Neue", Arial, sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: .14em; color: var(--ovs-gold);
+    }
+    .ovs-prop-row strong {
+      font-family: Georgia, "Times New Roman", serif; font-weight: 400;
+      font-size: clamp(18px, 2.4vw, 26px); line-height: 1.2; color: var(--ovs-paper);
+    }
+    .ovs-prop-row em {
+      font-style: normal; font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--ovs-stone); white-space: nowrap;
+    }
+    .ovs-prop-row:hover em { color: var(--ovs-gold-hot); }
+
+    /* ── Reader rail — the fast path, as a signage strip ──────────── */
+    .ovs-rail { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; padding: 0; list-style: none; }
+    .ovs-rail a {
+      display: block; padding: 10px 16px; text-decoration: none;
+      border: 1px solid rgba(201,162,39,.3); color: var(--ovs-stone);
+      font-family: "Helvetica Neue", Arial, sans-serif; font-size: 10px; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase; transition: all .16s ease;
+    }
+    .ovs-rail a:hover { border-color: var(--ovs-gold); color: var(--ovs-gold-hot); background: rgba(201,162,39,.07); }
+    .ovs-rail b { display: block; margin-bottom: 3px; font-weight: 700; color: var(--ovs-paper); letter-spacing: .1em; }
+    .ovs-rail a:hover b { color: var(--ovs-gold-hot); }
+
+    /* ── Function table: what a single object actually does ───────── */
+    .ovs-does { margin-top: 34px; border-top: 2px solid rgba(27,24,17,.5); }
+    .ovs-does-row {
+      display: grid; grid-template-columns: minmax(150px, .8fr) minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 10px 28px; align-items: baseline;
+      padding: 18px 0; border-bottom: 1px solid rgba(27,24,17,.18);
+    }
+    .ovs-does-obj {
+      font-family: "Helvetica Neue", Arial, sans-serif; font-size: clamp(16px, 2vw, 21px);
+      font-weight: 800; text-transform: uppercase; letter-spacing: -.01em; color: var(--ovs-ink); margin: 0;
+    }
+    .ovs-does-obj b { display: block; font-weight: 800; color: var(--ovs-oxide); }
+    .ovs-does-row p { margin: 0; }
+    .ovs-tags { display: flex; flex-wrap: wrap; gap: 5px; margin: 0; padding: 0; list-style: none; }
+    .ovs-tags li {
+      padding: 3px 9px; border: 1px solid rgba(27,24,17,.28);
+      font-family: "Helvetica Neue", Arial, sans-serif; font-size: 9.5px; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase; color: #5c5647;
+    }
+
+    /* ── Inheritance columns: what they left / what we leave ──────── */
+    .ovs-inherit { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; margin-top: 30px; background: rgba(201,162,39,.22); border: 1px solid rgba(201,162,39,.22); }
+    .ovs-inherit > div { padding: 24px 22px; background: var(--ovs-black-2); }
+    .ovs-inherit h3 {
+      margin: 0 0 14px; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 11px;
+      font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--ovs-gold);
+    }
+    .ovs-inherit ul { margin: 0; padding: 0; list-style: none; }
+    .ovs-inherit li { padding: 7px 0; border-bottom: 1px solid rgba(201,162,39,.1); font-size: 15px; color: #cfc7b4; }
+    .ovs-inherit li:last-child { border-bottom: 0; }
+    .ovs-inherit--now > div { background: var(--ovs-ink); }
+
+    /* ── Three moves of repair ────────────────────────────────────── */
+    .ovs-moves { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 32px; }
+    .ovs-move { padding: 24px 22px 22px; border: 1px solid rgba(201,162,39,.24); background: rgba(236,228,209,.03); }
+    .ovs-move-num {
+      font-family: Georgia, "Times New Roman", serif; font-size: 40px; line-height: .8;
+      color: transparent; -webkit-text-stroke: 1px rgba(201,162,39,.7); display: block; margin-bottom: 16px;
+    }
+    .ovs-move h3 {
+      margin: 0 0 10px; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 15px;
+      font-weight: 800; letter-spacing: .02em; text-transform: uppercase; line-height: 1.15;
+      color: var(--ovs-paper);
+    }
+    .ovs-move p { margin: 0; font-size: 14.5px; }
+    .ovs-move--here { border-color: var(--ovs-gold); background: rgba(201,162,39,.08); }
+    .ovs-move--here h3 { color: var(--ovs-gold-hot); }
+
     /* ── Ledger: what this is not / what this is ──────────────────── */
     .ovs-ledger { border-top: 2px solid var(--ovs-ink); margin-top: 34px; }
     .ovs-ledger-row {
@@ -373,6 +457,9 @@
     /* ── Responsive ───────────────────────────────────────────────── */
     @media (max-width: 900px) {
       .ovs-hero-grid, .ovs-argument-grid, .ovs-split { grid-template-columns: 1fr; }
+      .ovs-does-row { grid-template-columns: 1fr; gap: 8px; }
+      .ovs-prop-row { grid-template-columns: 38px minmax(0, 1fr); }
+      .ovs-prop-row em { grid-column: 2; }
       .ovs-argument blockquote { max-width: none; }
       .ovs-principle { grid-template-columns: 1fr; gap: 12px; }
       .ovs-principle-num { font-size: 40px; }
@@ -387,11 +474,17 @@
     /* styles.css hides mast links under 940px for the index tree experience.
        This is a reading page, so keep the navigation and let it wrap. */
     @media (max-width: 940px) {
-      [data-page="old-vic-state"] .masthead { flex-wrap: wrap; gap: 8px 14px; padding: 12px 20px; }
+      /* Stack the bar rather than wrap it: a wrapped flex masthead sizes to one
+         row and lets the second row of links spill over the scrolling page. */
+      [data-page="old-vic-state"] .masthead {
+        display: block; height: auto; padding: 12px 20px;
+        background: var(--ovs-black); backdrop-filter: none;
+      }
+      [data-page="old-vic-state"] .brand { display: inline-flex; }
       [data-page="old-vic-state"] .brand-copy { display: inline; }
-      [data-page="old-vic-state"] .mast-link { display: inline; font-size: 9px; letter-spacing: .14em; }
-      [data-page="old-vic-state"] .mast-actions { flex-wrap: wrap; gap: 6px 14px; }
-      .ovs-hero { padding-top: 132px; }
+      [data-page="old-vic-state"] .mast-link { display: inline-block; font-size: 9px; letter-spacing: .14em; }
+      [data-page="old-vic-state"] .mast-actions { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 9px; }
+      .ovs-hero { padding-top: 146px; }
     }
     @media (prefers-reduced-motion: reduce) {
       [data-page="old-vic-state"] * { animation: none !important; transition: none !important; }
@@ -460,11 +553,53 @@
             </blockquote>
           </div>
           <div>
-            <p class="ovs-lede">Old Vic State takes the visual authority, craftsmanship, civic pride and local identity of historic Victoria and translates them into a contemporary Victorian language.</p>
-            <p>Public art. Music. Street culture. Schools and young people. Digital art and interactive technology. Local storytelling, architecture, typography, native wildlife, civic spaces and community memory.</p>
+            <p class="ovs-lede">Old Vic State takes the visual authority, craftsmanship, civic pride and local identity of historic Victoria and translates them into a contemporary Victorian language — public art, music, street culture, schools, digital work, wildlife, typography and community memory.</p>
             <p>Not a heritage exercise. A working brief for what a state makes next.</p>
             <p class="ovs-shout ovs-gold" style="margin-top:26px;">Old bones.<br />New blood.</p>
           </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════ THE PROPOSITION ══════════════════ -->
+      <section class="ovs-band ovs-band--ink" style="padding-top:0;" aria-labelledby="ovs-prop-title">
+        <div class="ovs-wrap">
+          <p class="ovs-eyebrow" id="ovs-prop-title">The proposition — five lines, then the proof</p>
+
+          <div class="ovs-prop">
+            <a class="ovs-prop-row" href="#principles">
+              <span>01</span>
+              <strong>Keep what has cultural weight.</strong>
+              <em>Principle 01 →</em>
+            </a>
+            <a class="ovs-prop-row" href="#principles">
+              <span>02</span>
+              <strong>Let this generation add something worth inheriting.</strong>
+              <em>Principle 02 →</em>
+            </a>
+            <a class="ovs-prop-row" href="#does">
+              <span>03</span>
+              <strong>Put artists, young people and local communities inside civic creation.</strong>
+              <em>The proof →</em>
+            </a>
+            <a class="ovs-prop-row" href="#frankston">
+              <span>04</span>
+              <strong>Test it locally before pretending it scales.</strong>
+              <em>Frankston →</em>
+            </a>
+            <a class="ovs-prop-row" href="#towns">
+              <span>05</span>
+              <strong>Share the method so every place can write its own language.</strong>
+              <em>Every town →</em>
+            </a>
+          </div>
+
+          <ul class="ovs-rail" aria-label="Jump to the answers">
+            <li><a href="#register"><b>What exists now</b>The register</a></li>
+            <li><a href="#frankston"><b>Why Frankston</b>The laboratory</a></li>
+            <li><a href="#towns"><b>How it scales</b>Method, not aesthetic</a></li>
+            <li><a href="#repair"><b>Where it sits</b>Repair and creation</a></li>
+            <li><a href="#start"><b>How to talk to us</b>One email</a></li>
+          </ul>
         </div>
       </section>
 
@@ -493,14 +628,6 @@
               <div class="ovs-ledger-yes"><span class="ovs-ledger-mark">Is</span><p>Keeping what has weight, and adding to it on purpose.</p></div>
             </div>
             <div class="ovs-ledger-row">
-              <div class="ovs-ledger-no"><span class="ovs-ledger-mark">Not</span><p>One aesthetic rolled flat across the state.</p></div>
-              <div class="ovs-ledger-yes"><span class="ovs-ledger-mark">Is</span><p>Every place exaggerating what already makes it itself.</p></div>
-            </div>
-            <div class="ovs-ledger-row">
-              <div class="ovs-ledger-no"><span class="ovs-ledger-mark">Not</span><p>Culture designed by adults for young audiences.</p></div>
-              <div class="ovs-ledger-yes"><span class="ovs-ledger-mark">Is</span><p>Young Victorians making it, altering it and leaving evidence they were here.</p></div>
-            </div>
-            <div class="ovs-ledger-row">
               <div class="ovs-ledger-no"><span class="ovs-ledger-mark">Not</span><p>A tidy story about where Victoria came from.</p></div>
               <div class="ovs-ledger-yes"><span class="ovs-ledger-mark">Is</span><p>An honest one — achievement, migration, industry, hardship, dispossession, conflict, failure and reinvention, all of it.</p></div>
             </div>
@@ -509,7 +636,7 @@
           <div class="ovs-split" style="margin-top:52px;">
             <div>
               <h3 class="ovs-h3" style="color:var(--ovs-oxide);">On the history itself.</h3>
-              <p>Victorian history is not a mood board. It contains genuine achievement and genuine harm, often in the same decade and sometimes in the same building. A cultural project that only borrows the gold leaf is not continuity — it is decoration.</p>
+              <p>Victorian history contains genuine achievement and genuine harm, often in the same decade and sometimes in the same building. A project that only borrows the gold leaf is not continuity — it is decoration.</p>
               <p>The land this work is made on is Aboriginal land. Sovereignty was never ceded. Blue $nake Studio works in Frankston, on Bunurong Country.</p>
               <p><strong>First Nations culture is not an aesthetic resource.</strong> No element of First Nations language, story, symbol or design is available to this project without permission from the relevant community. Any collaboration must be permission-led, local, properly paid and genuinely collaborative — or it does not happen.</p>
               <p>The studio's written protocol on this is drafted and public. It has not yet been reviewed by a First Nations advisor, and until that review happens it is not used operationally. That is stated here rather than buried.</p>
@@ -525,7 +652,7 @@
       </section>
 
       <!-- ══════════════════ FIVE PRINCIPLES ══════════════════ -->
-      <section class="ovs-band ovs-band--dark" aria-labelledby="ovs-principles-title">
+      <section class="ovs-band ovs-band--dark" id="principles" aria-labelledby="ovs-principles-title">
         <div class="ovs-wrap">
           <p class="ovs-eyebrow">The philosophy · five principles</p>
           <h2 class="ovs-h2" id="ovs-principles-title" style="color:var(--ovs-paper);">A state should know what it looks like.</h2>
@@ -587,8 +714,92 @@
         </div>
       </section>
 
+      <!-- ══════════════════ PUBLIC ART SHOULD DO SOMETHING ══════════════════ -->
+      <section class="ovs-band ovs-band--paper" id="does" aria-labelledby="ovs-does-title">
+        <div class="ovs-wrap">
+          <p class="ovs-eyebrow">Principle 03, proved</p>
+          <h2 class="ovs-h2" id="ovs-does-title">Public art should do something.</h2>
+          <p class="ovs-lede ovs-narrow">The honest answer to <em>why should the public pay for this</em> is not a grant argument. It is that one object can carry identity, direction, teaching, memory and welcome at the same time — and none of those jobs make it less of an artwork.</p>
+
+          <div class="ovs-does">
+            <div class="ovs-does-row">
+              <p class="ovs-does-obj">A mural <b>teaches</b></p>
+              <p>Curriculum content built into the image, and a resource pack in the teacher's hand. The wall is on the timetable, not just on the building.</p>
+              <ul class="ovs-tags"><li>Education</li><li>Youth participation</li><li>Local history</li></ul>
+            </div>
+            <div class="ovs-does-row">
+              <p class="ovs-does-obj">A wall <b>orients</b></p>
+              <p>Colour, pattern and scale that tell you which part of town you are standing in. Wayfinding that works before you have read a word of it.</p>
+              <ul class="ovs-tags"><li>Wayfinding</li><li>Local identity</li><li>Public space</li></ul>
+            </div>
+            <div class="ovs-does-row">
+              <p class="ovs-does-obj">A plaque <b>plays</b></p>
+              <p>Scan it and the street gives you a song, an oral history, an animation. No app, no account, nothing collected. The mechanism already works.</p>
+              <ul class="ovs-tags"><li>Digital access</li><li>Storytelling</li><li>Community memory</li></ul>
+            </div>
+            <div class="ovs-does-row">
+              <p class="ovs-does-obj">A bench <b>remembers</b></p>
+              <p>One local story, carried by something people already sit on. The cheapest civic object in the catalogue, doing the work of a small museum.</p>
+              <ul class="ovs-tags"><li>Community memory</li><li>Local history</li><li>Public space</li></ul>
+            </div>
+            <div class="ovs-does-row">
+              <p class="ovs-does-obj">A station <b>welcomes</b></p>
+              <p>The most-seen surface in most Victorian towns, currently designed by nobody who lives there. It should tell a visitor exactly where they have arrived.</p>
+              <ul class="ovs-tags"><li>Local identity</li><li>Wayfinding</li><li>Tourism</li></ul>
+            </div>
+            <div class="ovs-does-row">
+              <p class="ovs-does-obj">A QR object <b>connects</b></p>
+              <p>A fixed point where the physical place and its digital record meet — the history of the corner you are standing on, attached to that corner permanently.</p>
+              <ul class="ovs-tags"><li>Digital access</li><li>Local history</li><li>Storytelling</li></ul>
+            </div>
+          </div>
+
+          <p class="ovs-lede" style="margin-top:34px;max-width:44ch;"><strong>Art does not become less artistic because it is useful.</strong> Victoria's best old buildings were railway sheds, markets and pumping stations.</p>
+        </div>
+      </section>
+
+      <!-- ══════════════════ HEALTHY TECHNOLOGY ══════════════════ -->
+      <section class="ovs-band ovs-band--ink" id="tech" aria-labelledby="ovs-tech-title">
+        <div class="ovs-wrap">
+          <div class="ovs-argument-grid">
+            <div>
+              <p class="ovs-eyebrow">The part people forget to count</p>
+              <h2 class="ovs-h2" id="ovs-tech-title" style="color:var(--ovs-paper);">Healthy technology is civic architecture too.</h2>
+            </div>
+            <div>
+              <p class="ovs-lede">The last generations left Victorian children stations, libraries, schools, parks, streets and signs. This one is mostly leaving them software.</p>
+              <p>Interfaces, platforms and behavioural systems are now where children spend their public life. They are built by someone, they shape behaviour, and they will outlast the companies that made them. That puts them squarely inside the question this whole page is asking: <span class="ovs-gold">what are we leaving behind?</span></p>
+              <p>A civic culture that gets the murals right and hands its children extraction-based software has not kept what has weight. It has just decorated the loss.</p>
+            </div>
+          </div>
+
+          <div class="ovs-inherit">
+            <div>
+              <h3>What they left us</h3>
+              <ul>
+                <li>Stations, libraries, schools</li>
+                <li>Parks, streets, public buildings</li>
+                <li>Signs, seals, lettering</li>
+                <li>Objects built to outlive their builders</li>
+              </ul>
+            </div>
+            <div class="ovs-inherit--now">
+              <h3>What we are leaving them</h3>
+              <ul>
+                <li>Software, interfaces, platforms</li>
+                <li>Digital environments and defaults</li>
+                <li>Behavioural systems and incentives</li>
+                <li>Objects built to outlive their builders</li>
+              </ul>
+            </div>
+          </div>
+
+          <p style="margin-top:28px;max-width:62ch;">Blue $nake Studio's answer is a design test, not a product: no ads, no trackers, no student login, no data taken from a child. <a href="meta-pet.html" style="color:var(--ovs-gold-hot);">Meta-Pet</a> and the studio's browser tools exist as evidence that the test can be met and something good still gets built. They are proof of a philosophy, not the centre of this argument.</p>
+        </div>
+      </section>
+
       <!-- ══════════════════ FRANKSTON — THE LABORATORY ══════════════════ -->
-      <section class="ovs-band ovs-band--paper" aria-labelledby="ovs-frankston-title">
+      <section class="ovs-band ovs-band--paper" id="frankston" aria-labelledby="ovs-frankston-title">
         <div class="ovs-wrap">
           <p class="ovs-eyebrow">The first laboratory</p>
           <h2 class="ovs-h2" id="ovs-frankston-title">Frankston first.<br />Not Frankston only.</h2>
@@ -596,7 +807,8 @@
             <div>
               <p class="ovs-lede">Blue $nake Studio is based in Frankston. So Frankston is where the thinking gets tested at city scale before it is offered to anyone else.</p>
               <p>That work already has a name and a document set: <strong>Frankston 2035</strong> — a ten-year civic creativity project covering permanent school artwork, healthy technology in the library, a QR art trail through the CBD and foreshore, curriculum-linked public art, local music and storytelling, and a First Nations protocol that governs all of it.</p>
-              <p>Old Vic State is what Frankston 2035 is an example <em>of</em>.</p>
+              <p>Old Vic State is what Frankston 2035 is an example <em>of</em>. The studio can speak for Frankston because it lives here, watches here and gets things wrong here. It cannot speak for Bendigo.</p>
+              <p><strong style="color:var(--ovs-oxide);">So what travels is the method, not the look.</strong> How you find what a place already is, who gets to decide it, and how young people end up holding the pen. Nobody needs Frankston's palette.</p>
               <p class="ovs-plate ovs-plate--oxide">Frankston is the laboratory · Old Vic State is the statewide thesis</p>
             </div>
             <figure class="ovs-figure">
@@ -619,7 +831,7 @@
       </section>
 
       <!-- ══════════════════ THE REGISTER ══════════════════ -->
-      <section class="ovs-band ovs-band--ink" aria-labelledby="ovs-register-title">
+      <section class="ovs-band ovs-band--ink" id="register" aria-labelledby="ovs-register-title">
         <div class="ovs-wrap">
           <p class="ovs-eyebrow">The register</p>
           <h2 class="ovs-h2" id="ovs-register-title" style="color:var(--ovs-paper);">Evidence, not enthusiasm.</h2>
@@ -740,8 +952,8 @@
           <div class="ovs-honesty">
             <h3>What Old Vic State is not claiming</h3>
             <ul>
-              <li><strong>Not a government project.</strong> Blue $nake Studio is an independent creative practice in Frankston. Nothing here is government-funded, endorsed or commissioned.</li>
-              <li><strong>Not a political movement.</strong> No party, no candidate, no campaign. It is a cultural argument that anyone is free to use or ignore.</li>
+              <li><strong>Not a government project.</strong> Blue $nake Studio is an independent creative practice in Frankston. Nothing here is government-funded, endorsed or commissioned, and no council, school or library has adopted any of it.</li>
+              <li><strong>Not a political movement or advocacy collateral.</strong> No party, no candidate, no campaign, no alignment with any advocacy organisation. It is a cultural argument that anyone is free to use, argue with or ignore.</li>
               <li><strong>Not a finished program.</strong> Most of what this page describes is proposal-stage. The register above says exactly which parts.</li>
               <li><strong>Not a cultural authority.</strong> The studio does not speak for any community, least of all a First Nations one.</li>
               <li><strong>Not a claim that old Victoria was better.</strong> It was not uniformly better. It was uniformly more confident about making things. That is the part worth taking.</li>
@@ -755,27 +967,23 @@
         <div class="ovs-wrap">
           <p class="ovs-eyebrow">Concrete possibilities · none of these exist yet</p>
           <h2 class="ovs-h2" id="ovs-become-title">What this looks like when it works.</h2>
-          <p class="ovs-lede ovs-narrow">Not promises. Twelve specific things that could be built by councils, schools, libraries, artists and businesses working together — each one small enough to actually start.</p>
+          <p class="ovs-lede ovs-narrow">Not promises. Eight specific things councils, schools, libraries, artists and businesses could build together — each small enough to actually start.</p>
 
           <div class="ovs-grid ovs-grid--3">
-            <div class="ovs-card"><h3>A station that belongs to its town</h3><p>The visual identity of a railway station developed with local young people. Signage, colour, pattern and name treatment. The most-seen public surface in most Victorian towns, currently designed by nobody who lives there.</p></div>
             <div class="ovs-card"><h3>A school that makes its town's artwork</h3><p>A regional school producing a permanent civic artwork for its own town — not a school project displayed at school, but a piece of the town made by people who are twelve.</p></div>
-            <div class="ovs-card"><h3>Plaques that play</h3><p>QR plaques on buildings, bridges, corners and shopfronts that open music, oral history, animation and local stories. No app. No account. No tracking. The proven mechanism, pointed at memory.</p></div>
             <div class="ovs-card"><h3>Libraries as production spaces</h3><p>A library where you can record, draw, animate and print — not only borrow. Cultural production as a public service, on tools that do not harvest children.</p></div>
             <div class="ovs-card"><h3>Old motifs, contemporary hands</h3><p>Contemporary artists commissioned to reinterpret Victorian ornament, lettering, ironwork and tile — properly paid, and free to break it.</p></div>
             <div class="ovs-card"><h3>Musicians scoring places</h3><p>A local musician commissioned to write for a specific place: a pier, a rail line, a main street, a mill. The place gets a sound as well as a look.</p></div>
             <div class="ovs-card"><h3>Artists and tradespeople together</h3><p>Signwriters, welders, bricklayers, stonemasons, printers and glaziers working with artists, historians, schools, councils and businesses. Craft is the missing half of most public art.</p></div>
-            <div class="ovs-card"><h3>Digital work with a fixed address</h3><p>Digital artworks permanently attached to physical locations — a piece that only resolves when you are standing in front of the thing it is about.</p></div>
             <div class="ovs-card"><h3>Wildlife as civic symbol</h3><p>Local species as contemporary emblems. Black cockatoos, brolgas, hooded plovers, Leadbeater's possum, the towns that already half-claim them. Living symbols instead of borrowed ones.</p></div>
             <div class="ovs-card"><h3>Empty infrastructure as canvas</h3><p>Substations, silos, water tanks, underpasses, hoardings, shutters, blank end-walls. Victoria has enormous quantities of unused public surface and no shortage of people who can paint.</p></div>
-            <div class="ovs-card"><h3>A vocabulary per town</h3><p>Every town developing its own visual language — a palette, a letterform, a motif, a material — documented and owned locally, not issued from a central style guide.</p></div>
             <div class="ovs-card"><h3>A living archive</h3><p>A digital archive that grows as Victoria grows: what was made, who made it, where it is, what it replaced. The record is part of the work.</p></div>
           </div>
         </div>
       </section>
 
       <!-- ══════════════════ EVERY TOWN ══════════════════ -->
-      <section class="ovs-band ovs-band--paper" style="padding-top:0;" aria-labelledby="ovs-towns-title">
+      <section class="ovs-band ovs-band--paper" id="towns" style="padding-top:0;" aria-labelledby="ovs-towns-title">
         <div class="ovs-wrap">
           <svg class="ovs-rule ovs-rule--center" viewBox="0 0 340 14" fill="none" aria-hidden="true">
             <line x1="0" y1="7" x2="140" y2="7" stroke="#1b1811" stroke-opacity=".35" stroke-width="1"/>
@@ -823,30 +1031,15 @@
               <p>Everything the studio has actually built, linked and status-labelled. The evidence layer under this page.</p>
               <span class="ovs-card-cta">The evidence →</span>
             </a>
-            <a class="ovs-card" href="field-guide.html">
-              <h3>Field Guide</h3>
-              <p>How the studio's projects connect structurally rather than thematically. The long explanation.</p>
-              <span class="ovs-card-cta">The system →</span>
-            </a>
             <a class="ovs-card" href="index.html#old-vic-state">
               <h3>The Old Vic State cycle</h3>
               <p>The artwork and writing that named this. Civic gothic: memory, command, ledger and witness.</p>
               <span class="ovs-card-cta">The origin →</span>
             </a>
-            <a class="ovs-card" href="black-wing-crew.html">
-              <h3>Black Wing Crew</h3>
-              <p>Music, black birds and street print. Where the contemporary half of the visual language is worked out.</p>
-              <span class="ovs-card-cta">The sound →</span>
-            </a>
             <a class="ovs-card" href="qr-portal.html">
               <h3>QR Portal</h3>
               <p>The street-drop mechanism: physical surface to digital artwork, with nothing collected on the way.</p>
               <span class="ovs-card-cta">The mechanism →</span>
-            </a>
-            <a class="ovs-card" href="print.html">
-              <h3>Print Vault</h3>
-              <p>Free printable artefacts. How a school, library or community group gets something on the wall this week.</p>
-              <span class="ovs-card-cta">The distribution →</span>
             </a>
             <a class="ovs-card" href="meta-pet.html">
               <h3>Meta-Pet</h3>
@@ -859,27 +1052,56 @@
               <span class="ovs-card-cta">The pathway →</span>
             </a>
           </div>
+          <p style="margin-top:20px;text-align:center;font-size:14px;">Also part of it: the <a href="field-guide.html" style="color:var(--ovs-gold-hot);">Field Guide</a> for how the branches connect, <a href="black-wing-crew.html" style="color:var(--ovs-gold-hot);">Black Wing Crew</a> for the sound and street print, and the <a href="print.html" style="color:var(--ovs-gold-hot);">Print Vault</a> for anything you want on a wall this week.</p>
         </div>
       </section>
 
       <!-- ══════════════════ REPAIR AND IMAGINATION ══════════════════ -->
-      <section class="ovs-band ovs-band--ink" aria-labelledby="ovs-bridge-title">
-        <div class="ovs-wrap ovs-argument-grid">
-          <div>
-            <p class="ovs-eyebrow">Where this sits</p>
-            <h2 class="ovs-h2" id="ovs-bridge-title" style="color:var(--ovs-paper);">Repair is half the job.</h2>
+      <section class="ovs-band ovs-band--ink" id="repair" aria-labelledby="ovs-bridge-title">
+        <div class="ovs-wrap">
+          <div class="ovs-argument-grid">
+            <div>
+              <p class="ovs-eyebrow">Where this sits</p>
+              <h2 class="ovs-h2" id="ovs-bridge-title" style="color:var(--ovs-paper);">Repair is three moves,<br />not one.</h2>
+            </div>
+            <div>
+              <p class="ovs-lede">Naming the damage is not repair. Treating the same damage every year is not repair either. Repair is what happens when the conditions producing the damage change, and something better gets built in the space that opens up.</p>
+              <p>Most public argument in Victoria stops at the first move and calls it the whole job.</p>
+            </div>
           </div>
-          <div>
-            <p class="ovs-lede">Fixing Victoria cannot only mean repairing what is broken. Someone also has to imagine what is worth building.</p>
-            <p>Plenty of good people are working on the first half — services, infrastructure, transparency, cost, safety, the things that have to function. That work matters and this page is not a substitute for it.</p>
-            <p>Old Vic State occupies the second space. It assumes the repairs get made, and asks the question that comes after: what does the state look like, sound like and feel like once it works?</p>
-            <p>The proposition is deliberately built so it can be handed to a council, a school, a cultural institution, a business, a community group or a civic-repair organisation without translation. Anyone working on Victoria is welcome to take it.</p>
+
+          <div class="ovs-moves">
+            <div class="ovs-move">
+              <span class="ovs-move-num" aria-hidden="true">I</span>
+              <h3>Identify the wound</h3>
+              <p>Say plainly what is broken. Necessary, loud, and the easiest of the three to mistake for progress.</p>
+            </div>
+            <div class="ovs-move">
+              <span class="ovs-move-num" aria-hidden="true">II</span>
+              <h3>Change the conditions that caused it</h3>
+              <p>Fix what keeps reproducing the damage — how things get commissioned, who decides, what gets maintained, what children are handed by default. Slow, unglamorous, and where prevention actually lives.</p>
+            </div>
+            <div class="ovs-move ovs-move--here">
+              <span class="ovs-move-num" aria-hidden="true">III</span>
+              <h3>Build something better in the space</h3>
+              <p>The part almost nobody funds and everybody misses when it is absent. This is where Old Vic State works.</p>
+            </div>
+          </div>
+
+          <div class="ovs-argument-grid" style="margin-top:38px;">
+            <div>
+              <p class="ovs-lede ovs-gold">Fixing Victoria cannot only mean repairing what is broken. Someone also has to imagine what is worth building.</p>
+            </div>
+            <div>
+              <p>Old Vic State occupies the third space and does not pretend otherwise. But the moves are connected: a mural built without changing who decides, who maintains it and who owns it is a repair that will need repairing. Good civic design prevents the next failure <em>and</em> leaves something worth inheriting. Prevention and creation are the same craft, running in different directions.</p>
+              <p>The proposition is deliberately built so it can be handed to a council, a school, a cultural institution, a business, a community group or a civic-repair organisation without translation — and without becoming theirs. It stays an independent studio project, unaligned with any political or advocacy organisation. That independence is what makes it worth taking.</p>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- ══════════════════ PARTICIPATE ══════════════════ -->
-      <section class="ovs-band ovs-band--paper" aria-labelledby="ovs-start-title">
+      <section class="ovs-band ovs-band--paper" id="start" aria-labelledby="ovs-start-title">
         <div class="ovs-wrap">
           <p class="ovs-eyebrow">Start a serious conversation</p>
           <h2 class="ovs-h2" id="ovs-start-title">Take it and use it.</h2>
@@ -888,7 +1110,7 @@
           <div class="ovs-grid ovs-grid--2">
             <div class="ovs-card">
               <h3>Councils and civic organisations</h3>
-              <p>Start with one site and one pilot rather than a strategy. The Frankston 2035 pilot scopes, budget ranges and governance model are written and readable, and they are designed to be copied rather than commissioned.</p>
+              <p>Start with one site and one pilot, not a strategy. The pilot scopes, budget ranges and governance model are written, readable and designed to be copied rather than commissioned.</p>
               <p><a class="ovs-btn" href="mailto:bluesssnakestudio@gmail.com?subject=Old%20Vic%20State%20%E2%80%94%20Council%20%2F%20civic%20enquiry">Email about a pilot</a></p>
             </div>
             <div class="ovs-card">
@@ -898,12 +1120,12 @@
             </div>
             <div class="ovs-card">
               <h3>Artists, musicians and tradespeople</h3>
-              <p>The model assumes artists are paid and credited, and that signwriters, welders and stonemasons are collaborators rather than contractors. If you work in a Victorian town and want it to look like itself, say so.</p>
+              <p>Artists are paid and credited. Signwriters, welders and stonemasons are collaborators, not contractors. If you work in a Victorian town and want it to look like itself, say so.</p>
               <p><a class="ovs-btn" href="mailto:bluesssnakestudio@gmail.com?subject=Old%20Vic%20State%20%E2%80%94%20Artist%20%2F%20maker">Email as a maker</a></p>
             </div>
             <div class="ovs-card">
               <h3>Young Victorians</h3>
-              <p>Principle 04 is the one that fails most easily, because adults keep taking the pen back. If you are young and want your town to look like something, that is the whole brief. Bring the thing you already made.</p>
+              <p>Principle 04 fails most easily, because adults keep taking the pen back. If you want your town to look like something, that is the whole brief. Bring the thing you already made.</p>
               <p><a class="ovs-btn" href="mailto:bluesssnakestudio@gmail.com?subject=Old%20Vic%20State%20%E2%80%94%20Young%20Victorian">Email the studio</a></p>
             </div>
             <div class="ovs-card">
@@ -913,7 +1135,7 @@
             </div>
             <div class="ovs-card">
               <h3>Local businesses</h3>
-              <p>A shopfront, a shutter, a blank side wall or a forty-year-old sign is civic surface. Some of the best Victorian typography left is on businesses, not public buildings.</p>
+              <p>A shopfront, a shutter, a blank side wall or a forty-year-old sign is civic surface. Some of the best Victorian lettering left is on businesses, not public buildings.</p>
               <p><a class="ovs-btn" href="mailto:bluesssnakestudio@gmail.com?subject=Old%20Vic%20State%20%E2%80%94%20Local%20business">Email about a site</a></p>
             </div>
           </div>
