@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Frankston 2035 — Community Future Artefact · Blue $nake Studio</title>
-  <meta name="description" content="Frankston 2035 is a Blue $nake Studio community future artefact: a discoverable civic imagination page for schools, councils, libraries and local collaborators in Frankston." />
+  <title>Frankston 2035 — Art That Lives · Blue $nake Studio</title>
+  <meta name="description" content="Frankston 2035 is a ten-year civic creativity project from Blue $nake Studio: permanent school artwork, healthy technology in the library and a QR art walk. Three pilots scoped, costed and honestly status-labelled." />
   <link rel="canonical" href="https://blkck2.com/frankston-2035.html" />
-  <meta property="og:title" content="Frankston 2035 — Community Future Artefact" />
-  <meta property="og:description" content="A civic imagination project from Blue $nake Studio: Frankston as a creative, child-safe, art-rich community future." />
+  <meta property="og:title" content="Frankston 2035 — Art That Lives" />
+  <meta property="og:description" content="A ten-year civic creativity project from Blue $nake Studio. Frankston is the laboratory; Old Vic State is the statewide thesis." />
   <meta property="og:image" content="https://blkck2.com/20_moss_man/moss-man-frankston-courts.png" />
   <meta property="og:url" content="https://blkck2.com/frankston-2035.html" />
   <meta property="og:type" content="website" />
@@ -33,6 +33,18 @@
     .f2035-section { margin: 42px 0 0; max-width: 820px; }
     .f2035-section h2 { margin: 0 0 12px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(26px, 4vw, 42px); font-weight: 400; color: var(--ink); }
     .f2035-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .f2035-stamp { display: inline-block; padding: 3px 9px; border: 2px solid currentColor; font-size: 9px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .f2035-stamp.dev { color: #e0b34f; }
+    .f2035-stamp.proposed { color: #d0714f; }
+    .f2035-stamp.built { color: #6fbf8b; }
+    .f2035-card .f2035-stamp { align-self: flex-start; margin-bottom: 10px; }
+    .f2035-card { display: flex; flex-direction: column; }
+    .f2035-docs { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin-top: 22px; }
+    .f2035-doc { display: block; padding: 14px 16px; border: 1px solid rgba(120,214,247,.14); border-radius: 10px; color: var(--muted); text-decoration: none; font-size: 13px; line-height: 1.5; transition: border-color .18s ease, color .18s ease; }
+    .f2035-doc:hover { border-color: rgba(199,168,106,.5); color: var(--gold-hot); }
+    .f2035-doc strong { display: block; color: var(--ink); font-size: 14px; margin-bottom: 3px; }
+    .f2035-note { margin-top: 26px; padding: 20px 22px; border: 1px solid rgba(255,0,110,.3); border-radius: 16px; background: rgba(255,0,110,.05); }
+    .f2035-note h3 { margin: 0 0 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #ff8fbb; }
     @media (max-width: 820px) { .f2035-hero, .f2035-grid { grid-template-columns: 1fr; } .f2035-shell { padding-top: 92px; } }
   </style>
 </head>
@@ -46,6 +58,7 @@
       </a>
       <div class="mast-actions">
         <a class="mast-link" href="index.html">Home</a>
+        <a class="mast-link" href="old-vic-state.html">Old Vic State</a>
         <a class="mast-link" href="proof-wall.html">Proof Wall</a>
         <a class="mast-link" href="gov.html">Schools / Council</a>
         <a class="mast-link" href="field-guide.html">Field Guide</a>
@@ -55,11 +68,13 @@
     <main class="f2035-shell" id="main">
       <section class="f2035-hero" aria-label="Frankston 2035 introduction">
         <div>
-          <p class="eyebrow">Community future artefact · Frankston, Australia</p>
+          <p class="eyebrow">Civic creativity project · Frankston, Victoria · The Old Vic State laboratory</p>
           <h1>Frankston 2035.</h1>
-          <p class="f2035-lede">A standalone civic-imagination project for the Blue $nake Studio archive: Frankston as a child-safe, art-rich, locally useful future where schools, libraries, councils, artists and families can build visible proof together.</p>
+          <p class="f2035-lede">A ten-year civic creativity project for Frankston: permanent artwork in schools, healthy technology in the library, and a QR art walk through the CBD and foreshore. Three pilots are scoped, costed and documented. None have been built yet.</p>
+          <p class="f2035-lede" style="margin-top:14px;font-size:16px;">Frankston 2035 is the laboratory. <a href="old-vic-state.html" style="color:var(--gold-hot);">Old Vic State</a> is the statewide thesis it is testing.</p>
           <div class="f2035-actions links-row">
-            <a class="project-link album-link" href="proof-wall.html#councils">See proof wall</a>
+            <a class="project-link album-link" href="#pilots">The three pilots</a>
+            <a class="project-link" href="#register">Claims register</a>
             <a class="project-link" href="gov.html">Schools / council pathway</a>
             <a class="project-link" href="mailto:bluesssnakestudio@gmail.com?subject=Frankston%202035">Contact about Frankston 2035</a>
           </div>
@@ -69,36 +84,102 @@
         </figure>
       </section>
 
-      <section class="f2035-grid" aria-label="Frankston 2035 pillars">
+      <section class="f2035-section">
+        <p class="eyebrow">The proposition</p>
+        <h2>Murals become classrooms.<br />Libraries become studios.</h2>
+        <p>Frankston is not short of people who can make things. It is short of the infrastructure that turns individual creative acts into civic culture — the systems, spaces and permissions. This project builds that infrastructure, one pilot at a time, over ten years.</p>
+        <p>Every pilot is designed to become permanent. Every artwork is designed to carry educational content. Every technology is designed without data extraction. Every program is designed to transfer ownership to the community.</p>
+      </section>
+
+      <section class="f2035-section" id="pilots" style="max-width:none;">
+        <p class="eyebrow">Three proving grounds · none built yet</p>
+        <h2>The pilots.</h2>
+        <p style="max-width:820px;">Three pilots, three settings, one purpose: prove the model works before scaling it. Scoped, costed and documented — and currently at proposal stage. Budget ranges are informed estimates with contingency, not supplier quotes.</p>
+      </section>
+
+      <section class="f2035-grid" aria-label="The three pilots">
         <article class="f2035-card">
-          <h2>Public imagination</h2>
-          <p>A shareable place for future-facing Frankston ideas: street art, learning tools, print drops, music, workshops and civic storytelling.</p>
+          <span class="f2035-stamp proposed">Proposed</span>
+          <h2>01 — The Living Mural</h2>
+          <p>A curriculum-linked mural at a Frankston primary school, co-designed with students, painted by a professional artist and owned permanently by the school. Teachers receive a freely licensed resource pack.</p>
+          <p style="margin-top:10px;font-size:12px;color:var(--dim);">12 months · $45,000–$65,000 indicative · school site to be identified with Council</p>
         </article>
         <article class="f2035-card">
-          <h2>Local proof</h2>
-          <p>Connects existing live artefacts — Meta-Pet, Teacher Tools, Frankston → Fuji, the Proof Wall and print-ready community work — into one discoverable project.</p>
+          <span class="f2035-stamp proposed">Proposed</span>
+          <h2>02 — The Healthy Tech Library</h2>
+          <p>A creative technology commons in Frankston Library: drawing, music, writing and animation on offline, account-free, ad-free tools only. Includes a facilitator program and a Healthy Technology Charter the Library adopts. The recommended first pilot.</p>
+          <p style="margin-top:10px;font-size:12px;color:var(--dim);">6 months setup · $30,000–$50,000 indicative · not yet scoped with the Library</p>
         </article>
         <article class="f2035-card">
-          <h2>Open invitation</h2>
-          <p>Written for schools, libraries, councils, disability arts groups, community organisations and collaborators who want practical creative outcomes.</p>
+          <span class="f2035-stamp proposed">Proposed</span>
+          <h2>03 — The QR Art Walk</h2>
+          <p>Ten to fifteen stops through the CBD and foreshore. Each QR code opens a local story, song, history or artwork. No app, no account, no tracking. The walk grows as new community stories are gathered, and belongs to the city.</p>
+          <p style="margin-top:10px;font-size:12px;color:var(--dim);">6 months development · $20,000–$35,000 indicative · delivery mechanism already proven</p>
         </article>
       </section>
 
-      <section class="f2035-section">
-        <p class="eyebrow">What this page is</p>
-        <h2>A marker in the archive.</h2>
-        <p>Frankston 2035 is not a policy claim or official council plan. It is a Blue $nake Studio project page for organising a local future story: a place where creative education, safe technology, community art and cultural bridge work can be found under one name.</p>
+      <section class="f2035-section" id="first-nations">
+        <p class="eyebrow">Protocol</p>
+        <h2>First Nations protocol.</h2>
+        <p>Frankston is on Bunurong Country, in the Kulin Nation. Sovereignty was never ceded. Every mural wall, foreshore path, library room and QR plaque in this project sits on Country.</p>
+        <p>The project carries a nine-part written protocol covering research, intermediaries, first contact, listening, time, documentation and the difference between a meeting, a relationship, a partnership and a permission. It states plainly that Blue $nake Studio does not begin from an existing relationship, does not speak for any community, and does not treat Acknowledgement of Country as engagement.</p>
+        <p><strong style="color:var(--gold-hot);">Status:</strong> drafted, published, and <strong>not yet reviewed by a First Nations advisor.</strong> It must not be used operationally until that review has occurred. A review, a correction or a refusal are all valid responses and all wanted.</p>
+        <div class="f2035-actions links-row">
+          <a class="project-link album-link" href="frankston-2035/06-first-nations-protocol.md">Read the full draft protocol</a>
+          <a class="project-link" href="mailto:bluesssnakestudio@gmail.com?subject=Frankston%202035%20%E2%80%94%20Cultural%20guidance%20%2F%20protocol%20review">Offer cultural guidance</a>
+        </div>
       </section>
 
-      <section class="f2035-section">
-        <p class="eyebrow">Possible outputs</p>
-        <h2>Things it can hold.</h2>
+      <section class="f2035-section" id="register">
+        <p class="eyebrow">Honesty layer</p>
+        <h2>The claims register.</h2>
+        <p>Every major claim this project makes is written down, graded and published — including the weak ones. Two claims are fully proven. Eight require caveats or further evidence before they belong in a Council-facing document.</p>
         <ul class="f2035-list">
-          <li>Workshop proposals for schools, libraries and youth/community spaces.</li>
-          <li>Frankston-focused posters, printable artefacts, QR trails and public-facing explainers.</li>
-          <li>Connections to the Frankston → Fuji sister-city learning bridge.</li>
-          <li>Proof of privacy-first, child-safe creative tools that can be tested locally.</li>
+          <li><strong style="color:#6fbf8b;">Proven —</strong> QR codes can create community walks with no app, account or tracking. The studio has deployed this repeatedly.</li>
+          <li><strong style="color:#6fbf8b;">Proven —</strong> Blue $nake Studio has the component capabilities: public art, community materials, QR and web delivery, educational resource design, documentation, healthy-technology practice.</li>
+          <li><strong style="color:#e0b34f;">Draft —</strong> murals can teach; healthy tech works in a library; public art builds belonging; budgets are realistic; community appetite exists. Well supported in the literature, not yet measured in Frankston.</li>
+          <li><strong style="color:#d0714f;">Proposal only —</strong> co-design strengthens students' connection to school; the model is replicable by other councils. Neither can be claimed until a pilot is complete.</li>
         </ul>
+        <div class="f2035-actions links-row">
+          <a class="project-link album-link" href="frankston-2035/PROOF-REGISTER.md">Read the full claims register</a>
+        </div>
+      </section>
+
+      <section class="f2035-section" id="documents" style="max-width:none;">
+        <p class="eyebrow">The document set</p>
+        <h2>Everything is written down.</h2>
+        <p style="max-width:820px;">The project is not a pitch deck. It is a working document set — constitution, pilots, charters, protocols, governance, risk, roadmap and playbook. Written to v1.0, June 2026. These open as plain Markdown files.</p>
+        <div class="f2035-docs">
+          <a class="f2035-doc" href="frankston-2035/CONTENTS.md"><strong>Contents</strong>The full index of every document.</a>
+          <a class="f2035-doc" href="frankston-2035/00-constitution.md"><strong>00 · Constitution</strong>The non-negotiable principles everything else answers to.</a>
+          <a class="f2035-doc" href="frankston-2035/01-executive-summary.md"><strong>01 · Executive summary</strong>The opportunity, the model and the ask, in two pages.</a>
+          <a class="f2035-doc" href="frankston-2035/03-pilot-projects.md"><strong>03 · Pilot projects</strong>Full scopes, outcomes and budget ranges for all three.</a>
+          <a class="f2035-doc" href="frankston-2035/05-risk-register.md"><strong>05 · Risk register</strong>What could go wrong and what is done about it.</a>
+          <a class="f2035-doc" href="frankston-2035/05c-council-ask.md"><strong>05c · Council ask</strong>Exactly what is being requested, and what is not.</a>
+          <a class="f2035-doc" href="frankston-2035/05d-governance.md"><strong>05d · Governance</strong>Decision rights, ownership and asset transfer.</a>
+          <a class="f2035-doc" href="frankston-2035/06-first-nations-protocol.md"><strong>06 · First Nations protocol</strong>Nine parts. Drafted, unreviewed, not operational.</a>
+          <a class="f2035-doc" href="frankston-2035/07-visual-language.md"><strong>07 · Visual language</strong>The diagram and information design system.</a>
+          <a class="f2035-doc" href="frankston-2035/08-creative-operating-system.md"><strong>08 · Creative operating system</strong>How the project runs as a system, not a commission.</a>
+          <a class="f2035-doc" href="frankston-2035/10-playbook.md"><strong>10 · Playbook</strong>The replication guide for anyone else who wants to run it.</a>
+          <a class="f2035-doc" href="frankston-2035/PROOF-REGISTER.md"><strong>Proof register</strong>Every claim, graded honestly.</a>
+          <a class="f2035-doc" href="frankston-2035/COMMUNITY-PARTICIPATION-GUIDE.md"><strong>Community participation guide</strong>How to take part without an invitation.</a>
+          <a class="f2035-doc" href="frankston-2035/COUNCIL-DECK.md"><strong>Council deck</strong>The presentation version.</a>
+        </div>
+
+        <div class="f2035-note">
+          <h3>What this is not</h3>
+          <p>Frankston 2035 is not a Council plan, a policy claim or a funded program. It is an independent proposal from a Frankston studio, written so that a council, school or library can read it, argue with it and adopt the parts that are useful. No partnership, endorsement or funding relationship currently exists.</p>
+        </div>
+      </section>
+
+      <section class="f2035-section">
+        <p class="eyebrow">The wider argument</p>
+        <h2>Frankston first. Not Frankston only.</h2>
+        <p>Everything here is designed to be documented and handed on, so another Victorian town can do its own version rather than receive a copy of this one. That wider argument — keep what has weight, create what is missing, put art back into civic life, give young people ownership, and make every place unmistakably itself — is set out in full on the Old Vic State page.</p>
+        <div class="f2035-actions links-row">
+          <a class="project-link album-link" href="old-vic-state.html">Read Old Vic State — the statewide thesis</a>
+          <a class="project-link" href="proof-wall.html#councils">See what is already built</a>
+        </div>
       </section>
     </main>
   </div>

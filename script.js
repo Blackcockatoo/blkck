@@ -8,6 +8,10 @@
   const status = document.getElementById('status');
   const items = window.BSS_GALLERY_ITEMS || [];
 
+  // Everything below builds the index tree experience. Other pages load this file
+  // for the shared data, so bail out cleanly when the scaffolding is not present.
+  if (!tree || !panelWrap) return;
+
   const sections = window.BSS_STUDIO_SECTIONS || [];
   if (!sections.length) {
     const fallback = document.getElementById('panel-wrap');
@@ -281,7 +285,8 @@
   ];
 
 
-  total.textContent = String(sections.length).padStart(2, '0');
+  // The counter only exists on the index tree; other pages load this file too.
+  if (total) total.textContent = String(sections.length).padStart(2, '0');
 
   const slugs = sections.map(section => section.slug);
   let active = Math.max(0, slugs.indexOf(location.hash.slice(1)));
@@ -700,6 +705,11 @@
             <span>Book II · two versions</span><strong>The Victorian Statesman’s Recursive Lullaby</strong><em>Memory sharpened into hope</em>
           </a>
         </div>
+        <div class="links-row" style="margin-top:28px;">
+          <a class="album-link" href="old-vic-state.html">Old Vic State — the cultural thesis</a>
+          <a class="project-link" href="frankston-2035.html">Frankston 2035 — the first laboratory</a>
+        </div>
+        <p style="margin-top:-8px;max-width:60ch;color:var(--muted);font-size:14px;line-height:1.65;">The cycle named the idea. The thesis is what the idea asks Victoria to build: old bones, new blood.</p>
       </section>`;
   }
 
@@ -864,7 +874,7 @@
     const changed = next !== active;
     active = next;
     root.style.setProperty('--active', active);
-    counter.textContent = String(active + 1).padStart(2, '0');
+    if (counter) counter.textContent = String(active + 1).padStart(2, '0');
 
     document.querySelectorAll('.node').forEach((node, i) => {
       const selected = i === active;
@@ -1044,90 +1054,4 @@
   buildPanels();
   select(active, { hash: location.hash.length > 1 });
 
-  // ─── Krishna Sanctum ──────────────────────────────────────────────────────────
-  function setupKrishnaSanctum() {
-    const sanctum  = document.getElementById('krishna-sanctum');
-    const door     = document.getElementById('brand-mark-door');
-    const closeBtn = document.getElementById('sanctum-close');
-    if (!sanctum || !door) return;
-
-    let lastFocused = null;
-
-    function getFocusable() {
-      return [...sanctum.querySelectorAll(
-        'button:not([disabled]), a[href], iframe, [tabindex]:not([tabindex="-1"])'
-      )];
-    }
-
-    function openSanctum() {
-      lastFocused = document.activeElement;
-      // The reader-edition PDF is heavy — only fetch it once the sanctum actually opens.
-      const reader = sanctum.querySelector('iframe[data-src]');
-      if (reader && !reader.getAttribute('src')) reader.setAttribute('src', reader.dataset.src);
-      sanctum.removeAttribute('aria-hidden');
-      sanctum.classList.add('is-open');
-      setTimeout(() => { if (closeBtn) closeBtn.focus({ preventScroll: true }); }, 820);
-      sanctum.addEventListener('keydown', trapFocus);
-    }
-
-    function closeSanctum() {
-      sanctum.setAttribute('aria-hidden', 'true');
-      sanctum.classList.remove('is-open');
-      sanctum.removeEventListener('keydown', trapFocus);
-      if (lastFocused) { lastFocused.focus({ preventScroll: true }); lastFocused = null; }
-    }
-
-    function trapFocus(e) {
-      if (e.key !== 'Tab') return;
-      const f = getFocusable();
-      if (!f.length) return;
-      if (e.shiftKey && document.activeElement === f[0]) {
-        e.preventDefault(); f[f.length - 1].focus();
-      } else if (!e.shiftKey && document.activeElement === f[f.length - 1]) {
-        e.preventDefault(); f[0].focus();
-      }
-    }
-
-    // The door is a native <button>, so keyboard activation arrives as a click event.
-    door.addEventListener('click', e => { e.stopPropagation(); openSanctum(); });
-    if (closeBtn) closeBtn.addEventListener('click', closeSanctum);
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && sanctum.classList.contains('is-open')) closeSanctum();
-    });
-
-    const sanctumPlayBtn = document.getElementById('sanctum-video-play');
-    const sanctumVideoFrame = document.getElementById('sanctum-video-frame');
-    if (sanctumPlayBtn && sanctumVideoFrame) {
-      sanctumPlayBtn.addEventListener('click', () => {
-        const iframe = document.createElement('iframe');
-        iframe.src = 'https://www.youtube-nocookie.com/embed/pufgJKzIXF4?autoplay=1&rel=0';
-        iframe.title = 'Kṛṣṇapakṣi Chant – Two ciphers, one name';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-        iframe.allowFullscreen = true;
-        iframe.loading = 'lazy';
-        sanctumVideoFrame.innerHTML = '';
-        sanctumVideoFrame.appendChild(iframe);
-      });
-    }
-
-    const copyBtn = document.getElementById('sanctum-copy-pitch');
-    if (copyBtn) {
-      copyBtn.addEventListener('click', () => {
-        const target = document.getElementById(copyBtn.getAttribute('data-copy-target'));
-        if (!target) return;
-        const text = target.textContent.trim();
-        const done = () => {
-          const orig = copyBtn.textContent;
-          copyBtn.textContent = 'Copied';
-          setTimeout(() => { copyBtn.textContent = orig; }, 1800);
-        };
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(text).then(done).catch(() => prompt('Copy this text:', text));
-        } else {
-          prompt('Copy this text:', text);
-        }
-      });
-    }
-  }
-  setupKrishnaSanctum();
 })();

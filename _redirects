@@ -33,6 +33,9 @@ http://blkck2.com/* https://blkck2.com/:splat 301!
 /start-here /start-here.html 301
 /proof-wall /proof-wall.html 301
 /frankston-2035 /frankston-2035.html 301
+/old-vic-state /old-vic-state.html 301
+/oldvicstate /old-vic-state.html 301
+/ovs /old-vic-state.html 301
 /2035 /frankston-2035.html 301
 /press-kit /press-kit.html 301
 /privacy-policy /privacy-policy.html 301

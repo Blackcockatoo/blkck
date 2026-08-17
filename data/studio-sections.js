@@ -91,17 +91,18 @@ window.BSS_STUDIO_SECTIONS = [
     label: 'Old Vic State',
     eyebrow: 'Civic gothic · recursive song cycle · Victoria',
     title: 'The old state dreams in circles.',
-    statement: 'Old Vic State is a civic-gothic song and image cycle about memory, command and the structures that outlive the people who believe they control them.',
-    pageTitle: 'Old Vic State — Civic Gothic Song Cycle · Blue $nake Studio',
-    pageDescription: 'A civic-gothic song and image cycle from Blue $nake Studio. One wing remembers fire. One wing remembers law. Between them hangs the body of command.',
+    statement: 'Old Vic State began as a civic-gothic song and image cycle about memory, command and civic record. It became the name for the studio\'s wider argument: keep what has weight, and build something worth inheriting.',
+    pageTitle: 'Old Vic State — Not nostalgia. Cultural continuity. · Blue $nake Studio',
+    pageDescription: 'A civic-gothic song and image cycle, and the cultural proposition it named: old bones, new blood. Public art, schools, young Victorians and local identity across the state.',
     oldVicState: true,
     details: [
-      'One wing remembers fire. One wing remembers law. Between them hangs the body of command.',
-      'The project moves between wartime nightmare and civic ritual: press room, stairwell, hospital glass, curfew street, ledger and seal.',
-      'Its answer is not forgetting or revenge, but witness, transfer and symmetry: the wound finds its author; memory sharpens into hope.'
+      'The cycle: one wing remembers fire, one wing remembers law, and between them hangs the body of command — press room, stairwell, curfew street, ledger and seal.',
+      'The proposition: Victoria does not only need systems that function. It needs a culture people recognise as their own.',
+      'Frankston is the first laboratory. Old Vic State is the statewide thesis.'
     ],
     links: [
-      { label: 'Listen on Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link' },
+      { label: 'Read the Old Vic State thesis', href: 'old-vic-state.html', className: 'album-link' },
+      { label: 'Listen on Black Wing Crew', href: 'https://blackwingcrew.netlify.app/' },
       { label: 'Read Butterfly Symmetry', href: 'documents/butterfly-symmetry-final-loop.pdf' },
       { label: 'Read the Victorian Lullaby', href: 'documents/victorian-statesman-recursive-lullaby.pdf' }
     ],
