@@ -91,17 +91,18 @@ window.BSS_STUDIO_SECTIONS = [
     label: 'Old Vic State',
     eyebrow: 'Civic gothic · recursive song cycle · Victoria',
     title: 'The old state dreams in circles.',
-    statement: 'Old Vic State is a civic-gothic song and image cycle about memory, command and the structures that outlive the people who believe they control them.',
-    pageTitle: 'Old Vic State — Civic Gothic Song Cycle · Blue $nake Studio',
-    pageDescription: 'A civic-gothic song and image cycle from Blue $nake Studio. One wing remembers fire. One wing remembers law. Between them hangs the body of command.',
+    statement: 'Old Vic State began as a civic-gothic song and image cycle about memory, command and civic record. It became the name for the studio\'s wider argument: keep what has weight, and build something worth inheriting.',
+    pageTitle: 'Old Vic State — Not nostalgia. Cultural continuity. · Blue $nake Studio',
+    pageDescription: 'A civic-gothic song and image cycle, and the cultural proposition it named: old bones, new blood. Public art, schools, young Victorians and local identity across the state.',
     oldVicState: true,
     details: [
-      'One wing remembers fire. One wing remembers law. Between them hangs the body of command.',
-      'The project moves between wartime nightmare and civic ritual: press room, stairwell, hospital glass, curfew street, ledger and seal.',
-      'Its answer is not forgetting or revenge, but witness, transfer and symmetry: the wound finds its author; memory sharpens into hope.'
+      'The cycle: one wing remembers fire, one wing remembers law, and between them hangs the body of command — press room, stairwell, curfew street, ledger and seal.',
+      'The proposition: Victoria does not only need systems that function. It needs a culture people recognise as their own.',
+      'Frankston is the first laboratory. Old Vic State is the statewide thesis.'
     ],
     links: [
-      { label: 'Listen on Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link' },
+      { label: 'Read the Old Vic State thesis', href: 'old-vic-state.html', className: 'album-link' },
+      { label: 'Listen on Black Wing Crew', href: 'https://blackwingcrew.netlify.app/' },
       { label: 'Read Butterfly Symmetry', href: 'documents/butterfly-symmetry-final-loop.pdf' },
       { label: 'Read the Victorian Lullaby', href: 'documents/victorian-statesman-recursive-lullaby.pdf' }
     ],
@@ -268,26 +269,53 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'games',
-    status: 'Prototype',
+    status: 'Live',
     label: 'Games',
     eyebrow: 'Play · Explore · Interactive',
     title: 'Games from the studio.',
-    statement: 'Playable games and interactive engines from Blue $nake Studio — built in the same mythic universe as the art, music and learning tools.',
-    pageTitle: 'Games — Blue $nake Studio',
-    pageDescription: 'B$S Six-Face Word Cube, Monkey Invaders and the Oracle Warden glyph engine — playable browser games from Blue $nake Studio.',
+    statement: 'Playable games and interactive engines from Blue $nake Studio — built in the same mythic universe as the art, music and learning tools. No login, no ads, no tracking.',
+    pageTitle: 'Games — Monkey Invaders, Bubble Hex & the Word Cube · Blue $nake Studio',
+    pageDescription: 'Monkey Invaders, Bubble Hex, the B$S Six-Face Word Cube and the Moss 60 Oracle Warden — playable browser games from Blue $nake Studio. Free, no login, no tracking.',
     details: [
+      'Monkey Invaders — banana-powered arcade shooter with waves, difficulty modes and boss levels. Touch controls built for a phone held sideways.',
+      'Bubble Hex — a lost gothic arcade game. Trap what is chasing you inside a bubble, then burst it. Chambers, maps and chronicles, with a Ritual State display mode.',
       'B$S Six-Face Word Cube — drag to spin a 3D artwork cube with six word-grid faces. Free in the browser, no login.',
-      'Monkey Invaders — arcade-style game from the studio.',
       'Oracle Warden — the Moss 60 glyph engine, a playable symbolic puzzle.',
       'More games in development as the studio\'s pattern systems are gamified.'
     ],
     links: [
-      { label: 'Play Word Cube', href: 'apps/bs-word-cube.html', className: 'game-link' },
-      { label: 'Play Monkey Invaders', href: 'https://www.bluesnakestudios.com/monkey-invaders.html', className: 'game-link' },
-      { label: 'Oracle Warden (Moss 60)', href: 'apps/moss60-oracle-warden.html', className: 'game-link' },
+      // `.game-link` already renders a "PLAY" chip via CSS ::before, so these
+      // labels must not repeat the word or the button reads "PLAY PLAY ...".
+      { label: 'Monkey Invaders', href: 'https://monkey-invaders-enhanced.vercel.app/', className: 'game-link', sub: 'Arcade shooter. Landscape recommended.' },
+      { label: 'Bubble Hex', href: 'https://bubblehex.vercel.app/', className: 'game-link', sub: 'Gothic bubble-trapping platformer.' },
+      { label: 'Word Cube', href: 'apps/bs-word-cube.html', className: 'game-link', sub: 'Six-face 5×5 word cube.' },
+      { label: 'Oracle Warden (Moss 60)', href: 'apps/moss60-oracle-warden.html', className: 'game-link', sub: 'Glyph engine puzzle.' },
+      { label: 'B$S Magic Rubix Cube', href: 'magic-cube.html', sub: 'Art, Game and Net View modes.' },
+      { label: 'Full B$S Arcade', href: 'https://www.bluesnakestudios.com/arcade', sub: 'Every game, plus the Meta-Pet mini-game tracks.' },
       { label: 'Watch @blkck2', href: 'https://www.youtube.com/@blkck2' }
     ],
     featuredIds: ['meta-pet-neon-ornament', 'moss60-geometry-linework', 'meta-pet-digital-genomes', 'meta-pet-companion-portrait']
+  },
+  {
+    slug: 'stompz',
+    status: 'Live',
+    label: 'STOMPZ',
+    eyebrow: 'Sponsored personality · Frankston, Victoria',
+    title: 'Such Is Life.',
+    statement: 'STOMPZ is a Frankston artist sponsored by Blue $nake Studio. A half-broke masterplan, written on walls and lived in.',
+    pageTitle: 'STOMPZ — Such Is Life · Sponsored by Blue $nake Studio',
+    pageDescription: 'STOMPZ, Frankston artist sponsored by Blue $nake Studio. Such Is Life — the declaration, character file, chain of custody and visual archive.',
+    details: [
+      '"This is not borrowed danger. This is documented presence."',
+      'B$S sponsors the work on the artist\'s terms: no personality diluted, no history rewritten, no performance of toughness.',
+      'The release runs as a record — declaration, character file, chain of custody, terms of exposure and sponsor witness.',
+      'Respect the work. No handouts, no imitation rights. The work carries its own evidence.'
+    ],
+    links: [
+      { label: 'Open the STOMPZ release', href: 'https://bss-stompz-such-is-life.themossman.chatgpt.site', className: 'album-link', sub: 'Such Is Life — the full record.' },
+      { label: 'Watch @blkck2', href: 'https://www.youtube.com/@blkck2' },
+      { label: 'Email B$S', href: 'mailto:bluesssnakestudio@gmail.com?subject=STOMPZ%20%E2%80%94%20enquiry' }
+    ]
   }
 ];
 
