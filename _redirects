@@ -21,6 +21,13 @@ http://blkck2.com/* https://blkck2.com/:splat 301!
 /privacy /privacy-policy.html 301
 /prints /print.html 301
 /cube /magic-cube.html 301
+/arcade /index.html#games 301
+# Games and sponsored personalities hosted on their own deployments. 302 so a
+# short blkck2 URL stays the studio's own address if the game ever moves.
+/monkey-invaders https://monkey-invaders-enhanced.vercel.app/ 302
+/bubble-hex https://bubblehex.vercel.app/ 302
+/bubblehex https://bubblehex.vercel.app/ 302
+/stompz https://bss-stompz-such-is-life.themossman.chatgpt.site 302
 /i-ran-lego /i-ran-lego/index.html 200
 /i-ran-lego/ /i-ran-lego/index.html 200
 /i-ran-lego.html /i-ran-lego/ 301

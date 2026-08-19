@@ -415,6 +415,8 @@
       { label: 'Meta-Pet', status: 'Prototype', desc: 'A privacy-first digital pet and learning companion — no ads, trackers, social feeds, gambling loops or unnecessary data.', href: '#meta-pet' },
       { label: 'Teacher\'s Secret Cheatsheet', status: 'Live', desc: 'Behaviour-support templates for stretched teachers. Print and use. Zero admin.', href: 'https://teachers-secret-cheatsheet.vercel.app/' },
       { label: 'Black Wing Crew / Neon Venom', status: 'Live', desc: '2026 LP: songs, lyric posters, QR drops, streaming.', href: 'https://blackwingcrew.netlify.app/' },
+      { label: 'Monkey Invaders', status: 'Live', desc: 'Banana-powered arcade shooter — waves, difficulty modes, boss levels and touch controls for a phone held sideways.', href: 'https://monkey-invaders-enhanced.vercel.app/' },
+      { label: 'Bubble Hex', status: 'Live', desc: 'A lost gothic arcade game. Trap what is chasing you inside a bubble, then burst it. Chambers, maps and a Ritual State display mode.', href: 'https://bubblehex.vercel.app/' },
       { label: 'B$S Magic Rubix Cube', status: 'Prototype', desc: 'Six-face 5×5 word cube — art mode, game mode, net view. No login, no ads.', href: 'magic-cube.html' },
       { label: 'I Ran LEGO', status: 'Prototype', desc: 'Miniature myth, brick-built motion and playful B$S side-quest world-building.', href: 'i-ran-lego.html' },
       { label: 'Moss 60', status: 'Research-in-progress', desc: 'Visual number system — base-60 digital DNA, glyph engine and symbolic identity.', href: 'https://www.bluesnakestudios.com/app/moss60' },
