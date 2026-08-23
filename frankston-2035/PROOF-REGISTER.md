@@ -33,7 +33,7 @@
 
 ## Claim 2 — QR codes can create community walks without apps, accounts, or tracking.
 
-**The claim:** A self-guided creative walk can be delivered via QR codes linking to static web pages — no download, no account, no data collected.
+**The claim:** A self-guided creative walk can be delivered via QR codes linking to static web pages — no download or participant account, with no application-level submission of participant data by default. The site host still processes ordinary page requests.
 
 **Evidence / link:** Static QR → static HTML is a proven technical model used widely. BSS has existing QR infrastructure deployed.
 

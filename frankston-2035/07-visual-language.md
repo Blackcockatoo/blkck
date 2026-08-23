@@ -226,7 +226,7 @@ Lands on static webpage
 
 **Key design notes:**
 - Show that no account is required at any step
-- Show that no data is collected at any step
+- Show data flows precisely, including local browser state, ordinary hosting requests and any deliberate export or submission
 - Show that the experience works offline after first load
 - Use a simplified phone icon at each step showing what the screen shows
 

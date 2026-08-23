@@ -102,10 +102,10 @@ Every technology must answer yes to all three before entering a program:
 The product's design purpose must be the child's learning, creativity, or wellbeing — not data collection, engagement maximisation, or commercial return. Check: who built this and what did they optimise for?
 
 **2. Does it work without an account?**
-No child in a BSS program creates an account, provides an email address, or submits personal information. If the technology requires this, it does not enter the program.
+A BSS program should not require a child to create an account, provide an email address or submit personal information. If a proposed technology requires this, it does not meet this design rule.
 
 **3. Does it work offline, or can it?**
-Offline capability protects children from data exposure and reduces dependency on connectivity. Preference is always given to tools that function fully without a network.
+Offline capability can reduce data exposure and dependency on connectivity. Prefer tools that function fully without a network where the activity allows it.
 
 ### The Process: Evaluating a Technology
 
@@ -155,11 +155,11 @@ The training is not about becoming a technology expert. It is about being comfor
 
 Most parents will appreciate the straightforward explanation:
 
-> "Everything in this space is designed so that your child creates something and then puts the device down. No accounts, no data collected, no advertising, no recommendations pulling them back in. When the session ends, it ends."
+> "Everything in this space is designed so that your child creates something and then puts the device down. We do not require participant accounts, advertising or behavioural recommendations, and we choose local or offline tools where possible. When the session ends, it ends."
 
 If a parent asks why a specific popular platform isn't used:
 
-> "We evaluated it against our Healthy Technology Charter and it didn't pass. The platform's business model depends on children spending more time on it — that's the opposite of what we're doing here."
+> "We evaluated it against our Healthy Technology Charter and it did not meet the requirements for this activity. We are choosing a tool that better fits our privacy, supervision and session-design rules."
 
 If a parent disagrees with the approach:
 
@@ -170,7 +170,7 @@ Do not argue. Document any feedback received.
 ### What Can Go Wrong
 
 - A technology passes the three questions but turns out to create loop behaviour in practice. Solution: remove it immediately. The three questions are a filter, not a guarantee. Behaviour in practice overrides the evaluation.
-- A vendor offers to "partner" by providing their platform for free. Solution: decline. Free platforms carry the same obligations to their investors as paid ones.
+- A vendor offers to "partner" by providing a platform for free. Solution: assess it under the same privacy, safeguarding and procurement rules as a paid platform; free access does not settle those questions.
 - A school or library partner wants to use a non-compliant tool for a specific educational reason. Solution: document the request, apply the evaluation, make the decision transparently. Do not allow exceptions under pressure.
 
 *Real example: Pilot 02 — to be documented on completion.*
@@ -858,6 +858,6 @@ This document will be ready when the pilots are done, the relationships are real
 
 ---
 
-*The Frankston Playbook — v2.0 — June 2026*
+*The Frankston Playbook — v2.1 — August 2026*
 *Maintained by Blue Snake Studio*
 *Updated as pilots complete*

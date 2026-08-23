@@ -3,6 +3,8 @@
 
 ---
 
+**Status:** Independent Blue Snake Studio proposal. No Frankston City Council, school or library partnership, approval or funding is currently in place.
+
 ### The Opportunity
 
 Frankston is underestimated. It is a coastal city with deep community roots, genuine creative talent, and a hunger for something to believe in. What it lacks is not people — it is infrastructure: the systems, spaces, and permissions that turn individual creative acts into civic culture.
@@ -13,7 +15,7 @@ This project builds that infrastructure.
 
 ### The Proposition
 
-Over ten years, Blue Snake Studio — in partnership with Frankston City Council, local schools, Frankston Library, and the community — will transform public creativity from occasional event into permanent civic habit.
+Over ten years, Blue Snake Studio proposes working with Frankston City Council, participating schools, Frankston Library and community members to help move public creativity from occasional events toward lasting civic practice.
 
 Murals become classrooms. Libraries become studios. Walls become lessons. Phones become guides. Children become makers.
 
@@ -25,7 +27,7 @@ Three forces are converging:
 
 1. **Cultural appetite.** Post-pandemic communities are hungry for place-based meaning. Public art is seeing a global renaissance.
 2. **Technology anxiety.** Parents, teachers, and councils are actively seeking alternatives to screen dependency and surveillance capitalism in education.
-3. **Funding alignment.** Creative Victoria, the Australia Council, and federal place-based investment programs are looking precisely for this kind of proposal.
+3. **Potential funding fit.** Relevant arts and place-based grant streams may be worth assessing when current eligibility, priorities and application windows can be confirmed.
 
 ---
 
@@ -35,7 +37,7 @@ The project operates as a creative operating system — not a one-off commission
 
 Every pilot is designed to become permanent infrastructure.
 Every artwork is designed to carry educational content.
-Every technology is designed without data extraction.
+Every technology choice is assessed for data minimisation, local-first use and suitability for the setting.
 Every program is designed to transfer ownership to the community.
 
 ---
@@ -66,5 +68,5 @@ Frankston has never needed someone to come in from outside and fix it — it nee
 
 ---
 
-*Executive Summary v1.0 — June 2026*
+*Executive Summary v1.1 — August 2026*
 *Read alongside: Constitution (00), Pilot Projects (03), Council Ask (05c)*

@@ -59,7 +59,7 @@ Score: 26/27. Highest across all five options.
 
 **It has the fewest dependencies.** One partner (Library Service). No artist to commission. No school to navigate. No software to build.
 
-**It has zero First Nations cultural risk.** No cultural content is involved. The Healthy Technology Charter governs everything in the space.
+**It does not intentionally use First Nations cultural content.** That narrows, but does not eliminate, cultural and place-based considerations. Apply the First Nations Protocol and seek guidance if the site, naming, imagery or activity introduces relevant material.
 
 **It demonstrates the core philosophy immediately.** A shelf of offline creative tools in a public library is the Screen as Doorway concept made physical. Parents can see it. Children can use it. Council can point to it.
 

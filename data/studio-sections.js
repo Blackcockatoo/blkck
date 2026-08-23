@@ -14,6 +14,7 @@ window.BSS_STUDIO_SECTIONS = [
       { label: 'Try Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link', sub: 'Browser demo. No login.' },
       { label: 'Download Teacher Pack', href: 'https://teachers-secret-cheatsheet.vercel.app/', className: 'album-link', sub: 'Seven printable classroom templates.' },
       { label: 'Enter Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link', sub: 'Stream the Neon Venom LP.' },
+      { label: 'Open I RAN, LEGO!', href: 'i-ran-lego/', className: 'album-link', sub: 'Interactive picture-book musical. Free living preview.' },
       { label: 'Gallery Rooms', href: '#visual-worlds', sub: 'Ten rooms of art and myth.' },
       { label: 'B$S Proof Wall', href: 'proof-wall.html', sub: 'Everything already built.' },
       { label: 'YouTube @blkck2', href: 'https://www.youtube.com/@blkck2' },
@@ -28,7 +29,7 @@ window.BSS_STUDIO_SECTIONS = [
     title: 'A studio without hard borders.',
     statement: 'The Moss Man is the creative identity behind a practice where painting, music, design, learning and systems thinking continuously inform one another.',
     pageTitle: 'The Moss Man — About the Practice · Blue $nake Studio',
-    pageDescription: 'Tom from Frankston: artist, musician, educator and founder of Blue $nake Studio. A practice where painting, music, design, learning and systems thinking inform one another.',
+    pageDescription: 'The Moss Man from Frankston: the creative identity behind Blue $nake Studio. A practice where painting, music, design, learning and systems thinking inform one another.',
     textualInstallation: true,
     details: [
       'The work moves between expressive art and practical tools without treating them as separate disciplines.',
@@ -84,6 +85,26 @@ window.BSS_STUDIO_SECTIONS = [
       { label: 'Watch on YouTube', href: 'https://www.youtube.com/@blkck2' }
     ],
     featuredIds: ['black-wing-cosmic-singing', 'neon-venom-cyberpunk-poster', 'bss-twin-cockatoos-stained-glass', 'neon-venom-enter-dream-qr', 'black-wing-chant-sheet', 'neon-venom-campaign']
+  },
+  {
+    slug: 'i-ran-lego',
+    status: 'Live',
+    label: 'I RAN, LEGO!',
+    eyebrow: 'Living storybook · music · moving picture book',
+    title: 'A book that performs itself.',
+    statement: 'I RAN, LEGO! is an interactive picture-book musical with authored camera movement, word-level sing-along lyrics, chapter navigation and pause-to-explore pages.',
+    pageTitle: 'I RAN, LEGO! — Interactive Living Storybook · Blue $nake Studio',
+    pageDescription: 'Watch, sing and explore I RAN, LEGO! — a Blue $nake Studio living storybook with a free 66-second interactive preview and printed-book pathway.',
+    details: [
+      'The complete programme travels through twenty-one illustrated pages in time with the full song.',
+      'A bouncing red button follows every word while chapter controls make the performance easy to revisit.',
+      'Pause at any point to drag, zoom and inspect the artwork.'
+    ],
+    links: [
+      { label: 'Open the Living Book', href: 'i-ran-lego/', className: 'album-link' },
+      { label: 'Watch @blkck2', href: 'https://www.youtube.com/@blkck2' },
+      { label: 'Ask about editions', href: 'mailto:bluesssnakestudio@gmail.com?subject=I%20RAN%20LEGO%20Edition' }
+    ]
   },
   {
     slug: 'old-vic-state',
@@ -154,9 +175,9 @@ window.BSS_STUDIO_SECTIONS = [
     label: 'Black Omen / Waahn',
     eyebrow: 'Respectful research · language journey',
     title: 'Ask before the omen speaks.',
-    statement: 'This branch holds the Black Omen / Waahn research path: Bunurong–Boonwurrung enquiry, place respect, translation limits, word-bank notes and consultation-first process.',
-    pageTitle: 'Black Omen / Waahn — Bunurong Language Research · Blue $nake Studio',
-    pageDescription: 'Respectful research-in-progress into Black Omen, Waahn and Bunurong–Boonwurrung language near Frankston. Consultation-first, not a final translation or cultural authority.',
+    statement: 'This branch holds the Black Omen / Waahn research path: Boonwurrung language research on Bunurong Country, place respect, translation limits, word-bank notes and consultation-first process.',
+    pageTitle: 'Black Omen / Waahn — Boonwurrung Language Research · Blue $nake Studio',
+    pageDescription: 'Respectful research-in-progress into Black Omen, Waahn and Boonwurrung language on Bunurong Country near Frankston. Consultation-first, not a final translation, endorsement or cultural authority.',
     details: [
       'Frame it as research-in-progress, not cultural authority or final translation.',
       'Good for notes, contact drafts, source maps, word-bank experiments and permission pathways.',
@@ -174,21 +195,21 @@ window.BSS_STUDIO_SECTIONS = [
     label: 'Meta-Pet',
     eyebrow: 'Privacy-first learning · In development',
     title: 'Technology that gives attention back.',
-    statement: 'Meta-Pet is a child-safe digital learning companion built for healthy device use, creativity and schools — without ads, trackers, social feeds, gambling loops or unnecessary data collection.',
+    statement: 'Meta-Pet is a teacher-supervised digital learning companion built for healthy device use, creativity and schools — without ads, behavioural tracking, social feeds or gambling loops on school routes.',
     pageTitle: 'Meta-Pet — Privacy-First Learning · Blue $nake Studio',
-    pageDescription: 'A child-safe STEAM learning companion: no ads, no trackers, no unnecessary data collection. Puzzles, pattern recognition and healthy device use for schools and families.',
+    pageDescription: 'A privacy-first STEAM learning companion: no ads or behavioural tracking on school routes, no required student account by default, and local-first classroom state.',
     details: [
-      'No ads, no trackers, no unnecessary cloud data — privacy-first from the ground up.',
+      'No ads or behavioural tracking on school routes; student personal data is not transmitted to B$S by default.',
       'Healthy device use design: no social feeds, no gambling loops, no endless scroll.',
       'Classroom mode: zero-admin setup, no login required for students.',
-      'Parent peace of mind: transparent, local-first, fully child-safe.',
+      'Parent visibility: transparent, local-first and designed for adult supervision and reset.',
       'A STEAM learning companion powered by puzzles, pattern recognition and creative tasks.',
       'Prototype available now. Contact the studio for school pilot enquiries.'
     ],
     links: [
-      { label: 'Open Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link' },
+      { label: 'Open Meta-Pet School', href: 'https://www.metapet.school/', className: 'album-link' },
       { label: 'Full Meta-Pet page', href: 'meta-pet.html', className: 'album-link' },
-      { label: 'Meta-Pet Pilot School', href: 'https://metapet-pilot-school.vercel.app/' },
+      { label: 'Meta-Pet Pilot School', href: 'https://www.metapet.school/teachers/pilot' },
       { label: 'Teacher Tools', href: 'teacher-tools.html' },
       { label: 'Email studio', href: 'mailto:bluesssnakestudio@gmail.com' }
     ],
@@ -238,7 +259,7 @@ window.BSS_STUDIO_SECTIONS = [
     links: [
       { label: 'Open Teacher Tools Landing Page', href: 'https://teachers-secret-cheatsheet.vercel.app/', className: 'album-link' },
       { label: 'Full Teacher Tools page', href: 'teacher-tools.html' },
-      { label: 'Open Meta-Pet Pilot School', href: 'https://metapet-pilot-school.vercel.app/' },
+      { label: 'Open Meta-Pet Pilot School', href: 'https://www.metapet.school/teachers/pilot' },
       { label: 'Open Meta-Pet', href: 'https://www.bluesnakestudios.com/' },
       { label: 'Email B$S', href: 'mailto:bluesssnakestudio@gmail.com' }
     ],

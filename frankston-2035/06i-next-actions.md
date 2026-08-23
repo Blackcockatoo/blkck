@@ -52,7 +52,7 @@
 
 **Steps:**
 - [ ] Review publicly available information about the Bunurong Land Council Aboriginal Corporation
-- [ ] Access the Aboriginal Victoria Heritage Register — search for registered sites in Frankston LGA
+- [ ] If authorised, access the Victorian Aboriginal Heritage Register through ACHRIS and check relevant Frankston sites
 - [ ] Review any existing CHMPs for proposed project sites (Council planning department may have these)
 - [ ] Research arts organisations and community services with First Nations relationships in Frankston area
 - [ ] Draft summary document and save to project records
@@ -143,7 +143,7 @@
 **Steps:**
 - [ ] Pilot 01 (Mural school): confirm proposed school site and conduct heritage search
 - [ ] Pilot 03 (QR Walk): map all proposed walk stops and conduct heritage search for each
-- [ ] For each site: check Victorian Heritage Register, Council heritage databases, Aboriginal Victoria Heritage Register
+- [ ] For each site: check the Victorian Heritage Register, Council heritage databases and, where access is authorised, the Victorian Aboriginal Heritage Register through ACHRIS
 - [ ] Document findings for each site in project records
 - [ ] If significance identified or uncertain: do not proceed with that site without community advice
 

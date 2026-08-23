@@ -39,7 +39,7 @@ Everything else governs something specific.
 - Arts industry advisors
 - Technology safety advisors
 
-Advisory roles are consultative. They do not override the Creative Director or Council partnership agreement.
+Advisory roles are consultative. They do not override the Creative Director or the terms of any future Council partnership agreement.
 
 ---
 

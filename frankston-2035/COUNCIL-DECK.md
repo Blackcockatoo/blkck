@@ -46,7 +46,7 @@
 
 | Cultural | Technological | Funding |
 |---|---|---|
-| Post-pandemic demand for place-based meaning. Public art is resurging nationally. | Growing community concern about children's digital safety. Council and schools are looking for alternatives. | Creative Victoria, Australia Council, and federal place-based investment programs are actively seeking proposals like this. |
+| Post-pandemic demand for place-based meaning. Public art is resurging nationally. | Growing community concern about children's digital safety. Council and schools are looking for alternatives. | Potential funding pathways may include Creative Victoria, Creative Australia and relevant federal place-based programs, subject to current rounds and eligibility. |
 
 **Visual:** Three column layout. Simple icons above each column (no clip art — geometric line icons only).
 

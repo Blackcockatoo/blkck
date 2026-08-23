@@ -30,7 +30,7 @@ These assets block everything. No First Nations engagement can occur until they 
 **How to find them:**
 - Creative Victoria's First Nations arts contacts
 - Regional Arts Victoria First Nations programs
-- Aboriginal Victoria (State Government)
+- First Peoples – State Relations (Victorian Government)
 - RMIT or Deakin Indigenous Studies programs (for referrals, not engagement)
 - Do not approach individuals cold — seek a referral from a trusted institutional intermediary
 
@@ -69,7 +69,7 @@ These assets are needed before BSS initiates any First Nations engagement.
 **What it is:** A written summary of publicly available information about:
 - The Bunurong Land Council Aboriginal Corporation — who they are, their formal processes, their contact process
 - Any registered cultural heritage sites in Frankston and the immediate project areas
-- Any existing CHMPs or Aboriginal Heritage Assessment Reports for relevant sites (available via Aboriginal Victoria Heritage Register)
+- Any existing CHMPs or Aboriginal Heritage Assessment Reports for relevant sites, where access is authorised through the Victorian Aboriginal Heritage Register / ACHRIS
 - Arts organisations and community services with established First Nations relationships in the Frankston area
 
 **Who produces it:** Creative Director (with possible assistance from a researcher)

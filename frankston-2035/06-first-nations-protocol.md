@@ -418,7 +418,7 @@ We do not claim to understand Country. We acknowledge that it exists, that it ca
 Before any project is installed or activated, the Creative Director:
 
 1. Reviews publicly available heritage information: Victorian Heritage Register, Council heritage registers, Aboriginal Cultural Heritage Management Plans if any exist for the area
-2. Checks the Aboriginal Victoria Registered Aboriginal Parties map to confirm the Bunurong Land Council Aboriginal Corporation as the relevant RAP for the site
+2. Checks the Aboriginal Heritage Council's current Registered Aboriginal Parties map to confirm the relevant RAP for the site
 3. Notes any sites, paths, waterways, or landforms that may carry significance that is not in public records
 4. Brings this research to any existing First Nations advisors on the project before proceeding
 

@@ -10,7 +10,7 @@
 
 Frankston 2035 is a public art and civic creativity initiative proposing to operate across public spaces, schools, and Frankston Library — all of which sit within the Country of the Bunurong people of the Kulin Nation, the Registered Aboriginal Party (RAP) for this area.
 
-Blue Snake Studio has prepared a formal First Nations Protocol to govern how the organisation will approach this landscape responsibly. This document summarises that protocol for Council partners.
+Blue Snake Studio has prepared a First Nations Protocol to govern how the organisation proposes to approach this landscape responsibly. This document summarises that protocol for prospective Council reviewers and partners.
 
 ---
 

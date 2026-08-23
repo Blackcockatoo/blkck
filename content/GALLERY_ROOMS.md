@@ -24,7 +24,7 @@ Purpose: hold the darker ceremonial song-world.
 
 Meta-Pet, Meta-Pet Pilot School, teacher tools, healthy attention design, classroom proof and behavioural support ideas.
 
-Purpose: show the practical education engine under the myth, including the live pilot-school link: https://metapet-pilot-school.vercel.app/.
+Purpose: show the practical education engine under the myth, including the live pilot-school link: https://www.metapet.school/teachers/pilot.
 
 ## Moss 60 Engine
 

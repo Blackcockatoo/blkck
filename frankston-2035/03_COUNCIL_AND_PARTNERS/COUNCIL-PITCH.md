@@ -33,7 +33,7 @@ Three forces are converging:
 
 **Technological:** Growing concern about children's digital safety. Parents, teachers, and councils are actively looking for alternatives to platform-based technology in learning environments.
 
-**Funding:** Creative Victoria, Australia Council, and federal place-based investment programs are actively seeking proposals in exactly this space. The window is open.
+**Funding:** Potential pathways may include Creative Victoria, Creative Australia and relevant federal place-based programs. No grant fit, eligibility or open round is assumed until checked at application time.
 
 ---
 

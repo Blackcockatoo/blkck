@@ -40,12 +40,12 @@ The full project document suite is complete. The Council pitch path is built.
 
 | Quarter | Milestone |
 |---|---|
-| Q3 2026 | Council partnership agreement signed |
+| Q3 2026 | Original target for a Council partnership agreement — not yet confirmed; outreach and decision remain pending |
 | Q3 2026 | Pilot 01 school identified and briefed |
 | Q3 2026 | Pilot 02 library scoping complete |
 | Q4 2026 | Pilot 01 artist selected, co-design process begins |
 | Q4 2026 | Pilot 03 QR walk route mapped with community |
-| Q4 2026 | First grant applications lodged (Creative Victoria, Australia Council) |
+| Q4 2026 | Original target for eligible grant applications (Creative Victoria, Creative Australia); current rounds and timing must be reconfirmed |
 | Q1 2027 | Pilot 01 mural in production |
 | Q1 2027 | Pilot 02 Healthy Tech Library installation begins |
 | Q2 2027 | Pilot 01 mural completed, curriculum resources delivered |

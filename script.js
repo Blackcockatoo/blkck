@@ -111,7 +111,7 @@
       ['Next move', 'Add a clean one-page explanation for councils, schools and sister-city contacts.']
     ],
     'black-omen-waahn': [
-      ['What it is', 'A respectful research branch for Black Omen, Waahn and Bunurong/Boonwurrung language enquiry.'],
+      ['What it is', 'Boonwurrung language research on Bunurong Country for Black Omen / Waahn, presented as research-in-progress.'],
       ['Why it matters', 'It keeps culture, permission and place respect visible instead of treating language as decoration.'],
       ['Exists already', 'Waahn research map, word-bank direction, contact framing and consultation-first notes.'],
       ['Next move', 'Keep it marked as research-in-progress and store approvals/notes beside the work.']
@@ -417,7 +417,7 @@
       { label: 'Visual Worlds', status: 'Live', desc: '10 gallery rooms: mythology, portraits, parody, print.', href: '#visual-worlds' },
       { label: 'Frankston → Fuji', status: 'Live', desc: 'Bilingual sister-city song, Japanese practice & taiko.', href: '#frankston-fuji' },
       { label: 'Frankston 2035', status: 'Project', desc: 'Community future artefact for Frankston schools, councils, libraries and local collaborators.', href: 'frankston-2035.html' },
-      { label: 'Black Omen / Waahn', status: 'Research-in-progress', desc: 'Bunurong-Boonwurrung language research map.', href: '#black-omen-waahn' }
+      { label: 'Black Omen / Waahn', status: 'Research-in-progress', desc: 'Boonwurrung language research on Bunurong Country.', href: '#black-omen-waahn' }
     ];
     return `
       <section class="featured-projects" aria-label="Studio projects">

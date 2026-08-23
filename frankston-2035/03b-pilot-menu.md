@@ -86,7 +86,7 @@
 | **Ownership transfer** | To school | To Library Service | To city/community |
 
 **Combined pilot investment: $95,000–$150,000**
-*(Council contribution sought: $60,000–$80,000. Balance via Creative Victoria, Australia Council, philanthropic.)*
+*(Council contribution sought: $60,000–$80,000. Balance proposed through Creative Victoria, Creative Australia and philanthropic funding, subject to eligibility and available rounds.)*
 
 ---
 

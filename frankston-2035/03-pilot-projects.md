@@ -3,6 +3,8 @@
 
 ---
 
+**Status:** Proposed pilots only. No Council, school or library partnership, site approval, commission or funding is currently in place.
+
 ### Purpose of the Pilots
 
 Three pilots. Three different settings. One shared purpose: prove that the model works before we scale it.
@@ -19,7 +21,7 @@ Each pilot is designed to:
 
 **Where:** A Frankston primary school (location TBC with Council)
 **Duration:** 12 months from commission to installation
-**Lead:** Blue Snake Studio, in partnership with school and selected artist
+**Proposed lead:** Blue Snake Studio, with a participating school and selected artist subject to agreement
 
 ### What It Is
 
@@ -46,7 +48,7 @@ $45,000–$65,000 (artist fee, materials, facilitation, documentation)
 
 **Where:** Frankston Library
 **Duration:** 6 months setup, ongoing programming
-**Lead:** Blue Snake Studio, in partnership with Frankston Library Service
+**Proposed lead:** Blue Snake Studio, with Frankston Library Service subject to agreement
 
 ### What It Is
 
@@ -55,14 +57,14 @@ A dedicated module within Frankston Library — physical and programmatic — th
 ### What It Contains
 
 - Offline creative tools (music, drawing, building, writing)
-- No accounts, no data collection, no advertising
+- No participant account required; no advertising or behavioural tracking; data flows assessed and disclosed for each selected tool
 - A curated selection of open-source educational software
 - A facilitator program (trained volunteers and library staff)
 - A parent/carer information resource
 
 ### What Makes It Different
 
-This is not a computer lab. It is a creative technology commons. Every tool in it has been evaluated against the Healthy Technology Charter (see document 04). Nothing extracts data from children.
+This is not a computer lab. It is a proposed creative technology commons. Before use, each tool would be evaluated against the Healthy Technology Charter (see document 04), including its local storage, hosting requests, external services and any participant-data pathway.
 
 ### Outcomes
 

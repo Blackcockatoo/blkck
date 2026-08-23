@@ -34,7 +34,7 @@ This is not a decorative commission. The visual content of the mural is built ar
 
 ### What It Costs the School
 
-**Nothing financial.** Blue Snake Studio coordinates the project. Frankston City Council facilitates site access and permits. Funding is sought from Creative Victoria and Australia Council.
+**No school contribution is proposed at this stage.** Blue Snake Studio would coordinate the project if approved. Council site access and permit support, and any Creative Victoria, Creative Australia or other grant funding, remain proposed and unconfirmed.
 
 **What we ask from the school:**
 

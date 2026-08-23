@@ -24,7 +24,7 @@ QR cards, A4 poster packs, sticker sheets, school one-pagers and the Street Prin
 - Main Moss Tree: `index.html#start-here`
 - Gallery Rooms: `index.html#visual-worlds`
 - Black Wing Crew: https://blackwingcrew.netlify.app/
-- Meta-Pet Pilot School: https://metapet-pilot-school.vercel.app/
+- Meta-Pet Pilot School: https://www.metapet.school/teachers/pilot
 - Teacher Tools: https://teachers-secret-cheatsheet.vercel.app/
 - YouTube: https://www.youtube.com/@blkck2
 - Email: bluesssnakestudio@gmail.com

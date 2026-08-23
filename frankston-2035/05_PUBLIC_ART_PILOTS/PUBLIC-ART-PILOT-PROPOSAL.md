@@ -185,7 +185,7 @@ Full decision rationale at `../PILOT-DECISION-SHEET.md`.
 |---|---|---|
 | Frankston City Council | Co-investment | Proposal stage |
 | Creative Victoria — Place-Based grants | Grant | Not yet applied |
-| Australia Council for the Arts — Communities fund | Grant | Not yet applied |
+| Creative Australia — relevant program to be confirmed | Grant | Not yet applied |
 | Philanthropic — local business sponsorship | Sponsorship | Not yet approached |
 | Blue Snake Studio contribution | In-kind + cash | Committed |
 

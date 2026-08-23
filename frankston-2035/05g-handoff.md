@@ -87,7 +87,7 @@ All documents below are in `/frankston-2035/` in the git repository.
 5. **Council meeting** — All materials are now in place: Hero Diagram, 12-slide Deck, Pilot Decision Sheet, Proof Register, Pilot Menu. Schedule a 45-minute meeting. The recommended ask is the Library Creative Pack ($12–15k Council co-investment).
 6. **Pilot 01 school identified** — No school has been approached yet.
 7. **Library scoping** — Pilot 02 (Library Creative Pack) needs a formal conversation with Frankston Library Service. This is the recommended first pilot.
-8. **Grant applications** — Creative Victoria and Australia Council applications not yet lodged. Do not lodge until Council partnership statement is in hand.
+8. **Grant applications** — Creative Victoria and Creative Australia applications not yet lodged. Confirm a current eligible program before drafting, and do not lodge until a Council partnership statement is in hand.
 
 **Ongoing:**
 9. **Playbook chapters** — Chapters 1, 6–10 are scaffolded. Each chapter is written after the relevant pilot completes.

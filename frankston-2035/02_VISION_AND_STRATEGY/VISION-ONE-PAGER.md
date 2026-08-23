@@ -53,7 +53,7 @@ This is the difference between a project and a system.
 
 **Blue Snake Studio** — Frankston-rooted creative practice. Public art, community programs, educational resources. The engine of this project, not the ego.
 
-**Frankston City Council** — The civic partner. Opens doors. Co-invests. Points to the result. Frankston is always the hero.
+**Frankston City Council** — A prospective civic partner. Could facilitate sites, co-investment and public pathways if a formal relationship is agreed. Frankston remains the subject, not the backdrop.
 
 **Local schools, libraries, and artists** — Own the outcomes. Run the programs. The work transfers to them on completion.
 
@@ -68,7 +68,7 @@ This is the difference between a project and a system.
 | QR Art Walk | $10,000–$15,000 |
 | **Total pilot phase** | **$47,000–$65,000** |
 
-*Balance matched by Blue Snake Studio contribution and grants (Creative Victoria, Australia Council).*
+*Proposed balance from Blue Snake Studio contribution and eligible grants, potentially including Creative Victoria or Creative Australia; no grant funding is confirmed.*
 
 ---
 
