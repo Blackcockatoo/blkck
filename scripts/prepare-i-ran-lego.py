@@ -175,7 +175,12 @@ def patch_book() -> None:
     )
     index = index.replace(
         '<button class="red" data-buy="digital">OPEN THE FULL SONG</button>',
+        '<button class="red" data-open-player="full">OPEN THE FULL SONG</button>',
+        1,
+    )
+    index = index.replace(
         '<button class="red" data-open-player="full" data-media-gated disabled>OPEN THE FULL SONG</button>',
+        '<button class="red" data-open-player="full">OPEN THE FULL SONG</button>',
         1,
     )
     index = index.replace(
@@ -223,6 +228,12 @@ def patch_book() -> None:
     )
     app = re.sub(r'preview:\s*true', 'preview: false', app, count=1)
     app = app.replace('state.preview = true;', 'state.preview = false;', 1)
+    app = re.sub(
+        r'state\.entitled\s*\?\s*"OPEN FULL BOOK"\s*:\s*"OPEN PREVIEW"',
+        '"OPEN FULL SONG"',
+        app,
+        count=1,
+    )
     app = app.replace('$("#demoUnlock").addEventListener', '$("#demoUnlock")?.addEventListener')
     app = app.replace('$("#resetAccess").addEventListener', '$("#resetAccess")?.addEventListener')
     app_path.write_text(app, encoding="utf-8")
@@ -299,6 +310,8 @@ def validate() -> None:
     assert "if(state.preview && !state.entitled" not in app
     assert "WATCH THE FREE PREVIEW" not in index
     assert "UNLOCK DIGITAL EDITION" not in index
+    assert 'data-open-player="full" data-media-gated disabled' not in index
+    assert '"OPEN PREVIEW"' not in app
     assert "BACK TO BLKCK2" in (TARGET / "index.html").read_text(encoding="utf-8")
     assert "slug: 'i-ran-lego'" in (ROOT / "data" / "studio-sections.js").read_text(encoding="utf-8")
 
