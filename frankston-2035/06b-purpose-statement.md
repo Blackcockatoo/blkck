@@ -7,7 +7,7 @@
 
 ## Why This Protocol Exists
 
-Frankston 2035 is a civic creativity project. It commissions public art, runs programs in schools and libraries, and creates experiences in public space.
+Frankston 2035 is an independent civic-creativity proposal. It proposes public art, programs in schools and libraries, and experiences in public space; none currently has Council, school, library or cultural approval.
 
 All of it takes place on Country.
 

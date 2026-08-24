@@ -11,9 +11,9 @@ Everything you need to understand, pitch, teach, print, or share is in this fold
 
 ## What Is This Project?
 
-Frankston 2035 is a ten-year civic creativity initiative.
+Frankston 2035 is an independent ten-year civic-creativity proposal. It is not a Council program, and no Council, school or library partnership, approval or funding is currently in place.
 
-It puts permanent art in schools, healthy technology in libraries, and self-guided creative walks in the streets. It commissions local artists. It builds things that stay.
+It proposes permanent art in schools, healthy technology in libraries, self-guided creative walks and commissions for local artists. These are proposed outputs, not current programs.
 
 It is run by Blue Snake Studio. It serves Frankston.
 

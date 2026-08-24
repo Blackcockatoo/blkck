@@ -34,3 +34,7 @@ To publish this as a page:
 5. Save.
 
 The page should then serve from the repository’s GitHub Pages URL.
+
+## Verification
+
+Run `node scripts/check-portfolio-truth.mjs` to verify the shared project-status registry, its consumers and the restrained public privacy/status wording.

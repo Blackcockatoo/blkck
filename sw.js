@@ -1,4 +1,4 @@
-const CACHE_NAME = 'moss-tree-v15';
+const CACHE_NAME = 'moss-tree-v16';
 
 const APP_SHELL = [
   './',
@@ -19,6 +19,8 @@ const APP_SHELL = [
   './styles.css',
   './script.js',
   './data/gallery-items.js',
+  './data/portfolio-truth.js',
+  './data/portfolio-status.js',
   './data/studio-sections.js',
   './downloads/black-wing-crew-lyric-sheet.html',
   './downloads/metapet-starter-sheet.html',

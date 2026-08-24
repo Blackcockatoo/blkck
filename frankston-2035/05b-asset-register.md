@@ -1,6 +1,8 @@
 # Asset Register
 ## Frankston 2035 — Version 1.0
 
+**Project status:** Independent Blue Snake Studio proposal. No Council, library or school asset transfer, partnership or site approval is currently in place.
+
 ---
 
 ### Purpose
@@ -66,7 +68,7 @@ Updated as assets are created, transferred, or retired.
 | ID | Asset | Type | Status | Location | Notes |
 |---|---|---|---|---|---|
 | P01 | Living Mural — Pilot 01 | Public artwork | Pending | Frankston primary school (TBC) | Permanent on completion |
-| P02 | Healthy Tech Library installation | Fitout | Pending | Frankston Library | Transfers to Library Service on completion |
+| P02 | Healthy Tech Library installation | Fitout | Proposed | Location TBC | Any transfer would require a written agreement with the recipient |
 | P03 | QR Art Walk signage/plaques | Signage | Pending | Frankston CBD / foreshore | Permanent |
 
 ---
@@ -85,7 +87,7 @@ Updated as assets are created, transferred, or retired.
 
 ### Asset Transfer Policy
 
-Assets created by Blue Snake Studio for Frankston 2035 transfer to the relevant community institution (Council, Library, School) on project completion — unless otherwise specified.
+Any future asset transfer would require a written agreement with the relevant recipient. No Council, library or school has agreed to receive or own a Frankston 2035 asset at this stage.
 
 Blue Snake Studio retains the right to document its contribution for professional portfolio purposes.
 

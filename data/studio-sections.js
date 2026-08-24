@@ -1,3 +1,9 @@
+const BSS_PORTFOLIO_TRUTH_BY_ID = new Map(
+  (window.BSS_PORTFOLIO_PROJECTS || []).map((project) => [project.id, project])
+);
+const bssProjectStatus = (id, fallback) =>
+  BSS_PORTFOLIO_TRUTH_BY_ID.get(id)?.status || fallback;
+
 window.BSS_STUDIO_SECTIONS = [
   {
     slug: 'start-here',
@@ -45,7 +51,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'visual-worlds',
-    status: 'Live',
+    status: bssProjectStatus('visual-worlds', 'Live'),
     label: 'Gallery Rooms',
     eyebrow: 'Selected work · Visual archive',
     title: 'Enter the visual worlds.',
@@ -66,7 +72,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'black-wing-crew',
-    status: 'Live',
+    status: bssProjectStatus('black-wing-crew', 'Streaming'),
     label: 'Black Wing Crew',
     eyebrow: 'Music and moving image · Neon Venom',
     title: 'Sound with a visual identity.',
@@ -88,7 +94,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'i-ran-lego',
-    status: 'Live',
+    status: bssProjectStatus('i-ran-lego', 'Live prototype'),
     label: 'I RAN, LEGO!',
     eyebrow: 'Living storybook · music · moving picture book',
     title: 'A book that performs itself.',
@@ -130,13 +136,13 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'frankston-fuji',
-    status: 'Live',
+    status: bssProjectStatus('frankston-fuji', 'Independent project'),
     label: 'Frankston → Fuji',
-    eyebrow: 'Sister-city song · learning bridge',
+    eyebrow: 'Independent bilingual song · learning bridge',
     title: 'Two shores. One song.',
-    statement: 'The Frankston → Fuji branch is for the bilingual sister-city material: song, lyric sheets, practice games, taiko rhythm, cultural connection and school-friendly learning.',
+    statement: 'The Frankston → Fuji branch is an independent bilingual creative project: song, lyric sheets, practice games, taiko rhythm, cultural connection and school-friendly learning.',
     pageTitle: 'Frankston → Fuji — Sister-City Song · Blue $nake Studio',
-    pageDescription: 'Bilingual Japanese and English sister-city material for schools and councils: lyric sheets, pronunciation guides, taiko rhythm and cultural connection between Frankston and Susono.',
+    pageDescription: 'An independent bilingual Japanese and English creative-learning project connecting Frankston and Fuji/Susono themes; not an official sister-city programme.',
     details: [
       'Keep this branch clean and respectful so councils, schools and collaborators can understand it quickly.',
       'Use it for Japanese/English lyric sheets, pronunciation cards, rhythm practice and context tidbits.',
@@ -150,7 +156,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'frankston-2035',
-    status: 'Project',
+    status: bssProjectStatus('frankston-2035', 'Independent proposal'),
     label: 'Frankston 2035',
     eyebrow: 'Community future artefact · civic imagination',
     title: 'Frankston as a visible, useful future.',
@@ -171,7 +177,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'black-omen-waahn',
-    status: 'Research-in-progress',
+    status: bssProjectStatus('black-omen-waahn', 'Research-in-progress'),
     label: 'Black Omen / Waahn',
     eyebrow: 'Respectful research · language journey',
     title: 'Ask before the omen speaks.',
@@ -191,9 +197,9 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'meta-pet',
-    status: 'Prototype',
+    status: bssProjectStatus('meta-pet', 'Working prototype'),
     label: 'Meta-Pet',
-    eyebrow: 'Privacy-first learning · In development',
+    eyebrow: 'Privacy-first learning · Working prototype',
     title: 'Technology that gives attention back.',
     statement: 'Meta-Pet is a teacher-supervised digital learning companion built for healthy device use, creativity and schools — without ads, behavioural tracking, social feeds or gambling loops on school routes.',
     pageTitle: 'Meta-Pet — Privacy-First Learning · Blue $nake Studio',
@@ -201,7 +207,7 @@ window.BSS_STUDIO_SECTIONS = [
     details: [
       'No ads or behavioural tracking on school routes; student personal data is not transmitted to B$S by default.',
       'Healthy device use design: no social feeds, no gambling loops, no endless scroll.',
-      'Classroom mode: zero-admin setup, no login required for students.',
+      'Classroom mode: low-admin setup, no login required for students.',
       'Parent visibility: transparent, local-first and designed for adult supervision and reset.',
       'A STEAM learning companion powered by puzzles, pattern recognition and creative tasks.',
       'Prototype available now. Contact the studio for school pilot enquiries.'
@@ -217,7 +223,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'moss60',
-    status: 'Research-in-progress',
+    status: bssProjectStatus('moss60', 'Research-in-progress'),
     label: 'Moss 60',
     eyebrow: 'Visual mathematics · 108 · 360',
     title: 'A number system you can see and feel.',
@@ -242,7 +248,7 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'teacher-tools',
-    status: 'Live',
+    status: bssProjectStatus('teacher-tools', 'Live'),
     label: 'Teacher Tools',
     eyebrow: 'Classroom proof · behaviour support',
     title: 'Useful in a real classroom.',

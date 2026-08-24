@@ -406,19 +406,7 @@
   }
 
   function featuredProjectsGrid() {
-    const projects = [
-      { label: 'Meta-Pet', status: 'Prototype', desc: 'A privacy-first digital pet and learning companion — no ads, trackers, social feeds, gambling loops or unnecessary data.', href: '#meta-pet' },
-      { label: 'Teacher\'s Secret Cheatsheet', status: 'Live', desc: 'Behaviour-support templates for stretched teachers. Print and use. Zero admin.', href: 'https://teachers-secret-cheatsheet.vercel.app/' },
-      { label: 'Black Wing Crew / Neon Venom', status: 'Live', desc: '2026 LP: songs, lyric posters, QR drops, streaming.', href: 'https://blackwingcrew.netlify.app/' },
-      { label: 'B$S Magic Rubix Cube', status: 'Prototype', desc: 'Six-face 5×5 word cube — art mode, game mode, net view. No login, no ads.', href: 'magic-cube.html' },
-      { label: 'I Ran LEGO', status: 'Prototype', desc: 'Miniature myth, brick-built motion and playful B$S side-quest world-building.', href: 'i-ran-lego.html' },
-      { label: 'Moss 60', status: 'Research-in-progress', desc: 'Visual number system — base-60 digital DNA, glyph engine and symbolic identity.', href: 'https://www.bluesnakestudios.com/app/moss60' },
-      { label: 'Semantic Sovereignty', status: 'Research-in-progress', desc: 'Doctrine on language, framing, meaning and narrative defence.', href: 'documents/oss-734g-known-unknowns-register.html' },
-      { label: 'Visual Worlds', status: 'Live', desc: '10 gallery rooms: mythology, portraits, parody, print.', href: '#visual-worlds' },
-      { label: 'Frankston → Fuji', status: 'Live', desc: 'Bilingual sister-city song, Japanese practice & taiko.', href: '#frankston-fuji' },
-      { label: 'Frankston 2035', status: 'Project', desc: 'Community future artefact for Frankston schools, councils, libraries and local collaborators.', href: 'frankston-2035.html' },
-      { label: 'Black Omen / Waahn', status: 'Research-in-progress', desc: 'Boonwurrung language research on Bunurong Country.', href: '#black-omen-waahn' }
-    ];
+    const projects = window.BSS_PORTFOLIO_PROJECTS || [];
     return `
       <section class="featured-projects" aria-label="Studio projects">
         <div class="section-heading">
