@@ -16,7 +16,7 @@ function assert(condition, message) {
 }
 
 assert(Array.isArray(projects), 'Portfolio truth must export an array.');
-assert(projects.length === 11, `Expected 11 portfolio projects, found ${projects.length}.`);
+assert(projects.length === 12, `Expected 12 portfolio projects, found ${projects.length}.`);
 assert(new Set(projects.map((project) => project.id)).size === projects.length, 'Portfolio project ids must be unique.');
 
 for (const project of projects) {

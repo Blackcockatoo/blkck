@@ -1,4 +1,4 @@
-const CACHE_NAME = 'moss-tree-v16';
+const CACHE_NAME = 'moss-tree-v17';
 
 const APP_SHELL = [
   './',
@@ -15,6 +15,10 @@ const APP_SHELL = [
   './black-wing-crew.html',
   './meta-pet.html',
   './teacher-tools.html',
+  './auralia/',
+  './auralia/auralia.css',
+  './auralia/auralia.js',
+  './auralia/edition-01/manifest.json',
   './404.html',
   './styles.css',
   './script.js',
@@ -76,9 +80,13 @@ self.addEventListener('fetch', event => {
     return normalizedPath === shellPath || url.pathname.endsWith(shellPath.replace('./', '/'));
   });
   const isMedia = /\.(mp4|webm|mov)$/i.test(url.pathname);
+  const isAuraliaMaster = url.pathname.startsWith('/auralia/edition-') && (
+    /\/(?:01_Lock_Screens|02_Home_Screens|05_Pairs)\//.test(url.pathname) ||
+    /\.zip$/i.test(url.pathname)
+  );
 
-  if (isMedia) {
-    // Network-only for video — avoid filling cache with large files.
+  if (isMedia || isAuraliaMaster) {
+    // Network-only for video and high-resolution downloads — avoid filling device storage.
     return;
   }
 

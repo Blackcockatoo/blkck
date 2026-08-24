@@ -134,6 +134,64 @@
   }
   .how-step strong { color: var(--gold); }
 
+  /* ── FREE AURALIA EDITION ────── */
+  .free-theme-drop {
+    margin: 0 0 40px;
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 24px;
+    border: 1px solid rgba(217,184,111,.36);
+    padding: 16px 20px 16px 16px;
+    background: rgba(6,7,10,.78);
+  }
+  .free-theme-drop img {
+    width: 112px;
+    aspect-ratio: 9/16;
+    display: block;
+    object-fit: cover;
+    border: 1px solid rgba(243,234,211,.12);
+    border-radius: 14px;
+  }
+  .free-theme-copy { min-width: 0; }
+  .free-theme-copy span {
+    color: var(--gold);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+  .free-theme-copy h2 {
+    margin: 7px 0 6px;
+    color: var(--pale);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 400;
+    line-height: 1.05;
+  }
+  .free-theme-copy p {
+    max-width: 620px;
+    margin: 0;
+    color: var(--muted);
+    font-size: .82rem;
+  }
+  .free-theme-link {
+    min-height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--gold);
+    padding: 0 17px;
+    color: #090a0b;
+    background: var(--gold);
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+  }
+  .free-theme-link:hover { background: #efd79f; }
+
   /* ── FILTERS ─────────────────── */
   .filters {
     display: flex;
@@ -368,6 +426,9 @@
   /* ── RESPONSIVE ──────────────── */
   @media (max-width: 600px) {
     .masthead { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .free-theme-drop { grid-template-columns: 82px 1fr; gap: 16px; padding: 14px; }
+    .free-theme-drop img { width: 82px; border-radius: 10px; }
+    .free-theme-link { grid-column: 1 / -1; width: 100%; }
     .how-it-works { flex-direction: column; }
     .how-to-order { padding: 20px 16px; }
     .card--set { grid-column: span 1; }
@@ -382,6 +443,7 @@
   <a href="index.html" aria-label="Back to blkck2.com">&#8592; blkck2.com</a>
   <span class="mast-badge">Art Store</span>
   <div class="mast-links">
+    <a href="auralia/">Auralia Theme</a>
     <a href="proof-wall.html">Proof Wall</a>
     <a href="print.html">Print Vault</a>
     <a href="mailto:bluesssnakestudio@gmail.com">Contact</a>
@@ -401,6 +463,16 @@
       <div class="how-step"><strong>3.</strong> Email arrives pre-filled — just send</div>
       <div class="how-step"><strong>4.</strong> Receive your file within 48 hours</div>
     </div>
+  </section>
+
+  <section class="free-theme-drop" aria-labelledby="free-theme-title">
+    <img src="auralia/edition-01/03_Previews/01_the-gold-between_LOCK_preview.jpg" alt="The Gold Between from Auralia Phone Theme Edition 01" width="540" height="960" loading="lazy" />
+    <div class="free-theme-copy">
+      <span>New · Free digital edition</span>
+      <h2 id="free-theme-title">Auralia — Phone Theme · Edition 01</h2>
+      <p>Six matched Lock + Home pairs for iPhone and Android. Preview them on a phone, download one, or keep the complete collection. No email or account.</p>
+    </div>
+    <a class="free-theme-link" href="auralia/">Explore free edition →</a>
   </section>
 
   <!-- ── FILTERS ────────────────── -->
@@ -672,6 +744,7 @@
   <footer class="footer">
     <span>Blue $nake Studio — Frankston, VIC</span>
     <a href="index.html">Home</a>
+    <a href="auralia/">Auralia</a>
     <a href="proof-wall.html">Proof Wall</a>
     <a href="print.html">Print Vault</a>
     <a href="magic-cube.html">Magic Cube</a>

@@ -1,0 +1,15 @@
+AURALIA — Android
+
+1. Open the wallpaper you want.
+2. Save it to your phone.
+3. Long-press the Home Screen or open Settings → Wallpaper & style.
+4. Set the Auralia LOCK image for Lock Screen.
+5. Set the matching Auralia HOME image for Home Screen.
+
+For the cleanest B$S look:
+• use dark or monochrome themed icons where available
+• keep widgets minimal
+• disable scrolling/parallax wallpaper if it crops the composition badly
+• center the main subject before applying
+
+The files are universal 9:16 masters. Android manufacturers may crop them slightly differently.

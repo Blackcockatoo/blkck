@@ -1,0 +1,58 @@
+{
+  "name": "AURALIA \u2014 Phone Theme \u00b7 Edition 01",
+  "studio": "Blue $nake Studio",
+  "source": "blkck2.com",
+  "edition": 1,
+  "format": "Universal 9:16",
+  "resolution": "1440\u00d72560",
+  "wallpapers": [
+    {
+      "id": 1,
+      "title": "The Gold Between",
+      "slug": "the-gold-between",
+      "lock": "01_Lock_Screens/01_Auralia_the-gold-between_LOCK.jpg",
+      "home": "02_Home_Screens/01_Auralia_the-gold-between_HOME.jpg",
+      "focal": "profile / cockatoo / serpent"
+    },
+    {
+      "id": 2,
+      "title": "108 Inner Vision",
+      "slug": "108-inner-vision",
+      "lock": "01_Lock_Screens/02_Auralia_108-inner-vision_LOCK.jpg",
+      "home": "02_Home_Screens/02_Auralia_108-inner-vision_HOME.jpg",
+      "focal": "halo / cockatoo / serpent"
+    },
+    {
+      "id": 3,
+      "title": "The Feather Upward",
+      "slug": "the-feather-upward",
+      "lock": "01_Lock_Screens/03_Auralia_the-feather-upward_LOCK.jpg",
+      "home": "02_Home_Screens/03_Auralia_the-feather-upward_HOME.jpg",
+      "focal": "feather / moon / omen"
+    },
+    {
+      "id": 4,
+      "title": "The Ouroboros Window",
+      "slug": "the-ouroboros-window",
+      "lock": "01_Lock_Screens/04_Auralia_the-ouroboros-window_LOCK.jpg",
+      "home": "02_Home_Screens/04_Auralia_the-ouroboros-window_HOME.jpg",
+      "focal": "ouroboros / portal / cockatoo"
+    },
+    {
+      "id": 5,
+      "title": "Of the Southern Sky",
+      "slug": "of-the-southern-sky",
+      "lock": "01_Lock_Screens/05_Auralia_of-the-southern-sky_LOCK.jpg",
+      "home": "02_Home_Screens/05_Auralia_of-the-southern-sky_HOME.jpg",
+      "focal": "southern sky / coastline / flock"
+    },
+    {
+      "id": 6,
+      "title": "After the Omen",
+      "slug": "after-the-omen",
+      "lock": "01_Lock_Screens/06_Auralia_after-the-omen_LOCK.jpg",
+      "home": "02_Home_Screens/06_Auralia_after-the-omen_HOME.jpg",
+      "focal": "lakeside / butterfly / dawn"
+    }
+  ]
+}

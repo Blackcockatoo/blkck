@@ -11,6 +11,14 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function buildPortfolioTruth() {
   return Object.freeze([
     Object.freeze({
+      id: 'auralia-phone-theme',
+      label: 'Auralia — Phone Theme',
+      status: 'Free digital edition',
+      availability: 'Live',
+      desc: 'Six matched Lock and Home Screen wallpaper themes for iPhone and Android. Free, with no account or sign-up.',
+      href: 'auralia/'
+    }),
+    Object.freeze({
       id: 'meta-pet',
       label: 'Meta-Pet',
       status: 'Working prototype',

@@ -1,0 +1,16 @@
+AURALIA — iPhone
+
+1. Open the wallpaper you want.
+2. Save it to Photos.
+3. Open Settings → Wallpaper → Add New Wallpaper.
+4. Choose the Auralia LOCK image.
+5. Set it as your Lock Screen.
+6. Tap Customize Home Screen and choose the matching Auralia HOME image.
+
+For the cleanest B$S look:
+• use Dark or Tinted app icons
+• keep widgets minimal
+• avoid extra wallpaper blur unless you prefer it
+• position the crop so the main figure stays clear
+
+The files are universal 9:16 masters. iOS may crop a small amount depending on model.

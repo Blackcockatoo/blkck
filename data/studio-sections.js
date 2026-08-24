@@ -17,6 +17,7 @@ window.BSS_STUDIO_SECTIONS = [
     startHere: true,
     details: [],
     links: [
+      { label: 'Get Auralia — Free Phone Theme', href: 'auralia/', className: 'album-link', sub: 'Six matched Lock + Home pairs. iPhone + Android.' },
       { label: 'Try Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link', sub: 'Browser demo. No login.' },
       { label: 'Download Teacher Pack', href: 'https://teachers-secret-cheatsheet.vercel.app/', className: 'album-link', sub: 'Seven printable classroom templates.' },
       { label: 'Enter Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link', sub: 'Stream the Neon Venom LP.' },
