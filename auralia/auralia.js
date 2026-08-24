@@ -44,6 +44,9 @@
   let imageTransition = 0;
   let toastTimer = 0;
   let pointerStart = null;
+  let touchStart = null;
+  let mouseStart = null;
+  let lastSwipeAt = 0;
 
   function pad(value) {
     return String(value).padStart(2, '0');
@@ -255,6 +258,17 @@
     return 'Wallpaper download started. Find it in Downloads.';
   }
 
+  function finishSwipe(start, endX, endY) {
+    if (!start || Date.now() - lastSwipeAt < 550) return;
+
+    const deltaX = endX - start.x;
+    const deltaY = endY - start.y;
+    if (Math.abs(deltaX) < 44 || Math.abs(deltaX) <= Math.abs(deltaY) * 1.15) return;
+
+    lastSwipeAt = Date.now();
+    goToTheme(deltaX < 0 ? themeIndex + 1 : themeIndex - 1);
+  }
+
   function bindInteractions() {
     document.querySelectorAll('[data-mode-choice]').forEach((button) => {
       button.addEventListener('click', () => setMode(button.dataset.modeChoice));
@@ -295,12 +309,39 @@
 
     elements.phoneStage.addEventListener('pointerup', (event) => {
       if (!pointerStart || event.pointerId !== pointerStart.id) return;
-      const deltaX = event.clientX - pointerStart.x;
-      const deltaY = event.clientY - pointerStart.y;
+      const start = pointerStart;
       pointerStart = null;
+      finishSwipe(start, event.clientX, event.clientY);
+    });
 
-      if (Math.abs(deltaX) < 44 || Math.abs(deltaX) <= Math.abs(deltaY) * 1.15) return;
-      goToTheme(deltaX < 0 ? themeIndex + 1 : themeIndex - 1);
+    elements.phoneStage.addEventListener('touchstart', (event) => {
+      const touch = event.changedTouches[0];
+      if (!touch) return;
+      touchStart = { x: touch.clientX, y: touch.clientY };
+    }, { passive: true });
+
+    elements.phoneStage.addEventListener('touchcancel', () => {
+      touchStart = null;
+    }, { passive: true });
+
+    elements.phoneStage.addEventListener('touchend', (event) => {
+      const touch = event.changedTouches[0];
+      const start = touchStart;
+      touchStart = null;
+      if (!touch) return;
+      finishSwipe(start, touch.clientX, touch.clientY);
+    }, { passive: true });
+
+    elements.phoneStage.addEventListener('mousedown', (event) => {
+      if (event.button !== 0) return;
+      mouseStart = { x: event.clientX, y: event.clientY };
+    });
+
+    window.addEventListener('mouseup', (event) => {
+      const start = mouseStart;
+      mouseStart = null;
+      if (event.button !== 0) return;
+      finishSwipe(start, event.clientX, event.clientY);
     });
 
     document.querySelectorAll('[data-download-kind]').forEach((link) => {

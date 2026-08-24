@@ -344,6 +344,8 @@ a:focus-visible,
   height: 100%;
   display: block;
   object-fit: cover;
+  -webkit-user-drag: none;
+  user-select: none;
   opacity: 0;
   transform: scale(1.008);
   transition: opacity 520ms var(--ease), transform 900ms var(--ease);
