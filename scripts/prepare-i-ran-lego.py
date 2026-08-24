@@ -104,7 +104,7 @@ def patch_book() -> None:
             '<link rel="manifest" href="manifest.webmanifest">\n'
             '  <link rel="canonical" href="https://blkck2.com/i-ran-lego/">\n'
             '  <meta property="og:title" content="I RAN, LEGO! — The Living Storybook">\n'
-            '  <meta property="og:description" content="A Blue $nake Studio interactive picture-book musical with a free 66-second living preview.">\n'
+            '  <meta property="og:description" content="The complete Blue $nake Studio interactive picture-book musical — free and fully unlocked.">\n'
             '  <meta property="og:type" content="website">\n'
             '  <meta property="og:url" content="https://blkck2.com/i-ran-lego/">\n'
             '  <meta property="og:image" content="https://blkck2.com/i-ran-lego/assets/pages/page-01.webp">',
@@ -117,17 +117,77 @@ def patch_book() -> None:
     index = re.sub(r'\s*<button class="ghost" id="demoUnlock">.*?</button>', '', index, count=1)
     index = index.replace(
         'The public preview is free. Full access opens immediately after purchase, while the hard copy can be ordered on its own or bundled with the living book.',
-        'The public preview is free. Digital access, hard copies and complete-edition orders are handled directly by Blue $nake Studio while secure checkout is being connected.',
+        'The complete digital living book is free and already unlocked. No teaser, no digital checkout. Printed and collector editions remain optional.',
     )
     index = index.replace(
         'The customer-facing flow stays this simple: secure checkout, email access, then straight into the complete experience.',
-        'Choose an edition and send a pre-filled enquiry directly to Blue $nake Studio. Secure checkout and automatic access are being connected.',
+        'The complete digital living book is already open. Continue only if you want to ask about an optional printed or collector edition.',
     )
     index = index.replace(
         'This prototype is running in demonstration mode. Add the real Stripe Checkout link in <strong>config.js</strong>; no redesign is required.',
-        'The website carries the free preview. Complete digital access and print orders are delivered directly by the studio.',
+        'The full digital song and every synced lyric are free on this site. This enquiry is only for optional print or collector editions.',
     )
-    index = index.replace('CONTINUE TO CHECKOUT', 'CONTINUE WITH ENQUIRY')
+    index = index.replace('WATCH THE FREE PREVIEW', 'OPEN THE FULL SONG')
+    index = index.replace('OPEN THE LIVING PREVIEW', 'OPEN THE FULL SONG')
+    index = index.replace('OPEN PREVIEW', 'OPEN FULL SONG')
+    index = index.replace('THE FREE PREVIEW ENDS HERE', 'THE FULL SONG IS OPEN')
+    index = index.replace('RESTART PREVIEW', 'RESTART SONG')
+    index = index.replace('UNLOCK DIGITAL EDITION', 'OPEN THE FULL SONG')
+    index = index.replace('CHOOSE YOUR EDITION', 'FULL SONG · FREE TO OPEN')
+    index = index.replace('Digital, physical, or the whole strange machine.', 'The whole strange machine is open.')
+    index = index.replace('Immediate digital access', 'Full digital song included free')
+    index = index.replace('Optional digital upgrade later', 'Full digital song already included')
+    index = index.replace('CONTINUE TO CHECKOUT', 'SEND PRINT ENQUIRY')
+    index = index.replace('data-open-player="preview"', 'data-open-player="full"')
+    index = index.replace(
+        'The living preview is free. The complete digital and printed editions are available directly from Blue $nake Studio while the checkout system is being connected.',
+        'The complete digital living book is free and already unlocked. No teaser, no digital checkout. Printed and collector editions remain optional.',
+    )
+    index = index.replace(
+        'The public preview is free. Digital access, hard copies and complete-edition orders are handled directly by Blue $nake Studio while secure checkout is being connected.',
+        'The complete digital living book is free and already unlocked. No teaser, no digital checkout. Printed and collector editions remain optional.',
+    )
+    index = index.replace(
+        'The secure checkout is being connected. For now, continue to send a pre-filled edition enquiry directly to Blue $nake Studio.',
+        'The complete digital living book is already open. Continue only if you want to ask about an optional printed or collector edition.',
+    )
+    index = index.replace(
+        'The public site carries the interactive preview only. Complete digital files and print orders are delivered directly by the studio.',
+        'The full digital song and every synced lyric are free on this site. This enquiry is only for optional print or collector editions.',
+    )
+    index = index.replace(
+        'The rest of the machine is behind the little red button.',
+        'The full performance is unlocked from start to finish.',
+    )
+    index = index.replace(
+        'Unlock the complete interactive book, or order the physical edition and bundle digital access with it.',
+        'Restart the song whenever you like, or ask B$S about an optional printed edition.',
+    )
+    index = index.replace('CHOOSE IT. OPEN IT. PLAY IT.', 'OPTIONAL PRINT EDITIONS')
+    index = index.replace('<h3 id="purchaseName">Living Book</h3>', '<h3 id="purchaseName">Printed Edition</h3>')
+    index = index.replace('<span>One-time purchase</span>', '<span>Optional printed edition</span>')
+    index = index.replace('<span>One-time edition</span>', '<span>Optional printed edition</span>')
+    index = index.replace('<button class="gold" id="purchaseAction">CONTINUE</button>', '<button class="gold" id="purchaseAction">SEND PRINT ENQUIRY</button>')
+    index = index.replace(
+        '<div class="price">Digital access</div><h3>Living Book</h3>',
+        '<div class="price">Full access · free</div><h3>Living Song</h3>',
+        1,
+    )
+    index = index.replace(
+        '<button class="red" data-buy="digital">OPEN THE FULL SONG</button>',
+        '<button class="red" data-open-player="full" data-media-gated disabled>OPEN THE FULL SONG</button>',
+        1,
+    )
+    index = index.replace(
+        '<button class="gold" data-buy="complete">GET THE COMPLETE EDITION</button>',
+        '<button class="gold" data-buy="print">OPTIONAL PRINT EDITIONS</button>',
+        1,
+    )
+    index = index.replace(
+        '<div class="lock-overlay" id="lockOverlay">',
+        '<div class="lock-overlay" id="lockOverlay" hidden>',
+        1,
+    )
     if 'LEGO Group' not in index:
         index = replace_once(
             index,
@@ -140,6 +200,7 @@ def patch_book() -> None:
     config_path = TARGET / "config.js"
     config = config_path.read_text(encoding="utf-8")
     config = re.sub(r'demoMode:\s*true', 'demoMode: false', config, count=1)
+    config = re.sub(r'previewOnly:\s*true', 'previewOnly: false', config, count=1)
     config = patch_product(config, "digital", "I%20RAN%20LEGO%20Digital%20Edition")
     config = patch_product(config, "print", "I%20RAN%20LEGO%20Printed%20Book")
     config = patch_product(config, "complete", "I%20RAN%20LEGO%20Complete%20Edition")
@@ -150,16 +211,24 @@ def patch_book() -> None:
     app = app_path.read_text(encoding="utf-8")
     app = re.sub(
         r'entitled:\s*localStorage\.getItem\("iran-lego-entitlement"\)==="full"\s*\|\|\s*new URLSearchParams\(location\.search\)\.get\("full"\)==="1"',
-        'entitled: false',
+        'entitled: true',
         app,
         count=1,
     )
+    app = re.sub(
+        r'\n\s*if\s*\(state\.preview\s*&&\s*!state\.entitled\s*&&\s*t\s*>=\s*CFG\.previewSeconds\)\s*\{\s*audio\.pause\(\);\s*lockOverlay\.classList\.add\("show"\);\s*\}',
+        '\n',
+        app,
+        count=1,
+    )
+    app = re.sub(r'preview:\s*true', 'preview: false', app, count=1)
+    app = app.replace('state.preview = true;', 'state.preview = false;', 1)
     app = app.replace('$("#demoUnlock").addEventListener', '$("#demoUnlock")?.addEventListener')
     app = app.replace('$("#resetAccess").addEventListener', '$("#resetAccess")?.addEventListener')
     app_path.write_text(app, encoding="utf-8")
 
     (TARGET / "sw.js").write_text(
-        '''const CACHE = "iran-lego-living-book-v2";
+        '''const CACHE = "iran-lego-living-book-v3";
 const CORE = [
   "./", "index.html", "styles.css", "app.js", "config.js",
   "data/timing-data.js", "data/camera-data.js",
@@ -191,7 +260,7 @@ def patch_portal() -> None:
     sections = sections_path.read_text(encoding="utf-8")
     if "href: 'i-ran-lego/'" not in sections:
         marker = "      { label: 'Enter Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link', sub: 'Stream the Neon Venom LP.' },\n"
-        cta = "      { label: 'Open I RAN, LEGO!', href: 'i-ran-lego/', className: 'album-link', sub: 'Interactive picture-book musical. Free living preview.' },\n"
+        cta = "      { label: 'Open I RAN, LEGO!', href: 'i-ran-lego/', className: 'album-link', sub: 'Full song and synced lyrics. Free to open.' },\n"
         sections = replace_once(sections, marker, marker + cta, "Start Here CTA")
     if "slug: 'i-ran-lego'" not in sections:
         section = """  {
@@ -202,7 +271,7 @@ def patch_portal() -> None:
     title: 'A book that performs itself.',
     statement: 'I RAN, LEGO! is an interactive picture-book musical with authored camera movement, word-level sing-along lyrics, chapter navigation and pause-to-explore pages.',
     pageTitle: 'I RAN, LEGO! — Interactive Living Storybook · Blue $nake Studio',
-    pageDescription: 'Watch, sing and explore I RAN, LEGO! — a Blue $nake Studio living storybook with a free 66-second interactive preview and printed-book pathway.',
+    pageDescription: 'Watch, sing and explore the complete I RAN, LEGO! living storybook — full song, synced lyrics and all twenty-one illustrated pages, free and unlocked.',
     details: [
       'The complete programme travels through twenty-one illustrated pages in time with the full song.',
       'A bouncing red button follows every word while chapter controls make the performance easy to revisit.',
@@ -211,7 +280,7 @@ def patch_portal() -> None:
     links: [
       { label: 'Open the Living Book', href: 'i-ran-lego/', className: 'album-link' },
       { label: 'Watch @blkck2', href: 'https://www.youtube.com/@blkck2' },
-      { label: 'Ask about editions', href: 'mailto:bluesssnakestudio@gmail.com?subject=I%20RAN%20LEGO%20Edition' }
+      { label: 'Ask about printed editions', href: 'mailto:bluesssnakestudio@gmail.com?subject=I%20RAN%20LEGO%20Printed%20Edition' }
     ]
   },
 """
@@ -224,7 +293,12 @@ def validate() -> None:
     assert len(pages) == 21
     assert (TARGET / "assets" / "audio" / "I_RAN_LEGO_MASTER.mp3").stat().st_size > 8_000_000
     assert "demoMode: false" in (TARGET / "config.js").read_text(encoding="utf-8")
-    assert "entitled: false" in (TARGET / "app.js").read_text(encoding="utf-8")
+    app = (TARGET / "app.js").read_text(encoding="utf-8")
+    index = (TARGET / "index.html").read_text(encoding="utf-8")
+    assert "entitled: true" in app
+    assert "if(state.preview && !state.entitled" not in app
+    assert "WATCH THE FREE PREVIEW" not in index
+    assert "UNLOCK DIGITAL EDITION" not in index
     assert "BACK TO BLKCK2" in (TARGET / "index.html").read_text(encoding="utf-8")
     assert "slug: 'i-ran-lego'" in (ROOT / "data" / "studio-sections.js").read_text(encoding="utf-8")
 

@@ -21,7 +21,7 @@ window.BSS_STUDIO_SECTIONS = [
       { label: 'Try Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link', sub: 'Browser demo. No login.' },
       { label: 'Download Teacher Pack', href: 'https://teachers-secret-cheatsheet.vercel.app/', className: 'album-link', sub: 'Seven printable classroom templates.' },
       { label: 'Enter Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link', sub: 'Stream the Neon Venom LP.' },
-      { label: 'Open I RAN, LEGO!', href: 'i-ran-lego/', className: 'album-link', sub: 'Interactive picture-book musical. Free living preview.' },
+      { label: 'Open I RAN, LEGO!', href: 'i-ran-lego/', className: 'album-link', sub: 'Full song and synced lyrics. Free to open.' },
       { label: 'Gallery Rooms', href: '#visual-worlds', sub: 'Ten rooms of art and myth.' },
       { label: 'B$S Proof Wall', href: 'proof-wall.html', sub: 'Everything already built.' },
       { label: 'YouTube @blkck2', href: 'https://www.youtube.com/@blkck2' },
@@ -101,7 +101,7 @@ window.BSS_STUDIO_SECTIONS = [
     title: 'A book that performs itself.',
     statement: 'I RAN, LEGO! is an interactive picture-book musical with authored camera movement, word-level sing-along lyrics, chapter navigation and pause-to-explore pages.',
     pageTitle: 'I RAN, LEGO! — Interactive Living Storybook · Blue $nake Studio',
-    pageDescription: 'Watch, sing and explore I RAN, LEGO! — a Blue $nake Studio living storybook with a free 66-second interactive preview and printed-book pathway.',
+    pageDescription: 'Watch, sing and explore the complete I RAN, LEGO! living storybook — full song, synced lyrics and all twenty-one illustrated pages, free and unlocked.',
     details: [
       'The complete programme travels through twenty-one illustrated pages in time with the full song.',
       'A bouncing red button follows every word while chapter controls make the performance easy to revisit.',
@@ -110,7 +110,7 @@ window.BSS_STUDIO_SECTIONS = [
     links: [
       { label: 'Open the Living Book', href: 'i-ran-lego/', className: 'album-link' },
       { label: 'Watch @blkck2', href: 'https://www.youtube.com/@blkck2' },
-      { label: 'Ask about editions', href: 'mailto:bluesssnakestudio@gmail.com?subject=I%20RAN%20LEGO%20Edition' }
+      { label: 'Ask about printed editions', href: 'mailto:bluesssnakestudio@gmail.com?subject=I%20RAN%20LEGO%20Printed%20Edition' }
     ]
   },
   {
