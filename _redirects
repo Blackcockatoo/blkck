@@ -11,6 +11,7 @@ http://blkck2.com/* https://blkck2.com/:splat 301!
 /gallery /index.html#visual-worlds 301
 /art /index.html#visual-worlds 301
 /games /index.html#games 301
+/arcade /index.html#games 301
 /moss60 /index.html#moss60 301
 /music /black-wing-crew.html 301
 /lore /field-guide.html 301
@@ -21,6 +22,13 @@ http://blkck2.com/* https://blkck2.com/:splat 301!
 /privacy /privacy-policy.html 301
 /prints /print.html 301
 /cube /magic-cube.html 301
+
+# Standalone B$S arcade cabinets. Temporary redirects keep the blkck2 short
+# links stable if a cabinet moves to a different deployment later.
+/monkey-invaders https://monkey-invaders-enhanced.vercel.app/ 302
+/monkey-invaders-fruitkind https://www.bluesnakestudios.com/monkey-invaders.html 302
+/bubble-hex https://bubblehex.vercel.app/ 302
+/bubblehex https://bubblehex.vercel.app/ 302
 /i-ran-lego /i-ran-lego/index.html 200
 /i-ran-lego/ /i-ran-lego/index.html 200
 /i-ran-lego.html /i-ran-lego/ 301

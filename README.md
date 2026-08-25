@@ -38,3 +38,5 @@ The page should then serve from the repository’s GitHub Pages URL.
 ## Verification
 
 Run `node scripts/check-portfolio-truth.mjs` to verify the shared project-status registry, its consumers and the restrained public privacy/status wording.
+
+Run `node scripts/check-arcade-registry.mjs` to verify Bubble Hex, both Monkey Invaders cabinets, the friendly arcade routes, Auralia coexistence and the service-worker cache version.
