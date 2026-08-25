@@ -296,23 +296,28 @@ window.BSS_STUDIO_SECTIONS = [
   },
   {
     slug: 'games',
-    status: 'Prototype',
+    status: 'Live',
     label: 'Games',
     eyebrow: 'Play · Explore · Interactive',
     title: 'Games from the studio.',
-    statement: 'Playable games and interactive engines from Blue $nake Studio — built in the same mythic universe as the art, music and learning tools.',
-    pageTitle: 'Games — Blue $nake Studio',
-    pageDescription: 'B$S Six-Face Word Cube, Monkey Invaders and the Oracle Warden glyph engine — playable browser games from Blue $nake Studio.',
+    statement: 'Playable games and interactive engines from Blue $nake Studio — built in the same mythic universe as the art, music and learning tools. The independent arcade cabinets remain live alongside the portal games.',
+    pageTitle: 'Games — Monkey Invaders, Bubble Hex & the Word Cube · Blue $nake Studio',
+    pageDescription: 'Monkey Invaders, Bubble Hex, the B$S Six-Face Word Cube, Magic Rubix Cube and Moss 60 Oracle Warden — playable browser games from Blue $nake Studio.',
     details: [
+      'Monkey Invaders survives in two distinct cabinets: the Twin Signal build and the newer Fruitkind cabinet with difficulty modes, power-ups and bosses.',
+      'Bubble Hex — trap what is chasing you inside a bubble, then burst it. Chambers, maps and chronicles live inside a gothic landscape cabinet.',
       'B$S Six-Face Word Cube — drag to spin a 3D artwork cube with six word-grid faces. Free in the browser, no login.',
-      'Monkey Invaders — arcade-style game from the studio.',
       'Oracle Warden — the Moss 60 glyph engine, a playable symbolic puzzle.',
       'More games in development as the studio\'s pattern systems are gamified.'
     ],
     links: [
-      { label: 'Play Word Cube', href: 'apps/bs-word-cube.html', className: 'game-link' },
-      { label: 'Play Monkey Invaders', href: 'https://www.bluesnakestudios.com/monkey-invaders.html', className: 'game-link' },
-      { label: 'Oracle Warden (Moss 60)', href: 'apps/moss60-oracle-warden.html', className: 'game-link' },
+      // `.game-link` renders its own PLAY chip via CSS, so labels do not repeat it.
+      { label: 'Monkey Invaders — Twin Signal', href: 'https://monkey-invaders-enhanced.vercel.app/', className: 'game-link', sub: 'Original restored B$S arcade cabinet.' },
+      { label: 'Bubble Hex', href: 'https://bubblehex.vercel.app/', className: 'game-link', sub: 'Gothic bubble-trapping platformer.' },
+      { label: 'Monkey Invaders — Fruitkind', href: 'https://www.bluesnakestudios.com/monkey-invaders.html', className: 'game-link', sub: 'Alternate cabinet with difficulties, power-ups and bosses.' },
+      { label: 'Word Cube', href: 'apps/bs-word-cube.html', className: 'game-link', sub: 'Six-face 5×5 word cube.' },
+      { label: 'Oracle Warden (Moss 60)', href: 'apps/moss60-oracle-warden.html', className: 'game-link', sub: 'Glyph engine puzzle.' },
+      { label: 'B$S Magic Rubix Cube', href: 'magic-cube.html', sub: 'Art, Game and Net View modes.' },
       { label: 'Watch @blkck2', href: 'https://www.youtube.com/@blkck2' }
     ],
     featuredIds: ['meta-pet-neon-ornament', 'moss60-geometry-linework', 'meta-pet-digital-genomes', 'meta-pet-companion-portrait']

@@ -2,6 +2,62 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "python3 scripts/prepare-i-ran-lego.py",
   "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.blkck2.com" }],
+      "destination": "https://blkck2.com/$1",
+      "permanent": true
+    },
+
+    { "source": "/schools", "destination": "/gov.html", "permanent": true },
+    { "source": "/professional", "destination": "/gov.html", "permanent": true },
+
+    { "source": "/gallery", "destination": "/index.html#visual-worlds", "permanent": true },
+    { "source": "/art", "destination": "/index.html#visual-worlds", "permanent": true },
+    { "source": "/games", "destination": "/index.html#games", "permanent": true },
+    { "source": "/arcade", "destination": "/index.html#games", "permanent": true },
+    { "source": "/moss60", "destination": "/index.html#moss60", "permanent": true },
+    { "source": "/music", "destination": "/black-wing-crew.html", "permanent": true },
+    { "source": "/lore", "destination": "/field-guide.html", "permanent": true },
+    { "source": "/semantic-sovereignty", "destination": "/documents/oss-734g-known-unknowns-register.html", "permanent": true },
+    { "source": "/oss-734g", "destination": "/documents/oss-734g-known-unknowns-register.html", "permanent": true },
+    { "source": "/teachers", "destination": "/teacher-tools.html", "permanent": true },
+    { "source": "/press", "destination": "/press-kit.html", "permanent": true },
+    { "source": "/privacy", "destination": "/privacy-policy.html", "permanent": true },
+    { "source": "/prints", "destination": "/print.html", "permanent": true },
+    { "source": "/cube", "destination": "/magic-cube.html", "permanent": true },
+    { "source": "/metapet", "destination": "/meta-pet.html", "permanent": true },
+
+    { "source": "/i-ran-lego.html", "destination": "/i-ran-lego/", "permanent": true },
+    { "source": "/iran-lego", "destination": "/i-ran-lego/", "permanent": true },
+    { "source": "/living-book", "destination": "/i-ran-lego/", "permanent": true },
+
+    { "source": "/start", "destination": "/start.html", "permanent": true },
+    { "source": "/start-here", "destination": "/start-here.html", "permanent": true },
+    { "source": "/proof-wall", "destination": "/proof-wall.html", "permanent": true },
+    { "source": "/frankston-2035", "destination": "/frankston-2035.html", "permanent": true },
+    { "source": "/2035", "destination": "/frankston-2035.html", "permanent": true },
+    { "source": "/press-kit", "destination": "/press-kit.html", "permanent": true },
+    { "source": "/privacy-policy", "destination": "/privacy-policy.html", "permanent": true },
+    { "source": "/print", "destination": "/print.html", "permanent": true },
+    { "source": "/packs", "destination": "/packs.html", "permanent": true },
+    { "source": "/store", "destination": "/store.html", "permanent": true },
+    { "source": "/field-guide", "destination": "/field-guide.html", "permanent": true },
+    { "source": "/teacher-tools", "destination": "/teacher-tools.html", "permanent": true },
+    { "source": "/meta-pet", "destination": "/meta-pet.html", "permanent": true },
+    { "source": "/magic-cube", "destination": "/magic-cube.html", "permanent": true },
+    { "source": "/qr-portal", "destination": "/qr-portal.html", "permanent": true },
+    { "source": "/black-wing-crew", "destination": "/black-wing-crew.html", "permanent": true },
+    { "source": "/gov", "destination": "/gov.html", "permanent": true },
+    { "source": "/site-health", "destination": "/site-health.html", "permanent": true },
+    { "source": "/strongman-tracker", "destination": "/strongman-tracker.html", "permanent": true },
+
+    { "source": "/monkey-invaders", "destination": "https://monkey-invaders-enhanced.vercel.app/", "permanent": false },
+    { "source": "/monkey-invaders-fruitkind", "destination": "https://www.bluesnakestudios.com/monkey-invaders.html", "permanent": false },
+    { "source": "/bubble-hex", "destination": "https://bubblehex.vercel.app/", "permanent": false },
+    { "source": "/bubblehex", "destination": "https://bubblehex.vercel.app/", "permanent": false }
+  ],
   "rewrites": [
     {
       "source": "/auralia",

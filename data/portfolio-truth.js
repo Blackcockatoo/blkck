@@ -43,6 +43,22 @@
       href: 'https://blackwingcrew.netlify.app/'
     }),
     Object.freeze({
+      id: 'monkey-invaders',
+      label: 'Monkey Invaders',
+      status: 'Live arcade game',
+      availability: 'Live',
+      desc: 'Banana-powered arcade shooter with two surviving cabinet builds, touch controls, waves and boss encounters.',
+      href: 'https://monkey-invaders-enhanced.vercel.app/'
+    }),
+    Object.freeze({
+      id: 'bubble-hex',
+      label: 'Bubble Hex',
+      status: 'Live arcade game',
+      availability: 'Live',
+      desc: 'A gothic bubble-trapping platformer with chambers, maps, chronicles and a dedicated landscape cabinet.',
+      href: 'https://bubblehex.vercel.app/'
+    }),
+    Object.freeze({
       id: 'magic-cube',
       label: 'B$S Magic Rubix Cube',
       status: 'Playable prototype',
