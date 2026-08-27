@@ -1,0 +1,22 @@
+{
+  "packageId": "i-ran-lego-living-book",
+  "version": "v1",
+  "archive": "I_RAN_LEGO_LIVING_BOOK_v1.zip",
+  "targetPath": "i-ran-lego",
+  "minArchiveBytes": 10000000,
+  "requiredFiles": [
+    "index.html",
+    "app.js",
+    "styles.css",
+    "config.js",
+    "data/timing-data.js",
+    "data/camera-data.js",
+    "assets/audio/I_RAN_LEGO_MASTER.mp3"
+  ],
+  "validators": {
+    "audioPath": "assets/audio/I_RAN_LEGO_MASTER.mp3",
+    "minAudioBytes": 8000000,
+    "pagesGlob": "assets/pages/page-*.webp",
+    "expectedPages": 21
+  }
+}
