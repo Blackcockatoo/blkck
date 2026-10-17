@@ -295,6 +295,25 @@ window.BSS_STUDIO_SECTIONS = [
     ]
   },
   {
+    slug: 'stomps',
+    status: 'Featured',
+    label: 'STOMPS',
+    eyebrow: 'Frankston original · PFK · B$S sponsored',
+    title: 'No introductions. He will approach you.',
+    statement: 'An original Frankstonite. Original PFK / Play For Keeps member. Grounded, streetwise, observant, defiant and self-possessed. The prototype of what a younger generation calls an eshay.',
+    pageTitle: 'STOMPS — Original Frankstonite · Blue $nake Studio',
+    pageDescription: 'A B$S sponsored STOMPS character feature. His PFK history, the visual code, the movement, and the standalone STOMPZ Such Is Life experience.',
+    details: [
+      'His history predates the name the kids now give the look. He is the original, not a new trend.',
+      'Respect the man and the boundaries. This character portrait is not an invitation to approach him.',
+      'The invitation is to the work: open the full character spread, then enter STOMPZ — Such Is Life.'
+    ],
+    links: [
+      { label: 'STOMPS — Full character spread', href: 'stomps.html', className: 'album-link', sub: 'Frankston, PFK, the uniform and the walk.' },
+      { label: 'STOMPZ — Such Is Life', href: 'https://bss-stompz-such-is-life.themossman.chatgpt.site/', className: 'game-link', sub: 'B$S-sponsored interactive project.' }
+    ]
+  },
+  {
     slug: 'games',
     status: 'Live',
     label: 'Games',
@@ -313,6 +332,8 @@ window.BSS_STUDIO_SECTIONS = [
     links: [
       // `.game-link` renders its own PLAY chip via CSS, so labels do not repeat it.
       { label: 'Monkey Invaders — Twin Signal', href: 'https://monkey-invaders-enhanced.vercel.app/', className: 'game-link', sub: 'Original restored B$S arcade cabinet.' },
+      { label: 'STOMPZ — Such Is Life', href: 'https://bss-stompz-such-is-life.themossman.chatgpt.site/', className: 'game-link', sub: 'B$S sponsored. Original Frankston character.' },
+      { label: 'STOMPS — Character introduction', href: 'stomps.html', sub: 'The man, his PFK history, and the movement study.' },
       { label: 'Bubble Hex', href: 'https://bubblehex.vercel.app/', className: 'game-link', sub: 'Gothic bubble-trapping platformer.' },
       { label: 'Monkey Invaders — Fruitkind', href: 'https://www.bluesnakestudios.com/monkey-invaders.html', className: 'game-link', sub: 'Alternate cabinet with difficulties, power-ups and bosses.' },
       { label: 'Word Cube', href: 'apps/bs-word-cube.html', className: 'game-link', sub: 'Six-face 5×5 word cube.' },

@@ -1,6 +1,6 @@
 // Bump whenever a precached portal file changes so returning visitors receive
 // the restored arcade registry instead of an older cached Games section.
-const CACHE_NAME = 'moss-tree-v19';
+const CACHE_NAME = 'moss-tree-v20';
 
 const APP_SHELL = [
   './',
@@ -8,6 +8,7 @@ const APP_SHELL = [
   './start-here.html',
   './start.html',
   './proof-wall.html',
+  './stomps.html',
   './print.html',
   './strongman-tracker.html',
   './site-health.html',
