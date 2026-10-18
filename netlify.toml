@@ -2,38 +2,10 @@
   command = "python3 scripts/prepare-i-ran-lego.py"
   publish = "."
 
-# www and http → https://blkck2.com
-[[redirects]]
-  from   = "https://www.blkck2.com/*"
-  to     = "https://blkck2.com/:splat"
-  status = 301
-  force  = true
-
-[[redirects]]
-  from   = "http://www.blkck2.com/*"
-  to     = "https://blkck2.com/:splat"
-  status = 301
-  force  = true
-
-[[redirects]]
-  from   = "http://blkck2.com/*"
-  to     = "https://blkck2.com/:splat"
-  status = 301
-  force  = true
-
-# Professional mode — clean lore-free route for schools, councils and partners
-[[redirects]]
-  from   = "/schools"
-  to     = "/gov.html"
-  status = 301
-
-[[redirects]]
-  from   = "/professional"
-  to     = "/gov.html"
-  status = 301
-
-# NOTE: friendly aliases and extensionless page URLs live in the _redirects
-# file, which Netlify processes ahead of these rules. Add new aliases there.
+# Redirects (canonical https, schools/professional aliases, friendly aliases,
+# extensionless page URLs) live in the `_redirects` file, which Netlify
+# processes ahead of any rules here. Keeping them in one place avoids the two
+# files drifting apart. Add or change redirects there, not here.
 
 # Security headers
 [[headers]]
