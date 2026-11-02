@@ -711,9 +711,10 @@
             ${section.studioDescription ? `<p class="studio-description">${escapeHtml(section.studioDescription)}</p>` : ''}
             ${section.textualInstallation ? textualInstallation() : ''}
             ${section.oldVicState ? oldVicStateFeature() : ''}
-            ${linksRow(section)}
+            ${!section.startHere ? linksRow(section) : ''}
             ${!section.startHere ? `<ul class="details">${(section.details || []).map(detail => `<li>${escapeHtml(detail)}</li>`).join('')}</ul>` : ''}
             ${!section.startHere ? projectProofStrip(section) : ''}
+            ${section.startHere ? `<div class="portal-feature"><div><p class="eyebrow">Frankston made. Independently built.</p><h2>Pick a world.<br>Make yourself at home.</h2><p>Art to get lost in. Music to get loud with. Games to master. Tools to grow with.</p><div class="portal-doors"><a href="#games">Play the arcade →</a><a href="#visual-worlds">Explore the art →</a><a href="gov.html">For teachers →</a></div></div><img src="01_auralia/auralia_cosmic_poster_v1.png" alt="Auralia: black birds, butterflies and gold celestial ornament" width="1152" height="1536" fetchpriority="high" /></div>` : ''}
             ${section.startHere ? startHereAudience() : ''}
             ${section.startHere ? featuredProjectsGrid() : ''}
             ${section.startHere ? startHereAbout() : ''}
@@ -740,7 +741,32 @@
 
   function buildTree() {
     tree.querySelectorAll('.node').forEach(node => node.remove());
-    sections.forEach((section, index) => {
+    const groups = [
+      ['Welcome', ['start-here', 'moss-man']],
+      ['Art & sound', ['visual-worlds', 'black-wing-crew', 'i-ran-lego', 'old-vic-state']],
+      ['Play & learn', ['games', 'stomps', 'meta-pet', 'teacher-tools', 'moss60']],
+      ['Place & ideas', ['frankston-fuji', 'frankston-2035', 'black-omen-waahn', 'print-street-pack']]
+    ];
+    const used = new Set();
+    const ordered = [];
+    groups.forEach(([label, slugs]) => {
+      slugs.forEach(slug => {
+        const index = sections.findIndex(section => section.slug === slug);
+        if (index >= 0) { ordered.push({index, group: label}); used.add(index); }
+      });
+    });
+    sections.forEach((section, index) => { if (!used.has(index)) ordered.push({index, group: 'More from the studio'}); });
+    let previousGroup = '';
+    ordered.forEach(({index, group}) => {
+      const section = sections[index];
+      if (group !== previousGroup) {
+        const heading = document.createElement('p');
+        heading.className = 'nav-group';
+        heading.textContent = group;
+        heading.setAttribute('role', 'presentation');
+        tree.appendChild(heading);
+        previousGroup = group;
+      }
       const node = document.createElement('button');
       node.className = `node${index === active ? ' is-active' : ''}`;
       node.style.setProperty('--i', index);
@@ -753,6 +779,7 @@
       node.tabIndex = index === active ? 0 : -1;
       node.dataset.index = index;
       node.dataset.slug = section.slug;
+      node.dataset.search = `${group} ${section.label} ${section.statement}`.toLowerCase();
       node.innerHTML = `<span class="node-index">${String(index + 1).padStart(2, '0')}</span><span class="node-label">${escapeHtml(section.label)}</span>`;
       node.addEventListener('click', () => select(index, { focus: true }));
       tree.appendChild(node);
@@ -855,7 +882,7 @@
     counter.textContent = String(active + 1).padStart(2, '0');
 
     document.querySelectorAll('.node').forEach((node, i) => {
-      const selected = i === active;
+      const selected = Number(node.dataset.index) === active;
       node.classList.toggle('is-active', selected);
       node.setAttribute('aria-selected', String(selected));
       node.tabIndex = selected ? 0 : -1;
@@ -872,16 +899,27 @@
     });
 
     if (options.focus) {
-      const node = document.querySelectorAll('.node')[active];
+      const node = document.querySelector(`.node[data-index="${active}"]`);
       if (node) node.focus({ preventScroll: true });
     }
     if (options.hash !== false && location.hash !== `#${slugs[active]}`) {
-      history.replaceState(null, '', `#${slugs[active]}`);
+      history.pushState(null, '', `#${slugs[active]}`);
     }
     const activeSec = sections[active];
     document.title = activeSec.pageTitle || `${activeSec.label} — Blue $nake Studio · blkck2.com`;
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', activeSec.pageDescription || activeSec.statement);
+    if (changed) {
+      window.scrollTo({top: 0, behavior: 'instant'});
+      stage.classList.remove('is-open');
+      document.getElementById('explore-toggle').setAttribute('aria-expanded', 'false');
+      document.getElementById('explore-toggle').textContent = 'Explore +';
+    }
+    if (changed && options.focus && matchMedia('(max-width: 760px)').matches) {
+      const heading = panelWrap.querySelector('.panel.is-active h1');
+      heading.tabIndex = -1;
+      heading.focus({preventScroll: true});
+    }
     if (changed && status) status.textContent = `${sections[active].label} selected`;
   }
 
@@ -973,7 +1011,7 @@
   }
 
   document.addEventListener('keydown', event => {
-    if (event.altKey || event.ctrlKey || event.metaKey) return;
+    if (event.altKey || event.ctrlKey || event.metaKey || !event.target.closest('#tree')) return;
     const target = event.target;
     if (target && ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)) return;
     if (event.key === 'ArrowDown' || event.key === 'ArrowRight' || event.key === 'PageDown') {
@@ -991,36 +1029,6 @@
     }
   });
 
-  stage.addEventListener('wheel', event => {
-    if (Math.abs(event.deltaY) < 12 || wheelLocked) return;
-    event.preventDefault();
-    wheelLocked = true;
-    select(active + Math.sign(event.deltaY));
-    window.setTimeout(() => { wheelLocked = false; }, 430);
-  }, { passive: false });
-
-  stage.addEventListener('pointerdown', event => {
-    if (event.pointerType === 'mouse' && event.button !== 0) return;
-    pointerStartY = event.clientY;
-    pointerStartX = event.clientX;
-  });
-
-  stage.addEventListener('pointerup', event => {
-    if (pointerStartY === null) return;
-    const dy = event.clientY - pointerStartY;
-    const dx = event.clientX - pointerStartX;
-    pointerStartY = null;
-    pointerStartX = null;
-    if (Math.abs(dy) > 38 && Math.abs(dy) > Math.abs(dx) * .8) {
-      select(active + (dy < 0 ? 1 : -1));
-    }
-  });
-
-  stage.addEventListener('pointercancel', () => {
-    pointerStartY = null;
-    pointerStartX = null;
-  });
-
   window.addEventListener('hashchange', () => {
     const index = slugs.indexOf(location.hash.slice(1));
     if (index >= 0) select(index, { hash: false });
@@ -1029,6 +1037,59 @@
   // The entrance film is fully handled by the gate in data/studio-sections.js,
   // which loads before this file and owns the Enter / sound controls.
   buildTree();
+  const exploreToggle = document.getElementById('explore-toggle');
+  exploreToggle.addEventListener('click', () => {
+    const open = stage.classList.toggle('is-open');
+    exploreToggle.setAttribute('aria-expanded', String(open));
+    exploreToggle.textContent = open ? 'Close ×' : 'Explore +';
+    if (open) document.getElementById('project-search').focus();
+  });
+  document.getElementById('project-search').addEventListener('input', event => {
+    const query = event.target.value.trim().toLowerCase();
+    let count = 0;
+    tree.querySelectorAll('.node').forEach(node => {
+      node.hidden = !node.dataset.search.includes(query);
+      node.tabIndex = node.hidden ? -1 : 0;
+      if (!node.hidden) count++;
+    });
+    tree.querySelectorAll('.nav-group').forEach(heading => {
+      let next = heading.nextElementSibling;
+      let visible = false;
+      while (next && !next.classList.contains('nav-group')) { if (!next.hidden) visible = true; next = next.nextElementSibling; }
+      heading.hidden = !visible;
+    });
+    document.getElementById('search-empty').hidden = count > 0;
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && stage.classList.contains('is-open')) { exploreToggle.click(); exploreToggle.focus(); }
+  });
+  const closeFilm = () => {
+    document.getElementById('intro-video').pause();
+    document.getElementById('intro-film').hidden = true;
+    document.getElementById('replay-intro').focus();
+  };
+  document.getElementById('intro-enter').addEventListener('click', closeFilm);
+  document.getElementById('intro-sound').addEventListener('click', event => {
+    const video = document.getElementById('intro-video');
+    video.muted = !video.muted;
+    event.currentTarget.textContent = video.muted ? 'Unmute' : 'Mute';
+    event.currentTarget.setAttribute('aria-pressed', String(!video.muted));
+  });
+  document.getElementById('intro-film').addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeFilm();
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      const next = document.activeElement.id === 'intro-enter' ? 'intro-sound' : 'intro-enter';
+      document.getElementById(next).focus();
+    }
+  });
+  document.getElementById('replay-intro').addEventListener('click', () => {
+    const film = document.getElementById('intro-film');
+    film.hidden = false;
+    film.classList.remove('is-leaving');
+    document.getElementById('intro-video').play().catch(() => {});
+    document.getElementById('intro-enter').focus();
+  });
   buildPanels();
   select(active, { hash: location.hash.length > 1 });
 

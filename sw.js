@@ -1,6 +1,6 @@
 // Bump whenever a precached portal file changes so returning visitors receive
 // the restored arcade registry instead of an older cached Games section.
-const CACHE_NAME = 'moss-tree-v21';
+const CACHE_NAME = 'moss-tree-v22';
 
 const APP_SHELL = [
   './',
@@ -24,6 +24,7 @@ const APP_SHELL = [
   './auralia/edition-01/manifest.json',
   './404.html',
   './styles.css',
+  './portal.css',
   './script.js',
   './data/gallery-items.js',
   './data/portfolio-truth.js',

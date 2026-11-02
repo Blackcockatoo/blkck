@@ -31,6 +31,7 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="icon-192.png" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="portal.css" />
   <noscript><style>body{overflow:auto!important}.shell,.intro-film{display:none!important}</style></noscript>
   <script type="application/ld+json">
   {
@@ -135,8 +136,8 @@
   </script>
 </head>
 <body>
-  <div class="intro-film" id="intro-film" role="dialog" aria-modal="true" aria-label="Welcome to Blue Snake Studio">
-    <video id="intro-video" autoplay playsinline muted preload="metadata">
+  <div class="intro-film" id="intro-film" hidden role="dialog" aria-modal="true" aria-label="Welcome to Blue Snake Studio">
+    <video id="intro-video" playsinline muted preload="metadata">
       <source src="YTShort_20June2026_13_12_14.mp4" type="video/mp4" />
     </video>
     <div class="intro-shade" aria-hidden="true"></div>
@@ -385,29 +386,26 @@
         <button class="brand-mark" id="brand-mark-door" type="button" aria-label="B$S — open the hidden sanctum">B$S</button>
         <a class="brand-copy" href="#start-here" aria-label="Blue Snake Studio — Start Here">Blue $nake Studio <small>Independent creative practice</small></a>
       </span>
-      <div class="mast-actions">
-        <span class="counter" aria-hidden="true"><span id="current-count">01</span> / <span id="total-count">12</span></span>
-        <a class="mast-link" href="start.html">Start here</a>
-        <a class="mast-link" href="proof-wall.html">Proof Wall</a>
-        <a class="mast-link" href="stomps.html">STOMPS</a>
-        <a class="mast-link" href="https://blackwingcrew.netlify.app/" target="_blank" rel="noopener">Music</a>
+      <nav class="mast-actions" aria-label="Quick links">
+        <span class="counter" aria-hidden="true"><span id="current-count">01</span> / <span id="total-count">15</span></span>
+        <a class="mast-link" href="#visual-worlds">Art</a>
+        <a class="mast-link" href="#black-wing-crew">Music</a>
+        <a class="mast-link" href="#games">Games</a>
         <a class="mast-link" href="gov.html">Schools</a>
-        <a class="mast-link" href="print.html">Print</a>
-        <a class="mast-link" href="store.html">Store</a>
-        <a class="mast-link" href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener">@blkck2</a>
-        <button class="print-button" type="button" onclick="window.print()"
-                title="Print or save the full studio overview as a PDF"
-                aria-label="Print the studio overview — opens your print dialog">⎙ Print overview</button>
-      </div>
+        <a class="mast-link" href="mailto:bluesssnakestudio@gmail.com">Contact ↗</a>
+        <button class="explore-toggle" id="explore-toggle" aria-controls="tree-stage" aria-expanded="false" type="button">Explore +</button>
+      </nav>
     </header>
 
     <main class="experience" id="experience">
       <section class="tree-stage" id="tree-stage" aria-label="Studio sections">
         <div class="nav-intro"><span>Explore the studio</span><p>Art, music, education and experimental systems from Frankston, Australia.</p></div>
+        <label class="project-search">Find your way<input id="project-search" type="search" placeholder="Search studio sections…" autocomplete="off" /></label>
+        <p id="search-empty" hidden>No sections found. Try art, music, games or learning.</p>
         <div class="tree" id="tree" role="tablist" aria-orientation="vertical" aria-label="Explore Blue Snake Studio">
           <span class="spine" aria-hidden="true"></span>
         </div>
-        <p class="hint"><span class="hint-key">↑</span><span class="hint-key">↓</span> Navigate</p>
+        <div class="nav-utilities"><a href="proof-wall.html">All projects ↗</a><a href="print.html">Print vault ↗</a><a href="store.html">Store ↗</a><button type="button" id="replay-intro">Watch studio film ↗</button></div>
         <p class="tree-label" aria-hidden="true">EST. FRANKSTON</p>
       </section>
 
