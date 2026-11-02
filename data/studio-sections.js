@@ -306,9 +306,10 @@ window.BSS_STUDIO_SECTIONS = [
     details: [
       'His history predates the name the kids now give the look. He is the original, not a new trend.',
       'Respect the man and the boundaries. This character portrait is not an invitation to approach him.',
-      'The invitation is to the work: open the full character spread, then enter STOMPZ — Such Is Life.'
+      'The invitation is to the work: play MOSS STOMPER, explore the full character spread, or enter STOMPZ — Such Is Life.'
     ],
     links: [
+      { label: 'MOSS STOMPER — Neon Strut', href: 'https://stomps.vercel.app/', className: 'game-link', sub: 'Three buttons. Frankston footwork, signature combos and reactive music.' },
       { label: 'STOMPS — Full character spread', href: 'stomps.html', className: 'album-link', sub: 'Frankston, PFK, the uniform and the walk.' },
       { label: 'STOMPZ — Such Is Life', href: 'https://bss-stompz-such-is-life.themossman.chatgpt.site/', className: 'game-link', sub: 'B$S-sponsored interactive project.' }
     ]
@@ -320,9 +321,10 @@ window.BSS_STUDIO_SECTIONS = [
     eyebrow: 'Play · Explore · Interactive',
     title: 'Games from the studio.',
     statement: 'Playable games and interactive engines from Blue $nake Studio — built in the same mythic universe as the art, music and learning tools. The independent arcade cabinets remain live alongside the portal games.',
-    pageTitle: 'Games — Monkey Invaders, Bubble Hex & the Word Cube · Blue $nake Studio',
-    pageDescription: 'Monkey Invaders, Bubble Hex, the B$S Six-Face Word Cube, Magic Rubix Cube and Moss 60 Oracle Warden — playable browser games from Blue $nake Studio.',
+    pageTitle: 'Games — MOSS STOMPER, Monkey Invaders, Bubble Hex & the Word Cube · Blue $nake Studio',
+    pageDescription: 'MOSS STOMPER, Monkey Invaders, Bubble Hex, the B$S Six-Face Word Cube, Magic Rubix Cube and Moss 60 Oracle Warden — playable browser games from Blue $nake Studio.',
     details: [
+      'MOSS STOMPER — three-button Frankston footwork: stride, stomp and style through The Long Way Home. Build FLOW, land signature combos and make the music respond.',
       'Monkey Invaders survives in two distinct cabinets: the Twin Signal build and the newer Fruitkind cabinet with difficulty modes, power-ups and bosses.',
       'Bubble Hex — trap what is chasing you inside a bubble, then burst it. Chambers, maps and chronicles live inside a gothic landscape cabinet.',
       'B$S Six-Face Word Cube — drag to spin a 3D artwork cube with six word-grid faces. Free in the browser, no login.',
@@ -331,6 +333,7 @@ window.BSS_STUDIO_SECTIONS = [
     ],
     links: [
       // `.game-link` renders its own PLAY chip via CSS, so labels do not repeat it.
+      { label: 'MOSS STOMPER — Neon Strut', href: 'https://stomps.vercel.app/', className: 'game-link', sub: 'Three buttons. Frankston footwork, signature combos and reactive music.' },
       { label: 'Monkey Invaders — Twin Signal', href: 'https://monkey-invaders-enhanced.vercel.app/', className: 'game-link', sub: 'Original restored B$S arcade cabinet.' },
       { label: 'STOMPZ — Such Is Life', href: 'https://bss-stompz-such-is-life.themossman.chatgpt.site/', className: 'game-link', sub: 'B$S sponsored. Original Frankston character.' },
       { label: 'STOMPS — Character introduction', href: 'stomps.html', sub: 'The man, his PFK history, and the movement study.' },

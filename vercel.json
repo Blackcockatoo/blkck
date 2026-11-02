@@ -17,6 +17,7 @@
     { "source": "/art", "destination": "/index.html#visual-worlds", "permanent": true },
     { "source": "/stomps", "destination": "/stomps.html", "permanent": true },
     { "source": "/stompz", "destination": "/stomps.html", "permanent": true },
+    { "source": "/moss-stomper", "destination": "https://stomps.vercel.app/", "permanent": false },
     { "source": "/games", "destination": "/index.html#games", "permanent": true },
     { "source": "/arcade", "destination": "/index.html#games", "permanent": true },
     { "source": "/moss60", "destination": "/index.html#moss60", "permanent": true },
