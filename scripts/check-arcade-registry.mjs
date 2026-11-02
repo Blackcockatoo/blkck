@@ -17,6 +17,7 @@ function assert(condition, message) {
 const projects = require(path.join(ROOT, 'data', 'portfolio-truth.js'));
 const projectIds = new Set(projects.map((project) => project.id));
 assert(projectIds.has('monkey-invaders'), 'Portfolio registry is missing Monkey Invaders.');
+assert(projectIds.has('moss-stomper'), 'Portfolio registry is missing MOSS STOMPER.');
 assert(projectIds.has('bubble-hex'), 'Portfolio registry is missing Bubble Hex.');
 
 const sections = read('data/studio-sections.js');
@@ -24,6 +25,7 @@ for (const requiredText of [
   "slug: 'games'",
   "status: 'Live'",
   'https://monkey-invaders-enhanced.vercel.app/',
+  'https://stomps.vercel.app/',
   'https://bubblehex.vercel.app/',
   'https://www.bluesnakestudios.com/monkey-invaders.html'
 ]) {
@@ -33,6 +35,8 @@ for (const requiredText of [
 const indexHtml = read('index.html');
 for (const requiredText of [
   'Games / Arcade',
+  'MOSS STOMPER — Neon Strut',
+  'https://stomps.vercel.app/',
   'Monkey Invaders — Twin Signal',
   'Bubble Hex',
   'Monkey Invaders — Fruitkind'
@@ -43,6 +47,7 @@ for (const requiredText of [
 const vercel = JSON.parse(read('vercel.json'));
 const redirectBySource = new Map((vercel.redirects || []).map((rule) => [rule.source, rule]));
 const expectedRedirects = new Map([
+  ['/moss-stomper', 'https://stomps.vercel.app/'],
   ['/games', '/index.html#games'],
   ['/arcade', '/index.html#games'],
   ['/monkey-invaders', 'https://monkey-invaders-enhanced.vercel.app/'],
@@ -68,10 +73,12 @@ assert(
 );
 
 const netlifyRedirects = read('_redirects');
-for (const alias of ['/games ', '/arcade ', '/monkey-invaders ', '/bubble-hex ', '/bubblehex ']) {
+for (const alias of ['/moss-stomper ', '/games ', '/arcade ', '/monkey-invaders ', '/bubble-hex ', '/bubblehex ']) {
   assert(netlifyRedirects.includes(alias), `Netlify redirect registry is missing ${alias.trim()}.`);
 }
 
-assert(read('sw.js').includes("moss-tree-v19"), 'Service worker cache was not bumped to moss-tree-v19.');
+assert(read('sw.js').includes("moss-tree-v21"), 'Service worker cache was not bumped to moss-tree-v21.');
+
+assert(read('stomps.html').includes('https://stomps.vercel.app/'), 'Character page must link to the live MOSS STOMPER game.');
 
 console.log('Arcade registry and route configuration verified.');

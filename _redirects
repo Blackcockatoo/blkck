@@ -25,6 +25,7 @@ http://blkck2.com/* https://blkck2.com/:splat 301!
 
 # Standalone B$S arcade cabinets. Temporary redirects keep the blkck2 short
 # links stable if a cabinet moves to a different deployment later.
+/moss-stomper https://stomps.vercel.app/ 302
 /monkey-invaders https://monkey-invaders-enhanced.vercel.app/ 302
 /monkey-invaders-fruitkind https://www.bluesnakestudios.com/monkey-invaders.html 302
 /bubble-hex https://bubblehex.vercel.app/ 302

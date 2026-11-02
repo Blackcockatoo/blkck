@@ -43,6 +43,14 @@
       href: 'https://blackwingcrew.netlify.app/'
     }),
     Object.freeze({
+      id: 'moss-stomper',
+      label: 'MOSS STOMPER — Neon Strut',
+      status: 'Live arcade game',
+      availability: 'Live',
+      desc: 'Three-button Frankston footwork with signature combos, FLOW-reactive music and route mastery grades. Touch, keyboard and gamepad.',
+      href: 'https://stomps.vercel.app/'
+    }),
+    Object.freeze({
       id: 'monkey-invaders',
       label: 'Monkey Invaders',
       status: 'Live arcade game',
