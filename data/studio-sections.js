@@ -21,6 +21,7 @@ window.BSS_STUDIO_SECTIONS = [
       { label: 'Try Meta-Pet', href: 'https://www.bluesnakestudios.com/', className: 'album-link', sub: 'Browser demo. No login.' },
       { label: 'Download Teacher Pack', href: 'https://teachers-secret-cheatsheet.vercel.app/', className: 'album-link', sub: 'Seven printable classroom templates.' },
       { label: 'Enter Black Wing Crew', href: 'https://blackwingcrew.netlify.app/', className: 'album-link', sub: 'Stream the Neon Venom LP.' },
+      { label: 'Enter Kṛṣṇapakṣi', href: 'https://krsna-two.vercel.app/', className: 'album-link', sub: 'The crossing-song, ten visions and the complete devotional work.' },
       { label: 'Open I RAN, LEGO!', href: 'i-ran-lego/', className: 'album-link', sub: 'Full song and synced lyrics. Free to open.' },
       { label: 'Gallery Rooms', href: '#visual-worlds', sub: 'Ten rooms of art and myth.' },
       { label: 'B$S Proof Wall', href: 'proof-wall.html', sub: 'Everything already built.' },
@@ -92,6 +93,28 @@ window.BSS_STUDIO_SECTIONS = [
       { label: 'Watch on YouTube', href: 'https://www.youtube.com/@blkck2' }
     ],
     featuredIds: ['black-wing-cosmic-singing', 'neon-venom-cyberpunk-poster', 'bss-twin-cockatoos-stained-glass', 'neon-venom-enter-dream-qr', 'black-wing-chant-sheet', 'neon-venom-campaign']
+  },
+  {
+    slug: 'krsnapaksi',
+    status: 'Live',
+    label: 'Kṛṣṇapakṣi',
+    eyebrow: 'The devotional work · midnight blue / weathered gold',
+    title: 'The black bird wears the prayer.',
+    statement: 'Kṛṣṇapakṣi — The Fruit of Bhakti gathers the crossing-song, synchronised Sanskrit-style chant and English reading, ten illustrated visions and the complete devotional work by Tom Moss / The Moss Man.',
+    pageTitle: 'Kṛṣṇapakṣi — The Fruit of Bhakti · Blue $nake Studio',
+    pageDescription: 'Enter the Kṛṣṇapakṣi devotional site: listen, sing, explore ten visions, read the English companion and keep the PDF reader.',
+    details: [
+      'Listen and sing with the recording, following lyrics and a paired English translation.',
+      'Explore the sixteen movements, the hidden Mahā-mantra and the illustrated English companion.',
+      'Keep the reader edition, or revisit The Pulse of Krishna from the studio archive.'
+    ],
+    links: [
+      { label: 'Enter Kṛṣṇapakṣi', href: 'https://krsna-two.vercel.app/', className: 'album-link', sub: 'Open the complete listening and reading experience.' },
+      { label: 'Read the English companion', href: 'https://krsna-two.vercel.app/#fruit' },
+      { label: 'Kṛṣṇapakṣi — PDF reader', href: 'https://krsna-two.vercel.app/assets/krsnapaksi-reader.pdf' },
+      { label: 'The Pulse of Krishna — archive PDF', href: 'documents/the-pulse-of-krishna-reader-edition.pdf' }
+    ],
+    featuredIds: ['krishna-bss-portrait', 'krishna-bss-fullbody', 'black-wing-chant-sheet']
   },
   {
     slug: 'i-ran-lego',
