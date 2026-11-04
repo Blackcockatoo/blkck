@@ -106,13 +106,13 @@ window.BSS_STUDIO_SECTIONS = [
     details: [
       'Listen and sing with the recording, following lyrics and a paired English translation.',
       'Explore the sixteen movements, the hidden Mahā-mantra and the illustrated English companion.',
-      'Keep the reader edition, or revisit The Pulse of Krishna from the studio archive.'
+      'Read The Pulse of Krishna: a Moss Man Lila, with Krishna as friend, trickster and companion through numbers, laughter and surrender.'
     ],
     links: [
       { label: 'Enter Kṛṣṇapakṣi', href: 'https://krsna-two.vercel.app/', className: 'album-link', sub: 'Open the complete listening and reading experience.' },
       { label: 'Read the English companion', href: 'https://krsna-two.vercel.app/#fruit' },
       { label: 'Kṛṣṇapakṣi — PDF reader', href: 'https://krsna-two.vercel.app/assets/krsnapaksi-reader.pdf' },
-      { label: 'The Pulse of Krishna — archive PDF', href: 'documents/the-pulse-of-krishna-reader-edition.pdf' }
+      { label: 'The Pulse of Krishna — Moss Man story (PDF)', href: 'documents/the-pulse-of-krishna-reader-edition.pdf' }
     ],
     featuredIds: ['krishna-bss-portrait', 'krishna-bss-fullbody', 'black-wing-chant-sheet']
   },
