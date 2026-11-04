@@ -743,7 +743,7 @@
     tree.querySelectorAll('.node').forEach(node => node.remove());
     const groups = [
       ['Welcome', ['start-here', 'moss-man']],
-      ['Art & sound', ['visual-worlds', 'black-wing-crew', 'i-ran-lego', 'old-vic-state']],
+      ['Art & sound', ['visual-worlds', 'black-wing-crew', 'krsnapaksi', 'i-ran-lego', 'old-vic-state']],
       ['Play & learn', ['games', 'stomps', 'meta-pet', 'teacher-tools', 'moss60']],
       ['Place & ideas', ['frankston-fuji', 'frankston-2035', 'black-omen-waahn', 'print-street-pack']]
     ];
