@@ -26,12 +26,12 @@
     },
     {
       "source": "/gallery",
-      "destination": "/index.html#visual-worlds",
+      "destination": "/visual-worlds/",
       "permanent": true
     },
     {
       "source": "/art",
-      "destination": "/index.html#visual-worlds",
+      "destination": "/visual-worlds/",
       "permanent": true
     },
     {
@@ -50,18 +50,8 @@
       "permanent": false
     },
     {
-      "source": "/games",
-      "destination": "/index.html#games",
-      "permanent": true
-    },
-    {
       "source": "/arcade",
-      "destination": "/index.html#games",
-      "permanent": true
-    },
-    {
-      "source": "/moss60",
-      "destination": "/index.html#moss60",
+      "destination": "/games/",
       "permanent": true
     },
     {
@@ -268,6 +258,24 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/opt/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/share/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
         }
       ]
     }

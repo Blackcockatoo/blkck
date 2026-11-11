@@ -8,11 +8,9 @@ http://blkck2.com/* https://blkck2.com/:splat 301!
 /professional /gov.html 301
 
 # Friendly aliases — commonly guessed URLs must never 404
-/gallery /index.html#visual-worlds 301
-/art /index.html#visual-worlds 301
-/games /index.html#games 301
-/arcade /index.html#games 301
-/moss60 /index.html#moss60 301
+/gallery /visual-worlds/ 301
+/art /visual-worlds/ 301
+/arcade /games/ 301
 /music /black-wing-crew.html 301
 /lore /field-guide.html 301
 /semantic-sovereignty /documents/oss-734g-known-unknowns-register.html 301

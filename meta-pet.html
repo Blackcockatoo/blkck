@@ -4,17 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Meta-Pet — Privacy-First Learning Companion · Blue $nake Studio</title>
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:width" content="1200" />
   <meta name="description" content="Meta-Pet is a working, local-first learning companion prototype. School routes have no advertising or behavioural tracking, and no student account is required by default." />
   <link rel="canonical" href="https://blkck2.com/meta-pet.html" />
   <meta property="og:title" content="Meta-Pet — Privacy-First Learning Companion" />
   <meta property="og:description" content="A working, local-first learning companion prototype. No advertising or behavioural tracking on school routes; no student account required by default." />
-  <meta property="og:image" content="https://blkck2.com/12_meta_pet/meta-pet-kid-with-feather.jpg" />
+  <meta property="og:image" content="https://blkck2.com/share/meta-pet.jpg" />
   <meta property="og:url" content="https://blkck2.com/meta-pet.html" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Meta-Pet — Privacy-First Learning Companion" />
   <meta name="twitter:description" content="Working local-first prototype. No advertising or behavioural tracking on school routes; no student account required by default." />
-  <meta name="twitter:image" content="https://blkck2.com/12_meta_pet/meta-pet-kid-with-feather.jpg" />
+  <meta name="twitter:image" content="https://blkck2.com/share/meta-pet.jpg" />
   <meta name="theme-color" content="#04101d" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -72,6 +74,9 @@
     @media (max-width: 560px) { .qa-grid { grid-template-columns: 1fr; } }
     @media print { .pilot-status-box, .qa-card { border-color: #ccc; background: #f9f9f9; } .qa-card h3, .pilot-status-box strong { color: #111; } }
   </style>
+<!-- bss:head -->
+<link rel="stylesheet" href="/worlds.css">
+<!-- /bss:head -->
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -307,5 +312,27 @@
   </div>
   <script src="data/portfolio-truth.js"></script>
   <script src="data/portfolio-status.js"></script>
+<!-- bss:footer -->
+<div class="bss-embed" style="padding:0 clamp(16px,4vw,40px) 48px">
+<a class="bss-next" href="/teacher-tools.html" data-bss-reveal>
+  <div><small>Next world · Learning &amp; Civic</small><strong>Teacher Tools</strong><span>Printable, Victoria-aware classroom templates.</span></div>
+  <i aria-hidden="true">→</i>
+</a>
+<section class="bss-signal" aria-labelledby="signal-page-title" data-bss-reveal>
+  <p class="bss-signal-eyebrow">Civilian Signal · B$S dispatch</p>
+  <h2 id="signal-page-title">Join the <em>Civilian Signal</em></h2>
+  <p>New songs, prints, drops and world openings from Blue $nake Studio — sent straight from Frankston. No spam. Leave any time.</p>
+  <form action="mailto:bluesssnakestudio@gmail.com?subject=Join%20the%20Civilian%20Signal" method="post" enctype="text/plain" data-bss-signal>
+    <label for="signal-page-email">Email address</label>
+    <input id="signal-page-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
+    <button type="submit">Join the Signal</button>
+  </form>
+  <p class="bss-signal-status" role="status" aria-live="polite"></p>
+  <p class="bss-signal-note">One email when something new is ready. Your address is never sold or shared.</p>
+</section>
+</div>
+<script src="/data/site-config.js" defer></script>
+<script src="/bss-components.js" defer></script>
+<!-- /bss:footer -->
 </body>
 </html>
