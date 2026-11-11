@@ -77,7 +77,8 @@ for (const alias of ['/moss-stomper ', '/games ', '/arcade ', '/monkey-invaders 
   assert(netlifyRedirects.includes(alias), `Netlify redirect registry is missing ${alias.trim()}.`);
 }
 
-assert(read('sw.js').includes("moss-tree-v22"), 'Service worker cache was not bumped to moss-tree-v22.');
+const swCacheVersion = Number((read('sw.js').match(/moss-tree-v(\d+)/) || [])[1] || 0);
+assert(swCacheVersion >= 22, 'Service worker cache must be at least moss-tree-v22.');
 
 assert(read('stomps.html').includes('https://stomps.vercel.app/'), 'Character page must link to the live MOSS STOMPER game.');
 

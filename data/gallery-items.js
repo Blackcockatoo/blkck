@@ -677,6 +677,17 @@ window.BSS_GALLERY_ITEMS = [
     description: 'A cinematic taiko performance beneath Fuji, bringing the rhythm and black-butterfly imagery of the sister-city project to life.'
   },
   {
+    id: 'old-vic-collective-cultural-defence',
+    title: 'Old Vic State — Collective Cultural Defence',
+    series: 'Old Vic State',
+    medium: 'Digital banner artwork',
+    type: 'Campaign banner',
+    year: '2026',
+    image: '19_old_vic_state/collective-cultural-defence.jpg',
+    tags: ['Old Vic State', 'B$S Original', 'black cockatoos', 'Melbourne', 'banner'],
+    description: 'A carved bronze-gold crest banner: crown and B$S monogram between two black cockatoos, Union Jack and Southern Cross in the storm, and a firelit Melbourne of Flinders Street, the Yarra and the Shrine below.'
+  },
+  {
     id: 'old-vic-command-cycle',
     title: 'Black Omen — The Command Cycle',
     series: 'Old Vic State',
