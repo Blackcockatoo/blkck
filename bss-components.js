@@ -28,12 +28,12 @@
         form.appendChild(hidden);
       });
     } else if (note) {
-      note.textContent = 'Online sign-up opens soon. Until then, joining sends one short email to the studio — no spam, leave any time.';
+      note.textContent = form.dataset.msgNoteFallback || 'Online sign-up opens soon. Until then, joining sends one short email to the studio — no spam, leave any time.';
     }
     form.addEventListener('submit', function (event) {
       if (!input.value || !input.checkValidity()) return;
       if (live) {
-        if (status) status.textContent = 'Signal received. Check your inbox to confirm.';
+        if (status) status.textContent = form.dataset.msgStatusLive || 'Signal received. Check your inbox to confirm.';
         setTimeout(function () { form.reset(); }, 400);
         return;
       }
@@ -42,7 +42,7 @@
       var href = 'mailto:' + to + '?subject=' + encodeURIComponent('Join the Civilian Signal') +
         '&body=' + encodeURIComponent('Please add ' + input.value + ' to the Civilian Signal list.\n\nSent from ' + location.href);
       window.location.href = href;
-      if (status) status.textContent = 'Your email app is opening — press send and you’re on the list.';
+      if (status) status.textContent = form.dataset.msgStatusMail || 'Your email app is opening — press send and you’re on the list.';
     });
   }
 
@@ -97,8 +97,9 @@
     });
     root.querySelector('.bss-prev').addEventListener('click', function () { load(index - 1, true); });
     root.querySelector('.bss-next-track').addEventListener('click', function () { load(index + 1, true); });
-    audio.addEventListener('play', function () { root.classList.add('is-playing'); play.textContent = '❚❚'; play.setAttribute('aria-label', 'Pause'); });
-    audio.addEventListener('pause', function () { root.classList.remove('is-playing'); play.textContent = '►'; play.setAttribute('aria-label', 'Play'); });
+    var labelPlay = root.dataset.labelPlay || 'Play', labelPause = root.dataset.labelPause || 'Pause';
+    audio.addEventListener('play', function () { root.classList.add('is-playing'); play.textContent = '❚❚'; play.setAttribute('aria-label', labelPause); });
+    audio.addEventListener('pause', function () { root.classList.remove('is-playing'); play.textContent = '►'; play.setAttribute('aria-label', labelPlay); });
     audio.addEventListener('ended', function () { load(index + 1, true); });
     audio.addEventListener('loadedmetadata', function () { dur.textContent = fmt(audio.duration); });
     audio.addEventListener('timeupdate', function () {
@@ -132,8 +133,9 @@
       btn.target = '_blank';
       btn.rel = 'noopener';
       btn.classList.add('is-checkout');
-      btn.innerHTML = (p.buyLabel || 'Buy now') + ' &#8594;';
-      btn.setAttribute('aria-label', (p.buyLabel || 'Buy now') + ': ' + p.title + ' (secure checkout, opens in a new tab)');
+      var label = btn.dataset.buyLabel || p.buyLabel || 'Buy now';
+      btn.innerHTML = label + ' &#8594;';
+      btn.setAttribute('aria-label', label + ': ' + p.title + (btn.dataset.buyLabel ? '' : ' (secure checkout, opens in a new tab)'));
     });
   }
 
@@ -148,6 +150,37 @@
     els.forEach(function (el) { el.classList.add('bss-reveal'); io.observe(el); });
   }
 
+  /* ── Languages: remember the choice; offer ja/hi to matching browsers ── */
+  var LANG_OFFER = {
+    ja: { text: 'このサイトは日本語でもご覧いただけます。', go: '日本語で見る', close: '閉じる' },
+    hi: { text: 'यह साइट हिन्दी में भी उपलब्ध है।', go: 'हिन्दी में देखें', close: 'बंद करें' }
+  };
+  function store(key, value) { try { if (value === undefined) return localStorage.getItem(key); localStorage.setItem(key, value); } catch (e) { return null; } }
+  function initLang() {
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[data-bss-lang]');
+      if (a) store('bss-lang', a.dataset.bssLang);
+    });
+    var pageLang = (document.documentElement.lang || 'en').slice(0, 2);
+    if (pageLang !== 'en' || store('bss-lang') || store('bss-lang-dismissed')) return;
+    var prefs = (navigator.languages || [navigator.language || '']).map(function (l) { return String(l).slice(0, 2).toLowerCase(); });
+    var want = null;
+    for (var i = 0; i < prefs.length && !want; i++) { if (prefs[i] === 'en') return; if (LANG_OFFER[prefs[i]]) want = prefs[i]; }
+    var alt = want && document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
+    var href = alt ? new URL(alt.href).pathname : (want ? '/' + want + '/' : null);
+    if (!want || !href) return;
+    var o = LANG_OFFER[want];
+    var toast = document.createElement('div');
+    toast.className = 'bss-lang-toast'; toast.lang = want; toast.setAttribute('role', 'region'); toast.setAttribute('aria-label', o.text);
+    toast.innerHTML = '<span></span><a data-bss-lang="' + want + '" hreflang="' + want + '"></a><button type="button">×</button>';
+    toast.querySelector('span').textContent = o.text;
+    toast.querySelector('a').textContent = o.go;
+    toast.querySelector('a').href = href;
+    toast.querySelector('button').setAttribute('aria-label', o.close);
+    toast.querySelector('button').addEventListener('click', function () { store('bss-lang-dismissed', '1'); toast.remove(); });
+    document.body.appendChild(toast);
+  }
+
   function init(scope) {
     scope = scope || document;
     scope.querySelectorAll('form[data-bss-signal]').forEach(initSignal);
@@ -155,7 +188,7 @@
     initReveal(scope);
   }
   window.BSS_COMPONENTS = { init: init };
-  function boot() { init(document); initStore(); }
+  function boot() { init(document); initStore(); initLang(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, { once: true });
   else boot();
 })();

@@ -3,9 +3,11 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 export const SITE = 'https://blkck2.com';
+export const LANGS = ['ja', 'hi'];
 const read = (rel) => readFileSync(path.join(ROOT, rel), 'utf8');
 
 export function loadSiteData() {
@@ -30,6 +32,17 @@ export function loadSiteData() {
     manifest: window.BSS_IMAGE_MANIFEST || {},
     worldMap: window.BSS_WORLD_MAP,
     tracks: window.BSS_TRACKS || [],
+    storeProducts: window.BSS_STORE_PRODUCTS || [],
     facts
   };
+}
+
+// Translations (data/i18n/<lang>.js, UMD) for the localized /ja/ and /hi/ pages.
+export function loadI18n() {
+  const require = createRequire(import.meta.url);
+  return Object.fromEntries(LANGS.map((l) => {
+    const file = path.join(ROOT, 'data', 'i18n', `${l}.js`);
+    delete require.cache[file];
+    return [l, require(file)];
+  }));
 }
