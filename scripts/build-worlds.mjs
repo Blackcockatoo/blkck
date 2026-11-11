@@ -307,8 +307,13 @@ function worldPage(world, lang = 'en') {
   const factRows = factsOf(world.slug, lang);
   const details = lang === 'en' ? (s.details || []).map((d) => ({ text: d })) : s.details;
   const links = (s.links || []).map((l, i) => {
-    const href = lhref(abs(l.href).replace(/^\/#/, '/#'), lang);
-    return `<li><a class="bss-btn${i === 0 ? ' is-primary' : ''}" href="${esc(href)}"${extAttrs(l.href)}${enAttr(lang, l.en)}>${esc(l.label)}${isExternal(l.href) ? ' ↗' : ' →'}</a></li>`;
+    const original = abs(l.href).replace(/^\/#/, '/#');
+    let href = lhref(original, lang);
+    // A link to this world's own standalone experience (the I RAN, LEGO! living book, the STOMPS
+    // spread…) must keep opening it, not loop back to the localized overview it sits on.
+    const opensEnglish = lang !== 'en' && href === alts[lang];
+    if (opensEnglish) href = original;
+    return `<li><a class="bss-btn${i === 0 ? ' is-primary' : ''}" href="${esc(href)}"${extAttrs(l.href)}${enAttr(lang, l.en)}${opensEnglish ? ' hreflang="en"' : ''}>${esc(l.label)}${isExternal(l.href) ? ' ↗' : ' →'}</a></li>`;
   }).join('');
   const jsonld = {
     '@context': 'https://schema.org',

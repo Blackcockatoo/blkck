@@ -60,6 +60,8 @@ for (const lang of LANGS) {
     const html = read(file);
     localized++;
     const canonical = `${SITE}/${lang}/${rel}`;
+    const heroLinks = html.match(/<ul class="bss-links">([\s\S]*?)<\/ul>/)?.[1] || '';
+    assert(!heroLinks.includes(`href="/${lang}/${rel}"`), `${label}: hero link points back at its own page`);
     assert(html.startsWith(`<!doctype html>\n<html lang="${lang}">`), `${label}: lang attribute`);
     assert(html.includes(`<link rel="canonical" href="${canonical}">`), `${label}: canonical`);
     assert(html.includes(`hreflang="${lang}" href="${canonical}"`) && html.includes('hreflang="en"') && html.includes('hreflang="x-default"'), `${label}: hreflang alternates`);
