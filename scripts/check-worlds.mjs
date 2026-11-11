@@ -64,6 +64,8 @@ for (const lang of LANGS) {
       assert(html.includes('id="pack-title"'), `${label}: Teacher's Secret Cheatsheet menu missing`);
       assert((html.match(/<ol class="bss-details bss-steps bss-pack-tools">([\s\S]*?)<\/ol>/)?.[1].match(/<li>/g) || []).length === 7, `${label}: pack should list 7 tools`);
     }
+    const heroLinks = html.match(/<ul class="bss-links">([\s\S]*?)<\/ul>/)?.[1] || '';
+    assert(!heroLinks.includes(`href="/${lang}/${rel}"`), `${label}: hero link points back at its own page`);
     assert(html.startsWith(`<!doctype html>\n<html lang="${lang}">`), `${label}: lang attribute`);
     assert(html.includes(`<link rel="canonical" href="${canonical}">`), `${label}: canonical`);
     assert(html.includes(`hreflang="${lang}" href="${canonical}"`) && html.includes('hreflang="en"') && html.includes('hreflang="x-default"'), `${label}: hreflang alternates`);
