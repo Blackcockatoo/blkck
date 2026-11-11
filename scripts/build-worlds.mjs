@@ -299,6 +299,25 @@ function artFigure(item, lang = 'en') {
   return `<figure class="bss-art"><a href="/${esc(item.image)}" target="_blank" rel="noopener" aria-label="${esc(fill(UI[lang].openFull, { title: item.title }))}">${picture(item.image, alt, { sizes: '(max-width: 620px) 100vw, (max-width: 1100px) 50vw, 380px' })}</a><figcaption><strong${en}>${esc(item.title)}</strong><span${en}>${esc([item.medium, item.year].filter(Boolean).join(' · '))}</span>${blurb}</figcaption></figure>`;
 }
 
+const TEACHER_PACK_URL = 'https://teachers-secret-cheatsheet.vercel.app/';
+/** The Teacher's Secret Cheatsheet menu (seven tools, audiences, principles) on /ja/ and /hi/ Teacher Tools. English keeps teacher-tools.html. */
+function teacherPackHtml(lang) {
+  const p = lang === 'en' ? null : I18N[lang].teacherPack;
+  if (!p) return '';
+  const rows = (list) => list.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('');
+  return `<section class="bss-section bss-pack" aria-labelledby="pack-title">
+    <p class="bss-eyebrow">${esc(p.eyebrow)}</p>
+    <h2 id="pack-title">${esc(p.title)}</h2>
+    <p class="bss-statement">${esc(p.intro)}</p>
+    <ol class="bss-details bss-steps bss-pack-tools">${p.tools.map(([k, v]) => `<li><strong>${esc(k)}</strong> ${esc(v)}</li>`).join('')}</ol>
+    <ul class="bss-links"><li><a class="bss-btn is-primary" href="${TEACHER_PACK_URL}" target="_blank" rel="noopener" hreflang="en">${esc(p.open)} ↗</a></li><li><a class="bss-btn" href="/teacher-tools.html" hreflang="en">${esc(UI[lang].englishPage)}</a></li></ul>
+    <p class="bss-pack-note">${esc(p.packNote)}</p>
+  </section>
+  <section class="bss-section" aria-labelledby="pack-who-title"><h2 id="pack-who-title">${esc(p.whoTitle)}</h2><dl class="bss-facts">${rows(p.who)}</dl></section>
+  <section class="bss-section" aria-labelledby="pack-how-title"><h2 id="pack-how-title">${esc(p.howTitle)}</h2><dl class="bss-facts">${rows(p.how)}</dl></section>
+  <section class="bss-section" aria-labelledby="pack-bundle-title"><h2 id="pack-bundle-title">${esc(p.bundleTitle)}</h2><p>${esc(p.bundle)}</p><ul class="bss-links"><li><a class="bss-btn" href="${pre(lang)}/meta-pet/">Meta-Pet →</a></li></ul><p class="bss-pack-note">${esc(p.disclaimer)}</p></section>`;
+}
+
 function worldPage(world, lang = 'en') {
   const s = sec(world.slug, lang);
   if (!s) throw new Error(`No studio section for world ${world.slug}`);
@@ -357,7 +376,7 @@ ${topbar(lang === 'en' ? world.href : alts[lang], lang, alts)}
     </div>
     ${cover ? `<figure class="bss-hero-art">${picture(cover.image, descOf(cover, lang) ? `${cover.title} — ${descOf(cover, lang)}` : cover.title, { sizes: '(max-width: 860px) 100vw, 50vw', eager: true })}</figure>` : ''}
   </section>
-  ${details.length ? `<section class="bss-section" aria-labelledby="about-title"><h2 id="about-title">${esc(fill(u.inside, { label: s.label }))}</h2><ul class="bss-details">${details.map((d) => `<li${enAttr(lang, d.en)}>${esc(d.text)}</li>`).join('')}</ul></section>` : ''}
+  ${world.slug === 'teacher-tools' && lang !== 'en' ? teacherPackHtml(lang) + '\n  ' : ''}${details.length ? `<section class="bss-section" aria-labelledby="about-title"><h2 id="about-title">${esc(fill(u.inside, { label: s.label }))}</h2><ul class="bss-details">${details.map((d) => `<li${enAttr(lang, d.en)}>${esc(d.text)}</li>`).join('')}</ul></section>` : ''}
   ${factRows.length ? `<section class="bss-section" aria-labelledby="facts-title"><h2 id="facts-title">${esc(u.glance)}</h2><dl class="bss-facts">${factRows.map((r) => `<div><dt>${esc(r.k)}</dt><dd${enAttr(lang, r.en)}>${esc(r.v)}</dd></div>`).join('')}</dl></section>` : ''}
   ${gallery.length ? `<section class="bss-section" aria-labelledby="works-title"><h2 id="works-title">${esc(u.works)}</h2><div class="bss-gallery">${gallery.map((i) => artFigure(i, lang)).join('\n')}</div></section>` : ''}
   ${portalNote}

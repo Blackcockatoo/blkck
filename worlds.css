@@ -316,3 +316,7 @@ html[lang="ja"] body *:not(:lang(en)) { font-style: normal; }
   .masthead .brand-copy { font-size: 10px; letter-spacing: .1em; }
 }
 @media (max-width: 400px) { .masthead .brand-copy { display: none; } }
+/* Teacher's Secret Cheatsheet menu on /ja/ and /hi/ Teacher Tools */
+.bss-pack .bss-pack-tools li strong { display: block; margin-bottom: 4px; color: var(--bss-gold); }
+.bss-pack-note { margin-top: 14px; color: var(--bss-muted); font-size: 13px; }
+html[lang="ja"] .bss-facts dt { font-size: 12px; }
