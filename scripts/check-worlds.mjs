@@ -60,6 +60,10 @@ for (const lang of LANGS) {
     const html = read(file);
     localized++;
     const canonical = `${SITE}/${lang}/${rel}`;
+    if (key === 'teacher-tools') {
+      assert(html.includes('id="pack-title"'), `${label}: Teacher's Secret Cheatsheet menu missing`);
+      assert((html.match(/<ol class="bss-details bss-steps bss-pack-tools">([\s\S]*?)<\/ol>/)?.[1].match(/<li>/g) || []).length === 7, `${label}: pack should list 7 tools`);
+    }
     assert(html.startsWith(`<!doctype html>\n<html lang="${lang}">`), `${label}: lang attribute`);
     assert(html.includes(`<link rel="canonical" href="${canonical}">`), `${label}: canonical`);
     assert(html.includes(`hreflang="${lang}" href="${canonical}"`) && html.includes('hreflang="en"') && html.includes('hreflang="x-default"'), `${label}: hreflang alternates`);

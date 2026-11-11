@@ -290,3 +290,8 @@ html[lang="hi"] .bss-section > h2, html[lang="hi"] .bss-next strong { line-heigh
 html[lang="ja"] body *:not(:lang(en)) { font-style: normal; }
 @media (max-width: 940px) { .bss-mast-lang { gap: 8px; margin-right: 6px; font-size: 11px; white-space: nowrap; } }
 @media (max-width: 440px) { .masthead .brand-copy { font-size: 10px; letter-spacing: .12em; } .bss-mast-lang { flex-direction: column; gap: 4px; font-size: 10px; line-height: 1.2; } }
+
+/* Teacher's Secret Cheatsheet menu on /ja/ and /hi/ Teacher Tools */
+.bss-pack .bss-pack-tools li strong { display: block; margin-bottom: 4px; color: var(--bss-gold); }
+.bss-pack-note { margin-top: 14px; color: var(--bss-muted); font-size: 13px; }
+html[lang="ja"] .bss-facts dt { font-size: 12px; }
