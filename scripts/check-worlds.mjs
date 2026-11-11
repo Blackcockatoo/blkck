@@ -68,6 +68,13 @@ for (const lang of LANGS) {
     assert(html.includes(`content="${SITE}/share/${lang}/${key}.jpg"`) && existsSync(path.join(ROOT, 'share', lang, `${key}.jpg`)), `${label}: localized share card`);
     assert(html.includes('fonts.googleapis.com'), `${label}: ${lang} webfont link`);
     assert(html.includes('class="bss-lang"'), `${label}: language switcher`);
+    // Never trap anyone: an English escape in the sticky top bar and again in the footer, each labelled "English", plus an obvious current marker.
+    const switchers = html.match(/<nav class="bss-lang[^"]*"[\s\S]*?<\/nav>/g) || [];
+    assert(switchers.length >= 2 && html.includes('class="bss-lang bss-lang-foot"'), `${label}: top-bar and footer language switchers`);
+    for (const nav of switchers) {
+      assert(nav.includes('class="bss-globe"') && /data-bss-lang="en"[^>]*>.*?English<\/small>/.test(nav), `${label}: switcher has globe and English escape`);
+      assert(new RegExp(`data-bss-lang="${lang}" aria-current="true"`).test(nav), `${label}: switcher marks current language`);
+    }
     assert(html.includes('data-bss-signal'), `${label}: Civilian Signal form`);
     assert(!/undefined|\[object Object\]|\{label\}|\{title\}|\{price\}/.test(html), `${label}: unfilled template text`);
     assert(!/<script(?![^>]*(src=|ld\+json))/.test(html), `${label}: inline script found`);
@@ -81,6 +88,7 @@ assert(index.includes(`hreflang="ja" href="${SITE}/ja/"`) && index.includes(`hre
 assert(index.includes('content="https://blkck2.com/share/home.jpg"'), 'home og:image is not the 1200x630 card');
 assert(index.includes('<!-- bss:noscript -->') && index.includes('bss-worldmap'), 'home <noscript> world map missing');
 for (const f of ['data/components.js', 'data/site-config.js', 'bss-components.js', 'worlds.css']) assert(index.includes(f), `index.html does not load ${f}`);
+assert(index.includes('class="bss-lang bss-lang-mast"') && index.includes('class="bss-lang bss-lang-foot"'), 'index.html: masthead and footer language switchers');
 
 const store = read('store.html');
 const ids = new Set(((await import(path.join(ROOT, 'data', 'store-products.js'))).default || []).map((p) => p.id));

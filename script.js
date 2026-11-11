@@ -489,8 +489,12 @@
   }
 
   function panelFooter() {
+    // Footer copy of the language switcher (same build-generated markup as the masthead one).
+    const mastLang = document.querySelector('.bss-lang-mast');
+    const footLang = mastLang ? mastLang.outerHTML.replace('bss-lang bss-lang-mast', 'bss-lang bss-lang-foot') : '';
     return `
       <footer class="panel-footer" role="contentinfo">
+        ${footLang}
         <p class="footer-brand">Created by <strong>The Moss Man</strong> / <strong>Blue $nake Studio</strong> — <a href="https://blkck2.com/">blkck2.com</a> — <a href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener noreferrer">@blkck2</a></p>
         <p class="footer-contact"><a href="mailto:bluesssnakestudio@gmail.com">bluesssnakestudio@gmail.com</a> · <a href="mailto:blkck2@gmail.com">blkck2@gmail.com</a></p>
       </footer>

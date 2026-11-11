@@ -73,6 +73,10 @@ const UI_EN = {
   footer: { line: '<strong>Blue $nake Studio</strong> · The Moss Man · Frankston, Victoria, Australia', press: 'Press kit', guide: 'Field guide', schools: 'Schools &amp; councils', privacy: 'Privacy' }
 };
 const LANG_NAMES = { en: 'EN', ja: '日本語', hi: 'हिन्दी' };
+const LANG_ENGLISH = { en: 'English', ja: 'Japanese', hi: 'Hindi' };
+// Always multilingual, so someone stuck in the wrong language can still read what this control is.
+const LANG_ARIA = 'Language · 言語 · भाषा';
+const GLOBE = '<svg class="bss-globe" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3C9.5 5.6 8.2 8.6 8.2 12s1.3 6.4 3.8 9"/></g></svg>';
 const FONT_CSS = {
   ja: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@500;700&display=swap',
   hi: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap'
@@ -129,8 +133,10 @@ const STORE_ALTS = altsFor('/store.html', (l) => `/${l}/store/`);
 function hreflangLinks(alts, indent = '') {
   return [...Object.entries(alts).map(([l, p]) => `<link rel="alternate" hreflang="${l}" href="${SITE}${p}">`), `<link rel="alternate" hreflang="x-default" href="${SITE}${alts.en}">`].join('\n' + indent);
 }
-function langSwitch(alts, lang, cls = 'bss-lang') {
-  return `<nav class="${cls}" aria-label="${esc(UI[lang].langLabel)}">${Object.entries(alts).map(([l, p]) => `<a href="${esc(p)}" hreflang="${l}" lang="${l}" data-bss-lang="${l}"${l === lang ? ' aria-current="true"' : ''}>${LANG_NAMES[l]}</a>`).join('')}</nav>`;
+/** Globe + one pill per language: its own script on top, the English name under it. The current one is filled gold with a tick. */
+export function langSwitch(alts, lang, cls = 'bss-lang') {
+  const pills = Object.entries(alts).map(([l, p]) => `<a href="${esc(p)}" hreflang="${l}" lang="${l}" data-bss-lang="${l}"${l === lang ? ' aria-current="true"' : ''}><b>${LANG_NAMES[l]}</b><small lang="en">${LANG_ENGLISH[l]}</small></a>`).join('');
+  return `<nav class="${cls}" aria-label="${LANG_ARIA}">${GLOBE}${pills}</nav>`;
 }
 
 
@@ -269,10 +275,10 @@ function topbar(current, lang = 'en', alts = null) {
 </header>`;
 }
 
-function footer(lang = 'en') {
+function footer(lang = 'en', alts = null) {
   const f = UI[lang].footer;
   const p = pre(lang);
-  return `<footer class="bss-footer">
+  return `<footer class="bss-footer">${alts ? '\n  ' + langSwitch(alts, lang, 'bss-lang bss-lang-foot') : ''}
   <p>${f.line}</p>
   <p><a href="${p}/">${esc(UI[lang].nav.portal)}</a> · <a href="${lang === 'en' ? '/store.html' : p + '/store/'}">${esc(UI[lang].nav.store)}</a> · <a href="/press-kit.html">${f.press}</a> · <a href="/field-guide.html">${f.guide}</a> · <a href="/gov.html">${f.schools}</a> · <a href="/privacy-policy.html">${f.privacy}</a> · <a href="https://www.youtube.com/@blkck2" target="_blank" rel="noopener">YouTube @blkck2</a> · <a href="mailto:bluesssnakestudio@gmail.com">bluesssnakestudio@gmail.com</a></p>
 </footer>`;
@@ -359,7 +365,7 @@ ${topbar(lang === 'en' ? world.href : alts[lang], lang, alts)}
 ${world.track === 'music' ? playerHtml('radio-' + world.slug, lang) : ''}
 ${nextHtml(world.slug, lang)}
 ${signalHtml('signal-' + world.slug, lang)}
-${footer(lang)}
+${footer(lang, alts)}
 ${scripts}
 </body>
 </html>
@@ -410,7 +416,7 @@ ${topbar(`/${lang}/`, lang, HOME_ALTS)}
 </main>
 ${playerHtml('radio-home', lang)}
 ${signalHtml('signal-home', lang)}
-${footer(lang)}
+${footer(lang, HOME_ALTS)}
 ${scripts}
 </body>
 </html>
@@ -476,7 +482,7 @@ ${cards}
   <p class="bss-portal-note"><a href="/store.html" hreflang="en">${esc(u.englishPage)}</a></p>
 </main>
 ${signalHtml('signal-store', lang)}
-${footer(lang)}
+${footer(lang, STORE_ALTS)}
 ${scripts}
 </body>
 </html>
@@ -506,7 +512,7 @@ function decorateExisting(file, { world, shareKey, player = false, store = false
   const full = path.join(ROOT, file);
   let html = readFileSync(full, 'utf8');
   const blocks = [];
-  if (alts) blocks.push(langSwitch(alts, 'en', 'bss-lang bss-lang-bar'));
+  if (alts) blocks.push(langSwitch(alts, 'en', 'bss-lang bss-lang-bar'), langSwitch(alts, 'en', 'bss-lang bss-lang-float'));
   if (player) blocks.push(playerHtml('radio-page'));
   if (world) blocks.push(nextHtml(world));
   blocks.push(signalHtml('signal-page'));
@@ -588,6 +594,8 @@ for (const file of ['store.html', 'stomps.html', 'krsnapaksi-chant.html', 'frank
   const html = readFileSync(file, 'utf8');
   let out = replaceBlock(html, '<!-- bss:noscript -->', '<!-- /bss:noscript -->', worldMapHtml() + '\n' + signalHtml('signal-noscript'), '<!-- CONTACT / FOOTER -->');
   out = replaceBlock(out, '<!-- bss:hreflang -->', '<!-- /bss:hreflang -->', hreflangLinks(HOME_ALTS), '</head>');
+  out = replaceBlock(out, '<!-- bss:mast-lang -->', '<!-- /bss:mast-lang -->', langSwitch(HOME_ALTS, 'en', 'bss-lang bss-lang-mast'), '<!-- bss:mast-lang-missing -->');
+  out = replaceBlock(out, '<!-- bss:foot-lang -->', '<!-- /bss:foot-lang -->', langSwitch(HOME_ALTS, 'en', 'bss-lang bss-lang-foot'), '<!-- bss:foot-lang-missing -->');
   writeFileSync(file, out);
 }
 
