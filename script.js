@@ -489,9 +489,13 @@
   }
 
   function panelFooter() {
-    // Footer copy of the language switcher (same build-generated markup as the masthead one).
-    const mastLang = document.querySelector('.bss-lang-mast');
-    const footLang = mastLang ? mastLang.outerHTML.replace('bss-lang bss-lang-mast', 'bss-lang bss-lang-foot') : '';
+    // Quiet footer row of language links, built from the masthead globe menu (same build-generated links).
+    const mastLinks = [...document.querySelectorAll('.bss-langmenu-mast a[data-bss-lang]')];
+    const footLang = mastLinks.length ? `<nav class="bss-lang-foot" aria-label="Language · 言語 · भाषा">${mastLinks.map((a) => {
+      const l = a.dataset.bssLang;
+      const name = l === 'en' ? 'English' : (a.querySelector('b')?.textContent || l);
+      return `<a href="${escapeHtml(a.getAttribute('href'))}" hreflang="${l}" lang="${l}" data-bss-lang="${l}"${a.hasAttribute('aria-current') ? ' aria-current="true"' : ''}>${escapeHtml(name)}</a>`;
+    }).join('')}</nav>` : '';
     return `
       <footer class="panel-footer" role="contentinfo">
         ${footLang}
