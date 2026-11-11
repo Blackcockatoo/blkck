@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Render the 1200x630 gold-on-black share cards in share/<key>.jpg.
+"""Render the 1200x630 gold-on-black share cards in share/<key>.jpg (and share/<lang>/<key>.jpg).
 
 Spec comes from `node scripts/share-spec.mjs` (worlds + home + store).
-Fonts: Gelasio (Georgia-metric serif, matches the site's Georgia headings) and Inter.
+Fonts: Gelasio (Georgia-metric serif, matches the site's Georgia headings) and Inter;
+Noto Serif/Sans CJK JP for Japanese, Noto Serif/Sans Devanagari for Hindi (needs Pillow with raqm).
 Run: python3 scripts/make-share-cards.py
 """
 import io, json, subprocess, zipfile
@@ -27,10 +28,21 @@ def find_font(name):
 SERIF = find_font("Gelasio-VariableFont_wght.ttf")
 SERIF_I = find_font("Gelasio-Italic-VariableFont_wght.ttf")
 SANS = find_font("Inter-VariableFont_opsz,wght.ttf")
+FONTSETS = {"en": {"serif": (SERIF, 0), "serif_i": (SERIF_I, 0), "sans": (SANS, 0), "track": True}}
+try:
+    FONTSETS["ja"] = {"serif": (find_font("NotoSerifCJK-Regular.ttc"), 0), "serif_i": (find_font("NotoSerifCJK-Regular.ttc"), 0),
+                      "sans": (find_font("NotoSansCJK-Bold.ttc"), 0), "track": True, "cjk": True}
+    FONTSETS["hi"] = {"serif": (find_font("NotoSerifDevanagari-VariableFont_wdth,wght.ttf"), 0), "serif_i": (find_font("NotoSerifDevanagari-VariableFont_wdth,wght.ttf"), 0),
+                      "sans": (find_font("NotoSansDevanagari-VariableFont_wdth,wght.ttf"), 0), "track": False}
+except SystemExit as e:
+    print(f"warning: {e} — localized cards skipped")
 
 
 def font(path, size, weight=None):
-    f = ImageFont.truetype(path, size)
+    index = 0
+    if isinstance(path, tuple):
+        path, index = path
+    f = ImageFont.truetype(path, size, index=index)
     if weight:
         try:
             axes = f.get_variation_axes()
@@ -56,7 +68,18 @@ def tracked(draw, xy, text, fnt, fill, spacing):
     return x
 
 
-def wrap(draw, text, fnt, width):
+NO_START = set("、。，．！？）」』ー")
+
+
+def wrap(draw, text, fnt, width, cjk=False):
+    if cjk and not text.isascii():
+        lines, cur = [], ""
+        for ch in text:
+            if draw.textlength(cur + ch, font=fnt) <= width or ch in NO_START or not cur:
+                cur += ch
+            else:
+                lines.append(cur); cur = ch
+        return lines + ([cur] if cur else [])
     words, lines, cur = text.split(), [], ""
     for w in words:
         t = (cur + " " + w).strip()
@@ -90,6 +113,14 @@ def gold_text(card, xy, text, fnt):
 
 
 def render(spec):
+    lang = spec.get("lang", "en")
+    fs = FONTSETS.get(lang)
+    if not fs:
+        return False
+    en = FONTSETS["en"]
+    cjk = fs.get("cjk", False)
+    latin = lambda text: lang == "en" or text.isascii()
+    pick = lambda text, role: en[role] if latin(text) else fs[role]
     card = Image.new("RGB", (W, H), (7, 9, 12))
     # artwork panel on the right, fading into black
     art = load_art(spec["art"])
@@ -120,38 +151,42 @@ def render(spec):
     tracked(d, (138, 74), "BLUE $NAKE STUDIO", font(SANS, 15, 700), CREAM, 3.2)
     tracked(d, (138, 96), "FRANKSTON · NAARM · VICTORIA", font(SANS, 11, 600), MUTED, 2.4)
     # eyebrow
-    tracked(d, (72, 196), spec["eyebrow"].upper(), font(SANS, 16, 800), GOLD, 3.6)
+    if latin(spec["eyebrow"]) or fs["track"]:
+        tracked(d, (72, 196), spec["eyebrow"].upper(), font(pick(spec["eyebrow"], "sans"), 16, 800), GOLD, 3.6 if latin(spec["eyebrow"]) else 2)
+    else:
+        d.text((72, 190), spec["eyebrow"], font=font(fs["sans"], 19, 700), fill=GOLD)
     # title (fit)
     size = 92
     while size > 44:
-        tf = font(SERIF, size, 500)
-        lines = wrap(d, spec["title"], tf, 600)
+        tf = font(pick(spec["title"], "serif"), size, 500)
+        lines = wrap(d, spec["title"], tf, 600, cjk and not latin(spec["title"]))
         if len(lines) <= 2 and all(d.textlength(l, font=tf) <= 600 for l in lines):
             break
         size -= 4
     y = 232
     for line in lines:
         gold_text(card, (68, y), line, tf)
-        y += int(size * 1.02)
+        y += int(size * (1.02 if latin(spec["title"]) else 1.25))
     d = ImageDraw.Draw(card)
     # line
-    lf = font(SERIF_I, 30, 400)
+    lf = font(pick(spec["line"], "serif_i"), 30 if latin(spec["line"]) else 28, 400)
     y += 14
-    for line in wrap(d, spec["line"], lf, 560)[:2]:
+    for line in wrap(d, spec["line"], lf, 560, cjk and not latin(spec["line"]))[:2]:
         d.text((72, y), line, font=lf, fill=(217, 210, 194))
-        y += 40
+        y += 40 if latin(spec["line"]) else 46
     # footer
     x = tracked(d, (72, H - 92), "BLKCK2.COM", font(SANS, 16, 800), GOLD_HOT, 3)
     d.line([(x + 14, H - 83), (x + 70, H - 83)], fill=GOLD, width=1)
-    OUT.mkdir(exist_ok=True)
-    card.save(OUT / f"{spec['key']}.jpg", quality=86, optimize=True, progressive=True)
+    out = OUT if lang == "en" else OUT / lang
+    out.mkdir(parents=True, exist_ok=True)
+    card.save(out / f"{spec['key']}.jpg", quality=86, optimize=True, progressive=True)
+    return True
 
 
 def main():
     spec = json.loads(subprocess.check_output(["node", str(ROOT / "scripts" / "share-spec.mjs")], cwd=ROOT))
-    for s in spec:
-        render(s)
-    print(f"{len(spec)} share cards → share/")
+    done = sum(1 for s in spec if render(s))
+    print(f"{done} share cards → share/ (+ share/<lang>/)")
 
 
 if __name__ == "__main__":

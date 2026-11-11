@@ -35,6 +35,11 @@ http://blkck2.com/* https://blkck2.com/:splat 301!
 /living-book /i-ran-lego/ 301
 /metapet /meta-pet.html 301
 
+# Languages
+/jp /ja/ 301
+/japanese /ja/ 301
+/hindi /hi/ 301
+
 # Extensionless versions of every public page
 /start /start.html 301
 /start-here /start-here.html 301

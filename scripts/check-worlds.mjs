@@ -1,7 +1,7 @@
 // Verifies the static world pages, share cards, responsive images, store config and sitemap.
 import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
-import { loadSiteData, ROOT, SITE } from './lib/site-data.mjs';
+import { loadSiteData, LANGS, ROOT, SITE } from './lib/site-data.mjs';
 
 const { worldMap, manifest } = loadSiteData();
 const read = (rel) => readFileSync(path.join(ROOT, rel), 'utf8');
@@ -41,10 +41,54 @@ for (const [src, [, , widths]] of Object.entries(manifest)) {
   }
 }
 
+// Localized pages: /<lang>/, /<lang>/store/, /<lang>/<slug>/ for every world.
+let localized = 0;
+const assetsExist = (html, label) => {
+  for (const m of html.matchAll(/(?:src|srcset)="([^"]+)"/g)) {
+    for (const part of m[1].split(',')) {
+      const url = part.trim().split(' ')[0];
+      if (url.startsWith('/') && !url.startsWith('//') && !url.startsWith('/i-ran-lego/assets/')) assert(existsSync(path.join(ROOT, decodeURIComponent(url))), `${label}: missing asset ${url}`);
+    }
+  }
+};
+for (const lang of LANGS) {
+  const pages = [['', 'home'], ['store/', 'store'], ...worldMap.worlds.map((w) => [`${w.slug}/`, w.slug])];
+  for (const [rel, key] of pages) {
+    const file = `${lang}/${rel}index.html`;
+    const label = `${lang}/${rel}`;
+    if (!existsSync(path.join(ROOT, file))) { fail.push(`${label}: page missing`); continue; }
+    const html = read(file);
+    localized++;
+    const canonical = `${SITE}/${lang}/${rel}`;
+    const heroLinks = html.match(/<ul class="bss-links">([\s\S]*?)<\/ul>/)?.[1] || '';
+    assert(!heroLinks.includes(`href="/${lang}/${rel}"`), `${label}: hero link points back at its own page`);
+    assert(html.startsWith(`<!doctype html>\n<html lang="${lang}">`), `${label}: lang attribute`);
+    assert(html.includes(`<link rel="canonical" href="${canonical}">`), `${label}: canonical`);
+    assert(html.includes(`hreflang="${lang}" href="${canonical}"`) && html.includes('hreflang="en"') && html.includes('hreflang="x-default"'), `${label}: hreflang alternates`);
+    assert(html.includes(`content="${SITE}/share/${lang}/${key}.jpg"`) && existsSync(path.join(ROOT, 'share', lang, `${key}.jpg`)), `${label}: localized share card`);
+    assert(html.includes('fonts.googleapis.com'), `${label}: ${lang} webfont link`);
+    assert(html.includes('class="bss-lang"'), `${label}: language switcher`);
+    // Never trap anyone: an English escape in the sticky top bar and again in the footer, each labelled "English", plus an obvious current marker.
+    const switchers = html.match(/<nav class="bss-lang[^"]*"[\s\S]*?<\/nav>/g) || [];
+    assert(switchers.length >= 2 && html.includes('class="bss-lang bss-lang-foot"'), `${label}: top-bar and footer language switchers`);
+    for (const nav of switchers) {
+      assert(nav.includes('class="bss-globe"') && /data-bss-lang="en"[^>]*>.*?English<\/small>/.test(nav), `${label}: switcher has globe and English escape`);
+      assert(new RegExp(`data-bss-lang="${lang}" aria-current="true"`).test(nav), `${label}: switcher marks current language`);
+    }
+    assert(html.includes('data-bss-signal'), `${label}: Civilian Signal form`);
+    assert(!/undefined|\[object Object\]|\{label\}|\{title\}|\{price\}/.test(html), `${label}: unfilled template text`);
+    assert(!/<script(?![^>]*(src=|ld\+json))/.test(html), `${label}: inline script found`);
+    assert(sitemap.includes(`<loc>${canonical}</loc>`), `${label}: not in sitemap`);
+    assetsExist(html, label);
+  }
+}
+
 const index = read('index.html');
+assert(index.includes(`hreflang="ja" href="${SITE}/ja/"`) && index.includes(`hreflang="hi" href="${SITE}/hi/"`), 'home hreflang alternates missing');
 assert(index.includes('content="https://blkck2.com/share/home.jpg"'), 'home og:image is not the 1200x630 card');
 assert(index.includes('<!-- bss:noscript -->') && index.includes('bss-worldmap'), 'home <noscript> world map missing');
 for (const f of ['data/components.js', 'data/site-config.js', 'bss-components.js', 'worlds.css']) assert(index.includes(f), `index.html does not load ${f}`);
+assert(index.includes('class="bss-lang bss-lang-mast"') && index.includes('class="bss-lang bss-lang-foot"'), 'index.html: masthead and footer language switchers');
 
 const store = read('store.html');
 const ids = new Set(((await import(path.join(ROOT, 'data', 'store-products.js'))).default || []).map((p) => p.id));
@@ -53,4 +97,4 @@ assert(store.includes('data-bss-signal'), 'store: Civilian Signal form missing')
 assert(read('robots.txt').includes('Sitemap: https://blkck2.com/sitemap.xml'), 'robots.txt sitemap line missing');
 
 if (fail.length) { console.error(fail.join('\n')); process.exit(1); }
-console.log(`World pages, share cards, ${Object.keys(manifest).length} responsive images, store and sitemap verified.`);
+console.log(`World pages, ${localized} localized pages (${LANGS.join(', ')}), share cards, ${Object.keys(manifest).length} responsive images, store and sitemap verified.`);

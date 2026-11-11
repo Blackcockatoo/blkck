@@ -104,6 +104,9 @@
       "destination": "/meta-pet.html",
       "permanent": true
     },
+    { "source": "/jp", "destination": "/ja/", "permanent": true },
+    { "source": "/japanese", "destination": "/ja/", "permanent": true },
+    { "source": "/hindi", "destination": "/hi/", "permanent": true },
     {
       "source": "/i-ran-lego.html",
       "destination": "/i-ran-lego/",
