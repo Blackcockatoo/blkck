@@ -222,19 +222,38 @@ body.bss-page {
 .bss-signal .bss-signal-eyebrow { letter-spacing: .28em; }
 
 /* ── Languages: EN / 日本語 / हिन्दी ─────────────────────────────────── */
-.bss-lang { display: flex; gap: 2px; padding: 3px; border: 1px solid var(--bss-line); border-radius: 999px; font: 700 11px/1 var(--bss-sans); letter-spacing: .06em; white-space: nowrap; }
-.bss-lang a { padding: 7px 10px; border-radius: 999px; color: var(--bss-muted); text-decoration: none; }
-.bss-lang a:hover { color: var(--bss-gold-hot); }
+/* ── Language switcher: globe + one pill per language (own script over its English name).
+   Big touch targets; the current language is filled gold with a tick so nobody gets lost. */
+.bss-lang { display: flex; align-items: center; gap: 4px; padding: 4px 4px 4px 10px; border: 1px solid rgba(231,199,103,.45); border-radius: 999px; background: rgba(7,9,12,.72); white-space: nowrap; }
+.bss-lang .bss-globe { flex: none; margin-right: 4px; color: var(--bss-gold-hot); }
+.bss-lang a { position: relative; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 54px; min-height: 44px; padding: 4px 12px; border-radius: 999px; color: #e9e2d0; text-decoration: none; line-height: 1.1; transition: background .15s, color .15s; }
+.bss-lang a b { font: 700 13px/1.15 var(--bss-sans); letter-spacing: .02em; }
+.bss-lang a small { margin-top: 2px; color: var(--bss-muted); font: 600 9px/1 Inter, "Segoe UI", system-ui, -apple-system, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.bss-lang a:hover, .bss-lang a:focus-visible { background: rgba(231,199,103,.14); color: var(--bss-gold-hot); outline: none; }
+.bss-lang a:focus-visible { box-shadow: 0 0 0 2px var(--bss-gold-hot); }
 .bss-lang a[aria-current] { background: linear-gradient(100deg, #b48a43, #e7c767 55%, #c9a14e); color: #120f08; }
-.bss-lang a[lang="ja"] { font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", var(--bss-sans); letter-spacing: 0; }
-.bss-lang a[lang="hi"] { font-family: "Noto Sans Devanagari", "Nirmala UI", var(--bss-sans); letter-spacing: 0; }
+.bss-lang a[aria-current] small { color: #3a2e12; }
+.bss-lang a[aria-current]::after { content: "✓"; position: absolute; top: -5px; right: -3px; display: grid; place-items: center; width: 16px; height: 16px; border-radius: 50%; background: #120f08; color: var(--bss-gold-hot); font: 700 10px/1 var(--bss-sans); border: 1px solid var(--bss-gold-hot); }
+.bss-lang a[lang="en"] b { font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif; }
+.bss-lang a[lang="ja"] b { font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", var(--bss-sans); letter-spacing: 0; }
+.bss-lang a[lang="hi"] b { font-family: "Noto Sans Devanagari", "Nirmala UI", var(--bss-sans); letter-spacing: 0; }
 .bss-topbar .bss-lang { margin-left: auto; }
-.bss-topbar .bss-topnav { margin-left: auto; }
-.bss-lang-bar { width: max-content; margin: 28px auto 0; }
-@media (max-width: 720px) { .bss-topbar { flex-wrap: wrap; gap: 10px; } .bss-topbar .bss-lang { margin-left: 0; order: 3; } .bss-lang a { padding: 6px 9px; } }
-.bss-mast-lang { display: inline-flex; gap: 10px; pointer-events: auto; font: 600 11px/1 "Noto Sans JP", "Noto Sans Devanagari", system-ui, sans-serif; }
-.bss-mast-lang a { color: inherit; opacity: .78; text-decoration: none; }
-.bss-mast-lang a:hover { opacity: 1; color: var(--bss-gold-hot); }
+.bss-lang-bar, .bss-lang-foot { width: max-content; max-width: 100%; margin: 28px auto 0; }
+.bss-footer .bss-lang-foot { margin: 0 auto 18px; }
+.ns-footer .bss-lang-foot { margin: 0 auto 18px; }
+.panel-footer .bss-lang-foot { margin: 0 0 18px; }
+/* English portal masthead */
+.bss-lang-mast { padding: 3px 3px 3px 8px; }
+.bss-lang-mast a { min-height: 40px; min-width: 48px; padding: 3px 9px; }
+/* English pages that keep their own header: a compact switcher pinned bottom-left. */
+.bss-lang-float { position: fixed; z-index: 55; left: max(12px, env(safe-area-inset-left)); bottom: max(12px, env(safe-area-inset-bottom)); box-shadow: 0 8px 28px rgba(0,0,0,.55); backdrop-filter: blur(10px); }
+.bss-lang-float a { min-width: 44px; padding: 3px 9px; }
+.bss-lang-float a small { display: none; }
+@media (max-width: 720px) {
+  .bss-topbar { flex-wrap: wrap; gap: 10px; }
+  .bss-topbar .bss-lang { order: 3; width: 100%; justify-content: center; margin-left: 0; }
+  .bss-topbar .bss-lang a { flex: 1 1 0; max-width: 120px; }
+}
 
 /* Japanese: Noto Serif JP / Noto Sans JP, no faux italics, gentler tracking. */
 html[lang="ja"] { --bss-serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif; --bss-sans: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", Inter, system-ui, sans-serif; }
@@ -252,7 +271,7 @@ html[lang="hi"] .bss-hero h1 { font-size: clamp(34px, 5.4vw, 70px); line-height:
 html[lang="hi"] .bss-eyebrow, html[lang="hi"] .bss-facts dt, html[lang="hi"] .bss-next small, html[lang="hi"] .bss-topnav { text-transform: none; font-size: 12px; }
 html[lang="hi"] .bss-section > h2, html[lang="hi"] .bss-next strong { line-height: 1.35; }
 :is(html[lang="ja"], html[lang="hi"]) [lang="en"] { font-family: Georgia, "Times New Roman", serif; }
-:is(html[lang="ja"], html[lang="hi"]) .bss-btn[lang="en"], :is(html[lang="ja"], html[lang="hi"]) .bss-tracklist [lang="en"], :is(html[lang="ja"], html[lang="hi"]) .bss-art [lang="en"] span { font-family: Inter, "Segoe UI", system-ui, sans-serif; }
+:is(html[lang="ja"], html[lang="hi"]) .bss-lang [lang="en"], :is(html[lang="ja"], html[lang="hi"]) .bss-btn[lang="en"], :is(html[lang="ja"], html[lang="hi"]) .bss-tracklist [lang="en"], :is(html[lang="ja"], html[lang="hi"]) .bss-art [lang="en"] span { font-family: Inter, "Segoe UI", system-ui, sans-serif; }
 .bss-art .bss-art-desc { margin-top: 8px; color: #bdb6a5; font-size: 13px; line-height: 1.7; }
 
 /* Localized home: featured world cards */
@@ -288,9 +307,15 @@ html[lang="hi"] .bss-section > h2, html[lang="hi"] .bss-next strong { line-heigh
 .bss-lang-toast a { padding: 8px 12px; background: linear-gradient(100deg, #b48a43, #e7c767 55%, #c9a14e); color: #120f08; font-weight: 700; text-decoration: none; }
 .bss-lang-toast button { border: 0; background: none; color: var(--bss-muted); font-size: 20px; cursor: pointer; }
 html[lang="ja"] body *:not(:lang(en)) { font-style: normal; }
-@media (max-width: 940px) { .bss-mast-lang { gap: 8px; margin-right: 6px; font-size: 11px; white-space: nowrap; } }
-@media (max-width: 440px) { .masthead .brand-copy { font-size: 10px; letter-spacing: .12em; } .bss-mast-lang { flex-direction: column; gap: 4px; font-size: 10px; line-height: 1.2; } }
-
+@media (max-width: 480px) {
+  .bss-lang-mast { padding: 2px; gap: 2px; }
+  .bss-lang-mast .bss-globe { width: 15px; height: 15px; margin: 0 1px 0 5px; }
+  .bss-lang-mast a { min-width: 44px; min-height: 44px; padding: 2px 6px; }
+  .bss-lang-mast a b { font-size: 12px; }
+  .bss-lang-mast a small { font-size: 7.5px; letter-spacing: .04em; }
+  .masthead .brand-copy { font-size: 10px; letter-spacing: .1em; }
+}
+@media (max-width: 400px) { .masthead .brand-copy { display: none; } }
 /* Teacher's Secret Cheatsheet menu on /ja/ and /hi/ Teacher Tools */
 .bss-pack .bss-pack-tools li strong { display: block; margin-bottom: 4px; color: var(--bss-gold); }
 .bss-pack-note { margin-top: 14px; color: var(--bss-muted); font-size: 13px; }
