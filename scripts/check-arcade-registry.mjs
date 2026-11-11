@@ -48,8 +48,7 @@ const vercel = JSON.parse(read('vercel.json'));
 const redirectBySource = new Map((vercel.redirects || []).map((rule) => [rule.source, rule]));
 const expectedRedirects = new Map([
   ['/moss-stomper', 'https://stomps.vercel.app/'],
-  ['/games', '/index.html#games'],
-  ['/arcade', '/index.html#games'],
+  ['/arcade', '/games/'],
   ['/monkey-invaders', 'https://monkey-invaders-enhanced.vercel.app/'],
   ['/monkey-invaders-fruitkind', 'https://www.bluesnakestudios.com/monkey-invaders.html'],
   ['/bubble-hex', 'https://bubblehex.vercel.app/'],
@@ -73,11 +72,16 @@ assert(
 );
 
 const netlifyRedirects = read('_redirects');
-for (const alias of ['/moss-stomper ', '/games ', '/arcade ', '/monkey-invaders ', '/bubble-hex ', '/bubblehex ']) {
+// /games is now a real static world page (scripts/build-worlds.mjs), so it needs no redirect.
+assert(read('games/index.html').includes('MOSS STOMPER'), 'Games world page is missing or lost the arcade cabinets.');
+assert(!redirectBySource.has('/games'), '/games must not redirect away from the static Games page.');
+
+for (const alias of ['/moss-stomper ', '/arcade ', '/monkey-invaders ', '/bubble-hex ', '/bubblehex ']) {
   assert(netlifyRedirects.includes(alias), `Netlify redirect registry is missing ${alias.trim()}.`);
 }
 
-assert(read('sw.js').includes("moss-tree-v22"), 'Service worker cache was not bumped to moss-tree-v22.');
+const swCacheVersion = Number((read('sw.js').match(/moss-tree-v(\d+)/) || [])[1] || 0);
+assert(swCacheVersion >= 22, 'Service worker cache must be at least moss-tree-v22.');
 
 assert(read('stomps.html').includes('https://stomps.vercel.app/'), 'Character page must link to the live MOSS STOMPER game.');
 

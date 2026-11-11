@@ -284,6 +284,7 @@
   total.textContent = String(sections.length).padStart(2, '0');
 
   const slugs = sections.map(section => section.slug);
+  const worldsDeepLink = location.hash === '#worlds';
   let active = Math.max(0, slugs.indexOf(location.hash.slice(1)));
   let wheelLocked = false;
   let pointerStartY = null;
@@ -308,11 +309,26 @@
     return isExternal(href) || /\.(pdf|zip)([?#]|$)/i.test(href || '') ? ' target="_blank" rel="noopener"' : '';
   }
 
+  // Responsive AVIF/WebP from opt/ (scripts/optimize-images.py); falls back to the original file.
+  const imageManifest = window.BSS_IMAGE_MANIFEST || {};
+  function picture(src, alt, options = {}) {
+    const { sizes = '(max-width: 760px) 100vw, 33vw', cls = '', eager = false, extra = '' } = options;
+    const entry = imageManifest[src];
+    const loading = eager ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"';
+    const klass = cls ? ` class="${cls}"` : '';
+    if (!entry) return `<img${klass} src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" ${loading}${extra}>`;
+    const [width, height, widths] = entry;
+    const stem = src.replace(/\.[^.]+$/, '');
+    const set = ext => widths.map(w => `opt/${escapeHtml(stem)}-${w}.${ext} ${w}w`).join(', ');
+    return `<picture><source type="image/avif" srcset="${set('avif')}" sizes="${sizes}"><source type="image/webp" srcset="${set('webp')}" sizes="${sizes}"><img${klass} src="${escapeHtml(src)}" width="${width}" height="${height}" alt="${escapeHtml(alt)}" ${loading}${extra}></picture>`;
+  }
+  const componentHtml = window.BSS_COMPONENT_HTML || {};
+
   function mediaPreview(item) {
     if (item.mediaType === 'video') {
       return `<video class="card-media lazy-video" data-src="${escapeHtml(item.video)}" muted preload="none" playsinline></video>`;
     }
-    return `<img class="card-media" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" loading="lazy" />`;
+    return picture(item.image, item.title, { cls: 'card-media', sizes: '(max-width: 760px) 50vw, 300px' });
   }
 
   function artCard(item) {
@@ -527,9 +543,9 @@
   function roomThumb(item) {
     if (!item) return '';
     if (item.mediaType === 'video') {
-      return `<video src="${escapeHtml(item.video)}" muted preload="metadata" playsinline></video>`;
+      return `<video class="lazy-video" data-src="${escapeHtml(item.video)}" muted preload="none" playsinline></video>`;
     }
-    return `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" loading="lazy" />`;
+    return picture(item.image, item.title, { sizes: '(max-width: 760px) 33vw, 160px' });
   }
 
   function roomCard(room, index) {
@@ -661,7 +677,7 @@
     return `
       <section class="old-vic-feature" aria-labelledby="old-vic-feature-title">
         <figure class="old-vic-hero">
-          <img src="14_music_campaigns/old-vic-state-campaign.png" alt="Old Vic State in monumental gold lettering between a recording studio and a gothic civic procession" loading="lazy">
+          ${picture('14_music_campaigns/old-vic-state-campaign.png', 'Old Vic State in monumental gold lettering between a recording studio and a gothic civic procession', { sizes: '(max-width: 760px) 100vw, 1120px' })}
           <figcaption>
             <span>Old Vic State · B$S original cycle</span>
             <h2 id="old-vic-feature-title">Memory sharpened into hope.</h2>
@@ -672,7 +688,7 @@
         <div class="old-vic-chapters">
           ${chapters.map(([number, title, copy, image]) => `
             <figure>
-              <img src="${image}" alt="${escapeHtml(title)} artwork from the Old Vic State cycle" loading="lazy">
+              ${picture(image, `${title} artwork from the Old Vic State cycle`, { sizes: '(max-width: 760px) 100vw, 560px' })}
               <figcaption><span>${number}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></figcaption>
             </figure>`).join('')}
         </div>
@@ -714,13 +730,18 @@
             ${!section.startHere ? linksRow(section) : ''}
             ${!section.startHere ? `<ul class="details">${(section.details || []).map(detail => `<li>${escapeHtml(detail)}</li>`).join('')}</ul>` : ''}
             ${!section.startHere ? projectProofStrip(section) : ''}
-            ${section.startHere ? `<div class="portal-feature"><div><p class="eyebrow">Frankston made. Independently built.</p><h2>Pick a world.<br>Make yourself at home.</h2><p>Art to get lost in. Music to get loud with. Games to master. Tools to grow with.</p><div class="portal-doors"><a href="#games">Play the arcade →</a><a href="#visual-worlds">Explore the art →</a><a href="gov.html">For teachers →</a></div></div><img src="01_auralia/auralia_cosmic_poster_v1.png" alt="Auralia: black birds, butterflies and gold celestial ornament" width="1152" height="1536" fetchpriority="high" /></div>` : ''}
+            ${section.startHere ? `<div class="portal-feature"><div><p class="eyebrow">Frankston made. Independently built.</p><h2>Pick a world.<br>Make yourself at home.</h2><p>Art to get lost in. Music to get loud with. Games to master. Tools to grow with.</p><div class="portal-doors"><a href="#games">Play the arcade →</a><a href="#visual-worlds">Explore the art →</a><a href="gov.html">For teachers →</a></div></div>${picture('01_auralia/auralia_cosmic_poster_v1.png', 'Auralia: black birds, butterflies and gold celestial ornament', { eager: true, sizes: '(max-width: 760px) 100vw, 40vw' })}</div>` : ''}
+            ${section.startHere && componentHtml.worldMap ? `<div id="worlds">${componentHtml.worldMap}</div>` : ''}
             ${section.startHere ? startHereAudience() : ''}
             ${section.startHere ? featuredProjectsGrid() : ''}
+            ${section.startHere && componentHtml.player ? componentHtml.player : ''}
             ${section.startHere ? startHereAbout() : ''}
             ${section.startHere ? collectionGrid() : ''}
+            ${section.startHere && componentHtml.signal ? componentHtml.signal : ''}
             ${section.startHere ? contactPathways() : ''}
             ${section.rooms ? roomsShowcase() : ''}
+            ${!section.startHere && componentHtml.pages && componentHtml.pages[section.slug] ? `<p class="bss-portal-note">Share this world: <a href="${escapeHtml(componentHtml.pages[section.slug])}">${escapeHtml(section.label)} — full page →</a></p>` : ''}
+            ${!section.startHere && componentHtml.next ? (componentHtml.next[section.slug] || '') : ''}
             ${panelFooter()}
           </section>
           ${hasGallery ? `
@@ -989,7 +1010,7 @@
     const backdrop = getOrCreateModal();
     const media = item.mediaType === 'video'
       ? `<video src="${escapeHtml(item.video)}" controls preload="metadata" playsinline></video>`
-      : `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" />`;
+      : picture(item.image, item.title, { eager: true, sizes: '(max-width: 760px) 100vw, 70vw' });
     const downloadAction = item.series === 'Colouring Pages'
       ? '<div class="links-row"><a class="project-link" href="' + escapeHtml(item.image) + '" download>Download for printing</a></div>'
       : '';
@@ -1091,7 +1112,11 @@
     document.getElementById('intro-enter').focus();
   });
   buildPanels();
-  select(active, { hash: location.hash.length > 1 });
+  select(active, { hash: location.hash.length > 1 && !worldsDeepLink });
+  if (worldsDeepLink) {
+    const map = document.getElementById('worlds');
+    if (map) requestAnimationFrame(() => map.scrollIntoView({ block: 'start' }));
+  }
 
   // ─── Krishna Sanctum ──────────────────────────────────────────────────────────
   function setupKrishnaSanctum() {

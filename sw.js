@@ -1,6 +1,6 @@
 // Bump whenever a precached portal file changes so returning visitors receive
 // the restored arcade registry instead of an older cached Games section.
-const CACHE_NAME = 'moss-tree-v23';
+const CACHE_NAME = 'moss-tree-v24';
 
 const APP_SHELL = [
   './',
@@ -30,6 +30,14 @@ const APP_SHELL = [
   './data/portfolio-truth.js',
   './data/portfolio-status.js',
   './data/studio-sections.js',
+  './data/image-manifest.js',
+  './data/components.js',
+  './data/worlds.js',
+  './data/tracks.js',
+  './data/site-config.js',
+  './data/store-products.js',
+  './bss-components.js',
+  './worlds.css',
   './downloads/black-wing-crew-lyric-sheet.html',
   './downloads/metapet-starter-sheet.html',
   './downloads/moss-60-glyph-sheet.html',
@@ -87,7 +95,7 @@ self.addEventListener('fetch', event => {
     const shellPath = path === './' ? './index.html' : path;
     return normalizedPath === shellPath || url.pathname.endsWith(shellPath.replace('./', '/'));
   });
-  const isMedia = /\.(mp4|webm|mov)$/i.test(url.pathname);
+  const isMedia = /\.(mp4|webm|mov|mp3|m4a|ogg|wav)$/i.test(url.pathname);
   const isAuraliaMaster = url.pathname.startsWith('/auralia/edition-') && (
     /\/(?:01_Lock_Screens|02_Home_Screens|05_Pairs)\//.test(url.pathname) ||
     /\.zip$/i.test(url.pathname)
