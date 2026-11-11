@@ -181,6 +181,60 @@
     document.body.appendChild(toast);
   }
 
+  /* Globe menu: <details> does the open/close; this adds outside click, Escape, arrow keys and aria-expanded. */
+  function initLangMenus() {
+    var menus = [].slice.call(document.querySelectorAll('details[data-bss-langmenu]'));
+    if (!menus.length) return;
+    function sync(d) { var s = d.querySelector('summary'); if (s) s.setAttribute('aria-expanded', d.open ? 'true' : 'false'); }
+    function close(d, focus) { if (!d.open) return; d.open = false; sync(d); if (focus) { var s = d.querySelector('summary'); if (s) s.focus(); } }
+    menus.forEach(function (d) {
+      var summary = d.querySelector('summary');
+      var links = function () { return [].slice.call(d.querySelectorAll('a[data-bss-lang]')); };
+      d.addEventListener('toggle', function () {
+        sync(d);
+        if (d.open) {
+          menus.forEach(function (o) { if (o !== d) close(o); });
+          if (d._kbd) { var cur = d.querySelector('a[aria-current]') || links()[0]; if (cur) cur.focus(); }
+        }
+        d._kbd = false;
+      });
+      summary.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') d._kbd = true;
+        if (e.key === 'ArrowDown' && !d.open) { e.preventDefault(); d._kbd = true; d.open = true; }
+      });
+      d.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && d.open) { e.preventDefault(); e.stopPropagation(); close(d, true); return; }
+        if (!d.open || (e.key !== 'ArrowDown' && e.key !== 'ArrowUp' && e.key !== 'Home' && e.key !== 'End')) return;
+        var l = links(); var i = l.indexOf(document.activeElement);
+        if (i < 0 && document.activeElement !== summary) return;
+        e.preventDefault();
+        var n = e.key === 'Home' ? 0 : e.key === 'End' ? l.length - 1 : e.key === 'ArrowDown' ? (i + 1) % l.length : (i <= 0 ? l.length - 1 : i - 1);
+        l[n].focus();
+      });
+      d.addEventListener('focusout', function (e) { if (d.open && e.relatedTarget && !d.contains(e.relatedTarget)) close(d); });
+      d.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('a[data-bss-lang]')) close(d); });
+      sync(d);
+    });
+    // Hand-written pages keep their own header: give it room on the right so the pinned globe never covers a link.
+    var float = document.querySelector('details.bss-langmenu-float');
+    if (float) {
+      var bars = [].slice.call(document.querySelectorAll('header, nav.masthead, .masthead'));
+      for (var k = 0; k < bars.length; k++) {
+        var bar = bars[k];
+        if (float.contains(bar) || bar.closest('.bss-embed, footer')) continue;
+        var r = bar.getBoundingClientRect();
+        if (r.top > 80 || r.width < window.innerWidth * 0.6) continue;
+        var pad = parseFloat(getComputedStyle(bar).paddingRight) || 0;
+        bar.style.paddingRight = Math.max(pad, 0) + 52 + 'px';
+        bar.setAttribute('data-bss-langroom', '');
+        break;
+      }
+    }
+    document.addEventListener('click', function (e) { menus.forEach(function (d) { if (d.open && !d.contains(e.target)) close(d); }); });
+    // Coming back via the back/forward cache must not show a stale open menu.
+    window.addEventListener('pageshow', function () { menus.forEach(function (d) { close(d); }); });
+  }
+
   function init(scope) {
     scope = scope || document;
     scope.querySelectorAll('form[data-bss-signal]').forEach(initSignal);
@@ -188,7 +242,7 @@
     initReveal(scope);
   }
   window.BSS_COMPONENTS = { init: init };
-  function boot() { init(document); initStore(); initLang(); }
+  function boot() { init(document); initStore(); initLang(); initLangMenus(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, { once: true });
   else boot();
 })();

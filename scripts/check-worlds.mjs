@@ -71,14 +71,17 @@ for (const lang of LANGS) {
     assert(html.includes(`hreflang="${lang}" href="${canonical}"`) && html.includes('hreflang="en"') && html.includes('hreflang="x-default"'), `${label}: hreflang alternates`);
     assert(html.includes(`content="${SITE}/share/${lang}/${key}.jpg"`) && existsSync(path.join(ROOT, 'share', lang, `${key}.jpg`)), `${label}: localized share card`);
     assert(html.includes('fonts.googleapis.com'), `${label}: ${lang} webfont link`);
-    assert(html.includes('class="bss-lang"'), `${label}: language switcher`);
-    // Never trap anyone: an English escape in the sticky top bar and again in the footer, each labelled "English", plus an obvious current marker.
-    const switchers = html.match(/<nav class="bss-lang[^"]*"[\s\S]*?<\/nav>/g) || [];
-    assert(switchers.length >= 2 && html.includes('class="bss-lang bss-lang-foot"'), `${label}: top-bar and footer language switchers`);
-    for (const nav of switchers) {
-      assert(nav.includes('class="bss-globe"') && /data-bss-lang="en"[^>]*>.*?English<\/small>/.test(nav), `${label}: switcher has globe and English escape`);
+    // Never trap anyone: a globe menu in the top bar with a trilingual label and an "English" escape, plus a quiet footer row.
+    const menus = html.match(/<details class="bss-langmenu[^"]*"[\s\S]*?<\/details>/g) || [];
+    assert(menus.length === 1, `${label}: one globe language menu in the top bar`);
+    const feet = html.match(/<nav class="bss-lang-foot[^"]*"[\s\S]*?<\/nav>/g) || [];
+    assert(feet.length === 1, `${label}: footer language links`);
+    for (const nav of [...menus, ...feet]) {
+      assert(/data-bss-lang="en"[^>]*>(<b>)?English</.test(nav), `${label}: switcher has an English escape`);
       assert(new RegExp(`data-bss-lang="${lang}" aria-current="true"`).test(nav), `${label}: switcher marks current language`);
     }
+    for (const m of menus) assert(m.includes('class="bss-globe"') && m.includes('aria-label="Language / 言語 / भाषा"') && m.includes('aria-expanded="false"'), `${label}: globe button label`);
+    assert(!html.includes('class="bss-lang '), `${label}: old pill switcher still present`);
     assert(html.includes('data-bss-signal'), `${label}: Civilian Signal form`);
     assert(!/undefined|\[object Object\]|\{label\}|\{title\}|\{price\}/.test(html), `${label}: unfilled template text`);
     assert(!/<script(?![^>]*(src=|ld\+json))/.test(html), `${label}: inline script found`);
@@ -92,7 +95,7 @@ assert(index.includes(`hreflang="ja" href="${SITE}/ja/"`) && index.includes(`hre
 assert(index.includes('content="https://blkck2.com/share/home.jpg"'), 'home og:image is not the 1200x630 card');
 assert(index.includes('<!-- bss:noscript -->') && index.includes('bss-worldmap'), 'home <noscript> world map missing');
 for (const f of ['data/components.js', 'data/site-config.js', 'bss-components.js', 'worlds.css']) assert(index.includes(f), `index.html does not load ${f}`);
-assert(index.includes('class="bss-lang bss-lang-mast"') && index.includes('class="bss-lang bss-lang-foot"'), 'index.html: masthead and footer language switchers');
+assert(index.includes('class="bss-langmenu bss-langmenu-mast"') && index.includes('class="bss-lang-foot"') && !index.includes('class="bss-lang '), 'index.html: masthead globe menu and footer language links');
 
 const store = read('store.html');
 const ids = new Set(((await import(path.join(ROOT, 'data', 'store-products.js'))).default || []).map((p) => p.id));
