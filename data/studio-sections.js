@@ -156,7 +156,7 @@ window.BSS_STUDIO_SECTIONS = [
       { label: 'Read Butterfly Symmetry', href: 'documents/butterfly-symmetry-final-loop.pdf' },
       { label: 'Read the Victorian Lullaby', href: 'documents/victorian-statesman-recursive-lullaby.pdf' }
     ],
-    featuredIds: ['old-vic-command-cycle', 'old-vic-ledger-city', 'old-vic-butterfly-triptych', 'old-vic-ledger-witness', 'old-vic-state-campaign']
+    featuredIds: ['old-vic-collective-cultural-defence', 'old-vic-command-cycle', 'old-vic-ledger-city', 'old-vic-butterfly-triptych', 'old-vic-ledger-witness', 'old-vic-state-campaign']
   },
   {
     slug: 'frankston-fuji',

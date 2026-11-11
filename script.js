@@ -667,6 +667,39 @@
       </section>`;
   }
 
+  function oldVicDefenceBanner() {
+    const base = '19_old_vic_state/collective-cultural-defence';
+    const sizes = '(max-width: 760px) 100vw, min(1120px, 72vw)';
+    const embers = Array.from({ length: 18 }, (_, i) => {
+      const x = (i * 37 + 11) % 100;
+      const delay = ((i * 1.7) % 9).toFixed(2);
+      const dur = (7 + (i % 5) * 1.6).toFixed(1);
+      const drift = ((i % 2 ? 1 : -1) * (12 + (i * 7) % 40));
+      const size = 2 + (i % 3);
+      return `<i style="--x:${x}%;--d:${delay}s;--t:${dur}s;--drift:${drift}px;--s:${size}px"></i>`;
+    }).join('');
+    return `
+        <figure class="vic-defence" data-vic-defence>
+          <div class="vic-defence__stage">
+            <picture class="vic-defence__art">
+              <source type="image/avif" srcset="${base}-640.avif 640w, ${base}-960.avif 960w, ${base}.avif 1672w" sizes="${sizes}">
+              <source type="image/webp" srcset="${base}-640.webp 640w, ${base}-960.webp 960w, ${base}.webp 1672w" sizes="${sizes}">
+              <img src="${base}.jpg" width="1672" height="941" loading="lazy" decoding="async"
+                alt="Old Vic State — Collective Cultural Defence: carved bronze-gold lettering beneath a crown and B$S monogram, flanked by two black cockatoos, a Union Jack and a Southern Cross flag in a lightning-split storm, above a firelit Melbourne skyline with Flinders Street Station, the Princes Bridge arches and the Shrine of Remembrance on the Yarra, with crossed oars, wattle and butterflies below.">
+            </picture>
+            <span class="vic-defence__flash" aria-hidden="true"></span>
+            <span class="vic-defence__sheen" aria-hidden="true"></span>
+            <span class="vic-defence__embers" aria-hidden="true">${embers}</span>
+            <span class="vic-defence__frame" aria-hidden="true"><b></b><b></b><b></b><b></b></span>
+          </div>
+          <figcaption class="vic-defence__caption">
+            <span>Old Vic State banner · B$S original · Naarm/Melbourne</span>
+            <h2 id="old-vic-defence-title"><em>Collective</em> Cultural Defence</h2>
+            <p>Two black wings over the crown. Fire on the river, law in the stone. The old state is defended by the people who remember it.</p>
+          </figcaption>
+        </figure>`;
+  }
+
   function oldVicStateFeature() {
     const chapters = [
       ['I', 'The Omen', 'War becomes government; government dreams it has escaped war.', '19_old_vic_state/black-omen-command-cycle.jpeg'],
@@ -675,12 +708,13 @@
       ['IV', 'The Witness', 'The civic memory remains when the office, crown and speaker are gone.', '19_old_vic_state/victorian-ledger-witness.jpeg']
     ];
     return `
-      <section class="old-vic-feature" aria-labelledby="old-vic-feature-title">
+      <section class="old-vic-feature" aria-labelledby="old-vic-defence-title">
+        ${oldVicDefenceBanner()}
         <figure class="old-vic-hero">
           ${picture('14_music_campaigns/old-vic-state-campaign.png', 'Old Vic State in monumental gold lettering between a recording studio and a gothic civic procession', { sizes: '(max-width: 760px) 100vw, 1120px' })}
           <figcaption>
             <span>Old Vic State · B$S original cycle</span>
-            <h2 id="old-vic-feature-title">Memory sharpened into hope.</h2>
+            <h2>Memory sharpened into hope.</h2>
             <p>The debt remembers names. The old gods do not hurry.</p>
           </figcaption>
         </figure>
@@ -807,8 +841,42 @@
     });
   }
 
+  function initVicDefence() {
+    const banner = panelWrap.querySelector('[data-vic-defence]');
+    if (!banner) return;
+    const stage = banner.querySelector('.vic-defence__stage');
+    const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => banner.classList.toggle('is-lit', entry.isIntersecting));
+      }, { threshold: 0.25 });
+      io.observe(banner);
+    } else {
+      banner.classList.add('is-lit');
+    }
+    if (reduce || !stage) return;
+    let frame = 0;
+    stage.addEventListener('pointermove', event => {
+      if (event.pointerType === 'touch') return;
+      const rect = stage.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        stage.style.setProperty('--px', x.toFixed(3));
+        stage.style.setProperty('--py', y.toFixed(3));
+      });
+    });
+    stage.addEventListener('pointerleave', () => {
+      cancelAnimationFrame(frame);
+      stage.style.setProperty('--px', 0);
+      stage.style.setProperty('--py', 0);
+    });
+  }
+
   function buildPanels() {
     panelWrap.innerHTML = sections.map(panelTemplate).join('');
+    initVicDefence();
 
     panelWrap.querySelectorAll('[data-art-id]').forEach(button => {
       button.addEventListener('click', () => {
