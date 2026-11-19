@@ -110,6 +110,18 @@ def patch_book() -> None:
             '  <meta property="og:image" content="https://blkck2.com/i-ran-lego/assets/pages/page-01.webp">',
             "canonical metadata",
         )
+    if 'hreflang=' not in index:
+        canonical = '<link rel="canonical" href="https://blkck2.com/i-ran-lego/">'
+        index = replace_once(
+            index,
+            canonical,
+            canonical + '\n'
+            '  <link rel="alternate" hreflang="en" href="https://blkck2.com/i-ran-lego/">\n'
+            '  <link rel="alternate" hreflang="ja" href="https://blkck2.com/ja/i-ran-lego/">\n'
+            '  <link rel="alternate" hreflang="hi" href="https://blkck2.com/hi/i-ran-lego/">\n'
+            '  <link rel="alternate" hreflang="x-default" href="https://blkck2.com/i-ran-lego/">',
+            "hreflang alternates",
+        )
     if 'BACK TO BLKCK2' not in index:
         index = replace_once(index, '<div class="top-actions">', '<div class="top-actions">\n    <a class="ghost" href="/">BACK TO BLKCK2</a>', "portal return link")
 

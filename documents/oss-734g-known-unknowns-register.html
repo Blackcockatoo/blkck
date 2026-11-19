@@ -1408,6 +1408,11 @@
     .sig-block { min-width: unset; width: 100%; margin: 8px 0; }
     .annex-header { padding: 24px 20px; }
     .interlude-inner { padding: 28px 20px; }
+    .doc-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    /* Phones: the stacked chapter buttons covered the text, so dock them as one scrollable strip. */
+    .nav-bar { left: 0; right: 0; bottom: 0; flex-direction: row; gap: 4px; padding: 6px 8px; overflow-x: auto; background: var(--midnight); border-top: 1px solid var(--gold-dim); }
+    .nav-btn { flex: 0 0 auto; }
+    body { padding-bottom: 52px; }
   }
 
 
