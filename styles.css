@@ -2792,3 +2792,33 @@ a.brand-copy {
 
 /* Responsive <picture> wrappers (scripts/optimize-images.py) behave exactly like the bare <img> they replace. */
 .panel picture, .modal picture, .room-card picture, .art-card picture { display: contents; }
+
+/* ─── Gallery card artwork: show the whole piece, matted ─────────────────────
+   The responsive <img> carries width/height attributes (for CLS), and those
+   presentational heights beat aspect-ratio unless height is reset — which is
+   what stretched cards to 1536px-tall slivers. Each card is now a uniform
+   4:5 gallery mat; the artwork sits whole inside it (faces, poster text and
+   QR stickers never cropped). */
+.art-card .card-media,
+.art-card .card-media.loaded {
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  object-position: 50% 50%;
+  padding: 10px;
+  box-sizing: border-box;
+  background:
+    radial-gradient(120% 90% at 50% 38%, rgba(199,168,106,.10), rgba(199,168,106,0) 62%),
+    linear-gradient(180deg, #0d1116 0%, #07090c 100%);
+  border-bottom: 1px solid rgba(199,168,106,.16);
+}
+.art-card video.card-media { padding: 0; object-fit: cover; }
+.art-card:hover .card-media { background-color: #0d1116; }
+
+/* Responsive images carry width/height attributes so the browser can reserve
+   space; let CSS width/aspect-ratio drive the height instead of the raw
+   attribute (otherwise a 1536px-tall attribute wins and slices the art). */
+:where(img[width][height]) { height: auto; }
+/* <picture> wrappers are display:contents in some grids; keep their <source>
+   children out of the layout so they never take up grid cells. */
+:where(picture) > source { display: none; }
