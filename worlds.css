@@ -319,3 +319,11 @@ html[lang="ja"] body *:not(:lang(en)) { font-style: normal; }
 .bss-pack .bss-pack-tools li strong { display: block; margin-bottom: 4px; color: var(--bss-gold); }
 .bss-pack-note { margin-top: 14px; color: var(--bss-muted); font-size: 13px; }
 html[lang="ja"] .bss-facts dt { font-size: 12px; }
+
+/* Responsive images carry width/height attributes so the browser can reserve
+   space; let CSS width/aspect-ratio drive the height instead of the raw
+   attribute (otherwise a 1536px-tall attribute wins and slices the art). */
+:where(img[width][height]) { height: auto; }
+/* <picture> wrappers are display:contents in some grids; keep their <source>
+   children out of the layout so they never take up grid cells. */
+:where(picture) > source { display: none; }
