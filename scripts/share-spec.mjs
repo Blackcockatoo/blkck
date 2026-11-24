@@ -9,8 +9,11 @@ const art = (s) => {
   const pool = ids.length ? ids.map((id) => items.find((i) => i.id === id)) : items.filter((i) => (s.series || []).includes(i.series));
   return (pool.find((i) => i && i.image) || {}).image || '01_auralia/auralia_cosmic_poster_v1.png';
 };
+// Posters with lettering are shown whole on the card (never cropped through the text).
+const posterImages = new Set(items.filter((i) => i.poster && i.image).map((i) => i.image));
 const track = Object.fromEntries(worldMap.tracks.map((t) => [t.id, t.label]));
 const cards = worldMap.worlds.map((w) => ({ key: w.slug, lang: 'en', eyebrow: track[w.track], title: bySlug[w.slug].label, line: bySlug[w.slug].title, art: w.shareArt || art(bySlug[w.slug]) }));
+cards.forEach((c) => { if (posterImages.has(c.art)) c.contain = true; });
 cards.push({ key: 'home', lang: 'en', eyebrow: 'Art · Music · Play · Learning', title: 'Blue $nake Studio', line: 'Patterns become worlds.', art: '01_auralia/auralia_cosmic_poster_v1.png' });
 cards.push({ key: 'store', lang: 'en', eyebrow: 'Prints · Wallpapers · Digital', title: 'The B$S Store', line: 'Original dark art, straight from the studio.', art: '24_auralia_prints/auralia-ouroboros-golden-fire.jpg' });
 for (const lang of LANGS) {

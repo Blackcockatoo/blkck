@@ -28,7 +28,7 @@ window.BSS_STUDIO_SECTIONS = [
       { label: 'YouTube @blkck2', href: 'https://www.youtube.com/@blkck2' },
       { label: 'Email B$S', href: 'mailto:bluesssnakestudio@gmail.com' }
     ],
-    featuredIds: ['moss-man-runic-scribe', 'auralia-cosmic-poster', 'black-wing-chant-sheet', 'neon-venom-enter-dream-qr', 'moss60-geometry-linework', 'painting-bss-woman-cockatoo', 'blue-snake-gold-logo']
+    featuredIds: ['frankston-writes-back', 'moss-man-runic-scribe', 'auralia-cosmic-poster', 'bwc-lucy-crest-poster', 'black-wing-chant-sheet', 'neon-venom-enter-dream-qr', 'moss60-geometry-linework', 'painting-bss-woman-cockatoo', 'blue-snake-gold-logo']
   },
   {
     slug: 'moss-man',
@@ -92,7 +92,7 @@ window.BSS_STUDIO_SECTIONS = [
       { label: 'BWC music archive', href: 'black-wing-crew.html' },
       { label: 'Watch on YouTube', href: 'https://www.youtube.com/@blkck2' }
     ],
-    featuredIds: ['black-wing-cosmic-singing', 'neon-venom-cyberpunk-poster', 'bss-twin-cockatoos-stained-glass', 'neon-venom-enter-dream-qr', 'black-wing-chant-sheet', 'neon-venom-campaign']
+    featuredIds: ['bwc-lucy-crest-poster', 'black-wing-cosmic-singing', 'neon-venom-cyberpunk-poster', 'bss-twin-cockatoos-stained-glass', 'neon-venom-enter-dream-qr', 'black-wing-chant-sheet', 'neon-venom-campaign']
   },
   {
     slug: 'krsnapaksi',
@@ -197,7 +197,7 @@ window.BSS_STUDIO_SECTIONS = [
       { label: 'Council / School pathway', href: 'gov.html' },
       { label: 'B$S Proof Wall', href: 'proof-wall.html#councils' }
     ],
-    featuredIds: ['moss-man-frankston-courts', 'moss-man-hope-poster', 'moss-man-notice-poster', 'fuji-sister-cities-song', 'meta-pet-process-overview']
+    featuredIds: ['frankston-writes-back', 'moss-man-frankston-courts', 'moss-man-hope-poster', 'moss-man-notice-poster', 'fuji-sister-cities-song', 'meta-pet-process-overview']
   },
   {
     slug: 'black-omen-waahn',

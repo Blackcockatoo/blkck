@@ -61,6 +61,11 @@ body.bss-page {
 .bss-hero-art img { display: block; width: 100%; height: auto; max-height: 72vh; object-fit: cover; }
 .bss-hero-art::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 90% at 50% 40%, transparent 60%, rgba(2,3,4,.6)); }
 @media (max-width: 860px) { .bss-hero { grid-template-columns: 1fr; } .bss-hero-art img { max-height: 62vh; } }
+/* Posters with lettering: always show the whole sheet, never crop the text */
+.bss-hero-art.is-poster { display: flex; justify-content: center; background: radial-gradient(120% 90% at 50% 30%, rgba(199,168,106,.14), #040506 70%); }
+.bss-hero-art.is-poster img { width: auto; max-width: 100%; object-fit: contain; }
+.bss-hero-art.is-poster::after { background: none; }
+.bss-art.is-poster img { object-fit: contain; background: #040506; }
 
 .bss-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 8px; padding: 0; list-style: none; }
 .bss-btn {

@@ -167,7 +167,7 @@
       useFor: 'music promo, YouTube traffic, QR drops, sticker sheets, street campaigns',
       proof: ['QR stickers', 'Black Wing Crew bait', 'neon campaign graphics', 'promo-ready visuals'],
       promise: 'This room makes the work scannable, shareable and hard to ignore.',
-      ids: ['neon-venom-portrait-qr', 'bwc-neon-qr-sheet', 'neon-venom-campaign', 'neon-venom-portal-qr', 'neon-venom-enter-dream-qr', 'neon-venom-black-birds-dream', 'woman-money-venom-shorts-qr', 'woman-money-venom-full-qr', 'neon-venom-cyberpunk-poster', 'black-wing-cosmic-singing']
+      ids: ['neon-venom-portrait-qr', 'bwc-neon-qr-sheet', 'neon-venom-campaign', 'neon-venom-portal-qr', 'bwc-lucy-crest-poster', 'neon-venom-enter-dream-qr', 'neon-venom-black-birds-dream', 'woman-money-venom-shorts-qr', 'woman-money-venom-full-qr', 'neon-venom-cyberpunk-poster', 'black-wing-cosmic-singing']
     },
     {
       slug: 'omen-room',
@@ -220,7 +220,7 @@
       proof: ['QR designs', 'lyric posters', 'brand marks', 'chant sheets', 'sticker-ready artwork'],
       promise: 'This room turns the online world into physical evidence people can hold, scan and remember.',
       downloadPack: { label: '↓ Download QR Pack', href: 'downloads/bss-qr-drop-pack.zip' },
-      ids: ['neon-venom-portrait-qr', 'bwc-neon-qr-sheet', 'bwc-crest-sheet', 'bss-serpent-crest', 'old-vic-state-campaign', 'neon-venom-campaign', 'neon-venom-portal-qr', 'black-wing-chant-sheet', 'qr-pink', 'qr-orange', 'qr-yellow', 'qr-green', 'qr-purple', 'qr-cyan', 'qr-rainbow', 'neon-venom-cyberpunk-poster', 'moss-man-hope-poster']
+      ids: ['neon-venom-portrait-qr', 'bwc-neon-qr-sheet', 'bwc-crest-sheet', 'bss-serpent-crest', 'old-vic-state-campaign', 'neon-venom-campaign', 'neon-venom-portal-qr', 'black-wing-chant-sheet', 'qr-pink', 'qr-orange', 'qr-yellow', 'qr-green', 'qr-purple', 'qr-cyan', 'qr-rainbow', 'neon-venom-cyberpunk-poster', 'moss-man-hope-poster', 'frankston-writes-back']
     },
     {
       slug: 'colouring-pages',

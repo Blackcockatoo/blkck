@@ -113,6 +113,14 @@
 1024
 ]
 ],
+"03_black_wing_crew/bss-black-wing-crew-lucy.jpg": [
+1121,
+1403,
+[
+640,
+1121
+]
+],
 "04_neon_venom/neon-venom-cyberpunk-poster.png": [
 1632,
 2176,
@@ -591,6 +599,14 @@
 [
 640,
 1086
+]
+],
+"17_branding_campaigns/frankston-writes-back.jpg": [
+1122,
+1402,
+[
+640,
+1122
 ]
 ],
 "17_branding_campaigns/neon-venom-portrait-qr-poster.png": [

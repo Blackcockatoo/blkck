@@ -124,14 +124,26 @@ def render(spec):
     card = Image.new("RGB", (W, H), (7, 9, 12))
     # artwork panel on the right, fading into black
     art = load_art(spec["art"])
-    pw = 700
-    art = ImageOps.fit(art, (pw, H), Image.LANCZOS, centering=(0.5, 0.4))
-    art = Image.blend(art, Image.new("RGB", art.size, (0, 0, 0)), 0.18)
-    fade = Image.new("L", (pw, H))
-    fd = ImageDraw.Draw(fade)
-    for x in range(pw):
-        fd.line([(x, 0), (x, H)], fill=int(255 * min(1, max(0, (x - 20) / 280)) ** 1.4))
-    card.paste(art, (W - pw, 0), fade)
+    if spec.get("contain"):
+        # poster with lettering: show the whole sheet, inset in a thin gold rule, no crop
+        ph = H - 2 * 46
+        pw = round(art.width * ph / art.height)
+        art = art.resize((pw, ph), Image.LANCZOS)
+        x0 = W - 50 - pw
+        halo = Image.new("L", (W, H), 0)
+        ImageDraw.Draw(halo).rectangle((x0 - 30, 4, W - 4, H - 4), fill=70)
+        card.paste(Image.new("RGB", (W, H), (199, 168, 106)), (0, 0), halo.filter(ImageFilter.GaussianBlur(40)).point(lambda v: v * 0.45))
+        card.paste(art, (x0, 46))
+        ImageDraw.Draw(card).rectangle((x0 - 7, 39, x0 + pw + 6, 46 + ph + 6), outline=(199, 168, 106), width=1)
+    else:
+        pw = 700
+        art = ImageOps.fit(art, (pw, H), Image.LANCZOS, centering=(0.5, 0.4))
+        art = Image.blend(art, Image.new("RGB", art.size, (0, 0, 0)), 0.18)
+        fade = Image.new("L", (pw, H))
+        fd = ImageDraw.Draw(fade)
+        for x in range(pw):
+            fd.line([(x, 0), (x, H)], fill=int(255 * min(1, max(0, (x - 20) / 280)) ** 1.4))
+        card.paste(art, (W - pw, 0), fade)
     # warm ember glow + vignette
     glow = Image.new("L", (W, H), 0)
     ImageDraw.Draw(glow).ellipse((-200, H - 180, 900, H + 260), fill=90)

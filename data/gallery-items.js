@@ -1555,4 +1555,28 @@ window.BSS_GALLERY_ITEMS = [
     image: '23_studio_process/studio-tom-feathers-hair.jpg',
     tags: ['Studio Process', 'portrait', 'feathers', 'sunglasses', 'origin', 'young', 'candid'],
     description: 'A young man in profile, feathers tucked behind his ear, sunglasses, dark hair and a striped jacket. The origin image — the feather-in-hair moment that the whole mythology grew around.'
+    },
+  {
+    id: 'frankston-writes-back',
+    title: 'Write Frankston Off. Frankston Writes Back.',
+    series: 'Frankston 2035',
+    medium: 'Digital poster',
+    type: 'Civic poster',
+    year: '2026',
+    poster: true,
+    image: '17_branding_campaigns/frankston-writes-back.jpg',
+    tags: ['Frankston', 'black cockatoo', 'serpent', 'Frankston pier', 'banksia', 'B$S'],
+    description: 'A gold-and-midnight civic poster: a woman crowned in moon-gold holds a black cockatoo and a coiled serpent above Frankston pier at night, framed by banksias, butterflies and the B$S seal. The line: “Write Frankston off. Frankston writes back.”'
+  },
+  {
+    id: 'bwc-lucy-crest-poster',
+    title: 'B$S × Black Wing Crew — Lucy',
+    series: 'Black Wing Crew',
+    medium: 'Digital poster',
+    type: 'Crew poster',
+    year: '2026',
+    poster: true,
+    image: '03_black_wing_crew/bss-black-wing-crew-lucy.jpg',
+    tags: ['Black Wing Crew', 'Lucy', 'crest', 'serpent', 'black wings', 'B$S'],
+    description: 'The Black Wing Crew crest poster: twin gold serpents and black wings crown the B$S / Blue $nake Studio mark above Lucy in the crew jacket, between banners reading “Create · Build · Code · Paint · Play” and “People · Culture · Art · Game · Community ∞”.'
   }];
