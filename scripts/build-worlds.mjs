@@ -43,7 +43,9 @@ function sectionItems(section) {
 }
 function coverFor(slug) {
   const s = bySlug[slug];
-  const first = s && sectionItems(s).find((i) => i.image);
+  // Home cards crop to 4:3, so prefer artwork without lettering over a poster.
+  const withImage = s ? sectionItems(s).filter((i) => i.image) : [];
+  const first = withImage.find((i) => !i.poster) || withImage[0];
   return first ? first.image : '01_auralia/auralia_cosmic_poster_v1.png';
 }
 const shareImage = (key, lang = 'en') => `${SITE}/share/${lang === 'en' ? '' : lang + '/'}${key}.jpg`;
@@ -305,7 +307,7 @@ function artFigure(item, lang = 'en') {
   const desc = descOf(item, lang);
   const alt = desc ? `${item.title} — ${desc}` : item.title;
   const blurb = lang !== 'en' && desc ? `<span class="bss-art-desc">${esc(desc)}</span>` : '';
-  return `<figure class="bss-art"><a href="/${esc(item.image)}" target="_blank" rel="noopener" aria-label="${esc(fill(UI[lang].openFull, { title: item.title }))}">${picture(item.image, alt, { sizes: '(max-width: 620px) 100vw, (max-width: 1100px) 50vw, 380px' })}</a><figcaption><strong${en}>${esc(item.title)}</strong><span${en}>${esc([item.medium, item.year].filter(Boolean).join(' · '))}</span>${blurb}</figcaption></figure>`;
+  return `<figure class="bss-art${item.poster ? ' is-poster' : ''}"><a href="/${esc(item.image)}" target="_blank" rel="noopener" aria-label="${esc(fill(UI[lang].openFull, { title: item.title }))}">${picture(item.image, alt, { sizes: '(max-width: 620px) 100vw, (max-width: 1100px) 50vw, 380px' })}</a><figcaption><strong${en}>${esc(item.title)}</strong><span${en}>${esc([item.medium, item.year].filter(Boolean).join(' · '))}</span>${blurb}</figcaption></figure>`;
 }
 
 const TEACHER_PACK_URL = 'https://teachers-secret-cheatsheet.vercel.app/';
@@ -383,7 +385,7 @@ ${topbar(lang === 'en' ? world.href : alts[lang], lang, alts)}
       ${s.studioDescription ? `<p${enAttr(lang, s._en.studioDescription)}>${esc(s.studioDescription)}</p>` : ''}
       ${links ? `<ul class="bss-links">${links}</ul>` : ''}
     </div>
-    ${cover ? `<figure class="bss-hero-art">${picture(cover.image, descOf(cover, lang) ? `${cover.title} — ${descOf(cover, lang)}` : cover.title, { sizes: '(max-width: 860px) 100vw, 50vw', eager: true })}</figure>` : ''}
+    ${cover ? `<figure class="bss-hero-art${cover.poster ? ' is-poster' : ''}">${picture(cover.image, descOf(cover, lang) ? `${cover.title} — ${descOf(cover, lang)}` : cover.title, { sizes: '(max-width: 860px) 100vw, 50vw', eager: true })}</figure>` : ''}
   </section>
   ${world.slug === 'teacher-tools' && lang !== 'en' ? teacherPackHtml(lang) + '\n  ' : ''}${details.length ? `<section class="bss-section" aria-labelledby="about-title"><h2 id="about-title">${esc(fill(u.inside, { label: s.label }))}</h2><ul class="bss-details">${details.map((d) => `<li${enAttr(lang, d.en)}>${esc(d.text)}</li>`).join('')}</ul></section>` : ''}
   ${factRows.length ? `<section class="bss-section" aria-labelledby="facts-title"><h2 id="facts-title">${esc(u.glance)}</h2><dl class="bss-facts">${factRows.map((r) => `<div><dt>${esc(r.k)}</dt><dd${enAttr(lang, r.en)}>${esc(r.v)}</dd></div>`).join('')}</dl></section>` : ''}
@@ -595,7 +597,7 @@ for (const w of existing) decorateExisting(w.href.slice(1), { world: w.slug, sha
 decorateExisting('store.html', { shareKey: 'store', store: true, alts: STORE_ALTS });
 
 // Responsive <picture> markup for the hand-written pages that show artwork.
-for (const file of ['store.html', 'stomps.html', 'krsnapaksi-chant.html', 'frankston-2035.html']) {
+for (const file of ['store.html', 'stomps.html', 'krsnapaksi-chant.html', 'frankston-2035.html', 'black-wing-crew.html']) {
   const full = path.join(ROOT, file);
   const html = readFileSync(full, 'utf8');
   const out = html.replace(/<img\b([^>]*?)\bsrc="([^"]+)"([^>]*)>/g, (tag, pre, src, post) => {

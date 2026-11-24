@@ -627,6 +627,8 @@
   "bss-cyberpunk-flute-child": "光る蛇の頭の上で笛を吹く、クリシュナを思わせる子ども。眼下にはネオンの街。神話と遊び心をひとつにした別案のブランドビジュアル。",
   "bss-pattern-architects-poster": "暗い背景に金の S ロゴとスタジオの銘文。Pattern Architects——スタジオの制作姿勢を視覚化したもの。",
   "bss-cockatoo-silhouette-mandala": "枝にとまるキイロオクロオウムの黒いシルエット、背後に装飾的な曼荼羅と花の渦。ミニマルで上品。サイトの背景やブランド要素に。",
+  "frankston-writes-back": "金と真夜中の色で描いた、フランクストンのための市民ポスター。月の金をまとった女性が、夜のフランクストン桟橋の上で黒いオウムととぐろを巻く蛇を抱き、バンクシア、蝶、B$S の紋章が縁取ります。ポスターの言葉は英語のまま：“Write Frankston off. Frankston writes back.”（フランクストンを見限るな。フランクストンは書き返す。）",
+  "bwc-lucy-crest-poster": "Black Wing Crew の紋章ポスター。金の双頭の蛇と黒い翼が B$S / Blue $nake Studio のマークを戴き、その下にクルーのジャケットを着た Lucy。両脇の旗には “Create · Build · Code · Paint · Play” と “People · Culture · Art · Game · Community ∞”（創る・組む・書く・描く・遊ぶ／人・文化・アート・ゲーム・コミュニティ）。",
   "black-wing-cosmic-singing": "海辺の岩の上で歌うキイロオクロオウム。音符が銀河といくつもの月へ舞い上がり、金色の朝日の中、群れが飛び立つ。B$S の音楽のすべてが一枚に。",
   "neon-venom-cyberpunk-poster": "緑にしたたる蛇、サイバーパンクの街、日本語の「毒」の文字。配信へまっすぐ誘うストリートポスター。",
   "colouring-child-saint": "光輪をいただいて座る子ども（聖者）と鳥たち、オウム、羽根のモチーフ。Namo Narayana の絵を子どもたちが塗れるようにした、すっきりした線画。",

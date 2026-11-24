@@ -28,6 +28,14 @@
     .f2035-lede { max-width: 680px; margin: 0; color: var(--muted); font-size: clamp(17px, 2vw, 21px); line-height: 1.58; }
     .f2035-art { border: 1px solid rgba(199,168,106,.28); border-radius: 28px; overflow: hidden; background: rgba(255,255,255,.04); box-shadow: 0 26px 90px rgba(0,0,0,.38); }
     .f2035-art img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+    .f2035-poster { position: relative; margin: 0; padding: 12px 12px 0; border-color: rgba(199,168,106,.55); background: radial-gradient(120% 80% at 50% 20%, rgba(199,168,106,.18), rgba(4,5,6,.92) 70%); box-shadow: 0 0 0 1px rgba(0,0,0,.6) inset, 0 26px 90px rgba(0,0,0,.45), 0 0 60px -10px rgba(240,200,120,.28); }
+    .f2035-poster a { display: block; border-radius: 18px; overflow: hidden; outline: 1px solid rgba(199,168,106,.35); }
+    .f2035-poster img { object-fit: contain; background: #040506; transition: transform 700ms ease, filter 400ms ease; }
+    .f2035-poster a:hover img { transform: scale(1.015); filter: brightness(1.06); }
+    .f2035-poster figcaption { padding: 14px 6px 16px; text-align: center; }
+    .f2035-poster figcaption span { display: block; font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--dim); }
+    .f2035-poster figcaption strong { display: block; margin-top: 6px; font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(17px, 2vw, 21px); line-height: 1.25; letter-spacing: .02em; color: var(--gold-hot); }
+    @media (prefers-reduced-motion: reduce) { .f2035-poster img { transition: none; } }
     .f2035-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 34px 0; }
     .f2035-card { padding: 22px; border: 1px solid rgba(120,214,247,.18); border-radius: 20px; background: rgba(2,7,13,.54); }
     .f2035-card h2 { margin: 0 0 10px; color: var(--gold-hot); font-size: 18px; }
@@ -73,8 +81,9 @@
             <a class="project-link" href="mailto:bluesssnakestudio@gmail.com?subject=Frankston%202035">Contact about Frankston 2035</a>
           </div>
         </div>
-        <figure class="f2035-art">
-          <picture style="display:contents"><source type="image/avif" srcset="/opt/20_moss_man/moss-man-frankston-courts-640.avif 640w, /opt/20_moss_man/moss-man-frankston-courts-1024.avif 1024w" sizes="(max-width: 760px) 100vw, 480px"><source type="image/webp" srcset="/opt/20_moss_man/moss-man-frankston-courts-640.webp 640w, /opt/20_moss_man/moss-man-frankston-courts-1024.webp 1024w" sizes="(max-width: 760px) 100vw, 480px"><img src="20_moss_man/moss-man-frankston-courts.png" alt="Moss Man Frankston Courts civic artwork" loading="lazy" decoding="async" width="1024" height="1536" data-bss-pic></picture>
+        <figure class="f2035-art f2035-poster">
+          <a href="17_branding_campaigns/frankston-writes-back.jpg" target="_blank" rel="noopener" aria-label="Open the full Write Frankston Off / Frankston Writes Back poster"><picture style="display:contents"><source type="image/avif" srcset="/opt/17_branding_campaigns/frankston-writes-back-640.avif 640w, /opt/17_branding_campaigns/frankston-writes-back-1122.avif 1122w" sizes="(max-width: 760px) 100vw, 480px"><source type="image/webp" srcset="/opt/17_branding_campaigns/frankston-writes-back-640.webp 640w, /opt/17_branding_campaigns/frankston-writes-back-1122.webp 1122w" sizes="(max-width: 760px) 100vw, 480px"><img src="17_branding_campaigns/frankston-writes-back.jpg" alt="Poster: a woman crowned in moon-gold holds a black cockatoo and a coiled serpent above Frankston pier at night, framed by banksias, butterflies and the B$S seal, with the words “Write Frankston off. Frankston writes back.”" fetchpriority="high" decoding="async" width="1122" height="1402" data-bss-pic></picture></a>
+          <figcaption><span>B$S civic poster · 2026</span><strong>Write Frankston off.<br>Frankston writes back.</strong></figcaption>
         </figure>
       </section>
 
